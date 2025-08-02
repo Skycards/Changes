@@ -89,29 +89,26 @@ jobs:
           COMMIT_HASH=$(git rev-parse HEAD)
           echo "Commit hash: $COMMIT_HASH"
 
-          //* Capitalize the data name for display
-          DATA_NAME_CAPITALIZED=$(echo "${{ inputs.data_name }}" | sed 's/.*/\u&/')
-
-          //* Create the webhook payload
-          WEBHOOK_PAYLOAD=$(cat <<EOF
-          {
-            "content": "@everyone $DATA_NAME_CAPITALIZED have been updated!\nTake a look at the diff here:\nhttps://github.com/Skycards/Changes/commit/$COMMIT_HASH",
-            "embeds": null,
-            "username": "Skycards",
-            "avatar_url": "https://avatars.githubusercontent.com/u/224248835?s=256",
-            "attachments": []
-          }
-          EOF
-          )
+          //* Capitalize the data name for display (more portable approach)
+          DATA_NAME="${{ inputs.data_name }}"
+          DATA_NAME_CAPITALIZED="$(echo ${DATA_NAME} | awk '{print toupper(substr($0,1,1)) substr($0,2)}')"
 
           //* Send to all configured webhooks
           for webhook_var in $(env | grep '^WEBHOOK_' | cut -d= -f1); do
-            webhook_url=$(eval echo \$$webhook_var)
+            webhook_url=$(printenv "$webhook_var")
             if [ ! -z "$webhook_url" ]; then
               echo "Sending notification to $webhook_var"
+
+              //* Create and send the webhook payload directly
               curl -X POST \
                    -H "Content-Type: application/json" \
-                   -d "$WEBHOOK_PAYLOAD" \
+                   -d '{
+                     "content": "@everyone '"$DATA_NAME_CAPITALIZED"' have been updated!\nTake a look at the diff here:\nhttps://github.com/Skycards/Changes/commit/'"$COMMIT_HASH"'",
+                     "embeds": null,
+                     "username": "Skycards",
+                     "avatar_url": "https://avatars.githubusercontent.com/u/224248835?s=256",
+                     "attachments": []
+                   }' \
                    "$webhook_url" || echo "Failed to send to $webhook_var"
             fi
           done
