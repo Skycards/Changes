@@ -16,6 +16,9 @@ on:
         required: true
         type: string
 
+permissions:
+  contents: write
+
 jobs:
   fetch-single-api:
     runs-on: ubuntu-latest
