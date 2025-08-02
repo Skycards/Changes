@@ -75,6 +75,47 @@ jobs:
             fi
           done
 
+      - name: Load webhook secrets
+        if: steps.changes.outputs.changes == 'true'
+        uses: oNaiPs/secrets-to-env-action@v1
+        with:
+          secrets: ${{ toJSON(secrets) }}
+          prefix: WEBHOOK_
+
+      - name: Send Discord webhook notifications
+        if: steps.changes.outputs.changes == 'true'
+        run: |
+          //* Get the commit hash that was just pushed
+          COMMIT_HASH=$(git rev-parse HEAD)
+          echo "Commit hash: $COMMIT_HASH"
+
+          //* Capitalize the data name for display
+          DATA_NAME_CAPITALIZED=$(echo "${{ inputs.data_name }}" | sed 's/.*/\u&/')
+
+          //* Create the webhook payload
+          WEBHOOK_PAYLOAD=$(cat <<EOF
+          {
+            "content": "@everyone $DATA_NAME_CAPITALIZED have been updated!\nTake a look at the diff here:\nhttps://github.com/Skycards/Changes/commit/$COMMIT_HASH",
+            "embeds": null,
+            "username": "Skycards",
+            "avatar_url": "https://avatars.githubusercontent.com/u/224248835?s=256",
+            "attachments": []
+          }
+          EOF
+          )
+
+          //* Send to all configured webhooks
+          for webhook_var in $(env | grep '^WEBHOOK_' | cut -d= -f1); do
+            webhook_url=$(eval echo \$$webhook_var)
+            if [ ! -z "$webhook_url" ]; then
+              echo "Sending notification to $webhook_var"
+              curl -X POST \
+                   -H "Content-Type: application/json" \
+                   -d "$WEBHOOK_PAYLOAD" \
+                   "$webhook_url" || echo "Failed to send to $webhook_var"
+            fi
+          done
+
       - name: Log no changes for ${{ inputs.data_name }}
         if: steps.changes.outputs.changes == 'false'
         run: echo "No changes to commit. ${{ inputs.data_name }} data is up to date."

@@ -71,6 +71,10 @@ The system uses [Conventional Commits](https://www.conventionalcommits.org/) for
 - `chore(airports): update data - 2025-01-15 14:30:00 UTC`
 - `chore(models): update data - 2025-01-15 14:30:00 UTC`
 
+## Discord Webhooks
+
+This repository can send Discord webhook notifications when data is updated. If you would like your Discord webhook to be added to receive notifications of data changes, please contact me.
+
 ## Data Format
 
 The JSON files contain the raw response from the Skycards API endpoints, preserving the original structure and format provided by the API. The files are automatically formatted with proper indentation for improved readability.
