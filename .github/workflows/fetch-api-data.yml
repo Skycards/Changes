@@ -26,3 +26,4 @@ jobs:
       api_url: ${{ matrix.api.url }}
       output_file: ${{ matrix.api.file }}
       data_name: ${{ matrix.api.name }}
+    secrets: inherit
