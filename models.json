@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1751610794150,
+  "updatedAt": 1751610794152,
   "rows": [
     {
       "id": "A10",
@@ -36,7 +36,7 @@
     {
       "id": "A109",
       "manufacturer": "AGUSTAWESTLAND",
-      "name": "AW-109 Super Duper Test",
+      "name": "AW-109",
       "manufacturers": [
         "AGUSTA A-109",
         "AGUSTA A-109 Grand",
