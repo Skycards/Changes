@@ -1,0 +1,77 @@
+name: Fetch Single API Data
+
+on:
+  workflow_call:
+    inputs:
+      api_url:
+        description: "API endpoint URL (without timestamp parameter)"
+        required: true
+        type: string
+      output_file:
+        description: "Output filename for the JSON data"
+        required: true
+        type: string
+      data_name:
+        description: "Display name for the data type (for logging)"
+        required: true
+        type: string
+
+jobs:
+  fetch-single-api:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure Git
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
+      - name: Get current timestamp
+        id: timestamp
+        run: echo "timestamp=$(date +%s%3N)" >> $GITHUB_OUTPUT
+
+      - name: Fetch ${{ inputs.data_name }} data
+        run: |
+          echo "Fetching ${{ inputs.data_name }} from ${{ inputs.api_url }}?updatedAt=${{ steps.timestamp.outputs.timestamp }}"
+          curl -s "${{ inputs.api_url }}?updatedAt=${{ steps.timestamp.outputs.timestamp }}" > ${{ inputs.output_file }}
+
+      - name: Check for changes in ${{ inputs.output_file }}
+        id: changes
+        run: |
+          if git diff --quiet HEAD ${{ inputs.output_file }}; then
+            echo "changes=false" >> $GITHUB_OUTPUT
+            echo "No changes detected in ${{ inputs.output_file }}"
+          else
+            echo "changes=true" >> $GITHUB_OUTPUT
+            echo "Changes detected in ${{ inputs.output_file }}"
+          fi
+
+      - name: Commit ${{ inputs.output_file }} changes
+        if: steps.changes.outputs.changes == 'true'
+        run: |
+          git add ${{ inputs.output_file }}
+          git commit -m "chore(${{ inputs.data_name }}): update data - $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+
+          # Handle potential race condition from parallel matrix jobs
+          for i in {1..3}; do
+            if git push; then
+              echo "Push successful on attempt $i"
+              break
+            else
+              echo "Push failed on attempt $i, pulling latest changes..."
+              git pull --rebase origin main
+              if [ $i -eq 3 ]; then
+                echo "Failed to push after 3 attempts"
+                exit 1
+              fi
+            fi
+          done
+
+      - name: Log no changes for ${{ inputs.data_name }}
+        if: steps.changes.outputs.changes == 'false'
+        run: echo "No changes to commit. ${{ inputs.data_name }} data is up to date."

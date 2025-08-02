@@ -1,0 +1,25 @@
+name: Fetch API Data
+
+on:
+  schedule:
+    # Run every 30 minutes
+    - cron: "*/30 * * * *"
+  workflow_dispatch: # Allow manual triggering
+
+jobs:
+  fetch-data:
+    strategy:
+      matrix:
+        api:
+          - url: "https://api.skycards.oldapes.com/airports"
+            file: "airports.json"
+            name: "airports"
+          - url: "https://api.skycards.oldapes.com/models"
+            file: "models.json"
+            name: "models"
+
+    uses: ./.github/workflows/fetch-single-api.yml
+    with:
+      api_url: ${{ matrix.api.url }}
+      output_file: ${{ matrix.api.file }}
+      data_name: ${{ matrix.api.name }}
