@@ -73,4 +73,4 @@ The system uses [Conventional Commits](https://www.conventionalcommits.org/) for
 
 ## Data Format
 
-The JSON files contain the raw response from the Skycards API endpoints, preserving the original structure and format provided by the API.
+The JSON files contain the raw response from the Skycards API endpoints, preserving the original structure and format provided by the API. The files are automatically formatted with proper indentation for improved readability.
