@@ -85,21 +85,21 @@ jobs:
       - name: Send Discord webhook notifications
         if: steps.changes.outputs.changes == 'true'
         run: |
-          //* Get the commit hash that was just pushed
+          # Get the commit hash that was just pushed
           COMMIT_HASH=$(git rev-parse HEAD)
           echo "Commit hash: $COMMIT_HASH"
 
-          //* Capitalize the data name for display (more portable approach)
+          # Capitalize the data name for display (more portable approach)
           DATA_NAME="${{ inputs.data_name }}"
           DATA_NAME_CAPITALIZED="$(echo ${DATA_NAME} | awk '{print toupper(substr($0,1,1)) substr($0,2)}')"
 
-          //* Send to all configured webhooks
+          # Send to all configured webhooks
           for webhook_var in $(env | grep '^WEBHOOK_' | cut -d= -f1); do
             webhook_url=$(printenv "$webhook_var")
             if [ ! -z "$webhook_url" ]; then
               echo "Sending notification to $webhook_var"
 
-              //* Create and send the webhook payload directly
+              # Create and send the webhook payload directly
               curl -X POST \
                    -H "Content-Type: application/json" \
                    -d '{
