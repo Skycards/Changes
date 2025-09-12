@@ -587,6 +587,10 @@ def compare_country_airports(fr24_airports: List[Dict], our_airports: List[Dict]
             # This airport has no identifier, so it's effectively "removed" since we can't match it
             removed_airports.append(airport)
 
+    # Sort both lists by IATA code first, then by name
+    cleaned_added_airports.sort(key=lambda airport: (airport.get('iata', ''), airport.get('name', '')))
+    removed_airports.sort(key=lambda airport: (airport.get('iata', ''), airport.get('name', '')))
+
     return cleaned_added_airports, removed_airports
 
 
