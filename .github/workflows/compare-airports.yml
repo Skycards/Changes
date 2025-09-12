@@ -1,0 +1,123 @@
+name: Compare Airport Counts
+
+on:
+  workflow_run:
+    workflows: ["Fetch API Data"]
+    types:
+      - completed
+  workflow_dispatch: # Allow manual triggering
+
+permissions:
+  contents: write
+
+jobs:
+  compare-airports:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          # No external dependencies needed - using built-in Python libraries
+
+      - name: Run airport comparison
+        run: |
+          python compare_airports.py
+
+      - name: Check for changes in airport differences file
+        id: changes
+        run: |
+          changes_detected=false
+
+          # Check if airport differences file exists and has changes
+          if [ -f airport_differences.json ]; then
+            if ! git diff --quiet HEAD airport_differences.json 2>/dev/null; then
+              changes_detected=true
+              echo "Changes detected in airport differences"
+            fi
+          else
+            echo "No airport_differences.json file found"
+          fi
+
+          if [ "$changes_detected" = true ]; then
+            echo "changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "changes=false" >> $GITHUB_OUTPUT
+            echo "No changes detected in airport differences file"
+          fi
+
+      - name: Configure Git
+        if: steps.changes.outputs.changes == 'true'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
+      - name: Commit airport differences file
+        if: steps.changes.outputs.changes == 'true'
+        run: |
+          git add airport_differences.json
+          git commit -m "chore(comparison): update airport comparison data - $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+
+          # Handle potential race condition
+          for i in {1..3}; do
+            if git push; then
+              echo "Push successful on attempt $i"
+              break
+            else
+              echo "Push failed on attempt $i, pulling latest changes..."
+              git pull --rebase origin main
+              if [ $i -eq 3 ]; then
+                echo "Failed to push after 3 attempts"
+                exit 1
+              fi
+            fi
+          done
+
+      - name: Load webhook secrets
+        if: steps.changes.outputs.changes == 'true'
+        uses: oNaiPs/secrets-to-env-action@v1
+        with:
+          secrets: ${{ toJSON(secrets) }}
+          prefix: WEBHOOK_
+
+      - name: Send Discord webhook notifications
+        if: steps.changes.outputs.changes == 'true'
+        run: |
+          # Get the commit hash that was just pushed
+          COMMIT_HASH=$(git rev-parse HEAD)
+          echo "Commit hash: $COMMIT_HASH"
+
+          # Send to all configured webhooks
+          for webhook_var in $(env | grep '^WEBHOOK_' | cut -d= -f1); do
+            webhook_url=$(printenv "$webhook_var")
+            if [ ! -z "$webhook_url" ]; then
+              echo "Sending notification to $webhook_var"
+
+              # Create and send the webhook payload directly
+              curl -X POST \
+                   -H "Content-Type: application/json" \
+                   -d '{
+                     "content": "Airport count comparison has been updated!\nTake a look at the comparison report here:\nhttps://github.com/Skycards/Changes/commit/'"$COMMIT_HASH"'",
+                     "embeds": null,
+                     "username": "Skycards Airport Comparison",
+                     "avatar_url": "https://avatars.githubusercontent.com/u/224248835?s=256",
+                     "attachments": []
+                   }' \
+                   "$webhook_url" || echo "Failed to send to $webhook_var"
+            fi
+          done
+
+      - name: Log no changes
+        if: steps.changes.outputs.changes == 'false'
+        run: echo "No changes to commit. Airport differences file is up to date."

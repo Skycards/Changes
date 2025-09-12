@@ -1,0 +1,594 @@
+{
+  "summary": {
+    "total_countries_with_differences": 17,
+    "total_added_airports": 44,
+    "total_removed_airports": 4
+  },
+  "countries": {
+    "AQ": {
+      "country_name": "Antarctica",
+      "iso_code": "AQ",
+      "fr24_count": 15,
+      "skycards_count": 14,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "QAK",
+          "lat": -66.690964,
+          "lon": 111.525993,
+          "link": "https://www.flightradar24.com/data/airports/qak",
+          "name": "Wilkins Aerodrome",
+          "icao": "YWKS"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
+      "removed_count": 0
+    },
+    "AU": {
+      "country_name": "Australia",
+      "iso_code": "AU",
+      "fr24_count": 459,
+      "skycards_count": 456,
+      "difference": 3,
+      "added_airports": [
+        {
+          "iata": "GSC",
+          "lat": -25.054697,
+          "lon": 115.202751,
+          "link": "https://www.flightradar24.com/data/airports/gsc",
+          "name": "Gascoyne Junction Airport",
+          "icao": "YGSC"
+        },
+        {
+          "iata": "CWR",
+          "lat": -27.71134,
+          "lon": 138.327637,
+          "link": "https://www.flightradar24.com/data/airports/cwr",
+          "name": "Cowarie Airport",
+          "icao": "YCWI"
+        },
+        {
+          "iata": "CGV",
+          "lat": -32.281075,
+          "lon": 125.477203,
+          "link": "https://www.flightradar24.com/data/airports/cgv",
+          "name": "Caiguna Airport",
+          "icao": "YCAG"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 3,
+      "removed_count": 0
+    },
+    "CA": {
+      "country_name": "Canada",
+      "iso_code": "CA",
+      "fr24_count": 314,
+      "skycards_count": 315,
+      "difference": -1,
+      "added_airports": [],
+      "removed_airports": [
+        {
+          "name": "Toronto Buttonville Municipal Airport",
+          "iata": null,
+          "icao": null,
+          "lat": 43.862221,
+          "lon": -79.370003
+        }
+      ],
+      "added_count": 0,
+      "removed_count": 1
+    },
+    "CH": {
+      "country_name": "Switzerland",
+      "iso_code": "CH",
+      "fr24_count": 21,
+      "skycards_count": 20,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "QJN",
+          "lat": 46.957478,
+          "lon": 6.86476,
+          "link": "https://www.flightradar24.com/data/airports/qjn",
+          "name": "Neuchatel Airport",
+          "icao": "LSGN"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
+      "removed_count": 0
+    },
+    "CN": {
+      "country_name": "China",
+      "iso_code": "CN",
+      "fr24_count": 259,
+      "skycards_count": 260,
+      "difference": -1,
+      "added_airports": [],
+      "removed_airports": [
+        {
+          "name": "Qinhuangdao Shanhaiguan Airport",
+          "iata": null,
+          "icao": null,
+          "lat": 39.968102,
+          "lon": 119.731003
+        }
+      ],
+      "added_count": 0,
+      "removed_count": 1
+    },
+    "DE": {
+      "country_name": "Germany",
+      "iso_code": "DE",
+      "fr24_count": 149,
+      "skycards_count": 145,
+      "difference": 4,
+      "added_airports": [
+        {
+          "iata": "QJG",
+          "lat": 50.197021,
+          "lon": 9.168713,
+          "link": "https://www.flightradar24.com/data/airports/qjg",
+          "name": "Gelnhausen Airport",
+          "icao": "EDFG"
+        },
+        {
+          "iata": "QUX",
+          "lat": 48.238991,
+          "lon": 11.558304,
+          "link": "https://www.flightradar24.com/data/airports/qux",
+          "name": "Schleissheim Airport",
+          "icao": "EDNX"
+        },
+        {
+          "iata": "QUU",
+          "lat": 53.647583,
+          "lon": 9.704747,
+          "link": "https://www.flightradar24.com/data/airports/quu",
+          "name": "Uetersen Heist Airport",
+          "icao": "EDHE"
+        },
+        {
+          "iata": "QUN",
+          "lat": 52.612816,
+          "lon": 14.239826,
+          "link": "https://www.flightradar24.com/data/airports/qun",
+          "name": "Neuhardenberg Airport",
+          "icao": "EDON"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 4,
+      "removed_count": 0
+    },
+    "EE": {
+      "country_name": "Estonia",
+      "iso_code": "EE",
+      "fr24_count": 6,
+      "skycards_count": 5,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "QDE",
+          "lat": 59.259361,
+          "lon": 24.203568,
+          "link": "https://www.flightradar24.com/data/airports/qde",
+          "name": "Amari Air Base",
+          "icao": "EEEI"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
+      "removed_count": 0
+    },
+    "ES": {
+      "country_name": "Spain",
+      "iso_code": "ES",
+      "fr24_count": 64,
+      "skycards_count": 63,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "QUD",
+          "lat": 38.531445,
+          "lon": -2.836983,
+          "link": "https://www.flightradar24.com/data/airports/qud",
+          "name": "La Cuesta Airport",
+          "icao": "LEDC"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
+      "removed_count": 0
+    },
+    "FR": {
+      "country_name": "France",
+      "iso_code": "FR",
+      "fr24_count": 157,
+      "skycards_count": 147,
+      "difference": 10,
+      "added_airports": [
+        {
+          "iata": "QFW",
+          "lat": 44.399044,
+          "lon": 0.760031,
+          "link": "https://www.flightradar24.com/data/airports/qfw",
+          "name": "Villeneuve-sur-Lot Airport",
+          "icao": "LFCW"
+        },
+        {
+          "iata": "QFX",
+          "lat": 44.069691,
+          "lon": 4.141985,
+          "link": "https://www.flightradar24.com/data/airports/qfx",
+          "name": "Ales Deaux Airport",
+          "icao": "LFMS"
+        },
+        {
+          "iata": "QFQ",
+          "lat": 44.027069,
+          "lon": 1.376231,
+          "link": "https://www.flightradar24.com/data/airports/qfq",
+          "name": "Montauban Airport",
+          "icao": "LFDB"
+        },
+        {
+          "iata": "QFP",
+          "lat": 46.905327,
+          "lon": 6.327546,
+          "link": "https://www.flightradar24.com/data/airports/qfp",
+          "name": "Pontarlier Airport",
+          "icao": "LFSP"
+        },
+        {
+          "iata": "QFH",
+          "lat": 47.479584,
+          "lon": 2.392455,
+          "link": "https://www.flightradar24.com/data/airports/qfh",
+          "name": "Aubigny-sur-Nere Airport",
+          "icao": "LFEH"
+        },
+        {
+          "iata": "QFF",
+          "lat": 47.406914,
+          "lon": -1.179485,
+          "link": "https://www.flightradar24.com/data/airports/qff",
+          "name": "Ancenis Airport",
+          "icao": "LFFI"
+        },
+        {
+          "iata": "QFI",
+          "lat": 44.983963,
+          "lon": -0.137393,
+          "link": "https://www.flightradar24.com/data/airports/qfi",
+          "name": "Libourne Artigues-de-Lussac Airport",
+          "icao": "LFDI"
+        },
+        {
+          "iata": "QFR",
+          "lat": 47.486725,
+          "lon": 6.792233,
+          "link": "https://www.flightradar24.com/data/airports/qfr",
+          "name": "Montbeliard Courcelles Airport",
+          "icao": "LFSM"
+        },
+        {
+          "iata": "QFS",
+          "lat": 44.368183,
+          "lon": -1.132075,
+          "link": "https://www.flightradar24.com/data/airports/qfs",
+          "name": "Biscarrosse Parentis Airport",
+          "icao": "LFBS"
+        },
+        {
+          "iata": "QFZ",
+          "lat": 45.218197,
+          "lon": 5.848492,
+          "link": "https://www.flightradar24.com/data/airports/qfz",
+          "name": "Grenoble Le Versoud Airport",
+          "icao": "LFLG"
+        },
+        {
+          "iata": "QFO",
+          "lat": 43.587822,
+          "lon": 1.498572,
+          "link": "https://www.flightradar24.com/data/airports/qfo",
+          "name": "Toulouse Lasbordes Airport",
+          "icao": "LFCL"
+        }
+      ],
+      "removed_airports": [
+        {
+          "name": "Reims Champagne Air Base",
+          "iata": null,
+          "icao": null,
+          "lat": 49.3102,
+          "lon": 4.050747
+        }
+      ],
+      "added_count": 11,
+      "removed_count": 1
+    },
+    "IT": {
+      "country_name": "Italy",
+      "iso_code": "IT",
+      "fr24_count": 79,
+      "skycards_count": 78,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "QIK",
+          "lat": 46.235088,
+          "lon": 13.073269,
+          "link": "https://www.flightradar24.com/data/airports/qik",
+          "name": "Rivoli di Osoppo Airport",
+          "icao": "LIKH"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
+      "removed_count": 0
+    },
+    "JP": {
+      "country_name": "Japan",
+      "iso_code": "JP",
+      "fr24_count": 88,
+      "skycards_count": 86,
+      "difference": 2,
+      "added_airports": [
+        {
+          "iata": "AGJ",
+          "lat": 26.592718,
+          "lon": 127.240433,
+          "link": "https://www.flightradar24.com/data/airports/agj",
+          "name": "Aguni Airport",
+          "icao": "RORA"
+        },
+        {
+          "iata": "IEJ",
+          "lat": 26.722498,
+          "lon": 127.786804,
+          "link": "https://www.flightradar24.com/data/airports/iej",
+          "name": "Iejima Airport",
+          "icao": "RORE"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 2,
+      "removed_count": 0
+    },
+    "LY": {
+      "country_name": "Libya",
+      "iso_code": "LY",
+      "fr24_count": 13,
+      "skycards_count": 11,
+      "difference": 2,
+      "added_airports": [
+        {
+          "iata": "SRX",
+          "lat": 31.063711,
+          "lon": 16.59395,
+          "link": "https://www.flightradar24.com/data/airports/srx",
+          "name": "Sirte Ghardabiya Airport",
+          "icao": "HLGD"
+        },
+        {
+          "iata": "LMQ",
+          "lat": 30.374851,
+          "lon": 19.579227,
+          "link": "https://www.flightradar24.com/data/airports/lmq",
+          "name": "Marsa Brega Airport",
+          "icao": "HLMB"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 2,
+      "removed_count": 0
+    },
+    "NO": {
+      "country_name": "Norway",
+      "iso_code": "NO",
+      "fr24_count": 57,
+      "skycards_count": 56,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "QUE",
+          "lat": 60.211742,
+          "lon": 10.314016,
+          "link": "https://www.flightradar24.com/data/airports/que",
+          "name": "Honefoss Eggemoen Airport",
+          "icao": "ENEG"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
+      "removed_count": 0
+    },
+    "PL": {
+      "country_name": "Poland",
+      "iso_code": "PL",
+      "fr24_count": 44,
+      "skycards_count": 45,
+      "difference": -1,
+      "added_airports": [],
+      "removed_airports": [
+        {
+          "name": "Koszalin Zegrze Pomorskie Airport",
+          "iata": null,
+          "icao": null,
+          "lat": 54.0425,
+          "lon": 16.2656
+        }
+      ],
+      "added_count": 0,
+      "removed_count": 1
+    },
+    "PT": {
+      "country_name": "Portugal",
+      "iso_code": "PT",
+      "fr24_count": 28,
+      "skycards_count": 27,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "QUC",
+          "lat": 39.844585,
+          "lon": -7.43989,
+          "link": "https://www.flightradar24.com/data/airports/quc",
+          "name": "Castelo Branco Airport",
+          "icao": "LPCB"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
+      "removed_count": 0
+    },
+    "SE": {
+      "country_name": "Sweden",
+      "iso_code": "SE",
+      "fr24_count": 67,
+      "skycards_count": 62,
+      "difference": 5,
+      "added_airports": [
+        {
+          "iata": "QUH",
+          "lat": 56.184612,
+          "lon": 12.574732,
+          "link": "https://www.flightradar24.com/data/airports/quh",
+          "name": "Hoganas Airport",
+          "icao": "ESMH"
+        },
+        {
+          "iata": "QUV",
+          "lat": 57.124577,
+          "lon": 12.229092,
+          "link": "https://www.flightradar24.com/data/airports/quv",
+          "name": "Varberg Airport",
+          "icao": "ESGV"
+        },
+        {
+          "iata": "QUF",
+          "lat": 58.17226,
+          "lon": 13.590839,
+          "link": "https://www.flightradar24.com/data/airports/quf",
+          "name": "Falkoping Airport",
+          "icao": "ESGK"
+        },
+        {
+          "iata": "QUM",
+          "lat": 55.849068,
+          "lon": 13.32986,
+          "link": "https://www.flightradar24.com/data/airports/qum",
+          "name": "Eslov Airport",
+          "icao": "ESME"
+        },
+        {
+          "iata": "QUZ",
+          "lat": 57.328175,
+          "lon": 17.050781,
+          "link": "https://www.flightradar24.com/data/airports/quz",
+          "name": "Byxelkrok Olanda Airport",
+          "icao": "ESMZ"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 5,
+      "removed_count": 0
+    },
+    "US": {
+      "country_name": "United States",
+      "iso_code": "US",
+      "fr24_count": 1604,
+      "skycards_count": 1594,
+      "difference": 10,
+      "added_airports": [
+        {
+          "iata": "DNS",
+          "lat": 41.98632,
+          "lon": -95.380615,
+          "link": "https://www.flightradar24.com/data/airports/dns",
+          "name": "Denison Municipal Airport",
+          "icao": "KDNS"
+        },
+        {
+          "iata": "QLQ",
+          "lat": 35.136169,
+          "lon": -92.713364,
+          "link": "https://www.flightradar24.com/data/airports/qlq",
+          "name": "Morrilton Municipal Airport",
+          "icao": "KBDQ"
+        },
+        {
+          "iata": "GBR",
+          "lat": 42.184216,
+          "lon": -73.403114,
+          "link": "https://www.flightradar24.com/data/airports/gbr",
+          "name": "Great Barrington Walter J. Koladza Airport",
+          "icao": "KGBR"
+        },
+        {
+          "iata": "MPJ",
+          "lat": 35.139229,
+          "lon": -92.909027,
+          "link": "https://www.flightradar24.com/data/airports/mpj",
+          "name": "Morrilton Petit Jean Park Airport",
+          "icao": "KMPJ"
+        },
+        {
+          "iata": "QLD",
+          "lat": 29.068205,
+          "lon": -81.283318,
+          "link": "https://www.flightradar24.com/data/airports/qld",
+          "name": "DeLand Municipal Airport",
+          "icao": "KDED"
+        },
+        {
+          "iata": "APT",
+          "lat": 35.060646,
+          "lon": -85.585358,
+          "link": "https://www.flightradar24.com/data/airports/apt",
+          "name": "Jasper Marion County Airport",
+          "icao": "KAPT"
+        },
+        {
+          "iata": "EPH",
+          "lat": 47.309227,
+          "lon": -119.517326,
+          "link": "https://www.flightradar24.com/data/airports/eph",
+          "name": "Ephrata Municipal Airport",
+          "icao": "KEPH"
+        },
+        {
+          "iata": "ASX",
+          "lat": 46.551807,
+          "lon": -90.918358,
+          "link": "https://www.flightradar24.com/data/airports/asx",
+          "name": "Ashland John F Kennedy Memorial Airport",
+          "icao": "KASX"
+        },
+        {
+          "iata": "HNC",
+          "lat": 35.232731,
+          "lon": -75.617928,
+          "link": "https://www.flightradar24.com/data/airports/hnc",
+          "name": "Hatteras Billy Mitchell Airport",
+          "icao": "KHSE"
+        },
+        {
+          "iata": "OGA",
+          "lat": 41.117863,
+          "lon": -101.763123,
+          "link": "https://www.flightradar24.com/data/airports/oga",
+          "name": "Ogallala Municipal Airport",
+          "icao": "KOGA"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 10,
+      "removed_count": 0
+    }
+  }
+}
