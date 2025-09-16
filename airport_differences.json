@@ -1,7 +1,7 @@
 {
   "summary": {
-    "total_countries_with_differences": 17,
-    "total_added_airports": 44,
+    "total_countries_with_differences": 18,
+    "total_added_airports": 45,
     "total_removed_airports": 4
   },
   "countries": {
@@ -19,6 +19,26 @@
           "link": "https://www.flightradar24.com/data/airports/qak",
           "name": "Wilkins Aerodrome",
           "icao": "YWKS"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
+      "removed_count": 0
+    },
+    "AR": {
+      "country_name": "Argentina",
+      "iso_code": "AR",
+      "fr24_count": 50,
+      "skycards_count": 49,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "COC",
+          "lat": -31.297194,
+          "lon": -57.996815,
+          "link": "https://www.flightradar24.com/data/airports/coc",
+          "name": "Concordia Comodoro Pierrestegui Airport",
+          "icao": "SAAC"
         }
       ],
       "removed_airports": [],
@@ -501,9 +521,9 @@
     "US": {
       "country_name": "United States",
       "iso_code": "US",
-      "fr24_count": 1604,
+      "fr24_count": 1605,
       "skycards_count": 1594,
-      "difference": 10,
+      "difference": 11,
       "added_airports": [
         {
           "iata": "APT",
