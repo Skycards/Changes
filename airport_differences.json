@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 18,
-    "total_added_airports": 45,
+    "total_added_airports": 46,
     "total_removed_airports": 4
   },
   "countries": {
@@ -598,6 +598,14 @@
           "icao": "KDED"
         },
         {
+          "iata": "QLP",
+          "lat": 33.176147,
+          "lon": -97.8284,
+          "link": "https://www.flightradar24.com/data/airports/qlp",
+          "name": "Bridgeport Municipal Airport",
+          "icao": "KXBP"
+        },
+        {
           "iata": "QLQ",
           "lat": 35.136169,
           "lon": -92.713364,
@@ -607,7 +615,7 @@
         }
       ],
       "removed_airports": [],
-      "added_count": 10,
+      "added_count": 11,
       "removed_count": 0
     }
   }
