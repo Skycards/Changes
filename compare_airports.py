@@ -475,8 +475,13 @@ class CountryAirportParser(HTMLParser):
             self.in_table_row = False
 
 
-def fetch_country_airports(country_name: str) -> List[Dict]:
-    """Fetch detailed airport data for a specific country from Flightradar24"""
+def fetch_country_airports(country_name: str) -> Tuple[List[Dict], Optional[str]]:
+    """Fetch detailed airport data for a specific country from Flightradar24
+
+    Returns:
+        Tuple of (airports_list, error_message). If successful, error_message is None.
+        If failed after all retries, airports_list is empty and error_message contains the error.
+    """
     # Convert country name to URL format (lowercase, replace spaces with dashes)
     country_url = country_name.lower().replace(' ', '-').replace('(', '').replace(')', '').replace("'", '')
 
@@ -485,28 +490,42 @@ def fetch_country_airports(country_name: str) -> List[Dict]:
 
     url = f"https://www.flightradar24.com/data/airports/{country_url}"
 
-    try:
-        print(f"  Fetching airports for {country_name} from {url}")
+    retry_delays = [10, 15, 20]  # Retry delays in seconds
+    last_error = None
 
-        req = urllib.request.Request(
-            url,
-            headers={
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
-            }
-        )
+    for attempt in range(4):  # 1 initial attempt + 3 retries
+        try:
+            if attempt == 0:
+                print(f"  Fetching airports for {country_name} from {url}")
+            else:
+                delay = retry_delays[attempt - 1]
+                print(f"  Retry {attempt}/3 for {country_name} after {delay}s delay...")
+                time.sleep(delay)
 
-        with urllib.request.urlopen(req, timeout=30) as response:
-            html_content = response.read().decode('utf-8')
+            req = urllib.request.Request(
+                url,
+                headers={
+                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+                }
+            )
 
-        parser = CountryAirportParser()
-        parser.feed(html_content)
+            with urllib.request.urlopen(req, timeout=30) as response:
+                html_content = response.read().decode('utf-8')
 
-        print(f"  Found {len(parser.airports)} airports for {country_name}")
-        return parser.airports
+            parser = CountryAirportParser()
+            parser.feed(html_content)
 
-    except Exception as e:
-        print(f"  Error fetching airports for {country_name}: {e}")
-        return []
+            print(f"  Found {len(parser.airports)} airports for {country_name}")
+            return parser.airports, None
+
+        except Exception as e:
+            last_error = str(e)
+            print(f"  Error fetching airports for {country_name} (attempt {attempt + 1}/4): {e}")
+
+    # All attempts failed
+    error_msg = f"Failed after 4 attempts. Last error: {last_error}"
+    print(f"  ❌ {error_msg}")
+    return [], error_msg
 
 
 def get_country_airports_from_our_data(airports_data: Dict, country_code: str) -> List[Dict]:
@@ -595,8 +614,15 @@ def compare_country_airports(fr24_airports: List[Dict], our_airports: List[Dict]
 
 
 def analyze_country_differences(fr24_counts: Dict[str, int], our_counts: Dict[str, int],
-                              country_mapping: Dict[str, str], airports_data: Dict) -> Dict:
-    """Analyze detailed differences for countries with mismatched airport counts"""
+                              country_mapping: Dict[str, str], airports_data: Dict,
+                              existing_differences: Optional[Dict] = None) -> Dict:
+    """Analyze detailed differences for countries with mismatched airport counts
+
+    Args:
+        existing_differences: Optional existing differences data to preserve on fetch failures
+    """
+    if existing_differences is None:
+        existing_differences = {}
 
     # Find countries with differences
     fr24_iso_counts = {}
@@ -629,28 +655,41 @@ def analyze_country_differences(fr24_counts: Dict[str, int], our_counts: Dict[st
         print(f"\nProcessing {country_name} ({iso_code}): FR24={fr24_count}, Ours={our_count}")
 
         # Fetch FR24 airport data for this country
-        fr24_airports = fetch_country_airports(country_name)
+        fr24_airports, fetch_error = fetch_country_airports(country_name)
 
         # Get our airport data for this country
         our_airports = get_country_airports_from_our_data(airports_data, iso_code)
 
-        if fr24_airports or our_airports:
-            added_airports, removed_airports = compare_country_airports(fr24_airports, our_airports)
+        if fetch_error:
+            # Failed to fetch new data
+            if iso_code in existing_differences:
+                # Preserve existing data - straight copy
+                print(f"  ⚠️  Fetch failed, preserving existing data for {country_name}")
+                differences[iso_code] = existing_differences[iso_code].copy()
+                differences[iso_code]['fetch_error'] = fetch_error
+            else:
+                # No existing data and failed to fetch - skip this country
+                print(f"  ⚠️  Fetch failed and no existing data - skipping {country_name}")
+                continue
+        else:
+            # Successfully fetched data or no error
+            if fr24_airports or our_airports:
+                added_airports, removed_airports = compare_country_airports(fr24_airports, our_airports)
 
-            differences[iso_code] = {
-                'country_name': country_name,
-                'iso_code': iso_code,
-                'fr24_count': fr24_count,
-                'skycards_count': our_count,
-                'difference': fr24_count - our_count,  # Positive means FR24 has more
-                'added_airports': added_airports,  # In FR24 but not in our data
-                'removed_airports': removed_airports,  # In our data but not in FR24
-                'added_count': len(added_airports),
-                'removed_count': len(removed_airports)
-            }
+                differences[iso_code] = {
+                    'country_name': country_name,
+                    'iso_code': iso_code,
+                    'fr24_count': fr24_count,
+                    'skycards_count': our_count,
+                    'difference': fr24_count - our_count,  # Positive means FR24 has more
+                    'added_airports': added_airports,  # In FR24 but not in our data
+                    'removed_airports': removed_airports,  # In our data but not in FR24
+                    'added_count': len(added_airports),
+                    'removed_count': len(removed_airports)
+                }
 
-            print(f"  Added: {len(added_airports)} airports")
-            print(f"  Removed: {len(removed_airports)} airports")
+                print(f"  Added: {len(added_airports)} airports")
+                print(f"  Removed: {len(removed_airports)} airports")
 
         # Add delay to be respectful to the server and avoid 429 errors
         time.sleep(5)
@@ -769,11 +808,23 @@ def main():
     print("DETAILED ANALYSIS")
     print("="*50)
 
-    differences = analyze_country_differences(fr24_counts, our_counts, country_mapping, airports_data)
+    # Load existing differences data if it exists
+    existing_differences = {}
+    output_file = 'airport_differences.json'
+    try:
+        with open(output_file, 'r', encoding='utf-8') as f:
+            existing_data = json.load(f)
+            existing_differences = existing_data.get('countries', {})
+        print(f"Loaded existing differences data for {len(existing_differences)} countries")
+    except FileNotFoundError:
+        print("No existing differences file found - starting fresh")
+    except Exception as e:
+        print(f"Warning: Could not load existing differences file: {e}")
+
+    differences = analyze_country_differences(fr24_counts, our_counts, country_mapping, airports_data, existing_differences)
 
     if differences:
         # Save detailed differences to JSON file
-        output_file = 'airport_differences.json'
 
         # Prepare output data with summary and sorted countries
         sorted_countries = dict(sorted(differences.items()))
