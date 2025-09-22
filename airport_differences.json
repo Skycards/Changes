@@ -1,7 +1,7 @@
 {
   "summary": {
-    "total_countries_with_differences": 18,
-    "total_added_airports": 46,
+    "total_countries_with_differences": 19,
+    "total_added_airports": 47,
     "total_removed_airports": 4
   },
   "countries": {
@@ -138,6 +138,26 @@
       ],
       "added_count": 0,
       "removed_count": 1
+    },
+    "CZ": {
+      "country_name": "Czechia",
+      "iso_code": "CZ",
+      "fr24_count": 19,
+      "skycards_count": 18,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "QJZ",
+          "lat": 49.286362,
+          "lon": 17.41629,
+          "link": "https://www.flightradar24.com/data/airports/qjz",
+          "name": "Kromeriz Airport",
+          "icao": "LKKM"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
+      "removed_count": 0
     },
     "DE": {
       "country_name": "Germany",
