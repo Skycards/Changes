@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 19,
-    "total_added_airports": 48,
+    "total_added_airports": 49,
     "total_removed_airports": 4
   },
   "countries": {
@@ -162,9 +162,9 @@
     "DE": {
       "country_name": "Germany",
       "iso_code": "DE",
-      "fr24_count": 149,
+      "fr24_count": 150,
       "skycards_count": 145,
-      "difference": 4,
+      "difference": 5,
       "added_airports": [
         {
           "iata": "QJG",
@@ -173,6 +173,14 @@
           "link": "https://www.flightradar24.com/data/airports/qjg",
           "name": "Gelnhausen Airport",
           "icao": "EDFG"
+        },
+        {
+          "iata": "QJI",
+          "lat": 49.391739,
+          "lon": 9.957519,
+          "link": "https://www.flightradar24.com/data/airports/qji",
+          "name": "Niederstetten Airport",
+          "icao": "ETHN"
         },
         {
           "iata": "QUN",
@@ -200,7 +208,7 @@
         }
       ],
       "removed_airports": [],
-      "added_count": 4,
+      "added_count": 5,
       "removed_count": 0
     },
     "EE": {
@@ -246,9 +254,9 @@
     "FR": {
       "country_name": "France",
       "iso_code": "FR",
-      "fr24_count": 157,
+      "fr24_count": 158,
       "skycards_count": 147,
-      "difference": 10,
+      "difference": 11,
       "added_airports": [
         {
           "iata": "QFF",
