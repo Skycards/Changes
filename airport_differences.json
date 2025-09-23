@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 19,
-    "total_added_airports": 47,
+    "total_added_airports": 48,
     "total_removed_airports": 4
   },
   "countries": {
@@ -331,6 +331,14 @@
           "icao": "LFMS"
         },
         {
+          "iata": "QFY",
+          "lat": 49.87262,
+          "lon": 2.388647,
+          "link": "https://www.flightradar24.com/data/airports/qfy",
+          "name": "Amiens Glisy Airport",
+          "icao": "LFAY"
+        },
+        {
           "iata": "QFZ",
           "lat": 45.218197,
           "lon": 5.848492,
@@ -348,7 +356,7 @@
           "lon": 4.050747
         }
       ],
-      "added_count": 11,
+      "added_count": 12,
       "removed_count": 1
     },
     "IT": {
