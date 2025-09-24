@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 21,
-    "total_added_airports": 56,
+    "total_added_airports": 57,
     "total_removed_airports": 4
   },
   "countries": {
@@ -694,6 +694,14 @@
           "icao": "KDED"
         },
         {
+          "iata": "QLF",
+          "lat": 36.284855,
+          "lon": -78.984123,
+          "link": "https://www.flightradar24.com/data/airports/qlf",
+          "name": "Person County Raleigh Regional Airport",
+          "icao": "KTDF"
+        },
+        {
           "iata": "QLP",
           "lat": 33.176147,
           "lon": -97.8284,
@@ -711,7 +719,7 @@
         }
       ],
       "removed_airports": [],
-      "added_count": 11,
+      "added_count": 12,
       "removed_count": 0
     },
     "ZA": {
