@@ -617,9 +617,9 @@
     "US": {
       "country_name": "United States",
       "iso_code": "US",
-      "fr24_count": 1606,
+      "fr24_count": 1607,
       "skycards_count": 1594,
-      "difference": 12,
+      "difference": 13,
       "added_airports": [
         {
           "iata": "APT",
