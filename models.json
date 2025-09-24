@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1757493784505,
+  "updatedAt": 1758703235997,
   "rows": [
     {
       "id": "A1",
@@ -439,9 +439,9 @@
       "engNum": 2,
       "engType": "J",
       "wtc": "M",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 2015,
       "wingspan": 30.6,
       "length": 32.2,
@@ -1320,6 +1320,7 @@
         "AS29"
       ],
       "markers": [
+        "VENT",
         "P28A"
       ],
       "inSeasons": [
@@ -2373,9 +2374,9 @@
       "engNum": 1,
       "engType": "P",
       "wtc": "L",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 1969,
       "wingspan": 10.4,
       "length": 7.27,
@@ -2409,9 +2410,9 @@
       "engNum": 1,
       "engType": "P",
       "wtc": "L",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 1967,
       "wingspan": 10.8,
       "length": 7.08,
@@ -3427,6 +3428,7 @@
         "C172"
       ],
       "markers": [
+        "SREY",
         "P28A"
       ],
       "inSeasons": [
@@ -3758,9 +3760,9 @@
       "engNum": 2,
       "engType": "T",
       "wtc": "L",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 1992,
       "wingspan": 13.2,
       "length": 15.9,
@@ -4062,9 +4064,9 @@
       "engNum": 1,
       "engType": "J",
       "wtc": "M",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 1984,
       "wingspan": 8.87,
       "length": 13.2,
@@ -4428,9 +4430,9 @@
       "engNum": 2,
       "engType": "P",
       "wtc": "L",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 1984,
       "wingspan": 12.2,
       "length": 10.2,
@@ -4483,6 +4485,7 @@
         "C172"
       ],
       "markers": [
+        "HRON",
         "LGEZ",
         "P28A"
       ],
@@ -5256,6 +5259,7 @@
         "M20P"
       ],
       "markers": [
+        "SF28",
         "SF36",
         "C172"
       ],
@@ -6395,9 +6399,9 @@
       "engNum": 1,
       "engType": "P",
       "wtc": "L",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 1986,
       "wingspan": 15.2,
       "length": 9.9,
@@ -6818,9 +6822,9 @@
       "engNum": 1,
       "engType": "P",
       "wtc": "L",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 1945,
       "wingspan": 11,
       "length": 6.93,
@@ -8390,9 +8394,9 @@
       "engNum": 4,
       "engType": "J",
       "wtc": "M",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 1981,
       "wingspan": 26.3,
       "length": 26.2,
@@ -8572,6 +8576,7 @@
         "R44"
       ],
       "markers": [
+        "B47G",
         "AS50",
         "R44"
       ],
@@ -8786,9 +8791,9 @@
       "engNum": 2,
       "engType": "T",
       "wtc": "L",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 1966,
       "wingspan": 12,
       "length": 10.3,
@@ -8835,9 +8840,9 @@
       "engNum": 4,
       "engType": "J",
       "wtc": "H",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 3,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 1957,
       "wingspan": 44.4,
       "length": 46.6,
@@ -10053,6 +10058,8 @@
         "BUETHE Barracuda",
         "JEFFAIR Barracuda"
       ],
+      "landingGear": "Tricycle",
+      "wingPos": "Low wing",
       "type": "L",
       "engNum": 1,
       "engType": "P",
@@ -10061,13 +10068,16 @@
       "num": 0,
       "xp": 10703,
       "firstFlight": 1975,
-      "wingspan": 7.5,
-      "length": 6.5,
+      "wingspan": 7.54,
+      "length": 6.55,
+      "mtow": 1040,
+      "seats": 2,
+      "range": 800,
       "maxSpeed": 181,
       "cardCategory": "ultra",
       "ftea": 0.000006751543209876544,
       "images": [
-        "C172"
+        "P28A"
       ],
       "markers": [
         "P28A"
@@ -10259,9 +10269,9 @@
       "engNum": 1,
       "engType": "J",
       "wtc": "L",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 1971,
       "wingspan": 5.2,
       "length": 4.13,
@@ -10563,9 +10573,9 @@
       "engNum": 1,
       "engType": "T",
       "wtc": "L",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 3,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 2021,
       "wingspan": 16.5,
       "length": 14.9,
@@ -12580,6 +12590,7 @@
         "LGEZ"
       ],
       "markers": [
+        "HRON",
         "LGEZ"
       ],
       "inSeasons": [
@@ -13076,9 +13087,9 @@
       "engNum": 2,
       "engType": "P",
       "wtc": "M",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 1949,
       "wingspan": 33.5,
       "length": 23.9,
@@ -15208,6 +15219,7 @@
         0,
         1
       ],
+      "imageOverride": "C5M",
       "military": true
     },
     {
@@ -15599,6 +15611,7 @@
         0,
         1
       ],
+      "imageOverride": "C5",
       "military": true
     },
     {
@@ -16132,9 +16145,9 @@
       "engNum": 1,
       "engType": "P",
       "wtc": "L",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 2002,
       "wingspan": 11,
       "length": 7.3,
@@ -16248,9 +16261,9 @@
       "engNum": 1,
       "engType": "P",
       "wtc": "L",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 1965,
       "wingspan": 7.62,
       "length": 5.8,
@@ -16398,9 +16411,9 @@
       "engNum": 1,
       "engType": "T",
       "wtc": "L",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "wingspan": 13,
       "length": 12,
       "height": 4.2,
@@ -16516,9 +16529,9 @@
       "engNum": 1,
       "engType": "P",
       "wtc": "L",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 1916,
       "wingspan": 8.53,
       "length": 5.72,
@@ -17293,6 +17306,7 @@
         "EC45"
       ],
       "markers": [
+        "S55P",
         "EC45"
       ],
       "inSeasons": [
@@ -18277,9 +18291,9 @@
       "engNum": 2,
       "engType": "J",
       "wtc": "M",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 1949,
       "wingspan": 19.5,
       "length": 20,
@@ -18358,9 +18372,9 @@
       "engNum": 1,
       "engType": "P",
       "wtc": "L",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 2,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 2015,
       "wingspan": 9.1,
       "length": 9.1,
@@ -18395,9 +18409,9 @@
       "engNum": 1,
       "engType": "P",
       "wtc": "L",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 2010,
       "wingspan": 8.2,
       "length": 5.8,
@@ -18564,9 +18578,9 @@
       "engNum": 4,
       "engType": "J",
       "wtc": "H",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 1969,
       "wingspan": 25.6,
       "length": 61.7,
@@ -19460,9 +19474,9 @@
       "engNum": 1,
       "engType": "P",
       "wtc": "L",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 1928,
       "wingspan": 12.5,
       "length": 7.85,
@@ -21422,9 +21436,9 @@
       "engNum": 4,
       "engType": "J",
       "wtc": "H",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 1958,
       "wingspan": 43.4,
       "length": 57.1,
@@ -23040,9 +23054,9 @@
       "engNum": 2,
       "engType": "P",
       "wtc": "L",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 1945,
       "wingspan": 17.4,
       "length": 12,
@@ -24407,9 +24421,9 @@
       "engNum": 4,
       "engType": "J",
       "wtc": "H",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 1972,
       "wingspan": 44.4,
       "length": 46.6,
@@ -24641,9 +24655,9 @@
       "engNum": 2,
       "engType": "J",
       "wtc": "M",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 2,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 2013,
       "wingspan": 14.6,
       "length": 13.9,
@@ -25752,9 +25766,9 @@
       "engNum": 2,
       "engType": "J",
       "wtc": "L",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 2019,
       "wingspan": 13.1,
       "length": 10.9,
@@ -25769,6 +25783,7 @@
         "EA50"
       ],
       "markers": [
+        "SJ30",
         "EA50"
       ],
       "inSeasons": [
@@ -26146,9 +26161,9 @@
       "engNum": 1,
       "engType": "T",
       "wtc": "L",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 2009,
       "wingspan": 11.1,
       "length": 10.2,
@@ -26406,6 +26421,7 @@
         "SF50"
       ],
       "markers": [
+        "SEAW",
         "P28A"
       ],
       "inSeasons": [
@@ -27355,9 +27371,9 @@
       "engNum": 1,
       "engType": "P",
       "wtc": "L",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 1936,
       "wingspan": 9.7,
       "length": 7,
@@ -28577,9 +28593,9 @@
       "engNum": 1,
       "engType": "P",
       "wtc": "L",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 1941,
       "wingspan": 12.6,
       "length": 11.6,
@@ -28615,9 +28631,9 @@
       "engNum": 1,
       "engType": "P",
       "wtc": "L",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 1990,
       "wingspan": 8.69,
       "length": 6.7,
@@ -28873,6 +28889,7 @@
         "ERCO"
       ],
       "markers": [
+        "BOOM",
         "P28A",
         "J600"
       ],
@@ -29157,9 +29174,9 @@
       "engNum": 3,
       "engType": "T",
       "wtc": "M",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 1962,
       "wingspan": 18.9,
       "length": 23,
@@ -29346,6 +29363,7 @@
         "C172"
       ],
       "markers": [
+        "TEAL",
         "DG1T",
         "P28A"
       ],
@@ -29411,9 +29429,9 @@
       "engNum": 1,
       "engType": "P",
       "wtc": "L",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "wingspan": 10.3,
       "length": 10,
       "height": 3.3,
@@ -29464,6 +29482,7 @@
         "DHC6"
       ],
       "markers": [
+        "XAIR",
         "DHC6",
         "PA34"
       ],
@@ -29953,6 +29972,7 @@
         "Z26"
       ],
       "markers": [
+        "Z26",
         "E400",
         "Z26"
       ],
@@ -30042,7 +30062,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "imageOverride": "G21"
     },
     {
       "id": "G250",
@@ -30510,6 +30531,7 @@
         "L39"
       ],
       "markers": [
+        "GNAT",
         "PC21"
       ],
       "inSeasons": [
@@ -31647,9 +31669,9 @@
       "engNum": 1,
       "engType": "T",
       "wtc": "L",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 1989,
       "wingspan": 8.5,
       "length": 7.6,
@@ -33051,6 +33073,7 @@
         "RS12"
       ],
       "markers": [
+        "HB23",
         "LGEZ"
       ],
       "inSeasons": [
@@ -33538,9 +33561,9 @@
       "engNum": 1,
       "engType": "T",
       "wtc": "L",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 2016,
       "wingspan": 11,
       "length": 10.5,
@@ -33781,9 +33804,9 @@
       "engNum": 1,
       "engType": "P",
       "wtc": "L",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 2014,
       "wingspan": 9.2,
       "length": 4.15,
@@ -33796,11 +33819,13 @@
         "RS12"
       ],
       "markers": [
+        "HRON",
         "LGEZ"
       ],
       "inSeasons": [
         0
-      ]
+      ],
+      "imageOverride": "ULAC"
     },
     {
       "id": "I114",
@@ -33898,9 +33923,9 @@
       "engNum": 4,
       "engType": "T",
       "wtc": "M",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 1957,
       "wingspan": 37.4,
       "length": 35.9,
@@ -34171,9 +34196,9 @@
       "engNum": 1,
       "engType": "P",
       "wtc": "L",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 1970,
       "wingspan": 11.7,
       "length": 7.43,
@@ -35101,6 +35126,7 @@
         "PC12"
       ],
       "markers": [
+        "DLTA",
         "P28A"
       ],
       "inSeasons": [
@@ -35141,6 +35167,7 @@
         "L410"
       ],
       "markers": [
+        "XAIR",
         "BE76"
       ],
       "inSeasons": [
@@ -37018,9 +37045,9 @@
       "engNum": 2,
       "engType": "P",
       "wtc": "M",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 2,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 1939,
       "wingspan": 20,
       "length": 15.2,
@@ -37193,6 +37220,7 @@
         "C46"
       ],
       "markers": [
+        "P38",
         "SF34"
       ],
       "inSeasons": [
@@ -38664,9 +38692,9 @@
       "engNum": 1,
       "engType": "P",
       "wtc": "L",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 1994,
       "wingspan": 7.8,
       "length": 6.3,
@@ -40414,9 +40442,9 @@
       "engNum": 1,
       "engType": "P",
       "wtc": "L",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 2017,
       "wingspan": 11,
       "length": 7.6,
@@ -40492,9 +40520,9 @@
       "engNum": 1,
       "engType": "P",
       "wtc": "L",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 2,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 1987,
       "wingspan": 5.79,
       "length": 5.41,
@@ -40735,9 +40763,9 @@
       "engNum": 1,
       "engType": "P",
       "wtc": "L",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 1991,
       "wingspan": 11.6,
       "length": 7.62,
@@ -41460,9 +41488,9 @@
       "engNum": 2,
       "engType": "J",
       "wtc": "M",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 1943,
       "wingspan": 13.1,
       "length": 13.6,
@@ -41636,9 +41664,9 @@
       "engNum": 1,
       "engType": "J",
       "wtc": "M",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 1955,
       "wingspan": 7.15,
       "length": 14.7,
@@ -42288,9 +42316,9 @@
       "engNum": 2,
       "engType": "P",
       "wtc": "M",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 1940,
       "wingspan": 16.5,
       "length": 13.6,
@@ -42305,6 +42333,7 @@
         "DC3T"
       ],
       "markers": [
+        "P38",
         "AT76"
       ],
       "inSeasons": [
@@ -43191,9 +43220,9 @@
       "engNum": 2,
       "engType": "T",
       "wtc": "M",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 2017,
       "wingspan": 19.5,
       "length": 16.5,
@@ -43840,6 +43869,7 @@
         "P28A"
       ],
       "markers": [
+        "Z26",
         "E400",
         "Z26"
       ],
@@ -43921,6 +43951,7 @@
         "AS25"
       ],
       "markers": [
+        "FANT",
         "AS25"
       ],
       "inSeasons": [
@@ -44181,9 +44212,9 @@
       "engNum": 2,
       "engType": "P",
       "wtc": "M",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 1945,
       "wingspan": 30.5,
       "length": 23.7,
@@ -44954,9 +44985,9 @@
       "engNum": 1,
       "engType": "P",
       "wtc": "L",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 1938,
       "wingspan": 10.4,
       "length": 9.19,
@@ -45187,6 +45218,7 @@
         0,
         1
       ],
+      "imageOverride": "SPIT",
       "military": true
     },
     {
@@ -45269,6 +45301,7 @@
         "P180"
       ],
       "markers": [
+        "ANGL",
         "P180"
       ],
       "inSeasons": [
@@ -47304,6 +47337,7 @@
         "PIVI"
       ],
       "markers": [
+        "XAIR",
         "DHC6",
         "PA34",
         "P28A"
@@ -47488,9 +47522,9 @@
       "engNum": 1,
       "engType": "P",
       "wtc": "L",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 1964,
       "wingspan": 10,
       "length": 6.6,
@@ -47964,9 +47998,9 @@
       "engNum": 1,
       "engType": "P",
       "wtc": "L",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 1927,
       "wingspan": 11.4,
       "length": 8.17,
@@ -48002,9 +48036,9 @@
       "engNum": 1,
       "engType": "P",
       "wtc": "L",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 1970,
       "wingspan": 7.9,
       "length": 4.9,
@@ -48315,9 +48349,9 @@
       "engNum": 1,
       "engType": "T",
       "wtc": "L",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 1996,
       "wingspan": 9,
       "length": 10.6,
@@ -48607,12 +48641,14 @@
         "LGEZ"
       ],
       "markers": [
+        "HRON",
         "LGEZ"
       ],
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "imageOverride": "ULAC"
     },
     {
       "id": "PULS",
@@ -48776,6 +48812,7 @@
         "C172"
       ],
       "markers": [
+        "HRON",
         "LGEZ",
         "P28A"
       ],
@@ -49084,9 +49121,9 @@
       "engNum": 1,
       "engType": "P",
       "wtc": "L",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "wingspan": 9.2,
       "length": 5.9,
       "height": 1.7,
@@ -50020,9 +50057,9 @@
       "engNum": 1,
       "engType": "P",
       "wtc": "L",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 2,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 2016,
       "wingspan": 11,
       "mtow": 950,
@@ -50474,6 +50511,7 @@
         "C172"
       ],
       "markers": [
+        "COZY",
         "P28A"
       ],
       "inSeasons": [
@@ -51494,9 +51532,9 @@
       "engNum": 1,
       "engType": "P",
       "wtc": "L",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 1941,
       "wingspan": 11.4,
       "length": 8.05,
@@ -51909,6 +51947,7 @@
         "EC45"
       ],
       "markers": [
+        "S55P",
         "EC45"
       ],
       "inSeasons": [
@@ -51982,6 +52021,7 @@
         "C172"
       ],
       "markers": [
+        "HRON",
         "P28A"
       ],
       "inSeasons": [
@@ -53459,6 +53499,7 @@
         "SB37"
       ],
       "markers": [
+        "KFIR",
         "SB37"
       ],
       "inSeasons": [
@@ -53681,6 +53722,7 @@
         "COZY"
       ],
       "markers": [
+        "CO50",
         "COZY"
       ],
       "inSeasons": [
@@ -53741,9 +53783,9 @@
       "engNum": 1,
       "engType": "P",
       "wtc": "L",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 1973,
       "wingspan": 5.33,
       "length": 4.27,
@@ -54330,9 +54372,9 @@
       "engNum": 1,
       "engType": "P",
       "wtc": "L",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 1991,
       "wingspan": 8.6,
       "length": 7.1,
@@ -54367,9 +54409,9 @@
       "engNum": 4,
       "engType": "T",
       "wtc": "M",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 1965,
       "wingspan": 47.6,
       "length": 43.8,
@@ -54552,6 +54594,7 @@
         "RS12"
       ],
       "markers": [
+        "HRON",
         "LGEZ"
       ],
       "inSeasons": [
@@ -54958,9 +55001,9 @@
       "description": "The legendary gift-giver who flies a magical sleigh pulled by reindeer, first mentioned in 1823’s “A Visit from St. Nicholas.”\n\nA symbol of Christmas joy and magic, he spreads cheer to believers worldwide.",
       "type": "_",
       "engType": "_",
-      "rareness": 996,
+      "rareness": 1400,
       "num": 1,
-      "xp": 5980,
+      "xp": 8000,
       "firstFlight": 1823,
       "mtow": 1000,
       "seats": 2,
@@ -55193,9 +55236,9 @@
       "engNum": 1,
       "engType": "P",
       "wtc": "L",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 18,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 2010,
       "wingspan": 7.77,
       "length": 6.71,
@@ -55488,6 +55531,7 @@
         0,
         1
       ],
+      "imageOverride": "P51",
       "military": true
     },
     {
@@ -55579,9 +55623,9 @@
       "engNum": 1,
       "engType": "P",
       "wtc": "L",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 1935,
       "wingspan": 10.7,
       "length": 6.78,
@@ -55825,9 +55869,9 @@
       "engNum": 1,
       "engType": "R",
       "wtc": "M",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 2013,
       "wingspan": 8.3,
       "length": 18.3,
@@ -56054,9 +56098,9 @@
       "engNum": 1,
       "engType": "P",
       "wtc": "L",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 1934,
       "wingspan": 9.8,
       "length": 7.3,
@@ -57715,6 +57759,7 @@
         0,
         1
       ],
+      "imageOverride": "YK52",
       "military": true
     },
     {
@@ -58013,12 +58058,13 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "imageOverride": "SPIT"
     },
     {
       "id": "T6",
       "manufacturer": "NORTH AMERICAN",
-      "name": "T-6 Harvard",
+      "name": "T-6 Texan",
       "manufacturers": [
         "CCF T-6 Harvard",
         "NOORDUYN AT-16 Harvard",
@@ -59650,9 +59696,9 @@
       "engNum": 1,
       "engType": "P",
       "wtc": "L",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 1973,
       "wingspan": 12.7,
       "length": 8.94,
@@ -62986,9 +63032,9 @@
       "engNum": 4,
       "engType": "J",
       "wtc": "M",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 2008,
       "wingspan": 43,
       "length": 24,
@@ -63307,6 +63353,7 @@
         "XB1"
       ],
       "markers": [
+        "SEAW",
         "XB1",
         "HAWK"
       ],
@@ -63702,9 +63749,9 @@
       "engNum": 2,
       "engType": "T",
       "wtc": "M",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 2010,
       "wingspan": 17.2,
       "length": 14.8,
@@ -63866,9 +63913,9 @@
       "engNum": 1,
       "engType": "P",
       "wtc": "L",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 1,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 1942,
       "wingspan": 9.74,
       "length": 8.55,
@@ -63906,9 +63953,9 @@
       "engNum": 1,
       "engType": "P",
       "wtc": "L",
-      "rareness": 1000,
+      "rareness": 1400,
       "num": 2,
-      "xp": 6000,
+      "xp": 8000,
       "firstFlight": 1936,
       "wingspan": 12.2,
       "length": 8.7,
