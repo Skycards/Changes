@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 21,
-    "total_added_airports": 55,
+    "total_added_airports": 56,
     "total_removed_airports": 4
   },
   "countries": {
@@ -720,9 +720,18 @@
       "fr24_count": 37,
       "skycards_count": 36,
       "difference": 1,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "iata": "GCJ",
+          "lat": -25.986547,
+          "lon": 28.140232,
+          "link": "https://www.flightradar24.com/data/airports/gcj",
+          "name": "Johannesburg Grand Central Airport",
+          "icao": "FAGC"
+        }
+      ],
       "removed_airports": [],
-      "added_count": 0,
+      "added_count": 1,
       "removed_count": 0
     }
   }
