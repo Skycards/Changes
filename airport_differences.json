@@ -1,7 +1,7 @@
 {
   "summary": {
-    "total_countries_with_differences": 19,
-    "total_added_airports": 52,
+    "total_countries_with_differences": 21,
+    "total_added_airports": 55,
     "total_removed_airports": 4
   },
   "countries": {
@@ -254,9 +254,9 @@
     "FR": {
       "country_name": "France",
       "iso_code": "FR",
-      "fr24_count": 158,
+      "fr24_count": 161,
       "skycards_count": 147,
-      "difference": 11,
+      "difference": 14,
       "added_airports": [
         {
           "iata": "QFF",
@@ -390,6 +390,42 @@
       ],
       "added_count": 15,
       "removed_count": 1
+    },
+    "GB": {
+      "country_name": "United Kingdom",
+      "iso_code": "GB",
+      "fr24_count": 137,
+      "skycards_count": 134,
+      "difference": 3,
+      "added_airports": [
+        {
+          "iata": "QGR",
+          "lat": 51.914291,
+          "lon": 0.682847,
+          "link": "https://www.flightradar24.com/data/airports/qgr",
+          "name": "Earls Colne Airport",
+          "icao": "EGSR"
+        },
+        {
+          "iata": "QUA",
+          "lat": 51.158348,
+          "lon": -1.741247,
+          "link": "https://www.flightradar24.com/data/airports/qua",
+          "name": "Amesbury MOD Boscombe Down",
+          "icao": "EGDM"
+        },
+        {
+          "iata": "QUL",
+          "lat": 52.607849,
+          "lon": -1.032093,
+          "link": "https://www.flightradar24.com/data/airports/qul",
+          "name": "Leicester Airport",
+          "icao": "EGBG"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 3,
+      "removed_count": 0
     },
     "IT": {
       "country_name": "Italy",
@@ -581,9 +617,9 @@
     "US": {
       "country_name": "United States",
       "iso_code": "US",
-      "fr24_count": 1605,
+      "fr24_count": 1606,
       "skycards_count": 1594,
-      "difference": 11,
+      "difference": 12,
       "added_airports": [
         {
           "iata": "APT",
@@ -676,6 +712,17 @@
       ],
       "removed_airports": [],
       "added_count": 11,
+      "removed_count": 0
+    },
+    "ZA": {
+      "country_name": "South Africa",
+      "iso_code": "ZA",
+      "fr24_count": 37,
+      "skycards_count": 36,
+      "difference": 1,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
       "removed_count": 0
     }
   }
