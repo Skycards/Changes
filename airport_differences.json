@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 19,
-    "total_added_airports": 49,
+    "total_added_airports": 52,
     "total_removed_airports": 4
   },
   "countries": {
@@ -283,6 +283,22 @@
           "icao": "LFDI"
         },
         {
+          "iata": "QFJ",
+          "lat": 49.025555,
+          "lon": 5.876398,
+          "link": "https://www.flightradar24.com/data/airports/qfj",
+          "name": "Chambley-Bussieres Airport",
+          "icao": "LFJY"
+        },
+        {
+          "iata": "QFK",
+          "lat": 46.440899,
+          "lon": -0.793719,
+          "link": "https://www.flightradar24.com/data/airports/qfk",
+          "name": "Fontenay-le-Comte Airport",
+          "icao": "LFFK"
+        },
+        {
           "iata": "QFO",
           "lat": 43.587822,
           "lon": 1.498572,
@@ -321,6 +337,14 @@
           "link": "https://www.flightradar24.com/data/airports/qfs",
           "name": "Biscarrosse Parentis Airport",
           "icao": "LFBS"
+        },
+        {
+          "iata": "QFT",
+          "lat": 49.455929,
+          "lon": 5.415401,
+          "link": "https://www.flightradar24.com/data/airports/qft",
+          "name": "Marville Montmedy Airport",
+          "icao": "LFYK"
         },
         {
           "iata": "QFW",
@@ -364,7 +388,7 @@
           "lon": 4.050747
         }
       ],
-      "added_count": 12,
+      "added_count": 15,
       "removed_count": 1
     },
     "IT": {
