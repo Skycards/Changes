@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 21,
-    "total_added_airports": 57,
+    "total_added_airports": 58,
     "total_removed_airports": 4
   },
   "countries": {
@@ -702,6 +702,14 @@
           "icao": "KTDF"
         },
         {
+          "iata": "QLO",
+          "lat": 46.701313,
+          "lon": -92.505547,
+          "link": "https://www.flightradar24.com/data/airports/qlo",
+          "name": "Cloquet Carlton County Airport",
+          "icao": "KCOQ"
+        },
+        {
           "iata": "QLP",
           "lat": 33.176147,
           "lon": -97.8284,
@@ -719,7 +727,7 @@
         }
       ],
       "removed_airports": [],
-      "added_count": 12,
+      "added_count": 13,
       "removed_count": 0
     },
     "ZA": {
