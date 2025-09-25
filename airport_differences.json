@@ -1,6 +1,6 @@
 {
   "summary": {
-    "total_countries_with_differences": 4,
+    "total_countries_with_differences": 5,
     "total_added_airports": 0,
     "total_removed_airports": 4
   },
@@ -42,6 +42,17 @@
       ],
       "added_count": 0,
       "removed_count": 1
+    },
+    "DE": {
+      "country_name": "Germany",
+      "iso_code": "DE",
+      "fr24_count": 151,
+      "skycards_count": 150,
+      "difference": 1,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
+      "removed_count": 0
     },
     "FR": {
       "country_name": "France",
