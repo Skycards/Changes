@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 5,
-    "total_added_airports": 0,
+    "total_added_airports": 1,
     "total_removed_airports": 4
   },
   "countries": {
@@ -49,9 +49,18 @@
       "fr24_count": 151,
       "skycards_count": 150,
       "difference": 1,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "iata": "QJD",
+          "lat": 48.707481,
+          "lon": 10.769316,
+          "link": "https://www.flightradar24.com/data/airports/qjd",
+          "name": "Donauworth Heliport",
+          "icao": "EDPR"
+        }
+      ],
       "removed_airports": [],
-      "added_count": 0,
+      "added_count": 1,
       "removed_count": 0
     },
     "FR": {
