@@ -1,10 +1,10 @@
 {
-  "updatedAt": 1758703235997,
+  "updatedAt": 1759147260675,
   "rows": [
     {
       "id": "A1",
       "manufacturer": "DOUGLAS",
-      "name": "AD Skyraider",
+      "name": "A-1 Skyraider",
       "manufacturers": [
         "DOUGLAS A-1 Skyraider",
         "DOUGLAS AD Skyraider",
@@ -21,9 +21,13 @@
       "num": 0,
       "xp": 7795,
       "firstFlight": 1945,
-      "wingspan": 15.4,
+      "wingspan": 15.3,
       "length": 11.8,
-      "height": 4.7,
+      "height": 4.8,
+      "ceiling": 28500,
+      "mtow": 8210,
+      "seats": 1,
+      "range": 1144,
       "maxSpeed": 280,
       "cardCategory": "ultra",
       "ftea": 0.002264433551198257,
@@ -35,7 +39,9 @@
       ],
       "inSeasons": [
         1
-      ]
+      ],
+      "imageOverride": "FURY",
+      "military": true
     },
     {
       "id": "A10",
@@ -1908,8 +1914,10 @@
         "ILYUSHIN A-50",
         "ILYUSHIN Be-976"
       ],
+      "description": "The Beriev A-50 is a Soviet airborne early warning aircraft, designed for radar surveillance and control. It features a distinctive rotodome and played a crucial role in enhancing airspace monitoring capabilities.",
       "landingGear": "Tricycle",
       "wingPos": "High wing",
+      "wingShape": "Swept back",
       "type": "L",
       "engNum": 4,
       "engType": "J",
@@ -1921,8 +1929,11 @@
       "wingspan": 50.5,
       "length": 49.6,
       "height": 14.8,
+      "ceiling": 39370,
       "mtow": 170000,
-      "maxSpeed": 458,
+      "seats": 15,
+      "range": 3456,
+      "maxSpeed": 486,
       "cardCategory": "ultra",
       "ftea": 0.0006312976579520697,
       "images": [
@@ -1933,7 +1944,8 @@
       ],
       "inSeasons": [
         1
-      ]
+      ],
+      "military": true
     },
     {
       "id": "A500",
@@ -3330,6 +3342,7 @@
       "manufacturers": [
         "CAIGA AG-100"
       ],
+      "description": "The CAIGA AG-100 is a Chinese light utility aircraft designed for training and general aviation. It features a high-wing configuration, enhancing visibility and stability, and supports various civil aviation roles.",
       "landingGear": "Tricycle",
       "wingPos": "Low wing",
       "wingShape": "Tapered",
@@ -10058,6 +10071,7 @@
         "BUETHE Barracuda",
         "JEFFAIR Barracuda"
       ],
+      "description": "The BUETHE Barracuda is a homebuilt aircraft known for its unique design, allowing aviation enthusiasts to construct and customize their own flying experience, reflecting the spirit of personal aviation innovation.",
       "landingGear": "Tricycle",
       "wingPos": "Low wing",
       "type": "L",
@@ -28401,6 +28415,8 @@
       "manufacturers": [
         "FLIGHT DESIGN F-2e"
       ],
+      "landingGear": "Tricycle",
+      "wingPos": "High wing",
       "type": "L",
       "engNum": 1,
       "engType": "E",
@@ -28408,9 +28424,15 @@
       "rareness": 1317,
       "num": 1,
       "xp": 7585,
+      "firstFlight": 2025,
       "wingspan": 9.8,
       "length": 6.8,
       "height": 2.3,
+      "ceiling": 8000,
+      "mtow": 1000,
+      "seats": 2,
+      "range": 200,
+      "maxSpeed": 85,
       "cardCategory": "ultra",
       "ftea": 0.0034484499818445897,
       "images": [
@@ -32817,7 +32839,7 @@
     },
     {
       "id": "H64",
-      "manufacturer": "HUGHES",
+      "manufacturer": "BOEING",
       "name": "AH-64 Apache",
       "manufacturers": [
         "BOEING AH-64 Longbow Apache",
@@ -32832,7 +32854,7 @@
         "MCDONNELL DOUGLAS JAH-64 Apache",
         "WESTLAND WAH-64 Apache"
       ],
-      "description": "The HUGHES AH-64 Apache is an advanced attack helicopter, renowned for its firepower, armor, and advanced targeting systems, used by the U.S. Army.",
+      "description": "The Boeing AH-64 Apache is a twin-turboshaft attack helicopter designed for close air support and anti-armor roles, featuring advanced avionics and weaponry, and has been pivotal in modern military operations.",
       "landingGear": "Tailwheel",
       "rotorConfig": "Main+Tail",
       "type": "H",
@@ -43830,7 +43852,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "imageOverride": "DR40"
     },
     {
       "id": "ONE",
@@ -44369,6 +44392,7 @@
         "ANTONIEWSKI P-220S-AT3",
         "POTTIER P-220 Koala"
       ],
+      "description": "The POTTIER P-220 Koala is a French homebuilt aircraft known for its compact design and ease of construction. It offers aviation enthusiasts a hands-on experience in building and flying.",
       "landingGear": "Tricycle",
       "wingPos": "Low wing",
       "type": "L",
@@ -44379,9 +44403,12 @@
       "num": 1,
       "xp": 7408,
       "wingspan": 6.5,
-      "length": 5.5,
+      "length": 5.54,
       "height": 1.9,
-      "maxSpeed": 113,
+      "mtow": 500,
+      "seats": 2,
+      "range": 378,
+      "maxSpeed": 135,
       "cardCategory": "ultra",
       "ftea": 0.004910754811183733,
       "images": [
@@ -45051,6 +45078,7 @@
         0,
         1
       ],
+      "imageOverride": "SPIT",
       "military": true
     },
     {
@@ -52472,6 +52500,8 @@
       "manufacturers": [
         "STRATOS 714"
       ],
+      "landingGear": "Tricycle",
+      "wingPos": "Low wing",
       "type": "L",
       "engNum": 1,
       "engType": "J",
@@ -57759,7 +57789,7 @@
         0,
         1
       ],
-      "imageOverride": "YK52",
+      "imageOverride": "T6",
       "military": true
     },
     {
@@ -59206,6 +59236,10 @@
         "TIPSY Belfair",
         "TIPSY Trainer"
       ],
+      "description": "The AVIONS FAIREY Tipsy B is a light, single-engine aircraft designed for recreational flying. Known for its simplicity and ease of handling, it was popular among private pilots in the 1930s.",
+      "landingGear": "Tailwheel",
+      "wingPos": "Low wing",
+      "wingShape": "Rounded rear",
       "type": "L",
       "engNum": 1,
       "engType": "P",
@@ -59216,8 +59250,12 @@
       "firstFlight": 1937,
       "wingspan": 9.5,
       "length": 6.6,
-      "height": 2.1,
-      "maxSpeed": 105,
+      "height": 1.7,
+      "ceiling": 20000,
+      "mtow": 450,
+      "seats": 2,
+      "range": 391,
+      "maxSpeed": 110,
       "cardCategory": "ultra",
       "ftea": 0.007638378267973856,
       "images": [
@@ -60572,6 +60610,9 @@
         "BEECH 1079",
         "BEECH QU-22"
       ],
+      "description": "The Beech QU-22 was a modified version of the Beechcraft Bonanza, used during the Vietnam War for electronic surveillance. It featured advanced signal intelligence equipment for monitoring enemy communications.",
+      "landingGear": "Tricycle",
+      "wingPos": "Low wing",
       "type": "L",
       "engNum": 1,
       "engType": "P",
@@ -60579,9 +60620,14 @@
       "rareness": 1321,
       "num": 0,
       "xp": 7607,
+      "firstFlight": 1968,
       "wingspan": 12,
       "length": 8.1,
       "height": 2.5,
+      "ceiling": 25000,
+      "mtow": 1810,
+      "seats": 1,
+      "range": 1000,
       "maxSpeed": 188,
       "cardCategory": "ultra",
       "ftea": 0.003297135984023239,
@@ -60594,7 +60640,9 @@
       ],
       "inSeasons": [
         1
-      ]
+      ],
+      "imageOverride": "BE36",
+      "military": true
     },
     {
       "id": "UF10",
@@ -62824,14 +62872,14 @@
     },
     {
       "id": "WCAT",
-      "manufacturer": "GENERAL MOTORS",
-      "name": "FM Wildcat",
+      "manufacturer": "GRUMMAN",
+      "name": "F4F Wildcat",
       "manufacturers": [
         "GENERAL MOTORS FM Wildcat",
         "GRUMMAN F4F Wildcat",
         "GRUMMAN G-36 Wildcat"
       ],
-      "description": "The GENERAL MOTORS FM Wildcat is a carrier-based fighter aircraft used by the United States Navy and Marine Corps during World War II.",
+      "description": "The Grumman F4F Wildcat was a rugged carrier-based fighter used by the U.S. Navy during World War II, known for its role in early Pacific battles and its robust design.",
       "landingGear": "Tailwheel",
       "wingPos": "Mid wing",
       "type": "L",
@@ -64261,7 +64309,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "imageOverride": "T6"
     },
     {
       "id": "YK54",
@@ -64785,6 +64834,7 @@
         0,
         1
       ],
+      "imageOverride": "T6",
       "military": true
     }
   ],
