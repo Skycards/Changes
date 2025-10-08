@@ -1,10 +1,21 @@
 {
   "summary": {
-    "total_countries_with_differences": 5,
+    "total_countries_with_differences": 6,
     "total_added_airports": 1,
     "total_removed_airports": 4
   },
   "countries": {
+    "BR": {
+      "country_name": "Brazil",
+      "iso_code": "BR",
+      "fr24_count": 233,
+      "skycards_count": 232,
+      "difference": 1,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
+      "removed_count": 0
+    },
     "CA": {
       "country_name": "Canada",
       "iso_code": "CA",
