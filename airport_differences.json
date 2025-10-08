@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 6,
-    "total_added_airports": 1,
+    "total_added_airports": 2,
     "total_removed_airports": 4
   },
   "countries": {
@@ -11,9 +11,18 @@
       "fr24_count": 233,
       "skycards_count": 232,
       "difference": 1,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "iata": "PPY",
+          "lat": -22.288853,
+          "lon": -45.919167,
+          "link": "https://www.flightradar24.com/data/airports/ppy",
+          "name": "Pouso Alegre Airport",
+          "icao": "SNZA"
+        }
+      ],
       "removed_airports": [],
-      "added_count": 0,
+      "added_count": 1,
       "removed_count": 0
     },
     "CA": {
