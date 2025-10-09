@@ -1,8 +1,8 @@
 {
   "summary": {
-    "total_countries_with_differences": 6,
+    "total_countries_with_differences": 5,
     "total_added_airports": 2,
-    "total_removed_airports": 4
+    "total_removed_airports": 3
   },
   "countries": {
     "BR": {
@@ -39,25 +39,6 @@
           "icao": null,
           "lat": 43.862221,
           "lon": -79.370003
-        }
-      ],
-      "added_count": 0,
-      "removed_count": 1
-    },
-    "CN": {
-      "country_name": "China",
-      "iso_code": "CN",
-      "fr24_count": 259,
-      "skycards_count": 260,
-      "difference": -1,
-      "added_airports": [],
-      "removed_airports": [
-        {
-          "name": "Qinhuangdao Shanhaiguan Airport",
-          "iata": null,
-          "icao": null,
-          "lat": 39.968102,
-          "lon": 119.731003
         }
       ],
       "added_count": 0,
