@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 7,
-    "total_added_airports": 8,
+    "total_added_airports": 10,
     "total_removed_airports": 4
   },
   "countries": {
@@ -65,6 +65,14 @@
       "difference": 2,
       "added_airports": [
         {
+          "iata": "LVR",
+          "lat": -13.036552,
+          "lon": -55.948006,
+          "link": "https://www.flightradar24.com/data/airports/lvr",
+          "name": "Lucas do Rio Verde Airport",
+          "icao": "SILC"
+        },
+        {
           "iata": "PPY",
           "lat": -22.288853,
           "lon": -45.919167,
@@ -74,7 +82,7 @@
         }
       ],
       "removed_airports": [],
-      "added_count": 1,
+      "added_count": 2,
       "removed_count": 0
     },
     "CA": {
@@ -104,6 +112,14 @@
       "difference": 1,
       "added_airports": [
         {
+          "iata": "APJ",
+          "lat": 30.397499,
+          "lon": 81.138611,
+          "link": "https://www.flightradar24.com/data/airports/apj",
+          "name": "Ali Pulan Airport",
+          "icao": "ZUPL"
+        },
+        {
           "iata": "JRJ",
           "lat": 25.961819,
           "lon": 116.080231,
@@ -121,7 +137,7 @@
           "lon": 119.731003
         }
       ],
-      "added_count": 1,
+      "added_count": 2,
       "removed_count": 1
     },
     "DE": {
