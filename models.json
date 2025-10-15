@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1759147260675,
+  "updatedAt": 1760520070150,
   "rows": [
     {
       "id": "A1",
@@ -1078,7 +1078,7 @@
       "engNum": 1,
       "engType": "P",
       "wtc": "L",
-      "rareness": 1017,
+      "rareness": 1002,
       "num": 16,
       "xp": 6087,
       "firstFlight": 2014,
@@ -1089,7 +1089,7 @@
       "seats": 2,
       "maxSpeed": 97,
       "cardCategory": "ultra",
-      "ftea": 0.06902023193536674,
+      "ftea": 0.0802523602033406,
       "markers": [
         "AS29"
       ],
@@ -15199,44 +15199,6 @@
       "military": true
     },
     {
-      "id": "C5",
-      "manufacturer": "LOCKHEED",
-      "name": "C-5A/B Galaxy",
-      "description": "The LOCKHEED C-5A/B Galaxy is a large military transport aircraft capable of carrying oversized cargo and troops over long distances, essential for strategic airlift missions.",
-      "landingGear": "Tricycle",
-      "wingPos": "High wing",
-      "type": "L",
-      "engNum": 4,
-      "engType": "J",
-      "wtc": "H",
-      "rareness": 1180,
-      "num": 1,
-      "xp": 6902,
-      "firstFlight": 1968,
-      "wingspan": 67.9,
-      "length": 75.3,
-      "height": 19.8,
-      "ceiling": 41000,
-      "mtow": 381000,
-      "seats": 80,
-      "range": 4800,
-      "maxSpeed": 496,
-      "cardCategory": "ultra",
-      "ftea": 0.013506150145243282,
-      "images": [
-        "B748"
-      ],
-      "markers": [
-        "B748"
-      ],
-      "inSeasons": [
-        0,
-        1
-      ],
-      "imageOverride": "C5M",
-      "military": true
-    },
-    {
       "id": "C500",
       "manufacturer": "CESSNA",
       "name": "500 Citation",
@@ -15601,7 +15563,7 @@
       "engNum": 4,
       "engType": "J",
       "wtc": "H",
-      "rareness": 694,
+      "rareness": 693,
       "num": 51,
       "xp": 4470,
       "firstFlight": 1968,
@@ -15614,7 +15576,7 @@
       "range": 4800,
       "maxSpeed": 462,
       "cardCategory": "rare",
-      "ftea": 1.752254050925926,
+      "ftea": 1.7657602010711693,
       "images": [
         "C17"
       ],
@@ -20005,6 +19967,8 @@
       "manufacturers": [
         "CULP Special"
       ],
+      "description": "The CULP Special is a homebuilt biplane known for its aerobatic capabilities. Designed for aviation enthusiasts, it combines classic biplane aesthetics with modern materials, offering a unique flying experience.",
+      "landingGear": "Tricycle",
       "wingPos": "Biplane",
       "type": "L",
       "engNum": 1,
@@ -20013,10 +19977,15 @@
       "rareness": 1610,
       "num": 0,
       "xp": 9051,
+      "firstFlight": 1998,
       "wingspan": 7.3,
       "length": 6.4,
       "height": 2.4,
-      "maxSpeed": 208,
+      "ceiling": 12000,
+      "mtow": 950,
+      "seats": 2,
+      "range": 520,
+      "maxSpeed": 190,
       "cardCategory": "ultra",
       "ftea": 0.00018376679375453885,
       "images": [
@@ -22928,41 +22897,6 @@
       ]
     },
     {
-      "id": "DLTA",
-      "manufacturer": "VERHEES",
-      "name": "Delta",
-      "description": "The VERHEES Delta is a unique, homebuilt aircraft featuring a delta wing design, known for its distinctive appearance and innovative engineering.",
-      "landingGear": "Tricycle",
-      "wingPos": "Mid wing",
-      "wingShape": "Delta",
-      "type": "L",
-      "engNum": 1,
-      "engType": "P",
-      "wtc": "L",
-      "rareness": 1152,
-      "num": 1,
-      "xp": 6762,
-      "firstFlight": 2004,
-      "wingspan": 4.5,
-      "length": 3.3,
-      "mtow": 300,
-      "seats": 1,
-      "range": 475,
-      "maxSpeed": 145,
-      "cardCategory": "ultra",
-      "ftea": 0.017880185639070442,
-      "images": [
-        "RANG"
-      ],
-      "markers": [
-        "P28A"
-      ],
-      "inSeasons": [
-        0,
-        1
-      ]
-    },
-    {
       "id": "DO27",
       "manufacturer": "DORNIER",
       "name": "Do-27",
@@ -23435,27 +23369,39 @@
       "manufacturers": [
         "VERHEES D-2 Delta"
       ],
+      "description": "The Verhees D-2 Delta is a unique homebuilt aircraft featuring a delta wing design. It emphasizes simplicity and efficiency, reflecting innovative approaches in personal aviation and experimental aircraft construction.",
+      "landingGear": "Tricycle",
+      "wingPos": "Mid wing",
+      "wingShape": "Delta",
       "type": "L",
       "engNum": 1,
       "engType": "P",
       "wtc": "L",
-      "rareness": 1347,
+      "rareness": 1139,
       "num": 0,
       "xp": 7736,
+      "firstFlight": 2018,
       "wingspan": 5.4,
       "length": 4.7,
+      "mtow": 600,
+      "seats": 2,
+      "range": 972,
       "maxSpeed": 140,
       "cardCategory": "ultra",
-      "ftea": 0.0025515727124183008,
+      "ftea": 0.020431758351488742,
       "images": [
+        "DLTA",
         "C172"
       ],
       "markers": [
+        "DLTA",
         "P28A"
       ],
       "inSeasons": [
         1
-      ]
+      ],
+      "imageOverride": "DLTA",
+      "military": false
     },
     {
       "id": "DUCE",
@@ -25766,45 +25712,6 @@
       ]
     },
     {
-      "id": "ELIT",
-      "manufacturer": "AIR",
-      "name": "Epic Elite",
-      "manufacturers": [
-        "AIR Epic Elite",
-        "EPIC AIRCRAFT Epic Elite"
-      ],
-      "description": "The AIR Epic Elite is a high-performance light sport aircraft known for its speed, efficiency, and advanced avionics, suitable for sport and recreational flying.",
-      "landingGear": "Tricycle",
-      "wingPos": "Low wing",
-      "type": "L",
-      "engNum": 2,
-      "engType": "J",
-      "wtc": "L",
-      "rareness": 1400,
-      "num": 1,
-      "xp": 8000,
-      "firstFlight": 2019,
-      "wingspan": 13.1,
-      "length": 10.9,
-      "height": 3.8,
-      "ceiling": 34000,
-      "mtow": 3670,
-      "seats": 6,
-      "range": 1650,
-      "maxSpeed": 333,
-      "cardCategory": "ultra",
-      "images": [
-        "EA50"
-      ],
-      "markers": [
-        "SJ30",
-        "EA50"
-      ],
-      "inSeasons": [
-        0
-      ]
-    },
-    {
       "id": "ELSP",
       "manufacturer": "A2 CZ",
       "name": "Ellipse Spirit",
@@ -26017,7 +25924,7 @@
       "engNum": 1,
       "engType": "T",
       "wtc": "L",
-      "rareness": 679,
+      "rareness": 678,
       "num": 128,
       "xp": 4393,
       "firstFlight": 2004,
@@ -26030,7 +25937,7 @@
       "range": 1874,
       "maxSpeed": 340,
       "cardCategory": "rare",
-      "ftea": 2.0407541870915034,
+      "ftea": 2.056602895787945,
       "inSeasons": [
         0,
         1
@@ -26402,48 +26309,6 @@
       ]
     },
     {
-      "id": "EVIC",
-      "manufacturer": "AIR",
-      "name": "Epic Victory",
-      "manufacturers": [
-        "AIR Epic Victory",
-        "EPIC AIRCRAFT Epic Victory"
-      ],
-      "description": "The Epic Victory is a very light jet designed for personal and business travel, featuring a sleek composite airframe. It represents an innovative approach to cost-effective, efficient private aviation.",
-      "landingGear": "Tricycle",
-      "wingPos": "Low wing",
-      "type": "L",
-      "engNum": 1,
-      "engType": "J",
-      "wtc": "L",
-      "rareness": 1164,
-      "num": 1,
-      "xp": 6822,
-      "firstFlight": 2007,
-      "wingspan": 11.1,
-      "length": 10.2,
-      "height": 3.3,
-      "ceiling": 28000,
-      "mtow": 2500,
-      "seats": 5,
-      "range": 1200,
-      "maxSpeed": 320,
-      "cardCategory": "ultra",
-      "ftea": 0.01584870869644154,
-      "images": [
-        "L29",
-        "SF50"
-      ],
-      "markers": [
-        "SEAW",
-        "P28A"
-      ],
-      "inSeasons": [
-        0,
-        1
-      ]
-    },
-    {
       "id": "EVOP",
       "manufacturer": "LANCAIR",
       "name": "Evolution Piston",
@@ -26550,7 +26415,7 @@
       "range": 700,
       "maxSpeed": 115,
       "cardCategory": "rare",
-      "ftea": 3.433981651688453,
+      "ftea": 3.437565132534495,
       "images": [
         "EV97"
       ],
@@ -33263,42 +33128,6 @@
       ]
     },
     {
-      "id": "HMNY",
-      "manufacturer": "EVEKTOR",
-      "name": "Harmony",
-      "description": "The EVEKTOR Harmony is a light sport aircraft, popular for its excellent flight characteristics, modern design, and affordability.",
-      "landingGear": "Tricycle",
-      "wingPos": "Low wing",
-      "type": "L",
-      "engNum": 1,
-      "engType": "P",
-      "wtc": "L",
-      "rareness": 1313,
-      "num": 1,
-      "xp": 7566,
-      "firstFlight": 1997,
-      "wingspan": 8.64,
-      "length": 5.98,
-      "height": 2.5,
-      "ceiling": 15490,
-      "mtow": 600,
-      "seats": 2,
-      "range": 700,
-      "maxSpeed": 115,
-      "cardCategory": "ultra",
-      "ftea": 0.0035834808460421205,
-      "images": [
-        "EV97"
-      ],
-      "markers": [
-        "P28A"
-      ],
-      "inSeasons": [
-        0,
-        1
-      ]
-    },
-    {
       "id": "HN70",
       "manufacturer": "NICOLLIER",
       "name": "HN-700 Menestrel 2",
@@ -35331,7 +35160,7 @@
       "engNum": 1,
       "engType": "J",
       "wtc": "L",
-      "rareness": 1099,
+      "rareness": 1051,
       "num": 10,
       "xp": 6497,
       "firstFlight": 2006,
@@ -35341,7 +35170,7 @@
       "seats": 1,
       "maxSpeed": 160,
       "cardCategory": "ultra",
-      "ftea": 0.03039817084241104,
+      "ftea": 0.04935258941539579,
       "images": [
         "VNTE"
       ],
@@ -35692,7 +35521,7 @@
       "range": 1132,
       "maxSpeed": 183,
       "cardCategory": "scarce",
-      "ftea": 5.475925131626725,
+      "ftea": 5.493191607661583,
       "markers": [
         "P28A"
       ],
@@ -36299,43 +36128,6 @@
       "maxSpeed": 100,
       "cardCategory": "rare",
       "ftea": 0.7268676243645606,
-      "inSeasons": [
-        0,
-        1
-      ]
-    },
-    {
-      "id": "KODI",
-      "manufacturer": "DAHER",
-      "name": "Kodiak",
-      "description": "The DAHER Kodiak is a rugged, high-wing utility aircraft designed for STOL operations, ideal for missions in remote and challenging environments.",
-      "landingGear": "Tricycle",
-      "wingPos": "High wing",
-      "wingShape": "Tapered outer",
-      "type": "L",
-      "engNum": 1,
-      "engType": "T",
-      "wtc": "L",
-      "rareness": 1156,
-      "num": 1,
-      "xp": 6779,
-      "firstFlight": 2004,
-      "wingspan": 13.7,
-      "length": 10.4,
-      "height": 4.7,
-      "ceiling": 25000,
-      "mtow": 3290,
-      "seats": 10,
-      "range": 1132,
-      "maxSpeed": 183,
-      "cardCategory": "ultra",
-      "ftea": 0.017266476034858386,
-      "images": [
-        "K100"
-      ],
-      "markers": [
-        "P28A"
-      ],
       "inSeasons": [
         0,
         1
@@ -41845,7 +41637,9 @@
       "manufacturers": [
         "MIL Mi-26"
       ],
+      "description": "The MIL Mi-26 is a heavy-lift helicopter designed for transporting large cargo. Known for its massive rotor system, it has been pivotal in both military and humanitarian missions globally.",
       "landingGear": "Tricycle",
+      "rotorConfig": "Main+Tail",
       "type": "H",
       "engNum": 2,
       "engType": "T",
@@ -41856,9 +41650,12 @@
       "firstFlight": 1977,
       "wingspan": 32,
       "length": 40,
-      "height": 8.2,
+      "height": 8.1,
+      "ceiling": 15100,
       "mtow": 56000,
-      "maxSpeed": 160,
+      "seats": 90,
+      "range": 270,
+      "maxSpeed": 159,
       "cardCategory": "ultra",
       "ftea": 0.0008767361111111111,
       "images": [
@@ -41869,7 +41666,8 @@
       ],
       "inSeasons": [
         1
-      ]
+      ],
+      "military": true
     },
     {
       "id": "MI8",
@@ -50031,14 +49829,14 @@
     },
     {
       "id": "RC70",
-      "manufacturer": "FUJI",
-      "name": "FA-300",
+      "manufacturer": "ROCKWELL",
+      "name": "Commander 700",
       "manufacturers": [
         "FUJI FA-300",
         "ROCKWELL 700 Commander 700",
         "ROCKWELL 710 Commander 710"
       ],
-      "description": "The FUJI FA-300 is a light, single-engine aircraft known for its efficiency and ease of handling, commonly used for training and personal flying.",
+      "description": "The Rockwell Commander 700 is a light twin-engine aircraft designed for general aviation. Known for its spacious cabin and high-wing design, it offers enhanced visibility and stability for private pilots.",
       "landingGear": "Tricycle",
       "wingPos": "Low wing",
       "type": "L",
@@ -51906,41 +51704,6 @@
       "military": true
     },
     {
-      "id": "S32M",
-      "manufacturer": "SCHLEICHER",
-      "name": "ASG-32Mi",
-      "description": "The SCHLEICHER ASG-32Mi is a high-performance, two-seat motor glider with self-launching capabilities, designed for competitive and recreational soaring.",
-      "landingGear": "Monowheel",
-      "wingPos": "Shoulder wing",
-      "wingShape": "Sailplane",
-      "type": "L",
-      "engNum": 1,
-      "engType": "P",
-      "wtc": "L",
-      "rareness": 1199,
-      "num": 3,
-      "xp": 6994,
-      "firstFlight": 2014,
-      "wingspan": 20,
-      "length": 9.07,
-      "height": 1.8,
-      "mtow": 850,
-      "seats": 2,
-      "maxSpeed": 97,
-      "cardCategory": "ultra",
-      "ftea": 0.011232128267973856,
-      "images": [
-        "AS29"
-      ],
-      "markers": [
-        "VENT"
-      ],
-      "inSeasons": [
-        0,
-        1
-      ]
-    },
-    {
       "id": "S330",
       "manufacturer": "SIKORSKY",
       "name": "S-333",
@@ -52500,6 +52263,7 @@
       "manufacturers": [
         "STRATOS 714"
       ],
+      "description": "The STRATOS 716 is a personal jet designed for efficient, single-pilot operation. It features a sleek, aerodynamic design and emphasizes accessibility for private owners seeking a balance between performance and convenience.",
       "landingGear": "Tricycle",
       "wingPos": "Low wing",
       "type": "L",
@@ -52509,6 +52273,15 @@
       "rareness": 1564,
       "num": 1,
       "xp": 8819,
+      "firstFlight": 2020,
+      "wingspan": 12.3,
+      "length": 10.9,
+      "height": 3.5,
+      "ceiling": 41000,
+      "mtow": 3820,
+      "seats": 6,
+      "range": 1178,
+      "maxSpeed": 402,
       "cardCategory": "ultra",
       "ftea": 0.00029230210602759624,
       "images": [
@@ -59720,44 +59493,6 @@
       ]
     },
     {
-      "id": "TR1",
-      "manufacturer": "TRIDENT",
-      "name": "TR-1 Trigull",
-      "manufacturers": [
-        "TRIDENT TR-1 Trigull"
-      ],
-      "description": "The TRIDENT TR-1 Trigull is an amphibious aircraft designed for versatility in both water and land operations.",
-      "landingGear": "Tricycle",
-      "wingPos": "High wing",
-      "wingShape": "Rectangular",
-      "type": "A",
-      "engNum": 1,
-      "engType": "P",
-      "wtc": "L",
-      "rareness": 1400,
-      "num": 1,
-      "xp": 8000,
-      "firstFlight": 1973,
-      "wingspan": 12.7,
-      "length": 8.94,
-      "height": 3.8,
-      "ceiling": 16000,
-      "mtow": 1720,
-      "seats": 4,
-      "range": 450,
-      "maxSpeed": 136,
-      "cardCategory": "ultra",
-      "images": [
-        "SMAX"
-      ],
-      "markers": [
-        "PETR"
-      ],
-      "inSeasons": [
-        0
-      ]
-    },
-    {
       "id": "TR20",
       "manufacturer": "TECH'AERO",
       "name": "TR-200",
@@ -60107,43 +59842,6 @@
       "ftea": 0.002075674019607843,
       "images": [
         "VENT"
-      ],
-      "markers": [
-        "VENT"
-      ],
-      "inSeasons": [
-        0,
-        1
-      ]
-    },
-    {
-      "id": "TS1J",
-      "manufacturer": "JONKER",
-      "name": "JS-1TJ Revelation",
-      "manufacturers": [
-        "JONKER JS-1TJ Revelation"
-      ],
-      "description": "The JONKER JS-1TJ Revelation is a high-performance sailplane equipped with a jet sustainer engine for extended gliding.",
-      "landingGear": "Monowheel",
-      "wingPos": "Shoulder wing",
-      "wingShape": "Sailplane",
-      "type": "L",
-      "engNum": 1,
-      "engType": "J",
-      "wtc": "L",
-      "rareness": 1147,
-      "num": 4,
-      "xp": 6733,
-      "firstFlight": 2006,
-      "wingspan": 18,
-      "length": 7.17,
-      "mtow": 600,
-      "seats": 1,
-      "maxSpeed": 160,
-      "cardCategory": "ultra",
-      "ftea": 0.01895441857298475,
-      "images": [
-        "VNTE"
       ],
       "markers": [
         "VENT"
@@ -61130,41 +60828,6 @@
         1
       ],
       "military": true
-    },
-    {
-      "id": "V252",
-      "manufacturer": "MSW",
-      "name": "Votec 252",
-      "manufacturers": [
-        "MSW Votec 252"
-      ],
-      "description": "The MSW Votec 252 is a Swiss aerobatic aircraft designed for precision flying. Known for its agility, it serves both competitive aerobatics and recreational pilots seeking high-performance maneuverability.",
-      "landingGear": "Tricycle",
-      "wingPos": "Low wing",
-      "type": "L",
-      "engNum": 1,
-      "engType": "P",
-      "wtc": "L",
-      "rareness": 1483,
-      "num": 1,
-      "xp": 8416,
-      "firstFlight": 2009,
-      "wingspan": 7.7,
-      "length": 6.5,
-      "height": 2.2,
-      "maxSpeed": 220,
-      "cardCategory": "ultra",
-      "ftea": 0.0006538784495279593,
-      "images": [
-        "P28A",
-        "C172"
-      ],
-      "markers": [
-        "P28A"
-      ],
-      "inSeasons": [
-        1
-      ]
     },
     {
       "id": "V322",
@@ -64953,7 +64616,6 @@
     "TMB8",
     "TMB9",
     "TORN",
-    "TRIN",
     "TWIN",
     "TWR",
     "U206",
@@ -64972,6 +64634,16 @@
     "DR20",
     "G102",
     "PTER",
-    "R22T"
+    "R22T",
+    "C5",
+    "DLTA",
+    "ELIT",
+    "EVIC",
+    "HMNY",
+    "KODI",
+    "S32M",
+    "TR1",
+    "TS1J",
+    "TRIN"
   ]
 }
