@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 7,
-    "total_added_airports": 3,
+    "total_added_airports": 8,
     "total_removed_airports": 4
   },
   "countries": {
@@ -11,9 +11,50 @@
       "fr24_count": 464,
       "skycards_count": 459,
       "difference": 5,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "iata": "AWN",
+          "lat": -26.489031,
+          "lon": 139.259827,
+          "link": "https://www.flightradar24.com/data/airports/awn",
+          "name": "Alton Downs Airport",
+          "icao": "YADS"
+        },
+        {
+          "iata": "AXL",
+          "lat": -19.061113,
+          "lon": 136.712814,
+          "link": "https://www.flightradar24.com/data/airports/axl",
+          "name": "Alexandria Homestead Airport",
+          "icao": "YALX"
+        },
+        {
+          "iata": "CFI",
+          "lat": -17.02207,
+          "lon": 131.327667,
+          "link": "https://www.flightradar24.com/data/airports/cfi",
+          "name": "Camfield Airport",
+          "icao": "YCFD"
+        },
+        {
+          "iata": "DFP",
+          "lat": -16.052237,
+          "lon": 143.013306,
+          "link": "https://www.flightradar24.com/data/airports/dfp",
+          "name": "Drumduff Airport",
+          "icao": "YDDF"
+        },
+        {
+          "iata": "DNB",
+          "lat": -16.047338,
+          "lon": 142.394485,
+          "link": "https://www.flightradar24.com/data/airports/dnb",
+          "name": "Dunbar Airport",
+          "icao": "YDBR"
+        }
+      ],
       "removed_airports": [],
-      "added_count": 0,
+      "added_count": 5,
       "removed_count": 0
     },
     "BR": {
