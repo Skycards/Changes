@@ -1,16 +1,27 @@
 {
   "summary": {
-    "total_countries_with_differences": 5,
-    "total_added_airports": 2,
-    "total_removed_airports": 3
+    "total_countries_with_differences": 7,
+    "total_added_airports": 3,
+    "total_removed_airports": 4
   },
   "countries": {
+    "AU": {
+      "country_name": "Australia",
+      "iso_code": "AU",
+      "fr24_count": 464,
+      "skycards_count": 459,
+      "difference": 5,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
+      "removed_count": 0
+    },
     "BR": {
       "country_name": "Brazil",
       "iso_code": "BR",
-      "fr24_count": 233,
+      "fr24_count": 234,
       "skycards_count": 232,
-      "difference": 1,
+      "difference": 2,
       "added_airports": [
         {
           "iata": "PPY",
@@ -42,6 +53,34 @@
         }
       ],
       "added_count": 0,
+      "removed_count": 1
+    },
+    "CN": {
+      "country_name": "China",
+      "iso_code": "CN",
+      "fr24_count": 261,
+      "skycards_count": 260,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "JRJ",
+          "lat": 25.961819,
+          "lon": 116.080231,
+          "link": "https://www.flightradar24.com/data/airports/jrj",
+          "name": "Ruijin Ganzhou Airport",
+          "icao": "ZSRJ"
+        }
+      ],
+      "removed_airports": [
+        {
+          "name": "Qinhuangdao Shanhaiguan Airport",
+          "iata": null,
+          "icao": null,
+          "lat": 39.968102,
+          "lon": 119.731003
+        }
+      ],
+      "added_count": 1,
       "removed_count": 1
     },
     "DE": {
