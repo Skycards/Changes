@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 8,
-    "total_added_airports": 11,
+    "total_added_airports": 17,
     "total_removed_airports": 4
   },
   "countries": {
@@ -91,7 +91,56 @@
       "fr24_count": 320,
       "skycards_count": 315,
       "difference": 5,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "iata": "YHF",
+          "lat": 49.711449,
+          "lon": -83.688957,
+          "link": "https://www.flightradar24.com/data/airports/yhf",
+          "name": "Hearst Municipal Airport",
+          "icao": "CYHF"
+        },
+        {
+          "iata": "YML",
+          "lat": 47.5975,
+          "lon": -70.2239,
+          "link": "https://www.flightradar24.com/data/airports/yml",
+          "name": "Charlevoix Airport",
+          "icao": "CYML"
+        },
+        {
+          "iata": "YMW",
+          "lat": 46.272667,
+          "lon": -75.990524,
+          "link": "https://www.flightradar24.com/data/airports/ymw",
+          "name": "Maniwaki Airport",
+          "icao": "CYMW"
+        },
+        {
+          "iata": "YOG",
+          "lat": 51.658176,
+          "lon": -85.904259,
+          "link": "https://www.flightradar24.com/data/airports/yog",
+          "name": "Ogoki Post Airport",
+          "icao": "CYKP"
+        },
+        {
+          "iata": "YRM",
+          "lat": 52.431358,
+          "lon": -114.906059,
+          "link": "https://www.flightradar24.com/data/airports/yrm",
+          "name": "Rocky Mountain House Airport",
+          "icao": "CYRM"
+        },
+        {
+          "iata": "YSL",
+          "lat": 47.156742,
+          "lon": -67.835907,
+          "link": "https://www.flightradar24.com/data/airports/ysl",
+          "name": "Saint-Leonard Airport",
+          "icao": "CYSL"
+        }
+      ],
       "removed_airports": [
         {
           "name": "Toronto Buttonville Municipal Airport",
@@ -101,7 +150,7 @@
           "lon": -79.370003
         }
       ],
-      "added_count": 0,
+      "added_count": 6,
       "removed_count": 1
     },
     "CN": {
