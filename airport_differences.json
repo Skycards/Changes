@@ -1,7 +1,7 @@
 {
   "summary": {
-    "total_countries_with_differences": 7,
-    "total_added_airports": 10,
+    "total_countries_with_differences": 8,
+    "total_added_airports": 11,
     "total_removed_airports": 4
   },
   "countries": {
@@ -197,6 +197,26 @@
       ],
       "added_count": 0,
       "removed_count": 1
+    },
+    "YE": {
+      "country_name": "Yemen",
+      "iso_code": "YE",
+      "fr24_count": 7,
+      "skycards_count": 6,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "AXK",
+          "lat": 14.55132,
+          "lon": 46.82618,
+          "link": "https://www.flightradar24.com/data/airports/axk",
+          "name": "Ataq Airport",
+          "icao": "OYAT"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
+      "removed_count": 0
     }
   }
 }
