@@ -88,9 +88,9 @@
     "CA": {
       "country_name": "Canada",
       "iso_code": "CA",
-      "fr24_count": 314,
+      "fr24_count": 320,
       "skycards_count": 315,
-      "difference": -1,
+      "difference": 5,
       "added_airports": [],
       "removed_airports": [
         {
