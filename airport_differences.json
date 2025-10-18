@@ -60,9 +60,9 @@
     "BR": {
       "country_name": "Brazil",
       "iso_code": "BR",
-      "fr24_count": 234,
+      "fr24_count": 236,
       "skycards_count": 232,
-      "difference": 2,
+      "difference": 4,
       "added_airports": [
         {
           "iata": "LVR",
