@@ -1,7 +1,7 @@
 {
   "summary": {
-    "total_countries_with_differences": 11,
-    "total_added_airports": 34,
+    "total_countries_with_differences": 14,
+    "total_added_airports": 39,
     "total_removed_airports": 4
   },
   "countries": {
@@ -313,6 +313,42 @@
       "added_count": 1,
       "removed_count": 0
     },
+    "FJ": {
+      "country_name": "Fiji",
+      "iso_code": "FJ",
+      "fr24_count": 15,
+      "skycards_count": 12,
+      "difference": 3,
+      "added_airports": [
+        {
+          "iata": "KXF",
+          "lat": -17.345739,
+          "lon": 179.421936,
+          "link": "https://www.flightradar24.com/data/airports/kxf",
+          "name": "Koro Island Airport",
+          "icao": "NFNO"
+        },
+        {
+          "iata": "LKB",
+          "lat": -18.199987,
+          "lon": -178.81601,
+          "link": "https://www.flightradar24.com/data/airports/lkb",
+          "name": "Lakeba Airport",
+          "icao": "NFNK"
+        },
+        {
+          "iata": "VBV",
+          "lat": -17.244789,
+          "lon": -178.959412,
+          "link": "https://www.flightradar24.com/data/airports/vbv",
+          "name": "Vanuabalavu Airport",
+          "icao": "NFVB"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 3,
+      "removed_count": 0
+    },
     "FR": {
       "country_name": "France",
       "iso_code": "FR",
@@ -400,6 +436,26 @@
       "added_count": 2,
       "removed_count": 0
     },
+    "PF": {
+      "country_name": "French Polynesia",
+      "iso_code": "PF",
+      "fr24_count": 48,
+      "skycards_count": 47,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "FHZ",
+          "lat": -15.991952,
+          "lon": -140.164856,
+          "link": "https://www.flightradar24.com/data/airports/fhz",
+          "name": "Fakahina Airport",
+          "icao": "NTKH"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
+      "removed_count": 0
+    },
     "PL": {
       "country_name": "Poland",
       "iso_code": "PL",
@@ -418,6 +474,26 @@
       ],
       "added_count": 0,
       "removed_count": 1
+    },
+    "TO": {
+      "country_name": "Tonga",
+      "iso_code": "TO",
+      "fr24_count": 4,
+      "skycards_count": 3,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "HPA",
+          "lat": -19.777626,
+          "lon": -174.340073,
+          "link": "https://www.flightradar24.com/data/airports/hpa",
+          "name": "Lifuka Island Airport",
+          "icao": "NFTL"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
+      "removed_count": 0
     },
     "YE": {
       "country_name": "Yemen",
