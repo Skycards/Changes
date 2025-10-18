@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 8,
-    "total_added_airports": 17,
+    "total_added_airports": 21,
     "total_removed_airports": 4
   },
   "countries": {
@@ -101,6 +101,14 @@
           "icao": "CYHF"
         },
         {
+          "iata": "YME",
+          "lat": 48.855968,
+          "lon": -67.453598,
+          "link": "https://www.flightradar24.com/data/airports/yme",
+          "name": "Matane Airport",
+          "icao": "CYME"
+        },
+        {
           "iata": "YML",
           "lat": 47.5975,
           "lon": -70.2239,
@@ -125,6 +133,14 @@
           "icao": "CYKP"
         },
         {
+          "iata": "YQH",
+          "lat": 60.116894,
+          "lon": -128.824661,
+          "link": "https://www.flightradar24.com/data/airports/yqh",
+          "name": "Watson Lake Airport",
+          "icao": "CYQH"
+        },
+        {
           "iata": "YRM",
           "lat": 52.431358,
           "lon": -114.906059,
@@ -139,6 +155,22 @@
           "link": "https://www.flightradar24.com/data/airports/ysl",
           "name": "Saint-Leonard Airport",
           "icao": "CYSL"
+        },
+        {
+          "iata": "YVG",
+          "lat": 53.357471,
+          "lon": -110.826691,
+          "link": "https://www.flightradar24.com/data/airports/yvg",
+          "name": "Vermilion Airport",
+          "icao": "CYVG"
+        },
+        {
+          "iata": "YYW",
+          "lat": 50.293919,
+          "lon": -88.91021,
+          "link": "https://www.flightradar24.com/data/airports/yyw",
+          "name": "Armstrong Airport",
+          "icao": "CYYW"
         }
       ],
       "removed_airports": [
@@ -150,7 +182,7 @@
           "lon": -79.370003
         }
       ],
-      "added_count": 6,
+      "added_count": 10,
       "removed_count": 1
     },
     "CN": {
