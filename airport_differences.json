@@ -1,7 +1,7 @@
 {
   "summary": {
-    "total_countries_with_differences": 8,
-    "total_added_airports": 30,
+    "total_countries_with_differences": 11,
+    "total_added_airports": 34,
     "total_removed_airports": 4
   },
   "countries": {
@@ -60,9 +60,9 @@
     "BR": {
       "country_name": "Brazil",
       "iso_code": "BR",
-      "fr24_count": 236,
+      "fr24_count": 243,
       "skycards_count": 232,
-      "difference": 4,
+      "difference": 11,
       "added_airports": [
         {
           "iata": "BVM",
@@ -160,9 +160,9 @@
     "CA": {
       "country_name": "Canada",
       "iso_code": "CA",
-      "fr24_count": 320,
+      "fr24_count": 324,
       "skycards_count": 315,
-      "difference": 5,
+      "difference": 9,
       "added_airports": [
         {
           "iata": "YHF",
@@ -331,6 +331,74 @@
       ],
       "added_count": 0,
       "removed_count": 1
+    },
+    "ID": {
+      "country_name": "Indonesia",
+      "iso_code": "ID",
+      "fr24_count": 144,
+      "skycards_count": 143,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "PSJ",
+          "lat": -1.413125,
+          "lon": 120.659958,
+          "link": "https://www.flightradar24.com/data/airports/psj",
+          "name": "Poso Kasiguncu Airport",
+          "icao": "WAFP"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
+      "removed_count": 0
+    },
+    "MA": {
+      "country_name": "Morocco",
+      "iso_code": "MA",
+      "fr24_count": 22,
+      "skycards_count": 21,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "SMW",
+          "lat": 26.734003,
+          "lon": -11.684893,
+          "link": "https://www.flightradar24.com/data/airports/smw",
+          "name": "Smara Airport",
+          "icao": "GMMA"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
+      "removed_count": 0
+    },
+    "MR": {
+      "country_name": "Mauritania",
+      "iso_code": "MR",
+      "fr24_count": 5,
+      "skycards_count": 3,
+      "difference": 2,
+      "added_airports": [
+        {
+          "iata": "ATR",
+          "lat": 20.500992,
+          "lon": -13.046662,
+          "link": "https://www.flightradar24.com/data/airports/atr",
+          "name": "Atar International Airport",
+          "icao": "GQPA"
+        },
+        {
+          "iata": "EMN",
+          "lat": 16.621794,
+          "lon": -7.316753,
+          "link": "https://www.flightradar24.com/data/airports/emn",
+          "name": "Nema Airport",
+          "icao": "GQNI"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 2,
+      "removed_count": 0
     },
     "PL": {
       "country_name": "Poland",
