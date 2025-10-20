@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 14,
-    "total_added_airports": 39,
+    "total_added_airports": 42,
     "total_removed_airports": 4
   },
   "countries": {
@@ -165,6 +165,22 @@
       "difference": 9,
       "added_airports": [
         {
+          "iata": "YEN",
+          "lat": 49.20797,
+          "lon": -102.959846,
+          "link": "https://www.flightradar24.com/data/airports/yen",
+          "name": "Estevan Airport",
+          "icao": "CYEN"
+        },
+        {
+          "iata": "YHB",
+          "lat": 52.818245,
+          "lon": -102.311188,
+          "link": "https://www.flightradar24.com/data/airports/yhb",
+          "name": "Hudson Bay Airport",
+          "icao": "CYHB"
+        },
+        {
           "iata": "YHF",
           "lat": 49.711449,
           "lon": -83.688957,
@@ -213,6 +229,14 @@
           "icao": "CYQH"
         },
         {
+          "iata": "YQN",
+          "lat": 50.18298,
+          "lon": -86.697281,
+          "link": "https://www.flightradar24.com/data/airports/yqn",
+          "name": "Nakina Airport",
+          "icao": "CYQN"
+        },
+        {
           "iata": "YRM",
           "lat": 52.431358,
           "lon": -114.906059,
@@ -254,7 +278,7 @@
           "lon": -79.370003
         }
       ],
-      "added_count": 10,
+      "added_count": 13,
       "removed_count": 1
     },
     "CN": {
