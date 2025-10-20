@@ -160,9 +160,9 @@
     "CA": {
       "country_name": "Canada",
       "iso_code": "CA",
-      "fr24_count": 324,
+      "fr24_count": 327,
       "skycards_count": 315,
-      "difference": 9,
+      "difference": 12,
       "added_airports": [
         {
           "iata": "YEN",
