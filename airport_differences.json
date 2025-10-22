@@ -1,7 +1,7 @@
 {
   "summary": {
-    "total_countries_with_differences": 14,
-    "total_added_airports": 42,
+    "total_countries_with_differences": 15,
+    "total_added_airports": 44,
     "total_removed_airports": 4
   },
   "countries": {
@@ -280,6 +280,34 @@
       ],
       "added_count": 13,
       "removed_count": 1
+    },
+    "CL": {
+      "country_name": "Chile",
+      "iso_code": "CL",
+      "fr24_count": 30,
+      "skycards_count": 28,
+      "difference": 2,
+      "added_airports": [
+        {
+          "iata": "CNR",
+          "lat": -26.332491,
+          "lon": -70.60743,
+          "link": "https://www.flightradar24.com/data/airports/cnr",
+          "name": "Chanaral Airport",
+          "icao": "SCRA"
+        },
+        {
+          "iata": "GXQ",
+          "lat": -45.594124,
+          "lon": -72.105972,
+          "link": "https://www.flightradar24.com/data/airports/gxq",
+          "name": "Coyhaique Teniente Vidal Airport",
+          "icao": "SCCY"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 2,
+      "removed_count": 0
     },
     "CN": {
       "country_name": "China",
