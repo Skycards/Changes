@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1760603213815,
+  "updatedAt": 1761211137093,
   "rows": [
     {
       "id": "A1",
@@ -5248,6 +5248,51 @@
       ]
     },
     {
+      "id": "ARVA",
+      "manufacturer": "IAI",
+      "name": "Arava",
+      "manufacturers": [
+        "IAI 101 Arava",
+        "IAI 102 Arava",
+        "IAI 201 Arava",
+        "IAI 202 Arava"
+      ],
+      "description": "The IAI Arava is a versatile Israeli short takeoff and landing aircraft, designed for cargo and troop transport. Its distinctive bulbous fuselage and twin-boom tail enhance its operational flexibility.",
+      "wingPos": "High wing",
+      "wingShape": "Rectangular",
+      "type": "L",
+      "engNum": 2,
+      "engType": "T",
+      "wtc": "L",
+      "rareness": 1417,
+      "num": 0,
+      "xp": 8083,
+      "firstFlight": 1969,
+      "wingspan": 21,
+      "length": 13,
+      "height": 5.2,
+      "ceiling": 25000,
+      "mtow": 6800,
+      "seats": 20,
+      "range": 570,
+      "maxSpeed": 176,
+      "cardCategory": "ultra",
+      "ftea": 0.001274215659834592,
+      "images": [
+        "P38",
+        "DHC6",
+        "BE58"
+      ],
+      "markers": [
+        "DHC6",
+        "PA34"
+      ],
+      "inSeasons": [
+        1
+      ],
+      "military": true
+    },
+    {
       "id": "AS02",
       "manufacturer": "FFA",
       "name": "AS-202-15 Bravo",
@@ -8909,9 +8954,9 @@
       "engNum": 2,
       "engType": "T",
       "wtc": "L",
-      "rareness": 1400,
+      "rareness": 1291,
       "num": 1,
-      "xp": 8000,
+      "xp": 7456,
       "firstFlight": 1966,
       "wingspan": 12,
       "length": 10.3,
@@ -8922,6 +8967,7 @@
       "range": 1227,
       "maxSpeed": 290,
       "cardCategory": "ultra",
+      "ftea": 0.0044643900575332615,
       "images": [
         "BE9L",
         "BE58"
@@ -8931,7 +8977,8 @@
         "PA34"
       ],
       "inSeasons": [
-        0
+        0,
+        1
       ]
     },
     {
@@ -17782,6 +17829,32 @@
         1
       ],
       "military": true
+    },
+    {
+      "id": "CHP2",
+      "manufacturer": "BELITE",
+      "name": "CH-2A Chipper 2",
+      "landingGear": "Tailwheel",
+      "wingPos": "High wing",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1299,
+      "xp": 7495,
+      "firstFlight": 2017,
+      "wingspan": 9.5,
+      "mtow": 560,
+      "seats": 2,
+      "maxSpeed": 95.6,
+      "cardCategory": "ultra",
+      "ftea": 0.004131326411362819,
+      "images": [
+        "PA18"
+      ],
+      "inSeasons": [
+        1
+      ]
     },
     {
       "id": "CHR1",
@@ -31974,11 +32047,11 @@
     {
       "id": "GLTU",
       "manufacturer": "STODDARD-HAMILTON",
-      "name": "Turbine Glasair",
+      "name": "Turbine Glasair III",
       "manufacturers": [
         "STODDARD-HAMILTON Turbine Glasair"
       ],
-      "description": "The STODDARD-HAMILTON Turbine Glasair is a high-performance, turbine-powered variant of the Glasair series, offering enhanced speed and efficiency for advanced pilots.",
+      "description": "The Stoddard-Hamilton Turbine Glasair III is a high-performance kit aircraft, notable for its turbine engine adaptation. It offers builders a unique blend of speed and advanced aerodynamics.",
       "landingGear": "Tricycle",
       "wingPos": "Low wing",
       "wingShape": "Tapered rear",
@@ -31986,19 +32059,20 @@
       "engNum": 1,
       "engType": "T",
       "wtc": "L",
-      "rareness": 1400,
+      "rareness": 1567,
       "num": 1,
-      "xp": 8000,
+      "xp": 8834,
       "firstFlight": 1989,
-      "wingspan": 8.5,
-      "length": 7.6,
-      "height": 2.8,
-      "ceiling": 25000,
-      "mtow": 1360,
+      "wingspan": 7.09,
+      "length": 6.5,
+      "height": 2.2,
+      "ceiling": 24000,
+      "mtow": 1090,
       "seats": 2,
-      "range": 1200,
-      "maxSpeed": 284,
+      "range": 1100,
+      "maxSpeed": 250,
       "cardCategory": "ultra",
+      "ftea": 0.0002836209996404171,
       "images": [
         "M20P"
       ],
@@ -32007,7 +32081,8 @@
         "PA24"
       ],
       "inSeasons": [
-        0
+        0,
+        1
       ]
     },
     {
@@ -54348,6 +54423,7 @@
       "cardCategory": "ultra",
       "ftea": 0.0078125,
       "images": [
+        "T6",
         "FA62"
       ],
       "markers": [
@@ -61887,6 +61963,47 @@
       ]
     },
     {
+      "id": "UNIV",
+      "manufacturer": "NEIVA",
+      "name": "Universal",
+      "manufacturers": [
+        "NEIVA N-621 Universal",
+        "NEIVA N-622 Universal",
+        "NEIVA T-25 Universal"
+      ],
+      "description": "The NEIVA Universal is a Brazilian light utility aircraft designed for training and agricultural tasks. Known for its versatility, it played a significant role in developing Brazil's general aviation sector.",
+      "landingGear": "Tricycle",
+      "wingPos": "Low wing",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1472,
+      "num": 0,
+      "xp": 8362,
+      "firstFlight": 1966,
+      "wingspan": 11,
+      "length": 8.6,
+      "height": 3,
+      "ceiling": 20000,
+      "mtow": 1700,
+      "seats": 2,
+      "range": 810,
+      "maxSpeed": 160,
+      "cardCategory": "ultra",
+      "ftea": 0.0007286048184106436,
+      "images": [
+        "P28A",
+        "C172"
+      ],
+      "markers": [
+        "P28A"
+      ],
+      "inSeasons": [
+        1
+      ]
+    },
+    {
       "id": "URRA",
       "manufacturer": "IBIS",
       "name": "Urraco",
@@ -64371,7 +64488,8 @@
       ],
       "inSeasons": [
         1
-      ]
+      ],
+      "imageOverride": "XB1"
     },
     {
       "id": "XA41",
