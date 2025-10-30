@@ -1,7 +1,7 @@
 {
   "summary": {
-    "total_countries_with_differences": 15,
-    "total_added_airports": 44,
+    "total_countries_with_differences": 16,
+    "total_added_airports": 46,
     "total_removed_airports": 4
   },
   "countries": {
@@ -438,6 +438,34 @@
       ],
       "removed_airports": [],
       "added_count": 1,
+      "removed_count": 0
+    },
+    "IQ": {
+      "country_name": "Iraq",
+      "iso_code": "IQ",
+      "fr24_count": 9,
+      "skycards_count": 7,
+      "difference": 2,
+      "added_airports": [
+        {
+          "iata": "OSM",
+          "lat": 36.306339,
+          "lon": 43.147106,
+          "link": "https://www.flightradar24.com/data/airports/osm",
+          "name": "Mosul International Airport",
+          "icao": "ORBM"
+        },
+        {
+          "iata": "XNH",
+          "lat": 30.935535,
+          "lon": 46.089973,
+          "link": "https://www.flightradar24.com/data/airports/xnh",
+          "name": "Nasiriyah Airport",
+          "icao": "ORTL"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 2,
       "removed_count": 0
     },
     "MA": {
