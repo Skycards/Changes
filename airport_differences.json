@@ -1,7 +1,7 @@
 {
   "summary": {
-    "total_countries_with_differences": 16,
-    "total_added_airports": 46,
+    "total_countries_with_differences": 19,
+    "total_added_airports": 49,
     "total_removed_airports": 4
   },
   "countries": {
@@ -440,6 +440,26 @@
       "added_count": 1,
       "removed_count": 0
     },
+    "IN": {
+      "country_name": "India",
+      "iso_code": "IN",
+      "fr24_count": 145,
+      "skycards_count": 144,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "HWR",
+          "lat": 30.746735,
+          "lon": 75.632202,
+          "link": "https://www.flightradar24.com/data/airports/hwr",
+          "name": "Ludhiana Halwara International Airport",
+          "icao": "VIHX"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
+      "removed_count": 0
+    },
     "IQ": {
       "country_name": "Iraq",
       "iso_code": "IQ",
@@ -514,6 +534,46 @@
       ],
       "removed_airports": [],
       "added_count": 2,
+      "removed_count": 0
+    },
+    "MV": {
+      "country_name": "Maldives",
+      "iso_code": "MV",
+      "fr24_count": 20,
+      "skycards_count": 19,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "MUM",
+          "lat": 2.911039,
+          "lon": 73.583656,
+          "link": "https://www.flightradar24.com/data/airports/mum",
+          "name": "Muli Airport",
+          "icao": "VRKM"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
+      "removed_count": 0
+    },
+    "NG": {
+      "country_name": "Nigeria",
+      "iso_code": "NG",
+      "fr24_count": 25,
+      "skycards_count": 24,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "GWI",
+          "lat": 6.93609,
+          "lon": 3.700204,
+          "link": "https://www.flightradar24.com/data/airports/gwi",
+          "name": "Iperu Gateway International Airport",
+          "icao": "DNGA"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
       "removed_count": 0
     },
     "PF": {
