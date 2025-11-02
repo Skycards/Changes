@@ -1,29 +1,10 @@
 {
   "summary": {
     "total_countries_with_differences": 4,
-    "total_added_airports": 0,
-    "total_removed_airports": 4
+    "total_added_airports": 44,
+    "total_removed_airports": 3
   },
   "countries": {
-    "CA": {
-      "country_name": "Canada",
-      "iso_code": "CA",
-      "fr24_count": 327,
-      "skycards_count": 328,
-      "difference": -1,
-      "added_airports": [],
-      "removed_airports": [
-        {
-          "name": "Toronto Buttonville Municipal Airport",
-          "iata": null,
-          "icao": null,
-          "lat": 43.862221,
-          "lon": -79.370003
-        }
-      ],
-      "added_count": 0,
-      "removed_count": 1
-    },
     "CN": {
       "country_name": "China",
       "iso_code": "CN",
@@ -80,6 +61,370 @@
       ],
       "added_count": 0,
       "removed_count": 1
+    },
+    "US": {
+      "country_name": "United States",
+      "iso_code": "US",
+      "fr24_count": 1651,
+      "skycards_count": 1607,
+      "difference": 44,
+      "added_airports": [
+        {
+          "iata": "AHD",
+          "lat": 34.147793,
+          "lon": -97.122688,
+          "link": "https://www.flightradar24.com/data/airports/ahd",
+          "name": "Ardmore Downtown Executive Airport",
+          "icao": ""
+        },
+        {
+          "iata": "ALE",
+          "lat": 30.387016,
+          "lon": -103.681152,
+          "link": "https://www.flightradar24.com/data/airports/ale",
+          "name": "Alpine Casparis Municipal Airport",
+          "icao": ""
+        },
+        {
+          "iata": "ATT",
+          "lat": 60.866539,
+          "lon": -162.273621,
+          "link": "https://www.flightradar24.com/data/airports/att",
+          "name": "Atmautluak Airport",
+          "icao": ""
+        },
+        {
+          "iata": "BLU",
+          "lat": 39.274021,
+          "lon": -120.709473,
+          "link": "https://www.flightradar24.com/data/airports/blu",
+          "name": "Emigrant Gap Blue Canyon Nyack Airport",
+          "icao": "KBLU"
+        },
+        {
+          "iata": "BNG",
+          "lat": 33.922531,
+          "lon": -116.852928,
+          "link": "https://www.flightradar24.com/data/airports/bng",
+          "name": "Banning Municipal Airport",
+          "icao": "KBNG"
+        },
+        {
+          "iata": "BSQ",
+          "lat": 31.368324,
+          "lon": -109.88414,
+          "link": "https://www.flightradar24.com/data/airports/bsq",
+          "name": "Bisbee Municipal Airport",
+          "icao": ""
+        },
+        {
+          "iata": "BZF",
+          "lat": 40.574139,
+          "lon": -122.40741,
+          "link": "https://www.flightradar24.com/data/airports/bzf",
+          "name": "Redding Benton Airport",
+          "icao": ""
+        },
+        {
+          "iata": "CHK",
+          "lat": 35.094311,
+          "lon": -97.969223,
+          "link": "https://www.flightradar24.com/data/airports/chk",
+          "name": "Chickasha Municipal Airport",
+          "icao": "KCHK"
+        },
+        {
+          "iata": "COA",
+          "lat": 38.028076,
+          "lon": -120.413528,
+          "link": "https://www.flightradar24.com/data/airports/coa",
+          "name": "Columbia Regional Airport",
+          "icao": "KCOA"
+        },
+        {
+          "iata": "CRO",
+          "lat": 36.101425,
+          "lon": -119.593712,
+          "link": "https://www.flightradar24.com/data/airports/cro",
+          "name": "Corcoran Airport",
+          "icao": "KCRO"
+        },
+        {
+          "iata": "CTW",
+          "lat": 34.729931,
+          "lon": -112.035065,
+          "link": "https://www.flightradar24.com/data/airports/ctw",
+          "name": "Cottonwood Airport",
+          "icao": ""
+        },
+        {
+          "iata": "DGL",
+          "lat": 31.343351,
+          "lon": -109.503319,
+          "link": "https://www.flightradar24.com/data/airports/dgl",
+          "name": "Douglas Municipal Airport",
+          "icao": "KDGL"
+        },
+        {
+          "iata": "DUG",
+          "lat": 31.463676,
+          "lon": -109.604416,
+          "link": "https://www.flightradar24.com/data/airports/dug",
+          "name": "Bisbee Douglas International",
+          "icao": "KDUG"
+        },
+        {
+          "iata": "EDK",
+          "lat": 37.774628,
+          "lon": -96.817787,
+          "link": "https://www.flightradar24.com/data/airports/edk",
+          "name": "El Dorado Captain Jack Thomas Memorial Airport",
+          "icao": "KEQA"
+        },
+        {
+          "iata": "FLX",
+          "lat": 39.499397,
+          "lon": -118.749176,
+          "link": "https://www.flightradar24.com/data/airports/flx",
+          "name": "Fallon Municipal Airport",
+          "icao": "KFLX"
+        },
+        {
+          "iata": "GNF",
+          "lat": 39.943714,
+          "lon": -120.94693,
+          "link": "https://www.flightradar24.com/data/airports/gnf",
+          "name": "Quincy Gansner Airport",
+          "icao": ""
+        },
+        {
+          "iata": "GNU",
+          "lat": 59.117279,
+          "lon": -161.576996,
+          "link": "https://www.flightradar24.com/data/airports/gnu",
+          "name": "Goodnews Bay Airport",
+          "icao": "KGNU"
+        },
+        {
+          "iata": "GTP",
+          "lat": 42.510063,
+          "lon": -123.387924,
+          "link": "https://www.flightradar24.com/data/airports/gtp",
+          "name": "Grants Pass Airport",
+          "icao": ""
+        },
+        {
+          "iata": "GTY",
+          "lat": 39.84269,
+          "lon": -77.272598,
+          "link": "https://www.flightradar24.com/data/airports/gty",
+          "name": "Gettysburg Regional Airport",
+          "icao": ""
+        },
+        {
+          "iata": "JVI",
+          "lat": 40.525063,
+          "lon": -74.597038,
+          "link": "https://www.flightradar24.com/data/airports/jvi",
+          "name": "Manville Central Jersey Regional Airport",
+          "icao": ""
+        },
+        {
+          "iata": "KIC",
+          "lat": 36.227253,
+          "lon": -121.119446,
+          "link": "https://www.flightradar24.com/data/airports/kic",
+          "name": "King City Mesa Del Rey Airport",
+          "icao": "KKIC"
+        },
+        {
+          "iata": "KYO",
+          "lat": 28.221243,
+          "lon": -82.374504,
+          "link": "https://www.flightradar24.com/data/airports/kyo",
+          "name": "Tampa North Aero Park Airport",
+          "icao": ""
+        },
+        {
+          "iata": "LAM",
+          "lat": 35.87991,
+          "lon": -106.270004,
+          "link": "https://www.flightradar24.com/data/airports/lam",
+          "name": "Los Alamos Airport",
+          "icao": "KLAM"
+        },
+        {
+          "iata": "LPS",
+          "lat": 48.485477,
+          "lon": -122.937119,
+          "link": "https://www.flightradar24.com/data/airports/lps",
+          "name": "Lopez Island Airport",
+          "icao": ""
+        },
+        {
+          "iata": "MDJ",
+          "lat": 44.667149,
+          "lon": -121.153412,
+          "link": "https://www.flightradar24.com/data/airports/mdj",
+          "name": "Madras Municipal Airport",
+          "icao": ""
+        },
+        {
+          "iata": "NPH",
+          "lat": 39.737682,
+          "lon": -111.869995,
+          "link": "https://www.flightradar24.com/data/airports/nph",
+          "name": "Nephi Municipal Airport",
+          "icao": ""
+        },
+        {
+          "iata": "NUP",
+          "lat": 60.903793,
+          "lon": -162.44194,
+          "link": "https://www.flightradar24.com/data/airports/nup",
+          "name": "Nunapitchuk Airport",
+          "icao": "PPIT"
+        },
+        {
+          "iata": "OTS",
+          "lat": 48.498489,
+          "lon": -122.662453,
+          "link": "https://www.flightradar24.com/data/airports/ots",
+          "name": "Anacortes Airport",
+          "icao": ""
+        },
+        {
+          "iata": "PCT",
+          "lat": 40.399059,
+          "lon": -74.65979,
+          "link": "https://www.flightradar24.com/data/airports/pct",
+          "name": "Princeton Airport",
+          "icao": ""
+        },
+        {
+          "iata": "PGM",
+          "lat": 59.349152,
+          "lon": -151.831177,
+          "link": "https://www.flightradar24.com/data/airports/pgm",
+          "name": "Port Graham Airport",
+          "icao": "KPGM"
+        },
+        {
+          "iata": "PLY",
+          "lat": 41.365261,
+          "lon": -86.302094,
+          "link": "https://www.flightradar24.com/data/airports/ply",
+          "name": "Plymouth Municipal Airport",
+          "icao": ""
+        },
+        {
+          "iata": "PQS",
+          "lat": 61.961777,
+          "lon": -162.94136,
+          "link": "https://www.flightradar24.com/data/airports/pqs",
+          "name": "Pilot Station Airport",
+          "icao": ""
+        },
+        {
+          "iata": "PRZ",
+          "lat": 44.289818,
+          "lon": -120.905983,
+          "link": "https://www.flightradar24.com/data/airports/prz",
+          "name": "Prineville Airport",
+          "icao": ""
+        },
+        {
+          "iata": "RBF",
+          "lat": 34.263809,
+          "lon": -116.853622,
+          "link": "https://www.flightradar24.com/data/airports/rbf",
+          "name": "Big Bear City Airport",
+          "icao": ""
+        },
+        {
+          "iata": "RBK",
+          "lat": 33.57486,
+          "lon": -117.128296,
+          "link": "https://www.flightradar24.com/data/airports/rbk",
+          "name": "Murrieta French Valley Airport",
+          "icao": ""
+        },
+        {
+          "iata": "RCE",
+          "lat": 48.610775,
+          "lon": -123.157532,
+          "link": "https://www.flightradar24.com/data/airports/rce",
+          "name": "Roche Harbor Sea Plane Base",
+          "icao": ""
+        },
+        {
+          "iata": "RIF",
+          "lat": 38.736961,
+          "lon": -112.09964,
+          "link": "https://www.flightradar24.com/data/airports/rif",
+          "name": "Richfield Municipal Airport",
+          "icao": "KRIF"
+        },
+        {
+          "iata": "SKW",
+          "lat": 61.964375,
+          "lon": -151.18782,
+          "link": "https://www.flightradar24.com/data/airports/skw",
+          "name": "Skwentna Airport",
+          "icao": "PASW"
+        },
+        {
+          "iata": "TDO",
+          "lat": 46.476212,
+          "lon": -122.811127,
+          "link": "https://www.flightradar24.com/data/airports/tdo",
+          "name": "Toledo South Lewis County Airport",
+          "icao": "KTDO"
+        },
+        {
+          "iata": "TLT",
+          "lat": 61.088963,
+          "lon": -160.924423,
+          "link": "https://www.flightradar24.com/data/airports/tlt",
+          "name": "Tuluksak Airport",
+          "icao": "PALT"
+        },
+        {
+          "iata": "TSP",
+          "lat": 35.135117,
+          "lon": -118.439476,
+          "link": "https://www.flightradar24.com/data/airports/tsp",
+          "name": "Tehachapi Municipal Airport",
+          "icao": "KTSP"
+        },
+        {
+          "iata": "TWD",
+          "lat": 48.054073,
+          "lon": -122.812416,
+          "link": "https://www.flightradar24.com/data/airports/twd",
+          "name": "Port Townsend Jefferson County International Airport",
+          "icao": ""
+        },
+        {
+          "iata": "WOW",
+          "lat": 61.754078,
+          "lon": -150.051483,
+          "link": "https://www.flightradar24.com/data/airports/wow",
+          "name": "Willow Airport",
+          "icao": "PAUO"
+        },
+        {
+          "iata": "WTL",
+          "lat": 60.349976,
+          "lon": -162.656296,
+          "link": "https://www.flightradar24.com/data/airports/wtl",
+          "name": "Tuntutuliak Airport",
+          "icao": ""
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 44,
+      "removed_count": 0
     }
   }
 }
