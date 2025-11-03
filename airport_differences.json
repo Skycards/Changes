@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 4,
-    "total_added_airports": 44,
+    "total_added_airports": 50,
     "total_removed_airports": 3
   },
   "countries": {
@@ -65,9 +65,9 @@
     "US": {
       "country_name": "United States",
       "iso_code": "US",
-      "fr24_count": 1651,
+      "fr24_count": 1657,
       "skycards_count": 1607,
-      "difference": 44,
+      "difference": 50,
       "added_airports": [
         {
           "iata": "AHD",
@@ -91,6 +91,14 @@
           "lon": -162.273621,
           "link": "https://www.flightradar24.com/data/airports/att",
           "name": "Atmautluak Airport",
+          "icao": ""
+        },
+        {
+          "iata": "BDY",
+          "lat": 43.085926,
+          "lon": -124.40786,
+          "link": "https://www.flightradar24.com/data/airports/bdy",
+          "name": "Bandon State Airport",
           "icao": ""
         },
         {
@@ -126,6 +134,14 @@
           "icao": ""
         },
         {
+          "iata": "CEA",
+          "lat": 37.649532,
+          "lon": -97.250618,
+          "link": "https://www.flightradar24.com/data/airports/cea",
+          "name": "Wichita Cessna Aircraft Field Airport",
+          "icao": "KCEA"
+        },
+        {
           "iata": "CHK",
           "lat": 35.094311,
           "lon": -97.969223,
@@ -158,6 +174,14 @@
           "icao": ""
         },
         {
+          "iata": "CTX",
+          "lat": 42.593266,
+          "lon": -76.213997,
+          "link": "https://www.flightradar24.com/data/airports/ctx",
+          "name": "Cortland County Airport",
+          "icao": ""
+        },
+        {
           "iata": "DGL",
           "lat": 31.343351,
           "lon": -109.503319,
@@ -180,6 +204,14 @@
           "link": "https://www.flightradar24.com/data/airports/edk",
           "name": "El Dorado Captain Jack Thomas Memorial Airport",
           "icao": "KEQA"
+        },
+        {
+          "iata": "FIL",
+          "lat": 38.958569,
+          "lon": -112.362373,
+          "link": "https://www.flightradar24.com/data/airports/fil",
+          "name": "Fillmore Municipal Airport",
+          "icao": "KFOM"
         },
         {
           "iata": "FLX",
@@ -206,6 +238,14 @@
           "icao": "KGNU"
         },
         {
+          "iata": "GQQ",
+          "lat": 40.753708,
+          "lon": -82.723289,
+          "link": "https://www.flightradar24.com/data/airports/gqq",
+          "name": "Galion Municipal Airport",
+          "icao": "KGQQ"
+        },
+        {
           "iata": "GTP",
           "lat": 42.510063,
           "lon": -123.387924,
@@ -227,6 +267,14 @@
           "lon": -74.597038,
           "link": "https://www.flightradar24.com/data/airports/jvi",
           "name": "Manville Central Jersey Regional Airport",
+          "icao": ""
+        },
+        {
+          "iata": "KEH",
+          "lat": 47.755245,
+          "lon": -122.259903,
+          "link": "https://www.flightradar24.com/data/airports/keh",
+          "name": "Kenmore Air Harbor Airport",
           "icao": ""
         },
         {
@@ -423,7 +471,7 @@
         }
       ],
       "removed_airports": [],
-      "added_count": 44,
+      "added_count": 50,
       "removed_count": 0
     }
   }
