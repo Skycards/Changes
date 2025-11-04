@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 4,
-    "total_added_airports": 50,
+    "total_added_airports": 51,
     "total_removed_airports": 3
   },
   "countries": {
@@ -124,6 +124,14 @@
           "link": "https://www.flightradar24.com/data/airports/bsq",
           "name": "Bisbee Municipal Airport",
           "icao": ""
+        },
+        {
+          "iata": "BXA",
+          "lat": 30.8137,
+          "lon": -89.864998,
+          "link": "https://www.flightradar24.com/data/airports/bxa",
+          "name": "Bogalusa George R Carr Memorial Air Field Airport",
+          "icao": "KBXA"
         },
         {
           "iata": "BZF",
@@ -471,7 +479,7 @@
         }
       ],
       "removed_airports": [],
-      "added_count": 50,
+      "added_count": 51,
       "removed_count": 0
     }
   }
