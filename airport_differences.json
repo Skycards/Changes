@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 5,
-    "total_added_airports": 51,
+    "total_added_airports": 54,
     "total_removed_airports": 3
   },
   "countries": {
@@ -11,9 +11,34 @@
       "fr24_count": 467,
       "skycards_count": 464,
       "difference": 3,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "iata": "BKP",
+          "lat": -20.495832,
+          "lon": 138.474731,
+          "link": "https://www.flightradar24.com/data/airports/bkp",
+          "name": "Barkly Downs Airport",
+          "icao": "YBAW"
+        },
+        {
+          "iata": "CFP",
+          "lat": -18.717371,
+          "lon": 144.312866,
+          "link": "https://www.flightradar24.com/data/airports/cfp",
+          "name": "Carpentaria Downs Airport",
+          "icao": "YCPN"
+        },
+        {
+          "iata": "LOC",
+          "lat": -33.543629,
+          "lon": 135.693054,
+          "link": "https://www.flightradar24.com/data/airports/loc",
+          "name": "Lock Airport",
+          "icao": "YLOK"
+        }
+      ],
       "removed_airports": [],
-      "added_count": 0,
+      "added_count": 3,
       "removed_count": 0
     },
     "CN": {
