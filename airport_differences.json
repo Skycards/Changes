@@ -1,10 +1,21 @@
 {
   "summary": {
-    "total_countries_with_differences": 4,
+    "total_countries_with_differences": 5,
     "total_added_airports": 51,
     "total_removed_airports": 3
   },
   "countries": {
+    "AU": {
+      "country_name": "Australia",
+      "iso_code": "AU",
+      "fr24_count": 467,
+      "skycards_count": 464,
+      "difference": 3,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
+      "removed_count": 0
+    },
     "CN": {
       "country_name": "China",
       "iso_code": "CN",
