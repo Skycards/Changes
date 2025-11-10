@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 5,
-    "total_added_airports": 54,
+    "total_added_airports": 58,
     "total_removed_airports": 3
   },
   "countries": {
@@ -266,6 +266,14 @@
           "icao": "KFLX"
         },
         {
+          "iata": "FRR",
+          "lat": 38.917492,
+          "lon": -78.254082,
+          "link": "https://www.flightradar24.com/data/airports/frr",
+          "name": "Front Royal Warren County Airport",
+          "icao": "KFRR"
+        },
+        {
           "iata": "GNF",
           "lat": 39.943714,
           "lon": -120.94693,
@@ -303,6 +311,14 @@
           "lon": -77.272598,
           "link": "https://www.flightradar24.com/data/airports/gty",
           "name": "Gettysburg Regional Airport",
+          "icao": ""
+        },
+        {
+          "iata": "HCC",
+          "lat": 42.293453,
+          "lon": -73.709717,
+          "link": "https://www.flightradar24.com/data/airports/hcc",
+          "name": "Hudson Columbia County Airport",
           "icao": ""
         },
         {
@@ -466,6 +482,14 @@
           "icao": "PASW"
         },
         {
+          "iata": "SQV",
+          "lat": 48.098091,
+          "lon": -123.18882,
+          "link": "https://www.flightradar24.com/data/airports/sqv",
+          "name": "Sequim Valley Airport",
+          "icao": ""
+        },
+        {
           "iata": "TDO",
           "lat": 46.476212,
           "lon": -122.811127,
@@ -506,6 +530,14 @@
           "icao": "PAUO"
         },
         {
+          "iata": "WPO",
+          "lat": 38.832001,
+          "lon": -107.643814,
+          "link": "https://www.flightradar24.com/data/airports/wpo",
+          "name": "Paonia North Fork Valley Airport",
+          "icao": ""
+        },
+        {
           "iata": "WTL",
           "lat": 60.349976,
           "lon": -162.656296,
@@ -515,7 +547,7 @@
         }
       ],
       "removed_airports": [],
-      "added_count": 51,
+      "added_count": 55,
       "removed_count": 0
     }
   }
