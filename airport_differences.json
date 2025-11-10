@@ -101,9 +101,9 @@
     "US": {
       "country_name": "United States",
       "iso_code": "US",
-      "fr24_count": 1658,
+      "fr24_count": 1662,
       "skycards_count": 1607,
-      "difference": 51,
+      "difference": 55,
       "added_airports": [
         {
           "iata": "AHD",
