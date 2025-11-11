@@ -1,7 +1,7 @@
 {
   "summary": {
-    "total_countries_with_differences": 5,
-    "total_added_airports": 58,
+    "total_countries_with_differences": 6,
+    "total_added_airports": 62,
     "total_removed_airports": 3
   },
   "countries": {
@@ -548,6 +548,50 @@
       ],
       "removed_airports": [],
       "added_count": 55,
+      "removed_count": 0
+    },
+    "YE": {
+      "country_name": "Yemen",
+      "iso_code": "YE",
+      "fr24_count": 11,
+      "skycards_count": 7,
+      "difference": 4,
+      "added_airports": [
+        {
+          "iata": "BUK",
+          "lat": 17.346783,
+          "lon": 44.62009,
+          "link": "https://www.flightradar24.com/data/airports/buk",
+          "name": "Al-Bough Airport",
+          "icao": "OYBQ"
+        },
+        {
+          "iata": "HOD",
+          "lat": 14.753,
+          "lon": 42.97633,
+          "link": "https://www.flightradar24.com/data/airports/hod",
+          "name": "Hodeida Airport",
+          "icao": "OYHD"
+        },
+        {
+          "iata": "KAM",
+          "lat": 15.360921,
+          "lon": 42.610535,
+          "link": "https://www.flightradar24.com/data/airports/kam",
+          "name": "Kamaran Airport",
+          "icao": "OYKM"
+        },
+        {
+          "iata": "SYE",
+          "lat": 16.969297,
+          "lon": 43.728794,
+          "link": "https://www.flightradar24.com/data/airports/sye",
+          "name": "Sadah Airport",
+          "icao": "OYSH"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 4,
       "removed_count": 0
     }
   }
