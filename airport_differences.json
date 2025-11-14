@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 6,
-    "total_added_airports": 62,
+    "total_added_airports": 70,
     "total_removed_airports": 3
   },
   "countries": {
@@ -105,6 +105,14 @@
       "skycards_count": 1607,
       "difference": 55,
       "added_airports": [
+        {
+          "iata": "AFF",
+          "lat": 38.975704,
+          "lon": -104.818306,
+          "link": "https://www.flightradar24.com/data/airports/aff",
+          "name": "Colorado Springs USAF Academy Davis Airfield",
+          "icao": "KAFF"
+        },
         {
           "iata": "AHD",
           "lat": 34.147793,
@@ -274,6 +282,22 @@
           "icao": "KFRR"
         },
         {
+          "iata": "GEY",
+          "lat": 44.516998,
+          "lon": -108.078087,
+          "link": "https://www.flightradar24.com/data/airports/gey",
+          "name": "Greybull South Big Horn County Airport",
+          "icao": "KGEY"
+        },
+        {
+          "iata": "GLW",
+          "lat": 37.031696,
+          "lon": -85.953873,
+          "link": "https://www.flightradar24.com/data/airports/glw",
+          "name": "Glasgow Municipal Airport",
+          "icao": "KGLW"
+        },
+        {
           "iata": "GNF",
           "lat": 39.943714,
           "lon": -120.94693,
@@ -320,6 +344,14 @@
           "link": "https://www.flightradar24.com/data/airports/hcc",
           "name": "Hudson Columbia County Airport",
           "icao": ""
+        },
+        {
+          "iata": "HLR",
+          "lat": 31.13866,
+          "lon": -97.7145,
+          "link": "https://www.flightradar24.com/data/airports/hlr",
+          "name": "Killeen Yoakum-Defrenn Army Heliport",
+          "icao": "KHLR"
         },
         {
           "iata": "JVI",
@@ -370,12 +402,28 @@
           "icao": ""
         },
         {
+          "iata": "LTW",
+          "lat": 38.315437,
+          "lon": -76.550514,
+          "link": "https://www.flightradar24.com/data/airports/ltw",
+          "name": "Leonardtown St. Mary's County Regional Airport",
+          "icao": ""
+        },
+        {
           "iata": "MDJ",
           "lat": 44.667149,
           "lon": -121.153412,
           "link": "https://www.flightradar24.com/data/airports/mdj",
           "name": "Madras Municipal Airport",
           "icao": ""
+        },
+        {
+          "iata": "MPR",
+          "lat": 38.354927,
+          "lon": -97.689384,
+          "link": "https://www.flightradar24.com/data/airports/mpr",
+          "name": "McPherson Airport",
+          "icao": "KMPR"
         },
         {
           "iata": "NPH",
@@ -392,6 +440,14 @@
           "link": "https://www.flightradar24.com/data/airports/nup",
           "name": "Nunapitchuk Airport",
           "icao": "PPIT"
+        },
+        {
+          "iata": "OLY",
+          "lat": 38.721943,
+          "lon": -88.173737,
+          "link": "https://www.flightradar24.com/data/airports/oly",
+          "name": "Olney Noble Airport",
+          "icao": "KOLY"
         },
         {
           "iata": "OTS",
@@ -522,6 +578,14 @@
           "icao": ""
         },
         {
+          "iata": "TYZ",
+          "lat": 34.455811,
+          "lon": -110.111626,
+          "link": "https://www.flightradar24.com/data/airports/tyz",
+          "name": "Taylor Airport",
+          "icao": "KTYL"
+        },
+        {
           "iata": "WOW",
           "lat": 61.754078,
           "lon": -150.051483,
@@ -547,7 +611,7 @@
         }
       ],
       "removed_airports": [],
-      "added_count": 55,
+      "added_count": 63,
       "removed_count": 0
     },
     "YE": {
