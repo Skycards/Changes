@@ -41,7 +41,10 @@ jobs:
       - name: Fetch ${{ inputs.data_name }} data
         run: |
           echo "Fetching ${{ inputs.data_name }} from ${{ inputs.api_url }}?updatedAt=${{ steps.timestamp.outputs.timestamp }}"
-          curl -s "${{ inputs.api_url }}?updatedAt=${{ steps.timestamp.outputs.timestamp }}" | jq '.' > ${{ inputs.output_file }}
+          curl -s \
+            -H "User-Agent: GitHub-Actions/1.0" \
+            -H "X-Client-Version: 3.0.0" \
+            "${{ inputs.api_url }}?updatedAt=${{ steps.timestamp.outputs.timestamp }}" | jq '.' > ${{ inputs.output_file }}
 
       - name: Check for changes in ${{ inputs.output_file }}
         id: changes
