@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1761211137093,
+  "updatedAt": 1764683929015,
   "rows": [
     {
       "id": "A1",
@@ -1941,6 +1941,7 @@
         "C17"
       ],
       "markers": [
+        "E3TF",
         "K35R"
       ],
       "inSeasons": [
@@ -3777,9 +3778,9 @@
       "engNum": 2,
       "engType": "T",
       "wtc": "L",
-      "rareness": 1400,
+      "rareness": 1602,
       "num": 1,
-      "xp": 8000,
+      "xp": 9010,
       "firstFlight": 1992,
       "wingspan": 13.2,
       "length": 15.9,
@@ -3790,6 +3791,7 @@
       "range": 340,
       "maxSpeed": 156,
       "cardCategory": "ultra",
+      "ftea": 0.00019927166292287797,
       "images": [
         "EC45"
       ],
@@ -3797,7 +3799,8 @@
         "EC45"
       ],
       "inSeasons": [
-        0
+        0,
+        1
       ],
       "military": true
     },
@@ -5284,6 +5287,7 @@
         "BE58"
       ],
       "markers": [
+        "P38",
         "DHC6",
         "PA34"
       ],
@@ -6944,9 +6948,9 @@
       "engNum": 1,
       "engType": "P",
       "wtc": "L",
-      "rareness": 1400,
+      "rareness": 1352,
       "num": 1,
-      "xp": 8000,
+      "xp": 7758,
       "firstFlight": 1945,
       "wingspan": 11,
       "length": 6.93,
@@ -6957,6 +6961,7 @@
       "range": 280,
       "maxSpeed": 85,
       "cardCategory": "ultra",
+      "ftea": 0.002437660245501781,
       "images": [
         "ACAR"
       ],
@@ -6964,7 +6969,8 @@
         "P28A"
       ],
       "inSeasons": [
-        0
+        0,
+        1
       ]
     },
     {
@@ -13494,7 +13500,7 @@
     {
       "id": "C152",
       "manufacturer": "CESSNA",
-      "name": "152 Aerobat",
+      "name": "152",
       "manufacturers": [
         "AVIONES COLOMBIA 152",
         "CESSNA 152",
@@ -13502,7 +13508,7 @@
         "REIMS F152",
         "REIMS FA152 Aerobat"
       ],
-      "description": "The Cessna 152 Aerobat is a two-seat, tricycle gear aircraft designed for flight training and light aerobatics, known for its durability and ease of handling.",
+      "description": "The Cessna 152 is a two-seat, single-engine aircraft primarily used for flight training and personal flying. Known for its reliability and ease of handling, it remains popular among aviation schools.",
       "landingGear": "Tricycle",
       "wingPos": "High wing",
       "wingShape": "Tapered outer",
@@ -16262,6 +16268,7 @@
         "C172"
       ],
       "markers": [
+        "G2T1",
         "P28A"
       ],
       "inSeasons": [
@@ -16718,9 +16725,9 @@
       "engNum": 1,
       "engType": "P",
       "wtc": "L",
-      "rareness": 1400,
+      "rareness": 1657,
       "num": 1,
-      "xp": 8000,
+      "xp": 9287,
       "firstFlight": 1916,
       "wingspan": 8.53,
       "length": 5.72,
@@ -16731,6 +16738,7 @@
       "range": 260,
       "maxSpeed": 98,
       "cardCategory": "ultra",
+      "ftea": 0.0001146960724252944,
       "images": [
         "ST75"
       ],
@@ -16738,7 +16746,8 @@
         "P28A"
       ],
       "inSeasons": [
-        0
+        0,
+        1
       ],
       "military": true
     },
@@ -17123,6 +17132,46 @@
       ],
       "inSeasons": [
         0,
+        1
+      ]
+    },
+    {
+      "id": "CH10",
+      "manufacturer": "ZENAIR",
+      "name": "CH-100 Mono-Z",
+      "manufacturers": [
+        "ZENAIR CH-100 Mono-Z",
+        "ZENAIR CH-100 Mono-Zenith",
+        "ZENAIR CH-100 Mono-Zénith"
+      ],
+      "description": "The ZENAIR CH-100 Mono-Z is a light, single-seat aircraft designed for amateur construction. Known for its simplicity and ease of assembly, it played a role in popularizing homebuilt aviation.",
+      "landingGear": "Tricycle",
+      "wingPos": "Low wing",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1438,
+      "num": 0,
+      "xp": 8188,
+      "firstFlight": 1975,
+      "wingspan": 6.71,
+      "length": 5.94,
+      "height": 2,
+      "ceiling": 12000,
+      "mtow": 440,
+      "seats": 1,
+      "range": 350,
+      "maxSpeed": 109,
+      "cardCategory": "ultra",
+      "ftea": 0.0010320944796133687,
+      "images": [
+        "P28A"
+      ],
+      "markers": [
+        "P28A"
+      ],
+      "inSeasons": [
         1
       ]
     },
@@ -17852,6 +17901,9 @@
       "images": [
         "PA18"
       ],
+      "markers": [
+        "P28A"
+      ],
       "inSeasons": [
         1
       ]
@@ -18243,6 +18295,39 @@
       ],
       "inSeasons": [
         0,
+        1
+      ]
+    },
+    {
+      "id": "CLA",
+      "manufacturer": "CALLAIR",
+      "name": "A-2",
+      "manufacturers": [
+        "CALLAIR A-2",
+        "CALLAIR A-3",
+        "CALLAIR A-4"
+      ],
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1734,
+      "num": 0,
+      "xp": 9671,
+      "firstFlight": 1940,
+      "wingspan": 10.9,
+      "length": 7.1,
+      "height": 2.1,
+      "maxSpeed": 97,
+      "cardCategory": "ultra",
+      "ftea": 0.00005315045492705285,
+      "images": [
+        "C172"
+      ],
+      "markers": [
+        "P28A"
+      ],
+      "inSeasons": [
         1
       ]
     },
@@ -22571,6 +22656,7 @@
         "BE58"
       ],
       "markers": [
+        "BN2P",
         "DHC6",
         "PA34"
       ],
@@ -24612,6 +24698,7 @@
         0,
         1
       ],
+      "imageOverride": "PC21",
       "military": true
     },
     {
@@ -24861,7 +24948,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "imageOverride": "E145"
     },
     {
       "id": "E500",
@@ -27892,6 +27980,7 @@
         "B738"
       ],
       "markers": [
+        "TRIM",
         "B738"
       ],
       "inSeasons": [
@@ -28724,6 +28813,7 @@
         "FDCT"
       ],
       "markers": [
+        "PC12",
         "P28A"
       ],
       "inSeasons": [
@@ -31607,14 +31697,14 @@
     },
     {
       "id": "GLAS",
-      "manufacturer": "GLASAIR",
+      "manufacturer": "STODDARD-HAMILTON",
       "name": "Glasair",
       "manufacturers": [
         "GLASAIR Glasair",
         "NEW GLASAIR Glasair",
         "STODDARD-HAMILTON Glasair"
       ],
-      "description": "The GLASAIR Glasair is a kit-built aircraft known for its high performance and customizable features, popular among aviation enthusiasts.",
+      "description": "The Stoddard-Hamilton Glasair is a pioneering kit aircraft known for its composite construction, offering amateur builders a high-performance, customizable platform for personal aviation, marking a significant shift in homebuilt aircraft design.",
       "landingGear": "Tricycle",
       "wingPos": "Low wing",
       "wingShape": "Tapered",
@@ -31626,14 +31716,14 @@
       "num": 390,
       "xp": 4603,
       "firstFlight": 1979,
-      "wingspan": 7.9,
-      "length": 6.5,
-      "height": 2.3,
-      "ceiling": 18000,
-      "mtow": 980,
+      "wingspan": 7.42,
+      "length": 5.94,
+      "height": 1.9,
+      "ceiling": 19000,
+      "mtow": 1000,
       "seats": 2,
-      "range": 1000,
-      "maxSpeed": 252,
+      "range": 1023,
+      "maxSpeed": 230,
       "cardCategory": "rare",
       "ftea": 1.3415550676289034,
       "markers": [
@@ -31963,6 +32053,156 @@
       ]
     },
     {
+      "id": "GLIM",
+      "name": "Motor Glider",
+      "manufacturers": [
+        "AKAFLIEG BERLIN B-13",
+        "AMEAGLE American Eaglet",
+        "AMS-FLIGHT Carat",
+        "AVIASTROITEL AC-5M",
+        "BINDER (2) ASH-25EB",
+        "BINDER (2) EB-28",
+        "BINDER (2) EB-29",
+        "BINDER (2) EB-29D",
+        "BINDER (2) EB-29DE",
+        "BINDER (2) Eta",
+        "COMPOSIT AIRPLANES Viva",
+        "DG FLUGZEUGBAU DG-800",
+        "DG FLUGZEUGBAU DG-1000T",
+        "DG FLUGZEUGBAU LS-10ST",
+        "DG FLUGZEUGBAU LS-8ST",
+        "DG FLUGZEUGBAU DG-1000M",
+        "DG FLUGZEUGBAU DG-1001M",
+        "DG FLUGZEUGBAU DG-1001T",
+        "EIRI PIK-20E",
+        "ETA AIRCRAFT Eta",
+        "GLASER-DIRKS DG-400",
+        "GLASER-DIRKS DG-500M",
+        "GLASER-DIRKS DG-600M",
+        "GLASER-DIRKS DG-800",
+        "GROB G-103C Twin 3SL",
+        "ISSOIRE PIK-20E",
+        "ISSOIRE PIK-30",
+        "JONKER JS-1 Revelation (jet)",
+        "JONKER JS-2 Revenant (jet)",
+        "JONKER JS-2 Revenant (piston)",
+        "JONKER JS-3 Rapture (jet)",
+        "JONKER JS-3 Rapture (electric)",
+        "LAK LAK-17BT",
+        "LAK LAK-17 FES",
+        "LAK LAK-17AT",
+        "LAK LAK-19T",
+        "LAK LAK-20M",
+        "LANGE E-1 Antares 20E",
+        "LANGE E-1 Antares DLR-H2",
+        "M&D FLUGZEUGBAU JS-MD-1 Single (jet)",
+        "M&D FLUGZEUGBAU JS-MD-2 Single (jet)",
+        "M&D FLUGZEUGBAU JS-MD-2 Single (piston)",
+        "M&D FLUGZEUGBAU JS-MD-3 Single (jet)",
+        "M&D FLUGZEUGBAU JS-MD-3 Single (electric)",
+        "PIK PIK-20E",
+        "PIPISTREL Taurus Electro G2",
+        "PIPISTREL Taurus 503",
+        "PIPISTREL Taurus Electro",
+        "ROLLADEN-SCHNEIDER LS-8T",
+        "ROLLADEN-SCHNEIDER LS-9",
+        "RUTAN 77 Solitaire",
+        "SCHEIBE SF-27M",
+        "SCHEMPP-HIRTH Duo Discus T",
+        "SCHEMPP-HIRTH Discus 2T",
+        "SCHEMPP-HIRTH Discus 2CT",
+        "SCHEMPP-HIRTH Nimbus 4DLM",
+        "SCHEMPP-HIRTH Nimbus 4DLT",
+        "SCHEMPP-HIRTH Arcus T",
+        "SCHEMPP-HIRTH Arcus M",
+        "SCHEMPP-HIRTH Arcus E",
+        "SCHEMPP-HIRTH Duo Discus XT",
+        "SCHEMPP-HIRTH Duo Discus XLT",
+        "SCHEMPP-HIRTH Quintus",
+        "SCHEMPP-HIRTH Ventus bT",
+        "SCHEMPP-HIRTH Ventus cM",
+        "SCHEMPP-HIRTH Ventus cT",
+        "SCHEMPP-HIRTH Ventus 2cM",
+        "SCHEMPP-HIRTH Ventus 2cT",
+        "SCHEMPP-HIRTH Ventus 2cxM",
+        "SCHEMPP-HIRTH Ventus 2cxT",
+        "SCHEMPP-HIRTH Ventus 3M",
+        "SCHEMPP-HIRTH Ventus 3T",
+        "SCHEMPP-HIRTH Ventus 3F",
+        "SCHEMPP-HIRTH Discus BM",
+        "SCHEMPP-HIRTH Discus BT",
+        "SCHEMPP-HIRTH Janus BM",
+        "SCHEMPP-HIRTH Janus CM",
+        "SCHEMPP-HIRTH Janus CT",
+        "SCHEMPP-HIRTH Nimbus 2M",
+        "SCHEMPP-HIRTH Nimbus 3DM",
+        "SCHEMPP-HIRTH Nimbus 3DT",
+        "SCHEMPP-HIRTH Nimbus 3T",
+        "SCHEMPP-HIRTH Nimbus 4DM",
+        "SCHEMPP-HIRTH Nimbus 4DT",
+        "SCHEMPP-HIRTH Nimbus 4M",
+        "SCHEMPP-HIRTH Nimbus 4T",
+        "SCHLEICHER ASH-25E",
+        "SCHLEICHER ASH-25M",
+        "SCHLEICHER ASH-25Mi",
+        "SCHLEICHER ASH-25SL",
+        "SCHLEICHER ASH-26E",
+        "SCHLEICHER ASK-21Mi",
+        "SCHLEICHER ASW-20TOP",
+        "SCHLEICHER ASW-22BE",
+        "SCHLEICHER ASW-22BLE",
+        "SCHLEICHER ASW-22M",
+        "SCHLEICHER ASW-24E",
+        "SCHLEICHER ASW-24TOP",
+        "SCHLEICHER ASW-28E",
+        "SCHLEICHER ASG-32EL",
+        "SCHLEICHER ASG-32Mi",
+        "SCHLEICHER ASG-29Es",
+        "SCHLEICHER AS-34Me",
+        "SCHLEICHER AS-33Es",
+        "SCHLEICHER AS-33Me",
+        "SCHLEICHER ASG-29E",
+        "SCHLEICHER ASH-31Mi",
+        "SCHLEICHER ASW-27-18E",
+        "SCHLEICHER ASH-30Mi",
+        "SCHLEICHER ASW-20J",
+        "SPORTINE AVIACIJA LAK-17AT",
+        "SPORTINE AVIACIJA LAK-19T",
+        "SPORTINE AVIACIJA LAK-20M",
+        "SPORTINE AVIACIJA LAK-17BT",
+        "SPORTINE AVIACIJA LAK-17 FES",
+        "STEMME S-10",
+        "STEMME S-10 Chrysalis",
+        "STEMME S-12 Twin Voyager",
+        "STROJNIK S-2",
+        "TECHNOFLUG TFK-2 Carat",
+        "TEST TST-14 Bonus",
+        "TWI Kiwi",
+        "VALENTIN Kiwi"
+      ],
+      "description": "A motor glider combines features of a glider and a powered aircraft, allowing for extended flight without thermal currents. It offers versatility in training, recreational flying, and cross-country soaring.",
+      "wingShape": "Sailplane",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 818,
+      "xp": 5092,
+      "firstFlight": 1929,
+      "cardCategory": "ultra",
+      "ftea": 0.5047914255893631,
+      "images": [
+        "SF25"
+      ],
+      "markers": [
+        "SF25"
+      ],
+      "inSeasons": [
+        0,
+        1
+      ]
+    },
+    {
       "id": "GLSP",
       "manufacturer": "NEW GLASTAR",
       "name": "Sportsman 2+2",
@@ -32006,7 +32246,7 @@
     },
     {
       "id": "GLST",
-      "manufacturer": "GLASAIR",
+      "manufacturer": "STODDARD-HAMILTON",
       "name": "GlaStar",
       "manufacturers": [
         "GLASAIR GlaStar",
@@ -32014,7 +32254,7 @@
         "NEW GLASTAR GlaStar",
         "STODDARD-HAMILTON SH-4 GlaStar"
       ],
-      "description": "The GLASAIR GlaStar is a versatile, two-seat, high-wing aircraft known for its excellent performance and handling characteristics, suitable for both recreational flying and light sport aviation.",
+      "description": "The Stoddard-Hamilton GlaStar is a versatile kit aircraft designed for both amateur builders and pilots. Known for its adaptability, it can operate from various terrains, including grass strips and water.",
       "landingGear": "Tricycle",
       "wingPos": "High wing",
       "wingShape": "Rectangular",
@@ -32047,14 +32287,14 @@
     {
       "id": "GLTU",
       "manufacturer": "STODDARD-HAMILTON",
-      "name": "Turbine Glasair III",
+      "name": "Glasair III Turbine",
       "manufacturers": [
         "STODDARD-HAMILTON Turbine Glasair"
       ],
-      "description": "The Stoddard-Hamilton Turbine Glasair III is a high-performance kit aircraft, notable for its turbine engine adaptation. It offers builders a unique blend of speed and advanced aerodynamics.",
+      "description": "The Stoddard-Hamilton Glasair III Turbine is a high-performance kit aircraft known for its sleek design and turbine engine, offering builders a unique blend of speed and advanced aerodynamics.",
       "landingGear": "Tricycle",
       "wingPos": "Low wing",
-      "wingShape": "Tapered rear",
+      "wingShape": "Tapered",
       "type": "L",
       "engNum": 1,
       "engType": "T",
@@ -32074,9 +32314,11 @@
       "cardCategory": "ultra",
       "ftea": 0.0002836209996404171,
       "images": [
+        "GLAS",
         "M20P"
       ],
       "markers": [
+        "DA40",
         "C210",
         "PA24"
       ],
@@ -36014,6 +36256,7 @@
         "DC3"
       ],
       "markers": [
+        "F900",
         "METR",
         "DC3"
       ],
@@ -36181,7 +36424,7 @@
       "manufacturers": [
         "BOEING KC-135E Stratotanker"
       ],
-      "description": "The BOEING KC-135E Stratotanker is a military aerial refueling aircraft developed from the Boeing 707 airliner, primarily used by the United States Air Force.",
+      "description": "The Boeing KC-135E Stratotanker is a military aerial refueling aircraft, pivotal in extending the range of combat and transport planes. It played a crucial role during the Cold War era.",
       "landingGear": "Tricycle",
       "wingPos": "Low wing",
       "wingShape": "Swept back",
@@ -36568,6 +36811,7 @@
         "C172"
       ],
       "markers": [
+        "TEAL",
         "P28A"
       ],
       "inSeasons": [
@@ -37023,6 +37267,7 @@
         "BE58"
       ],
       "markers": [
+        "P180",
         "DHC6",
         "PA34"
       ],
@@ -37761,6 +38006,7 @@
         "C46"
       ],
       "markers": [
+        "L14",
         "P38",
         "SF34"
       ],
@@ -42439,6 +42685,7 @@
         "H53S"
       ],
       "markers": [
+        "A189",
         "H53S"
       ],
       "inSeasons": [
@@ -42933,6 +43180,7 @@
         "DC3T"
       ],
       "markers": [
+        "L14",
         "P38",
         "AT76"
       ],
@@ -45663,6 +45911,7 @@
       "inSeasons": [
         0
       ],
+      "imageOverride": "P63",
       "military": true
     },
     {
@@ -45775,13 +46024,14 @@
       "mtow": 7940,
       "seats": 1,
       "range": 900,
-      "maxSpeed": 426,
+      "maxSpeed": 370,
       "cardCategory": "ultra",
       "ftea": 0.000730982207697894,
       "images": [
         "CORS"
       ],
       "markers": [
+        "AT8T",
         "TBM"
       ],
       "inSeasons": [
@@ -45833,6 +46083,43 @@
       "military": true
     },
     {
+      "id": "P50",
+      "manufacturer": "POTTIER",
+      "name": "P-50",
+      "manufacturers": [
+        "POTTIER P-50 Bouvreuil"
+      ],
+      "landingGear": "Tricycle",
+      "wingPos": "Low wing",
+      "wingShape": "Tapered",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1523,
+      "num": 0,
+      "xp": 8615,
+      "firstFlight": 1979,
+      "wingspan": 6.2,
+      "length": 5.65,
+      "mtow": 400,
+      "seats": 1,
+      "maxSpeed": 170,
+      "cardCategory": "ultra",
+      "ftea": 0.00043983844984457604,
+      "images": [
+        "SR22",
+        "P28A"
+      ],
+      "markers": [
+        "DA40",
+        "P28A"
+      ],
+      "inSeasons": [
+        1
+      ]
+    },
+    {
       "id": "P51",
       "manufacturer": "NORTH AMERICAN",
       "name": "P-51 Mustang",
@@ -45881,7 +46168,7 @@
     {
       "id": "P63",
       "manufacturer": "BELL",
-      "name": "Kingcobra",
+      "name": "P-63 Kingcobra",
       "manufacturers": [
         "BELL P-63 Kingcobra"
       ],
@@ -45916,6 +46203,7 @@
         0,
         1
       ],
+      "imageOverride": "P40",
       "military": true
     },
     {
@@ -49161,6 +49449,7 @@
         "C172"
       ],
       "markers": [
+        "AA5",
         "P28A"
       ],
       "inSeasons": [
@@ -49880,9 +50169,9 @@
       "engNum": 1,
       "engType": "P",
       "wtc": "L",
-      "rareness": 1400,
+      "rareness": 1561,
       "num": 1,
-      "xp": 8000,
+      "xp": 8805,
       "wingspan": 9.2,
       "length": 5.9,
       "height": 1.7,
@@ -49891,6 +50180,7 @@
       "range": 432,
       "maxSpeed": 124,
       "cardCategory": "ultra",
+      "ftea": 0.0003008077507771198,
       "images": [
         "U15"
       ],
@@ -49898,7 +50188,8 @@
         "P28A"
       ],
       "inSeasons": [
-        0
+        0,
+        1
       ]
     },
     {
@@ -51209,6 +51500,7 @@
         "C172"
       ],
       "markers": [
+        "SF25",
         "P28A"
       ],
       "inSeasons": [
@@ -53282,6 +53574,7 @@
         "SF50"
       ],
       "markers": [
+        "PC21",
         "P28A"
       ],
       "inSeasons": [
@@ -54427,6 +54720,7 @@
         "FA62"
       ],
       "markers": [
+        "T6",
         "GC1"
       ],
       "inSeasons": [
@@ -54991,6 +55285,7 @@
         "SF25"
       ],
       "markers": [
+        "SF25",
         "P28A"
       ],
       "inSeasons": [
@@ -55284,9 +55579,9 @@
       "engNum": 4,
       "engType": "T",
       "wtc": "M",
-      "rareness": 1400,
+      "rareness": 1504,
       "num": 1,
-      "xp": 8000,
+      "xp": 8518,
       "firstFlight": 1965,
       "wingspan": 47.6,
       "length": 43.8,
@@ -55297,6 +55592,7 @@
       "range": 1734,
       "maxSpeed": 250,
       "cardCategory": "ultra",
+      "ftea": 0.0005334898917704718,
       "images": [
         "P3"
       ],
@@ -55304,7 +55600,8 @@
         "P3"
       ],
       "inSeasons": [
-        0
+        0,
+        1
       ]
     },
     {
@@ -55342,6 +55639,7 @@
         "R44"
       ],
       "markers": [
+        "EC55",
         "AS50",
         "R44"
       ],
@@ -59025,7 +59323,7 @@
         0,
         1
       ],
-      "imageOverride": "SPIT"
+      "imageOverride": "P51"
     },
     {
       "id": "T6",
@@ -59146,6 +59444,7 @@
         "C172"
       ],
       "markers": [
+        "VENT",
         "P28A"
       ],
       "inSeasons": [
@@ -61187,6 +61486,7 @@
         0,
         1
       ],
+      "imageOverride": "TEX2",
       "military": true
     },
     {
@@ -61588,6 +61888,7 @@
         "BE35"
       ],
       "markers": [
+        "BT36",
         "P28A"
       ],
       "inSeasons": [
@@ -62122,6 +62423,49 @@
         1
       ],
       "military": true
+    },
+    {
+      "id": "UT75",
+      "manufacturer": "UTVA",
+      "name": "75",
+      "manufacturers": [
+        "SAFAT 03",
+        "UTVA 75",
+        "UTVA V-53"
+      ],
+      "description": "The UTVA 75 is a Yugoslavian light aircraft designed for training and utility roles. Known for its robust construction, it served in both military and civilian capacities, emphasizing versatility and reliability.",
+      "landingGear": "Tricycle",
+      "wingPos": "Low wing",
+      "wingShape": "Rectangular",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1547,
+      "num": 0,
+      "xp": 8736,
+      "firstFlight": 1976,
+      "wingspan": 9.73,
+      "length": 7.11,
+      "height": 3.1,
+      "ceiling": 13708,
+      "mtow": 960,
+      "seats": 2,
+      "range": 430,
+      "maxSpeed": 116,
+      "cardCategory": "ultra",
+      "ftea": 0.0003451659746329953,
+      "images": [
+        "AA5",
+        "P28A"
+      ],
+      "markers": [
+        "AA5",
+        "P28A"
+      ],
+      "inSeasons": [
+        1
+      ]
     },
     {
       "id": "V10",
@@ -64257,6 +64601,7 @@
         "RV7"
       ],
       "markers": [
+        "T6",
         "P28A"
       ],
       "inSeasons": [
@@ -65105,6 +65450,7 @@
         "T6"
       ],
       "markers": [
+        "T6",
         "P28A"
       ],
       "inSeasons": [
