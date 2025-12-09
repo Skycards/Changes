@@ -1,7 +1,7 @@
 {
   "summary": {
-    "total_countries_with_differences": 6,
-    "total_added_airports": 11,
+    "total_countries_with_differences": 7,
+    "total_added_airports": 14,
     "total_removed_airports": 4
   },
   "countries": {
@@ -192,6 +192,42 @@
       ],
       "added_count": 0,
       "removed_count": 1
+    },
+    "VE": {
+      "country_name": "Venezuela",
+      "iso_code": "VE",
+      "fr24_count": 28,
+      "skycards_count": 25,
+      "difference": 3,
+      "added_airports": [
+        {
+          "iata": "AGV",
+          "lat": 9.553295,
+          "lon": -69.237045,
+          "link": "https://www.flightradar24.com/data/airports/agv",
+          "name": "Acarigua Oswaldo Guevara Mujica Airport",
+          "icao": "SVAC"
+        },
+        {
+          "iata": "SFD",
+          "lat": 7.883285,
+          "lon": -67.443939,
+          "link": "https://www.flightradar24.com/data/airports/sfd",
+          "name": "San Fernando de Apu Las Flecheras Airport",
+          "icao": "SVSR"
+        },
+        {
+          "iata": "SNV",
+          "lat": 4.553615,
+          "lon": -61.140026,
+          "link": "https://www.flightradar24.com/data/airports/snv",
+          "name": "Santa Elena Airport",
+          "icao": "SVSE"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 3,
+      "removed_count": 0
     }
   }
 }
