@@ -1,10 +1,122 @@
 {
   "summary": {
-    "total_countries_with_differences": 4,
-    "total_added_airports": 0,
+    "total_countries_with_differences": 6,
+    "total_added_airports": 11,
     "total_removed_airports": 4
   },
   "countries": {
+    "AQ": {
+      "country_name": "Antarctica",
+      "iso_code": "AQ",
+      "fr24_count": 16,
+      "skycards_count": 15,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "QXX",
+          "lat": -83.402,
+          "lon": 19.686001,
+          "link": "https://www.flightradar24.com/data/airports/qxx",
+          "name": "Dixi Camp Airport",
+          "icao": ""
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
+      "removed_count": 0
+    },
+    "BR": {
+      "country_name": "Brazil",
+      "iso_code": "BR",
+      "fr24_count": 253,
+      "skycards_count": 243,
+      "difference": 10,
+      "added_airports": [
+        {
+          "iata": "AXE",
+          "lat": -26.875586,
+          "lon": -52.372814,
+          "link": "https://www.flightradar24.com/data/airports/axe",
+          "name": "Xanxere Joao Winckler Airport",
+          "icao": "SSXX"
+        },
+        {
+          "iata": "CCI",
+          "lat": -27.179777,
+          "lon": -52.052795,
+          "link": "https://www.flightradar24.com/data/airports/cci",
+          "name": "Concordia Olavo Cecco Rigon Airport",
+          "icao": "SSCK"
+        },
+        {
+          "iata": "CFC",
+          "lat": -26.790939,
+          "lon": -50.940323,
+          "link": "https://www.flightradar24.com/data/airports/cfc",
+          "name": "Cacador",
+          "icao": "SBCD"
+        },
+        {
+          "iata": "GJM",
+          "lat": -10.789435,
+          "lon": -65.284134,
+          "link": "https://www.flightradar24.com/data/airports/gjm",
+          "name": "Guajara-Mirim Airport",
+          "icao": "SBGM"
+        },
+        {
+          "iata": "JCB",
+          "lat": -27.171331,
+          "lon": -51.553482,
+          "link": "https://www.flightradar24.com/data/airports/jcb",
+          "name": "Joacaba Santa Terezinha Airport",
+          "icao": "SSJA"
+        },
+        {
+          "iata": "JEQ",
+          "lat": -13.878262,
+          "lon": -40.070679,
+          "link": "https://www.flightradar24.com/data/airports/jeq",
+          "name": "Jequie Airport",
+          "icao": "SNJK"
+        },
+        {
+          "iata": "LOI",
+          "lat": -27.159801,
+          "lon": -49.541912,
+          "link": "https://www.flightradar24.com/data/airports/loi",
+          "name": "Lontras Helmuth Baungartem Airport",
+          "icao": "SSLN"
+        },
+        {
+          "iata": "PVI",
+          "lat": -23.089958,
+          "lon": -52.488628,
+          "link": "https://www.flightradar24.com/data/airports/pvi",
+          "name": "Paranavai Airport",
+          "icao": "SSPI"
+        },
+        {
+          "iata": "SQX",
+          "lat": -26.780989,
+          "lon": -53.503738,
+          "link": "https://www.flightradar24.com/data/airports/sqx",
+          "name": "Sao Miguel do Oeste Helio Wasum Airport",
+          "icao": "SSOE"
+        },
+        {
+          "iata": "TSQ",
+          "lat": -29.412291,
+          "lon": -49.807484,
+          "link": "https://www.flightradar24.com/data/airports/tsq",
+          "name": "Torres Airport",
+          "icao": "SSTE"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 10,
+      "removed_count": 0
+    },
     "CA": {
       "country_name": "Canada",
       "iso_code": "CA",
