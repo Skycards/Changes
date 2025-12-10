@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 11,
-    "total_added_airports": 16,
+    "total_added_airports": 18,
     "total_removed_airports": 4
   },
   "countries": {
@@ -285,9 +285,26 @@
       "fr24_count": 39,
       "skycards_count": 37,
       "difference": 2,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "iata": "ROD",
+          "lat": -33.811806,
+          "lon": 19.9034,
+          "link": "https://www.flightradar24.com/data/airports/rod",
+          "name": "Robertson Airport",
+          "icao": "FARS"
+        },
+        {
+          "iata": "VRU",
+          "lat": -26.982401,
+          "lon": 24.72875,
+          "link": "https://www.flightradar24.com/data/airports/vru",
+          "name": "Vryburg Airport",
+          "icao": "FAVB"
+        }
+      ],
       "removed_airports": [],
-      "added_count": 0,
+      "added_count": 2,
       "removed_count": 0
     }
   }
