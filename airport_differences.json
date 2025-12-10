@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 11,
-    "total_added_airports": 26,
+    "total_added_airports": 33,
     "total_removed_airports": 4
   },
   "countries": {
@@ -85,6 +85,14 @@
       "difference": 17,
       "added_airports": [
         {
+          "iata": "ALT",
+          "lat": -1.917034,
+          "lon": -54.723213,
+          "link": "https://www.flightradar24.com/data/airports/alt",
+          "name": "Alenquer Airport",
+          "icao": "SDWQ"
+        },
+        {
           "iata": "AXE",
           "lat": -26.875586,
           "lon": -52.372814,
@@ -109,12 +117,36 @@
           "icao": "SBCD"
         },
         {
+          "iata": "CMC",
+          "lat": -2.897187,
+          "lon": -40.855984,
+          "link": "https://www.flightradar24.com/data/airports/cmc",
+          "name": "Camocim Airport",
+          "icao": "SNWC"
+        },
+        {
+          "iata": "CQA",
+          "lat": -13.57313,
+          "lon": -52.269463,
+          "link": "https://www.flightradar24.com/data/airports/cqa",
+          "name": "Canarana Airport",
+          "icao": "SWEK"
+        },
+        {
           "iata": "GJM",
           "lat": -10.789435,
           "lon": -65.284134,
           "link": "https://www.flightradar24.com/data/airports/gjm",
           "name": "Guajara-Mirim Airport",
           "icao": "SBGM"
+        },
+        {
+          "iata": "ITE",
+          "lat": -13.731836,
+          "lon": -39.141281,
+          "link": "https://www.flightradar24.com/data/airports/ite",
+          "name": "Itubera Airport",
+          "icao": "SNZW"
         },
         {
           "iata": "JCB",
@@ -141,12 +173,36 @@
           "icao": "SSLN"
         },
         {
+          "iata": "PCS",
+          "lat": -7.063593,
+          "lon": -41.521683,
+          "link": "https://www.flightradar24.com/data/airports/pcs",
+          "name": "Picos Airport",
+          "icao": "SNPC"
+        },
+        {
           "iata": "PVI",
           "lat": -23.089958,
           "lon": -52.488628,
           "link": "https://www.flightradar24.com/data/airports/pvi",
           "name": "Paranavai Airport",
           "icao": "SSPI"
+        },
+        {
+          "iata": "SFK",
+          "lat": -0.699174,
+          "lon": -48.520851,
+          "link": "https://www.flightradar24.com/data/airports/sfk",
+          "name": "Soure Airport",
+          "icao": "SNSW"
+        },
+        {
+          "iata": "SQM",
+          "lat": -13.331634,
+          "lon": -50.199917,
+          "link": "https://www.flightradar24.com/data/airports/sqm",
+          "name": "Sao Miguel do Araguaia Airport",
+          "icao": "SWUA"
         },
         {
           "iata": "SQX",
@@ -166,7 +222,7 @@
         }
       ],
       "removed_airports": [],
-      "added_count": 10,
+      "added_count": 17,
       "removed_count": 0
     },
     "CA": {
