@@ -1,7 +1,7 @@
 {
   "summary": {
-    "total_countries_with_differences": 7,
-    "total_added_airports": 14,
+    "total_countries_with_differences": 11,
+    "total_added_airports": 16,
     "total_removed_airports": 4
   },
   "countries": {
@@ -25,12 +25,23 @@
       "added_count": 1,
       "removed_count": 0
     },
+    "AR": {
+      "country_name": "Argentina",
+      "iso_code": "AR",
+      "fr24_count": 55,
+      "skycards_count": 50,
+      "difference": 5,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
+      "removed_count": 0
+    },
     "BR": {
       "country_name": "Brazil",
       "iso_code": "BR",
-      "fr24_count": 253,
+      "fr24_count": 260,
       "skycards_count": 243,
-      "difference": 10,
+      "difference": 17,
       "added_airports": [
         {
           "iata": "AXE",
@@ -193,6 +204,45 @@
       "added_count": 0,
       "removed_count": 1
     },
+    "PY": {
+      "country_name": "Paraguay",
+      "iso_code": "PY",
+      "fr24_count": 7,
+      "skycards_count": 4,
+      "difference": 3,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
+      "removed_count": 0
+    },
+    "TN": {
+      "country_name": "Tunisia",
+      "iso_code": "TN",
+      "fr24_count": 10,
+      "skycards_count": 8,
+      "difference": 2,
+      "added_airports": [
+        {
+          "iata": "EBM",
+          "lat": 31.702822,
+          "lon": 9.25758,
+          "link": "https://www.flightradar24.com/data/airports/ebm",
+          "name": "El Borma Airport",
+          "icao": "DTTR"
+        },
+        {
+          "iata": "GAF",
+          "lat": 34.422977,
+          "lon": 8.823748,
+          "link": "https://www.flightradar24.com/data/airports/gaf",
+          "name": "Gafsa Ksar International",
+          "icao": "DTTF"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 2,
+      "removed_count": 0
+    },
     "VE": {
       "country_name": "Venezuela",
       "iso_code": "VE",
@@ -227,6 +277,17 @@
       ],
       "removed_airports": [],
       "added_count": 3,
+      "removed_count": 0
+    },
+    "ZA": {
+      "country_name": "South Africa",
+      "iso_code": "ZA",
+      "fr24_count": 39,
+      "skycards_count": 37,
+      "difference": 2,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
       "removed_count": 0
     }
   }
