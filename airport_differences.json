@@ -1,7 +1,7 @@
 {
   "summary": {
-    "total_countries_with_differences": 11,
-    "total_added_airports": 33,
+    "total_countries_with_differences": 14,
+    "total_added_airports": 43,
     "total_removed_airports": 4
   },
   "countries": {
@@ -282,6 +282,46 @@
       "added_count": 0,
       "removed_count": 1
     },
+    "MN": {
+      "country_name": "Mongolia",
+      "iso_code": "MN",
+      "fr24_count": 10,
+      "skycards_count": 9,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "BYN",
+          "lat": 46.099998,
+          "lon": 100.683334,
+          "link": "https://www.flightradar24.com/data/airports/byn",
+          "name": "Bayankhongor Airport",
+          "icao": "ZMBH"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
+      "removed_count": 0
+    },
+    "NA": {
+      "country_name": "Namibia",
+      "iso_code": "NA",
+      "fr24_count": 12,
+      "skycards_count": 11,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "GOG",
+          "lat": -22.505907,
+          "lon": 18.971233,
+          "link": "https://www.flightradar24.com/data/airports/gog",
+          "name": "Gobabis Airport",
+          "icao": "FYGB"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
+      "removed_count": 0
+    },
     "PL": {
       "country_name": "Poland",
       "iso_code": "PL",
@@ -335,6 +375,82 @@
       ],
       "removed_airports": [],
       "added_count": 3,
+      "removed_count": 0
+    },
+    "RU": {
+      "country_name": "Russia",
+      "iso_code": "RU",
+      "fr24_count": 185,
+      "skycards_count": 177,
+      "difference": 8,
+      "added_airports": [
+        {
+          "iata": "AEM",
+          "lat": 45.841248,
+          "lon": 137.673462,
+          "link": "https://www.flightradar24.com/data/airports/aem",
+          "name": "Amgu Airport",
+          "icao": "UHTG"
+        },
+        {
+          "iata": "BQG",
+          "lat": 52.379723,
+          "lon": 140.448669,
+          "link": "https://www.flightradar24.com/data/airports/bqg",
+          "name": "Bogorodskoye Airport",
+          "icao": "UHNB"
+        },
+        {
+          "iata": "CSH",
+          "lat": 65.029732,
+          "lon": 35.732262,
+          "link": "https://www.flightradar24.com/data/airports/csh",
+          "name": "Solovetsky Airport",
+          "icao": "ULAS"
+        },
+        {
+          "iata": "DHG",
+          "lat": 44.558117,
+          "lon": 135.490814,
+          "link": "https://www.flightradar24.com/data/airports/dhg",
+          "name": "Dalnegorsk Airport",
+          "icao": "UHWG"
+        },
+        {
+          "iata": "ERG",
+          "lat": 61.275002,
+          "lon": 108.029999,
+          "link": "https://www.flightradar24.com/data/airports/erg",
+          "name": "Erbogachen Airport",
+          "icao": "UIKE"
+        },
+        {
+          "iata": "LDG",
+          "lat": 64.894653,
+          "lon": 45.725769,
+          "link": "https://www.flightradar24.com/data/airports/ldg",
+          "name": "Leshukonskoye Airport",
+          "icao": "ULAL"
+        },
+        {
+          "iata": "SUK",
+          "lat": 67.791939,
+          "lon": 130.390823,
+          "link": "https://www.flightradar24.com/data/airports/suk",
+          "name": "Batagay-Alyta Sakkyryr Airport",
+          "icao": "UEBS"
+        },
+        {
+          "iata": "TLY",
+          "lat": 44.815548,
+          "lon": 136.290024,
+          "link": "https://www.flightradar24.com/data/airports/tly",
+          "name": "Plastun Airport",
+          "icao": "UHWP"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 8,
       "removed_count": 0
     },
     "TN": {
