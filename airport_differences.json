@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 11,
-    "total_added_airports": 21,
+    "total_added_airports": 26,
     "total_removed_airports": 4
   },
   "countries": {
@@ -31,9 +31,50 @@
       "fr24_count": 55,
       "skycards_count": 50,
       "difference": 5,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "iata": "CLX",
+          "lat": -25.303446,
+          "lon": -57.733555,
+          "link": "https://www.flightradar24.com/data/airports/clx",
+          "name": "Clorinda Airport",
+          "icao": "SATC"
+        },
+        {
+          "iata": "EHL",
+          "lat": -41.944984,
+          "lon": -71.532501,
+          "link": "https://www.flightradar24.com/data/airports/ehl",
+          "name": "El Bolson Airport",
+          "icao": "SAVB"
+        },
+        {
+          "iata": "GPO",
+          "lat": -35.695972,
+          "lon": -63.758301,
+          "link": "https://www.flightradar24.com/data/airports/gpo",
+          "name": "General Pico Airport",
+          "icao": "SAZG"
+        },
+        {
+          "iata": "JNI",
+          "lat": -34.546375,
+          "lon": -60.93045,
+          "link": "https://www.flightradar24.com/data/airports/jni",
+          "name": "Junin Airport",
+          "icao": "SAAJ"
+        },
+        {
+          "iata": "RZA",
+          "lat": -50.017132,
+          "lon": -68.580086,
+          "link": "https://www.flightradar24.com/data/airports/rza",
+          "name": "Santa Cruz Airport",
+          "icao": "SAWU"
+        }
+      ],
       "removed_airports": [],
-      "added_count": 0,
+      "added_count": 5,
       "removed_count": 0
     },
     "BR": {
