@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 11,
-    "total_added_airports": 18,
+    "total_added_airports": 21,
     "total_removed_airports": 4
   },
   "countries": {
@@ -210,9 +210,34 @@
       "fr24_count": 7,
       "skycards_count": 4,
       "difference": 3,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "iata": "AYO",
+          "lat": -27.371983,
+          "lon": -56.854332,
+          "link": "https://www.flightradar24.com/data/airports/ayo",
+          "name": "Ayolas Juan De Ayolas Airport",
+          "icao": "SGAY"
+        },
+        {
+          "iata": "CIO",
+          "lat": -23.44067,
+          "lon": -57.426762,
+          "link": "https://www.flightradar24.com/data/airports/cio",
+          "name": "Concepcion Teniente Coronel Carmelo Peralta Airport",
+          "icao": "SGCO"
+        },
+        {
+          "iata": "PIL",
+          "lat": -26.882076,
+          "lon": -58.318165,
+          "link": "https://www.flightradar24.com/data/airports/pil",
+          "name": "Pilar Carlos Miguel Jimenez Airport",
+          "icao": "SGPI"
+        }
+      ],
       "removed_airports": [],
-      "added_count": 0,
+      "added_count": 3,
       "removed_count": 0
     },
     "TN": {
