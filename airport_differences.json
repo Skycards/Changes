@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 23,
-    "total_added_airports": 80,
+    "total_added_airports": 82,
     "total_removed_airports": 4
   },
   "countries": {
@@ -13,16 +13,32 @@
       "difference": 3,
       "added_airports": [
         {
-          "iata": "QXX",
-          "lat": -83.402,
-          "lon": 19.686001,
-          "link": "https://www.flightradar24.com/data/airports/qxx",
-          "name": "Dixi Camp Airport",
+          "iata": "QAC",
+          "lat": -75.103302,
+          "lon": 123.358299,
+          "link": "https://www.flightradar24.com/data/airports/qac",
+          "name": "Concordia Skyway",
+          "icao": ""
+        },
+        {
+          "iata": "QAZ",
+          "lat": -74.681099,
+          "lon": 164.127594,
+          "link": "https://www.flightradar24.com/data/airports/qaz",
+          "name": "Zucchelli Ice Runway",
+          "icao": ""
+        },
+        {
+          "iata": "QXI",
+          "lat": -83.400002,
+          "lon": 19.683001,
+          "link": "https://www.flightradar24.com/data/airports/qxi",
+          "name": "Dixie's Camp Airport",
           "icao": ""
         }
       ],
       "removed_airports": [],
-      "added_count": 1,
+      "added_count": 3,
       "removed_count": 0
     },
     "AR": {
