@@ -1,16 +1,16 @@
 {
   "summary": {
-    "total_countries_with_differences": 19,
-    "total_added_airports": 60,
-    "total_removed_airports": 4
+    "total_countries_with_differences": 23,
+    "total_added_airports": 75,
+    "total_removed_airports": 3
   },
   "countries": {
     "AQ": {
       "country_name": "Antarctica",
       "iso_code": "AQ",
-      "fr24_count": 16,
+      "fr24_count": 18,
       "skycards_count": 15,
-      "difference": 1,
+      "difference": 3,
       "added_airports": [
         {
           "iata": "QXX",
@@ -28,9 +28,9 @@
     "AR": {
       "country_name": "Argentina",
       "iso_code": "AR",
-      "fr24_count": 55,
+      "fr24_count": 56,
       "skycards_count": 50,
-      "difference": 5,
+      "difference": 6,
       "added_airports": [
         {
           "iata": "CLX",
@@ -132,9 +132,9 @@
     "BR": {
       "country_name": "Brazil",
       "iso_code": "BR",
-      "fr24_count": 260,
+      "fr24_count": 265,
       "skycards_count": 243,
-      "difference": 17,
+      "difference": 22,
       "added_airports": [
         {
           "iata": "ALT",
@@ -332,9 +332,9 @@
     "CA": {
       "country_name": "Canada",
       "iso_code": "CA",
-      "fr24_count": 328,
+      "fr24_count": 330,
       "skycards_count": 329,
-      "difference": -1,
+      "difference": 1,
       "added_airports": [
         {
           "iata": "YKY",
@@ -404,31 +404,23 @@
       "added_count": 0,
       "removed_count": 1
     },
-    "FR": {
-      "country_name": "France",
-      "iso_code": "FR",
-      "fr24_count": 161,
-      "skycards_count": 162,
-      "difference": -1,
+    "CO": {
+      "country_name": "Colombia",
+      "iso_code": "CO",
+      "fr24_count": 70,
+      "skycards_count": 66,
+      "difference": 4,
       "added_airports": [],
-      "removed_airports": [
-        {
-          "name": "Reims Champagne Air Base",
-          "iata": null,
-          "icao": null,
-          "lat": 49.3102,
-          "lon": 4.050747
-        }
-      ],
+      "removed_airports": [],
       "added_count": 0,
-      "removed_count": 1
+      "removed_count": 0
     },
     "ID": {
       "country_name": "Indonesia",
       "iso_code": "ID",
-      "fr24_count": 145,
+      "fr24_count": 146,
       "skycards_count": 144,
-      "difference": 1,
+      "difference": 2,
       "added_airports": [
         {
           "iata": "APD",
@@ -491,6 +483,58 @@
       "added_count": 1,
       "removed_count": 0
     },
+    "MX": {
+      "country_name": "Mexico",
+      "iso_code": "MX",
+      "fr24_count": 80,
+      "skycards_count": 75,
+      "difference": 5,
+      "added_airports": [
+        {
+          "iata": "ISJ",
+          "lat": 21.247108,
+          "lon": -86.740982,
+          "link": "https://www.flightradar24.com/data/airports/isj",
+          "name": "Isla Mujeres National Airport",
+          "icao": "MMIM"
+        },
+        {
+          "iata": "PCM",
+          "lat": 20.622669,
+          "lon": -87.081963,
+          "link": "https://www.flightradar24.com/data/airports/pcm",
+          "name": "Playa Del Carmen Airport",
+          "icao": "MMPY"
+        },
+        {
+          "iata": "PQM",
+          "lat": 17.53336,
+          "lon": -92.016762,
+          "link": "https://www.flightradar24.com/data/airports/pqm",
+          "name": "Palenque International Airport",
+          "icao": "MMPQ"
+        },
+        {
+          "iata": "TCN",
+          "lat": 18.493364,
+          "lon": -97.417099,
+          "link": "https://www.flightradar24.com/data/airports/tcn",
+          "name": "Tehuacan National Airport",
+          "icao": "MMHC"
+        },
+        {
+          "iata": "ZMM",
+          "lat": 20.04253,
+          "lon": -102.275719,
+          "link": "https://www.flightradar24.com/data/airports/zmm",
+          "name": "Zamora Airport",
+          "icao": "MMZM"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 5,
+      "removed_count": 0
+    },
     "NA": {
       "country_name": "Namibia",
       "iso_code": "NA",
@@ -509,6 +553,17 @@
       ],
       "removed_airports": [],
       "added_count": 1,
+      "removed_count": 0
+    },
+    "PE": {
+      "country_name": "Peru",
+      "iso_code": "PE",
+      "fr24_count": 31,
+      "skycards_count": 30,
+      "difference": 1,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
       "removed_count": 0
     },
     "PL": {
@@ -668,6 +723,110 @@
       ],
       "removed_airports": [],
       "added_count": 2,
+      "removed_count": 0
+    },
+    "TZ": {
+      "country_name": "Tanzania",
+      "iso_code": "TZ",
+      "fr24_count": 23,
+      "skycards_count": 22,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "GIT",
+          "lat": -2.81946,
+          "lon": 32.173588,
+          "link": "https://www.flightradar24.com/data/airports/git",
+          "name": "Geita Airport",
+          "icao": "HTGE"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
+      "removed_count": 0
+    },
+    "US": {
+      "country_name": "United States",
+      "iso_code": "US",
+      "fr24_count": 1679,
+      "skycards_count": 1670,
+      "difference": 9,
+      "added_airports": [
+        {
+          "iata": "AKB",
+          "lat": 52.21701,
+          "lon": -174.204788,
+          "link": "https://www.flightradar24.com/data/airports/akb",
+          "name": "Atka Airport",
+          "icao": "PAAK"
+        },
+        {
+          "iata": "ANN",
+          "lat": 55.037476,
+          "lon": -131.573212,
+          "link": "https://www.flightradar24.com/data/airports/ann",
+          "name": "Annette Island Airport",
+          "icao": "PANT"
+        },
+        {
+          "iata": "ENN",
+          "lat": 64.54718,
+          "lon": -149.081039,
+          "link": "https://www.flightradar24.com/data/airports/enn",
+          "name": "Nenana Municipal Airport",
+          "icao": "PANN"
+        },
+        {
+          "iata": "GKN",
+          "lat": 62.156105,
+          "lon": -145.454849,
+          "link": "https://www.flightradar24.com/data/airports/gkn",
+          "name": "Gulkana Airport",
+          "icao": "PAGK"
+        },
+        {
+          "iata": "IKO",
+          "lat": 52.941536,
+          "lon": -168.851898,
+          "link": "https://www.flightradar24.com/data/airports/iko",
+          "name": "Nikolski Airport",
+          "icao": "PAKO"
+        },
+        {
+          "iata": "KYK",
+          "lat": 57.565479,
+          "lon": -154.452103,
+          "link": "https://www.flightradar24.com/data/airports/kyk",
+          "name": "Karluk Airport",
+          "icao": "PAKY"
+        },
+        {
+          "iata": "MDO",
+          "lat": 59.447777,
+          "lon": -146.308151,
+          "link": "https://www.flightradar24.com/data/airports/mdo",
+          "name": "Middleton Island Airport",
+          "icao": "PAMD"
+        },
+        {
+          "iata": "PAK",
+          "lat": 21.89686,
+          "lon": -159.602951,
+          "link": "https://www.flightradar24.com/data/airports/pak",
+          "name": "Hanapepe Port Allen Airport",
+          "icao": "PHPA"
+        },
+        {
+          "iata": "UPP",
+          "lat": 20.265209,
+          "lon": -155.859634,
+          "link": "https://www.flightradar24.com/data/airports/upp",
+          "name": "Hawi Upolu Airport",
+          "icao": "PHUP"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 9,
       "removed_count": 0
     },
     "VE": {
