@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 23,
-    "total_added_airports": 89,
+    "total_added_airports": 90,
     "total_removed_airports": 4
   },
   "countries": {
@@ -81,6 +81,14 @@
           "icao": "SAAJ"
         },
         {
+          "iata": "PEH",
+          "lat": -35.844498,
+          "lon": -61.857525,
+          "link": "https://www.flightradar24.com/data/airports/peh",
+          "name": "Pehuajo Comodoro Pedro Zanni Airport",
+          "icao": "SAZP"
+        },
+        {
           "iata": "RZA",
           "lat": -50.017132,
           "lon": -68.580086,
@@ -98,7 +106,7 @@
         }
       ],
       "removed_airports": [],
-      "added_count": 6,
+      "added_count": 7,
       "removed_count": 0
     },
     "AU": {
