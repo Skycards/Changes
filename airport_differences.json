@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 19,
-    "total_added_airports": 44,
+    "total_added_airports": 48,
     "total_removed_airports": 4
   },
   "countries": {
@@ -83,9 +83,42 @@
       "fr24_count": 471,
       "skycards_count": 467,
       "difference": 4,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "iata": "GKL",
+          "lat": -23.184168,
+          "lon": 150.940994,
+          "link": "https://www.flightradar24.com/data/airports/gkl",
+          "name": "Great Keppel Island Airport",
+          "icao": "YGKL"
+        },
+        {
+          "iata": "MFP",
+          "lat": -22.099245,
+          "lon": 137.985535,
+          "link": "https://www.flightradar24.com/data/airports/mfp",
+          "name": "Manners Creek Airport",
+          "icao": "YMCR"
+        },
+        {
+          "iata": "MUQ",
+          "lat": -20.658758,
+          "lon": 120.06694,
+          "link": "https://www.flightradar24.com/data/airports/muq",
+          "name": "Muccan Station Airport",
+          "icao": "YMUC"
+        },
+        {
+          "iata": "WEW",
+          "lat": -30.257847,
+          "lon": 149.409042,
+          "link": "https://www.flightradar24.com/data/airports/wew",
+          "name": "Wee Waa Airport",
+          "icao": "YWWA"
+        }
+      ],
       "removed_airports": [],
-      "added_count": 0,
+      "added_count": 4,
       "removed_count": 0
     },
     "BR": {
