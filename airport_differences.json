@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 19,
-    "total_added_airports": 49,
+    "total_added_airports": 50,
     "total_removed_airports": 4
   },
   "countries": {
@@ -305,9 +305,18 @@
       "fr24_count": 21,
       "skycards_count": 20,
       "difference": 1,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "iata": "FDU",
+          "lat": -3.31131,
+          "lon": 17.381445,
+          "link": "https://www.flightradar24.com/data/airports/fdu",
+          "name": "Bandundu Airport",
+          "icao": "FZBO"
+        }
+      ],
       "removed_airports": [],
-      "added_count": 0,
+      "added_count": 1,
       "removed_count": 0
     },
     "CN": {
