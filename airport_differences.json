@@ -1,8 +1,8 @@
 {
   "summary": {
     "total_countries_with_differences": 23,
-    "total_added_airports": 75,
-    "total_removed_airports": 3
+    "total_added_airports": 80,
+    "total_removed_airports": 4
   },
   "countries": {
     "AQ": {
@@ -125,9 +125,17 @@
           "icao": "YWWA"
         }
       ],
-      "removed_airports": [],
+      "removed_airports": [
+        {
+          "name": "Carrapateena Airport",
+          "iata": "QAC",
+          "icao": "YCPT",
+          "lat": -31.308111,
+          "lon": 137.443481
+        }
+      ],
       "added_count": 4,
-      "removed_count": 0
+      "removed_count": 1
     },
     "BR": {
       "country_name": "Brazil",
@@ -410,9 +418,42 @@
       "fr24_count": 70,
       "skycards_count": 66,
       "difference": 4,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "iata": "CRC",
+          "lat": 4.761045,
+          "lon": -75.955734,
+          "link": "https://www.flightradar24.com/data/airports/crc",
+          "name": "Cartago Santa Ana Airport",
+          "icao": "SKGO"
+        },
+        {
+          "iata": "CVE",
+          "lat": 9.400814,
+          "lon": -75.691582,
+          "link": "https://www.flightradar24.com/data/airports/cve",
+          "name": "Covenas Airport",
+          "icao": "SKCV"
+        },
+        {
+          "iata": "GIR",
+          "lat": 4.276165,
+          "lon": -74.79612,
+          "link": "https://www.flightradar24.com/data/airports/gir",
+          "name": "Girardot Santiago Vila Airport",
+          "icao": "SKGI"
+        },
+        {
+          "iata": "PBE",
+          "lat": 6.460575,
+          "lon": -74.410622,
+          "link": "https://www.flightradar24.com/data/airports/pbe",
+          "name": "Puerto Berrio Morela Airport",
+          "icao": "SKPR"
+        }
+      ],
       "removed_airports": [],
-      "added_count": 0,
+      "added_count": 4,
       "removed_count": 0
     },
     "ID": {
@@ -561,9 +602,18 @@
       "fr24_count": 31,
       "skycards_count": 30,
       "difference": 1,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "iata": "VVN",
+          "lat": -11.850168,
+          "lon": -72.940102,
+          "link": "https://www.flightradar24.com/data/airports/vvn",
+          "name": "Las Malvinas Airport",
+          "icao": "SPWT"
+        }
+      ],
       "removed_airports": [],
-      "added_count": 0,
+      "added_count": 1,
       "removed_count": 0
     },
     "PL": {
