@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 23,
-    "total_added_airports": 98,
+    "total_added_airports": 99,
     "total_removed_airports": 4
   },
   "countries": {
@@ -1067,6 +1067,14 @@
       "difference": 4,
       "added_airports": [
         {
+          "iata": "ALJ",
+          "lat": -28.57095,
+          "lon": 16.531851,
+          "link": "https://www.flightradar24.com/data/airports/alj",
+          "name": "Alexander Bay Airport",
+          "icao": "FAAB"
+        },
+        {
           "iata": "ROD",
           "lat": -33.811806,
           "lon": 19.9034,
@@ -1092,7 +1100,7 @@
         }
       ],
       "removed_airports": [],
-      "added_count": 3,
+      "added_count": 4,
       "removed_count": 0
     }
   }
