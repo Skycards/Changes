@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 19,
-    "total_added_airports": 50,
+    "total_added_airports": 52,
     "total_removed_airports": 4
   },
   "countries": {
@@ -363,9 +363,26 @@
       "fr24_count": 145,
       "skycards_count": 144,
       "difference": 1,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "iata": "APD",
+          "lat": -4.458515,
+          "lon": 120.307693,
+          "link": "https://www.flightradar24.com/data/airports/apd",
+          "name": "Bone Arung Palakka Airport",
+          "icao": "WAWN"
+        },
+        {
+          "iata": "CBN",
+          "lat": -6.755458,
+          "lon": 108.540154,
+          "link": "https://www.flightradar24.com/data/airports/cbn",
+          "name": "Cirebon Cakrabhuwana Airport",
+          "icao": "WICD"
+        }
+      ],
       "removed_airports": [],
-      "added_count": 0,
+      "added_count": 2,
       "removed_count": 0
     },
     "MH": {
