@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 19,
-    "total_added_airports": 48,
+    "total_added_airports": 49,
     "total_removed_airports": 4
   },
   "countries": {
@@ -636,10 +636,18 @@
           "link": "https://www.flightradar24.com/data/airports/vru",
           "name": "Vryburg Airport",
           "icao": "FAVB"
+        },
+        {
+          "iata": "ZEC",
+          "lat": -26.523802,
+          "lon": 29.170647,
+          "link": "https://www.flightradar24.com/data/airports/zec",
+          "name": "Secunda Airport",
+          "icao": "FASC"
         }
       ],
       "removed_airports": [],
-      "added_count": 2,
+      "added_count": 3,
       "removed_count": 0
     }
   }
