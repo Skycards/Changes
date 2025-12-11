@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 19,
-    "total_added_airports": 53,
+    "total_added_airports": 56,
     "total_removed_airports": 4
   },
   "countries": {
@@ -71,10 +71,18 @@
           "link": "https://www.flightradar24.com/data/airports/rza",
           "name": "Santa Cruz Airport",
           "icao": "SAWU"
+        },
+        {
+          "iata": "TDL",
+          "lat": -37.242222,
+          "lon": -59.229511,
+          "link": "https://www.flightradar24.com/data/airports/tdl",
+          "name": "Tandil Airport",
+          "icao": "SAZT"
         }
       ],
       "removed_airports": [],
-      "added_count": 5,
+      "added_count": 6,
       "removed_count": 0
     },
     "AU": {
@@ -295,7 +303,24 @@
       "fr24_count": 328,
       "skycards_count": 329,
       "difference": -1,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "iata": "YKY",
+          "lat": 51.518291,
+          "lon": -109.176804,
+          "link": "https://www.flightradar24.com/data/airports/yky",
+          "name": "Kindersley Regional Airport",
+          "icao": "CYKY"
+        },
+        {
+          "iata": "ZGR",
+          "lat": 52.044605,
+          "lon": -95.466301,
+          "link": "https://www.flightradar24.com/data/airports/zgr",
+          "name": "Little Grand Rapids Airport",
+          "icao": "CZGR"
+        }
+      ],
       "removed_airports": [
         {
           "name": "Toronto Buttonville Municipal Airport",
@@ -305,7 +330,7 @@
           "lon": -79.370003
         }
       ],
-      "added_count": 0,
+      "added_count": 2,
       "removed_count": 1
     },
     "CD": {
