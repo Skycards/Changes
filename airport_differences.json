@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 19,
-    "total_added_airports": 56,
+    "total_added_airports": 60,
     "total_removed_airports": 4
   },
   "countries": {
@@ -193,12 +193,36 @@
           "icao": "SBGM"
         },
         {
+          "iata": "HRZ",
+          "lat": -27.640184,
+          "lon": -54.337444,
+          "link": "https://www.flightradar24.com/data/airports/hrz",
+          "name": "Horizontina Walter Bundchen Airport",
+          "icao": "SSHZ"
+        },
+        {
+          "iata": "IJU",
+          "lat": -28.369408,
+          "lon": -53.846291,
+          "link": "https://www.flightradar24.com/data/airports/iju",
+          "name": "Ijui Airport",
+          "icao": "SSIJ"
+        },
+        {
           "iata": "ITE",
           "lat": -13.731836,
           "lon": -39.141281,
           "link": "https://www.flightradar24.com/data/airports/ite",
           "name": "Itubera Airport",
           "icao": "SNZW"
+        },
+        {
+          "iata": "ITR",
+          "lat": -18.443977,
+          "lon": -49.21368,
+          "link": "https://www.flightradar24.com/data/airports/itr",
+          "name": "Itumbiara Airport",
+          "icao": "SBIT"
         },
         {
           "iata": "JCB",
@@ -223,6 +247,14 @@
           "link": "https://www.flightradar24.com/data/airports/loi",
           "name": "Lontras Helmuth Baungartem Airport",
           "icao": "SSLN"
+        },
+        {
+          "iata": "MBK",
+          "lat": -10.173235,
+          "lon": -54.954365,
+          "link": "https://www.flightradar24.com/data/airports/mbk",
+          "name": "Matupa Orlando Villas-Boas Airport",
+          "icao": "SWXM"
         },
         {
           "iata": "PCS",
@@ -274,7 +306,7 @@
         }
       ],
       "removed_airports": [],
-      "added_count": 17,
+      "added_count": 21,
       "removed_count": 0
     },
     "BZ": {
