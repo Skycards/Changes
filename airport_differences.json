@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 19,
-    "total_added_airports": 52,
+    "total_added_airports": 53,
     "total_removed_airports": 4
   },
   "countries": {
@@ -275,9 +275,18 @@
       "fr24_count": 12,
       "skycards_count": 11,
       "difference": 1,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "iata": "BCV",
+          "lat": 17.269464,
+          "lon": -88.776138,
+          "link": "https://www.flightradar24.com/data/airports/bcv",
+          "name": "Belmopan Hector Silva Airport",
+          "icao": "MZBP"
+        }
+      ],
       "removed_airports": [],
-      "added_count": 0,
+      "added_count": 1,
       "removed_count": 0
     },
     "CA": {
