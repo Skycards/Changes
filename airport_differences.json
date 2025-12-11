@@ -1,7 +1,7 @@
 {
   "summary": {
-    "total_countries_with_differences": 14,
-    "total_added_airports": 43,
+    "total_countries_with_differences": 19,
+    "total_added_airports": 44,
     "total_removed_airports": 4
   },
   "countries": {
@@ -75,6 +75,17 @@
       ],
       "removed_airports": [],
       "added_count": 5,
+      "removed_count": 0
+    },
+    "AU": {
+      "country_name": "Australia",
+      "iso_code": "AU",
+      "fr24_count": 471,
+      "skycards_count": 467,
+      "difference": 4,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
       "removed_count": 0
     },
     "BR": {
@@ -225,6 +236,17 @@
       "added_count": 17,
       "removed_count": 0
     },
+    "BZ": {
+      "country_name": "Belize",
+      "iso_code": "BZ",
+      "fr24_count": 12,
+      "skycards_count": 11,
+      "difference": 1,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
+      "removed_count": 0
+    },
     "CA": {
       "country_name": "Canada",
       "iso_code": "CA",
@@ -243,6 +265,17 @@
       ],
       "added_count": 0,
       "removed_count": 1
+    },
+    "CD": {
+      "country_name": "Democratic Republic Of The Congo",
+      "iso_code": "CD",
+      "fr24_count": 21,
+      "skycards_count": 20,
+      "difference": 1,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
+      "removed_count": 0
     },
     "CN": {
       "country_name": "China",
@@ -281,6 +314,37 @@
       ],
       "added_count": 0,
       "removed_count": 1
+    },
+    "ID": {
+      "country_name": "Indonesia",
+      "iso_code": "ID",
+      "fr24_count": 145,
+      "skycards_count": 144,
+      "difference": 1,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
+      "removed_count": 0
+    },
+    "MH": {
+      "country_name": "Marshall Islands",
+      "iso_code": "MH",
+      "fr24_count": 3,
+      "skycards_count": 2,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "MIJ",
+          "lat": 6.084568,
+          "lon": 171.73143,
+          "link": "https://www.flightradar24.com/data/airports/mij",
+          "name": "Mili Island Airport",
+          "icao": "MLIP"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
+      "removed_count": 0
     },
     "MN": {
       "country_name": "Mongolia",
@@ -520,9 +584,9 @@
     "ZA": {
       "country_name": "South Africa",
       "iso_code": "ZA",
-      "fr24_count": 39,
+      "fr24_count": 40,
       "skycards_count": 37,
-      "difference": 2,
+      "difference": 3,
       "added_airports": [
         {
           "iata": "ROD",
