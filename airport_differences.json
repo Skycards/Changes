@@ -44,9 +44,9 @@
     "AR": {
       "country_name": "Argentina",
       "iso_code": "AR",
-      "fr24_count": 56,
+      "fr24_count": 57,
       "skycards_count": 50,
-      "difference": 6,
+      "difference": 7,
       "added_airports": [
         {
           "iata": "CLX",
@@ -164,9 +164,9 @@
     "BR": {
       "country_name": "Brazil",
       "iso_code": "BR",
-      "fr24_count": 265,
+      "fr24_count": 272,
       "skycards_count": 243,
-      "difference": 22,
+      "difference": 29,
       "added_airports": [
         {
           "iata": "ALT",
@@ -886,9 +886,9 @@
     "US": {
       "country_name": "United States",
       "iso_code": "US",
-      "fr24_count": 1679,
+      "fr24_count": 1686,
       "skycards_count": 1670,
-      "difference": 9,
+      "difference": 16,
       "added_airports": [
         {
           "iata": "AKB",
@@ -1062,9 +1062,9 @@
     "ZA": {
       "country_name": "South Africa",
       "iso_code": "ZA",
-      "fr24_count": 40,
+      "fr24_count": 41,
       "skycards_count": 37,
-      "difference": 3,
+      "difference": 4,
       "added_airports": [
         {
           "iata": "ROD",
