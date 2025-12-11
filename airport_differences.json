@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 23,
-    "total_added_airports": 90,
+    "total_added_airports": 98,
     "total_removed_airports": 4
   },
   "countries": {
@@ -177,6 +177,14 @@
           "icao": "SDWQ"
         },
         {
+          "iata": "AMJ",
+          "lat": -16.167686,
+          "lon": -40.686485,
+          "link": "https://www.flightradar24.com/data/airports/amj",
+          "name": "Almenara Cirilo Queiroz Airport",
+          "icao": "SNAR"
+        },
+        {
           "iata": "AXE",
           "lat": -26.875586,
           "lon": -52.372814,
@@ -215,6 +223,14 @@
           "link": "https://www.flightradar24.com/data/airports/cqa",
           "name": "Canarana Airport",
           "icao": "SWEK"
+        },
+        {
+          "iata": "DTI",
+          "lat": -18.230534,
+          "lon": -43.650387,
+          "link": "https://www.flightradar24.com/data/airports/dti",
+          "name": "Diamantina Juscelino Kubitschek Airport",
+          "icao": "SNDT"
         },
         {
           "iata": "GJM",
@@ -289,6 +305,30 @@
           "icao": "SWXM"
         },
         {
+          "iata": "MTG",
+          "lat": -14.996632,
+          "lon": -59.945522,
+          "link": "https://www.flightradar24.com/data/airports/mtg",
+          "name": "Vila Bela da Santíssima Trindade Airport",
+          "icao": "SWVB"
+        },
+        {
+          "iata": "NNU",
+          "lat": -17.823175,
+          "lon": -40.329075,
+          "link": "https://www.flightradar24.com/data/airports/nnu",
+          "name": "Nanuque Airport",
+          "icao": "SNNU"
+        },
+        {
+          "iata": "NVP",
+          "lat": -5.118115,
+          "lon": -60.364868,
+          "link": "https://www.flightradar24.com/data/airports/nvp",
+          "name": "Novo Aripuana Airport",
+          "icao": "SWNA"
+        },
+        {
           "iata": "PCS",
           "lat": -7.063593,
           "lon": -41.521683,
@@ -297,12 +337,36 @@
           "icao": "SNPC"
         },
         {
+          "iata": "PIV",
+          "lat": -17.31395,
+          "lon": -44.858624,
+          "link": "https://www.flightradar24.com/data/airports/piv",
+          "name": "Pirapora Airport",
+          "icao": "SNPX"
+        },
+        {
+          "iata": "PSW",
+          "lat": -20.732363,
+          "lon": -46.661297,
+          "link": "https://www.flightradar24.com/data/airports/psw",
+          "name": "Passos Municipal Jose Figueiredo Airport",
+          "icao": "SNOS"
+        },
+        {
           "iata": "PVI",
           "lat": -23.089958,
           "lon": -52.488628,
           "link": "https://www.flightradar24.com/data/airports/pvi",
           "name": "Paranavai Airport",
           "icao": "SSPI"
+        },
+        {
+          "iata": "QRE",
+          "lat": -22.477596,
+          "lon": -44.479141,
+          "link": "https://www.flightradar24.com/data/airports/qre",
+          "name": "Resende Airport",
+          "icao": "SDRS"
         },
         {
           "iata": "SFK",
@@ -338,7 +402,7 @@
         }
       ],
       "removed_airports": [],
-      "added_count": 21,
+      "added_count": 29,
       "removed_count": 0
     },
     "BZ": {
