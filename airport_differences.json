@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 23,
-    "total_added_airports": 82,
+    "total_added_airports": 89,
     "total_removed_airports": 4
   },
   "countries": {
@@ -835,6 +835,14 @@
           "icao": "PANT"
         },
         {
+          "iata": "ANY",
+          "lat": 37.158127,
+          "lon": -98.079041,
+          "link": "https://www.flightradar24.com/data/airports/any",
+          "name": "Anthony Municipal Airport",
+          "icao": "KANY"
+        },
+        {
           "iata": "ENN",
           "lat": 64.54718,
           "lon": -149.081039,
@@ -859,6 +867,22 @@
           "icao": "PAKO"
         },
         {
+          "iata": "INK",
+          "lat": 31.779692,
+          "lon": -103.204407,
+          "link": "https://www.flightradar24.com/data/airports/ink",
+          "name": "Wink Winkler County Airport",
+          "icao": "KINK"
+        },
+        {
+          "iata": "KLL",
+          "lat": 59.126141,
+          "lon": -156.860886,
+          "link": "https://www.flightradar24.com/data/airports/kll",
+          "name": "Levelock Airport",
+          "icao": ""
+        },
+        {
           "iata": "KYK",
           "lat": 57.565479,
           "lon": -154.452103,
@@ -875,12 +899,44 @@
           "icao": "PAMD"
         },
         {
+          "iata": "MNT",
+          "lat": 65.149956,
+          "lon": -149.364716,
+          "link": "https://www.flightradar24.com/data/airports/mnt",
+          "name": "Minto Al Wright Airport",
+          "icao": ""
+        },
+        {
+          "iata": "OZA",
+          "lat": 30.731516,
+          "lon": -101.201263,
+          "link": "https://www.flightradar24.com/data/airports/oza",
+          "name": "Ozona Municipal Airport",
+          "icao": "KOZA"
+        },
+        {
           "iata": "PAK",
           "lat": 21.89686,
           "lon": -159.602951,
           "link": "https://www.flightradar24.com/data/airports/pak",
           "name": "Hanapepe Port Allen Airport",
           "icao": "PHPA"
+        },
+        {
+          "iata": "RDV",
+          "lat": 61.788136,
+          "lon": -157.350754,
+          "link": "https://www.flightradar24.com/data/airports/rdv",
+          "name": "Red Devil Airport",
+          "icao": "PRDV"
+        },
+        {
+          "iata": "SRV",
+          "lat": 61.789146,
+          "lon": -156.588959,
+          "link": "https://www.flightradar24.com/data/airports/srv",
+          "name": "Stony River Airport",
+          "icao": "PSRV"
         },
         {
           "iata": "UPP",
@@ -892,7 +948,7 @@
         }
       ],
       "removed_airports": [],
-      "added_count": 9,
+      "added_count": 16,
       "removed_count": 0
     },
     "VE": {
