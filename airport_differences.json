@@ -1,7 +1,7 @@
 {
   "summary": {
-    "total_countries_with_differences": 5,
-    "total_added_airports": 0,
+    "total_countries_with_differences": 6,
+    "total_added_airports": 4,
     "total_removed_airports": 5
   },
   "countries": {
@@ -24,13 +24,58 @@
       "added_count": 0,
       "removed_count": 1
     },
+    "BR": {
+      "country_name": "Brazil",
+      "iso_code": "BR",
+      "fr24_count": 273,
+      "skycards_count": 272,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "PHI",
+          "lat": -2.476044,
+          "lon": -45.10162,
+          "link": "https://www.flightradar24.com/data/airports/phi",
+          "name": "Pinheiro Airport",
+          "icao": "SNYE"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
+      "removed_count": 0
+    },
     "CA": {
       "country_name": "Canada",
       "iso_code": "CA",
-      "fr24_count": 330,
+      "fr24_count": 333,
       "skycards_count": 331,
-      "difference": -1,
-      "added_airports": [],
+      "difference": 2,
+      "added_airports": [
+        {
+          "iata": "XSI",
+          "lat": 56.794376,
+          "lon": -98.906929,
+          "link": "https://www.flightradar24.com/data/airports/xsi",
+          "name": "South Indian Lake Airport",
+          "icao": "CZSN"
+        },
+        {
+          "iata": "YSY",
+          "lat": 71.993698,
+          "lon": -125.242683,
+          "link": "https://www.flightradar24.com/data/airports/ysy",
+          "name": "Sachs Harbour Airport",
+          "icao": "CYSY"
+        },
+        {
+          "iata": "ZFM",
+          "lat": 67.407387,
+          "lon": -134.860855,
+          "link": "https://www.flightradar24.com/data/airports/zfm",
+          "name": "Fort McPherson Airport",
+          "icao": "CZFM"
+        }
+      ],
       "removed_airports": [
         {
           "name": "Toronto Buttonville Municipal Airport",
@@ -40,7 +85,7 @@
           "lon": -79.370003
         }
       ],
-      "added_count": 0,
+      "added_count": 3,
       "removed_count": 1
     },
     "CN": {
