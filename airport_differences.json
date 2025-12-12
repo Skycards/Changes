@@ -5,6 +5,25 @@
     "total_removed_airports": 5
   },
   "countries": {
+    "AU": {
+      "country_name": "Australia",
+      "iso_code": "AU",
+      "fr24_count": 470,
+      "skycards_count": 471,
+      "difference": -1,
+      "added_airports": [],
+      "removed_airports": [
+        {
+          "name": "Carrapateena Airport",
+          "iata": "QAC",
+          "icao": "YCPT",
+          "lat": -31.308111,
+          "lon": 137.443481
+        }
+      ],
+      "added_count": 0,
+      "removed_count": 1
+    },
     "CA": {
       "country_name": "Canada",
       "iso_code": "CA",
@@ -19,25 +38,6 @@
           "icao": null,
           "lat": 43.862221,
           "lon": -79.370003
-        }
-      ],
-      "added_count": 0,
-      "removed_count": 1
-    },
-    "CD": {
-      "country_name": "Democratic Republic Of The Congo",
-      "iso_code": "CD",
-      "fr24_count": 21,
-      "skycards_count": 22,
-      "difference": -1,
-      "added_airports": [],
-      "removed_airports": [
-        {
-          "name": "Inongo Airport",
-          "iata": "INO",
-          "icao": "FZBA",
-          "lat": -1.946662,
-          "lon": 18.285711
         }
       ],
       "added_count": 0,
