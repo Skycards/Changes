@@ -15,8 +15,8 @@
       "removed_airports": [
         {
           "name": "Carrapateena Airport",
-          "iata": "QAC",
-          "icao": "YCPT",
+          "iata": null,
+          "icao": null,
           "lat": -31.308111,
           "lon": 137.443481
         }
