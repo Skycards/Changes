@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 6,
-    "total_added_airports": 6,
+    "total_added_airports": 15,
     "total_removed_airports": 5
   },
   "countries": {
@@ -68,6 +68,14 @@
       "difference": 11,
       "added_airports": [
         {
+          "iata": "XPP",
+          "lat": 52.996395,
+          "lon": -97.274345,
+          "link": "https://www.flightradar24.com/data/airports/xpp",
+          "name": "Poplar River Airport",
+          "icao": "CZNG"
+        },
+        {
           "iata": "XSI",
           "lat": 56.794376,
           "lon": -98.906929,
@@ -76,12 +84,76 @@
           "icao": "CZSN"
         },
         {
+          "iata": "YEL",
+          "lat": 46.351147,
+          "lon": -82.559601,
+          "link": "https://www.flightradar24.com/data/airports/yel",
+          "name": "Elliot Lake Municipal Airport",
+          "icao": "CYEL"
+        },
+        {
+          "iata": "YFR",
+          "lat": 61.179855,
+          "lon": -113.688019,
+          "link": "https://www.flightradar24.com/data/airports/yfr",
+          "name": "Fort Resolution Airport",
+          "icao": "CYFR"
+        },
+        {
+          "iata": "YHN",
+          "lat": 49.191811,
+          "lon": -84.762581,
+          "link": "https://www.flightradar24.com/data/airports/yhn",
+          "name": "Hornepayne Municipal Airport",
+          "icao": "CYHN"
+        },
+        {
+          "iata": "YIB",
+          "lat": 48.77364,
+          "lon": -91.639442,
+          "link": "https://www.flightradar24.com/data/airports/yib",
+          "name": "Atikokan Airport",
+          "icao": "CYIB"
+        },
+        {
+          "iata": "YJF",
+          "lat": 60.235302,
+          "lon": -123.470375,
+          "link": "https://www.flightradar24.com/data/airports/yjf",
+          "name": "Fort Liard Airport",
+          "icao": "CYJF"
+        },
+        {
+          "iata": "YOP",
+          "lat": 58.492813,
+          "lon": -119.414139,
+          "link": "https://www.flightradar24.com/data/airports/yop",
+          "name": "Rainbow Lake Airport",
+          "icao": "CYOP"
+        },
+        {
+          "iata": "YQW",
+          "lat": 52.769344,
+          "lon": -108.243599,
+          "link": "https://www.flightradar24.com/data/airports/yqw",
+          "name": "North Battleford Airport",
+          "icao": "CYQW"
+        },
+        {
           "iata": "YSY",
           "lat": 71.993698,
           "lon": -125.242683,
           "link": "https://www.flightradar24.com/data/airports/ysy",
           "name": "Sachs Harbour Airport",
           "icao": "CYSY"
+        },
+        {
+          "iata": "ZAC",
+          "lat": 56.08997,
+          "lon": -96.092239,
+          "link": "https://www.flightradar24.com/data/airports/zac",
+          "name": "York Landing Airport",
+          "icao": "CZAC"
         },
         {
           "iata": "ZFM",
@@ -101,7 +173,7 @@
           "lon": -79.370003
         }
       ],
-      "added_count": 3,
+      "added_count": 12,
       "removed_count": 1
     },
     "CN": {
