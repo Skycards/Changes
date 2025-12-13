@@ -27,9 +27,9 @@
     "BR": {
       "country_name": "Brazil",
       "iso_code": "BR",
-      "fr24_count": 273,
+      "fr24_count": 275,
       "skycards_count": 272,
-      "difference": 1,
+      "difference": 3,
       "added_airports": [
         {
           "iata": "GDP",
@@ -63,9 +63,9 @@
     "CA": {
       "country_name": "Canada",
       "iso_code": "CA",
-      "fr24_count": 333,
+      "fr24_count": 342,
       "skycards_count": 331,
-      "difference": 2,
+      "difference": 11,
       "added_airports": [
         {
           "iata": "XSI",
