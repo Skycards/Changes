@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 6,
-    "total_added_airports": 4,
+    "total_added_airports": 6,
     "total_removed_airports": 5
   },
   "countries": {
@@ -32,16 +32,32 @@
       "difference": 1,
       "added_airports": [
         {
+          "iata": "GDP",
+          "lat": -6.782934,
+          "lon": -43.580879,
+          "link": "https://www.flightradar24.com/data/airports/gdp",
+          "name": "Guadalupe Airport",
+          "icao": "SNGD"
+        },
+        {
           "iata": "PHI",
           "lat": -2.476044,
           "lon": -45.10162,
           "link": "https://www.flightradar24.com/data/airports/phi",
           "name": "Pinheiro Airport",
           "icao": "SNYE"
+        },
+        {
+          "iata": "VLP",
+          "lat": -9.980289,
+          "lon": -51.138897,
+          "link": "https://www.flightradar24.com/data/airports/vlp",
+          "name": "Vila Rica Airport",
+          "icao": "SWVC"
         }
       ],
       "removed_airports": [],
-      "added_count": 1,
+      "added_count": 3,
       "removed_count": 0
     },
     "CA": {
