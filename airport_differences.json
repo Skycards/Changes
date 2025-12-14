@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 7,
-    "total_added_airports": 15,
+    "total_added_airports": 25,
     "total_removed_airports": 5
   },
   "countries": {
@@ -239,9 +239,90 @@
       "fr24_count": 1696,
       "skycards_count": 1686,
       "difference": 10,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "iata": "BNW",
+          "lat": 42.05175,
+          "lon": -93.848785,
+          "link": "https://www.flightradar24.com/data/airports/bnw",
+          "name": "Boone Municipal Airport",
+          "icao": "KBNW"
+        },
+        {
+          "iata": "CSQ",
+          "lat": 41.019474,
+          "lon": -94.36319,
+          "link": "https://www.flightradar24.com/data/airports/csq",
+          "name": "Creston Municipal Airport",
+          "icao": "KCSQ"
+        },
+        {
+          "iata": "EGP",
+          "lat": 28.85709,
+          "lon": -100.513,
+          "link": "https://www.flightradar24.com/data/airports/egp",
+          "name": "Eagle Pass Maverick County Memorial International Airport",
+          "icao": ""
+        },
+        {
+          "iata": "FBR",
+          "lat": 41.392181,
+          "lon": -110.406357,
+          "link": "https://www.flightradar24.com/data/airports/fbr",
+          "name": "Fort Bridger Airport",
+          "icao": "KFBR"
+        },
+        {
+          "iata": "HKB",
+          "lat": 63.867332,
+          "lon": -148.968781,
+          "link": "https://www.flightradar24.com/data/airports/hkb",
+          "name": "Healy Lake Airport",
+          "icao": "PAHV"
+        },
+        {
+          "iata": "MLF",
+          "lat": 38.42498,
+          "lon": -113.013298,
+          "link": "https://www.flightradar24.com/data/airports/mlf",
+          "name": "Milford Municipal Airport",
+          "icao": "KMLF"
+        },
+        {
+          "iata": "PSX",
+          "lat": 28.725826,
+          "lon": -96.25193,
+          "link": "https://www.flightradar24.com/data/airports/psx",
+          "name": "Palacios Municipal Airport",
+          "icao": "KPSX"
+        },
+        {
+          "iata": "PTA",
+          "lat": 60.198288,
+          "lon": -154.324188,
+          "link": "https://www.flightradar24.com/data/airports/pta",
+          "name": "Port Alsworth Airport",
+          "icao": "PALJ"
+        },
+        {
+          "iata": "RSL",
+          "lat": 38.874611,
+          "lon": -98.81134,
+          "link": "https://www.flightradar24.com/data/airports/rsl",
+          "name": "Russell Municipal Airport",
+          "icao": "KRSL"
+        },
+        {
+          "iata": "SYV",
+          "lat": 31.556343,
+          "lon": -83.89418,
+          "link": "https://www.flightradar24.com/data/airports/syv",
+          "name": "Sylvester Airport",
+          "icao": "KSYV"
+        }
+      ],
       "removed_airports": [],
-      "added_count": 0,
+      "added_count": 10,
       "removed_count": 0
     }
   }
