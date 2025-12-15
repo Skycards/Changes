@@ -1,7 +1,7 @@
 {
   "summary": {
-    "total_countries_with_differences": 7,
-    "total_added_airports": 25,
+    "total_countries_with_differences": 8,
+    "total_added_airports": 26,
     "total_removed_airports": 5
   },
   "countries": {
@@ -175,6 +175,26 @@
       ],
       "added_count": 12,
       "removed_count": 1
+    },
+    "CG": {
+      "country_name": "Congo",
+      "iso_code": "CG",
+      "fr24_count": 3,
+      "skycards_count": 2,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "RUE",
+          "lat": 0.117142,
+          "lon": 29.312992,
+          "link": "https://www.flightradar24.com/data/airports/rue",
+          "name": "Butembo Rughenda Airfield",
+          "icao": "FZMB"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
+      "removed_count": 0
     },
     "CN": {
       "country_name": "China",
