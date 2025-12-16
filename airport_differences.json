@@ -185,8 +185,8 @@
       "added_airports": [
         {
           "iata": "RUE",
-          "lat": 0.117142,
-          "lon": 29.312992,
+          "lat": 0.116831,
+          "lon": 29.313217,
           "link": "https://www.flightradar24.com/data/airports/rue",
           "name": "Butembo Rughenda Airfield",
           "icao": "FZMB"
