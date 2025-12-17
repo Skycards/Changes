@@ -1,7 +1,7 @@
 {
   "summary": {
-    "total_countries_with_differences": 8,
-    "total_added_airports": 26,
+    "total_countries_with_differences": 12,
+    "total_added_airports": 30,
     "total_removed_airports": 5
   },
   "countries": {
@@ -234,6 +234,26 @@
       "added_count": 0,
       "removed_count": 1
     },
+    "MN": {
+      "country_name": "Mongolia",
+      "iso_code": "MN",
+      "fr24_count": 11,
+      "skycards_count": 10,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "QXK",
+          "lat": 43.136093,
+          "lon": 106.85054,
+          "link": "https://www.flightradar24.com/data/airports/qxk",
+          "name": "Khanbogd Khanbumbat Airport",
+          "icao": "ZMKB"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
+      "removed_count": 0
+    },
     "PL": {
       "country_name": "Poland",
       "iso_code": "PL",
@@ -252,6 +272,26 @@
       ],
       "added_count": 0,
       "removed_count": 1
+    },
+    "RU": {
+      "country_name": "Russia",
+      "iso_code": "RU",
+      "fr24_count": 186,
+      "skycards_count": 185,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "QXQ",
+          "lat": 67.981918,
+          "lon": 75.10408,
+          "link": "https://www.flightradar24.com/data/airports/qxq",
+          "name": "Yamburg Airport",
+          "icao": "USMQ"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
+      "removed_count": 0
     },
     "US": {
       "country_name": "United States",
@@ -343,6 +383,46 @@
       ],
       "removed_airports": [],
       "added_count": 10,
+      "removed_count": 0
+    },
+    "VE": {
+      "country_name": "Venezuela",
+      "iso_code": "VE",
+      "fr24_count": 29,
+      "skycards_count": 28,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "QXC",
+          "lat": 10.28696,
+          "lon": -66.817024,
+          "link": "https://www.flightradar24.com/data/airports/qxc",
+          "name": "Caracas Oscar Machado Zuloaga Airport",
+          "icao": "SVCS"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
+      "removed_count": 0
+    },
+    "ZA": {
+      "country_name": "South Africa",
+      "iso_code": "ZA",
+      "fr24_count": 42,
+      "skycards_count": 41,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "QXW",
+          "lat": -32.301975,
+          "lon": 22.667305,
+          "link": "https://www.flightradar24.com/data/airports/qxw",
+          "name": "Beaufort West Karoo Gateway Airport",
+          "icao": "FABW"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
       "removed_count": 0
     }
   }
