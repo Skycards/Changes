@@ -616,7 +616,7 @@ def compare_country_airports(fr24_airports: List[Dict], our_airports: List[Dict]
 def analyze_country_differences(fr24_counts: Dict[str, int], our_counts: Dict[str, int],
                               country_mapping: Dict[str, str], airports_data: Dict,
                               existing_differences: Optional[Dict] = None) -> Dict:
-    """Analyze detailed differences for countries with mismatched airport counts
+    """Analyze detailed airport differences for all countries
 
     Args:
         existing_differences: Optional existing differences data to preserve on fetch failures
@@ -624,7 +624,7 @@ def analyze_country_differences(fr24_counts: Dict[str, int], our_counts: Dict[st
     if existing_differences is None:
         existing_differences = {}
 
-    # Find countries with differences
+    # Build ISO mappings from FR24 data
     fr24_iso_counts = {}
     iso_to_name = {}
 
@@ -635,19 +635,21 @@ def analyze_country_differences(fr24_counts: Dict[str, int], our_counts: Dict[st
             iso_to_name[iso_code] = country_name
 
     differences = {}
-    countries_with_diffs = []
 
-    # Find countries that have different counts
-    for iso_code in set(fr24_iso_counts.keys()) | set(our_counts.keys()):
+    # Get ISO codes in the order they appear in the mapping
+    mapping_order = list(dict.fromkeys(country_mapping.values()))
+    all_iso_codes = set(fr24_iso_counts.keys()) | set(our_counts.keys())
+
+    # Sort by mapping order, then alphabetically for any not in mapping
+    all_countries = [iso for iso in mapping_order if iso in all_iso_codes]
+    all_countries.extend(sorted(all_iso_codes - set(all_countries)))
+
+    print(f"\nAnalyzing {len(all_countries)} countries...")
+
+    for iso_code in all_countries:
+        country_name = iso_to_name.get(iso_code, iso_code)
         fr24_count = fr24_iso_counts.get(iso_code, 0)
         our_count = our_counts.get(iso_code, 0)
-
-        if fr24_count != our_count:
-            countries_with_diffs.append((iso_code, iso_to_name.get(iso_code, iso_code), fr24_count, our_count))
-
-    print(f"\nAnalyzing detailed differences for {len(countries_with_diffs)} countries...")
-
-    for iso_code, country_name, fr24_count, our_count in countries_with_diffs:
         if not country_name or country_name == iso_code:
             print(f"Skipping {iso_code} - no country name mapping")
             continue
@@ -676,20 +678,24 @@ def analyze_country_differences(fr24_counts: Dict[str, int], our_counts: Dict[st
             if fr24_airports or our_airports:
                 added_airports, removed_airports = compare_country_airports(fr24_airports, our_airports)
 
-                differences[iso_code] = {
-                    'country_name': country_name,
-                    'iso_code': iso_code,
-                    'fr24_count': fr24_count,
-                    'skycards_count': our_count,
-                    'difference': fr24_count - our_count,  # Positive means FR24 has more
-                    'added_airports': added_airports,  # In FR24 but not in our data
-                    'removed_airports': removed_airports,  # In our data but not in FR24
-                    'added_count': len(added_airports),
-                    'removed_count': len(removed_airports)
-                }
+                # Only add to differences if there are actual changes
+                if added_airports or removed_airports:
+                    differences[iso_code] = {
+                        'country_name': country_name,
+                        'iso_code': iso_code,
+                        'fr24_count': fr24_count,
+                        'skycards_count': our_count,
+                        'difference': fr24_count - our_count,  # Positive means FR24 has more
+                        'added_airports': added_airports,  # In FR24 but not in our data
+                        'removed_airports': removed_airports,  # In our data but not in FR24
+                        'added_count': len(added_airports),
+                        'removed_count': len(removed_airports)
+                    }
 
-                print(f"  Added: {len(added_airports)} airports")
-                print(f"  Removed: {len(removed_airports)} airports")
+                    print(f"  Added: {len(added_airports)} airports")
+                    print(f"  Removed: {len(removed_airports)} airports")
+                else:
+                    print(f"  No differences")
 
         # Add delay to be respectful to the server and avoid 429 errors
         time.sleep(5)
