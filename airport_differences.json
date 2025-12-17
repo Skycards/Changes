@@ -1,10 +1,38 @@
 {
   "summary": {
-    "total_countries_with_differences": 12,
-    "total_added_airports": 30,
-    "total_removed_airports": 5
+    "total_countries_with_differences": 13,
+    "total_added_airports": 31,
+    "total_removed_airports": 6
   },
   "countries": {
+    "AQ": {
+      "country_name": "Antarctica",
+      "iso_code": "AQ",
+      "fr24_count": 18,
+      "skycards_count": 18,
+      "difference": 0,
+      "added_airports": [
+        {
+          "iata": "QAY",
+          "lat": -75.103302,
+          "lon": 123.358299,
+          "link": "https://www.flightradar24.com/data/airports/qay",
+          "name": "Concordia Skyway",
+          "icao": ""
+        }
+      ],
+      "removed_airports": [
+        {
+          "name": "Concordia Skyway",
+          "iata": "QAC",
+          "icao": "AT03",
+          "lat": -75.103302,
+          "lon": 123.358299
+        }
+      ],
+      "added_count": 1,
+      "removed_count": 1
+    },
     "AU": {
       "country_name": "Australia",
       "iso_code": "AU",
