@@ -1,29 +1,10 @@
 {
   "summary": {
-    "total_countries_with_differences": 12,
+    "total_countries_with_differences": 11,
     "total_added_airports": 30,
-    "total_removed_airports": 5
+    "total_removed_airports": 4
   },
   "countries": {
-    "AU": {
-      "country_name": "Australia",
-      "iso_code": "AU",
-      "fr24_count": 470,
-      "skycards_count": 471,
-      "difference": -1,
-      "added_airports": [],
-      "removed_airports": [
-        {
-          "name": "Carrapateena Airport",
-          "iata": null,
-          "icao": null,
-          "lat": -31.308111,
-          "lon": 137.443481
-        }
-      ],
-      "added_count": 0,
-      "removed_count": 1
-    },
     "BR": {
       "country_name": "Brazil",
       "iso_code": "BR",
