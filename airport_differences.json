@@ -1,16 +1,44 @@
 {
   "summary": {
-    "total_countries_with_differences": 11,
-    "total_added_airports": 30,
-    "total_removed_airports": 4
+    "total_countries_with_differences": 13,
+    "total_added_airports": 33,
+    "total_removed_airports": 5
   },
   "countries": {
+    "AU": {
+      "country_name": "Australia",
+      "iso_code": "AU",
+      "fr24_count": 473,
+      "skycards_count": 471,
+      "difference": 2,
+      "added_airports": [
+        {
+          "iata": "QAC",
+          "lat": -31.308111,
+          "lon": 137.443481,
+          "link": "https://www.flightradar24.com/data/airports/qac",
+          "name": "Carrapateena Airport",
+          "icao": "YCPT"
+        }
+      ],
+      "removed_airports": [
+        {
+          "name": "Carrapateena Airport",
+          "iata": null,
+          "icao": null,
+          "lat": -31.308111,
+          "lon": 137.443481
+        }
+      ],
+      "added_count": 1,
+      "removed_count": 1
+    },
     "BR": {
       "country_name": "Brazil",
       "iso_code": "BR",
-      "fr24_count": 275,
+      "fr24_count": 279,
       "skycards_count": 272,
-      "difference": 3,
+      "difference": 7,
       "added_airports": [
         {
           "iata": "GDP",
@@ -233,6 +261,34 @@
       ],
       "removed_airports": [],
       "added_count": 1,
+      "removed_count": 0
+    },
+    "NZ": {
+      "country_name": "New Zealand",
+      "iso_code": "NZ",
+      "fr24_count": 53,
+      "skycards_count": 51,
+      "difference": 2,
+      "added_airports": [
+        {
+          "iata": "CMV",
+          "lat": -36.790943,
+          "lon": 175.508255,
+          "link": "https://www.flightradar24.com/data/airports/cmv",
+          "name": "Coromandel Airport",
+          "icao": "NZCX"
+        },
+        {
+          "iata": "TMZ",
+          "lat": -37.157181,
+          "lon": 175.549072,
+          "link": "https://www.flightradar24.com/data/airports/tmz",
+          "name": "Thames Airport",
+          "icao": "NZTH"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 2,
       "removed_count": 0
     },
     "PL": {
