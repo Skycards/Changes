@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 13,
-    "total_added_airports": 33,
+    "total_added_airports": 39,
     "total_removed_airports": 5
   },
   "countries": {
@@ -12,6 +12,22 @@
       "skycards_count": 471,
       "difference": 2,
       "added_airports": [
+        {
+          "iata": "ADO",
+          "lat": -30.437939,
+          "lon": 137.138779,
+          "link": "https://www.flightradar24.com/data/airports/ado",
+          "name": "Andamooka Airport",
+          "icao": "YAMK"
+        },
+        {
+          "iata": "OYN",
+          "lat": -35.088783,
+          "lon": 142.354507,
+          "link": "https://www.flightradar24.com/data/airports/oyn",
+          "name": "Ouyen Airport",
+          "icao": "YOUY"
+        },
         {
           "iata": "QAC",
           "lat": -31.308111,
@@ -30,7 +46,7 @@
           "lon": 137.443481
         }
       ],
-      "added_count": 1,
+      "added_count": 3,
       "removed_count": 1
     },
     "BR": {
@@ -41,12 +57,44 @@
       "difference": 7,
       "added_airports": [
         {
+          "iata": "FEJ",
+          "lat": -8.143962,
+          "lon": -70.341949,
+          "link": "https://www.flightradar24.com/data/airports/fej",
+          "name": "Feijo Airport",
+          "icao": "SWFJ"
+        },
+        {
           "iata": "GDP",
           "lat": -6.782934,
           "lon": -43.580879,
           "link": "https://www.flightradar24.com/data/airports/gdp",
           "name": "Guadalupe Airport",
           "icao": "SNGD"
+        },
+        {
+          "iata": "IPU",
+          "lat": -14.173509,
+          "lon": -39.683979,
+          "link": "https://www.flightradar24.com/data/airports/ipu",
+          "name": "Ipiau Airport",
+          "icao": "SNIU"
+        },
+        {
+          "iata": "ITN",
+          "lat": -14.810573,
+          "lon": -39.290813,
+          "link": "https://www.flightradar24.com/data/airports/itn",
+          "name": "Itabuna Airport",
+          "icao": "SNHA"
+        },
+        {
+          "iata": "LCB",
+          "lat": -15.195446,
+          "lon": -59.384514,
+          "link": "https://www.flightradar24.com/data/airports/lcb",
+          "name": "Pontes-e-Lacerda Airport",
+          "icao": "SWBG"
         },
         {
           "iata": "PHI",
@@ -66,7 +114,7 @@
         }
       ],
       "removed_airports": [],
-      "added_count": 3,
+      "added_count": 7,
       "removed_count": 0
     },
     "CA": {
