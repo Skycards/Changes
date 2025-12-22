@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 5,
-    "total_added_airports": 0,
+    "total_added_airports": 4,
     "total_removed_airports": 4
   },
   "countries": {
@@ -87,9 +87,42 @@
       "fr24_count": 1700,
       "skycards_count": 1696,
       "difference": 4,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "iata": "QDG",
+          "lat": 30.173285,
+          "lon": -90.94075,
+          "link": "https://www.flightradar24.com/data/airports/qdg",
+          "name": "Gonzales Louisiana Regional Airport",
+          "icao": "KREG"
+        },
+        {
+          "iata": "QDI",
+          "lat": 35.483223,
+          "lon": -81.161415,
+          "link": "https://www.flightradar24.com/data/airports/qdi",
+          "name": "Lincolnton Lincoln County Regional Airport",
+          "icao": "KIPJ"
+        },
+        {
+          "iata": "QDK",
+          "lat": 37.578217,
+          "lon": -84.771706,
+          "link": "https://www.flightradar24.com/data/airports/qdk",
+          "name": "Danville Boyle County Airport",
+          "icao": "KDVK"
+        },
+        {
+          "iata": "QDO",
+          "lat": 29.301943,
+          "lon": -81.113892,
+          "link": "https://www.flightradar24.com/data/airports/qdo",
+          "name": "Ormond Beach Municipal Airport",
+          "icao": "KOMN"
+        }
+      ],
       "removed_airports": [],
-      "added_count": 0,
+      "added_count": 4,
       "removed_count": 0
     }
   }
