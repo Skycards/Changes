@@ -1,6 +1,6 @@
 {
   "summary": {
-    "total_countries_with_differences": 4,
+    "total_countries_with_differences": 5,
     "total_added_airports": 0,
     "total_removed_airports": 4
   },
@@ -80,6 +80,17 @@
       ],
       "added_count": 0,
       "removed_count": 1
+    },
+    "US": {
+      "country_name": "United States",
+      "iso_code": "US",
+      "fr24_count": 1700,
+      "skycards_count": 1696,
+      "difference": 4,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
+      "removed_count": 0
     }
   }
 }
