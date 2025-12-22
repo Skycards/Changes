@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 5,
-    "total_added_airports": 4,
+    "total_added_airports": 5,
     "total_removed_airports": 4
   },
   "countries": {
@@ -68,7 +68,16 @@
       "fr24_count": 44,
       "skycards_count": 45,
       "difference": -1,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "iata": "QXS",
+          "lat": 53.390514,
+          "lon": 14.631557,
+          "link": "https://www.flightradar24.com/data/airports/qxs",
+          "name": "Szczecin Dabie Airport",
+          "icao": "EPSD"
+        }
+      ],
       "removed_airports": [
         {
           "name": "Koszalin Zegrze Pomorskie Airport",
@@ -78,7 +87,7 @@
           "lon": 16.2656
         }
       ],
-      "added_count": 0,
+      "added_count": 1,
       "removed_count": 1
     },
     "US": {
