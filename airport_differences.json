@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 7,
-    "total_added_airports": 6,
+    "total_added_airports": 7,
     "total_removed_airports": 3
   },
   "countries": {
@@ -151,10 +151,18 @@
           "link": "https://www.flightradar24.com/data/airports/qdo",
           "name": "Ormond Beach Municipal Airport",
           "icao": "KOMN"
+        },
+        {
+          "iata": "QDQ",
+          "lat": 30.740639,
+          "lon": -98.238022,
+          "link": "https://www.flightradar24.com/data/airports/qdq",
+          "name": "Burnet Municipal Airport",
+          "icao": "KBMQ"
         }
       ],
       "removed_airports": [],
-      "added_count": 4,
+      "added_count": 5,
       "removed_count": 0
     }
   }
