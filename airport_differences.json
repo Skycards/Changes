@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 7,
-    "total_added_airports": 7,
+    "total_added_airports": 8,
     "total_removed_airports": 3
   },
   "countries": {
@@ -50,9 +50,18 @@
       "fr24_count": 22,
       "skycards_count": 21,
       "difference": 1,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "iata": "QRZ",
+          "lat": 47.375641,
+          "lon": 8.759306,
+          "link": "https://www.flightradar24.com/data/airports/qrz",
+          "name": "Fehraltorf Speck Airport",
+          "icao": "LSZK"
+        }
+      ],
       "removed_airports": [],
-      "added_count": 0,
+      "added_count": 1,
       "removed_count": 0
     },
     "CN": {
