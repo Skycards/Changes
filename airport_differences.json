@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 8,
-    "total_added_airports": 8,
+    "total_added_airports": 10,
     "total_removed_airports": 3
   },
   "countries": {
@@ -89,9 +89,26 @@
       "fr24_count": 72,
       "skycards_count": 70,
       "difference": 2,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "iata": "CUO",
+          "lat": 1.013697,
+          "lon": -71.296844,
+          "link": "https://www.flightradar24.com/data/airports/cuo",
+          "name": "Caruru Airport",
+          "icao": "SKCR"
+        },
+        {
+          "iata": "TIB",
+          "lat": 8.63126,
+          "lon": -72.733009,
+          "link": "https://www.flightradar24.com/data/airports/tib",
+          "name": "Tibu Airport",
+          "icao": "SKTB"
+        }
+      ],
       "removed_airports": [],
-      "added_count": 0,
+      "added_count": 2,
       "removed_count": 0
     },
     "DE": {
