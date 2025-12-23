@@ -1,6 +1,6 @@
 {
   "summary": {
-    "total_countries_with_differences": 7,
+    "total_countries_with_differences": 8,
     "total_added_airports": 8,
     "total_removed_airports": 3
   },
@@ -83,6 +83,17 @@
       "added_count": 0,
       "removed_count": 1
     },
+    "CO": {
+      "country_name": "Colombia",
+      "iso_code": "CO",
+      "fr24_count": 72,
+      "skycards_count": 70,
+      "difference": 2,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
+      "removed_count": 0
+    },
     "DE": {
       "country_name": "Germany",
       "iso_code": "DE",
@@ -125,9 +136,9 @@
     "US": {
       "country_name": "United States",
       "iso_code": "US",
-      "fr24_count": 1701,
+      "fr24_count": 1703,
       "skycards_count": 1696,
-      "difference": 5,
+      "difference": 7,
       "added_airports": [
         {
           "iata": "QDG",
