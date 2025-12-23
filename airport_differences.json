@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 8,
-    "total_added_airports": 10,
+    "total_added_airports": 12,
     "total_removed_airports": 3
   },
   "countries": {
@@ -196,10 +196,26 @@
           "link": "https://www.flightradar24.com/data/airports/qdq",
           "name": "Burnet Municipal Airport",
           "icao": "KBMQ"
+        },
+        {
+          "iata": "QDW",
+          "lat": 42.628334,
+          "lon": -83.980263,
+          "link": "https://www.flightradar24.com/data/airports/qdw",
+          "name": "Howell Livingston County Spencer J. Hardy Airport",
+          "icao": "KOZW"
+        },
+        {
+          "iata": "QDX",
+          "lat": 33.902046,
+          "lon": -87.315636,
+          "link": "https://www.flightradar24.com/data/airports/qdx",
+          "name": "Jasper Walker County Airport",
+          "icao": "KJFX"
         }
       ],
       "removed_airports": [],
-      "added_count": 5,
+      "added_count": 7,
       "removed_count": 0
     }
   }
