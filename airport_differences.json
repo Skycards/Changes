@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 10,
-    "total_added_airports": 15,
+    "total_added_airports": 16,
     "total_removed_airports": 3
   },
   "countries": {
@@ -260,9 +260,18 @@
       "fr24_count": 30,
       "skycards_count": 29,
       "difference": 1,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "iata": "SOM",
+          "lat": 8.946037,
+          "lon": -64.148628,
+          "link": "https://www.flightradar24.com/data/airports/som",
+          "name": "San Tome Airport",
+          "icao": "SVST"
+        }
+      ],
       "removed_airports": [],
-      "added_count": 0,
+      "added_count": 1,
       "removed_count": 0
     }
   }
