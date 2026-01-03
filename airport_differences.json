@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 8,
-    "total_added_airports": 12,
+    "total_added_airports": 14,
     "total_removed_airports": 3
   },
   "countries": {
@@ -99,6 +99,22 @@
           "icao": "SKCR"
         },
         {
+          "iata": "MFS",
+          "lat": 1.339328,
+          "lon": -71.952026,
+          "link": "https://www.flightradar24.com/data/airports/mfs",
+          "name": "Miraflores Airport",
+          "icao": "SKMF"
+        },
+        {
+          "iata": "RAV",
+          "lat": 6.316477,
+          "lon": -70.211273,
+          "link": "https://www.flightradar24.com/data/airports/rav",
+          "name": "Cravo Norte Airport",
+          "icao": "SKCN"
+        },
+        {
           "iata": "TIB",
           "lat": 8.63126,
           "lon": -72.733009,
@@ -108,7 +124,7 @@
         }
       ],
       "removed_airports": [],
-      "added_count": 2,
+      "added_count": 4,
       "removed_count": 0
     },
     "DE": {
