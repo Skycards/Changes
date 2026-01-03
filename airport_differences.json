@@ -1,7 +1,7 @@
 {
   "summary": {
-    "total_countries_with_differences": 8,
-    "total_added_airports": 14,
+    "total_countries_with_differences": 10,
+    "total_added_airports": 15,
     "total_removed_airports": 3
   },
   "countries": {
@@ -19,6 +19,26 @@
           "link": "https://www.flightradar24.com/data/airports/qxg",
           "name": "Sankt Georgen Airport",
           "icao": "LOLG"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
+      "removed_count": 0
+    },
+    "BR": {
+      "country_name": "Brazil",
+      "iso_code": "BR",
+      "fr24_count": 280,
+      "skycards_count": 279,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "PDF",
+          "lat": -17.297028,
+          "lon": -39.272087,
+          "link": "https://www.flightradar24.com/data/airports/pdf",
+          "name": "Prado Airport",
+          "icao": "SNRD"
         }
       ],
       "removed_airports": [],
@@ -86,9 +106,9 @@
     "CO": {
       "country_name": "Colombia",
       "iso_code": "CO",
-      "fr24_count": 72,
+      "fr24_count": 74,
       "skycards_count": 70,
-      "difference": 2,
+      "difference": 4,
       "added_airports": [
         {
           "iata": "CUO",
@@ -232,6 +252,17 @@
       ],
       "removed_airports": [],
       "added_count": 7,
+      "removed_count": 0
+    },
+    "VE": {
+      "country_name": "Venezuela",
+      "iso_code": "VE",
+      "fr24_count": 30,
+      "skycards_count": 29,
+      "difference": 1,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
       "removed_count": 0
     }
   }
