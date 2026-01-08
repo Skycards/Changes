@@ -1,7 +1,7 @@
 {
   "summary": {
-    "total_countries_with_differences": 10,
-    "total_added_airports": 20,
+    "total_countries_with_differences": 12,
+    "total_added_airports": 22,
     "total_removed_airports": 3
   },
   "countries": {
@@ -71,6 +71,45 @@
       ],
       "added_count": 0,
       "removed_count": 1
+    },
+    "CD": {
+      "country_name": "Democratic Republic Of The Congo",
+      "iso_code": "CD",
+      "fr24_count": 25,
+      "skycards_count": 22,
+      "difference": 3,
+      "added_airports": [
+        {
+          "iata": "MNB",
+          "lat": -5.930583,
+          "lon": 12.351394,
+          "link": "https://www.flightradar24.com/data/airports/mnb",
+          "name": "Muanda Airport",
+          "icao": "FZAG"
+        },
+        {
+          "iata": "PFR",
+          "lat": -4.329411,
+          "lon": 20.591734,
+          "link": "https://www.flightradar24.com/data/airports/pfr",
+          "name": "Ilebo Airport",
+          "icao": "FZVS"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 2,
+      "removed_count": 0
+    },
+    "CF": {
+      "country_name": "Central African Republic",
+      "iso_code": "CF",
+      "fr24_count": 4,
+      "skycards_count": 2,
+      "difference": 2,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
+      "removed_count": 0
     },
     "CH": {
       "country_name": "Switzerland",
