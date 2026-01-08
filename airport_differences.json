@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 10,
-    "total_added_airports": 17,
+    "total_added_airports": 18,
     "total_removed_airports": 3
   },
   "countries": {
@@ -28,9 +28,9 @@
     "BR": {
       "country_name": "Brazil",
       "iso_code": "BR",
-      "fr24_count": 280,
+      "fr24_count": 281,
       "skycards_count": 279,
-      "difference": 1,
+      "difference": 2,
       "added_airports": [
         {
           "iata": "ITQ",
@@ -114,9 +114,9 @@
     "CO": {
       "country_name": "Colombia",
       "iso_code": "CO",
-      "fr24_count": 74,
+      "fr24_count": 76,
       "skycards_count": 70,
-      "difference": 4,
+      "difference": 6,
       "added_airports": [
         {
           "iata": "CUO",
@@ -265,10 +265,18 @@
     "VE": {
       "country_name": "Venezuela",
       "iso_code": "VE",
-      "fr24_count": 30,
+      "fr24_count": 31,
       "skycards_count": 29,
-      "difference": 1,
+      "difference": 2,
       "added_airports": [
+        {
+          "iata": "CUP",
+          "lat": 10.66001,
+          "lon": -63.2616,
+          "link": "https://www.flightradar24.com/data/airports/cup",
+          "name": "Carupano General Jose Francisco Bermudez Airport",
+          "icao": "SVCP"
+        },
         {
           "iata": "SOM",
           "lat": 8.946037,
@@ -279,7 +287,7 @@
         }
       ],
       "removed_airports": [],
-      "added_count": 1,
+      "added_count": 2,
       "removed_count": 0
     }
   }
