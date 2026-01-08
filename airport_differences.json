@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 10,
-    "total_added_airports": 16,
+    "total_added_airports": 17,
     "total_removed_airports": 3
   },
   "countries": {
@@ -33,6 +33,14 @@
       "difference": 1,
       "added_airports": [
         {
+          "iata": "ITQ",
+          "lat": -29.172867,
+          "lon": -56.537548,
+          "link": "https://www.flightradar24.com/data/airports/itq",
+          "name": "Itaqui Airport",
+          "icao": "SSIQ"
+        },
+        {
           "iata": "PDF",
           "lat": -17.297028,
           "lon": -39.272087,
@@ -42,7 +50,7 @@
         }
       ],
       "removed_airports": [],
-      "added_count": 1,
+      "added_count": 2,
       "removed_count": 0
     },
     "CA": {
