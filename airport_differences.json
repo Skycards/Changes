@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 12,
-    "total_added_airports": 24,
+    "total_added_airports": 25,
     "total_removed_airports": 3
   },
   "countries": {
@@ -80,6 +80,14 @@
       "difference": 3,
       "added_airports": [
         {
+          "iata": "BDT",
+          "lat": 4.252136,
+          "lon": 20.9732,
+          "link": "https://www.flightradar24.com/data/airports/bdt",
+          "name": "Gbadolite Airport",
+          "icao": "FZFD"
+        },
+        {
           "iata": "MNB",
           "lat": -5.930583,
           "lon": 12.351394,
@@ -97,7 +105,7 @@
         }
       ],
       "removed_airports": [],
-      "added_count": 2,
+      "added_count": 3,
       "removed_count": 0
     },
     "CF": {
