@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 12,
-    "total_added_airports": 22,
+    "total_added_airports": 24,
     "total_removed_airports": 3
   },
   "countries": {
@@ -106,9 +106,26 @@
       "fr24_count": 4,
       "skycards_count": 2,
       "difference": 2,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "iata": "IRO",
+          "lat": 10.236612,
+          "lon": 22.715738,
+          "link": "https://www.flightradar24.com/data/airports/iro",
+          "name": "Birao Airport",
+          "icao": "FEFI"
+        },
+        {
+          "iata": "NDL",
+          "lat": 8.427558,
+          "lon": 20.634949,
+          "link": "https://www.flightradar24.com/data/airports/ndl",
+          "name": "N'Dele Airport",
+          "icao": "FEFN"
+        }
+      ],
       "removed_airports": [],
-      "added_count": 0,
+      "added_count": 2,
       "removed_count": 0
     },
     "CH": {
