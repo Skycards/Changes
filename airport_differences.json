@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 10,
-    "total_added_airports": 18,
+    "total_added_airports": 20,
     "total_removed_airports": 3
   },
   "countries": {
@@ -135,6 +135,22 @@
           "icao": "SKMF"
         },
         {
+          "iata": "ORC",
+          "lat": 4.793848,
+          "lon": -71.345337,
+          "link": "https://www.flightradar24.com/data/airports/orc",
+          "name": "Orocue Airport",
+          "icao": "SKOE"
+        },
+        {
+          "iata": "PZA",
+          "lat": 5.876822,
+          "lon": -71.886261,
+          "link": "https://www.flightradar24.com/data/airports/pza",
+          "name": "Paz De Ariporo Airport",
+          "icao": "SKPZ"
+        },
+        {
           "iata": "RAV",
           "lat": 6.316477,
           "lon": -70.211273,
@@ -152,7 +168,7 @@
         }
       ],
       "removed_airports": [],
-      "added_count": 4,
+      "added_count": 6,
       "removed_count": 0
     },
     "DE": {
