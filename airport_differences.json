@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 12,
-    "total_added_airports": 25,
+    "total_added_airports": 35,
     "total_removed_airports": 3
   },
   "countries": {
@@ -56,10 +56,59 @@
     "CA": {
       "country_name": "Canada",
       "iso_code": "CA",
-      "fr24_count": 342,
+      "fr24_count": 348,
       "skycards_count": 343,
-      "difference": -1,
-      "added_airports": [],
+      "difference": 5,
+      "added_airports": [
+        {
+          "iata": "KES",
+          "lat": 56.036644,
+          "lon": -96.505836,
+          "link": "https://www.flightradar24.com/data/airports/kes",
+          "name": "Kelsey Airport",
+          "icao": "CZEE"
+        },
+        {
+          "iata": "WPC",
+          "lat": 49.520405,
+          "lon": -113.999962,
+          "link": "https://www.flightradar24.com/data/airports/wpc",
+          "name": "Pincher Creek Airport",
+          "icao": "CZPC"
+        },
+        {
+          "iata": "YDO",
+          "lat": 48.7785,
+          "lon": -72.374954,
+          "link": "https://www.flightradar24.com/data/airports/ydo",
+          "name": "Dolbeau St.Felicien Airport",
+          "icao": "CYDO"
+        },
+        {
+          "iata": "YHE",
+          "lat": 49.368774,
+          "lon": -121.495338,
+          "link": "https://www.flightradar24.com/data/airports/yhe",
+          "name": "Hope Airport",
+          "icao": "CYHE"
+        },
+        {
+          "iata": "YLD",
+          "lat": 47.822472,
+          "lon": -83.350426,
+          "link": "https://www.flightradar24.com/data/airports/yld",
+          "name": "Chapleau Municipal Airport",
+          "icao": "CYLD"
+        },
+        {
+          "iata": "YSU",
+          "lat": 46.440376,
+          "lon": -63.833599,
+          "link": "https://www.flightradar24.com/data/airports/ysu",
+          "name": "Summerside Airport",
+          "icao": "CYSU"
+        }
+      ],
       "removed_airports": [
         {
           "name": "Toronto Buttonville Municipal Airport",
@@ -69,7 +118,7 @@
           "lon": -79.370003
         }
       ],
-      "added_count": 0,
+      "added_count": 6,
       "removed_count": 1
     },
     "CD": {
@@ -277,10 +326,34 @@
     "US": {
       "country_name": "United States",
       "iso_code": "US",
-      "fr24_count": 1703,
+      "fr24_count": 1707,
       "skycards_count": 1696,
-      "difference": 7,
+      "difference": 11,
       "added_airports": [
+        {
+          "iata": "AIV",
+          "lat": 33.107471,
+          "lon": -88.195526,
+          "link": "https://www.flightradar24.com/data/airports/aiv",
+          "name": "Aliceville George Downer Airport",
+          "icao": "KAIV"
+        },
+        {
+          "iata": "FBY",
+          "lat": 40.182392,
+          "lon": -97.169273,
+          "link": "https://www.flightradar24.com/data/airports/fby",
+          "name": "Fairbury Municipal Airport",
+          "icao": "KFBY"
+        },
+        {
+          "iata": "LKV",
+          "lat": 42.160797,
+          "lon": -120.399124,
+          "link": "https://www.flightradar24.com/data/airports/lkv",
+          "name": "Lakeview Lake County Airport",
+          "icao": "KLKV"
+        },
         {
           "iata": "QDG",
           "lat": 30.173285,
@@ -336,10 +409,18 @@
           "link": "https://www.flightradar24.com/data/airports/qdx",
           "name": "Jasper Walker County Airport",
           "icao": "KJFX"
+        },
+        {
+          "iata": "STK",
+          "lat": 40.613441,
+          "lon": -103.263702,
+          "link": "https://www.flightradar24.com/data/airports/stk",
+          "name": "Sterling Municipal Airport",
+          "icao": "KSTK"
         }
       ],
       "removed_airports": [],
-      "added_count": 7,
+      "added_count": 11,
       "removed_count": 0
     },
     "VE": {
