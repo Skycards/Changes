@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 17,
-    "total_added_airports": 40,
+    "total_added_airports": 41,
     "total_removed_airports": 4
   },
   "countries": {
@@ -404,6 +404,14 @@
           "link": "https://www.flightradar24.com/data/airports/qxs",
           "name": "Szczecin Dabie Airport",
           "icao": "EPSD"
+        },
+        {
+          "iata": "QXY",
+          "lat": 51.205334,
+          "lon": 16.997684,
+          "link": "https://www.flightradar24.com/data/airports/qxy",
+          "name": "Wroclaw Szymanow Airport",
+          "icao": "EPWS"
         }
       ],
       "removed_airports": [
@@ -415,7 +423,7 @@
           "lon": 16.2656
         }
       ],
-      "added_count": 1,
+      "added_count": 2,
       "removed_count": 1
     },
     "US": {
