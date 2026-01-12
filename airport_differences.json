@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 17,
-    "total_added_airports": 41,
+    "total_added_airports": 45,
     "total_removed_airports": 4
   },
   "countries": {
@@ -11,9 +11,18 @@
       "fr24_count": 16,
       "skycards_count": 15,
       "difference": 1,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "iata": "NDD",
+          "lat": -11.167942,
+          "lon": 13.847747,
+          "link": "https://www.flightradar24.com/data/airports/ndd",
+          "name": "Sumbe Airport",
+          "icao": "FNSU"
+        }
+      ],
       "removed_airports": [],
-      "added_count": 0,
+      "added_count": 1,
       "removed_count": 0
     },
     "AT": {
@@ -44,6 +53,14 @@
       "difference": 3,
       "added_airports": [
         {
+          "iata": "ITP",
+          "lat": -21.219149,
+          "lon": -41.875877,
+          "link": "https://www.flightradar24.com/data/airports/itp",
+          "name": "Itaperuna Airport",
+          "icao": "SDUN"
+        },
+        {
           "iata": "ITQ",
           "lat": -29.172867,
           "lon": -56.537548,
@@ -61,7 +78,7 @@
         }
       ],
       "removed_airports": [],
-      "added_count": 2,
+      "added_count": 3,
       "removed_count": 0
     },
     "CA": {
@@ -238,7 +255,24 @@
       "fr24_count": 263,
       "skycards_count": 262,
       "difference": 1,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "iata": "BZJ",
+          "lat": 33.560307,
+          "lon": 115.909752,
+          "link": "https://www.flightradar24.com/data/airports/bzj",
+          "name": "Bozhou Airport",
+          "icao": "ZSBO"
+        },
+        {
+          "iata": "JNH",
+          "lat": 30.704973,
+          "lon": 120.679276,
+          "link": "https://www.flightradar24.com/data/airports/jnh",
+          "name": "Jiaxing Nanhu Airport",
+          "icao": "ZSJX"
+        }
+      ],
       "removed_airports": [
         {
           "name": "Qinhuangdao Shanhaiguan Airport",
@@ -248,7 +282,7 @@
           "lon": 119.731003
         }
       ],
-      "added_count": 0,
+      "added_count": 2,
       "removed_count": 1
     },
     "CO": {
