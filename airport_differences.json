@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 17,
-    "total_added_airports": 45,
+    "total_added_airports": 48,
     "total_removed_airports": 4
   },
   "countries": {
@@ -566,9 +566,34 @@
       "fr24_count": 18,
       "skycards_count": 15,
       "difference": 3,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "iata": "AFS",
+          "lat": 41.612133,
+          "lon": 64.232834,
+          "link": "https://www.flightradar24.com/data/airports/afs",
+          "name": "Zarafshan Airport",
+          "icao": "UZSN"
+        },
+        {
+          "iata": "IYO",
+          "lat": 38.407104,
+          "lon": 67.945679,
+          "link": "https://www.flightradar24.com/data/airports/iyo",
+          "name": "Sariasiya Airport",
+          "icao": "UZSR"
+        },
+        {
+          "iata": "TVT",
+          "lat": 41.313911,
+          "lon": 69.403549,
+          "link": "https://www.flightradar24.com/data/airports/tvt",
+          "name": "Tashkent East Airport",
+          "icao": "UZTP"
+        }
+      ],
       "removed_airports": [],
-      "added_count": 0,
+      "added_count": 3,
       "removed_count": 0
     },
     "VE": {
