@@ -1,10 +1,21 @@
 {
   "summary": {
-    "total_countries_with_differences": 12,
-    "total_added_airports": 37,
-    "total_removed_airports": 3
+    "total_countries_with_differences": 17,
+    "total_added_airports": 40,
+    "total_removed_airports": 4
   },
   "countries": {
+    "AO": {
+      "country_name": "Angola",
+      "iso_code": "AO",
+      "fr24_count": 16,
+      "skycards_count": 15,
+      "difference": 1,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
+      "removed_count": 0
+    },
     "AT": {
       "country_name": "Austria",
       "iso_code": "AT",
@@ -28,9 +39,9 @@
     "BR": {
       "country_name": "Brazil",
       "iso_code": "BR",
-      "fr24_count": 281,
+      "fr24_count": 282,
       "skycards_count": 279,
-      "difference": 2,
+      "difference": 3,
       "added_airports": [
         {
           "iata": "ITQ",
@@ -56,9 +67,9 @@
     "CA": {
       "country_name": "Canada",
       "iso_code": "CA",
-      "fr24_count": 348,
+      "fr24_count": 350,
       "skycards_count": 343,
-      "difference": 5,
+      "difference": 7,
       "added_airports": [
         {
           "iata": "KES",
@@ -224,9 +235,9 @@
     "CN": {
       "country_name": "China",
       "iso_code": "CN",
-      "fr24_count": 261,
+      "fr24_count": 263,
       "skycards_count": 262,
-      "difference": -1,
+      "difference": 1,
       "added_airports": [],
       "removed_airports": [
         {
@@ -339,6 +350,74 @@
       "added_count": 0,
       "removed_count": 1
     },
+    "IN": {
+      "country_name": "India",
+      "iso_code": "IN",
+      "fr24_count": 146,
+      "skycards_count": 145,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "AMI",
+          "lat": 30.374516,
+          "lon": 76.809647,
+          "link": "https://www.flightradar24.com/data/airports/ami",
+          "name": "Ambala Airport",
+          "icao": "VIAM"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
+      "removed_count": 0
+    },
+    "KZ": {
+      "country_name": "Kazakhstan",
+      "iso_code": "KZ",
+      "fr24_count": 25,
+      "skycards_count": 24,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "BXJ",
+          "lat": 43.351616,
+          "lon": 76.88269,
+          "link": "https://www.flightradar24.com/data/airports/bxj",
+          "name": "Almaty Boraldai Airport",
+          "icao": "UAAR"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
+      "removed_count": 0
+    },
+    "PL": {
+      "country_name": "Poland",
+      "iso_code": "PL",
+      "fr24_count": 46,
+      "skycards_count": 45,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "QXS",
+          "lat": 53.390678,
+          "lon": 14.632319,
+          "link": "https://www.flightradar24.com/data/airports/qxs",
+          "name": "Szczecin Dabie Airport",
+          "icao": "EPSD"
+        }
+      ],
+      "removed_airports": [
+        {
+          "name": "Koszalin Zegrze Pomorskie Airport",
+          "iata": null,
+          "icao": null,
+          "lat": 54.0425,
+          "lon": 16.2656
+        }
+      ],
+      "added_count": 1,
+      "removed_count": 1
+    },
     "US": {
       "country_name": "United States",
       "iso_code": "US",
@@ -437,6 +516,17 @@
       ],
       "removed_airports": [],
       "added_count": 11,
+      "removed_count": 0
+    },
+    "UZ": {
+      "country_name": "Uzbekistan",
+      "iso_code": "UZ",
+      "fr24_count": 18,
+      "skycards_count": 15,
+      "difference": 3,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
       "removed_count": 0
     },
     "VE": {
