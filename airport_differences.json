@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 12,
-    "total_added_airports": 35,
+    "total_added_airports": 37,
     "total_removed_airports": 3
   },
   "countries": {
@@ -101,6 +101,22 @@
           "icao": "CYLD"
         },
         {
+          "iata": "YLQ",
+          "lat": 47.410542,
+          "lon": -72.789116,
+          "link": "https://www.flightradar24.com/data/airports/ylq",
+          "name": "La Tuque Airport",
+          "icao": "CYLQ"
+        },
+        {
+          "iata": "YSE",
+          "lat": 49.782101,
+          "lon": -123.161766,
+          "link": "https://www.flightradar24.com/data/airports/yse",
+          "name": "Squamish Airport",
+          "icao": "CYSE"
+        },
+        {
           "iata": "YSU",
           "lat": 46.440376,
           "lon": -63.833599,
@@ -118,7 +134,7 @@
           "lon": -79.370003
         }
       ],
-      "added_count": 6,
+      "added_count": 8,
       "removed_count": 1
     },
     "CD": {
