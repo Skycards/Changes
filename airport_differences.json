@@ -1,7 +1,7 @@
 {
   "summary": {
-    "total_countries_with_differences": 17,
-    "total_added_airports": 48,
+    "total_countries_with_differences": 18,
+    "total_added_airports": 51,
     "total_removed_airports": 4
   },
   "countries": {
@@ -23,6 +23,42 @@
       ],
       "removed_airports": [],
       "added_count": 1,
+      "removed_count": 0
+    },
+    "AQ": {
+      "country_name": "Antarctica",
+      "iso_code": "AQ",
+      "fr24_count": 21,
+      "skycards_count": 18,
+      "difference": 3,
+      "added_airports": [
+        {
+          "iata": "QAF",
+          "lat": -70.296288,
+          "lon": -2.421412,
+          "link": "https://www.flightradar24.com/data/airports/qaf",
+          "name": "The Fuel Depot",
+          "icao": ""
+        },
+        {
+          "iata": "QAH",
+          "lat": -75.002014,
+          "lon": 0.069968,
+          "link": "https://www.flightradar24.com/data/airports/qah",
+          "name": "Kohnen Skiway",
+          "icao": ""
+        },
+        {
+          "iata": "QAU",
+          "lat": -74.856148,
+          "lon": -71.568199,
+          "link": "https://www.flightradar24.com/data/airports/qau",
+          "name": "Sky-Blu Field Station",
+          "icao": "EGAT"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 3,
       "removed_count": 0
     },
     "AT": {
