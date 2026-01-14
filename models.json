@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1764766081428,
+  "updatedAt": 1768386557571,
   "rows": [
     {
       "id": "A1",
@@ -541,6 +541,7 @@
         "BCS3"
       ],
       "markers": [
+        "B38M",
         "A20N"
       ],
       "inSeasons": [
@@ -1061,7 +1062,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "excluded": true
     },
     {
       "id": "A32P",
@@ -1096,7 +1098,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "excluded": true
     },
     {
       "id": "A332",
@@ -1331,7 +1334,8 @@
       ],
       "inSeasons": [
         1
-      ]
+      ],
+      "excluded": true
     },
     {
       "id": "A33P",
@@ -1371,7 +1375,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "excluded": true
     },
     {
       "id": "A342",
@@ -1577,7 +1582,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "excluded": true
     },
     {
       "id": "A359",
@@ -2298,7 +2304,7 @@
       "manufacturer": "AERO",
       "name": "AT-3",
       "manufacturers": [
-        "AERO (3) AT-3"
+        "AERO AT-3"
       ],
       "description": "The Aero AT-3 is a two-seat, single-engine light aircraft designed for training and recreational flying, known for its modern design and efficiency.",
       "landingGear": "Tricycle",
@@ -2339,7 +2345,7 @@
       "manufacturer": "AERO",
       "name": "AT-4",
       "manufacturers": [
-        "AERO (3) AT-4",
+        "AERO AT-4",
         "GOBOSH G-700"
       ],
       "description": "The Aero AT-4 is a two-seat, single-engine light aircraft, similar to the AT-3, used for training and recreational purposes, featuring advanced avionics.",
@@ -5205,7 +5211,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "excluded": true
     },
     {
       "id": "ARV1",
@@ -5381,7 +5388,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "excluded": true
     },
     {
       "id": "AS16",
@@ -5421,7 +5429,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "excluded": true
     },
     {
       "id": "AS20",
@@ -5453,7 +5462,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "excluded": true
     },
     {
       "id": "AS21",
@@ -5485,7 +5495,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "excluded": true
     },
     {
       "id": "AS22",
@@ -5525,7 +5536,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "excluded": true
     },
     {
       "id": "AS24",
@@ -5565,7 +5577,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "excluded": true
     },
     {
       "id": "AS25",
@@ -5603,7 +5616,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "excluded": true
     },
     {
       "id": "AS26",
@@ -5638,7 +5652,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "excluded": true
     },
     {
       "id": "AS28",
@@ -5677,7 +5692,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "excluded": true
     },
     {
       "id": "AS29",
@@ -5711,7 +5727,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "excluded": true
     },
     {
       "id": "AS30",
@@ -5749,7 +5766,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "excluded": true
     },
     {
       "id": "AS31",
@@ -5786,7 +5804,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "excluded": true
     },
     {
       "id": "AS32",
@@ -8346,6 +8365,7 @@
         "BCS3"
       ],
       "markers": [
+        "B38M",
         "A20N"
       ],
       "inSeasons": [
@@ -10339,6 +10359,7 @@
         "A20N"
       ],
       "markers": [
+        "B38M",
         "A20N"
       ],
       "inSeasons": [
@@ -12458,6 +12479,44 @@
       ],
       "inSeasons": [
         0,
+        1
+      ]
+    },
+    {
+      "id": "BR8",
+      "manufacturer": "BRM AERO",
+      "name": "Bristell B8",
+      "manufacturers": [
+        "BRM AERO Bristell B8"
+      ],
+      "description": "The BRM AERO Bristell B8 is a light sport aircraft designed for recreational flying. It features a sleek, modern design with a focus on pilot comfort and ease of handling.",
+      "landingGear": "Tricycle",
+      "wingPos": "High wing",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1579,
+      "num": 0,
+      "xp": 8897,
+      "firstFlight": 2010,
+      "wingspan": 9.13,
+      "length": 6.45,
+      "height": 2.3,
+      "ceiling": 15000,
+      "mtow": 600,
+      "seats": 2,
+      "range": 700,
+      "maxSpeed": 156,
+      "cardCategory": "ultra",
+      "ftea": 0.0002500373357228196,
+      "images": [
+        "C172"
+      ],
+      "markers": [
+        "P28A"
+      ],
+      "inSeasons": [
         1
       ]
     },
@@ -16226,6 +16285,7 @@
         "A20N"
       ],
       "markers": [
+        "B38M",
         "A20N"
       ],
       "inSeasons": [
@@ -21247,14 +21307,14 @@
     {
       "id": "DA40",
       "manufacturer": "DIAMOND",
-      "name": "DA-40 Club Star",
+      "name": "DA-40 Diamond Star",
       "manufacturers": [
         "DIAMOND DA-40 Club Star",
         "DIAMOND DA-40 Diamond Star",
         "DIAMOND DA-40 Katana",
         "DIAMOND DA-40 Tundra Star"
       ],
-      "description": "The DIAMOND DA-40 Club Star is an Austrian four-seat, single-engine light aircraft renowned for its advanced avionics and safety features.",
+      "description": "The Diamond DA-40 Diamond Star is a versatile four-seat light aircraft known for its efficient design and advanced avionics, making it popular for flight training and personal use.",
       "landingGear": "Tricycle",
       "wingPos": "Low wing",
       "wingShape": "Tapered",
@@ -22157,7 +22217,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "excluded": true
     },
     {
       "id": "DG40",
@@ -22197,7 +22258,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "excluded": true
     },
     {
       "id": "DG50",
@@ -22236,7 +22298,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "excluded": true
     },
     {
       "id": "DG60",
@@ -22275,7 +22338,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "excluded": true
     },
     {
       "id": "DG80",
@@ -22311,7 +22375,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "excluded": true
     },
     {
       "id": "DH2T",
@@ -23321,7 +23386,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "excluded": true
     },
     {
       "id": "DO27",
@@ -23911,7 +23977,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "excluded": true
     },
     {
       "id": "DV1",
@@ -24330,6 +24397,7 @@
         "E75L"
       ],
       "markers": [
+        "B38M",
         "A20N"
       ],
       "inSeasons": [
@@ -25525,7 +25593,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "excluded": true
     },
     {
       "id": "EC20",
@@ -30014,7 +30083,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "excluded": true
     },
     {
       "id": "G109",
@@ -32204,7 +32274,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "imageOverride": "AS21"
     },
     {
       "id": "GLSP",
@@ -35635,7 +35706,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "excluded": true
     },
     {
       "id": "JARO",
@@ -35989,7 +36061,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "excluded": true
     },
     {
       "id": "JS31",
@@ -36104,7 +36177,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "excluded": true
     },
     {
       "id": "JS3J",
@@ -36139,7 +36213,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "excluded": true
     },
     {
       "id": "JS41",
@@ -38549,7 +38624,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "excluded": true
     },
     {
       "id": "LAKR",
@@ -38717,6 +38793,7 @@
         0,
         1
       ],
+      "imageOverride": "MIR2",
       "military": true
     },
     {
@@ -39393,7 +39470,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "excluded": true
     },
     {
       "id": "LK19",
@@ -39433,7 +39511,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "excluded": true
     },
     {
       "id": "LK7E",
@@ -39470,7 +39549,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "excluded": true
     },
     {
       "id": "LMK1",
@@ -39754,7 +39834,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "excluded": true
     },
     {
       "id": "LS8",
@@ -39795,7 +39876,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "excluded": true
     },
     {
       "id": "LS9",
@@ -39835,7 +39917,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "excluded": true
     },
     {
       "id": "LWIN",
@@ -41343,6 +41426,43 @@
       ]
     },
     {
+      "id": "MB80",
+      "manufacturer": "BROCHET",
+      "name": "MB-80",
+      "manufacturers": [
+        "BROCHET MB-83"
+      ],
+      "description": "The Brochet MB-80 is a French light aircraft from the 1950s, designed for recreational flying. It features a high-wing configuration and was popular among private pilots for its simplicity.",
+      "landingGear": "Tailwheel",
+      "wingPos": "High wing",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1987,
+      "xp": 10934,
+      "firstFlight": 1951,
+      "wingspan": 10.4,
+      "length": 6.58,
+      "height": 2.5,
+      "mtow": 620,
+      "seats": 2,
+      "range": 270,
+      "maxSpeed": 86,
+      "cardCategory": "ultra",
+      "ftea": 0.000004256272401433691,
+      "images": [
+        "B738"
+      ],
+      "markers": [
+        "P28A",
+        "B738"
+      ],
+      "inSeasons": [
+        1
+      ]
+    },
+    {
       "id": "MC01",
       "manufacturer": "MONTAER",
       "name": "MC-01",
@@ -41460,6 +41580,7 @@
         "A20N"
       ],
       "markers": [
+        "B38M",
         "A20N"
       ],
       "inSeasons": [
@@ -44447,7 +44568,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "excluded": true
     },
     {
       "id": "NIPR",
@@ -44529,6 +44651,44 @@
       ],
       "inSeasons": [
         0,
+        1
+      ]
+    },
+    {
+      "id": "NPOR",
+      "manufacturer": "REDFERN",
+      "name": "Nieuport 17",
+      "manufacturers": [
+        "REDFERN Nieuport 17",
+        "REDFERN Nieuport 24"
+      ],
+      "description": "The REDFERN Nieuport 17 is a replica of the iconic World War I French fighter, known for its sesquiplane design and agility, which made it a favorite among Allied pilots.",
+      "landingGear": "Tailwheel",
+      "wingPos": "Biplane",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1551,
+      "num": 0,
+      "xp": 8757,
+      "wingspan": 8.21,
+      "length": 5.69,
+      "height": 2.4,
+      "ceiling": 12500,
+      "mtow": 660,
+      "seats": 1,
+      "range": 196,
+      "maxSpeed": 109,
+      "cardCategory": "ultra",
+      "ftea": 0.0003306824970131422,
+      "images": [
+        "C172"
+      ],
+      "markers": [
+        "P28A"
+      ],
+      "inSeasons": [
         1
       ]
     },
@@ -48347,7 +48507,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "excluded": true
     },
     {
       "id": "PITE",
@@ -48388,7 +48549,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "excluded": true
     },
     {
       "id": "PIVE",
@@ -48546,7 +48708,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "excluded": true
     },
     {
       "id": "PK23",
@@ -52425,16 +52588,16 @@
     {
       "id": "S1",
       "manufacturer": "ARCTIC",
-      "name": "Arctic Tern",
+      "name": "S-1 Arctic Tern",
       "manufacturers": [
         "ARCTIC S-1 Arctic Tern",
         "CALLAIR S-1",
         "INTERSTATE L-6 Cadet",
-        "INTERSTATE S-1",
+        "INTERSTATE S-1 Cadet",
         "INTERSTATE S-1 Arctic Tern",
         "INTERSTATE S-1 Cadet"
       ],
-      "description": "The ARCTIC Arctic Tern is a rugged, high-wing, single-engine aircraft designed for operations in harsh environments, including bush flying and short takeoff and landing (STOL) capabilities.",
+      "description": "The ARCTIC S-1 Arctic Tern is a versatile light aircraft designed for remote operations, featuring robust landing gear for rough terrains and a high-wing configuration for enhanced visibility and stability.",
       "landingGear": "Tailwheel",
       "wingPos": "High wing",
       "wingShape": "Rectangular",
@@ -52449,10 +52612,10 @@
       "wingspan": 11.2,
       "length": 7.01,
       "height": 2.1,
-      "ceiling": 21000,
+      "ceiling": 19000,
       "mtow": 860,
       "seats": 2,
-      "range": 650,
+      "range": 567,
       "maxSpeed": 102,
       "cardCategory": "ultra",
       "ftea": 0.06113217128945049,
@@ -52466,7 +52629,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "military": true
     },
     {
       "id": "S10",
@@ -52588,7 +52752,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "excluded": true
     },
     {
       "id": "S11",
@@ -52705,7 +52870,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "excluded": true
     },
     {
       "id": "S15U",
@@ -53037,11 +53203,11 @@
     {
       "id": "S4",
       "manufacturer": "ARCTIC",
-      "name": "Privateer",
+      "name": "S-4 Privateer",
       "manufacturers": [
         "ARCTIC S-4 Privateer"
       ],
-      "description": "The ARCTIC Privateer is a rugged, high-wing, single-engine aircraft designed for operations in remote and challenging environments, with STOL capabilities.",
+      "description": "The ARCTIC S-4 Privateer is a versatile amphibious aircraft designed for remote operations, featuring a rugged build for harsh environments and a history of supporting scientific and exploratory missions.",
       "landingGear": "Tailwheel",
       "wingPos": "High wing",
       "type": "L",
@@ -53411,7 +53577,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "excluded": true
     },
     {
       "id": "S61",
@@ -54147,6 +54314,42 @@
       ],
       "inSeasons": [
         0,
+        1
+      ]
+    },
+    {
+      "id": "SAPH",
+      "manufacturer": "PIEL",
+      "name": "CP-1320 Saphir",
+      "manufacturers": [
+        "PIEL CP-1320 Saphir"
+      ],
+      "description": "The PIEL CP-1320 Saphir is a French light aircraft designed for amateur construction. Known for its wooden construction, it offers enthusiasts a hands-on building experience and a classic flying adventure.",
+      "wingPos": "Low wing",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1611,
+      "num": 0,
+      "xp": 9056,
+      "wingspan": 7.9,
+      "length": 6.7,
+      "height": 1.9,
+      "mtow": 940,
+      "seats": 2,
+      "range": 591,
+      "maxSpeed": 173,
+      "cardCategory": "ultra",
+      "ftea": 0.00018201164874551972,
+      "images": [
+        "CP32",
+        "C172"
+      ],
+      "markers": [
+        "P28A"
+      ],
+      "inSeasons": [
         1
       ]
     },
@@ -55295,7 +55498,8 @@
       ],
       "inSeasons": [
         1
-      ]
+      ],
+      "excluded": true
     },
     {
       "id": "SF28",
@@ -56223,16 +56427,18 @@
       "description": "The legendary gift-giver who flies a magical sleigh pulled by reindeer, first mentioned in 1823’s “A Visit from St. Nicholas.”\n\nA symbol of Christmas joy and magic, he spreads cheer to believers worldwide.",
       "type": "_",
       "engType": "_",
-      "rareness": 1400,
+      "rareness": 1232,
       "num": 1,
-      "xp": 8000,
+      "xp": 7160,
       "firstFlight": 1823,
       "mtow": 1000,
       "seats": 2,
       "maxSpeed": 1140,
       "cardCategory": "fantasy",
+      "ftea": 0.008064516129032258,
       "inSeasons": [
-        0
+        0,
+        1
       ]
     },
     {
@@ -56710,6 +56916,41 @@
       ],
       "inSeasons": [
         0,
+        1
+      ]
+    },
+    {
+      "id": "SP91",
+      "manufacturer": "TECHNOAVIA",
+      "name": "Slava",
+      "manufacturers": [
+        "TECHNOAVIA SP-91 Slava"
+      ],
+      "description": "The TECHNOAVIA Slava is a Russian aerobatic aircraft designed for training and competition. Known for its agility, it serves as a platform for pilots to hone their aerobatic skills.",
+      "landingGear": "Tailwheel",
+      "wingPos": "Low wing",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1583,
+      "num": 0,
+      "xp": 8914,
+      "wingspan": 8.4,
+      "length": 7,
+      "mtow": 1080,
+      "seats": 2,
+      "range": 700,
+      "maxSpeed": 160,
+      "cardCategory": "ultra",
+      "ftea": 0.0002415994623655914,
+      "images": [
+        "C172"
+      ],
+      "markers": [
+        "P28A"
+      ],
+      "inSeasons": [
         1
       ]
     },
@@ -57222,6 +57463,47 @@
         0,
         1
       ]
+    },
+    {
+      "id": "SSAB",
+      "manufacturer": "NORTH AMERICAN",
+      "name": "F-100 Super Sabre",
+      "manufacturers": [
+        "NORTH AMERICAN F-100 Super Sabre"
+      ],
+      "description": "The North American F-100 Super Sabre was a pioneering jet fighter, notable for being the first U.S. Air Force aircraft capable of supersonic speed in level flight, influencing future jet designs.",
+      "landingGear": "Tricycle",
+      "wingPos": "Mid wing",
+      "wingShape": "Swept back",
+      "type": "L",
+      "engNum": 1,
+      "engType": "J",
+      "wtc": "M",
+      "rareness": 1656,
+      "num": 0,
+      "xp": 9280,
+      "firstFlight": 1953,
+      "wingspan": 11.8,
+      "length": 15,
+      "height": 4.9,
+      "ceiling": 50000,
+      "mtow": 15800,
+      "seats": 1,
+      "range": 1734,
+      "maxSpeed": 803,
+      "cardCategory": "ultra",
+      "ftea": 0.00011622610513739546,
+      "images": [
+        "HAWK"
+      ],
+      "markers": [
+        "HUNT",
+        "HAWK"
+      ],
+      "inSeasons": [
+        1
+      ],
+      "military": true
     },
     {
       "id": "SSTL",
@@ -58801,6 +59083,7 @@
         "E195"
       ],
       "markers": [
+        "B38M",
         "A20N"
       ],
       "inSeasons": [
@@ -59078,7 +59361,7 @@
     {
       "id": "T34P",
       "manufacturer": "BEECH",
-      "name": "45 Mentor",
+      "name": "T-34 Mentor",
       "manufacturers": [
         "BEECH 45 Mentor",
         "BEECH T-34A Mentor",
@@ -59121,7 +59404,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "military": true
     },
     {
       "id": "T34T",
@@ -60427,7 +60711,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "excluded": true
     },
     {
       "id": "TFUN",
@@ -61405,7 +61690,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "excluded": true
     },
     {
       "id": "TTRS",
@@ -62827,7 +63113,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "excluded": true
     },
     {
       "id": "VEZE",
@@ -63229,7 +63516,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "excluded": true
     },
     {
       "id": "VNTR",
@@ -64650,6 +64938,42 @@
       ],
       "inSeasons": [
         0,
+        1
+      ]
+    },
+    {
+      "id": "WLBY",
+      "manufacturer": "FLY SYNTHESIS",
+      "name": "Wallaby",
+      "manufacturers": [
+        "FLY SYNTHESIS Wallaby"
+      ],
+      "description": "The FLY SYNTHESIS Wallaby is a light sport aircraft designed for recreational flying. Known for its simplicity and ease of use, it offers an open cockpit experience, enhancing pilot engagement.",
+      "landingGear": "Tricycle",
+      "wingPos": "High wing",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1769,
+      "num": 0,
+      "xp": 9844,
+      "wingspan": 9.43,
+      "length": 5.7,
+      "height": 2.4,
+      "mtow": 430,
+      "seats": 2,
+      "maxSpeed": 78,
+      "cardCategory": "ultra",
+      "ftea": 0.00003763440860215054,
+      "images": [
+        "C172"
+      ],
+      "markers": [
+        "XAIR",
+        "P28A"
+      ],
+      "inSeasons": [
         1
       ]
     },
@@ -66311,7 +66635,6 @@
     "AL18",
     "AN21",
     "AS35",
-    "AT6",
     "AT7",
     "B05",
     "B200",
@@ -66392,13 +66715,13 @@
     "SR10",
     "T214",
     "TEST",
-    "TEX",
     "TMB8",
     "TMB9",
     "TORN",
     "TWIN",
     "TWR",
     "U206",
+    "AT3",
     "V44",
     "VFHC",
     "VL3E",
@@ -66424,9 +66747,11 @@
     "TR1",
     "TS1J",
     "TRIN",
-    "A22",
     "MA6",
     "MI34",
+    "AT6",
+    "TEX",
+    "A22",
     "SH6"
   ]
 }
