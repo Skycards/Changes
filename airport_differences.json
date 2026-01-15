@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 19,
-    "total_added_airports": 51,
+    "total_added_airports": 53,
     "total_removed_airports": 4
   },
   "countries": {
@@ -407,9 +407,26 @@
       "fr24_count": 22,
       "skycards_count": 21,
       "difference": 1,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "iata": "EGL",
+          "lat": 5.290512,
+          "lon": 39.702816,
+          "link": "https://www.flightradar24.com/data/airports/egl",
+          "name": "Negele Borana Airport",
+          "icao": "HANG"
+        },
+        {
+          "iata": "NEK",
+          "lat": 9.342161,
+          "lon": 36.536739,
+          "link": "https://www.flightradar24.com/data/airports/nek",
+          "name": "Nekemte Airport",
+          "icao": "HANK"
+        }
+      ],
       "removed_airports": [],
-      "added_count": 0,
+      "added_count": 2,
       "removed_count": 0
     },
     "FR": {
