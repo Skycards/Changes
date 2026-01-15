@@ -1,6 +1,6 @@
 {
   "summary": {
-    "total_countries_with_differences": 18,
+    "total_countries_with_differences": 19,
     "total_added_airports": 51,
     "total_removed_airports": 4
   },
@@ -399,6 +399,17 @@
       ],
       "removed_airports": [],
       "added_count": 1,
+      "removed_count": 0
+    },
+    "ET": {
+      "country_name": "Ethiopia",
+      "iso_code": "ET",
+      "fr24_count": 22,
+      "skycards_count": 21,
+      "difference": 1,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
       "removed_count": 0
     },
     "FR": {
