@@ -1,7 +1,7 @@
 {
   "summary": {
-    "total_countries_with_differences": 19,
-    "total_added_airports": 53,
+    "total_countries_with_differences": 22,
+    "total_added_airports": 56,
     "total_removed_airports": 4
   },
   "countries": {
@@ -404,9 +404,9 @@
     "ET": {
       "country_name": "Ethiopia",
       "iso_code": "ET",
-      "fr24_count": 22,
+      "fr24_count": 23,
       "skycards_count": 21,
-      "difference": 1,
+      "difference": 2,
       "added_airports": [
         {
           "iata": "EGL",
@@ -468,6 +468,26 @@
       "added_count": 1,
       "removed_count": 0
     },
+    "KE": {
+      "country_name": "Kenya",
+      "iso_code": "KE",
+      "fr24_count": 28,
+      "skycards_count": 27,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "ILU",
+          "lat": -2.903988,
+          "lon": 38.072346,
+          "link": "https://www.flightradar24.com/data/airports/ilu",
+          "name": "Kilaguni Airport",
+          "icao": "HKKL"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
+      "removed_count": 0
+    },
     "KZ": {
       "country_name": "Kazakhstan",
       "iso_code": "KZ",
@@ -523,6 +543,26 @@
       ],
       "added_count": 2,
       "removed_count": 1
+    },
+    "RU": {
+      "country_name": "Russia",
+      "iso_code": "RU",
+      "fr24_count": 187,
+      "skycards_count": 186,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "SES",
+          "lat": 66.840446,
+          "lon": 88.411186,
+          "link": "https://www.flightradar24.com/data/airports/ses",
+          "name": "Svetlogorsk Airport",
+          "icao": "UOIG"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
+      "removed_count": 0
     },
     "US": {
       "country_name": "United States",
@@ -686,6 +726,26 @@
       ],
       "removed_airports": [],
       "added_count": 2,
+      "removed_count": 0
+    },
+    "ZW": {
+      "country_name": "Zimbabwe",
+      "iso_code": "ZW",
+      "fr24_count": 7,
+      "skycards_count": 6,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "UTA",
+          "lat": -18.996964,
+          "lon": 32.627071,
+          "link": "https://www.flightradar24.com/data/airports/uta",
+          "name": "Mutare Airport",
+          "icao": "FVGR"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
       "removed_count": 0
     }
   }
