@@ -51,10 +51,34 @@ jobs:
         run: |
           if git diff --quiet HEAD ${{ inputs.output_file }}; then
             echo "changes=false" >> $GITHUB_OUTPUT
+            echo "only_updatedAt=false" >> $GITHUB_OUTPUT
             echo "No changes detected in ${{ inputs.output_file }}"
           else
             echo "changes=true" >> $GITHUB_OUTPUT
             echo "Changes detected in ${{ inputs.output_file }}"
+
+            # Check if only updatedAt changed
+            DIFF_OUTPUT=$(git diff HEAD ${{ inputs.output_file }})
+            # Extract only actual changed lines (lines starting with + or - but not +++ or ---)
+            CHANGED_LINES=$(echo "$DIFF_OUTPUT" | grep -E "^[\+\-]" | grep -vE "^[\+\-]{3}" || true)
+
+            # Check if all changed lines contain "updatedAt"
+            # If there are no changed lines, or all changed lines contain "updatedAt", then only updatedAt changed
+            if [ -z "$CHANGED_LINES" ]; then
+              echo "only_updatedAt=true" >> $GITHUB_OUTPUT
+              echo "Only updatedAt field changed - will skip webhooks"
+            else
+              # Count lines that don't contain "updatedAt"
+              NON_UPDATEDAT_COUNT=$(echo "$CHANGED_LINES" | grep -v "updatedAt" | wc -l | tr -d ' ' || echo "0")
+
+              if [ "$NON_UPDATEDAT_COUNT" = "0" ]; then
+                echo "only_updatedAt=true" >> $GITHUB_OUTPUT
+                echo "Only updatedAt field changed - will skip webhooks"
+              else
+                echo "only_updatedAt=false" >> $GITHUB_OUTPUT
+                echo "Changes detected beyond updatedAt - will send webhooks"
+              fi
+            fi
           fi
 
       - name: Commit ${{ inputs.output_file }} changes
@@ -79,14 +103,14 @@ jobs:
           done
 
       - name: Load webhook secrets
-        if: steps.changes.outputs.changes == 'true'
+        if: steps.changes.outputs.changes == 'true' && steps.changes.outputs.only_updatedAt != 'true'
         uses: oNaiPs/secrets-to-env-action@v1
         with:
           secrets: ${{ toJSON(secrets) }}
           prefix: WEBHOOK_
 
       - name: Send Discord webhook notifications
-        if: steps.changes.outputs.changes == 'true'
+        if: steps.changes.outputs.changes == 'true' && steps.changes.outputs.only_updatedAt != 'true'
         run: |
           # Get the commit hash that was just pushed
           COMMIT_HASH=$(git rev-parse HEAD)

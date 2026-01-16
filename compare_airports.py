@@ -535,13 +535,16 @@ def get_country_airports_from_our_data(airports_data: Dict, country_code: str) -
     for airport in airports_data.get('rows', []):
         place_code = airport.get('placeCode', '')
         if place_code and place_code.split('-')[0] == country_code:
-            country_airports.append({
-                'name': airport.get('name', ''),
-                'iata': airport.get('iata', ''),
-                'icao': airport.get('icao', ''),
-                'lat': airport.get('lat', 0),
-                'lon': airport.get('lon', 0)
-            })
+            iata = airport.get('iata')
+            #* Filter out airports with null IATA values
+            if iata is not None and iata != '':
+                country_airports.append({
+                    'name': airport.get('name', ''),
+                    'iata': iata,
+                    'icao': airport.get('icao', ''),
+                    'lat': airport.get('lat', 0),
+                    'lon': airport.get('lon', 0)
+                })
 
     return country_airports
 
