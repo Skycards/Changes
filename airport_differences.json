@@ -2,7 +2,7 @@
   "summary": {
     "total_countries_with_differences": 22,
     "total_added_airports": 56,
-    "total_removed_airports": 4
+    "total_removed_airports": 0
   },
   "countries": {
     "AO": {
@@ -189,17 +189,9 @@
           "icao": "CYSU"
         }
       ],
-      "removed_airports": [
-        {
-          "name": "Toronto Buttonville Municipal Airport",
-          "iata": null,
-          "icao": null,
-          "lat": 43.862221,
-          "lon": -79.370003
-        }
-      ],
+      "removed_airports": [],
       "added_count": 8,
-      "removed_count": 1
+      "removed_count": 0
     },
     "CD": {
       "country_name": "Democratic Republic Of The Congo",
@@ -309,17 +301,9 @@
           "icao": "ZSJX"
         }
       ],
-      "removed_airports": [
-        {
-          "name": "Qinhuangdao Shanhaiguan Airport",
-          "iata": null,
-          "icao": null,
-          "lat": 39.968102,
-          "lon": 119.731003
-        }
-      ],
+      "removed_airports": [],
       "added_count": 2,
-      "removed_count": 1
+      "removed_count": 0
     },
     "CO": {
       "country_name": "Colombia",
@@ -436,17 +420,9 @@
       "skycards_count": 163,
       "difference": -1,
       "added_airports": [],
-      "removed_airports": [
-        {
-          "name": "Reims Champagne Air Base",
-          "iata": null,
-          "icao": null,
-          "lat": 49.3102,
-          "lon": 4.050747
-        }
-      ],
+      "removed_airports": [],
       "added_count": 0,
-      "removed_count": 1
+      "removed_count": 0
     },
     "IN": {
       "country_name": "India",
@@ -532,17 +508,9 @@
           "icao": "EPWS"
         }
       ],
-      "removed_airports": [
-        {
-          "name": "Koszalin Zegrze Pomorskie Airport",
-          "iata": null,
-          "icao": null,
-          "lat": 54.0425,
-          "lon": 16.2656
-        }
-      ],
+      "removed_airports": [],
       "added_count": 2,
-      "removed_count": 1
+      "removed_count": 0
     },
     "RU": {
       "country_name": "Russia",
