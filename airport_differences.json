@@ -1,7 +1,7 @@
 {
   "summary": {
-    "total_countries_with_differences": 22,
-    "total_added_airports": 56,
+    "total_countries_with_differences": 23,
+    "total_added_airports": 57,
     "total_removed_airports": 0
   },
   "countries": {
@@ -478,6 +478,26 @@
           "link": "https://www.flightradar24.com/data/airports/bxj",
           "name": "Almaty Boraldai Airport",
           "icao": "UAAR"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
+      "removed_count": 0
+    },
+    "MX": {
+      "country_name": "Mexico",
+      "iso_code": "MX",
+      "fr24_count": 81,
+      "skycards_count": 80,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "NCG",
+          "lat": 30.3974,
+          "lon": -107.875076,
+          "link": "https://www.flightradar24.com/data/airports/ncg",
+          "name": "Nuevo Casas Grandes Airport",
+          "icao": "MMCG"
         }
       ],
       "removed_airports": [],
