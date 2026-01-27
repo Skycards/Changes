@@ -555,9 +555,9 @@
     "US": {
       "country_name": "United States",
       "iso_code": "US",
-      "fr24_count": 1707,
+      "fr24_count": 1711,
       "skycards_count": 1696,
-      "difference": 11,
+      "difference": 15,
       "added_airports": [
         {
           "iata": "AIV",
