@@ -1,8 +1,8 @@
 {
   "summary": {
     "total_countries_with_differences": 23,
-    "total_added_airports": 54,
-    "total_removed_airports": 26
+    "total_added_airports": 57,
+    "total_removed_airports": 0
   },
   "countries": {
     "AO": {
@@ -235,25 +235,27 @@
       "fr24_count": 4,
       "skycards_count": 2,
       "difference": 2,
-      "added_airports": [],
-      "removed_airports": [
+      "added_airports": [
         {
-          "name": "Bangui Airport",
-          "iata": "BGF",
-          "icao": "FEFF",
-          "lat": 4.398475,
-          "lon": 18.51878
+          "iata": "IRO",
+          "lat": 10.236612,
+          "lon": 22.715738,
+          "link": "https://www.flightradar24.com/data/airports/iro",
+          "name": "Birao Airport",
+          "icao": "FEFI"
         },
         {
-          "name": "Bria Airport",
-          "iata": "BIV",
-          "icao": "FEFR",
-          "lat": 6.527778,
-          "lon": 21.989441
+          "iata": "NDL",
+          "lat": 8.427558,
+          "lon": 20.634949,
+          "link": "https://www.flightradar24.com/data/airports/ndl",
+          "name": "N'Dele Airport",
+          "icao": "FEFN"
         }
       ],
-      "added_count": 0,
-      "removed_count": 2
+      "removed_airports": [],
+      "added_count": 2,
+      "removed_count": 0
     },
     "CH": {
       "country_name": "Switzerland",
@@ -468,179 +470,19 @@
       "fr24_count": 25,
       "skycards_count": 24,
       "difference": 1,
-      "added_airports": [],
-      "removed_airports": [
+      "added_airports": [
         {
-          "name": "Aktobe Airport",
-          "iata": "AKX",
-          "icao": "UATT",
-          "lat": 50.245831,
-          "lon": 57.206661
-        },
-        {
-          "name": "Almaty International Airport",
-          "iata": "ALA",
-          "icao": "UAAA",
-          "lat": 43.354755,
-          "lon": 77.044792
-        },
-        {
-          "name": "Balkhash Airport",
-          "iata": "BXH",
-          "icao": "UAAH",
-          "lat": 46.893299,
-          "lon": 75.004997
-        },
-        {
-          "name": "Baykonur Krayniy Airport",
-          "iata": "BXY",
-          "icao": "UAOL",
-          "lat": 45.621822,
-          "lon": 63.210751
-        },
-        {
-          "name": "Shymkent International Airport",
-          "iata": "CIT",
-          "icao": "UAII",
-          "lat": 42.364159,
-          "lon": 69.478882
-        },
-        {
-          "name": "Taraz Airport",
-          "iata": "DMB",
-          "icao": "UADD",
-          "lat": 42.853611,
-          "lon": 71.303612
-        },
-        {
-          "name": "Zhezkazgan Airport",
-          "iata": "DZN",
-          "icao": "UAKD",
-          "lat": 47.708328,
-          "lon": 67.73333
-        },
-        {
-          "name": "Atyrau Airport",
-          "iata": "GUW",
-          "icao": "UATG",
-          "lat": 47.121941,
-          "lon": 51.821381
-        },
-        {
-          "name": "Turkistan Hazret Sultan International Airport",
-          "iata": "HSA",
-          "icao": "UAIT",
-          "lat": 43.311111,
-          "lon": 68.550278
-        },
-        {
-          "name": "Karaganda Sary-Arka Airport",
-          "iata": "KGF",
-          "icao": "UAKK",
-          "lat": 49.67083,
-          "lon": 73.334442
-        },
-        {
-          "name": "Kokshetau Airport",
-          "iata": "KOV",
-          "icao": "UACK",
-          "lat": 53.330002,
-          "lon": 69.596664
-        },
-        {
-          "name": "Kostanay Airport",
-          "iata": "KSN",
-          "icao": "UAUU",
-          "lat": 53.20694,
-          "lon": 63.55027
-        },
-        {
-          "name": "Kyzylorda Airport",
-          "iata": "KZO",
-          "icao": "UAOO",
-          "lat": 44.70694,
-          "lon": 65.592499
-        },
-        {
-          "name": "Astana Nursultan Nazarbayev International Airport",
-          "iata": "NQZ",
-          "icao": "UACC",
-          "lat": 51.022221,
-          "lon": 71.466942
-        },
-        {
-          "name": "Semipalatinsk Semey Airport",
-          "iata": "PLX",
-          "icao": "UASS",
-          "lat": 50.351299,
-          "lon": 80.23436
-        },
-        {
-          "name": "Petropavl",
-          "iata": "PPK",
-          "icao": "UACP",
-          "lat": 54.774349,
-          "lon": 69.18399
-        },
-        {
-          "name": "Pavlodar Airport",
-          "iata": "PWQ",
-          "icao": "UASP",
-          "lat": 52.195,
-          "lon": 77.073883
-        },
-        {
-          "name": "Aktau Airport",
-          "iata": "SCO",
-          "icao": "UATE",
-          "lat": 43.86005,
-          "lon": 51.091969
-        },
-        {
-          "name": "Zaisan Airport",
-          "iata": "SZI",
-          "icao": "UASZ",
-          "lat": 47.487484,
-          "lon": 84.886566
-        },
-        {
-          "name": "Taldykorgan Airport",
-          "iata": "TDK",
-          "icao": "UAAT",
-          "lat": 45.109287,
-          "lon": 78.441322
-        },
-        {
-          "name": "Oskemen Airport",
-          "iata": "UKK",
-          "icao": "UASK",
-          "lat": 50.036591,
-          "lon": 82.494179
-        },
-        {
-          "name": "Oral Ak Zhol Airport",
-          "iata": "URA",
-          "icao": "UARR",
-          "lat": 51.150829,
-          "lon": 51.543049
-        },
-        {
-          "name": "Usharal Airport",
-          "iata": "USJ",
-          "icao": "UAAL",
-          "lat": 46.190765,
-          "lon": 80.830925
-        },
-        {
-          "name": "Urzhar Airport",
-          "iata": "UZR",
-          "icao": "UASU",
-          "lat": 47.091038,
-          "lon": 81.66468
+          "iata": "BXJ",
+          "lat": 43.351616,
+          "lon": 76.88269,
+          "link": "https://www.flightradar24.com/data/airports/bxj",
+          "name": "Almaty Boraldai Airport",
+          "icao": "UAAR"
         }
       ],
-      "added_count": 0,
-      "removed_count": 24
+      "removed_airports": [],
+      "added_count": 1,
+      "removed_count": 0
     },
     "MX": {
       "country_name": "Mexico",
