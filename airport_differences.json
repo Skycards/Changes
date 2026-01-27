@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 23,
-    "total_added_airports": 57,
+    "total_added_airports": 61,
     "total_removed_airports": 0
   },
   "countries": {
@@ -568,12 +568,44 @@
           "icao": "KAIV"
         },
         {
+          "iata": "BFR",
+          "lat": 38.838547,
+          "lon": -86.441681,
+          "link": "https://www.flightradar24.com/data/airports/bfr",
+          "name": "Bedford Virgil I. Grissom Municipal Airport",
+          "icao": "KBFR"
+        },
+        {
+          "iata": "DLL",
+          "lat": 34.449013,
+          "lon": -79.368599,
+          "link": "https://www.flightradar24.com/data/airports/dll",
+          "name": "Dillon County Airport",
+          "icao": "KDLC"
+        },
+        {
+          "iata": "ENL",
+          "lat": 38.51535,
+          "lon": -89.091713,
+          "link": "https://www.flightradar24.com/data/airports/enl",
+          "name": "Centralia Municipal Airport",
+          "icao": "KENL"
+        },
+        {
           "iata": "FBY",
           "lat": 40.182392,
           "lon": -97.169273,
           "link": "https://www.flightradar24.com/data/airports/fby",
           "name": "Fairbury Municipal Airport",
           "icao": "KFBY"
+        },
+        {
+          "iata": "HSB",
+          "lat": 37.812584,
+          "lon": -88.550453,
+          "link": "https://www.flightradar24.com/data/airports/hsb",
+          "name": "Harrisburg Raleigh Airport",
+          "icao": "KHSB"
         },
         {
           "iata": "LKV",
@@ -649,7 +681,7 @@
         }
       ],
       "removed_airports": [],
-      "added_count": 11,
+      "added_count": 15,
       "removed_count": 0
     },
     "UZ": {
