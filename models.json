@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1768914581643,
+  "updatedAt": 1769589708589,
   "rows": [
     {
       "id": "A1",
@@ -9799,7 +9799,8 @@
         0,
         1
       ],
-      "imageOverride": "B763"
+      "imageOverride": "B763",
+      "military": true
     },
     {
       "id": "B763",
@@ -16626,11 +16627,12 @@
     {
       "id": "CA8",
       "manufacturer": "AEROCOMP",
-      "name": "CA-8 Comp Air 8",
+      "name": "CA-8 Comp Air 8",
       "manufacturers": [
         "AEROCOMP CA-8 Comp Air 8",
         "COMP AIR CA-8 Comp Air 8"
       ],
+      "description": "The AEROCOMP CA-8 Comp Air 8 is a versatile kit-built aircraft designed for utility and personal use, known for its adaptability to various engines and configurations, enhancing its operational flexibility.",
       "type": "L",
       "engNum": 1,
       "engType": "T",
@@ -16638,10 +16640,13 @@
       "rareness": 1524,
       "num": 0,
       "xp": 8620,
-      "wingspan": 10.9,
+      "firstFlight": 2000,
+      "wingspan": 10.1,
       "length": 9.6,
-      "height": 2.4,
-      "maxSpeed": 217,
+      "height": 2.7,
+      "mtow": 2540,
+      "seats": 8,
+      "maxSpeed": 199,
       "cardCategory": "ultra",
       "ftea": 0.00043722274499260653,
       "images": [
@@ -18945,9 +18950,9 @@
       "engNum": 4,
       "engType": "J",
       "wtc": "H",
-      "rareness": 1400,
+      "rareness": 1486,
       "num": 1,
-      "xp": 8000,
+      "xp": 8432,
       "firstFlight": 1969,
       "wingspan": 25.6,
       "length": 61.7,
@@ -18958,6 +18963,7 @@
       "range": 3900,
       "maxSpeed": 1180,
       "cardCategory": "historical",
+      "ftea": 0.0006339605734767025,
       "images": [
         "B744",
         "K35R"
@@ -18968,7 +18974,8 @@
         "K35R"
       ],
       "inSeasons": [
-        0
+        0,
+        1
       ]
     },
     {
@@ -21844,7 +21851,7 @@
         0,
         1
       ],
-      "imageOverride": "DC3"
+      "imageOverride": "DC4"
     },
     {
       "id": "DC86",
@@ -31372,7 +31379,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "imageOverride": "C208"
     },
     {
       "id": "GA8C",
@@ -42652,7 +42660,7 @@
     {
       "id": "MG29",
       "manufacturer": "MIKOYAN",
-      "name": "MiG-29 Baaz",
+      "name": "MiG-29",
       "manufacturers": [
         "MAPO MiG-29",
         "MAPO MiG-33",
@@ -42661,7 +42669,7 @@
         "MIKOYAN MiG-33",
         "MIKOYAN MiG-35"
       ],
-      "description": "The Mikoyan MiG-29 Baaz is a twin-engine, fourth-generation jet fighter designed for air superiority. It is known for its advanced avionics and maneuverability.",
+      "description": "The Mikoyan MiG-29 is a versatile Soviet-era fighter jet known for its agility and advanced aerodynamics, designed primarily for air superiority missions during the Cold War.",
       "landingGear": "Tricycle",
       "wingPos": "Low wing",
       "wingShape": "Swept back slightly",
@@ -45575,7 +45583,7 @@
     {
       "id": "P28B",
       "manufacturer": "PIPER",
-      "name": "PA-28-235 Cherokee Charger",
+      "name": "PA-28-236 Dakota",
       "manufacturers": [
         "AICSA PA-28-201T Turbo Dakota",
         "AICSA PA-28-235 Cherokee",
@@ -45594,7 +45602,7 @@
         "PIPER PA-28-235 Cherokee Pathfinder",
         "PIPER PA-28-236 Dakota"
       ],
-      "description": "The PIPER PA-28-235 Cherokee Charger is a variant of the PA-28 series, featuring a more powerful engine and increased payload capacity, ideal for longer trips and heavier loads.",
+      "description": "The Piper PA-28-236 Dakota is a single-engine, low-wing aircraft designed for general aviation. Known for its versatility, it serves both training and personal travel, with a reputation for reliability.",
       "landingGear": "Tricycle",
       "wingPos": "Low wing",
       "wingShape": "Tapered outer",
@@ -45627,7 +45635,7 @@
     {
       "id": "P28R",
       "manufacturer": "PIPER",
-      "name": "PA-28R-180 Cherokee Arrow",
+      "name": "PA-28R-201 Arrow",
       "manufacturers": [
         "AICSA PA-28R-180 Cherokee Arrow",
         "AICSA PA-28R-200 Cherokee Arrow 2",
@@ -45645,7 +45653,7 @@
         "PIPER PA-28R-201 Arrow 3",
         "PIPER PA-28R-201 Cherokee Arrow 3"
       ],
-      "description": "The PIPER PA-28R-180 Cherokee Arrow is a retractable-gear version of the Cherokee, offering improved aerodynamics and performance for pilots seeking a more advanced flying experience.",
+      "description": "The Piper PA-28R-201 Arrow is a single-engine, four-seat aircraft known for its retractable landing gear and constant-speed propeller, making it a popular choice for flight training and personal use.",
       "landingGear": "Tricycle",
       "wingPos": "Low wing",
       "wingShape": "Tapered outer",
@@ -53868,7 +53876,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "military": true
     },
     {
       "id": "S97",
@@ -64561,14 +64570,14 @@
       "num": 2,
       "xp": 7030,
       "firstFlight": 1953,
-      "wingspan": 19,
-      "length": 19.8,
-      "height": 4.5,
-      "ceiling": 48000,
+      "wingspan": 37.3,
+      "length": 20.8,
+      "height": 6.2,
+      "ceiling": 65000,
       "mtow": 32700,
-      "seats": 3,
-      "range": 800,
-      "maxSpeed": 521,
+      "seats": 2,
+      "range": 2500,
+      "maxSpeed": 190,
       "cardCategory": "ultra",
       "ftea": 0.01047041866439635,
       "images": [
@@ -66752,6 +66761,7 @@
     "AT6",
     "TEX",
     "A22",
-    "SH6"
+    "SH6",
+    "AC15"
   ]
 }
