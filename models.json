@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1769589708589,
+  "updatedAt": 1770022475094,
   "rows": [
     {
       "id": "A1",
@@ -18956,10 +18956,10 @@
       "firstFlight": 1969,
       "wingspan": 25.6,
       "length": 61.7,
-      "height": 11.4,
+      "height": 12.2,
       "ceiling": 60000,
       "mtow": 185000,
-      "seats": 92,
+      "seats": 128,
       "range": 3900,
       "maxSpeed": 1180,
       "cardCategory": "historical",
