@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1770022475094,
+  "updatedAt": 1770211666399,
   "rows": [
     {
       "id": "A1",
@@ -3385,11 +3385,8 @@
     {
       "id": "AG60",
       "manufacturer": "CAIGA",
-      "name": "AG-600 Kunlong",
-      "manufacturers": [
-        "CAIGA AG-600 Kunlong"
-      ],
-      "description": "The CAIGA AG-600 Kunlong is a large amphibious aircraft from China, designed for maritime rescue, firefighting, and transport missions.",
+      "name": "AG600 Kunlong",
+      "description": "The CAIGA AG600 Kunlong is a versatile amphibious aircraft designed for maritime rescue, firefighting, and environmental monitoring. It stands out for its ability to operate on both land and water.",
       "landingGear": "Tricycle",
       "wingPos": "High wing",
       "wingShape": "Tapered outer",
@@ -6957,11 +6954,8 @@
     {
       "id": "AUJ2",
       "manufacturer": "AUSTER",
-      "name": "J-2 Arrow",
-      "manufacturers": [
-        "AUSTER J-2 Arrow"
-      ],
-      "description": "The AUSTER J-2 Arrow is a classic light aircraft, known for its rugged design and versatility in various flying conditions.",
+      "name": "J/2 Arrow",
+      "description": "The Auster J/2 Arrow is a British light aircraft designed for private use and training. Known for its simplicity and reliability, it played a role in post-war aviation development.",
       "landingGear": "Tailwheel",
       "wingPos": "High wing",
       "type": "L",
@@ -6996,11 +6990,8 @@
     {
       "id": "AUJ4",
       "manufacturer": "AUSTER",
-      "name": "J-4 Archer",
-      "manufacturers": [
-        "AUSTER J-4 Archer"
-      ],
-      "description": "The Auster J-4 Archer is a British light aircraft designed for private and training use, known for its high-wing configuration and adaptability to various terrains, enhancing its utility in diverse environments.",
+      "name": "J/4 Archer",
+      "description": "The Auster J/4 Archer is a British light aircraft designed for private use and training. Known for its simplicity and reliability, it played a role in post-war aviation development.",
       "landingGear": "Tailwheel",
       "wingPos": "High wing",
       "type": "L",
@@ -10284,12 +10275,12 @@
     {
       "id": "BCAT",
       "manufacturer": "GRUMMAN",
-      "name": "Bearcat",
+      "name": "F8F Bearcat",
       "manufacturers": [
         "GRUMMAN F8F Bearcat",
         "GRUMMAN G-58 Bearcat"
       ],
-      "description": "The Grumman Bearcat is a World War II-era American fighter aircraft known for its speed, agility, and powerful engine.",
+      "description": "The Grumman F8F Bearcat was a carrier-based fighter aircraft designed for the U.S. Navy. Known for its agility and speed, it was one of the last piston-engine fighters before the jet age.",
       "landingGear": "Tailwheel",
       "wingPos": "Low wing",
       "wingShape": "Tapered",
@@ -11760,11 +11751,11 @@
     {
       "id": "BER2",
       "manufacturer": "BERIEV",
-      "name": "Altair",
+      "name": "Be-200 Altair",
       "manufacturers": [
         "BERIEV Be-200 Altair"
       ],
-      "description": "The Beriev Altair is a Russian amphibious aircraft, designed for maritime patrol, search and rescue, and firefighting missions.",
+      "description": "The Beriev Be-200 Altair is a Russian amphibious aircraft, designed for maritime patrol, search and rescue, and firefighting missions.",
       "landingGear": "Tricycle",
       "wingPos": "High wing",
       "wingShape": "Swept back slightly",
@@ -13515,7 +13506,7 @@
     {
       "id": "C150",
       "manufacturer": "CESSNA",
-      "name": "150 Commuter",
+      "name": "150",
       "manufacturers": [
         "AVIONES COLOMBIA 150",
         "CESSNA 150",
@@ -13529,7 +13520,7 @@
         "REIMS FA150 Aerobat",
         "REIMS FRA150 Aerobat"
       ],
-      "description": "The Cessna 150 Commuter is a two-seat, tricycle gear general aviation aircraft, widely used for flight training and personal use due to its simplicity and reliability.",
+      "description": "The Cessna 150 is a two-seat, tricycle gear general aviation aircraft, primarily used for flight training and personal use. Known for its simplicity and reliability, it remains popular among pilots.",
       "landingGear": "Tricycle",
       "wingPos": "High wing",
       "wingShape": "Tapered outer",
@@ -13798,13 +13789,13 @@
       "xp": 1540,
       "firstFlight": 1955,
       "wingspan": 11,
-      "length": 8.28,
+      "length": 8.3,
       "height": 2.7,
-      "ceiling": 13500,
-      "mtow": 1110,
+      "ceiling": 14000,
+      "mtow": 1160,
       "seats": 4,
-      "range": 696,
-      "maxSpeed": 163,
+      "range": 640,
+      "maxSpeed": 124,
       "cardCategory": "common",
       "ftea": 616.3119593060596,
       "inSeasons": [
@@ -17929,10 +17920,10 @@
       "length": 5.34,
       "height": 1.8,
       "ceiling": 15000,
-      "mtow": 280,
-      "seats": 1,
-      "range": 170,
-      "maxSpeed": 52,
+      "mtow": 480,
+      "seats": 2,
+      "range": 644,
+      "maxSpeed": 91.2,
       "cardCategory": "ultra",
       "ftea": 0.008308576421562039,
       "images": [
@@ -21314,14 +21305,14 @@
     {
       "id": "DA40",
       "manufacturer": "DIAMOND",
-      "name": "DA-40 Diamond Star",
+      "name": "DA40 Diamond Star",
       "manufacturers": [
-        "DIAMOND DA-40 Club Star",
-        "DIAMOND DA-40 Diamond Star",
-        "DIAMOND DA-40 Katana",
-        "DIAMOND DA-40 Tundra Star"
+        "DIAMOND DA40 Club Star",
+        "DIAMOND DA40 Diamond Star",
+        "DIAMOND DA40 Katana",
+        "DIAMOND DA40 Tundra Star"
       ],
-      "description": "The Diamond DA-40 Diamond Star is a versatile four-seat light aircraft known for its efficient design and advanced avionics, making it popular for flight training and personal use.",
+      "description": "The Diamond DA40 Diamond Star is a versatile four-seat light aircraft known for its efficient design, advanced avionics, and safety features, making it popular for flight training and personal use.",
       "landingGear": "Tricycle",
       "wingPos": "Low wing",
       "wingShape": "Tapered",
@@ -21354,13 +21345,13 @@
     {
       "id": "DA42",
       "manufacturer": "DIAMOND",
-      "name": "DA-42 Twin Star",
+      "name": "DA42 Twin Star",
       "manufacturers": [
-        "DIAMOND DA-42 Guardian",
-        "DIAMOND DA-42 Twin Star",
-        "DIAMOND DA-42 Twin Turbo"
+        "DIAMOND DA42 Guardian",
+        "DIAMOND DA42 Twin Star",
+        "DIAMOND DA42 Twin Turbo"
       ],
-      "description": "The DIAMOND DA-42 Twin Star is an Austrian twin-engine light aircraft, notable for its fuel efficiency and advanced avionics, often used for training and private flying.",
+      "description": "The Diamond DA42 Twin Star is a versatile light twin-engine aircraft, known for its fuel efficiency and advanced avionics. It serves both training and private travel, emphasizing safety and modern design.",
       "landingGear": "Tricycle",
       "wingPos": "Low wing",
       "wingShape": "Tapered",
@@ -21390,13 +21381,13 @@
     {
       "id": "DA50",
       "manufacturer": "DIAMOND",
-      "name": "DA-50 Magnum",
+      "name": "DA50 Magnum",
       "manufacturers": [
-        "DIAMOND DA-50 Magnum",
-        "DIAMOND DA-50 SuperStar",
+        "DIAMOND DA50 Magnum",
+        "DIAMOND DA50 SuperStar",
         "WANFENG DIAMOND DA50"
       ],
-      "description": "The DIAMOND DA-50 Magnum is a high-performance, single-engine light aircraft designed for long-range travel and comfort.",
+      "description": "The Diamond DA50 Magnum is a versatile single-engine aircraft designed for personal and business travel, featuring a spacious cabin and advanced avionics, emphasizing comfort and efficiency in general aviation.",
       "landingGear": "Tricycle",
       "wingPos": "Low wing",
       "wingShape": "Tapered",
@@ -21433,11 +21424,8 @@
     {
       "id": "DA62",
       "manufacturer": "DIAMOND",
-      "name": "DA-62",
-      "manufacturers": [
-        "DIAMOND DA-62"
-      ],
-      "description": "The DIAMOND DA-62 is a twin-engine light aircraft offering spacious interiors and advanced avionics, ideal for both private and business travel.",
+      "name": "DA62",
+      "description": "The Diamond DA62 is a twin-engine light aircraft designed for versatility, offering spacious interiors and advanced avionics. It's used for personal travel, air taxi services, and surveillance missions.",
       "landingGear": "Tricycle",
       "wingPos": "Low wing",
       "wingShape": "Tapered rear",
@@ -23319,18 +23307,18 @@
     {
       "id": "DIMO",
       "manufacturer": "DIAMOND",
-      "name": "Eco Dimona",
+      "name": "HK36 Super Dimona",
       "manufacturers": [
-        "DIAMOND HK-36 Eco Dimona",
-        "DIAMOND HK-36 Katana Xtreme",
-        "DIAMOND HK-36 MPX",
-        "DIAMOND HK-36 Super Dimona",
-        "DIAMOND HK-36 Turbo Xtreme",
-        "DIAMOND HK-36 Xtreme",
-        "HOAC HK-36 Super Dimona",
-        "HOFFMANN H-36 Dimona"
+        "DIAMOND HK36 Eco Dimona",
+        "DIAMOND HK36 Katana Xtreme",
+        "DIAMOND HK36 MPX",
+        "DIAMOND HK36 Super Dimona",
+        "DIAMOND HK36 Turbo Xtreme",
+        "DIAMOND HK36 Xtreme",
+        "HOAC HK36 Super Dimona",
+        "HOFFMANN H36 Dimona"
       ],
-      "description": "The DIAMOND Eco Dimona is a motor glider designed for efficient and environmentally friendly flight, combining the characteristics of a glider and a powered aircraft.",
+      "description": "The Diamond HK36 Super Dimona is a motor glider designed for efficient soaring and training. It features a sleek design with a low-wing configuration, offering versatility in both powered and unpowered flight.",
       "landingGear": "Tricycle",
       "wingPos": "Low wing",
       "wingShape": "Sailplane",
@@ -24070,17 +24058,17 @@
     {
       "id": "DV20",
       "manufacturer": "DIAMOND",
-      "name": "DV-20 Katana",
+      "name": "DV20 Katana",
       "manufacturers": [
-        "DIAMOND DA-20 Eclipse",
-        "DIAMOND DA-20 Evolution",
-        "DIAMOND DA-20 Falcon",
-        "DIAMOND DA-20 Katana",
-        "DIAMOND DA-22 Speed Katana",
-        "DIAMOND DV-20 Katana",
-        "HOAC DV-20 Katana"
+        "DIAMOND DA20 Eclipse",
+        "DIAMOND DA20 Evolution",
+        "DIAMOND DA20 Falcon",
+        "DIAMOND DA20 Katana",
+        "DIAMOND DA22 Speed Katana",
+        "DIAMOND DV20 Katana",
+        "HOAC DV20 Katana"
       ],
-      "description": "The DIAMOND DV-20 Katana is a two-seat, single-engine light aircraft, widely used for flight training and personal use due to its reliability and ease of handling.",
+      "description": "The Diamond DV20 Katana is a light, two-seat training aircraft known for its efficient design and ease of handling, making it popular in flight schools for pilot instruction and basic flight training.",
       "landingGear": "Tricycle",
       "wingPos": "Low wing",
       "wingShape": "Tapered",
@@ -28032,11 +28020,8 @@
     {
       "id": "F7",
       "manufacturer": "FOKKER",
-      "name": "F-7",
-      "manufacturers": [
-        "F-7 Replica"
-      ],
-      "description": "The Fokker F-7 was a pioneering tri-motor aircraft known for its role in early transatlantic flights, featuring a robust design that enhanced reliability and range during the 1920s.",
+      "name": "F.VII",
+      "description": "The Fokker F.VII was a pioneering tri-motor airliner, known for its role in early transcontinental flights. Its robust design and reliability made it a favorite for long-distance travel in the 1920s.",
       "landingGear": "Tailwheel",
       "wingPos": "High wing",
       "type": "L",
@@ -35080,16 +35065,15 @@
     {
       "id": "J1",
       "manufacturer": "AUSTER",
-      "name": "J-1 Aiglet",
+      "name": "J/1 Autocrat",
       "manufacturers": [
-        "AUSTER J-1 Aiglet",
-        "AUSTER J-1 Alpha",
-        "AUSTER J-1 Autocrat",
-        "AUSTER J-1 Kingsland",
-        "AUSTER J-1 Workmaster",
-        "TAYLORCRAFT (2) J-1 Autocrat"
+        "AUSTER J/1B Aiglet",
+        "AUSTER J/1 Alpha",
+        "AUSTER J/1 Kingsland",
+        "AUSTER J/1 Workmaster",
+        "TAYLORCRAFT J/1 Autocrat"
       ],
-      "description": "The AUSTER J-1 Aiglet is a British light aircraft, known for its versatility and use in both civilian and military roles.",
+      "description": "The Auster J/1 Autocrat is a British light aircraft designed for private and club use post-WWII. Known for its simplicity and reliability, it played a significant role in civilian aviation.",
       "landingGear": "Tailwheel",
       "wingPos": "High wing",
       "wingShape": "Rectangular",
@@ -36730,10 +36714,10 @@
       "wingspan": 44.4,
       "length": 43.9,
       "height": 14.2,
-      "ceiling": 40000,
-      "mtow": 120000,
+      "ceiling": 43000,
+      "mtow": 141000,
       "seats": 3,
-      "range": 3500,
+      "range": 4100,
       "maxSpeed": 500,
       "cardCategory": "ultra",
       "ftea": 0.5350992890322773,
@@ -41514,7 +41498,7 @@
     },
     {
       "id": "MC10",
-      "manufacturer": "ZENAIR",
+      "manufacturer": "COLOMBAN",
       "name": "MC-10 Cricri",
       "manufacturers": [
         "COLOMBAN MC-10 Cricri",
@@ -41522,7 +41506,7 @@
         "COLOMBAN MC-15 Cricri",
         "ZENAIR MC-12 Cricri"
       ],
-      "description": "The Zenair MC-10 Cricri is a tiny, single-seat homebuilt aircraft, known for its unique design and aerobatic capabilities.",
+      "description": "The Colomban MC-10 Cricri is a minimalist, single-seat homebuilt aircraft known for its compact design and unique twin-engine configuration, making it the world's smallest twin-engine aircraft.",
       "landingGear": "Tricycle",
       "wingPos": "Low wing",
       "wingShape": "Rectangular",
@@ -45264,7 +45248,7 @@
     {
       "id": "P2",
       "manufacturer": "LOCKHEED",
-      "name": "L-426 Neptune",
+      "name": "P-2 Neptune",
       "manufacturers": [
         "LOCKHEED L-426 Neptune",
         "LOCKHEED L-726 Neptune",
@@ -45273,7 +45257,7 @@
         "LOCKHEED P2V Neptune",
         "LOCKHEED SP-2 Neptune"
       ],
-      "description": "The Lockheed L-426 Neptune is an American maritime patrol and anti-submarine warfare aircraft, used extensively during the Cold War.",
+      "description": "The Lockheed P-2 Neptune was a maritime patrol aircraft designed for anti-submarine warfare. It featured distinctive wingtip tanks and played a crucial role during the Cold War era.",
       "landingGear": "Tricycle",
       "wingPos": "Mid wing",
       "wingShape": "Tapered",
@@ -50688,14 +50672,13 @@
     {
       "id": "R22",
       "manufacturer": "ROBINSON",
-      "name": "R-22",
+      "name": "R22",
       "manufacturers": [
         "AERO ELI Yo-Yo",
-        "ROBINSON R-22",
-        "ROBINSON R-22 Beta",
-        "ROBINSON R-22 Mariner"
+        "ROBINSON R22 Beta",
+        "ROBINSON R22 Mariner"
       ],
-      "description": "The Robinson R-22 is a lightweight, two-seat helicopter known for its affordability and reliability. Widely used for flight training and personal use, it features a simple design and is powered by a piston engine.",
+      "description": "The Robinson R22 is a lightweight, two-seat helicopter primarily used for flight training and personal transport. Known for its simplicity and reliability, it has become a staple in pilot education.",
       "landingGear": "Skids",
       "rotorConfig": "Main+Tail",
       "type": "H",
@@ -50774,13 +50757,13 @@
     {
       "id": "R44",
       "manufacturer": "ROBINSON",
-      "name": "R-44",
+      "name": "R44",
       "manufacturers": [
-        "ROBINSON R-44 Astro",
-        "ROBINSON R-44 Clipper",
-        "ROBINSON R-44 Raven"
+        "ROBINSON R44 Astro",
+        "ROBINSON R44 Clipper",
+        "ROBINSON R44 Raven"
       ],
-      "description": "The ROBINSON R-44 is a popular light helicopter, known for its reliability, performance, and suitability for a variety of roles including training and private use.",
+      "description": "The Robinson R44 is a light, four-seat helicopter known for its versatility in personal, commercial, and training roles. Its simple design and reliability make it popular among private owners and flight schools.",
       "landingGear": "Skids",
       "rotorConfig": "Main+Tail",
       "type": "H",
@@ -50809,11 +50792,8 @@
     {
       "id": "R66",
       "manufacturer": "ROBINSON",
-      "name": "R-66",
-      "manufacturers": [
-        "ROBINSON R-66"
-      ],
-      "description": "The ROBINSON R-66 is a turbine-powered light helicopter, offering enhanced performance, reliability, and versatility for various applications.",
+      "name": "R66",
+      "description": "The Robinson R66 is a light utility helicopter known for its turbine engine, offering improved performance over its predecessors. It's widely used for private, commercial, and law enforcement applications.",
       "landingGear": "Skids",
       "rotorConfig": "Main+Tail",
       "type": "H",
@@ -53045,12 +53025,11 @@
     {
       "id": "S22T",
       "manufacturer": "CIRRUS",
-      "name": "SR-22T",
+      "name": "SR22T",
       "manufacturers": [
-        "CIRRUS SR-22 Turbo",
-        "CIRRUS SR-22T"
+        "CIRRUS SR22 Turbo"
       ],
-      "description": "The CIRRUS SR-22T is a high-performance, single-engine, four-seat aircraft equipped with a turbocharged engine and advanced avionics, popular for personal and business aviation.",
+      "description": "The Cirrus SR22T is a single-engine, four-seat aircraft known for its advanced avionics and safety features, including a whole-aircraft parachute system, making it popular among private pilots.",
       "landingGear": "Tricycle",
       "wingPos": "Low wing",
       "wingShape": "Tapered",
@@ -54380,15 +54359,13 @@
       "rareness": 1295,
       "num": 6,
       "xp": 7475,
-      "firstFlight": 1936,
-      "wingspan": 11.2,
-      "length": 9.12,
-      "height": 3.5,
-      "ceiling": 36500,
-      "mtow": 3040,
-      "seats": 1,
-      "range": 479,
-      "maxSpeed": 370,
+      "firstFlight": 1994,
+      "wingspan": 8.43,
+      "length": 7.24,
+      "height": 2.1,
+      "mtow": 810,
+      "seats": 2,
+      "maxSpeed": 230,
       "cardCategory": "ultra",
       "ftea": 0.004294558707114158,
       "images": [
@@ -55627,12 +55604,11 @@
     {
       "id": "SF50",
       "manufacturer": "CIRRUS",
-      "name": "SJ-X Vision",
+      "name": "Vision SF50",
       "manufacturers": [
-        "CIRRUS SF-50 Vision",
-        "CIRRUS SJ-X Vision"
+        "CIRRUS SJX Vision"
       ],
-      "description": "The CIRRUS SJ-X Vision is a single-engine, very light jet known for its advanced avionics, safety features, and luxurious cabin.",
+      "description": "The Cirrus Vision SF50 is a single-engine jet designed for personal use, notable for its V-tail and whole-aircraft parachute system, offering a unique blend of simplicity and innovation in aviation.",
       "landingGear": "Tricycle",
       "wingPos": "Low wing",
       "wingShape": "Tapered",
@@ -57185,13 +57161,12 @@
     {
       "id": "SR20",
       "manufacturer": "CIRRUS",
-      "name": "SR-20",
+      "name": "SR20",
       "manufacturers": [
-        "CIRRUS SR-20",
-        "CIRRUS SR-20 SRV",
+        "CIRRUS SR20 SRV",
         "CIRRUS T-53"
       ],
-      "description": "The CIRRUS SR-20 is a modern, single-engine, four-seat aircraft known for its advanced avionics and safety features.",
+      "description": "The Cirrus SR20 is a versatile single-engine aircraft known for its innovative safety features, including a whole-aircraft parachute system. It serves as a popular choice for flight training and personal use.",
       "landingGear": "Tricycle",
       "wingPos": "Low wing",
       "wingShape": "Tapered",
@@ -57224,11 +57199,8 @@
     {
       "id": "SR22",
       "manufacturer": "CIRRUS",
-      "name": "SR-22",
-      "manufacturers": [
-        "CIRRUS SR-22"
-      ],
-      "description": "The CIRRUS SR-22 is a high-performance, single-engine, four-seat aircraft, popular for its speed and advanced technology.",
+      "name": "SR22",
+      "description": "The Cirrus SR22 is a single-engine, four-seat aircraft known for its advanced avionics and safety features, including a whole-aircraft parachute system, making it popular among private pilots.",
       "landingGear": "Tricycle",
       "wingPos": "Low wing",
       "wingShape": "Tapered",
@@ -57331,13 +57303,13 @@
     },
     {
       "id": "SS2",
-      "manufacturer": "RUTAN",
+      "manufacturer": "SCALED",
       "name": "339 Space Ship Two",
       "manufacturers": [
         "RUTAN 339 Space Ship Two",
         "SCALED 339 Space Ship Two"
       ],
-      "description": "The RUTAN 339 Space Ship Two is a suborbital spaceplane designed for commercial space tourism by Virgin Galactic.",
+      "description": "The Scaled 339 SpaceShipTwo is a suborbital spaceplane designed for commercial space tourism. It features a unique feathered reentry system and represents a significant step in private space exploration.",
       "landingGear": "Tricycle",
       "type": "L",
       "engNum": 1,
@@ -63855,8 +63827,11 @@
     {
       "id": "W135",
       "manufacturer": "BOEING",
-      "name": "WC-135R",
-      "description": "The BOEING WC-135R is a specialized reconnaissance aircraft used for atmospheric sampling and monitoring nuclear activities.",
+      "name": "WC-135R Constant Phoenix",
+      "manufacturers": [
+        "WC-135 Constant Phoenix"
+      ],
+      "description": "The Boeing WC-135R Constant Phoenix is a specialized aircraft designed for atmospheric collection and analysis, primarily used to detect nuclear explosions. It plays a crucial role in global nuclear treaty monitoring.",
       "landingGear": "Tricycle",
       "wingPos": "Low wing",
       "wingShape": "Swept back",
@@ -64577,7 +64552,7 @@
       "mtow": 32700,
       "seats": 2,
       "range": 2500,
-      "maxSpeed": 190,
+      "maxSpeed": 410,
       "cardCategory": "ultra",
       "ftea": 0.01047041866439635,
       "images": [
@@ -64790,13 +64765,13 @@
     },
     {
       "id": "WHK2",
-      "manufacturer": "RUTAN",
+      "manufacturer": "SCALED",
       "name": "348 White Knight Two",
       "manufacturers": [
         "RUTAN 348 White Knight Two",
         "SCALED 348 White Knight Two"
       ],
-      "description": "The RUTAN 348 White Knight Two is a carrier aircraft designed to launch spacecraft into suborbital flight, developed by Scaled Composites.",
+      "description": "The Scaled 348 White Knight Two is a carrier aircraft designed to launch spacecraft. It features a twin-fuselage design and supports space tourism by carrying SpaceShipTwo to high altitudes.",
       "landingGear": "Quadricycle",
       "wingPos": "High wing",
       "type": "L",
@@ -64807,12 +64782,13 @@
       "num": 1,
       "xp": 7715,
       "firstFlight": 2008,
-      "wingspan": 43,
-      "length": 24,
-      "height": 7.6,
-      "ceiling": 70000,
-      "mtow": 17000,
+      "wingspan": 42.7,
+      "length": 23.7,
+      "height": 7.9,
+      "ceiling": 55000,
+      "mtow": 31800,
       "seats": 2,
+      "range": 2600,
       "maxSpeed": 140,
       "cardCategory": "ultra",
       "ftea": 0.002668108019297695,
