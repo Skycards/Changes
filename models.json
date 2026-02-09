@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1770211666399,
+  "updatedAt": 1770652938955,
   "rows": [
     {
       "id": "A1",
@@ -1144,7 +1144,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "military": true
     },
     {
       "id": "A333",
@@ -2755,15 +2756,15 @@
       "rareness": 956,
       "num": 9,
       "xp": 5780,
-      "firstFlight": 1948,
-      "wingspan": 14.9,
-      "length": 13.5,
-      "height": 4.6,
+      "firstFlight": 1963,
+      "wingspan": 13.4,
+      "length": 12.6,
+      "height": 4.4,
       "ceiling": 25000,
-      "mtow": 4100,
+      "mtow": 3860,
       "seats": 11,
-      "range": 157,
-      "maxSpeed": 214,
+      "range": 1130,
+      "maxSpeed": 208,
       "cardCategory": "ultra",
       "ftea": 0.12762158145509403,
       "images": [
@@ -5565,6 +5566,7 @@
       "cardCategory": "ultra",
       "ftea": 0.03549244970202088,
       "images": [
+        "A32P",
         "AS20",
         "A32P"
       ],
@@ -5680,6 +5682,7 @@
       "cardCategory": "ultra",
       "ftea": 0.07293785753760212,
       "images": [
+        "A32P",
         "AS20",
         "A32P"
       ],
@@ -10450,16 +10453,16 @@
         "BD-MICRO BD-5J Micro",
         "BEDE BD-5J Micro"
       ],
-      "description": "The Alturair BD-5J Micro is a small, single-seat jet aircraft, known for its compact design and impressive performance, often used in airshows and for personal recreation.",
+      "description": "The BEDE BD-5J Micro is a small, single-seat jet known for its compact design and agility. It gained fame for its appearances in airshows and the James Bond film \"Octopussy.\"",
       "landingGear": "Tricycle",
       "wingPos": "Low wing",
       "type": "L",
       "engNum": 1,
       "engType": "J",
       "wtc": "L",
-      "rareness": 1400,
+      "rareness": 1572,
       "num": 1,
-      "xp": 8000,
+      "xp": 8860,
       "firstFlight": 1971,
       "wingspan": 5.2,
       "length": 4.13,
@@ -10470,6 +10473,7 @@
       "range": 812,
       "maxSpeed": 305,
       "cardCategory": "ultra",
+      "ftea": 0.00026919171556989056,
       "images": [
         "L39"
       ],
@@ -10477,7 +10481,8 @@
         "PC21"
       ],
       "inSeasons": [
-        0
+        0,
+        1
       ],
       "military": true
     },
@@ -14433,6 +14438,50 @@
       "military": true
     },
     {
+      "id": "C21T",
+      "manufacturer": "RILEY",
+      "name": "Turbine Eagle 421",
+      "manufacturers": [
+        "ADVANCED AIRCRAFT Regent 1500",
+        "CESSNA 421 (turbine)",
+        "RILEY Turbine Eagle 421",
+        "RILEY Turbine Rocket 421"
+      ],
+      "description": "The Riley Turbine Eagle 421 is a modified twin-engine aircraft, known for its conversion from piston to turbine engines, enhancing performance and efficiency. It serves primarily in executive and private aviation.",
+      "landingGear": "Tricycle",
+      "wingPos": "Low wing",
+      "type": "L",
+      "engNum": 2,
+      "engType": "T",
+      "wtc": "L",
+      "rareness": 1611,
+      "num": 0,
+      "xp": 9056,
+      "firstFlight": 1965,
+      "wingspan": 12.5,
+      "length": 11.1,
+      "height": 3.5,
+      "ceiling": 30200,
+      "mtow": 3380,
+      "seats": 6,
+      "range": 1487,
+      "maxSpeed": 256,
+      "cardCategory": "ultra",
+      "ftea": 0.00018176320387044753,
+      "images": [
+        "C310",
+        "DHC6",
+        "BE58"
+      ],
+      "markers": [
+        "DHC6",
+        "PA34"
+      ],
+      "inSeasons": [
+        1
+      ]
+    },
+    {
       "id": "C240",
       "manufacturer": "CESSNA",
       "name": "T240 Corvalis TTx",
@@ -16274,6 +16323,7 @@
       "cardCategory": "rare",
       "ftea": 4.3367877253513765,
       "images": [
+        "B38M",
         "A20N"
       ],
       "markers": [
@@ -17460,7 +17510,7 @@
         "ZENITH CH-601 Zodiac"
       ],
       "description": "The AMD CH-601 Zodiac is a popular, light sport aircraft known for its ease of construction, good performance, and enjoyable flying characteristics.",
-      "landingGear": "Tailwheel",
+      "landingGear": "Tricycle",
       "wingPos": "Low wing",
       "wingShape": "Rectangular",
       "type": "L",
@@ -19981,6 +20031,7 @@
       "cardCategory": "rare",
       "ftea": 1.7771652029095906,
       "images": [
+        "CH60",
         "TEX2",
         "AA5"
       ],
@@ -29668,16 +29719,16 @@
         "CHANGHE Z-8",
         "SUD SA-321 Super Frelon"
       ],
-      "description": "The Aérospatiale SA-321 Super Frelon is a large, multi-role helicopter used for transport, search and rescue, and anti-submarine warfare.",
+      "description": "The Aérospatiale SA-321 Super Frelon is a French heavy-lift helicopter known for its versatility in military and civilian roles, including troop transport, search and rescue, and anti-submarine warfare.",
       "landingGear": "Tricycle",
       "rotorConfig": "Main+Tail",
       "type": "H",
       "engNum": 3,
       "engType": "T",
       "wtc": "M",
-      "rareness": 1400,
+      "rareness": 1842,
       "num": 1,
-      "xp": 8000,
+      "xp": 10211,
       "firstFlight": 1962,
       "wingspan": 18.9,
       "length": 23,
@@ -29688,14 +29739,17 @@
       "range": 550,
       "maxSpeed": 218,
       "cardCategory": "ultra",
+      "ftea": 0.00001806806134181487,
       "images": [
+        "H53S",
         "H60"
       ],
       "markers": [
         "H60"
       ],
       "inSeasons": [
-        0
+        0,
+        1
       ],
       "military": true
     },
@@ -39950,6 +40004,7 @@
       "cardCategory": "ultra",
       "ftea": 0.0007263894490000149,
       "images": [
+        "KFAS",
         "ACAR",
         "KFAS"
       ],
@@ -40240,6 +40295,7 @@
       "cardCategory": "ultra",
       "ftea": 0.04396140460934116,
       "images": [
+        "D11",
         "CH60",
         "T6"
       ],
@@ -40282,6 +40338,7 @@
       "cardCategory": "ultra",
       "ftea": 0.03216557631700796,
       "images": [
+        "CH60",
         "TEX2",
         "AA5"
       ],
@@ -41444,6 +41501,7 @@
       "cardCategory": "ultra",
       "ftea": 0.000004256272401433691,
       "images": [
+        "PA18",
         "B738"
       ],
       "markers": [
@@ -41569,6 +41627,7 @@
       "cardCategory": "ultra",
       "ftea": 0.035332033875520905,
       "images": [
+        "B38M",
         "A20N"
       ],
       "markers": [
@@ -44675,6 +44734,7 @@
       "cardCategory": "ultra",
       "ftea": 0.0003306824970131422,
       "images": [
+        "ST75",
         "C172"
       ],
       "markers": [
@@ -46523,6 +46583,7 @@
       "cardCategory": "rare",
       "ftea": 3.4615374677002584,
       "images": [
+        "CH60",
         "TEX2",
         "AA5"
       ],
@@ -50863,14 +50924,50 @@
       ]
     },
     {
+      "id": "R90F",
+      "manufacturer": "RUSCHMEYER",
+      "name": "R 90-230FG",
+      "manufacturers": [
+        "RUSCHMEYER R 90-230FG"
+      ],
+      "description": "The Ruschmeyer R 90-230RG is a German light aircraft known for its composite construction and retractable landing gear, designed for efficient personal and business travel with a focus on fuel economy.",
+      "landingGear": "Tricycle",
+      "wingPos": "Low wing",
+      "wingShape": "Tapered",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1658,
+      "num": 0,
+      "xp": 9291,
+      "firstFlight": 1988,
+      "wingspan": 9.5,
+      "length": 7.9,
+      "height": 2.7,
+      "maxSpeed": 175,
+      "cardCategory": "ultra",
+      "ftea": 0.00011374665890187998,
+      "images": [
+        "SR22",
+        "C172"
+      ],
+      "markers": [
+        "P28A"
+      ],
+      "inSeasons": [
+        1
+      ]
+    },
+    {
       "id": "R90R",
       "manufacturer": "RUSCHMEYER",
-      "name": "R-90-230RG",
+      "name": "R 90-230RG",
       "manufacturers": [
         "RUSCHMEYER MF-85",
         "RUSCHMEYER R-90-230RG"
       ],
-      "description": "The RUSCHMEYER R-90-230RG is a German light aircraft, known for its advanced design, efficiency, and performance in touring and training roles.",
+      "description": "The Ruschmeyer R 90-230RG is a German-engineered light aircraft known for its composite construction and retractable landing gear, designed for efficient personal and business travel with a focus on aerodynamic performance.",
       "landingGear": "Tricycle",
       "wingPos": "Low wing",
       "wingShape": "Tapered",
@@ -56930,6 +57027,7 @@
       "cardCategory": "ultra",
       "ftea": 0.0002415994623655914,
       "images": [
+        "RV7",
         "C172"
       ],
       "markers": [
@@ -57475,6 +57573,7 @@
       "cardCategory": "ultra",
       "ftea": 0.00011622610513739546,
       "images": [
+        "SB32",
         "HAWK"
       ],
       "markers": [
@@ -58707,13 +58806,13 @@
     },
     {
       "id": "SWOR",
-      "manufacturer": "BLACKBURN",
+      "manufacturer": "FAIREY",
       "name": "Swordfish",
       "manufacturers": [
         "BLACKBURN Swordfish",
         "FAIREY Swordfish"
       ],
-      "description": "The Blackburn Swordfish is a British biplane torpedo bomber used during World War II, renowned for its durability and versatility.",
+      "description": "The Fairey Swordfish was a British biplane torpedo bomber used during World War II, renowned for its role in naval battles like the attack on Taranto and the sinking of the Bismarck.",
       "landingGear": "Tailwheel",
       "wingPos": "Biplane",
       "wingShape": "Swept back",
@@ -58975,6 +59074,7 @@
       "cardCategory": "ultra",
       "ftea": 0.28596275634419205,
       "images": [
+        "RV7",
         "CH60"
       ],
       "markers": [
@@ -59710,6 +59810,7 @@
       "cardCategory": "ultra",
       "ftea": 0.00018177473077325208,
       "images": [
+        "LA25",
         "DG80",
         "C172"
       ],
@@ -62787,7 +62888,8 @@
         "BELL-BOEING 901 Osprey",
         "BELL-BOEING CV-22 Osprey",
         "BELL-BOEING MV-22 Osprey",
-        "BELL-BOEING V-22 Osprey"
+        "BELL-BOEING V-22 Osprey",
+        "BELL-BOEING MCV-22 Osprey"
       ],
       "description": "The BELL-BOEING V-22 Osprey is a tiltrotor aircraft capable of vertical takeoff and landing, used for military transport and special operations.",
       "landingGear": "Tricycle",
@@ -64952,6 +65054,7 @@
       "cardCategory": "ultra",
       "ftea": 0.00003763440860215054,
       "images": [
+        "XAIR",
         "C172"
       ],
       "markers": [
