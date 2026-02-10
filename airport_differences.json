@@ -1,6 +1,6 @@
 {
   "summary": {
-    "total_countries_with_differences": 4,
+    "total_countries_with_differences": 5,
     "total_added_airports": 0,
     "total_removed_airports": 0
   },
@@ -44,6 +44,17 @@
       "fr24_count": 46,
       "skycards_count": 47,
       "difference": -1,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
+      "removed_count": 0
+    },
+    "SO": {
+      "country_name": "Somalia",
+      "iso_code": "SO",
+      "fr24_count": 11,
+      "skycards_count": 10,
+      "difference": 1,
       "added_airports": [],
       "removed_airports": [],
       "added_count": 0,
