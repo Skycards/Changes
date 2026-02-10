@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 5,
-    "total_added_airports": 0,
+    "total_added_airports": 1,
     "total_removed_airports": 0
   },
   "countries": {
@@ -55,9 +55,18 @@
       "fr24_count": 11,
       "skycards_count": 10,
       "difference": 1,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "iata": "BSY",
+          "lat": 2.332724,
+          "lon": 42.31031,
+          "link": "https://www.flightradar24.com/data/airports/bsy",
+          "name": "Bardera Airport",
+          "icao": "HCMD"
+        }
+      ],
       "removed_airports": [],
-      "added_count": 0,
+      "added_count": 1,
       "removed_count": 0
     }
   }
