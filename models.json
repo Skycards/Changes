@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1770652938955,
+  "updatedAt": 1771583058214,
   "rows": [
     {
       "id": "A1",
@@ -2962,17 +2962,17 @@
     {
       "id": "ACAR",
       "manufacturer": "AUSTER",
-      "name": "Autocar",
+      "name": "J/5 Autocar",
       "manufacturers": [
-        "AUSTER J-5B Autocar",
-        "AUSTER J-5E Autocar",
-        "AUSTER J-5G Autocar",
-        "AUSTER J-5H Autocar",
-        "AUSTER J-5P Autocar",
-        "AUSTER J-5T Autocar",
-        "AUSTER J-5V Autocar"
+        "AUSTER J/5B Autocar",
+        "AUSTER J/5E Autocar",
+        "AUSTER J/5G Autocar",
+        "AUSTER J/5H Autocar",
+        "AUSTER J/5P Autocar",
+        "AUSTER J/5T Autocar",
+        "AUSTER J/5V Autocar"
       ],
-      "description": "The Auster Autocar is a British light aircraft used for general aviation, known for its rugged construction and versatility in various roles.",
+      "description": "The Auster J/5 Autocar is a British light aircraft designed for touring and training. Known for its versatility, it features a high-wing design and was popular in post-war civilian aviation.",
       "landingGear": "Tailwheel",
       "wingPos": "High wing",
       "wingShape": "Rectangular",
@@ -3159,11 +3159,11 @@
     {
       "id": "ADVE",
       "manufacturer": "AUSTER",
-      "name": "Adventurer",
+      "name": "J/5 Adventurer",
       "manufacturers": [
-        "AUSTER J-5 Adventurer"
+        "AUSTER J/5 Adventurer"
       ],
-      "description": "The AUSTER Adventurer is a British light aircraft known for its versatility and reliability, often used for training and private flying.",
+      "description": "The Auster J/5 Adventurer is a British light aircraft designed for private and utility use, known for its versatility and adaptability in various roles, including training and aerial observation.",
       "landingGear": "Tailwheel",
       "wingPos": "High wing",
       "type": "L",
@@ -3459,13 +3459,13 @@
     {
       "id": "AIGT",
       "manufacturer": "AUSTER",
-      "name": "Aiglet Trainer",
+      "name": "J/5 Aiglet Trainer",
       "manufacturers": [
-        "AUSTER J-5F Aiglet Trainer",
-        "AUSTER J-5K Aiglet Trainer",
-        "AUSTER J-5L Aiglet Trainer"
+        "AUSTER J/5F Aiglet Trainer",
+        "AUSTER J/5K Aiglet Trainer",
+        "AUSTER J/5L Aiglet Trainer"
       ],
-      "description": "The AUSTER Aiglet Trainer is a British light aircraft used primarily for pilot training, known for its robust design and reliability.",
+      "description": "The Auster J/5 Aiglet Trainer is a British light aircraft designed for flight training. Known for its robust construction, it played a significant role in post-war pilot instruction and civilian aviation.",
       "landingGear": "Tailwheel",
       "wingPos": "High wing",
       "type": "L",
@@ -12085,15 +12085,16 @@
     {
       "id": "BLKS",
       "manufacturer": "AIRCRAFT SPRUCE",
-      "name": "Baby Lakes",
+      "name": "Baby Great Lakes",
       "manufacturers": [
-        "AIRCRAFT SPRUCE Baby Lakes",
-        "AIRCRAFT SPRUCE Buddy Baby Lakes",
-        "AIRCRAFT SPRUCE Super Baby Lakes",
-        "OLDFIELD Baby Lakes",
-        "OLDFIELD Buddy Baby Lakes",
-        "OLDFIELD Super Baby Lakes"
+        "AIRCRAFT SPRUCE Baby Great Lakes",
+        "AIRCRAFT SPRUCE Buddy Baby Great Lakes",
+        "AIRCRAFT SPRUCE Super Baby Great Lakes",
+        "OLDFIELD Baby Great Lakes",
+        "OLDFIELD Buddy Baby Great Lakes",
+        "OLDFIELD Super Baby Great Lakes"
       ],
+      "description": "The Baby Great Lakes is a compact, homebuilt biplane known for its aerobatic capabilities. Inspired by the Great Lakes 2T-1A, it offers enthusiasts a hands-on building and flying experience.",
       "wingPos": "Biplane",
       "type": "L",
       "engNum": 1,
@@ -14791,7 +14792,7 @@
     {
       "id": "C30J",
       "manufacturer": "LOCKHEED MARTIN",
-      "name": "C-130J Hercules",
+      "name": "C-130J Super Hercules",
       "manufacturers": [
         "LOCKHEED MARTIN 382J Super Hercules",
         "LOCKHEED MARTIN 382U Super Hercules",
@@ -14807,7 +14808,7 @@
         "LOCKHEED MARTIN MC-130J Super Hercules",
         "LOCKHEED MARTIN WC-130J Super Hercules"
       ],
-      "description": "The Lockheed Martin C-130J Hercules is a four-engine, high-wing military transport aircraft known for its versatility, durability, and ability to perform a wide range of missions.",
+      "description": "The C-130J Super Hercules is a versatile military transport aircraft, renowned for its ability to perform diverse missions, including troop transport, medical evacuation, and aerial refueling, with enhanced performance and modern avionics.",
       "landingGear": "Tricycle",
       "wingPos": "High wing",
       "wingShape": "Tapered outer",
@@ -16426,13 +16427,13 @@
     },
     {
       "id": "CA3",
-      "manufacturer": "AEROCOMP",
+      "manufacturer": "COMP AIR",
       "name": "CA-3 Comp Air 3",
       "manufacturers": [
         "AEROCOMP CA-3 Comp Air 3",
         "COMP AIR CA-3 Comp Air 3"
       ],
-      "description": "The AEROCOMP CA-3 Comp Air 3 is a kit-built aircraft designed for versatility and performance, suitable for both personal and utility use.",
+      "description": "The Comp Air 3 is a versatile kit-built aircraft designed for personal use, known for its adaptability to various engines and configurations, reflecting the innovation in homebuilt aviation.",
       "landingGear": "Tailwheel",
       "wingPos": "High wing",
       "type": "L",
@@ -16710,13 +16711,14 @@
       "description": "The Comp Air CA-9 is a versatile, high-performance kit-built aircraft, known for its spacious cabin and ability to operate in various environments, including rough airstrips.",
       "landingGear": "Tricycle",
       "wingPos": "High wing",
+      "wingShape": "Tapered",
       "type": "L",
       "engNum": 1,
       "engType": "T",
       "wtc": "L",
-      "rareness": 1400,
+      "rareness": 1601,
       "num": 1,
-      "xp": 8000,
+      "xp": 9005,
       "wingspan": 13,
       "length": 12,
       "height": 4.2,
@@ -16725,14 +16727,17 @@
       "range": 1500,
       "maxSpeed": 250,
       "cardCategory": "ultra",
+      "ftea": 0.00020132449342232973,
       "images": [
+        "C208",
         "C172"
       ],
       "markers": [
         "P28A"
       ],
       "inSeasons": [
-        0
+        0,
+        1
       ]
     },
     {
@@ -18416,6 +18421,7 @@
         "CALLAIR A-3",
         "CALLAIR A-4"
       ],
+      "description": "The CallAir A-2 is an agricultural aircraft designed for crop dusting. Known for its rugged construction, it played a significant role in enhancing agricultural productivity in the mid-20th century.",
       "type": "L",
       "engNum": 1,
       "engType": "P",
@@ -18427,6 +18433,8 @@
       "wingspan": 10.9,
       "length": 7.1,
       "height": 2.1,
+      "mtow": 700,
+      "seats": 2,
       "maxSpeed": 97,
       "cardCategory": "ultra",
       "ftea": 0.00003498827500709474,
@@ -21140,7 +21148,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "imageOverride": "J328"
     },
     {
       "id": "D4",
@@ -26396,7 +26405,7 @@
       "height": 2.9,
       "mtow": 1110,
       "seats": 1,
-      "maxSpeed": 56,
+      "maxSpeed": 91,
       "cardCategory": "ultra",
       "ftea": 0.0005720975041448224,
       "images": [
@@ -26813,6 +26822,45 @@
       ],
       "inSeasons": [
         0,
+        1
+      ]
+    },
+    {
+      "id": "EURT",
+      "manufacturer": "FFT",
+      "name": "Eurotrainer 2000",
+      "manufacturers": [
+        "FFT Eurotrainer 2000"
+      ],
+      "description": "The FFT Eurotrainer 2000 is a versatile training aircraft designed for pilot instruction. It features advanced avionics and a robust airframe, making it ideal for both basic and advanced flight training.",
+      "landingGear": "Tricycle",
+      "wingPos": "Low wing",
+      "wingShape": "Tapered",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1766,
+      "num": 0,
+      "xp": 9828,
+      "firstFlight": 1991,
+      "wingspan": 10.4,
+      "length": 8.1,
+      "height": 3.2,
+      "ceiling": 23100,
+      "mtow": 1300,
+      "seats": 4,
+      "maxSpeed": 225,
+      "cardCategory": "ultra",
+      "ftea": 0.00003882393346175096,
+      "images": [
+        "SR22",
+        "C172"
+      ],
+      "markers": [
+        "P28A"
+      ],
+      "inSeasons": [
         1
       ]
     },
@@ -27332,7 +27380,7 @@
     {
       "id": "F15",
       "manufacturer": "BOEING",
-      "name": "F-15 Strike Eagle",
+      "name": "F-15 Eagle",
       "manufacturers": [
         "BOEING F-15 Eagle",
         "BOEING F-15 Ra'am",
@@ -27343,7 +27391,7 @@
         "MCDONNELL DOUGLAS F-15 Ra'am",
         "MITSUBISHI F-15 Eagle"
       ],
-      "description": "The BOEING F-15 Strike Eagle is a twin-engine, all-weather tactical fighter designed for air superiority and ground attack missions, known for its speed and combat capabilities.",
+      "description": "The Boeing F-15 Eagle is a twin-engine tactical fighter designed for air superiority. Known for its agility and advanced avionics, it has played a crucial role in maintaining aerial dominance since the 1970s.",
       "landingGear": "Tricycle",
       "wingPos": "Shoulder wing",
       "wingShape": "Swept back slightly",
@@ -27619,8 +27667,8 @@
     },
     {
       "id": "F27",
-      "manufacturer": "CONAIR",
-      "name": "F-27 Firefighter",
+      "manufacturer": "FOKKER",
+      "name": "F-27 Friendship",
       "manufacturers": [
         "CONAIR F-27 Firefighter",
         "FAIRCHILD (1) F-27",
@@ -27631,7 +27679,7 @@
         "FOKKER F-27 Maritime",
         "FOKKER F-27 Troopship"
       ],
-      "description": "The CONAIR F-27 Firefighter is a modified version of the Fokker F-27, equipped for aerial firefighting missions with water or retardant tanks.",
+      "description": "The Fokker F-27 Friendship is a turboprop airliner designed for short-haul flights, known for its reliability and versatility. It played a significant role in regional aviation from the late 1950s.",
       "landingGear": "Tricycle",
       "wingPos": "High wing",
       "type": "L",
@@ -27653,6 +27701,7 @@
       "cardCategory": "ultra",
       "ftea": 0.02584274320025093,
       "images": [
+        "F50",
         "AN32"
       ],
       "markers": [
@@ -28905,6 +28954,7 @@
       "manufacturers": [
         "FLIGHT DESIGN F-2e"
       ],
+      "description": "The Flight Design F-2e is an electric-powered light aircraft designed for efficient, eco-friendly flight. It features modern avionics and a sleek design, emphasizing sustainability in personal aviation.",
       "landingGear": "Tricycle",
       "wingPos": "High wing",
       "type": "L",
@@ -28914,15 +28964,15 @@
       "rareness": 1359,
       "num": 1,
       "xp": 7795,
-      "firstFlight": 2025,
-      "wingspan": 9.8,
+      "firstFlight": 2019,
+      "wingspan": 9.2,
       "length": 6.8,
       "height": 2.3,
       "ceiling": 8000,
       "mtow": 1000,
       "seats": 2,
       "range": 200,
-      "maxSpeed": 85,
+      "maxSpeed": 113,
       "cardCategory": "ultra",
       "ftea": 0.0022696076234858327,
       "images": [
@@ -34638,7 +34688,7 @@
     {
       "id": "IL18",
       "manufacturer": "ILYUSHIN",
-      "name": "Bizon",
+      "name": "Il-18",
       "manufacturers": [
         "ILYUSHIN Il-18",
         "ILYUSHIN Il-18 Bizon",
@@ -34646,7 +34696,7 @@
         "ILYUSHIN Il-22 Zebra",
         "ILYUSHIN Il-24"
       ],
-      "description": "The ILYUSHIN Bizon is a variant of the Il-18, a large turboprop airliner known for its durability and long service life.",
+      "description": "The Ilyushin Il-18 is a Soviet-era turboprop airliner known for its durability and long service life. It played a crucial role in expanding medium to long-haul routes during the Cold War.",
       "landingGear": "Tricycle",
       "wingPos": "Low wing",
       "type": "L",
@@ -35329,7 +35379,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "imageOverride": "D328"
     },
     {
       "id": "J4",
@@ -35797,8 +35848,11 @@
     {
       "id": "JAS4",
       "manufacturer": "JOBY",
-      "name": "JAS-4",
-      "description": "The JOBY JAS-4 is an electric vertical takeoff and landing (eVTOL) aircraft designed for urban air mobility, featuring cutting-edge electric propulsion technology.",
+      "name": "S4",
+      "manufacturers": [
+        "JOBY JAS4-1"
+      ],
+      "description": "The JOBY S4 is an electric vertical takeoff and landing (eVTOL) aircraft designed for urban air mobility, featuring a sleek design and quiet operation, aimed at revolutionizing short-distance travel in congested cities.",
       "landingGear": "Tricycle",
       "type": "T",
       "engNum": 6,
@@ -35815,7 +35869,7 @@
       "mtow": 1800,
       "seats": 5,
       "range": 150,
-      "maxSpeed": 200,
+      "maxSpeed": 174,
       "cardCategory": "ultra",
       "ftea": 0.015441591611775777,
       "images": [
@@ -37839,7 +37893,7 @@
       "mtow": 580,
       "seats": 2,
       "range": 310,
-      "maxSpeed": 54,
+      "maxSpeed": 103,
       "cardCategory": "ultra",
       "ftea": 0.024728159400158326,
       "inSeasons": [
@@ -43541,7 +43595,6 @@
       "rareness": 1387,
       "num": 2,
       "xp": 7935,
-      "firstFlight": 2023,
       "wingspan": 11,
       "length": 7.01,
       "height": 2,
@@ -48919,6 +48972,48 @@
         0,
         1
       ]
+    },
+    {
+      "id": "PL12",
+      "manufacturer": "TRANSAVIA",
+      "name": "PL-12 Airtruk",
+      "manufacturers": [
+        "FLIGHT ENGINEERS PL-12 Airtruk",
+        "TRANSAVIA PL-12 Airtruk",
+        "TRANSAVIA PL-12 Skyfarmer"
+      ],
+      "description": "The TRANSAVIA PL-12 Airtruk is an agricultural aircraft known for its distinctive twin-boom design, enhancing visibility and maneuverability. It played a crucial role in aerial spraying and crop dusting operations.",
+      "landingGear": "Tricycle",
+      "wingPos": "Shoulder wing",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1478,
+      "num": 0,
+      "xp": 8391,
+      "firstFlight": 1965,
+      "wingspan": 12,
+      "length": 6.4,
+      "height": 2.7,
+      "ceiling": 12000,
+      "mtow": 1860,
+      "seats": 2,
+      "range": 300,
+      "maxSpeed": 103,
+      "cardCategory": "ultra",
+      "ftea": 0.0006883035434305425,
+      "images": [
+        "MF17",
+        "C172"
+      ],
+      "markers": [
+        "P28A"
+      ],
+      "inSeasons": [
+        1
+      ],
+      "imageOverride": "C336"
     },
     {
       "id": "PL2",
@@ -66841,6 +66936,7 @@
     "TEX",
     "A22",
     "SH6",
-    "AC15"
+    "AC15",
+    "B778"
   ]
 }
