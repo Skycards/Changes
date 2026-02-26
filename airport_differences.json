@@ -1,8 +1,8 @@
 {
   "summary": {
-    "total_countries_with_differences": 6,
+    "total_countries_with_differences": 5,
     "total_added_airports": 1,
-    "total_removed_airports": 1
+    "total_removed_airports": 0
   },
   "countries": {
     "CA": {
@@ -37,25 +37,6 @@
       "removed_airports": [],
       "added_count": 0,
       "removed_count": 0
-    },
-    "MA": {
-      "country_name": "Morocco",
-      "iso_code": "MA",
-      "fr24_count": 21,
-      "skycards_count": 22,
-      "difference": -1,
-      "added_airports": [],
-      "removed_airports": [
-        {
-          "name": "Ben Slimane Airport",
-          "iata": "GMD",
-          "icao": "GMMB",
-          "lat": 33.655556,
-          "lon": -7.221389
-        }
-      ],
-      "added_count": 0,
-      "removed_count": 1
     },
     "PL": {
       "country_name": "Poland",
