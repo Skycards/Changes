@@ -1,10 +1,29 @@
 {
   "summary": {
-    "total_countries_with_differences": 9,
+    "total_countries_with_differences": 10,
     "total_added_airports": 7,
-    "total_removed_airports": 0
+    "total_removed_airports": 1
   },
   "countries": {
+    "AU": {
+      "country_name": "Australia",
+      "iso_code": "AU",
+      "fr24_count": 472,
+      "skycards_count": 473,
+      "difference": -1,
+      "added_airports": [],
+      "removed_airports": [
+        {
+          "name": "Argyle Airport",
+          "iata": "GYL",
+          "icao": "YARG",
+          "lat": -16.629999,
+          "lon": 128.449997
+        }
+      ],
+      "added_count": 0,
+      "removed_count": 1
+    },
     "CA": {
       "country_name": "Canada",
       "iso_code": "CA",
@@ -92,9 +111,9 @@
     "PY": {
       "country_name": "Paraguay",
       "iso_code": "PY",
-      "fr24_count": 9,
+      "fr24_count": 10,
       "skycards_count": 7,
-      "difference": 2,
+      "difference": 3,
       "added_airports": [
         {
           "iata": "BFA",
