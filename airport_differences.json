@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 9,
-    "total_added_airports": 1,
+    "total_added_airports": 2,
     "total_removed_airports": 0
   },
   "countries": {
@@ -55,9 +55,18 @@
       "fr24_count": 49,
       "skycards_count": 48,
       "difference": 1,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "iata": "IQR",
+          "lat": 9.20979,
+          "lon": 123.468285,
+          "link": "https://www.flightradar24.com/data/airports/iqr",
+          "name": "Siquijor Airport",
+          "icao": "RPVZ"
+        }
+      ],
       "removed_airports": [],
-      "added_count": 0,
+      "added_count": 1,
       "removed_count": 0
     },
     "PL": {
