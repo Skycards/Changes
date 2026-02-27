@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 9,
-    "total_added_airports": 2,
+    "total_added_airports": 3,
     "total_removed_airports": 0
   },
   "countries": {
@@ -117,9 +117,18 @@
       "fr24_count": 1712,
       "skycards_count": 1711,
       "difference": 1,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "iata": "WAL",
+          "lat": 37.940495,
+          "lon": -75.464394,
+          "link": "https://www.flightradar24.com/data/airports/wal",
+          "name": "Wallops Flight Facility",
+          "icao": "KWAL"
+        }
+      ],
       "removed_airports": [],
-      "added_count": 0,
+      "added_count": 1,
       "removed_count": 0
     }
   }
