@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 9,
-    "total_added_airports": 3,
+    "total_added_airports": 7,
     "total_removed_airports": 0
   },
   "countries": {
@@ -33,9 +33,18 @@
       "fr24_count": 77,
       "skycards_count": 76,
       "difference": 1,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "iata": "OCV",
+          "lat": 8.315974,
+          "lon": -73.358215,
+          "link": "https://www.flightradar24.com/data/airports/ocv",
+          "name": "Ocana Aguas Claras Airport",
+          "icao": "SKOC"
+        }
+      ],
       "removed_airports": [],
-      "added_count": 0,
+      "added_count": 1,
       "removed_count": 0
     },
     "FR": {
@@ -86,9 +95,34 @@
       "fr24_count": 9,
       "skycards_count": 7,
       "difference": 2,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "iata": "BFA",
+          "lat": -20.229862,
+          "lon": -58.170258,
+          "link": "https://www.flightradar24.com/data/airports/bfa",
+          "name": "Bahia Negra Airport",
+          "icao": "SGBN"
+        },
+        {
+          "iata": "OLK",
+          "lat": -21.045101,
+          "lon": -57.88237,
+          "link": "https://www.flightradar24.com/data/airports/olk",
+          "name": "Fuerte Olimpo Airport",
+          "icao": "SGOL"
+        },
+        {
+          "iata": "VMI",
+          "lat": -22.159414,
+          "lon": -57.942326,
+          "link": "https://www.flightradar24.com/data/airports/vmi",
+          "name": "Puerto Valle-Mi Dr. Juan Plate Airport",
+          "icao": "SGVM"
+        }
+      ],
       "removed_airports": [],
-      "added_count": 0,
+      "added_count": 3,
       "removed_count": 0
     },
     "SO": {
