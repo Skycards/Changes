@@ -1,6 +1,6 @@
 {
   "summary": {
-    "total_countries_with_differences": 5,
+    "total_countries_with_differences": 9,
     "total_added_airports": 1,
     "total_removed_airports": 0
   },
@@ -27,6 +27,17 @@
       "added_count": 0,
       "removed_count": 0
     },
+    "CO": {
+      "country_name": "Colombia",
+      "iso_code": "CO",
+      "fr24_count": 77,
+      "skycards_count": 76,
+      "difference": 1,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
+      "removed_count": 0
+    },
     "FR": {
       "country_name": "France",
       "iso_code": "FR",
@@ -38,12 +49,34 @@
       "added_count": 0,
       "removed_count": 0
     },
+    "PH": {
+      "country_name": "Philippines",
+      "iso_code": "PH",
+      "fr24_count": 49,
+      "skycards_count": 48,
+      "difference": 1,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
+      "removed_count": 0
+    },
     "PL": {
       "country_name": "Poland",
       "iso_code": "PL",
       "fr24_count": 46,
       "skycards_count": 47,
       "difference": -1,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
+      "removed_count": 0
+    },
+    "PY": {
+      "country_name": "Paraguay",
+      "iso_code": "PY",
+      "fr24_count": 9,
+      "skycards_count": 7,
+      "difference": 2,
       "added_airports": [],
       "removed_airports": [],
       "added_count": 0,
@@ -67,6 +100,17 @@
       ],
       "removed_airports": [],
       "added_count": 1,
+      "removed_count": 0
+    },
+    "US": {
+      "country_name": "United States",
+      "iso_code": "US",
+      "fr24_count": 1712,
+      "skycards_count": 1711,
+      "difference": 1,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
       "removed_count": 0
     }
   }
