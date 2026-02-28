@@ -22,8 +22,7 @@
         }
       ],
       "added_count": 0,
-      "removed_count": 1,
-      "fetch_error": "Failed after 4 attempts. Last error: The read operation timed out"
+      "removed_count": 1
     },
     "CA": {
       "country_name": "Canada",
@@ -34,8 +33,7 @@
       "added_airports": [],
       "removed_airports": [],
       "added_count": 0,
-      "removed_count": 0,
-      "fetch_error": "Failed after 4 attempts. Last error: The read operation timed out"
+      "removed_count": 0
     },
     "CN": {
       "country_name": "China",
@@ -66,8 +64,7 @@
       ],
       "removed_airports": [],
       "added_count": 1,
-      "removed_count": 0,
-      "fetch_error": "Failed after 4 attempts. Last error: The read operation timed out"
+      "removed_count": 0
     },
     "FR": {
       "country_name": "France",
@@ -78,8 +75,7 @@
       "added_airports": [],
       "removed_airports": [],
       "added_count": 0,
-      "removed_count": 0,
-      "fetch_error": "Failed after 4 attempts. Last error: The read operation timed out"
+      "removed_count": 0
     },
     "PH": {
       "country_name": "Philippines",
@@ -99,8 +95,7 @@
       ],
       "removed_airports": [],
       "added_count": 1,
-      "removed_count": 0,
-      "fetch_error": "Failed after 4 attempts. Last error: The read operation timed out"
+      "removed_count": 0
     },
     "PL": {
       "country_name": "Poland",
@@ -147,8 +142,7 @@
       ],
       "removed_airports": [],
       "added_count": 3,
-      "removed_count": 0,
-      "fetch_error": "Failed after 4 attempts. Last error: The read operation timed out"
+      "removed_count": 0
     },
     "SO": {
       "country_name": "Somalia",
@@ -168,8 +162,7 @@
       ],
       "removed_airports": [],
       "added_count": 1,
-      "removed_count": 0,
-      "fetch_error": "Failed after 4 attempts. Last error: The read operation timed out"
+      "removed_count": 0
     },
     "US": {
       "country_name": "United States",
@@ -189,8 +182,7 @@
       ],
       "removed_airports": [],
       "added_count": 1,
-      "removed_count": 0,
-      "fetch_error": "Failed after 4 attempts. Last error: The read operation timed out"
+      "removed_count": 0
     }
   }
 }
