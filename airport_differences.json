@@ -22,7 +22,8 @@
         }
       ],
       "added_count": 0,
-      "removed_count": 1
+      "removed_count": 1,
+      "fetch_error": "Failed after 4 attempts. Last error: HTTP Error 502: Bad Gateway"
     },
     "CA": {
       "country_name": "Canada",
@@ -33,7 +34,8 @@
       "added_airports": [],
       "removed_airports": [],
       "added_count": 0,
-      "removed_count": 0
+      "removed_count": 0,
+      "fetch_error": "Failed after 4 attempts. Last error: The read operation timed out"
     },
     "CN": {
       "country_name": "China",
@@ -44,8 +46,7 @@
       "added_airports": [],
       "removed_airports": [],
       "added_count": 0,
-      "removed_count": 0,
-      "fetch_error": "Failed after 4 attempts. Last error: HTTP Error 502: Bad Gateway"
+      "removed_count": 0
     },
     "CO": {
       "country_name": "Colombia",
@@ -76,8 +77,7 @@
       "added_airports": [],
       "removed_airports": [],
       "added_count": 0,
-      "removed_count": 0,
-      "fetch_error": "Failed after 4 attempts. Last error: HTTP Error 502: Bad Gateway"
+      "removed_count": 0
     },
     "PH": {
       "country_name": "Philippines",
@@ -108,7 +108,8 @@
       "added_airports": [],
       "removed_airports": [],
       "added_count": 0,
-      "removed_count": 0
+      "removed_count": 0,
+      "fetch_error": "Failed after 4 attempts. Last error: HTTP Error 502: Bad Gateway"
     },
     "PY": {
       "country_name": "Paraguay",
@@ -164,8 +165,7 @@
       ],
       "removed_airports": [],
       "added_count": 1,
-      "removed_count": 0,
-      "fetch_error": "Failed after 4 attempts. Last error: HTTP Error 502: Bad Gateway"
+      "removed_count": 0
     },
     "US": {
       "country_name": "United States",
@@ -185,8 +185,7 @@
       ],
       "removed_airports": [],
       "added_count": 1,
-      "removed_count": 0,
-      "fetch_error": "Failed after 4 attempts. Last error: The read operation timed out"
+      "removed_count": 0
     }
   }
 }
