@@ -167,9 +167,9 @@
     "US": {
       "country_name": "United States",
       "iso_code": "US",
-      "fr24_count": 1712,
+      "fr24_count": 1713,
       "skycards_count": 1711,
-      "difference": 1,
+      "difference": 2,
       "added_airports": [
         {
           "iata": "WAL",
