@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1774427907270,
+  "updatedAt": 1774428874272,
   "rows": [
     {
       "id": "A1",
@@ -19454,12 +19454,13 @@
     },
     {
       "id": "CP20",
-      "manufacturer": "CAARP",
+      "manufacturer": "MUDRY",
       "name": "CAP-20",
       "manufacturers": [
         "CAARP CAP-20",
         "MUDRY CAP-20"
       ],
+      "description": "The MUDRY CAP-20 is a French aerobatic aircraft designed for precision flying. Known for its agility, it played a significant role in aerobatic competitions, showcasing advanced maneuverability and pilot skill.",
       "type": "L",
       "engNum": 1,
       "engType": "P",
@@ -19467,9 +19468,12 @@
       "rareness": 1837,
       "num": 0,
       "xp": 10185,
+      "firstFlight": 1976,
       "wingspan": 8.7,
       "length": 7.2,
       "height": 2.3,
+      "mtow": 620,
+      "seats": 1,
       "maxSpeed": 199,
       "cardCategory": "ultra",
       "ftea": 0.000018930745814307458,
@@ -28399,8 +28403,11 @@
       "manufacturer": "FLÄMING AIR",
       "name": "FA-02 Smaragd VLA",
       "manufacturers": [
-        "FL�MING AIR FA-02 Smaragd VLA"
+        "FLÄMING AIR FA-02 Smaragd VLA"
       ],
+      "description": "The FLÄMING AIR FA-02 Smaragd VLA is a light sport aircraft designed for recreational flying, featuring a sleek design and efficient performance, ideal for pilot training and personal use.",
+      "landingGear": "Tricycle",
+      "wingPos": "Low wing",
       "type": "L",
       "engNum": 1,
       "engType": "P",
@@ -28408,9 +28415,14 @@
       "rareness": 1544,
       "num": 0,
       "xp": 8720,
+      "firstFlight": 2003,
       "wingspan": 10.1,
       "length": 5.8,
       "height": 2.1,
+      "ceiling": 19000,
+      "mtow": 630,
+      "seats": 2,
+      "range": 756,
       "maxSpeed": 146,
       "cardCategory": "ultra",
       "ftea": 0.00035794013191273465,
@@ -53049,7 +53061,7 @@
     {
       "id": "S12",
       "manufacturer": "SPENCER",
-      "name": "Air Car",
+      "name": "S-12 Air Car",
       "manufacturers": [
         "SPENCER S-12 Air Car"
       ],
@@ -53459,6 +53471,9 @@
       "manufacturers": [
         "SIKORSKY S-39"
       ],
+      "description": "The Sikorsky S-39 is an amphibious light transport aircraft known for its single-engine design and versatility in remote areas, contributing to early aviation exploration and commercial air travel.",
+      "landingGear": "Tailwheel",
+      "wingPos": "High wing",
       "type": "A",
       "engNum": 1,
       "engType": "P",
@@ -53466,9 +53481,13 @@
       "rareness": 1811,
       "num": 0,
       "xp": 10055,
+      "firstFlight": 1929,
       "wingspan": 15.8,
-      "length": 9.6,
+      "length": 9.73,
       "height": 3.6,
+      "mtow": 1810,
+      "seats": 5,
+      "range": 326,
       "maxSpeed": 100,
       "cardCategory": "ultra",
       "ftea": 0.000024575088787417554,
