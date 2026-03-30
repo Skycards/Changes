@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 12,
-    "total_added_airports": 9,
+    "total_added_airports": 10,
     "total_removed_airports": 1
   },
   "countries": {
@@ -103,9 +103,18 @@
       "fr24_count": 4,
       "skycards_count": 3,
       "difference": 1,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "iata": "PKM",
+          "lat": 7.742751,
+          "lon": -59.881325,
+          "link": "https://www.flightradar24.com/data/airports/pkm",
+          "name": "Port Kaituma Airport",
+          "icao": "SYPK"
+        }
+      ],
       "removed_airports": [],
-      "added_count": 0,
+      "added_count": 1,
       "removed_count": 0
     },
     "PH": {
