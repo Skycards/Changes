@@ -1,7 +1,7 @@
 {
   "summary": {
-    "total_countries_with_differences": 10,
-    "total_added_airports": 8,
+    "total_countries_with_differences": 12,
+    "total_added_airports": 9,
     "total_removed_airports": 1
   },
   "countries": {
@@ -66,12 +66,43 @@
       "added_count": 1,
       "removed_count": 0
     },
+    "EG": {
+      "country_name": "Egypt",
+      "iso_code": "EG",
+      "fr24_count": 19,
+      "skycards_count": 18,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "EES",
+          "lat": 23.979462,
+          "lon": 35.460949,
+          "link": "https://www.flightradar24.com/data/airports/ees",
+          "name": "Berenice International Airport",
+          "icao": "HEBR"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
+      "removed_count": 0
+    },
     "FR": {
       "country_name": "France",
       "iso_code": "FR",
       "fr24_count": 162,
       "skycards_count": 163,
       "difference": -1,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
+      "removed_count": 0
+    },
+    "GY": {
+      "country_name": "Guyana",
+      "iso_code": "GY",
+      "fr24_count": 4,
+      "skycards_count": 3,
+      "difference": 1,
       "added_airports": [],
       "removed_airports": [],
       "added_count": 0,
