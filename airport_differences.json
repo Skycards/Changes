@@ -1,6 +1,6 @@
 {
   "summary": {
-    "total_countries_with_differences": 12,
+    "total_countries_with_differences": 8,
     "total_added_airports": 10,
     "total_removed_airports": 1
   },
@@ -23,28 +23,6 @@
       ],
       "added_count": 0,
       "removed_count": 1
-    },
-    "CA": {
-      "country_name": "Canada",
-      "iso_code": "CA",
-      "fr24_count": 350,
-      "skycards_count": 351,
-      "difference": -1,
-      "added_airports": [],
-      "removed_airports": [],
-      "added_count": 0,
-      "removed_count": 0
-    },
-    "CN": {
-      "country_name": "China",
-      "iso_code": "CN",
-      "fr24_count": 263,
-      "skycards_count": 264,
-      "difference": -1,
-      "added_airports": [],
-      "removed_airports": [],
-      "added_count": 0,
-      "removed_count": 0
     },
     "CO": {
       "country_name": "Colombia",
@@ -86,17 +64,6 @@
       "added_count": 1,
       "removed_count": 0
     },
-    "FR": {
-      "country_name": "France",
-      "iso_code": "FR",
-      "fr24_count": 162,
-      "skycards_count": 163,
-      "difference": -1,
-      "added_airports": [],
-      "removed_airports": [],
-      "added_count": 0,
-      "removed_count": 0
-    },
     "GY": {
       "country_name": "Guyana",
       "iso_code": "GY",
@@ -135,17 +102,6 @@
       ],
       "removed_airports": [],
       "added_count": 1,
-      "removed_count": 0
-    },
-    "PL": {
-      "country_name": "Poland",
-      "iso_code": "PL",
-      "fr24_count": 46,
-      "skycards_count": 47,
-      "difference": -1,
-      "added_airports": [],
-      "removed_airports": [],
-      "added_count": 0,
       "removed_count": 0
     },
     "PY": {
