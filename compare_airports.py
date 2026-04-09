@@ -536,15 +536,16 @@ def get_country_airports_from_our_data(airports_data: Dict, country_code: str) -
         place_code = airport.get('placeCode', '')
         if place_code and place_code.split('-')[0] == country_code:
             iata = airport.get('iata')
-            #* Filter out airports with null IATA values
-            if iata is not None and iata != '':
-                country_airports.append({
-                    'name': airport.get('name', ''),
-                    'iata': iata,
-                    'icao': airport.get('icao', ''),
-                    'lat': airport.get('lat', 0),
-                    'lon': airport.get('lon', 0)
-                })
+            if iata is None or iata == '':
+                continue
+
+            country_airports.append({
+                'name': airport.get('name', ''),
+                'iata': iata,
+                'icao': airport.get('icao', ''),
+                'lat': airport.get('lat', 0),
+                'lon': airport.get('lon', 0)
+            })
 
     return country_airports
 
@@ -709,6 +710,10 @@ def load_airports_data(airports_file: str) -> Tuple[Dict[str, int], Dict]:
         # Count by placeCode (which includes country and sometimes region)
         place_counts = Counter()
         for airport in data.get('rows', []):
+            iata = airport.get('iata')
+            if iata is None or iata == '':
+                continue
+
             place_code = airport.get('placeCode', '')
             if place_code:
                 # Extract just the country code (before any hyphen for regions like US-TX)
