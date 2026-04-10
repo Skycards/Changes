@@ -831,34 +831,33 @@ def main():
 
     differences = analyze_country_differences(fr24_counts, our_counts, country_mapping, airports_data, existing_differences)
 
-    if differences:
-        # Save detailed differences to JSON file
+    # Save differences output even when there are no mismatches so downstream
+    # consumers always get a consistent JSON structure.
+    sorted_countries = dict(sorted(differences.items()))
+    output_data = {
+        'summary': {
+            'total_countries_with_differences': len(differences),
+            'total_added_airports': sum(diff['added_count'] for diff in differences.values()),
+            'total_removed_airports': sum(diff['removed_count'] for diff in differences.values())
+        },
+        'countries': sorted_countries
+    }
 
-        # Prepare output data with summary and sorted countries
-        sorted_countries = dict(sorted(differences.items()))
-        output_data = {
-            'summary': {
-                'total_countries_with_differences': len(differences),
-                'total_added_airports': sum(diff['added_count'] for diff in differences.values()),
-                'total_removed_airports': sum(diff['removed_count'] for diff in differences.values())
-            },
-            'countries': sorted_countries
-        }
+    try:
+        with open(output_file, 'w', encoding='utf-8') as f:
+            json.dump(output_data, f, indent=2, ensure_ascii=False)
 
-        try:
-            with open(output_file, 'w', encoding='utf-8') as f:
-                json.dump(output_data, f, indent=2, ensure_ascii=False)
+        print(f"\n✅ Detailed differences saved to {output_file}")
+        print(f"📊 Summary:")
+        print(f"   • {output_data['summary']['total_countries_with_differences']} countries with differences")
+        print(f"   • {output_data['summary']['total_added_airports']} airports added (in FR24 but not in our data)")
+        print(f"   • {output_data['summary']['total_removed_airports']} airports removed (in our data but not in FR24)")
 
-            print(f"\n✅ Detailed differences saved to {output_file}")
-            print(f"📊 Summary:")
-            print(f"   • {output_data['summary']['total_countries_with_differences']} countries with differences")
-            print(f"   • {output_data['summary']['total_added_airports']} airports added (in FR24 but not in our data)")
-            print(f"   • {output_data['summary']['total_removed_airports']} airports removed (in our data but not in FR24)")
+        if not differences:
+            print("✅ No detailed analysis needed - all countries match!")
 
-        except Exception as e:
-            print(f"❌ Error saving differences to file: {e}")
-    else:
-        print("\n✅ No detailed analysis needed - all countries match!")
+    except Exception as e:
+        print(f"❌ Error saving differences to file: {e}")
 
 
 if __name__ == "__main__":
