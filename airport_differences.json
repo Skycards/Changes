@@ -1,8 +1,20 @@
 {
   "summary": {
-    "total_countries_with_differences": 0,
+    "total_countries_with_differences": 1,
     "total_added_airports": 0,
     "total_removed_airports": 0
   },
-  "countries": {}
+  "countries": {
+    "GB": {
+      "country_name": "United Kingdom",
+      "iso_code": "GB",
+      "fr24_count": 136,
+      "skycards_count": 137,
+      "difference": -1,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
+      "removed_count": 0
+    }
+  }
 }
