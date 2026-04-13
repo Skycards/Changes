@@ -2,7 +2,7 @@
   "summary": {
     "total_countries_with_differences": 1,
     "total_added_airports": 0,
-    "total_removed_airports": 0
+    "total_removed_airports": 1
   },
   "countries": {
     "GB": {
@@ -12,9 +12,17 @@
       "skycards_count": 137,
       "difference": -1,
       "added_airports": [],
-      "removed_airports": [],
+      "removed_airports": [
+        {
+          "name": "Wethersfield Airport",
+          "iata": "WXF",
+          "icao": "EGVT",
+          "lat": 51.973923,
+          "lon": 0.509015
+        }
+      ],
       "added_count": 0,
-      "removed_count": 0
+      "removed_count": 1
     }
   }
 }
