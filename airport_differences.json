@@ -1,7 +1,7 @@
 {
   "summary": {
-    "total_countries_with_differences": 1,
-    "total_added_airports": 0,
+    "total_countries_with_differences": 2,
+    "total_added_airports": 1,
     "total_removed_airports": 1
   },
   "countries": {
@@ -23,6 +23,26 @@
       ],
       "added_count": 0,
       "removed_count": 1
+    },
+    "GL": {
+      "country_name": "Greenland",
+      "iso_code": "GL",
+      "fr24_count": 17,
+      "skycards_count": 16,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "JJU",
+          "lat": 60.765835,
+          "lon": -46.064999,
+          "link": "https://www.flightradar24.com/data/airports/jju",
+          "name": "Qaqortoq Airport",
+          "icao": "BGQO"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
+      "removed_count": 0
     }
   }
 }
