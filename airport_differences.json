@@ -1,10 +1,29 @@
 {
   "summary": {
-    "total_countries_with_differences": 2,
+    "total_countries_with_differences": 3,
     "total_added_airports": 1,
-    "total_removed_airports": 1
+    "total_removed_airports": 2
   },
   "countries": {
+    "CA": {
+      "country_name": "Canada",
+      "iso_code": "CA",
+      "fr24_count": 349,
+      "skycards_count": 350,
+      "difference": -1,
+      "added_airports": [],
+      "removed_airports": [
+        {
+          "name": "Moose Jaw Municipal Airport",
+          "iata": "YMJ",
+          "icao": "CYMJ",
+          "lat": 50.434601,
+          "lon": -105.387596
+        }
+      ],
+      "added_count": 0,
+      "removed_count": 1
+    },
     "GB": {
       "country_name": "United Kingdom",
       "iso_code": "GB",
