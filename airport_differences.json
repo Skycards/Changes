@@ -22,8 +22,7 @@
         }
       ],
       "added_count": 0,
-      "removed_count": 1,
-      "fetch_error": "Failed after 4 attempts. Last error: The read operation timed out"
+      "removed_count": 1
     },
     "GB": {
       "country_name": "United Kingdom",
@@ -42,8 +41,7 @@
         }
       ],
       "added_count": 0,
-      "removed_count": 1,
-      "fetch_error": "Failed after 4 attempts. Last error: The read operation timed out"
+      "removed_count": 1
     },
     "GL": {
       "country_name": "Greenland",
@@ -63,8 +61,7 @@
       ],
       "removed_airports": [],
       "added_count": 1,
-      "removed_count": 0,
-      "fetch_error": "Failed after 4 attempts. Last error: HTTP Error 502: Bad Gateway"
+      "removed_count": 0
     }
   }
 }
