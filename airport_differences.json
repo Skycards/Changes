@@ -1,7 +1,7 @@
 {
   "summary": {
-    "total_countries_with_differences": 3,
-    "total_added_airports": 1,
+    "total_countries_with_differences": 4,
+    "total_added_airports": 2,
     "total_removed_airports": 2
   },
   "countries": {
@@ -57,6 +57,26 @@
           "link": "https://www.flightradar24.com/data/airports/jju",
           "name": "Qaqortoq Airport",
           "icao": "BGQO"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
+      "removed_count": 0
+    },
+    "US": {
+      "country_name": "United States",
+      "iso_code": "US",
+      "fr24_count": 1714,
+      "skycards_count": 1713,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "IDH",
+          "lat": 45.942616,
+          "lon": -116.119499,
+          "link": "https://www.flightradar24.com/data/airports/idh",
+          "name": "Grangeville Idaho County Airport",
+          "icao": "KGIC"
         }
       ],
       "removed_airports": [],
