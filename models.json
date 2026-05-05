@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1774428874272,
+  "updatedAt": 1777983837088,
   "rows": [
     {
       "id": "A1",
@@ -10,6 +10,7 @@
         "DOUGLAS AD Skyraider",
         "DOUGLAS EA-1 Skyraider"
       ],
+      "description": "The Douglas A-1 Skyraider is a robust, single-seat attack aircraft known for its versatility and long service life, excelling in close air support and rescue missions during the Korean and Vietnam Wars.",
       "landingGear": "Tailwheel",
       "wingPos": "Low wing",
       "wingShape": "Tapered",
@@ -3005,10 +3006,11 @@
     {
       "id": "ACED",
       "manufacturer": "POWELL",
-      "name": "Acey Deucy",
+      "name": "P-70 Acey Deucy",
       "manufacturers": [
         "POWELL P-70 Acey Deucy"
       ],
+      "description": "The Powell P-70 Acey Deucy is a classic tandem-seat, parasol-wing homebuilt monoplane. Designed for grassroots aviators, its open-cockpit configuration and rugged wooden structure emphasize the nostalgic, pure joy of recreational flight.",
       "type": "L",
       "engNum": 1,
       "engType": "P",
@@ -3017,9 +3019,12 @@
       "num": 0,
       "xp": 8130,
       "firstFlight": 1970,
-      "wingspan": 9.9,
-      "length": 6.3,
-      "height": 2,
+      "wingspan": 9.91,
+      "length": 6.32,
+      "height": 2.1,
+      "mtow": 580,
+      "seats": 2,
+      "range": 220,
       "maxSpeed": 85,
       "cardCategory": "ultra",
       "ftea": 0.0011640981735159817,
@@ -6850,6 +6855,7 @@
       "manufacturers": [
         "AIRCRAFT TECHNOLOGIES Atlantis"
       ],
+      "description": "The AIRCRAFT TECHNOLOGIES Atlantis is a light sport aircraft designed for recreational flying. It features a sleek, modern design and is known for its ease of handling and efficient performance.",
       "type": "L",
       "engNum": 1,
       "engType": "P",
@@ -12344,6 +12350,7 @@
       "manufacturers": [
         "BORTOLANZA Puma"
       ],
+      "description": "The BDC AERO Puma is a light sport aircraft designed for recreational flying. Known for its agility and ease of handling, it offers pilots an enjoyable and accessible flying experience.",
       "type": "L",
       "engNum": 1,
       "engType": "P",
@@ -12351,6 +12358,12 @@
       "rareness": 1321,
       "num": 0,
       "xp": 7605,
+      "firstFlight": 2007,
+      "wingspan": 8.5,
+      "length": 6.3,
+      "mtow": 560,
+      "seats": 2,
+      "maxSpeed": 115,
       "cardCategory": "ultra",
       "ftea": 0.003318429731100964,
       "images": [
@@ -17999,6 +18012,7 @@
       "id": "CHP2",
       "manufacturer": "BELITE",
       "name": "CH-2A Chipper 2",
+      "description": "The BELITE CH-2A Chipper 2 is a lightweight, two-seat aircraft designed for recreational flying. It features a modular construction, allowing for easy assembly and customization by aviation enthusiasts.",
       "landingGear": "Tailwheel",
       "wingPos": "High wing",
       "type": "L",
@@ -18071,6 +18085,7 @@
       "manufacturers": [
         "ELMWOOD CH-8 Christavia Mk4"
       ],
+      "description": "The ELMWOOD CH-8 Christavia Mk4 is a homebuilt aircraft designed for personal use, known for its simplicity and adaptability. It reflects the spirit of grassroots aviation and DIY craftsmanship.",
       "type": "L",
       "engNum": 1,
       "engType": "P",
@@ -18078,10 +18093,15 @@
       "rareness": 1507,
       "num": 0,
       "xp": 8535,
-      "wingspan": 10.7,
-      "length": 6.7,
+      "firstFlight": 1983,
+      "wingspan": 10.8,
+      "length": 6.78,
       "height": 2.1,
-      "maxSpeed": 120,
+      "ceiling": 19000,
+      "mtow": 1000,
+      "seats": 4,
+      "range": 350,
+      "maxSpeed": 110,
       "cardCategory": "ultra",
       "ftea": 0.0005157280568239473,
       "images": [
@@ -19409,8 +19429,8 @@
     },
     {
       "id": "CP13",
-      "manufacturer": "CAARP",
-      "name": "CP-1310 Super Emeraude",
+      "manufacturer": "PIEL",
+      "name": "CP-1310 Super Emeraude",
       "manufacturers": [
         "CAARP CP-1310 Super Emeraude",
         "PIEL CP-1310 Super Emeraude",
@@ -19420,7 +19440,7 @@
         "SCINTEX CP-1315 Super Emeraude",
         "SCINTEX CP-1330 Super Emeraude"
       ],
-      "description": "The CAARP CP-1310 Super Emeraude is a French light aircraft, known for its elegant design and performance in recreational flying.",
+      "description": "The PIEL CP-1310 Super Emeraude is a light, two-seat aircraft designed for recreational flying. Known for its wooden construction, it offers enthusiasts a classic flying experience with responsive handling.",
       "landingGear": "Tailwheel",
       "wingPos": "Low wing",
       "type": "L",
@@ -19893,6 +19913,7 @@
       "manufacturers": [
         "PENA Capena"
       ],
+      "description": "The PENA Capena is a French-designed light sport aircraft built for agile aerobatics and recreational flying. Its wooden construction and distinct mid-wing profile offer pilots a responsive, classic flying experience.",
       "landingGear": "Tailwheel",
       "type": "L",
       "engNum": 1,
@@ -26585,6 +26606,7 @@
       "manufacturers": [
         "DICKEY E-Racer"
       ],
+      "description": "The DICKEY E-Racer is a homebuilt aircraft known for its sleek design and efficient performance. It combines innovative engineering with a focus on speed, appealing to aviation enthusiasts and builders.",
       "landingGear": "Tricycle",
       "wingPos": "Mid wing",
       "wingShape": "Swept back + Canard",
@@ -29594,6 +29616,7 @@
         "FLYER Flyer SS",
         "KOLB Flyer SS"
       ],
+      "description": "The Kolb Flyer Super Sport, a refined version of the Canadian Ultravia Pelican, is a versatile two-seat light-sport aircraft. It features a carbon fiber fuselage and a STOL-capable wing design.",
       "landingGear": "Tricycle",
       "wingPos": "High wing",
       "type": "L",
@@ -29603,11 +29626,14 @@
       "rareness": 1473,
       "num": 0,
       "xp": 8365,
-      "firstFlight": 1970,
+      "firstFlight": 2008,
       "wingspan": 9.7,
       "length": 6.3,
       "height": 2.5,
-      "maxSpeed": 120,
+      "mtow": 600,
+      "seats": 2,
+      "range": 90,
+      "maxSpeed": 117,
       "cardCategory": "ultra",
       "ftea": 0.00072279299847793,
       "images": [
@@ -32752,6 +32778,7 @@
         "OSPREY GP-4",
         "PEREIRA GP-4"
       ],
+      "description": "The Osprey GP-4 is a homebuilt aircraft known for its wooden construction and sleek design. It offers aviation enthusiasts a unique project, combining traditional craftsmanship with modern aerodynamics.",
       "type": "L",
       "engNum": 1,
       "engType": "P",
@@ -32760,10 +32787,14 @@
       "num": 2,
       "xp": 8080,
       "firstFlight": 1984,
-      "wingspan": 7.5,
-      "length": 6.5,
+      "wingspan": 7.3,
+      "length": 6.55,
       "height": 1.6,
-      "maxSpeed": 221,
+      "ceiling": 20000,
+      "mtow": 910,
+      "seats": 2,
+      "range": 960,
+      "maxSpeed": 222,
       "cardCategory": "ultra",
       "ftea": 0.0012804731100963978,
       "images": [
@@ -33047,6 +33078,7 @@
       "manufacturers": [
         "HB-AIRCRAFT HB-202 Fledger"
       ],
+      "description": "The HB-202 Fledger is an Austrian-designed two-seat trainer and touring aircraft. Noted for its distinctive high-wing configuration and composite construction, it offers pilots exceptional visibility and stable handling for flight instruction.",
       "landingGear": "Tricycle",
       "wingPos": "High wing",
       "type": "L",
@@ -34165,6 +34197,7 @@
       "manufacturers": [
         "WALLERKOWSKI Hornisse"
       ],
+      "description": "The Wallerkowski Hornisse is a bespoke, single-seat German sportplane crafted from wood and composites. It emphasizes aerodynamic refinement, featuring a seamless, high-back fuselage designed to optimize airflow and high-speed efficiency.",
       "landingGear": "Tailwheel",
       "wingPos": "Low wing",
       "type": "L",
@@ -36849,6 +36882,7 @@
       "manufacturers": [
         "KIEGER AK-1"
       ],
+      "description": "The Kieger AK-1 is a specialized Hungarian kit-built ultralight designed for short-field performance. Its distinctive high-wing profile and rugged landing gear prioritize accessibility for recreational pilots operating from primitive airfields.",
       "landingGear": "Tailwheel",
       "wingPos": "Low wing",
       "type": "L",
@@ -41573,14 +41607,14 @@
     },
     {
       "id": "MAVR",
-      "manufacturer": "AEA",
+      "manufacturer": "MURPHY",
       "name": "Maverick",
       "manufacturers": [
-        "AEA Maverick"
+        "MURPHY Maverick"
       ],
-      "description": "The AEA Maverick is a light sport aircraft, known for its innovative design and performance, suitable for recreational flying.",
+      "description": "The MURPHY Maverick is a lightweight, kit-built aircraft designed for recreational flying. Known for its simplicity and versatility, it offers pilots an accessible entry into the world of personal aviation.",
       "landingGear": "Tailwheel",
-      "wingPos": "Low wing",
+      "wingPos": "High wing",
       "type": "L",
       "engNum": 1,
       "engType": "P",
@@ -41588,13 +41622,14 @@
       "rareness": 1909,
       "num": 2,
       "xp": 10545,
-      "firstFlight": 1987,
-      "wingspan": 5.79,
-      "length": 5.41,
-      "height": 1.8,
-      "mtow": 480,
-      "seats": 1,
-      "maxSpeed": 196,
+      "firstFlight": 1993,
+      "wingspan": 9,
+      "length": 6.3,
+      "ceiling": 13000,
+      "mtow": 430,
+      "seats": 2,
+      "range": 240,
+      "maxSpeed": 95,
       "cardCategory": "ultra",
       "ftea": 0.000009290969051243023,
       "images": [
@@ -41606,7 +41641,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "imageOverride": "J2"
     },
     {
       "id": "MB80",
@@ -42891,6 +42927,7 @@
         "PZL-SWIDNIK Mi-2 Kania",
         "PZL-SWIDNIK Mi-2 Kitty Hawk"
       ],
+      "description": "The MIL Mi-2 is a Soviet-era light utility helicopter, notable for its twin-turbine engines. It served various roles, including transport and medical evacuation, and was widely used in Eastern Europe.",
       "type": "H",
       "engNum": 2,
       "engType": "T",
@@ -42899,9 +42936,14 @@
       "num": 0,
       "xp": 7900,
       "firstFlight": 1961,
-      "length": 11.9,
-      "height": 2.7,
-      "maxSpeed": 116,
+      "wingspan": 14.5,
+      "length": 11.4,
+      "height": 3.8,
+      "ceiling": 13000,
+      "mtow": 3700,
+      "seats": 8,
+      "range": 240,
+      "maxSpeed": 110,
       "cardCategory": "ultra",
       "ftea": 0.001833396752917301,
       "images": [
@@ -44212,11 +44254,12 @@
     {
       "id": "MX80",
       "manufacturer": "AEROANDINA",
-      "name": "Fantasy",
+      "name": "MXP-800 Fantasy",
       "manufacturers": [
         "AEROANDINA MXP-800 Fantasy",
-        "AEROTEC (2) MXP-800 Fantasy"
+        "AEROTEC MXP-800 Fantasy"
       ],
+      "description": "The Aeroandina MXP-800 Fantasy is a Colombian-designed all-metal light aircraft. Developed for training and touring, it features a high-wing configuration, tricycle landing gear, and a robust steel-cage cockpit for enhanced safety.",
       "landingGear": "Tricycle",
       "wingPos": "High wing",
       "type": "L",
@@ -44230,7 +44273,11 @@
       "wingspan": 10,
       "length": 6.2,
       "height": 2,
-      "maxSpeed": 115,
+      "ceiling": 12000,
+      "mtow": 640,
+      "seats": 2,
+      "range": 325,
+      "maxSpeed": 100,
       "cardCategory": "ultra",
       "ftea": 0.0036416159309994927,
       "images": [
@@ -45015,6 +45062,7 @@
         "TISSOT-CHARBONNIER TC-160 Océanair",
         "TISSOT-CHARBONNIER TC-180 Océanair"
       ],
+      "description": "The TISSOT-CHARBONNIER TC-120 Océanair is a French amphibious aircraft designed for coastal surveillance and rescue missions, featuring a unique hull design for water landings and operations in challenging maritime environments.",
       "landingGear": "Tricycle",
       "wingPos": "Low wing",
       "type": "L",
@@ -46440,6 +46488,7 @@
       "manufacturers": [
         "POTTIER P-50 Bouvreuil"
       ],
+      "description": "The Pottier P-50 is a French homebuilt aircraft known for its compact design and ease of construction. It reflects the DIY aviation movement, allowing enthusiasts to build and customize their own planes.",
       "landingGear": "Tricycle",
       "wingPos": "Low wing",
       "wingShape": "Tapered",
@@ -49022,6 +49071,7 @@
       "manufacturers": [
         "PAZMANY PL-1 Laminar"
       ],
+      "description": "The PAZMANY Laminar is a homebuilt aircraft known for its efficient laminar flow wing design, enhancing aerodynamic performance. It represents innovation in personal aviation, emphasizing builder involvement and customization.",
       "landingGear": "Tricycle",
       "wingPos": "Low wing",
       "type": "L",
@@ -49588,6 +49638,7 @@
       "manufacturers": [
         "PERCIVAL P-40 Prentice"
       ],
+      "description": "The Percival P-40 Prentice was a British post-war training aircraft, notable for its side-by-side seating arrangement, designed to train RAF pilots in navigation and radio operations during the late 1940s.",
       "type": "L",
       "engNum": 1,
       "engType": "P",
@@ -52022,6 +52073,7 @@
       "manufacturers": [
         "JUNQUA RJ-03 Ibis"
       ],
+      "description": "The JUNQUA Ibis is a French homebuilt aircraft known for its unique pusher configuration and canard design, offering enthusiasts a distinctive flying experience with its unconventional layout and construction approach.",
       "landingGear": "Tricycle",
       "wingPos": "Shoulder wing",
       "wingShape": "Swept back + Canard",
@@ -57146,14 +57198,15 @@
     },
     {
       "id": "SP20",
-      "manufacturer": "LANSHE",
-      "name": "SP-26",
+      "manufacturer": "MEYERS",
+      "name": "MAC-145",
       "manufacturers": [
         "LANSHE SP-26",
         "MICCO SP-20",
         "MICCO SP-26",
         "NEW MEYERS SP-20"
       ],
+      "description": "The Meyers MAC-145 is a light, single-engine aircraft known for its robust construction and reliability. It served private pilots in the mid-20th century, emphasizing simplicity and ease of maintenance.",
       "type": "L",
       "engNum": 1,
       "engType": "P",
@@ -57161,10 +57214,15 @@
       "rareness": 1198,
       "num": 0,
       "xp": 6990,
-      "wingspan": 9.2,
-      "length": 7.3,
-      "height": 1.9,
-      "maxSpeed": 135,
+      "firstFlight": 1997,
+      "wingspan": 9.14,
+      "length": 6.5,
+      "height": 2.6,
+      "ceiling": 18000,
+      "mtow": 790,
+      "seats": 2,
+      "range": 520,
+      "maxSpeed": 144,
       "cardCategory": "ultra",
       "ftea": 0.011319190766108574,
       "images": [
@@ -57422,6 +57480,7 @@
         "SOPWITH Pup",
         "SOPWITH Pup Replica"
       ],
+      "description": "The AIRDROME AEROPLANES Sopwith Pup Replica is a modern recreation of the iconic WWI British fighter, capturing its historical design for enthusiasts and educational purposes, while offering a glimpse into early aviation engineering.",
       "type": "L",
       "engNum": 1,
       "engType": "P",
@@ -57451,6 +57510,7 @@
         "GLASSIC SQ-2000",
         "KLS COMPOSITES SQ-2000"
       ],
+      "description": "The GLASSIC SQ-2000 is a homebuilt aircraft known for its composite construction. It offers aviation enthusiasts a customizable flying experience, emphasizing innovation in personal aircraft design and amateur-built aviation.",
       "type": "L",
       "engNum": 1,
       "engType": "P",
@@ -61880,6 +61940,7 @@
       "id": "TRMA",
       "manufacturer": "STINSON",
       "name": "Tri-Motor Model A",
+      "description": "The Stinson Tri-Motor Model A was an early American airliner, notable for its three-engine configuration, enhancing reliability and performance, and played a role in pioneering commercial air travel in the 1930s.",
       "landingGear": "Tricycle",
       "wingPos": "Low wing",
       "type": "L",
@@ -63957,6 +64018,7 @@
       "manufacturers": [
         "AMERICAN AFFORDABLE Vision"
       ],
+      "description": "The AMERICAN AFFORDABLE Vision is a conceptual light aircraft designed for cost-effective personal aviation, emphasizing simplicity and accessibility. Its unique design aims to democratize flying for enthusiasts and hobbyists.",
       "type": "L",
       "engNum": 1,
       "engType": "P",
@@ -65020,6 +65082,7 @@
         "HALL WH-4 Harpoon",
         "HALL WH-6 Harpoon"
       ],
+      "description": "The HALL WH-4 Harpoon is a unique experimental conversion that marries a Beechcraft airframe with the powerful turboprop engine of a Czech Let L-410UVP, creating a rugged, high-performance hybrid.",
       "landingGear": "Tricycle",
       "wingPos": "Low wing",
       "type": "L",
@@ -67061,6 +67124,7 @@
     "SH6",
     "AC15",
     "B778",
-    "VHFC"
+    "VHFC",
+    "C115"
   ]
 }
