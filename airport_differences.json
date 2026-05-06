@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 4,
-    "total_added_airports": 2,
+    "total_added_airports": 6,
     "total_removed_airports": 2
   },
   "countries": {
@@ -66,10 +66,26 @@
     "US": {
       "country_name": "United States",
       "iso_code": "US",
-      "fr24_count": 1714,
+      "fr24_count": 1718,
       "skycards_count": 1713,
-      "difference": 1,
+      "difference": 5,
       "added_airports": [
+        {
+          "iata": "COM",
+          "lat": 31.841209,
+          "lon": -99.403633,
+          "link": "https://www.flightradar24.com/data/airports/com",
+          "name": "Coleman Municipal Airport",
+          "icao": "KCOM"
+        },
+        {
+          "iata": "HIF",
+          "lat": 41.12558,
+          "lon": -111.974182,
+          "link": "https://www.flightradar24.com/data/airports/hif",
+          "name": "Ogden Hill Air Force Base",
+          "icao": "KHIF"
+        },
         {
           "iata": "IDH",
           "lat": 45.942616,
@@ -77,10 +93,26 @@
           "link": "https://www.flightradar24.com/data/airports/idh",
           "name": "Grangeville Idaho County Airport",
           "icao": "KGIC"
+        },
+        {
+          "iata": "ISQ",
+          "lat": 45.974915,
+          "lon": -86.170616,
+          "link": "https://www.flightradar24.com/data/airports/isq",
+          "name": "Manistique Schoolcraft County Airport",
+          "icao": "KISQ"
+        },
+        {
+          "iata": "LSF",
+          "lat": 32.33947,
+          "lon": -84.993553,
+          "link": "https://www.flightradar24.com/data/airports/lsf",
+          "name": "Columbus Lawson Army Airfield",
+          "icao": "KLSF"
         }
       ],
       "removed_airports": [],
-      "added_count": 1,
+      "added_count": 5,
       "removed_count": 0
     }
   }
