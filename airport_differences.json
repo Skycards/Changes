@@ -1,8 +1,8 @@
 {
   "summary": {
     "total_countries_with_differences": 7,
-    "total_added_airports": 13,
-    "total_removed_airports": 1
+    "total_added_airports": 23,
+    "total_removed_airports": 2
   },
   "countries": {
     "AU": {
@@ -155,12 +155,52 @@
       "difference": 14,
       "added_airports": [
         {
+          "iata": "AFN",
+          "lat": 42.805588,
+          "lon": -72.003387,
+          "link": "https://www.flightradar24.com/data/airports/afn",
+          "name": "Jaffrey Silver Ranch Airport",
+          "icao": "KAFN"
+        },
+        {
+          "iata": "AXG",
+          "lat": 43.078575,
+          "lon": -94.273827,
+          "link": "https://www.flightradar24.com/data/airports/axg",
+          "name": "Algona Municipal Airport",
+          "icao": "KAXA"
+        },
+        {
+          "iata": "BCE",
+          "lat": 37.702114,
+          "lon": -112.151672,
+          "link": "https://www.flightradar24.com/data/airports/bce",
+          "name": "Bryce Canyon Airport",
+          "icao": "KBCE"
+        },
+        {
+          "iata": "CAO",
+          "lat": 36.4491,
+          "lon": -103.150475,
+          "link": "https://www.flightradar24.com/data/airports/cao",
+          "name": "Clayton Municipal Airpark",
+          "icao": "KCAO"
+        },
+        {
           "iata": "COM",
           "lat": 31.841209,
           "lon": -99.403633,
           "link": "https://www.flightradar24.com/data/airports/com",
           "name": "Coleman Municipal Airport",
           "icao": "KCOM"
+        },
+        {
+          "iata": "HBR",
+          "lat": 34.99128,
+          "lon": -99.05442,
+          "link": "https://www.flightradar24.com/data/airports/hbr",
+          "name": "Hobart Regional Airport",
+          "icao": "KHBR"
         },
         {
           "iata": "HIF",
@@ -193,11 +233,59 @@
           "link": "https://www.flightradar24.com/data/airports/lsf",
           "name": "Columbus Lawson Army Airfield",
           "icao": "KLSF"
+        },
+        {
+          "iata": "MDN",
+          "lat": 38.760994,
+          "lon": -85.463814,
+          "link": "https://www.flightradar24.com/data/airports/mdn",
+          "name": "Madison Regional Airport",
+          "icao": "KIMS"
+        },
+        {
+          "iata": "NNL",
+          "lat": 59.98,
+          "lon": -154.8396,
+          "link": "https://www.flightradar24.com/data/airports/nnl",
+          "name": "Nondalton Airport",
+          "icao": "PANO"
+        },
+        {
+          "iata": "PNN",
+          "lat": 45.199795,
+          "lon": -67.566879,
+          "link": "https://www.flightradar24.com/data/airports/pnn",
+          "name": "Princeton Municipal Airport",
+          "icao": "KPNN"
+        },
+        {
+          "iata": "SJN",
+          "lat": 34.519566,
+          "lon": -109.377831,
+          "link": "https://www.flightradar24.com/data/airports/sjn",
+          "name": "St. Johns Industrial Air Park",
+          "icao": "KSJN"
+        },
+        {
+          "iata": "TIK",
+          "lat": 35.409134,
+          "lon": -97.382179,
+          "link": "https://www.flightradar24.com/data/airports/tik",
+          "name": "Oklahoma City Tinker Air Force Base",
+          "icao": "KTIK"
         }
       ],
-      "removed_airports": [],
-      "added_count": 5,
-      "removed_count": 0
+      "removed_airports": [
+        {
+          "name": "Madison Municipal Airport",
+          "iata": "IMS",
+          "icao": "KIMS",
+          "lat": 38.760994,
+          "lon": -85.463814
+        }
+      ],
+      "added_count": 15,
+      "removed_count": 1
     }
   }
 }
