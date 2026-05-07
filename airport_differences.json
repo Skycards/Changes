@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 4,
-    "total_added_airports": 6,
+    "total_added_airports": 7,
     "total_removed_airports": 2
   },
   "countries": {
@@ -11,7 +11,16 @@
       "fr24_count": 349,
       "skycards_count": 350,
       "difference": -1,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "iata": "YGM",
+          "lat": 50.629673,
+          "lon": -97.044693,
+          "link": "https://www.flightradar24.com/data/airports/ygm",
+          "name": "Gimli Industrial Park Airport",
+          "icao": "CYGM"
+        }
+      ],
       "removed_airports": [
         {
           "name": "Moose Jaw Municipal Airport",
@@ -21,7 +30,7 @@
           "lon": -105.387596
         }
       ],
-      "added_count": 0,
+      "added_count": 1,
       "removed_count": 1
     },
     "GB": {
