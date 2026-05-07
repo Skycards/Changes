@@ -1,37 +1,56 @@
 {
   "summary": {
-    "total_countries_with_differences": 4,
-    "total_added_airports": 7,
-    "total_removed_airports": 2
+    "total_countries_with_differences": 7,
+    "total_added_airports": 13,
+    "total_removed_airports": 1
   },
   "countries": {
-    "CA": {
-      "country_name": "Canada",
-      "iso_code": "CA",
-      "fr24_count": 349,
-      "skycards_count": 350,
-      "difference": -1,
+    "AU": {
+      "country_name": "Australia",
+      "iso_code": "AU",
+      "fr24_count": 473,
+      "skycards_count": 472,
+      "difference": 1,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
+      "removed_count": 0
+    },
+    "CN": {
+      "country_name": "China",
+      "iso_code": "CN",
+      "fr24_count": 266,
+      "skycards_count": 263,
+      "difference": 3,
       "added_airports": [
         {
-          "iata": "YGM",
-          "lat": 50.629673,
-          "lon": -97.044693,
-          "link": "https://www.flightradar24.com/data/airports/ygm",
-          "name": "Gimli Industrial Park Airport",
-          "icao": "CYGM"
-        }
-      ],
-      "removed_airports": [
+          "iata": "BFY",
+          "lat": 33.165821,
+          "lon": 117.057442,
+          "link": "https://www.flightradar24.com/data/airports/bfy",
+          "name": "Bengbu Tenghu Airport",
+          "icao": "ZSBA"
+        },
         {
-          "name": "Moose Jaw Municipal Airport",
-          "iata": "YMJ",
-          "icao": "CYMJ",
-          "lat": 50.434601,
-          "lon": -105.387596
+          "iata": "DHH",
+          "lat": 43.756802,
+          "lon": 93.136765,
+          "link": "https://www.flightradar24.com/data/airports/dhh",
+          "name": "Barkol Dahe Airport",
+          "icao": "ZWLK"
+        },
+        {
+          "iata": "ZZH",
+          "lat": 34.90546,
+          "lon": 117.402435,
+          "link": "https://www.flightradar24.com/data/airports/zzh",
+          "name": "Zaozhuang Yiyun Airport",
+          "icao": "ZSZF"
         }
       ],
-      "added_count": 1,
-      "removed_count": 1
+      "removed_airports": [],
+      "added_count": 3,
+      "removed_count": 0
     },
     "GB": {
       "country_name": "United Kingdom",
@@ -72,12 +91,68 @@
       "added_count": 1,
       "removed_count": 0
     },
+    "ID": {
+      "country_name": "Indonesia",
+      "iso_code": "ID",
+      "fr24_count": 148,
+      "skycards_count": 146,
+      "difference": 2,
+      "added_airports": [
+        {
+          "iata": "KWB",
+          "lat": -5.800857,
+          "lon": 110.478371,
+          "link": "https://www.flightradar24.com/data/airports/kwb",
+          "name": "Karimunjawa Dewadaru Airport",
+          "icao": "WARU"
+        },
+        {
+          "iata": "PGQ",
+          "lat": 0.917452,
+          "lon": 128.383041,
+          "link": "https://www.flightradar24.com/data/airports/pgq",
+          "name": "Buli Airport",
+          "icao": "WAME"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 2,
+      "removed_count": 0
+    },
+    "SN": {
+      "country_name": "Senegal",
+      "iso_code": "SN",
+      "fr24_count": 6,
+      "skycards_count": 4,
+      "difference": 2,
+      "added_airports": [
+        {
+          "iata": "KGG",
+          "lat": 12.572594,
+          "lon": -12.220954,
+          "link": "https://www.flightradar24.com/data/airports/kgg",
+          "name": "Kedougou Airport",
+          "icao": "GOTK"
+        },
+        {
+          "iata": "XLS",
+          "lat": 16.04977,
+          "lon": -16.46102,
+          "link": "https://www.flightradar24.com/data/airports/xls",
+          "name": "Saint Louis Airport",
+          "icao": "GOSS"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 2,
+      "removed_count": 0
+    },
     "US": {
       "country_name": "United States",
       "iso_code": "US",
-      "fr24_count": 1718,
+      "fr24_count": 1727,
       "skycards_count": 1713,
-      "difference": 5,
+      "difference": 14,
       "added_airports": [
         {
           "iata": "COM",
