@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1778153796502,
+  "updatedAt": 1778223568806,
   "rows": [
     {
       "id": "A1",
@@ -57213,15 +57213,15 @@
     },
     {
       "id": "SP20",
-      "manufacturer": "MEYERS",
-      "name": "MAC-145",
+      "manufacturer": "LANSHE",
+      "name": "SP-26",
       "manufacturers": [
         "LANSHE SP-26",
         "MICCO SP-20",
         "MICCO SP-26",
         "NEW MEYERS SP-20"
       ],
-      "description": "The Meyers MAC-145 is a light, single-engine aircraft known for its robust construction and reliability. It served private pilots in the mid-20th century, emphasizing simplicity and ease of maintenance.",
+      "description": "The LanShe SP-26, originally developed by Micco, is a modern resurrection of the classic Meyers 145. This robust, all-metal aerobatic taildragger blends vintage aesthetics with responsive handling for sport and training.",
       "type": "L",
       "engNum": 1,
       "engType": "P",
@@ -57230,13 +57230,13 @@
       "num": 0,
       "xp": 6990,
       "firstFlight": 1997,
-      "wingspan": 9.14,
-      "length": 6.5,
-      "height": 2.6,
-      "ceiling": 18000,
-      "mtow": 790,
+      "wingspan": 9.25,
+      "length": 7.34,
+      "height": 2,
+      "ceiling": 12000,
+      "mtow": 1180,
       "seats": 2,
-      "range": 520,
+      "range": 920,
       "maxSpeed": 144,
       "cardCategory": "ultra",
       "ftea": 0.011319190766108574,
