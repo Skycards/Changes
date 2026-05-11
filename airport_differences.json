@@ -1,7 +1,7 @@
 {
   "summary": {
-    "total_countries_with_differences": 7,
-    "total_added_airports": 24,
+    "total_countries_with_differences": 8,
+    "total_added_airports": 25,
     "total_removed_airports": 2
   },
   "countries": {
@@ -59,6 +59,26 @@
       ],
       "removed_airports": [],
       "added_count": 3,
+      "removed_count": 0
+    },
+    "FR": {
+      "country_name": "France",
+      "iso_code": "FR",
+      "fr24_count": 163,
+      "skycards_count": 162,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "AHZ",
+          "lat": 45.087982,
+          "lon": 6.085063,
+          "link": "https://www.flightradar24.com/data/airports/ahz",
+          "name": "L'Alpe d'Huez Airport",
+          "icao": "LFHU"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
       "removed_count": 0
     },
     "GB": {
