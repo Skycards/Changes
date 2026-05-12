@@ -1,10 +1,29 @@
 {
   "summary": {
-    "total_countries_with_differences": 8,
-    "total_added_airports": 25,
-    "total_removed_airports": 2
+    "total_countries_with_differences": 11,
+    "total_added_airports": 26,
+    "total_removed_airports": 5
   },
   "countries": {
+    "AR": {
+      "country_name": "Argentina",
+      "iso_code": "AR",
+      "fr24_count": 56,
+      "skycards_count": 57,
+      "difference": -1,
+      "added_airports": [],
+      "removed_airports": [
+        {
+          "name": "Clorinda Airport",
+          "iata": "CLX",
+          "icao": "SATC",
+          "lat": -25.303446,
+          "lon": -57.733555
+        }
+      ],
+      "added_count": 0,
+      "removed_count": 1
+    },
     "AU": {
       "country_name": "Australia",
       "iso_code": "AU",
@@ -24,6 +43,41 @@
       "removed_airports": [],
       "added_count": 1,
       "removed_count": 0
+    },
+    "CA": {
+      "country_name": "Canada",
+      "iso_code": "CA",
+      "fr24_count": 349,
+      "skycards_count": 350,
+      "difference": -1,
+      "added_airports": [
+        {
+          "iata": "YGM",
+          "lat": 50.629673,
+          "lon": -97.044693,
+          "link": "https://www.flightradar24.com/data/airports/ygm",
+          "name": "Gimli Industrial Park Airport",
+          "icao": "CYGM"
+        }
+      ],
+      "removed_airports": [
+        {
+          "name": "Moose Jaw Municipal Airport",
+          "iata": "YMJ",
+          "icao": "CYMJ",
+          "lat": 50.434601,
+          "lon": -105.387596
+        },
+        {
+          "name": "Williams Harbour Airport",
+          "iata": "YWM",
+          "icao": "CCA6",
+          "lat": 52.567184,
+          "lon": -55.784054
+        }
+      ],
+      "added_count": 1,
+      "removed_count": 2
     },
     "CN": {
       "country_name": "China",
@@ -146,6 +200,17 @@
       ],
       "removed_airports": [],
       "added_count": 2,
+      "removed_count": 0
+    },
+    "PL": {
+      "country_name": "Poland",
+      "iso_code": "PL",
+      "fr24_count": 45,
+      "skycards_count": 46,
+      "difference": -1,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
       "removed_count": 0
     },
     "SN": {
