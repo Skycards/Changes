@@ -2,7 +2,7 @@
   "summary": {
     "total_countries_with_differences": 11,
     "total_added_airports": 26,
-    "total_removed_airports": 5
+    "total_removed_airports": 6
   },
   "countries": {
     "AR": {
@@ -209,9 +209,17 @@
       "skycards_count": 46,
       "difference": -1,
       "added_airports": [],
-      "removed_airports": [],
+      "removed_airports": [
+        {
+          "name": "Biala Podlaska Airport",
+          "iata": "BXP",
+          "icao": "EPBP",
+          "lat": 52.003056,
+          "lon": 23.143612
+        }
+      ],
       "added_count": 0,
-      "removed_count": 0
+      "removed_count": 1
     },
     "SN": {
       "country_name": "Senegal",
