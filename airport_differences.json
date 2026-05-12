@@ -1,7 +1,7 @@
 {
   "summary": {
-    "total_countries_with_differences": 11,
-    "total_added_airports": 26,
+    "total_countries_with_differences": 15,
+    "total_added_airports": 30,
     "total_removed_airports": 6
   },
   "countries": {
@@ -44,6 +44,26 @@
       "added_count": 1,
       "removed_count": 0
     },
+    "BE": {
+      "country_name": "Belgium",
+      "iso_code": "BE",
+      "fr24_count": 8,
+      "skycards_count": 7,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "QXZ",
+          "lat": 51.014771,
+          "lon": 5.525361,
+          "link": "https://www.flightradar24.com/data/airports/qxz",
+          "name": "Genk Zwartberg Airfield",
+          "icao": "EBZW"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
+      "removed_count": 0
+    },
     "CA": {
       "country_name": "Canada",
       "iso_code": "CA",
@@ -78,6 +98,26 @@
       ],
       "added_count": 1,
       "removed_count": 2
+    },
+    "CH": {
+      "country_name": "Switzerland",
+      "iso_code": "CH",
+      "fr24_count": 23,
+      "skycards_count": 22,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "QXV",
+          "lat": 47.204788,
+          "lon": 8.867233,
+          "link": "https://www.flightradar24.com/data/airports/qxv",
+          "name": "Wangen Lachen Airport",
+          "icao": "LSPV"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
+      "removed_count": 0
     },
     "CN": {
       "country_name": "China",
@@ -200,6 +240,46 @@
       ],
       "removed_airports": [],
       "added_count": 2,
+      "removed_count": 0
+    },
+    "JP": {
+      "country_name": "Japan",
+      "iso_code": "JP",
+      "fr24_count": 89,
+      "skycards_count": 88,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "QXT",
+          "lat": 35.671883,
+          "lon": 139.527802,
+          "link": "https://www.flightradar24.com/data/airports/qxt",
+          "name": "Tokyo Chofu Airport",
+          "icao": "RJTF"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
+      "removed_count": 0
+    },
+    "LT": {
+      "country_name": "Lithuania",
+      "iso_code": "LT",
+      "fr24_count": 6,
+      "skycards_count": 5,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "QXA",
+          "lat": 54.879875,
+          "lon": 23.878311,
+          "link": "https://www.flightradar24.com/data/airports/qxa",
+          "name": "Kaunas Aleksotas Airport",
+          "icao": "EYKS"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
       "removed_count": 0
     },
     "PL": {
