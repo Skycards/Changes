@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1778223568806,
+  "updatedAt": 1778653410745,
   "rows": [
     {
       "id": "A1",
@@ -4331,6 +4331,44 @@
       ]
     },
     {
+      "id": "AN3",
+      "manufacturer": "ANTONOV",
+      "name": "An-3",
+      "manufacturers": [
+        "ANTONOV An-3"
+      ],
+      "description": "The Antonov An-3 is a versatile Soviet-era biplane, primarily used for agricultural tasks and cargo transport. It features a turboprop engine, enhancing its performance over its predecessor, the An-2.",
+      "landingGear": "Tailwheel",
+      "wingPos": "Biplane",
+      "type": "L",
+      "engNum": 1,
+      "engType": "T",
+      "wtc": "L",
+      "rareness": 1517,
+      "num": 0,
+      "xp": 8585,
+      "firstFlight": 1980,
+      "wingspan": 18.2,
+      "length": 14,
+      "height": 4.2,
+      "ceiling": 14400,
+      "mtow": 5800,
+      "seats": 12,
+      "range": 300,
+      "maxSpeed": 140,
+      "cardCategory": "ultra",
+      "ftea": 0.0004668315575849822,
+      "images": [
+        "AN2"
+      ],
+      "markers": [
+        "P28A"
+      ],
+      "inSeasons": [
+        1
+      ]
+    },
+    {
       "id": "AN30",
       "manufacturer": "ANTONOV",
       "name": "An-30",
@@ -4503,9 +4541,9 @@
       "engNum": 2,
       "engType": "P",
       "wtc": "L",
-      "rareness": 1400,
+      "rareness": 1625,
       "num": 1,
-      "xp": 8000,
+      "xp": 9126,
       "firstFlight": 1984,
       "wingspan": 12.2,
       "length": 10.2,
@@ -4516,6 +4554,7 @@
       "range": 1720,
       "maxSpeed": 180,
       "cardCategory": "ultra",
+      "ftea": 0.00015826357179096905,
       "images": [
         "P180"
       ],
@@ -4523,7 +4562,8 @@
         "P180"
       ],
       "inSeasons": [
-        0
+        0,
+        1
       ]
     },
     {
@@ -10328,6 +10368,43 @@
       "military": true
     },
     {
+      "id": "BCMP",
+      "manufacturer": "AVIPRO",
+      "name": "Bearhawk Companion",
+      "manufacturers": [
+        "BEARHAWK Bearhawk Companion",
+        "R & B Bearhawk Companion"
+      ],
+      "landingGear": "Tailwheel",
+      "wingPos": "High wing",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1520,
+      "xp": 8602,
+      "wingspan": 10.4,
+      "length": 6.91,
+      "height": 1.9,
+      "mtow": 1000,
+      "seats": 4,
+      "range": 521,
+      "maxSpeed": 143,
+      "cardCategory": "ultra",
+      "ftea": 0.0004509766615930999,
+      "images": [
+        "PA18",
+        "B738"
+      ],
+      "markers": [
+        "P28A",
+        "B738"
+      ],
+      "inSeasons": [
+        1
+      ]
+    },
+    {
       "id": "BCS1",
       "manufacturer": "AIRBUS",
       "name": "A220-100",
@@ -10359,6 +10436,7 @@
       "cardCategory": "scarce",
       "ftea": 17.759604991121257,
       "images": [
+        "A21N",
         "A20N"
       ],
       "markers": [
@@ -11720,12 +11798,53 @@
       ]
     },
     {
+      "id": "BEA5",
+      "manufacturer": "AVIPRO",
+      "name": "Bearhawk 5",
+      "manufacturers": [
+        "BEARHAWK Bearhawk 5",
+        "R & B Bearhawk 5"
+      ],
+      "landingGear": "Tailwheel",
+      "wingPos": "High wing",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1377,
+      "xp": 7885,
+      "firstFlight": 2020,
+      "wingspan": 10.4,
+      "length": 7.77,
+      "height": 2,
+      "ceiling": 18000,
+      "mtow": 1360,
+      "seats": 6,
+      "range": 640,
+      "maxSpeed": 156,
+      "cardCategory": "ultra",
+      "ftea": 0.001892789193302892,
+      "images": [
+        "PA18",
+        "B738"
+      ],
+      "markers": [
+        "P28A",
+        "B738"
+      ],
+      "inSeasons": [
+        1
+      ]
+    },
+    {
       "id": "BEAR",
       "manufacturer": "AVIPRO",
       "name": "Bearhawk",
       "manufacturers": [
         "AVIPRO RB-4 Bearhawk",
-        "R & B RB-4 Bearhawk"
+        "R & B RB-4 Bearhawk",
+        "BEARHAWK Bearhawk",
+        "BARROWS RB-4 Bearhawk"
       ],
       "description": "The AVIPRO Bearhawk is a versatile, four-seat utility aircraft, known for its rugged construction and capability to operate from short and rough airstrips.",
       "landingGear": "Tailwheel",
@@ -12122,6 +12241,43 @@
       ],
       "markers": [
         "P28A"
+      ],
+      "inSeasons": [
+        1
+      ]
+    },
+    {
+      "id": "BLSA",
+      "manufacturer": "AVIPRO",
+      "name": "Bearhawk LSA",
+      "manufacturers": [
+        "BEARHAWK Bearhawk LSA",
+        "R & B Bearhawk LSA"
+      ],
+      "landingGear": "Tricycle",
+      "wingPos": "High wing",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1488,
+      "xp": 8441,
+      "wingspan": 10.4,
+      "length": 6.78,
+      "height": 2,
+      "mtow": 680,
+      "seats": 2,
+      "range": 521,
+      "maxSpeed": 121,
+      "cardCategory": "ultra",
+      "ftea": 0.0006223997970573313,
+      "images": [
+        "C172",
+        "B738"
+      ],
+      "markers": [
+        "P28A",
+        "B738"
       ],
       "inSeasons": [
         1
@@ -12847,6 +13003,47 @@
         1
       ],
       "military": true
+    },
+    {
+      "id": "BU20",
+      "manufacturer": "AIRCRAFT HYDRO-FORMING",
+      "name": "Bushmaster 2000",
+      "manufacturers": [
+        "AIRCRAFT HYDRO-FORMING Bushmaster 2000"
+      ],
+      "description": "The Hydro-Forming Bushmaster 2000 is a rugged bush plane designed for remote area operations, featuring a robust airframe and enhanced landing gear for rough terrain, emphasizing utility and reliability.",
+      "landingGear": "Tailwheel",
+      "wingPos": "High wing",
+      "type": "L",
+      "engNum": 3,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1789,
+      "num": 0,
+      "xp": 9945,
+      "firstFlight": 1966,
+      "wingspan": 23.7,
+      "length": 15.1,
+      "height": 4.2,
+      "mtow": 5640,
+      "seats": 23,
+      "range": 594,
+      "maxSpeed": 113,
+      "cardCategory": "ultra",
+      "ftea": 0.00003072678843226788,
+      "images": [
+        "BN2P",
+        "TRIS",
+        "C172"
+      ],
+      "markers": [
+        "BN2P",
+        "TRIS",
+        "F900"
+      ],
+      "inSeasons": [
+        1
+      ]
     },
     {
       "id": "BU31",
@@ -16569,16 +16766,16 @@
       "manufacturers": [
         "CVJETKOVIC CA-65 Skyfly"
       ],
-      "description": "The CVJETKOVIC CA-65 Skyfly is a light, single-engine aircraft known for its efficient design and ease of handling.",
+      "description": "The CVJETKOVIC CA-65 Skyfly is a unique homebuilt aircraft known for its wooden construction and pusher propeller design, reflecting innovative amateur aviation engineering from the mid-20th century.",
       "landingGear": "Tailwheel",
       "wingPos": "Low wing",
       "type": "L",
       "engNum": 1,
       "engType": "P",
       "wtc": "L",
-      "rareness": 1400,
+      "rareness": 1652,
       "num": 1,
-      "xp": 8000,
+      "xp": 9261,
       "firstFlight": 1965,
       "wingspan": 7.62,
       "length": 5.8,
@@ -16589,6 +16786,7 @@
       "range": 430,
       "maxSpeed": 140,
       "cardCategory": "ultra",
+      "ftea": 0.00012075088787417554,
       "images": [
         "RV7"
       ],
@@ -16596,7 +16794,8 @@
         "P28A"
       ],
       "inSeasons": [
-        0
+        0,
+        1
       ]
     },
     {
@@ -17559,6 +17758,49 @@
       ],
       "inSeasons": [
         0,
+        1
+      ]
+    },
+    {
+      "id": "CH62",
+      "manufacturer": "ZENAIR",
+      "name": "CH-620 Gemini",
+      "manufacturers": [
+        "ZENAIR CH-620 Gemini",
+        "ZENITH CH-620 Gemini"
+      ],
+      "landingGear": "Tailwheel",
+      "wingPos": "Low wing",
+      "type": "L",
+      "engNum": 2,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1850,
+      "num": 0,
+      "xp": 10248,
+      "firstFlight": 1996,
+      "wingspan": 8.31,
+      "length": 5.79,
+      "height": 1.8,
+      "ceiling": 16000,
+      "mtow": 660,
+      "seats": 2,
+      "range": 560,
+      "maxSpeed": 135,
+      "cardCategory": "ultra",
+      "ftea": 0.000016774479959411467,
+      "images": [
+        "BLEN",
+        "DHC6",
+        "MC10",
+        "DHC6",
+        "BE58"
+      ],
+      "markers": [
+        "DHC6",
+        "PA34"
+      ],
+      "inSeasons": [
         1
       ]
     },
@@ -18539,6 +18781,7 @@
       "cardCategory": "ultra",
       "ftea": 0.0007884956874682903,
       "images": [
+        "MT",
         "AS50",
         "R44"
       ],
@@ -18879,6 +19122,40 @@
       ],
       "inSeasons": [
         0
+      ]
+    },
+    {
+      "id": "COBR",
+      "manufacturer": "DEBORDE-ROLLAND",
+      "name": "Cobra",
+      "manufacturers": [
+        "DEBORDE-ROLLAND Cobra"
+      ],
+      "landingGear": "Tailwheel",
+      "wingPos": "Low wing",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1633,
+      "num": 0,
+      "xp": 9165,
+      "firstFlight": 1988,
+      "wingspan": 7.5,
+      "mtow": 770,
+      "seats": 2,
+      "maxSpeed": 175,
+      "cardCategory": "ultra",
+      "ftea": 0.00014618214104515474,
+      "images": [
+        "RV7",
+        "C172"
+      ],
+      "markers": [
+        "P28A"
+      ],
+      "inSeasons": [
+        1
       ]
     },
     {
@@ -19467,6 +19744,7 @@
       "cardCategory": "ultra",
       "ftea": 0.004682394723490614,
       "images": [
+        "CP32",
         "RV7"
       ],
       "markers": [
@@ -19503,6 +19781,7 @@
       "cardCategory": "ultra",
       "ftea": 0.000018930745814307458,
       "images": [
+        "CP10",
         "C172"
       ],
       "markers": [
@@ -19936,6 +20215,7 @@
       "cardCategory": "ultra",
       "ftea": 0.0020320268899036023,
       "images": [
+        "PA18",
         "RV7",
         "C172"
       ],
@@ -22573,6 +22853,42 @@
       ]
     },
     {
+      "id": "DH4T",
+      "manufacturer": "DE HAVILLAND CANADA",
+      "name": "DHC-4 Turbo Caribou",
+      "manufacturers": [
+        "DE HAVILLAND CANADA DHC-4 Turbo Caribou"
+      ],
+      "description": "The DHC-4 Turbo Caribou is a versatile STOL transport aircraft, renowned for its ability to operate in rugged environments. It played a crucial role in military logistics and humanitarian missions.",
+      "landingGear": "Tricycle",
+      "wingPos": "High wing",
+      "wingShape": "Tapered rear",
+      "type": "L",
+      "engNum": 2,
+      "engType": "T",
+      "wtc": "M",
+      "rareness": 1355,
+      "num": 0,
+      "xp": 7774,
+      "wingspan": 29.1,
+      "length": 22.1,
+      "height": 9.7,
+      "cardCategory": "ultra",
+      "ftea": 0.0023637430238457637,
+      "images": [
+        "DHC4",
+        "DH8D"
+      ],
+      "markers": [
+        "C295",
+        "B738"
+      ],
+      "inSeasons": [
+        1
+      ],
+      "military": true
+    },
+    {
       "id": "DH60",
       "manufacturer": "DE HAVILLAND",
       "name": "DH-60 Moth",
@@ -23628,6 +23944,7 @@
       "maxSpeed": 200,
       "cardCategory": "ultra",
       "images": [
+        "BE58",
         "PA31",
         "BE58"
       ],
@@ -28455,6 +28772,7 @@
       "cardCategory": "ultra",
       "ftea": 0.00035794013191273465,
       "images": [
+        "P28A",
         "C172"
       ],
       "markers": [
@@ -31104,6 +31422,52 @@
       "military": true
     },
     {
+      "id": "G64T",
+      "manufacturer": "GRUMMAN",
+      "name": "G-164 Turbo Ag-Cat",
+      "manufacturers": [
+        "AG-CAT G-164 Super Turbine",
+        "ETHIOPIAN AIRLINES G-164 Eshet",
+        "FRAKES G-164 Turbo Cat",
+        "GRUMMAN AMERICAN G-164 Turbo Ag-Cat",
+        "GRUMMAN G-164 Turbo Ag-Cat",
+        "GULFSTREAM AMERICAN G-164 Turbo Ag-Cat",
+        "MARSH G-164 Turbo Cat",
+        "SCHWEIZER G-164 Ag-Cat Turbine",
+        "SCHWEIZER G-164 Turbo Ag-Cat"
+      ],
+      "description": "The Grumman G-164 Turbo Ag-Cat is an agricultural aircraft designed for crop dusting, featuring a turboprop engine for enhanced performance and reliability, continuing the legacy of the original Ag-Cat series.",
+      "landingGear": "Tailwheel",
+      "wingPos": "Biplane",
+      "type": "L",
+      "engNum": 1,
+      "engType": "T",
+      "wtc": "L",
+      "rareness": 1352,
+      "num": 0,
+      "xp": 7760,
+      "firstFlight": 1957,
+      "wingspan": 12.9,
+      "length": 8.41,
+      "height": 3.7,
+      "mtow": 3180,
+      "seats": 1,
+      "range": 172,
+      "maxSpeed": 113,
+      "cardCategory": "ultra",
+      "ftea": 0.0024279553526128867,
+      "images": [
+        "ST75",
+        "C172"
+      ],
+      "markers": [
+        "P28A"
+      ],
+      "inSeasons": [
+        1
+      ]
+    },
+    {
       "id": "G70",
       "manufacturer": "GROPPO",
       "name": "G-70",
@@ -32805,6 +33169,42 @@
       "cardCategory": "ultra",
       "ftea": 0.0012804731100963978,
       "images": [
+        "C172"
+      ],
+      "markers": [
+        "P28A"
+      ],
+      "inSeasons": [
+        1
+      ]
+    },
+    {
+      "id": "GPRO",
+      "manufacturer": "GENEVATION",
+      "name": "GenPro",
+      "manufacturers": [
+        "GENEVATION GenPro"
+      ],
+      "landingGear": "Tailwheel",
+      "wingPos": "Low wing",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1695,
+      "num": 0,
+      "xp": 9477,
+      "firstFlight": 2018,
+      "wingspan": 7.56,
+      "length": 6.91,
+      "height": 2.6,
+      "mtow": 630,
+      "seats": 1,
+      "maxSpeed": 228,
+      "cardCategory": "ultra",
+      "ftea": 0.00007832318619989853,
+      "images": [
+        "RV7",
         "C172"
       ],
       "markers": [
@@ -35035,6 +35435,42 @@
       ]
     },
     {
+      "id": "INEX",
+      "manufacturer": "INPAER",
+      "name": "Stallion",
+      "manufacturers": [
+        "INPAER Explorer"
+      ],
+      "landingGear": "Tricycle",
+      "wingPos": "High wing",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1470,
+      "num": 0,
+      "xp": 8349,
+      "firstFlight": 2023,
+      "wingspan": 10.4,
+      "length": 7.5,
+      "height": 2.4,
+      "mtow": 1300,
+      "seats": 4,
+      "range": 1144,
+      "maxSpeed": 160,
+      "cardCategory": "ultra",
+      "ftea": 0.0007487633181126332,
+      "images": [
+        "C172"
+      ],
+      "markers": [
+        "P28A"
+      ],
+      "inSeasons": [
+        1
+      ]
+    },
+    {
       "id": "INTG",
       "manufacturer": "AURA AERO",
       "name": "Integral R",
@@ -35276,6 +35712,7 @@
         "CP10"
       ],
       "markers": [
+        "CP10",
         "SPIT",
         "CP10",
         "SHRK"
@@ -36236,6 +36673,7 @@
       "cardCategory": "ultra",
       "ftea": 0.020756595636732624,
       "images": [
+        "MT",
         "AS50",
         "R44"
       ],
@@ -37246,6 +37684,46 @@
       ],
       "inSeasons": [
         0,
+        1
+      ]
+    },
+    {
+      "id": "KL25",
+      "manufacturer": "KLEMM",
+      "name": "L-25",
+      "manufacturers": [
+        "KLEMM L-25"
+      ],
+      "description": "The Klemm L-25 was a German light aircraft from the 1920s, known for its wooden construction and versatility in training and sport flying, contributing to early aviation development in Europe.",
+      "landingGear": "Tailwheel",
+      "wingPos": "Low wing",
+      "wingShape": "Rounded rear",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1733,
+      "num": 0,
+      "xp": 9663,
+      "firstFlight": 1928,
+      "wingspan": 13,
+      "length": 7.3,
+      "height": 1.8,
+      "ceiling": 21300,
+      "mtow": 500,
+      "seats": 2,
+      "range": 350,
+      "maxSpeed": 76,
+      "cardCategory": "ultra",
+      "ftea": 0.000054033485540334856,
+      "images": [
+        "RV7",
+        "C172"
+      ],
+      "markers": [
+        "P28A"
+      ],
+      "inSeasons": [
         1
       ]
     },
@@ -38978,6 +39456,44 @@
       "military": true
     },
     {
+      "id": "LARK",
+      "manufacturer": "AERO COMMANDER",
+      "name": "100-180 Lark Commander",
+      "manufacturers": [
+        "NORTH AMERICAN ROCKWELL 100 Lark Commander"
+      ],
+      "description": "The AERO COMMANDER 100-180 Lark Commander is a light utility aircraft known for its versatility in general aviation. It features a high-wing design, enhancing visibility and stability for pilots.",
+      "landingGear": "Tricycle",
+      "wingPos": "High wing",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1351,
+      "num": 0,
+      "xp": 7754,
+      "firstFlight": 1960,
+      "wingspan": 10.7,
+      "length": 6.86,
+      "height": 2.8,
+      "ceiling": 13000,
+      "mtow": 1020,
+      "seats": 4,
+      "range": 440,
+      "maxSpeed": 116,
+      "cardCategory": "ultra",
+      "ftea": 0.0024568746829020803,
+      "images": [
+        "C172"
+      ],
+      "markers": [
+        "P28A"
+      ],
+      "inSeasons": [
+        1
+      ]
+    },
+    {
       "id": "LCA",
       "manufacturer": "HINDUSTAN",
       "name": "LCA Tejas",
@@ -40144,6 +40660,40 @@
         1
       ],
       "excluded": true
+    },
+    {
+      "id": "LW20",
+      "manufacturer": "HOWARD HUGHES",
+      "name": "Australian LightWing Speed SP-2000",
+      "manufacturers": [
+        "HOWARD HUGHES Australian LightWing Speed SP-2000"
+      ],
+      "landingGear": "Tricycle",
+      "wingPos": "Low wing",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1508,
+      "num": 0,
+      "xp": 8540,
+      "wingspan": 8.7,
+      "length": 6.5,
+      "mtow": 600,
+      "seats": 2,
+      "maxSpeed": 130,
+      "cardCategory": "ultra",
+      "ftea": 0.0005103056823947235,
+      "images": [
+        "P28A",
+        "C172"
+      ],
+      "markers": [
+        "P28A"
+      ],
+      "inSeasons": [
+        1
+      ]
     },
     {
       "id": "LWIN",
@@ -41552,9 +42102,9 @@
       "engNum": 1,
       "engType": "P",
       "wtc": "L",
-      "rareness": 1400,
+      "rareness": 1758,
       "num": 1,
-      "xp": 8000,
+      "xp": 9789,
       "firstFlight": 2017,
       "wingspan": 11,
       "length": 7.6,
@@ -41565,6 +42115,7 @@
       "range": 1100,
       "maxSpeed": 245,
       "cardCategory": "ultra",
+      "ftea": 0.00004201547437848808,
       "images": [
         "LNP4"
       ],
@@ -41572,7 +42123,8 @@
         "P28A"
       ],
       "inSeasons": [
-        0
+        0,
+        1
       ]
     },
     {
@@ -41645,6 +42197,7 @@
       "cardCategory": "ultra",
       "ftea": 0.000009290969051243023,
       "images": [
+        "PA18",
         "RV7"
       ],
       "markers": [
@@ -42630,6 +43183,44 @@
       "military": true
     },
     {
+      "id": "MEL2",
+      "manufacturer": "GARRISON",
+      "name": "Melmoth 2",
+      "manufacturers": [
+        "GARRISON Melmoth 2"
+      ],
+      "description": "The GARRISON Melmoth 2 is a unique homebuilt aircraft designed for long-distance travel. It features innovative engineering solutions and reflects the personal vision of its creator, Peter Garrison, for efficient flight.",
+      "landingGear": "Tricycle",
+      "wingPos": "Low wing",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1609,
+      "num": 0,
+      "xp": 9044,
+      "firstFlight": 2002,
+      "wingspan": 10.9,
+      "length": 7.3,
+      "height": 2.6,
+      "mtow": 1290,
+      "seats": 4,
+      "range": 2600,
+      "maxSpeed": 220,
+      "cardCategory": "ultra",
+      "ftea": 0.00018626331811263317,
+      "images": [
+        "PC12",
+        "C172"
+      ],
+      "markers": [
+        "P28A"
+      ],
+      "inSeasons": [
+        1
+      ]
+    },
+    {
       "id": "MESS",
       "manufacturer": "MILES",
       "name": "M-38 Messenger",
@@ -42927,6 +43518,41 @@
         1
       ],
       "military": true
+    },
+    {
+      "id": "MH46",
+      "manufacturer": "AEROSETTE",
+      "name": "MH-46 Eclipse",
+      "manufacturers": [
+        "AEROSETTE MH-46 Eclipse"
+      ],
+      "landingGear": "Tricycle",
+      "wingPos": "High wing",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1817,
+      "num": 0,
+      "xp": 10083,
+      "firstFlight": 2002,
+      "wingspan": 9.71,
+      "length": 6.34,
+      "height": 2.2,
+      "mtow": 470,
+      "seats": 2,
+      "maxSpeed": 161,
+      "cardCategory": "ultra",
+      "ftea": 0.000023338406900050735,
+      "images": [
+        "C172"
+      ],
+      "markers": [
+        "P28A"
+      ],
+      "inSeasons": [
+        1
+      ]
     },
     {
       "id": "MI2",
@@ -44332,6 +44958,7 @@
       "cardCategory": "ultra",
       "ftea": 0.029253139269406394,
       "images": [
+        "GB1",
         "GC1",
         "T6"
       ],
@@ -44343,6 +44970,46 @@
         0,
         1
       ]
+    },
+    {
+      "id": "MY12",
+      "manufacturer": "MYLIUS",
+      "name": "MY-102 Tornado",
+      "manufacturers": [
+        "MYLIUS MY-102 Tornado"
+      ],
+      "description": "The Mylius MY-102 Tornado is a German aerobatic aircraft designed for precision flying. Known for its agility, it serves both recreational pilots and competitive aerobatic performers, showcasing advanced maneuverability.",
+      "landingGear": "Tricycle",
+      "wingPos": "Low wing",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 2049,
+      "num": 0,
+      "xp": 11245,
+      "firstFlight": 1973,
+      "wingspan": 8.1,
+      "length": 6.4,
+      "height": 2.3,
+      "ceiling": 30000,
+      "mtow": 820,
+      "seats": 1,
+      "range": 520,
+      "maxSpeed": 214,
+      "cardCategory": "ultra",
+      "ftea": 0.0000022831050228310503,
+      "images": [
+        "P28A",
+        "C172"
+      ],
+      "markers": [
+        "P28A"
+      ],
+      "inSeasons": [
+        1
+      ],
+      "military": false
     },
     {
       "id": "MY13",
@@ -44896,6 +45563,99 @@
       ],
       "inSeasons": [
         0,
+        1
+      ]
+    },
+    {
+      "id": "NOMA",
+      "manufacturer": "GAF",
+      "name": "Nomad",
+      "manufacturers": [
+        "GAF N-2 Nomad",
+        "GAF N-22 Floatmaster",
+        "GAF N-22 Missionmaster",
+        "GAF N-22 Nomad",
+        "GAF N-22 Searchmaster",
+        "GAF N-24 Nomad"
+      ],
+      "description": "The GAF Nomad is a versatile twin-engine utility aircraft designed for short takeoff and landing capabilities, widely used for regional transport, surveillance, and medical evacuation, reflecting Australia's aviation innovation in the 1970s.",
+      "landingGear": "Tricycle",
+      "wingPos": "High wing",
+      "wingShape": "Rectangular",
+      "type": "L",
+      "engNum": 2,
+      "engType": "T",
+      "wtc": "L",
+      "rareness": 1471,
+      "num": 0,
+      "xp": 8355,
+      "firstFlight": 1971,
+      "wingspan": 16.5,
+      "length": 14.3,
+      "height": 5.5,
+      "ceiling": 25000,
+      "mtow": 4260,
+      "seats": 17,
+      "range": 730,
+      "maxSpeed": 168,
+      "cardCategory": "ultra",
+      "ftea": 0.0007390918315575849,
+      "images": [
+        "BN2P",
+        "DHC6",
+        "BE58"
+      ],
+      "markers": [
+        "BN2P",
+        "DHC6",
+        "PA34"
+      ],
+      "inSeasons": [
+        1
+      ]
+    },
+    {
+      "id": "NORS",
+      "manufacturer": "NOORDUYN",
+      "name": "Norseman",
+      "manufacturers": [
+        "CCF Norseman",
+        "NOORDUYN C-64 Norseman",
+        "NOORDUYN JA Norseman",
+        "NOORDUYN Norseman",
+        "NOORDUYN UC-64 Norseman"
+      ],
+      "description": "The Noorduyn Norseman is a rugged, versatile bush plane designed for remote operations. Known for its reliability, it played a crucial role in World War II and post-war civilian aviation.",
+      "landingGear": "Tailwheel",
+      "wingPos": "High wing",
+      "wingShape": "Rectangular",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1544,
+      "num": 0,
+      "xp": 8721,
+      "firstFlight": 1935,
+      "wingspan": 15.7,
+      "length": 9.86,
+      "height": 3.1,
+      "ceiling": 17000,
+      "mtow": 3360,
+      "seats": 10,
+      "range": 810,
+      "maxSpeed": 135,
+      "cardCategory": "ultra",
+      "ftea": 0.0003553716387620497,
+      "images": [
+        "PA18",
+        "C172"
+      ],
+      "markers": [
+        "PA18",
+        "P28A"
+      ],
+      "inSeasons": [
         1
       ]
     },
@@ -51902,6 +52662,7 @@
       "cardCategory": "ultra",
       "ftea": 0.1499339802130898,
       "images": [
+        "GB1",
         "GC1",
         "T6"
       ],
@@ -52309,6 +53070,7 @@
       "cardCategory": "ultra",
       "ftea": 0.03931960299340436,
       "images": [
+        "GB1",
         "GC1",
         "T6"
       ],
@@ -52318,6 +53080,47 @@
       ],
       "inSeasons": [
         0,
+        1
+      ]
+    },
+    {
+      "id": "ROND",
+      "manufacturer": "AMBROSINI",
+      "name": "F-4 Rondone",
+      "manufacturers": [
+        "AMBROSINI F-4 Rondone",
+        "LOMBARDI F-4 Rondone",
+        "PASOTTI F-7 Rondone 2"
+      ],
+      "description": "The Ambrosini F-4 Rondone was an Italian light touring aircraft from the 1950s, known for its sleek design and wooden construction, reflecting post-war innovation in civilian aviation.",
+      "landingGear": "Tricycle",
+      "wingPos": "Low wing",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1621,
+      "num": 0,
+      "xp": 9104,
+      "firstFlight": 1951,
+      "wingspan": 9.3,
+      "length": 6.8,
+      "height": 2.3,
+      "ceiling": 14800,
+      "mtow": 900,
+      "seats": 3,
+      "range": 380,
+      "maxSpeed": 143,
+      "cardCategory": "ultra",
+      "ftea": 0.0001653031456113648,
+      "images": [
+        "P28A",
+        "C172"
+      ],
+      "markers": [
+        "P28A"
+      ],
+      "inSeasons": [
         1
       ]
     },
@@ -53204,6 +54007,42 @@
       "excluded": true
     },
     {
+      "id": "S15S",
+      "manufacturer": "STEMME",
+      "name": "S-15",
+      "manufacturers": [
+        "STEMME S-15"
+      ],
+      "landingGear": "Tricycle",
+      "wingPos": "High wing",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1628,
+      "num": 0,
+      "xp": 9140,
+      "firstFlight": 2009,
+      "wingspan": 18,
+      "length": 8.52,
+      "height": 2.5,
+      "mtow": 1100,
+      "seats": 2,
+      "maxSpeed": 143,
+      "cardCategory": "ultra",
+      "ftea": 0.00015366565195332318,
+      "images": [
+        "S6",
+        "S10S"
+      ],
+      "markers": [
+        "P28A"
+      ],
+      "inSeasons": [
+        1
+      ]
+    },
+    {
       "id": "S15U",
       "manufacturer": "SAFRAN",
       "name": "S-15 Patroller",
@@ -53558,6 +54397,7 @@
       "cardCategory": "ultra",
       "ftea": 0.000024575088787417554,
       "images": [
+        "VJ22",
         "C172"
       ],
       "markers": [
@@ -55628,6 +56468,40 @@
       ]
     },
     {
+      "id": "SE1",
+      "manufacturer": "SPIRIT",
+      "name": "SE-1",
+      "description": "The Spirit SE-1 is a contemporary all-metal light sport aircraft blending 1930s racing aesthetics with modern efficiency. Featuring folding wings and a custom V-twin engine, it prioritizes accessible, minimalist flight.",
+      "landingGear": "Tailwheel",
+      "wingPos": "Low wing",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1185,
+      "xp": 6923,
+      "firstFlight": 2025,
+      "wingspan": 7.49,
+      "length": 5.49,
+      "height": 2,
+      "ceiling": 17500,
+      "mtow": 340,
+      "seats": 1,
+      "range": 400,
+      "maxSpeed": 122,
+      "cardCategory": "ultra",
+      "ftea": 0.0129509766615931,
+      "images": [
+        "RV7"
+      ],
+      "markers": [
+        "P28A"
+      ],
+      "inSeasons": [
+        1
+      ]
+    },
+    {
       "id": "SE5R",
       "manufacturer": "REPLICA PLANS",
       "name": "SE-5A Replica",
@@ -55950,6 +56824,40 @@
       "imageOverride": "SB20"
     },
     {
+      "id": "SF35",
+      "manufacturer": "SCHEIBE",
+      "name": "SF-35",
+      "manufacturers": [
+        "SCHEIBE SF-35"
+      ],
+      "landingGear": "Tailwheel",
+      "wingPos": "Low wing",
+      "wingShape": "Sailplane",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1366,
+      "num": 0,
+      "xp": 7829,
+      "wingspan": 16.3,
+      "length": 7.2,
+      "height": 1.9,
+      "maxSpeed": 113,
+      "cardCategory": "ultra",
+      "ftea": 0.0021168505834601725,
+      "images": [
+        "SF25"
+      ],
+      "markers": [
+        "SF25",
+        "P28A"
+      ],
+      "inSeasons": [
+        1
+      ]
+    },
+    {
       "id": "SF36",
       "manufacturer": "SCHEIBE",
       "name": "SF-36",
@@ -56118,9 +57026,9 @@
       "engNum": 1,
       "engType": "P",
       "wtc": "L",
-      "rareness": 1400,
+      "rareness": 1704,
       "num": 1,
-      "xp": 8000,
+      "xp": 9522,
       "firstFlight": 1991,
       "wingspan": 8.6,
       "length": 7.1,
@@ -56130,6 +57038,7 @@
       "range": 820,
       "maxSpeed": 120,
       "cardCategory": "ultra",
+      "ftea": 0.00007169583967529172,
       "images": [
         "C172"
       ],
@@ -56137,7 +57046,8 @@
         "P28A"
       ],
       "inSeasons": [
-        0
+        0,
+        1
       ]
     },
     {
@@ -58044,6 +58954,45 @@
       ]
     },
     {
+      "id": "ST4",
+      "manufacturer": "STEARMAN",
+      "name": "4 Junior Speedmail",
+      "manufacturers": [
+        "STEARMAN 4 Junior Speedmail",
+        "STEARMAN 4 Senior Speedmail"
+      ],
+      "description": "The Stearman 4 Junior Speedmail was a biplane designed for airmail service, featuring robust construction and open cockpit design, reflecting the early era of commercial aviation and mail delivery.",
+      "landingGear": "Tailwheel",
+      "wingPos": "Biplane",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1566,
+      "num": 0,
+      "xp": 8828,
+      "firstFlight": 1930,
+      "wingspan": 11.6,
+      "length": 8,
+      "height": 3.2,
+      "ceiling": 18000,
+      "mtow": 1790,
+      "seats": 3,
+      "range": 560,
+      "maxSpeed": 137,
+      "cardCategory": "ultra",
+      "ftea": 0.0002869736174530695,
+      "images": [
+        "ST75"
+      ],
+      "markers": [
+        "P28A"
+      ],
+      "inSeasons": [
+        1
+      ]
+    },
+    {
       "id": "ST6",
       "manufacturer": "STEARMAN",
       "name": "6 Cloudboy",
@@ -58635,6 +59584,7 @@
       "cardCategory": "ultra",
       "ftea": 0.018963311770674784,
       "images": [
+        "GB1",
         "GC1",
         "T6"
       ],
@@ -60111,6 +61061,47 @@
       ],
       "markers": [
         "VENT",
+        "P28A"
+      ],
+      "inSeasons": [
+        1
+      ]
+    },
+    {
+      "id": "TA20",
+      "manufacturer": "TAYLORCRAFT",
+      "name": "20 Ranchwagon",
+      "manufacturers": [
+        "TAYLORCRAFT (1) 20 Ranchwagon",
+        "TAYLORCRAFT (1) 20 Seabird",
+        "TAYLORCRAFT (1) 20 Topper",
+        "TAYLORCRAFT (1) 20 Zephyr 400"
+      ],
+      "description": "The Taylorcraft 20 Ranchwagon is a light utility aircraft designed for versatility in rural settings, featuring a high-wing configuration for improved visibility and short takeoff capabilities, ideal for agricultural and personal use.",
+      "landingGear": "Tailwheel",
+      "wingPos": "High wing",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1585,
+      "num": 0,
+      "xp": 8926,
+      "firstFlight": 1955,
+      "wingspan": 10.6,
+      "length": 7.42,
+      "height": 2.2,
+      "ceiling": 15000,
+      "mtow": 1250,
+      "seats": 4,
+      "maxSpeed": 140,
+      "cardCategory": "ultra",
+      "ftea": 0.00023598427194317605,
+      "images": [
+        "PA18",
+        "TF19"
+      ],
+      "markers": [
         "P28A"
       ],
       "inSeasons": [
@@ -65627,6 +66618,7 @@
       "cardCategory": "ultra",
       "ftea": 0.09739868721461187,
       "images": [
+        "GB1",
         "GC1",
         "T6"
       ],
@@ -66406,6 +67398,7 @@
       "cardCategory": "ultra",
       "ftea": 0.026548325722983258,
       "images": [
+        "GB1",
         "GC1",
         "T6"
       ],
