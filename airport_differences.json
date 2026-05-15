@@ -1,7 +1,7 @@
 {
   "summary": {
-    "total_countries_with_differences": 15,
-    "total_added_airports": 30,
+    "total_countries_with_differences": 16,
+    "total_added_airports": 31,
     "total_removed_airports": 6
   },
   "countries": {
@@ -153,6 +153,26 @@
       ],
       "removed_airports": [],
       "added_count": 3,
+      "removed_count": 0
+    },
+    "CZ": {
+      "country_name": "Czechia",
+      "iso_code": "CZ",
+      "fr24_count": 20,
+      "skycards_count": 19,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "QZV",
+          "lat": 49.29863,
+          "lon": 17.023111,
+          "link": "https://www.flightradar24.com/data/airports/qzv",
+          "name": "Vyskov Airport",
+          "icao": "LKVY"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
       "removed_count": 0
     },
     "FR": {
