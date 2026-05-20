@@ -24,26 +24,6 @@
       "added_count": 0,
       "removed_count": 1
     },
-    "AU": {
-      "country_name": "Australia",
-      "iso_code": "AU",
-      "fr24_count": 473,
-      "skycards_count": 472,
-      "difference": 1,
-      "added_airports": [
-        {
-          "iata": "CLH",
-          "lat": -31.773773,
-          "lon": 149.613754,
-          "link": "https://www.flightradar24.com/data/airports/clh",
-          "name": "Coolah Airport",
-          "icao": "YCAH"
-        }
-      ],
-      "removed_airports": [],
-      "added_count": 1,
-      "removed_count": 0
-    },
     "BE": {
       "country_name": "Belgium",
       "iso_code": "BE",
@@ -260,6 +240,26 @@
       ],
       "removed_airports": [],
       "added_count": 2,
+      "removed_count": 0
+    },
+    "IN": {
+      "country_name": "India",
+      "iso_code": "IN",
+      "fr24_count": 147,
+      "skycards_count": 146,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "DXN",
+          "lat": 28.180065,
+          "lon": 77.610985,
+          "link": "https://www.flightradar24.com/data/airports/dxn",
+          "name": "Noida International Airport",
+          "icao": "VIND"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
       "removed_count": 0
     },
     "JP": {
