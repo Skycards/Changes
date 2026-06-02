@@ -2,7 +2,7 @@
   "summary": {
     "total_countries_with_differences": 17,
     "total_added_airports": 31,
-    "total_removed_airports": 7
+    "total_removed_airports": 9
   },
   "countries": {
     "AF": {
@@ -203,6 +203,13 @@
       "added_airports": [],
       "removed_airports": [
         {
+          "name": "RAF Scampton",
+          "iata": "SQZ",
+          "icao": "EGXP",
+          "lat": 53.3078,
+          "lon": -0.550833
+        },
+        {
           "name": "Wethersfield Airport",
           "iata": "WXF",
           "icao": "EGVT",
@@ -211,7 +218,7 @@
         }
       ],
       "added_count": 0,
-      "removed_count": 1
+      "removed_count": 2
     },
     "GL": {
       "country_name": "Greenland",
@@ -503,10 +510,17 @@
           "icao": "KIMS",
           "lat": 38.760994,
           "lon": -85.463814
+        },
+        {
+          "name": "Denver Front Range Airport",
+          "iata": "QQH",
+          "icao": "KFTG",
+          "lat": 39.785278,
+          "lon": -104.543053
         }
       ],
       "added_count": 15,
-      "removed_count": 1
+      "removed_count": 2
     }
   }
 }
