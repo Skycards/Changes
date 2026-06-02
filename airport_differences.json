@@ -1,10 +1,29 @@
 {
   "summary": {
-    "total_countries_with_differences": 16,
+    "total_countries_with_differences": 17,
     "total_added_airports": 31,
-    "total_removed_airports": 6
+    "total_removed_airports": 7
   },
   "countries": {
+    "AF": {
+      "country_name": "Afghanistan",
+      "iso_code": "AF",
+      "fr24_count": 10,
+      "skycards_count": 11,
+      "difference": -1,
+      "added_airports": [],
+      "removed_airports": [
+        {
+          "name": "Zaranj Airport",
+          "iata": "ZAJ",
+          "icao": "OAZJ",
+          "lat": 30.96916,
+          "lon": 61.86702
+        }
+      ],
+      "added_count": 0,
+      "removed_count": 1
+    },
     "AR": {
       "country_name": "Argentina",
       "iso_code": "AR",
@@ -178,9 +197,9 @@
     "GB": {
       "country_name": "United Kingdom",
       "iso_code": "GB",
-      "fr24_count": 136,
+      "fr24_count": 135,
       "skycards_count": 137,
-      "difference": -1,
+      "difference": -2,
       "added_airports": [],
       "removed_airports": [
         {
@@ -352,9 +371,9 @@
     "US": {
       "country_name": "United States",
       "iso_code": "US",
-      "fr24_count": 1727,
+      "fr24_count": 1726,
       "skycards_count": 1713,
-      "difference": 14,
+      "difference": 13,
       "added_airports": [
         {
           "iata": "AFN",
