@@ -1,8 +1,8 @@
 {
   "summary": {
     "total_countries_with_differences": 17,
-    "total_added_airports": 31,
-    "total_removed_airports": 9
+    "total_added_airports": 30,
+    "total_removed_airports": 11
   },
   "countries": {
     "AF": {
@@ -174,26 +174,6 @@
       "added_count": 1,
       "removed_count": 0
     },
-    "FR": {
-      "country_name": "France",
-      "iso_code": "FR",
-      "fr24_count": 163,
-      "skycards_count": 162,
-      "difference": 1,
-      "added_airports": [
-        {
-          "iata": "AHZ",
-          "lat": 45.087982,
-          "lon": 6.085063,
-          "link": "https://www.flightradar24.com/data/airports/ahz",
-          "name": "L'Alpe d'Huez Airport",
-          "icao": "LFHU"
-        }
-      ],
-      "removed_airports": [],
-      "added_count": 1,
-      "removed_count": 0
-    },
     "GB": {
       "country_name": "United Kingdom",
       "iso_code": "GB",
@@ -328,6 +308,25 @@
       "added_count": 1,
       "removed_count": 0
     },
+    "MX": {
+      "country_name": "Mexico",
+      "iso_code": "MX",
+      "fr24_count": 80,
+      "skycards_count": 81,
+      "difference": -1,
+      "added_airports": [],
+      "removed_airports": [
+        {
+          "name": "Isla Mujeres National Airport",
+          "iata": "ISJ",
+          "icao": "MMIM",
+          "lat": 21.247108,
+          "lon": -86.740982
+        }
+      ],
+      "added_count": 0,
+      "removed_count": 1
+    },
     "PL": {
       "country_name": "Poland",
       "iso_code": "PL",
@@ -378,9 +377,9 @@
     "US": {
       "country_name": "United States",
       "iso_code": "US",
-      "fr24_count": 1726,
+      "fr24_count": 1725,
       "skycards_count": 1713,
-      "difference": 13,
+      "difference": 12,
       "added_airports": [
         {
           "iata": "AFN",
@@ -505,6 +504,13 @@
       ],
       "removed_airports": [
         {
+          "name": "Corcoran Airport",
+          "iata": "CRO",
+          "icao": "KCRO",
+          "lat": 36.101425,
+          "lon": -119.593712
+        },
+        {
           "name": "Madison Municipal Airport",
           "iata": "IMS",
           "icao": "KIMS",
@@ -520,7 +526,7 @@
         }
       ],
       "added_count": 15,
-      "removed_count": 2
+      "removed_count": 3
     }
   }
 }
