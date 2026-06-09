@@ -1,7 +1,7 @@
 {
   "summary": {
-    "total_countries_with_differences": 17,
-    "total_added_airports": 32,
+    "total_countries_with_differences": 18,
+    "total_added_airports": 33,
     "total_removed_airports": 10
   },
   "countries": {
@@ -223,9 +223,9 @@
     "ID": {
       "country_name": "Indonesia",
       "iso_code": "ID",
-      "fr24_count": 148,
+      "fr24_count": 149,
       "skycards_count": 146,
-      "difference": 2,
+      "difference": 3,
       "added_airports": [
         {
           "iata": "KWB",
@@ -282,6 +282,26 @@
           "link": "https://www.flightradar24.com/data/airports/qxt",
           "name": "Tokyo Chofu Airport",
           "icao": "RJTF"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
+      "removed_count": 0
+    },
+    "LB": {
+      "country_name": "Lebanon",
+      "iso_code": "LB",
+      "fr24_count": 2,
+      "skycards_count": 1,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "KYE",
+          "lat": 34.589298,
+          "lon": 36.011299,
+          "link": "https://www.flightradar24.com/data/airports/kye",
+          "name": "Tripoli Rene Mouawad International Airport",
+          "icao": "OLKA"
         }
       ],
       "removed_airports": [],
