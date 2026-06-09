@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 18,
-    "total_added_airports": 33,
+    "total_added_airports": 34,
     "total_removed_airports": 10
   },
   "countries": {
@@ -228,6 +228,14 @@
       "difference": 3,
       "added_airports": [
         {
+          "iata": "KRC",
+          "lat": -2.092644,
+          "lon": 101.46759,
+          "link": "https://www.flightradar24.com/data/airports/krc",
+          "name": "Kerinci Depati Parbo Airport",
+          "icao": "WIJI"
+        },
+        {
           "iata": "KWB",
           "lat": -5.800857,
           "lon": 110.478371,
@@ -245,7 +253,7 @@
         }
       ],
       "removed_airports": [],
-      "added_count": 2,
+      "added_count": 3,
       "removed_count": 0
     },
     "IN": {
