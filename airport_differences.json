@@ -1,8 +1,8 @@
 {
   "summary": {
     "total_countries_with_differences": 17,
-    "total_added_airports": 30,
-    "total_removed_airports": 11
+    "total_added_airports": 32,
+    "total_removed_airports": 10
   },
   "countries": {
     "AF": {
@@ -377,9 +377,9 @@
     "US": {
       "country_name": "United States",
       "iso_code": "US",
-      "fr24_count": 1725,
+      "fr24_count": 1728,
       "skycards_count": 1713,
-      "difference": 12,
+      "difference": 15,
       "added_airports": [
         {
           "iata": "AFN",
@@ -486,6 +486,22 @@
           "icao": "KPNN"
         },
         {
+          "iata": "QLM",
+          "lat": 32.698479,
+          "lon": -97.046867,
+          "link": "https://www.flightradar24.com/data/airports/qlm",
+          "name": "Grand Prairie Municipal Airport",
+          "icao": "KGPM"
+        },
+        {
+          "iata": "QLZ",
+          "lat": 37.972733,
+          "lon": -92.690514,
+          "link": "https://www.flightradar24.com/data/airports/qlz",
+          "name": "Camdenton Memorial Airport",
+          "icao": "KOZS"
+        },
+        {
           "iata": "SJN",
           "lat": 34.519566,
           "lon": -109.377831,
@@ -516,17 +532,10 @@
           "icao": "KIMS",
           "lat": 38.760994,
           "lon": -85.463814
-        },
-        {
-          "name": "Denver Front Range Airport",
-          "iata": "QQH",
-          "icao": "KFTG",
-          "lat": 39.785278,
-          "lon": -104.543053
         }
       ],
-      "added_count": 15,
-      "removed_count": 3
+      "added_count": 17,
+      "removed_count": 2
     }
   }
 }
