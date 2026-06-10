@@ -75,6 +75,15 @@ class ModelsTest(unittest.TestCase):
         self.assertIn("Total aircraft: 1", msg)
         self.assertLess(msg.index("Total aircraft: 1"), msg.index("For all changes see <L>"))
 
+    def test_misc_only_non_gameplay_change(self):
+        old = self._row(logoId="a")
+        new = self._row(logoId="b")
+        msg, tldr = fc.format_models([old], [new], "L")
+        self.assertIn("Some miscellaneous changes were made to aircraft", msg)
+        self.assertIn("View them here: <L>", msg)
+        self.assertEqual(tldr, "Miscellaneous aircraft changes (non-gameplay)")
+        self.assertNotIn("### Added", msg)
+
 
 class AirportsTest(unittest.TestCase):
     def _ap(self, **kw):
@@ -130,6 +139,14 @@ class AirportsTest(unittest.TestCase):
         msg, _ = fc.format_airports([], [self._ap()], "L")
         self.assertIn("Total airports: 1", msg)
 
+    def test_misc_only_non_gameplay_change(self):
+        old = self._ap(distance=10)
+        new = self._ap(distance=20)
+        msg, tldr = fc.format_airports([old], [new], "L")
+        self.assertIn("Some miscellaneous changes were made to airports", msg)
+        self.assertEqual(tldr, "Miscellaneous airports changes (non-gameplay)")
+        self.assertNotIn("### Added", msg)
+
 
 class FleetsTest(unittest.TestCase):
     def _al(self, **kw):
@@ -170,6 +187,14 @@ class FleetsTest(unittest.TestCase):
     def test_total_footer(self):
         msg, _ = fc.format_fleets([], [self._al()], "L")
         self.assertIn("Total fleets: 1", msg)
+
+    def test_misc_only_non_gameplay_change(self):
+        old = self._al(logoId="a")
+        new = self._al(logoId="b")
+        msg, tldr = fc.format_fleets([old], [new], "L")
+        self.assertIn("Some miscellaneous changes were made to fleets", msg)
+        self.assertEqual(tldr, "Miscellaneous fleets changes (non-gameplay)")
+        self.assertNotIn("### Added", msg)
 
 
 class ComparisonTest(unittest.TestCase):
