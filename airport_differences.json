@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 19,
-    "total_added_airports": 35,
+    "total_added_airports": 36,
     "total_removed_airports": 10
   },
   "countries": {
@@ -188,9 +188,18 @@
       "fr24_count": 23,
       "skycards_count": 22,
       "difference": 1,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "iata": "QUW",
+          "lat": 56.846321,
+          "lon": 9.462855,
+          "link": "https://www.flightradar24.com/data/airports/quw",
+          "name": "Aars Vesthimmerland Airport",
+          "icao": "EKVH"
+        }
+      ],
       "removed_airports": [],
-      "added_count": 0,
+      "added_count": 1,
       "removed_count": 0
     },
     "GB": {
