@@ -10,6 +10,7 @@ This project is **not affiliated with, endorsed by, or connected to Skycards** i
 
 - **airports.json** - Airport data from `https://api.skycards.oldapes.com/airports`
 - **models.json** - Aircraft models data from `https://api.skycards.oldapes.com/models`
+- **airlines.json** - Airline data from `https://api.skycards.oldapes.com/airlines` (the required snapshot timestamp is fetched from `https://api.skycards.oldapes.com/airlines/timestamp`)
 
 ## Automation
 
@@ -51,6 +52,7 @@ This design allows for:
 - `.github/workflows/fetch-single-api.yml` - Reusable workflow for fetching individual APIs
 - `airports.json` - Latest airport data (created automatically)
 - `models.json` - Latest aircraft models data (created automatically)
+- `airlines.json` - Latest airline data (created automatically)
 
 ## Manual Execution
 
@@ -74,6 +76,15 @@ The system uses [Conventional Commits](https://www.conventionalcommits.org/) for
 ## Discord Webhooks
 
 This repository can send Discord webhook notifications when data is updated. If you would like your Discord webhook to be added to receive notifications of data changes, please contact me.
+
+Notifications include a formatted summary of what changed — aircraft stat changes
+and added/removed models, airports and airline fleets grouped by continent →
+country (→ region), each linking back to the commit. The Flightradar24 comparison
+is reported as a Skycards "to be added / to be removed" worklist: new items this
+update, a merged count of entries resolved (covered by the airports update), any
+count-only movements, and an overall standing of how far the worklist stretches.
+When a summary is too long for a single Discord message, a short TLDR is posted
+with the full summary attached as a Markdown file.
 
 ## Data Format
 

@@ -20,10 +20,20 @@ jobs:
           - url: "https://api.skycards.oldapes.com/models"
             file: "models.json"
             name: "models"
+          - url: "https://api.skycards.oldapes.com/airlines"
+            file: "airlines.json"
+            name: "airlines"
+            timestamp_param: "timestamp"
+            timestamp_url: "https://api.skycards.oldapes.com/airlines/timestamp"
+            mention_everyone: false
 
     uses: ./.github/workflows/fetch-single-api.yml
     with:
       api_url: ${{ matrix.api.url }}
       output_file: ${{ matrix.api.file }}
       data_name: ${{ matrix.api.name }}
+      timestamp_param: ${{ matrix.api.timestamp_param || 'updatedAt' }}
+      timestamp_url: ${{ matrix.api.timestamp_url || '' }}
+      notify: ${{ matrix.api.notify != false }}
+      mention_everyone: ${{ matrix.api.mention_everyone != false }}
     secrets: inherit
