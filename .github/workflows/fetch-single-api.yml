@@ -15,6 +15,26 @@ on:
         description: "Display name for the data type (for logging)"
         required: true
         type: string
+      timestamp_param:
+        description: "Query parameter name used for the cache-busting timestamp"
+        required: false
+        type: string
+        default: "updatedAt"
+      timestamp_url:
+        description: "Optional URL that returns the timestamp to use. When unset, the current time is used."
+        required: false
+        type: string
+        default: ""
+      notify:
+        description: "Send Discord webhook notifications when meaningful changes are detected"
+        required: false
+        type: boolean
+        default: true
+      mention_everyone:
+        description: "Prefix webhook messages with @everyone"
+        required: false
+        type: boolean
+        default: true
 
 permissions:
   contents: write
@@ -34,17 +54,31 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
 
-      - name: Get current timestamp
+      - name: Determine timestamp
         id: timestamp
-        run: echo "timestamp=$(date +%s%3N)" >> $GITHUB_OUTPUT
+        run: |
+          if [ -n "${{ inputs.timestamp_url }}" ]; then
+            echo "Fetching timestamp from ${{ inputs.timestamp_url }}"
+            TS=$(curl -s \
+              -H "User-Agent: GitHub-Actions/1.0" \
+              -H "X-Client-Version: 3.0.0" \
+              "${{ inputs.timestamp_url }}")
+            if ! echo "$TS" | grep -qE '^[0-9]+$'; then
+              echo "Invalid timestamp received: '$TS'"
+              exit 1
+            fi
+            echo "timestamp=${TS}" >> $GITHUB_OUTPUT
+          else
+            echo "timestamp=$(date +%s%3N)" >> $GITHUB_OUTPUT
+          fi
 
       - name: Fetch ${{ inputs.data_name }} data
         run: |
-          echo "Fetching ${{ inputs.data_name }} from ${{ inputs.api_url }}?updatedAt=${{ steps.timestamp.outputs.timestamp }}"
+          echo "Fetching ${{ inputs.data_name }} from ${{ inputs.api_url }}?${{ inputs.timestamp_param }}=${{ steps.timestamp.outputs.timestamp }}"
           curl -s \
             -H "User-Agent: GitHub-Actions/1.0" \
             -H "X-Client-Version: 3.0.0" \
-            "${{ inputs.api_url }}?updatedAt=${{ steps.timestamp.outputs.timestamp }}" | jq '.' > ${{ inputs.output_file }}
+            "${{ inputs.api_url }}?${{ inputs.timestamp_param }}=${{ steps.timestamp.outputs.timestamp }}" | jq '.' > ${{ inputs.output_file }}
 
       - name: Check for changes in ${{ inputs.output_file }}
         id: changes
@@ -81,11 +115,42 @@ jobs:
             fi
           fi
 
+      - name: Capture previous version
+        if: steps.changes.outputs.changes == 'true' && steps.changes.outputs.only_updatedAt != 'true' && inputs.notify
+        run: |
+          git show HEAD:${{ inputs.output_file }} > /tmp/previous.json 2>/dev/null || echo "" > /tmp/previous.json
+
+      - name: Build webhook summary
+        id: summary
+        if: steps.changes.outputs.changes == 'true' && steps.changes.outputs.only_updatedAt != 'true' && inputs.notify
+        run: |
+          # Run before committing so the TLDR can go in the commit body. The
+          # commit URL isn't known yet, so use a placeholder and substitute it
+          # into the message after the commit (Finalize webhook link step).
+          TLDR=$(python3 scripts/format_changes.py \
+            --type "${{ inputs.data_name }}" \
+            --old /tmp/previous.json \
+            --new "${{ inputs.output_file }}" \
+            --link "__COMMIT_URL__" \
+            --out /tmp/webhook_message.md)
+          {
+            echo "tldr<<WEBHOOK_EOF"
+            echo "${TLDR}"
+            echo "WEBHOOK_EOF"
+          } >> "$GITHUB_OUTPUT"
+
       - name: Commit ${{ inputs.output_file }} changes
         if: steps.changes.outputs.changes == 'true'
         run: |
           git add ${{ inputs.output_file }}
-          git commit -m "chore(${{ inputs.data_name }}): update data - $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+          SUMMARY="${{ steps.summary.outputs.tldr }}"
+          if [ -n "$SUMMARY" ]; then
+            git commit \
+              -m "chore(${{ inputs.data_name }}): update data - $(date -u '+%Y-%m-%d %H:%M:%S UTC')" \
+              -m "$SUMMARY"
+          else
+            git commit -m "chore(${{ inputs.data_name }}): update data - $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+          fi
 
           # Handle potential race condition from parallel matrix jobs
           for i in {1..3}; do
@@ -102,43 +167,31 @@ jobs:
             fi
           done
 
+      - name: Finalize webhook link
+        id: message
+        if: steps.changes.outputs.changes == 'true' && steps.changes.outputs.only_updatedAt != 'true' && inputs.notify
+        run: |
+          COMMIT_HASH=$(git rev-parse HEAD)
+          LINK="https://github.com/Skycards/Changes/commit/${COMMIT_HASH}"
+          echo "link=${LINK}" >> "$GITHUB_OUTPUT"
+          sed -i "s|__COMMIT_URL__|${LINK}|g" /tmp/webhook_message.md
+
       - name: Load webhook secrets
-        if: steps.changes.outputs.changes == 'true' && steps.changes.outputs.only_updatedAt != 'true'
+        if: steps.changes.outputs.changes == 'true' && steps.changes.outputs.only_updatedAt != 'true' && inputs.notify
         uses: oNaiPs/secrets-to-env-action@v1
         with:
           secrets: ${{ toJSON(secrets) }}
           prefix: WEBHOOK_
 
       - name: Send Discord webhook notifications
-        if: steps.changes.outputs.changes == 'true' && steps.changes.outputs.only_updatedAt != 'true'
-        run: |
-          # Get the commit hash that was just pushed
-          COMMIT_HASH=$(git rev-parse HEAD)
-          echo "Commit hash: $COMMIT_HASH"
-
-          # Capitalize the data name for display (more portable approach)
-          DATA_NAME="${{ inputs.data_name }}"
-          DATA_NAME_CAPITALIZED="$(echo ${DATA_NAME} | awk '{print toupper(substr($0,1,1)) substr($0,2)}')"
-
-          # Send to all configured webhooks
-          for webhook_var in $(env | grep '^WEBHOOK_' | cut -d= -f1); do
-            webhook_url=$(printenv "$webhook_var")
-            if [ ! -z "$webhook_url" ]; then
-              echo "Sending notification to $webhook_var"
-
-              # Create and send the webhook payload directly
-              curl -X POST \
-                   -H "Content-Type: application/json" \
-                   -d '{
-                     "content": "@everyone '"$DATA_NAME_CAPITALIZED"' have been updated!\nTake a look at the diff here:\nhttps://github.com/Skycards/Changes/commit/'"$COMMIT_HASH"'",
-                     "embeds": null,
-                     "username": "Skycards",
-                     "avatar_url": "https://avatars.githubusercontent.com/u/224248835?s=256",
-                     "attachments": []
-                   }' \
-                   "$webhook_url" || echo "Failed to send to $webhook_var"
-            fi
-          done
+        if: steps.changes.outputs.changes == 'true' && steps.changes.outputs.only_updatedAt != 'true' && inputs.notify
+        uses: ./.github/actions/send-discord
+        with:
+          message_file: /tmp/webhook_message.md
+          tldr: ${{ steps.summary.outputs.tldr }}
+          link: ${{ steps.message.outputs.link }}
+          username: "Skycards"
+          mention: ${{ inputs.mention_everyone && '@everyone' || '' }}
 
       - name: Log no changes for ${{ inputs.data_name }}
         if: steps.changes.outputs.changes == 'false'

@@ -63,11 +63,52 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
 
+      - name: Capture previous state
+        if: steps.changes.outputs.changes == 'true'
+        run: |
+          LAST_CMP=$(git log -1 --format=%H -- airport_differences.json || true)
+          if [ -n "$LAST_CMP" ]; then
+            git show "$LAST_CMP:airport_differences.json" > /tmp/previous_differences.json 2>/dev/null || echo "" > /tmp/previous_differences.json
+            git show "$LAST_CMP:airports.json"            > /tmp/previous_airports.json     2>/dev/null || echo "" > /tmp/previous_airports.json
+          else
+            echo "" > /tmp/previous_differences.json
+            echo "" > /tmp/previous_airports.json
+          fi
+
+      - name: Build webhook summary
+        id: summary
+        if: steps.changes.outputs.changes == 'true'
+        run: |
+          # Run before committing so the TLDR can go in the commit body. The
+          # commit URL isn't known yet, so use a placeholder and substitute it
+          # into the message after the commit (Finalize webhook link step).
+          TLDR=$(python3 scripts/format_changes.py \
+            --type comparison \
+            --old /tmp/previous_differences.json \
+            --new airport_differences.json \
+            --old-airports /tmp/previous_airports.json \
+            --airports airports.json \
+            --link "__COMMIT_URL__" \
+            --out /tmp/webhook_message.md)
+          {
+            echo "tldr<<WEBHOOK_EOF"
+            echo "${TLDR}"
+            echo "WEBHOOK_EOF"
+          } >> "$GITHUB_OUTPUT"
+
       - name: Commit airport differences file
         if: steps.changes.outputs.changes == 'true'
         run: |
           git add airport_differences.json
-          git commit -m "chore(comparison): update airport comparison data - $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+          SUMMARY="${{ steps.summary.outputs.tldr }}"
+          if [ -n "$SUMMARY" ]; then
+            git commit \
+              -m "chore(comparison): update airport comparison data - $(date -u '+%Y-%m-%d %H:%M:%S UTC')" \
+              -m "$SUMMARY"
+          else
+            git commit \
+              -m "chore(comparison): update airport comparison data - $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+          fi
 
           # Handle potential race condition
           for i in {1..3}; do
@@ -84,6 +125,15 @@ jobs:
             fi
           done
 
+      - name: Finalize webhook link
+        id: message
+        if: steps.changes.outputs.changes == 'true'
+        run: |
+          COMMIT_HASH=$(git rev-parse HEAD)
+          LINK="https://github.com/Skycards/Changes/commit/${COMMIT_HASH}"
+          echo "link=${LINK}" >> "$GITHUB_OUTPUT"
+          sed -i "s|__COMMIT_URL__|${LINK}|g" /tmp/webhook_message.md
+
       - name: Load webhook secrets
         if: steps.changes.outputs.changes == 'true'
         uses: oNaiPs/secrets-to-env-action@v1
@@ -93,30 +143,13 @@ jobs:
 
       - name: Send Discord webhook notifications
         if: steps.changes.outputs.changes == 'true'
-        run: |
-          # Get the commit hash that was just pushed
-          COMMIT_HASH=$(git rev-parse HEAD)
-          echo "Commit hash: $COMMIT_HASH"
-
-          # Send to all configured webhooks
-          for webhook_var in $(env | grep '^WEBHOOK_' | cut -d= -f1); do
-            webhook_url=$(printenv "$webhook_var")
-            if [ ! -z "$webhook_url" ]; then
-              echo "Sending notification to $webhook_var"
-
-              # Create and send the webhook payload directly
-              curl -X POST \
-                   -H "Content-Type: application/json" \
-                   -d '{
-                     "content": "Airport count comparison has been updated!\nTake a look at the comparison report here:\nhttps://github.com/Skycards/Changes/commit/'"$COMMIT_HASH"'",
-                     "embeds": null,
-                     "username": "Skycards Airport Comparison",
-                     "avatar_url": "https://avatars.githubusercontent.com/u/224248835?s=256",
-                     "attachments": []
-                   }' \
-                   "$webhook_url" || echo "Failed to send to $webhook_var"
-            fi
-          done
+        uses: ./.github/actions/send-discord
+        with:
+          message_file: /tmp/webhook_message.md
+          tldr: ${{ steps.summary.outputs.tldr }}
+          link: ${{ steps.message.outputs.link }}
+          username: "Skycards Airport Comparison"
+          mention: ""
 
       - name: Log no changes
         if: steps.changes.outputs.changes == 'false'
