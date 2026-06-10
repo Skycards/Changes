@@ -1,7 +1,7 @@
 {
   "summary": {
-    "total_countries_with_differences": 18,
-    "total_added_airports": 34,
+    "total_countries_with_differences": 19,
+    "total_added_airports": 35,
     "total_removed_airports": 10
   },
   "countries": {
@@ -46,10 +46,18 @@
     "BE": {
       "country_name": "Belgium",
       "iso_code": "BE",
-      "fr24_count": 8,
+      "fr24_count": 9,
       "skycards_count": 7,
-      "difference": 1,
+      "difference": 2,
       "added_airports": [
+        {
+          "iata": "OBL",
+          "lat": 51.268959,
+          "lon": 4.762192,
+          "link": "https://www.flightradar24.com/data/airports/obl",
+          "name": "Zoersel Oostmalle Airport",
+          "icao": "EBZR"
+        },
         {
           "iata": "QXZ",
           "lat": 51.014771,
@@ -60,7 +68,7 @@
         }
       ],
       "removed_airports": [],
-      "added_count": 1,
+      "added_count": 2,
       "removed_count": 0
     },
     "CA": {
@@ -172,6 +180,17 @@
       ],
       "removed_airports": [],
       "added_count": 1,
+      "removed_count": 0
+    },
+    "DK": {
+      "country_name": "Denmark",
+      "iso_code": "DK",
+      "fr24_count": 23,
+      "skycards_count": 22,
+      "difference": 1,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
       "removed_count": 0
     },
     "GB": {
