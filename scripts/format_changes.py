@@ -104,8 +104,19 @@ def _tldr(thing, added, updated, removed):
             f"{len(updated)} updated · {len(removed)} removed")
 
 
+def _misc_message(thing, link):
+    """Notice for updates that touched only non-gameplay fields (e.g. logoId,
+    airport distance). The file still commits; this just flags it in Discord."""
+    head = f"## {HEADER_EMOJI} Airpedia {thing} update"
+    body = (f"Some miscellaneous changes were made to {thing}, not important "
+            f"to gameplay. View them here: <{link}>")
+    return f"{head}\n\n{body}", f"Miscellaneous {thing} changes (non-gameplay)"
+
+
 def format_models(old_rows, new_rows, link):
     added, updated, removed = diff(old_rows, new_rows, "id", MODEL_CHANGE_FIELDS)
+    if not (added or updated or removed):
+        return _misc_message("aircraft", link)
 
     def added_block(r):
         lines = [_model_title(r)]
@@ -204,6 +215,8 @@ def _iata_codes(records):
 
 def format_airports(old_rows, new_rows, link):
     added, updated, removed = diff(old_rows, new_rows, "id", AIRPORT_CHANGE_FIELDS)
+    if not (added or updated or removed):
+        return _misc_message("airports", link)
     place = lambda r: r.get("placeCode")
     name_key = lambda r: (r.get("name") or "")
 
@@ -450,6 +463,8 @@ FLEET_CHANGE_FIELDS = [
 
 def format_fleets(old_list, new_list, link):
     added, updated, removed = diff(old_list, new_list, "id", FLEET_CHANGE_FIELDS)
+    if not (added or updated or removed):
+        return _misc_message("fleets", link)
     place = lambda r: r.get("placeCode")
     name_key = lambda r: (r.get("name") or "")
 
