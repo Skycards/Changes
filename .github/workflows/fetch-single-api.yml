@@ -127,11 +127,13 @@ jobs:
             --old /tmp/previous.json \
             --new "${{ inputs.output_file }}" \
             --link "__COMMIT_URL__" \
-            --out /tmp/webhook_message.md)
+            --out /tmp/webhook_message.md \
+            --meta-out /tmp/webhook_meta.txt)
           {
             echo "tldr<<WEBHOOK_EOF"
             echo "${TLDR}"
             echo "WEBHOOK_EOF"
+            echo "is_misc=$(cat /tmp/webhook_meta.txt)"
           } >> "$GITHUB_OUTPUT"
 
       - name: Commit ${{ inputs.output_file }} changes
@@ -186,7 +188,9 @@ jobs:
           tldr: ${{ steps.summary.outputs.tldr }}
           link: ${{ steps.message.outputs.link }}
           username: "Skycards"
-          mention: ${{ inputs.mention_everyone && '@everyone' || '' }}
+          # Never @everyone on a misc (non-gameplay) notice, even when the API
+          # would otherwise ping (airports/models).
+          mention: ${{ (inputs.mention_everyone && steps.summary.outputs.is_misc != 'true') && '@everyone' || '' }}
 
       - name: Log no changes for ${{ inputs.data_name }}
         if: steps.changes.outputs.changes == 'false'

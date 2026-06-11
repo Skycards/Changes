@@ -104,13 +104,22 @@ def _tldr(thing, added, updated, removed):
             f"{len(updated)} updated · {len(removed)} removed")
 
 
+MISC_TLDR_SUFFIX = "(non-gameplay)"
+
+
 def _misc_message(thing, link):
     """Notice for updates that touched only non-gameplay fields (e.g. logoId,
     airport distance). The file still commits; this just flags it in Discord."""
     head = f"## {HEADER_EMOJI} Airpedia {thing} update"
     body = (f"Some miscellaneous changes were made to {thing}, not important "
             f"to gameplay. View them here: <{link}>")
-    return f"{head}\n\n{body}", f"Miscellaneous {thing} changes (non-gameplay)"
+    return f"{head}\n\n{body}", f"Miscellaneous {thing} changes {MISC_TLDR_SUFFIX}"
+
+
+def is_misc_tldr(tldr):
+    """True when a TLDR came from _misc_message (non-gameplay-only change).
+    The webhook uses this to suppress @everyone on misc notices."""
+    return tldr.endswith(MISC_TLDR_SUFFIX)
 
 
 def format_models(old_rows, new_rows, link):
@@ -542,6 +551,8 @@ def main(argv=None):
     parser.add_argument("--airports")
     parser.add_argument("--link", required=True)
     parser.add_argument("--out", required=True)
+    parser.add_argument("--meta-out", dest="meta_out",
+                        help="Write 'true'/'false' indicating a misc (non-gameplay) notice")
     args = parser.parse_args(argv)
 
     if args.type == "comparison":
@@ -563,6 +574,9 @@ def main(argv=None):
 
     with open(args.out, "w", encoding="utf-8") as fh:
         fh.write(msg)
+    if args.meta_out:
+        with open(args.meta_out, "w", encoding="utf-8") as fh:
+            fh.write("true" if is_misc_tldr(tldr) else "false")
     print(tldr)
     return 0
 

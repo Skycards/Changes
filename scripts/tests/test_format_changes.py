@@ -406,6 +406,32 @@ class CliTest(unittest.TestCase):
             self.assertIn("1 to add", tldr)
             self.assertIn("**To be added** (new)", open(out).read())
 
+    def test_meta_out_flags_misc_true(self):
+        with tempfile.TemporaryDirectory() as d:
+            old = os.path.join(d, "old.json")
+            new = os.path.join(d, "new.json")
+            out = os.path.join(d, "msg.md")
+            meta = os.path.join(d, "meta.txt")
+            row = {"id": "PC12", "name": "PC-12", "logoId": 1}
+            json.dump({"rows": [row]}, open(old, "w"))
+            json.dump({"rows": [dict(row, logoId=2)]}, open(new, "w"))
+            self._run(["--type", "models", "--old", old, "--new", new,
+                       "--link", "L", "--out", out, "--meta-out", meta])
+            self.assertEqual(open(meta).read(), "true")
+
+    def test_meta_out_flags_misc_false_for_real_change(self):
+        with tempfile.TemporaryDirectory() as d:
+            old = os.path.join(d, "old.json")
+            new = os.path.join(d, "new.json")
+            out = os.path.join(d, "msg.md")
+            meta = os.path.join(d, "meta.txt")
+            row = {"id": "PC12", "name": "PC-12", "seats": 9}
+            json.dump({"rows": [row]}, open(old, "w"))
+            json.dump({"rows": [dict(row, seats=10)]}, open(new, "w"))
+            self._run(["--type", "models", "--old", old, "--new", new,
+                       "--link", "L", "--out", out, "--meta-out", meta])
+            self.assertEqual(open(meta).read(), "false")
+
 
 if __name__ == "__main__":
     unittest.main()
