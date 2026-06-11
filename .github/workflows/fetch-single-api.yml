@@ -25,11 +25,6 @@ on:
         required: false
         type: string
         default: ""
-      notify:
-        description: "Send Discord webhook notifications when meaningful changes are detected"
-        required: false
-        type: boolean
-        default: true
       mention_everyone:
         description: "Prefix webhook messages with @everyone"
         required: false
@@ -116,13 +111,13 @@ jobs:
           fi
 
       - name: Capture previous version
-        if: steps.changes.outputs.changes == 'true' && steps.changes.outputs.only_updatedAt != 'true' && inputs.notify
+        if: steps.changes.outputs.changes == 'true' && steps.changes.outputs.only_updatedAt != 'true'
         run: |
           git show HEAD:${{ inputs.output_file }} > /tmp/previous.json 2>/dev/null || echo "" > /tmp/previous.json
 
       - name: Build webhook summary
         id: summary
-        if: steps.changes.outputs.changes == 'true' && steps.changes.outputs.only_updatedAt != 'true' && inputs.notify
+        if: steps.changes.outputs.changes == 'true' && steps.changes.outputs.only_updatedAt != 'true'
         run: |
           # Run before committing so the TLDR can go in the commit body. The
           # commit URL isn't known yet, so use a placeholder and substitute it
@@ -132,11 +127,13 @@ jobs:
             --old /tmp/previous.json \
             --new "${{ inputs.output_file }}" \
             --link "__COMMIT_URL__" \
-            --out /tmp/webhook_message.md)
+            --out /tmp/webhook_message.md \
+            --meta-out /tmp/webhook_meta.txt)
           {
             echo "tldr<<WEBHOOK_EOF"
             echo "${TLDR}"
             echo "WEBHOOK_EOF"
+            echo "is_misc=$(cat /tmp/webhook_meta.txt)"
           } >> "$GITHUB_OUTPUT"
 
       - name: Commit ${{ inputs.output_file }} changes
@@ -169,7 +166,7 @@ jobs:
 
       - name: Finalize webhook link
         id: message
-        if: steps.changes.outputs.changes == 'true' && steps.changes.outputs.only_updatedAt != 'true' && inputs.notify
+        if: steps.changes.outputs.changes == 'true' && steps.changes.outputs.only_updatedAt != 'true'
         run: |
           COMMIT_HASH=$(git rev-parse HEAD)
           LINK="https://github.com/Skycards/Changes/commit/${COMMIT_HASH}"
@@ -177,21 +174,23 @@ jobs:
           sed -i "s|__COMMIT_URL__|${LINK}|g" /tmp/webhook_message.md
 
       - name: Load webhook secrets
-        if: steps.changes.outputs.changes == 'true' && steps.changes.outputs.only_updatedAt != 'true' && inputs.notify
+        if: steps.changes.outputs.changes == 'true' && steps.changes.outputs.only_updatedAt != 'true'
         uses: oNaiPs/secrets-to-env-action@v1
         with:
           secrets: ${{ toJSON(secrets) }}
           prefix: WEBHOOK_
 
       - name: Send Discord webhook notifications
-        if: steps.changes.outputs.changes == 'true' && steps.changes.outputs.only_updatedAt != 'true' && inputs.notify
+        if: steps.changes.outputs.changes == 'true' && steps.changes.outputs.only_updatedAt != 'true'
         uses: ./.github/actions/send-discord
         with:
           message_file: /tmp/webhook_message.md
           tldr: ${{ steps.summary.outputs.tldr }}
           link: ${{ steps.message.outputs.link }}
           username: "Skycards"
-          mention: ${{ inputs.mention_everyone && '@everyone' || '' }}
+          # Never @everyone on a misc (non-gameplay) notice, even when the API
+          # would otherwise ping (airports/models).
+          mention: ${{ (inputs.mention_everyone && steps.summary.outputs.is_misc != 'true') && '@everyone' || '' }}
 
       - name: Log no changes for ${{ inputs.data_name }}
         if: steps.changes.outputs.changes == 'false'
