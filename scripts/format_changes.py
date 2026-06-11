@@ -223,6 +223,12 @@ def _iata_codes(records):
 
 
 def format_airports(old_rows, new_rows, link):
+    # Upstream never deletes airports; it nulls their iata/icao while keeping
+    # the id row. An airport without an iata is not a real (playable) airport
+    # (see compare_airports.py, which skips them), so drop those before diffing
+    # — a row that loses its iata then reads as a removal instead of vanishing.
+    old_rows = [r for r in old_rows if r.get("iata")]
+    new_rows = [r for r in new_rows if r.get("iata")]
     added, updated, removed = diff(old_rows, new_rows, "id", AIRPORT_CHANGE_FIELDS)
     if not (added or updated or removed):
         return _misc_message("airports", link)

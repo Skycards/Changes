@@ -118,10 +118,9 @@ class AirportsTest(unittest.TestCase):
             "(<https://www.flightradar24.com/data/airports/JFK>) (`JFK`/`KJFK`)",
             msg,
         )
-        # No IATA -> plain name (no link), icao-only code.
-        self.assertIn("    + Tiny (`KXYZ`)", msg)
-        # IATA-only total list drops the null-iata airport.
-        self.assertIn("- Added (2): `JFK`", msg)
+        # Airports without an IATA are not real airports -> dropped entirely.
+        self.assertNotIn("Tiny", msg)
+        self.assertIn("- Added (1): `JFK`", msg)
 
     def test_updated_shows_field_changes(self):
         old = self._ap(id=2, iata="JFK", icao="KJFK", name="John F Kennedy",
@@ -134,6 +133,23 @@ class AirportsTest(unittest.TestCase):
                       "(<https://www.flightradar24.com/data/airports/JFK>) (`JFK`/`KJFK`)", msg)
         self.assertIn("      \\- City: Queens " + fc.ARROW + " New York", msg)
         self.assertIn("      \\- Region: New York " + fc.ARROW + " New Jersey", msg)
+
+    def test_losing_iata_counts_as_removed(self):
+        # Upstream never deletes airports; it nulls iata/icao but keeps the id
+        # row. Such an airport is effectively removed, not a silent update.
+        old = self._ap(id=9, iata="ZAJ", icao="OAZJ", name="Zaranj Airport",
+                       placeCode="AF")
+        new = self._ap(id=9, iata=None, icao=None, name="Zaranj Airport",
+                       placeCode="AF")
+        msg, tldr = fc.format_airports([old], [new], "L")
+        self.assertIn("### Removed (1)", msg)
+        self.assertIn(
+            "Zaranj Airport]"
+            "(<https://www.flightradar24.com/data/airports/ZAJ>) (`ZAJ`/`OAZJ`)",
+            msg,
+        )
+        self.assertIn("- Removed (1): `ZAJ`", msg)
+        self.assertEqual(tldr, "Airports update: 0 added · 0 updated · 1 removed")
 
     def test_total_footer(self):
         msg, _ = fc.format_airports([], [self._ap()], "L")
