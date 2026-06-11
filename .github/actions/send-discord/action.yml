@@ -7,6 +7,10 @@ inputs:
   tldr:
     description: "Short summary used when the message is too long"
     required: true
+  caption:
+    description: "Optional multi-line caption for the file-attachment message (falls back to tldr when empty)"
+    required: false
+    default: ""
   link:
     description: "Commit or report URL for the full changes"
     required: true
@@ -25,6 +29,7 @@ runs:
       env:
         MESSAGE_FILE: ${{ inputs.message_file }}
         TLDR: ${{ inputs.tldr }}
+        CAPTION: ${{ inputs.caption }}
         LINK: ${{ inputs.link }}
         USERNAME: ${{ inputs.username }}
         MENTION: ${{ inputs.mention }}
@@ -70,7 +75,8 @@ runs:
               | curl -sf -X POST -H "Content-Type: application/json" -d @- "$url" \
               || echo "Failed to send to $webhook_var"
           else
-            content="${PREFIX}${FILE_TITLE}"$'\n'"${TLDR}"$'\n'"See [commit](<${LINK}>) for full changes"
+            BODY="${CAPTION:-$TLDR}"
+            content="${PREFIX}${FILE_TITLE}"$'\n'"${BODY}"$'\n\n'"See [commit](<${LINK}>) for full changes"
             payload=$(jq -cn --arg c "$content" --arg u "$USERNAME" --arg a "$AVATAR" \
               '{content: $c, username: $u, avatar_url: $a, attachments: [{id: 0, filename: "changes.md"}]}')
             curl -sf -X POST \

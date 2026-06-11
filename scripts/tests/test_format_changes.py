@@ -203,6 +203,17 @@ class AirportsTest(unittest.TestCase):
         self.assertEqual(tldr, "Miscellaneous airports changes (non-gameplay)")
         self.assertNotIn("### Added", msg)
 
+    def test_caption_lists_iata_codes_per_category(self):
+        # The Discord file-attachment caption breaks the one-line tldr into a
+        # per-category code list (commit body keeps the terse tldr).
+        old = self._ap(id=1, iata="AMS", icao="EHAM")
+        jfk = self._ap(id=2, iata="JFK", icao="KJFK", name="JFK", placeCode="US-NY")
+        caption = fc.airports_caption([old], [old, jfk])
+        self.assertEqual(
+            caption,
+            "- Added (1): `JFK`\n- Updated (0): none\n- Removed (0): none",
+        )
+
 
 class FleetsTest(unittest.TestCase):
     def _al(self, **kw):
@@ -487,6 +498,46 @@ class CliTest(unittest.TestCase):
             self._run(["--type", "models", "--old", old, "--new", new,
                        "--link", "L", "--out", out, "--meta-out", meta])
             self.assertEqual(open(meta).read(), "false")
+
+    def _ap_doc(self, **kw):
+        base = {"id": 1, "iata": "AMS", "icao": "EHAM", "name": "AMS",
+                "placeCode": "NL"}
+        base.update(kw)
+        return base
+
+    def test_caption_out_writes_code_breakdown_for_airports(self):
+        with tempfile.TemporaryDirectory() as d:
+            old = os.path.join(d, "old.json")
+            new = os.path.join(d, "new.json")
+            out = os.path.join(d, "msg.md")
+            cap = os.path.join(d, "cap.txt")
+            json.dump({"rows": [self._ap_doc()]}, open(old, "w"))
+            json.dump({"rows": [self._ap_doc(),
+                                self._ap_doc(id=2, iata="JFK", icao="KJFK",
+                                             name="JFK", placeCode="US-NY")]},
+                      open(new, "w"))
+            rc, tldr = self._run(["--type", "airports", "--old", old, "--new", new,
+                                  "--link", "L", "--out", out, "--caption-out", cap])
+            self.assertEqual(rc, 0)
+            self.assertEqual(tldr, "Airports update: 1 added · 0 updated · 0 removed")
+            self.assertEqual(
+                open(cap).read().strip(),
+                "- Added (1): `JFK`\n- Updated (0): none\n- Removed (0): none",
+            )
+
+    def test_caption_out_falls_back_to_tldr_for_models(self):
+        with tempfile.TemporaryDirectory() as d:
+            old = os.path.join(d, "old.json")
+            new = os.path.join(d, "new.json")
+            out = os.path.join(d, "msg.md")
+            cap = os.path.join(d, "cap.txt")
+            row = {"id": "PC12", "name": "PC-12", "seats": 9}
+            json.dump({"rows": [row]}, open(old, "w"))
+            json.dump({"rows": [dict(row, seats=10)]}, open(new, "w"))
+            rc, tldr = self._run(["--type", "models", "--old", old, "--new", new,
+                                  "--link", "L", "--out", out, "--caption-out", cap])
+            self.assertEqual(rc, 0)
+            self.assertEqual(open(cap).read().strip(), tldr)
 
 
 if __name__ == "__main__":

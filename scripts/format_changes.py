@@ -74,13 +74,19 @@ def _total_block(added_codes, updated_codes, removed_codes):
     ])
 
 
-def _count_total_block(rows):
-    """TOTAL block where the count is the number of records and the displayed
-    codes are a (possibly shorter) list. `rows` is [(label, count, codes), ...]."""
+def _count_lines(rows):
+    """Render [(label, count, codes), ...] as `- Label (count): \\`codes\\`` lines
+    (count is the record total; codes may be a shorter list)."""
     def line(label, count, codes):
         body = f"`{','.join(codes)}`" if codes else "none"
         return f"- {label} ({count}): {body}"
-    return "\n".join(["### TOTAL"] + [line(*r) for r in rows])
+    return [line(*r) for r in rows]
+
+
+def _count_total_block(rows):
+    """TOTAL block where the count is the number of records and the displayed
+    codes are a (possibly shorter) list. `rows` is [(label, count, codes), ...]."""
+    return "\n".join(["### TOTAL"] + _count_lines(rows))
 
 
 def _assemble(thing, sections, total, link, footer=None):
@@ -255,6 +261,26 @@ def _iata_codes(records):
     return sorted(r["iata"] for r in records if r.get("iata"))
 
 
+def _airport_count_rows(added, updated_new, removed):
+    """[(label, count, iata_codes), ...] shared by the TOTAL block and the
+    Discord file-attachment caption."""
+    return [
+        ("Added", len(added), _iata_codes(added)),
+        ("Updated", len(updated_new), _iata_codes(updated_new)),
+        ("Removed", len(removed), _iata_codes(removed)),
+    ]
+
+
+def airports_caption(old_rows, new_rows):
+    """Multi-line per-category IATA-code breakdown used as the Discord
+    file-attachment caption. The one-line _tldr still feeds the commit body."""
+    old_rows = [r for r in old_rows if r.get("iata")]
+    new_rows = [r for r in new_rows if r.get("iata")]
+    added, updated, removed = diff(old_rows, new_rows, "id", AIRPORT_CHANGE_FIELDS)
+    rows = _airport_count_rows(added, [n for _, n in updated], removed)
+    return "\n".join(_count_lines(rows))
+
+
 def format_airports(old_rows, new_rows, link):
     # Upstream never deletes airports; it nulls their iata/icao while keeping
     # the id row. An airport without an iata is not a real (playable) airport
@@ -293,11 +319,7 @@ def format_airports(old_rows, new_rows, link):
     ]
 
     updated_new = [n for _, n in updated]
-    total = _count_total_block([
-        ("Added", len(added), _iata_codes(added)),
-        ("Updated", len(updated_new), _iata_codes(updated_new)),
-        ("Removed", len(removed), _iata_codes(removed)),
-    ])
+    total = _count_total_block(_airport_count_rows(added, updated_new, removed))
     if became_major or became_minor:
         total += "\n\n" + _unlockable_block(became_major, became_minor)
     msg = _assemble("airports", sections, total, link,
@@ -595,6 +617,9 @@ def main(argv=None):
     parser.add_argument("--out", required=True)
     parser.add_argument("--meta-out", dest="meta_out",
                         help="Write 'true'/'false' indicating a misc (non-gameplay) notice")
+    parser.add_argument("--caption-out", dest="caption_out",
+                        help="Write the Discord file-attachment caption (per-category "
+                             "code breakdown for airports; falls back to the tldr)")
     args = parser.parse_args(argv)
 
     if args.type == "comparison":
@@ -619,6 +644,15 @@ def main(argv=None):
     if args.meta_out:
         with open(args.meta_out, "w", encoding="utf-8") as fh:
             fh.write("true" if is_misc_tldr(tldr) else "false")
+    if args.caption_out:
+        # Airports get a per-category code breakdown; everything else reuses the
+        # one-line tldr. Misc/first-run airport notices have no diff to break out.
+        if args.type == "airports" and old_data is not None and not is_misc_tldr(tldr):
+            caption = airports_caption(_rows(old_data) or [], new_rows)
+        else:
+            caption = tldr
+        with open(args.caption_out, "w", encoding="utf-8") as fh:
+            fh.write(caption + "\n")
     print(tldr)
     return 0
 

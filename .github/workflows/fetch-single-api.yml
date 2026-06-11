@@ -128,10 +128,14 @@ jobs:
             --new "${{ inputs.output_file }}" \
             --link "__COMMIT_URL__" \
             --out /tmp/webhook_message.md \
-            --meta-out /tmp/webhook_meta.txt)
+            --meta-out /tmp/webhook_meta.txt \
+            --caption-out /tmp/webhook_caption.txt)
           {
             echo "tldr<<WEBHOOK_EOF"
             echo "${TLDR}"
+            echo "WEBHOOK_EOF"
+            echo "caption<<WEBHOOK_EOF"
+            cat /tmp/webhook_caption.txt
             echo "WEBHOOK_EOF"
             echo "is_misc=$(cat /tmp/webhook_meta.txt)"
           } >> "$GITHUB_OUTPUT"
@@ -186,6 +190,7 @@ jobs:
         with:
           message_file: /tmp/webhook_message.md
           tldr: ${{ steps.summary.outputs.tldr }}
+          caption: ${{ steps.summary.outputs.caption }}
           link: ${{ steps.message.outputs.link }}
           username: "Skycards"
           # Never @everyone on a misc (non-gameplay) notice, even when the API
