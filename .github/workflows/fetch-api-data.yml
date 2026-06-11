@@ -33,7 +33,6 @@ jobs:
       data_name: ${{ matrix.api.name }}
       timestamp_param: ${{ matrix.api.timestamp_param || 'updatedAt' }}
       timestamp_url: ${{ matrix.api.timestamp_url || '' }}
-      notify: true
       # @everyone for airports/models, but not airlines/fleets. (Name comparison
       # avoids the null-coerces-to-false trap of `matrix.api.x != false`.)
       mention_everyone: ${{ matrix.api.name != 'airlines' }}
