@@ -48,7 +48,7 @@ class ModelsTest(unittest.TestCase):
         self.assertIn("- Weight: 4.74T", msg)
         self.assertIn("- Speed: 285kts", msg)
         self.assertIn("- Wingspan: 16.3m", msg)
-        self.assertIn("For all changes see <L>", msg)
+        self.assertIn("For all changes see [commit](<L>)", msg)
         self.assertIn("- Added (1): `PC12`", msg)
         self.assertIn("- Removed (0): none", msg)
 
@@ -73,14 +73,14 @@ class ModelsTest(unittest.TestCase):
     def test_total_footer(self):
         msg, _ = fc.format_models([], [self._row()], "L")
         self.assertIn("Total aircraft: 1", msg)
-        self.assertLess(msg.index("Total aircraft: 1"), msg.index("For all changes see <L>"))
+        self.assertLess(msg.index("Total aircraft: 1"), msg.index("For all changes see [commit](<L>)"))
 
     def test_misc_only_non_gameplay_change(self):
         old = self._row(logoId="a")
         new = self._row(logoId="b")
         msg, tldr = fc.format_models([old], [new], "L")
         self.assertIn("Some miscellaneous changes were made to aircraft", msg)
-        self.assertIn("View them here: <L>", msg)
+        self.assertIn("View them here: [commit](<L>)", msg)
         self.assertEqual(tldr, "Miscellaneous aircraft changes (non-gameplay)")
         self.assertNotIn("### Added", msg)
 

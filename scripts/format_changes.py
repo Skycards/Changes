@@ -95,7 +95,7 @@ def _assemble(thing, sections, total, link, footer=None):
         parts.append("")
         parts.append(footer)
     parts.append("")
-    parts.append(f"For all changes see <{link}>")
+    parts.append(f"For all changes see [commit](<{link}>)")
     return "\n".join(parts)
 
 
@@ -112,7 +112,7 @@ def _misc_message(thing, link):
     airport distance). The file still commits; this just flags it in Discord."""
     head = f"## {HEADER_EMOJI} Airpedia {thing} update"
     body = (f"Some miscellaneous changes were made to {thing}, not important "
-            f"to gameplay. View them here: <{link}>")
+            f"to gameplay. View them here: [commit](<{link}>)")
     return f"{head}\n\n{body}", f"Miscellaneous {thing} changes {MISC_TLDR_SUFFIX}"
 
 
@@ -397,7 +397,7 @@ def format_comparison(old_diffs, new_diffs, old_iatas, new_iatas, link):
 
     if old_diffs is None:
         head = f"## {HEADER_EMOJI} Airpedia airport comparison baseline"
-        msg = "\n".join([head, "", overall, "", f"For all changes see <{link}>"])
+        msg = "\n".join([head, "", overall, "", f"For all changes see [commit](<{link}>)"])
         tldr = f"Airport comparison baseline: {to_add:,} to add, {to_remove:,} to remove"
         return msg, tldr
 
@@ -439,7 +439,7 @@ def format_comparison(old_diffs, new_diffs, old_iatas, new_iatas, link):
             parts += ["**Still to be added**",
                       render_geo(all_add, place, name_key,
                                  lambda r: [_comparison_line(r, "+")], with_region=False), ""]
-    parts += [overall, "", f"For all changes see <{link}>"]
+    parts += [overall, "", f"For all changes see [commit](<{link}>)"]
 
     tldr = _comparison_tldr(len(new_add), len(new_rem), len(count_changes),
                             resolved, to_add)
@@ -567,7 +567,7 @@ def main(argv=None):
         if old_data is None:
             label = FIRST_RUN_LABEL[args.type]
             msg = (f"## {HEADER_EMOJI} Airpedia {label.lower()} data published\n\n"
-                   f"For all changes see <{args.link}>")
+                   f"For all changes see [commit](<{args.link}>)")
             tldr = f"{label} data published"
         else:
             msg, tldr = FORMATTERS[args.type](_rows(old_data) or [], new_rows, args.link)
