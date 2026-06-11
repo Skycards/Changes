@@ -218,6 +218,39 @@ AIRPORT_CHANGE_FIELDS = [
 ]
 
 
+AIRPORT_MAJOR_SIZE = 4000  # size >= this => "major" (unlockable) airport
+
+
+def _is_major(r):
+    s = r.get("size")
+    return s is not None and s >= AIRPORT_MAJOR_SIZE
+
+
+def _size_transitions(old_rows, new_rows):
+    """IATA codes of airports that crossed the major/minor size threshold.
+
+    Only considers airports present in both versions (matched by id); returns
+    (became_major, became_minor) as sorted IATA code lists.
+    """
+    old_by = {r["id"]: r for r in old_rows}
+    became_major, became_minor = [], []
+    for n in new_rows:
+        o = old_by.get(n["id"])
+        if o is None or not n.get("iata") or _is_major(o) == _is_major(n):
+            continue
+        (became_major if _is_major(n) else became_minor).append(n["iata"])
+    return sorted(became_major), sorted(became_minor)
+
+
+def _unlockable_block(became_major, became_minor):
+    lines = ["### Unlockable airports changes"]
+    if became_major:
+        lines.append(f"Became major: `{','.join(became_major)}`")
+    if became_minor:
+        lines.append(f"Became minor: `{','.join(became_minor)}`")
+    return "\n".join(lines)
+
+
 def _iata_codes(records):
     return sorted(r["iata"] for r in records if r.get("iata"))
 
@@ -230,7 +263,8 @@ def format_airports(old_rows, new_rows, link):
     old_rows = [r for r in old_rows if r.get("iata")]
     new_rows = [r for r in new_rows if r.get("iata")]
     added, updated, removed = diff(old_rows, new_rows, "id", AIRPORT_CHANGE_FIELDS)
-    if not (added or updated or removed):
+    became_major, became_minor = _size_transitions(old_rows, new_rows)
+    if not (added or updated or removed or became_major or became_minor):
         return _misc_message("airports", link)
     place = lambda r: r.get("placeCode")
     name_key = lambda r: (r.get("name") or "")
@@ -264,6 +298,8 @@ def format_airports(old_rows, new_rows, link):
         ("Updated", len(updated_new), _iata_codes(updated_new)),
         ("Removed", len(removed), _iata_codes(removed)),
     ])
+    if became_major or became_minor:
+        total += "\n\n" + _unlockable_block(became_major, became_minor)
     msg = _assemble("airports", sections, total, link,
                     footer=f"Total airports: {len(new_rows):,}")
     return msg, _tldr("Airports", added, updated, removed)

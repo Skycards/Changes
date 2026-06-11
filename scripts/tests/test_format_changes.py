@@ -151,6 +151,46 @@ class AirportsTest(unittest.TestCase):
         self.assertIn("- Removed (1): `ZAJ`", msg)
         self.assertEqual(tldr, "Airports update: 0 added · 0 updated · 1 removed")
 
+    def test_became_major_listed_below_total(self):
+        old = self._ap(id=2, iata="AAR", size=100)
+        new = self._ap(id=2, iata="AAR", size=fc.AIRPORT_MAJOR_SIZE + 1)
+        msg, _ = fc.format_airports([old], [new], "L")
+        self.assertIn("### Unlockable airports changes", msg)
+        self.assertIn("Became major: `AAR`", msg)
+        self.assertNotIn("Became minor:", msg)
+        # The section sits below the TOTAL block.
+        self.assertLess(msg.index("### TOTAL"),
+                        msg.index("### Unlockable airports changes"))
+
+    def test_became_minor_listed(self):
+        old = self._ap(id=2, iata="ASW", size=fc.AIRPORT_MAJOR_SIZE + 1)
+        new = self._ap(id=2, iata="ASW", size=100)
+        msg, _ = fc.format_airports([old], [new], "L")
+        self.assertIn("Became minor: `ASW`", msg)
+        self.assertNotIn("Became major:", msg)
+
+    def test_threshold_is_major_inclusive(self):
+        # size == threshold counts as major.
+        old = self._ap(id=2, iata="AAR", size=fc.AIRPORT_MAJOR_SIZE - 1)
+        new = self._ap(id=2, iata="AAR", size=fc.AIRPORT_MAJOR_SIZE)
+        msg, _ = fc.format_airports([old], [new], "L")
+        self.assertIn("Became major: `AAR`", msg)
+
+    def test_size_transition_alone_is_not_misc(self):
+        # A category change with no other tracked field change still produces a
+        # real message, not the "miscellaneous" notice.
+        old = self._ap(id=2, iata="AAR", size=100)
+        new = self._ap(id=2, iata="AAR", size=fc.AIRPORT_MAJOR_SIZE + 1)
+        msg, tldr = fc.format_airports([old], [new], "L")
+        self.assertNotIn("miscellaneous", msg)
+        self.assertIn("Became major: `AAR`", msg)
+
+    def test_no_section_when_no_transition(self):
+        old = self._ap(id=2, iata="AAR", size=100, name="Old")
+        new = self._ap(id=2, iata="AAR", size=200, name="New")
+        msg, _ = fc.format_airports([old], [new], "L")
+        self.assertNotIn("Unlockable airports changes", msg)
+
     def test_total_footer(self):
         msg, _ = fc.format_airports([], [self._ap()], "L")
         self.assertIn("Total airports: 1", msg)
