@@ -43,14 +43,16 @@ runs:
         PREFIX=""
         if [ -n "$MENTION" ]; then PREFIX="$MENTION"$'\n'; fi
 
-        # The inline message escapes leading dashes (\-) so Discord doesn't
-        # reflow sub-lines into bullet lists. That escape is ugly in the raw
-        # file preview, so strip it from the attached copy only.
+        # The inline message carries two Discord-only rendering artifacts:
+        # leading-dash escapes (\-) that stop sub-lines reflowing into bullet
+        # lists, and angle brackets around link targets ([x](<url>)) that
+        # suppress embeds. Both are noise in the raw file preview, so strip
+        # them from the attached copy only.
         ATTACH_FILE="$MESSAGE_FILE"
         FILE_TITLE=""
         if [ "$LEN" -gt "$LIMIT" ]; then
           ATTACH_FILE="$(mktemp)"
-          sed -E 's/^([[:space:]]*)\\-/\1-/' "$MESSAGE_FILE" > "$ATTACH_FILE"
+          sed -E -e 's/^([[:space:]]*)\\-/\1-/' -e 's/\]\(<([^>]*)>\)/](\1)/g' "$MESSAGE_FILE" > "$ATTACH_FILE"
           # First line is always the "## ... update" heading; keep it in the
           # inline message so the attachment is identifiable at a glance.
           FILE_TITLE=$(head -n 1 "$MESSAGE_FILE")
