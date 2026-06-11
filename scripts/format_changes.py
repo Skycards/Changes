@@ -535,6 +535,11 @@ FLEET_CHANGE_FIELDS = [
 
 
 def format_fleets(old_list, new_list, link):
+    # A fleet with no aircraft isn't a real (playable) fleet, mirroring how
+    # iata-less airports are handled. Drop empty fleets before diffing so a
+    # fleet emptying out reads as a removal, and one refilling reads as added.
+    old_list = [r for r in old_list if _aircraft_count(r)]
+    new_list = [r for r in new_list if _aircraft_count(r)]
     added, updated, removed = diff(old_list, new_list, "id", FLEET_CHANGE_FIELDS)
     if not (added or updated or removed):
         return _misc_message("fleets", link)

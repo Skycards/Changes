@@ -191,6 +191,15 @@ class AirportsTest(unittest.TestCase):
         msg, _ = fc.format_airports([old], [new], "L")
         self.assertNotIn("Unlockable airports changes", msg)
 
+    def test_refilled_iata_counts_as_added(self):
+        # An airport that regains an IATA (was null) is treated as newly added.
+        old = self._ap(id=2, iata=None, icao="KXYZ", name="Reborn", placeCode="US-NY")
+        new = self._ap(id=2, iata="RBN", icao="KXYZ", name="Reborn", placeCode="US-NY")
+        msg, tldr = fc.format_airports([old], [new], "L")
+        self.assertIn("### Added (1)", msg)
+        self.assertIn("- Added (1): `RBN`", msg)
+        self.assertEqual(tldr, "Airports update: 1 added · 0 updated · 0 removed")
+
     def test_total_footer(self):
         msg, _ = fc.format_airports([], [self._ap()], "L")
         self.assertIn("Total airports: 1", msg)
@@ -250,6 +259,31 @@ class FleetsTest(unittest.TestCase):
         msg, _ = fc.format_fleets([old], [new], "L")
         self.assertIn("### Updated (1)", msg)
         self.assertIn("    \\- Aircraft: 250 " + fc.ARROW + " 255", msg)
+
+    def test_emptied_fleet_counts_as_removed(self):
+        # A fleet dropping to 0 aircraft is effectively gone, not an update.
+        old = self._al(fleet=list(range(3)))
+        new = self._al(fleet=[])
+        msg, tldr = fc.format_fleets([old], [new], "L")
+        self.assertIn("### Removed (1)", msg)
+        self.assertIn("- Removed (1): `DLH`", msg)
+        self.assertNotIn("### Updated (1)", msg)
+        self.assertEqual(tldr, "Fleets update: 0 added · 0 updated · 1 removed")
+
+    def test_refilled_fleet_counts_as_added(self):
+        # A fleet climbing back to >=1 aircraft is treated as newly added.
+        old = self._al(fleet=[])
+        new = self._al(fleet=list(range(2)))
+        msg, tldr = fc.format_fleets([old], [new], "L")
+        self.assertIn("### Added (1)", msg)
+        self.assertIn("- Added (1): `DLH`", msg)
+        self.assertEqual(tldr, "Fleets update: 1 added · 0 updated · 0 removed")
+
+    def test_always_empty_fleet_ignored(self):
+        old = self._al(fleet=[])
+        new = self._al(fleet=[], name="Renamed")
+        msg, tldr = fc.format_fleets([old], [new], "L")
+        self.assertIn("Some miscellaneous changes were made to fleets", msg)
 
     def test_total_footer(self):
         msg, _ = fc.format_fleets([], [self._al()], "L")
