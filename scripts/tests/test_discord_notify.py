@@ -1,6 +1,8 @@
 import os
 import sys
+import tempfile
 import unittest
+from unittest import mock
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 import discord_notify as dn  # noqa: E402
@@ -38,10 +40,6 @@ class PayloadTest(unittest.TestCase):
             c, "## Title\nthe body\n\nSee [commit](<https://c/1>) for full changes")
 
 
-import tempfile
-from unittest import mock
-
-
 class _Resp:
     status_code = 204
 
@@ -55,6 +53,7 @@ class SendTest(unittest.TestCase):
                                          encoding="utf-8")
         fh.write(text)
         fh.close()
+        self.addCleanup(os.unlink, fh.name)
         return fh.name
 
     def test_short_message_posts_inline_json(self):
@@ -78,10 +77,19 @@ class SendTest(unittest.TestCase):
         _, kwargs = session.post.call_args
         self.assertIn("files", kwargs)
         self.assertIn("cap", kwargs["data"]["payload_json"])
+        file_part = kwargs["files"]["files[0]"]
+        self.assertNotIn("\\-", file_part[1])
 
     def test_empty_file_sends_nothing(self):
         path = self._write("")
         session = mock.Mock()
         dn.send_discord(path, tldr="t", link="l", username="u",
                         env={"WEBHOOK_A": "https://a"}, session=session)
+        session.post.assert_not_called()
+
+    def test_no_webhooks_sends_nothing(self):
+        path = self._write("## small\nbody")
+        session = mock.Mock()
+        dn.send_discord(path, tldr="t", link="l", username="u", env={},
+                        session=session)
         session.post.assert_not_called()

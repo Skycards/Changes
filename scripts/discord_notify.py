@@ -55,6 +55,9 @@ def send_discord(message_file, tldr, link, username, caption="", mention="",
         return
 
     urls = webhook_urls(env)
+    if not urls:
+        print("No WEBHOOK_* environment variables found; nothing to send.")
+        return
     if len(message) <= LIMIT:
         payload = build_inline_payload(message, username, mention)
         for url in urls:
