@@ -971,7 +971,28 @@ which is harmless.)
 ## Task 11: Dockerfile
 
 **Files:**
-- Create: `deploy/Dockerfile`
+- Create: `deploy/Dockerfile`, `.dockerignore`
+
+- [ ] **Step 0: Create `.dockerignore` (keep build context small)**
+
+The build context would otherwise include the large root `*.json` data files and
+the entire `.git` history. Exclude everything the image doesn't need:
+
+```
+.git
+.github
+docs
+deploy
+*.json
+__pycache__
+*.pyc
+.venv
+AIRPORT_COMPARISON_README.md
+README.md
+```
+
+(`compare_airports.py` and `scripts/` are still copied because they are not
+excluded; root data `*.json` are cloned at runtime, not baked in.)
 
 - [ ] **Step 1: Create the Dockerfile**
 
@@ -1012,7 +1033,7 @@ Expected: argparse usage for the `fetch` subcommand prints; exit 0.
 - [ ] **Step 4: Commit**
 
 ```bash
-git add deploy/Dockerfile
+git add deploy/Dockerfile .dockerignore
 git commit -m "build: container image for the data-fetch pipeline"
 ```
 
