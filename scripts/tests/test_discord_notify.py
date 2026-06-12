@@ -36,3 +36,52 @@ class PayloadTest(unittest.TestCase):
         c = dn.build_attachment_content("## Title", "the body", "https://c/1", "")
         self.assertEqual(
             c, "## Title\nthe body\n\nSee [commit](<https://c/1>) for full changes")
+
+
+import tempfile
+from unittest import mock
+
+
+class _Resp:
+    status_code = 204
+
+    def raise_for_status(self):
+        pass
+
+
+class SendTest(unittest.TestCase):
+    def _write(self, text):
+        fh = tempfile.NamedTemporaryFile("w", suffix=".md", delete=False,
+                                         encoding="utf-8")
+        fh.write(text)
+        fh.close()
+        return fh.name
+
+    def test_short_message_posts_inline_json(self):
+        path = self._write("## small\nbody")
+        session = mock.Mock()
+        session.post.return_value = _Resp()
+        dn.send_discord(path, tldr="t", link="https://c/1", username="Skycards",
+                        env={"WEBHOOK_A": "https://a"}, mention="@everyone",
+                        session=session)
+        _, kwargs = session.post.call_args
+        self.assertEqual(kwargs["json"]["content"], "@everyone\n## small\nbody")
+        self.assertNotIn("files", kwargs)
+
+    def test_long_message_posts_multipart_attachment(self):
+        path = self._write("## big\n" + ("x" * 2500))
+        session = mock.Mock()
+        session.post.return_value = _Resp()
+        dn.send_discord(path, tldr="tldr", link="https://c/1",
+                        username="Skycards", env={"WEBHOOK_A": "https://a"},
+                        caption="cap", session=session)
+        _, kwargs = session.post.call_args
+        self.assertIn("files", kwargs)
+        self.assertIn("cap", kwargs["data"]["payload_json"])
+
+    def test_empty_file_sends_nothing(self):
+        path = self._write("")
+        session = mock.Mock()
+        dn.send_discord(path, tldr="t", link="l", username="u",
+                        env={"WEBHOOK_A": "https://a"}, session=session)
+        session.post.assert_not_called()
