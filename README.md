@@ -67,8 +67,7 @@ This design allows for:
 
 ## Deployment
 
-See [`docs/superpowers/specs/2026-06-12-k8s-cronjobs-design.md`](docs/superpowers/specs/2026-06-12-k8s-cronjobs-design.md)
-for the design. In short: build/push the image (CI does this on merge), create the
+Build/push the image (CI does this on merge), create the
 `skycards-changes-secrets` SealedSecret, then apply `deploy/` via Flux.
 
 ## Commit Messages
