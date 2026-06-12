@@ -41,9 +41,9 @@ composite `send-discord` action:
 - **Image:** single image, built + pushed to GHCR via a small Actions workflow; `args` select the work.
 - **Manifests:** in this repo under `deploy/`.
 - **Namespace:** `skycards`.
-- **Git identity:** dedicated bot identity (default `Skycards Bot` /
-  `bot@skycards.oldapes.com`), overridable via env, so cluster commits are
-  distinguishable from any leftover Actions commits.
+- **Git identity:** default `Skycards Changes` / `noreply@github.com`,
+  overridable via `GIT_AUTHOR_NAME` / `GIT_AUTHOR_EMAIL` env (use a
+  `<id>+<user>@users.noreply.github.com` form if commits should link to an account).
 - **compare-airports chaining:** chained into the airports job (same pod, after
   the airports commit/push). K8s has no native "run after Job X" trigger, and a
   separate offset CronJob re-introduces the timing race the `workflow_run`
@@ -52,14 +52,17 @@ composite `send-discord` action:
   commit graph (the compare step needs `git log -1 -- airport_differences.json`
   history), blobs fetched on demand — cheap despite the large, fast-growing
   JSON history.
-- **Language:** Python only. No bash entrypoint/lib. `pipeline.py` reuses
-  `format_changes.py` and `compare_airports.py` unchanged via subprocess.
+- **Language:** Python orchestrator (`pipeline.py`), reusing `format_changes.py`
+  and `compare_airports.py` unchanged via subprocess. CLI tools (`jq`, `git`) are
+  used where they're the right fit — notably `jq '.'` formats fetched JSON so
+  output stays byte-identical to the historical curl|jq commits (no first-run
+  reformatting diff).
 
 ## Architecture
 
 ### Single image (`deploy/Dockerfile`)
 
-- Base `python:3.11-slim` + `git`, `ca-certificates` (curl/jq no longer needed).
+- Base `python:3.11-slim` + `git`, `jq`, `ca-certificates`.
 - `pip install -r requirements.txt` (just `requests`).
 - Copies `scripts/`, `compare_airports.py`.
 - Runs as a non-root user.
@@ -121,7 +124,7 @@ One `SealedSecret` → `Secret skycards-changes-secrets` (namespace `skycards`) 
 - `GIT_TOKEN` — fine-grained PAT, `contents: write` on `Skycards/Changes`
 - `WEBHOOK_*` — one key per Discord webhook (consumed by the `WEBHOOK_`-prefix loop)
 
-Git identity defaults to `Skycards Bot` / `bot@skycards.oldapes.com`, overridable
+Git identity defaults to `Skycards Changes` / `noreply@github.com`, overridable
 via `GIT_AUTHOR_NAME` / `GIT_AUTHOR_EMAIL` env on the CronJobs.
 
 Delivered as: a committed plaintext template (`deploy/secret.example.yaml`) + a
