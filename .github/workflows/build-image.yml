@@ -1,0 +1,36 @@
+name: Build Image
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "deploy/Dockerfile"
+      - "scripts/**"
+      - "compare_airports.py"
+      - "requirements.txt"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: deploy/Dockerfile
+          push: true
+          tags: |
+            ghcr.io/skycards/changes:latest
+            ghcr.io/skycards/changes:${{ github.sha }}
