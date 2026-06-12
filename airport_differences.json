@@ -1,8 +1,28 @@
 {
   "summary": {
-    "total_countries_with_differences": 0,
+    "total_countries_with_differences": 1,
     "total_added_airports": 0,
-    "total_removed_airports": 0
+    "total_removed_airports": 1
   },
-  "countries": {}
+  "countries": {
+    "SE": {
+      "country_name": "Sweden",
+      "iso_code": "SE",
+      "fr24_count": 66,
+      "skycards_count": 67,
+      "difference": -1,
+      "added_airports": [],
+      "removed_airports": [
+        {
+          "name": "Gavle Airport",
+          "iata": "GVX",
+          "icao": "ESSK",
+          "lat": 60.5933,
+          "lon": 16.951401
+        }
+      ],
+      "added_count": 0,
+      "removed_count": 1
+    }
+  }
 }
