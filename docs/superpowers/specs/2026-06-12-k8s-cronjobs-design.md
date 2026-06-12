@@ -40,6 +40,10 @@ composite `send-discord` action:
 - **Secrets:** Sealed Secrets.
 - **Image:** single image, built + pushed to GHCR via a small Actions workflow; `args` select the work.
 - **Manifests:** in this repo under `deploy/`.
+- **Namespace:** `skycards`.
+- **Git identity:** dedicated bot identity (default `Skycards Bot` /
+  `bot@skycards.oldapes.com`), overridable via env, so cluster commits are
+  distinguishable from any leftover Actions commits.
 - **compare-airports chaining:** chained into the airports job (same pod, after
   the airports commit/push). K8s has no native "run after Job X" trigger, and a
   separate offset CronJob re-introduces the timing race the `workflow_run`
@@ -113,9 +117,12 @@ The mention behavior keeps the original split: airports/models may `@everyone`
 
 ### Secrets (Sealed Secrets)
 
-One `SealedSecret` → `Secret skycards-changes-secrets` with:
+One `SealedSecret` → `Secret skycards-changes-secrets` (namespace `skycards`) with:
 - `GIT_TOKEN` — fine-grained PAT, `contents: write` on `Skycards/Changes`
 - `WEBHOOK_*` — one key per Discord webhook (consumed by the `WEBHOOK_`-prefix loop)
+
+Git identity defaults to `Skycards Bot` / `bot@skycards.oldapes.com`, overridable
+via `GIT_AUTHOR_NAME` / `GIT_AUTHOR_EMAIL` env on the CronJobs.
 
 Delivered as: a committed plaintext template (`deploy/secret.example.yaml`) + a
 `kubeseal` command. The encrypted `SealedSecret` is what gets committed.
