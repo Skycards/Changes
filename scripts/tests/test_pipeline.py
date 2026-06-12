@@ -60,3 +60,29 @@ class FetchApiTest(unittest.TestCase):
         session.get.assert_called_once_with(
             "https://api/airports", params={"updatedAt": "123"}, headers=pl.HEADERS)
         self.assertEqual(text, '{"ok": 1}')
+
+
+class CliParseTest(unittest.TestCase):
+    def test_fetch_args(self):
+        ns = pl.build_parser().parse_args([
+            "fetch", "--data-name", "airports", "--api-url", "https://a",
+            "--output-file", "airports.json", "--mention-everyone",
+            "--compare-after"])
+        self.assertEqual(ns.command, "fetch")
+        self.assertEqual(ns.data_name, "airports")
+        self.assertTrue(ns.mention_everyone)
+        self.assertTrue(ns.compare_after)
+        self.assertEqual(ns.timestamp_param, "updatedAt")
+
+    def test_fetch_no_mention(self):
+        ns = pl.build_parser().parse_args([
+            "fetch", "--data-name", "airlines", "--api-url", "https://a",
+            "--output-file", "airlines.json", "--no-mention-everyone",
+            "--timestamp-param", "timestamp",
+            "--timestamp-url", "https://a/timestamp"])
+        self.assertFalse(ns.mention_everyone)
+        self.assertEqual(ns.timestamp_url, "https://a/timestamp")
+
+    def test_compare_command(self):
+        ns = pl.build_parser().parse_args(["compare"])
+        self.assertEqual(ns.command, "compare")
