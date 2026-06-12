@@ -35,3 +35,14 @@ def determine_timestamp(timestamp_url, session=None):
     if not re.fullmatch(r"[0-9]+", ts):
         raise ValueError(f"Invalid timestamp received: {ts!r}")
     return ts
+
+
+def resolve_mention(mention_everyone, is_misc):
+    # @everyone only for gameplay-relevant (non-misc) changes when enabled.
+    return "@everyone" if (mention_everyone and not is_misc) else ""
+
+
+def fetch_api(api_url, timestamp_param, timestamp, session):
+    resp = session.get(api_url, params={timestamp_param: timestamp},
+                       headers=HEADERS)
+    return resp.text
