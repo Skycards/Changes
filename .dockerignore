@@ -1,0 +1,10 @@
+.git
+.github
+docs
+deploy
+*.json
+__pycache__
+*.pyc
+.venv
+AIRPORT_COMPARISON_README.md
+README.md
