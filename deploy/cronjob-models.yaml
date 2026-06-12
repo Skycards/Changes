@@ -12,12 +12,14 @@ spec:
   jobTemplate:
     spec:
       backoffLimit: 2
+      activeDeadlineSeconds: 600
       template:
         spec:
           restartPolicy: OnFailure
           containers:
             - name: fetch
               image: ghcr.io/skycards/changes:latest
+              imagePullPolicy: Always
               args:
                 - fetch
                 - --data-name=models
