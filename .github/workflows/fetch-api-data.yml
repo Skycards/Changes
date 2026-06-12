@@ -20,11 +20,6 @@ jobs:
           - url: "https://api.skycards.oldapes.com/models"
             file: "models.json"
             name: "models"
-          - url: "https://api.skycards.oldapes.com/airlines"
-            file: "airlines.json"
-            name: "airlines"
-            timestamp_param: "timestamp"
-            timestamp_url: "https://api.skycards.oldapes.com/airlines/timestamp"
 
     uses: ./.github/workflows/fetch-single-api.yml
     with:
@@ -33,7 +28,5 @@ jobs:
       data_name: ${{ matrix.api.name }}
       timestamp_param: ${{ matrix.api.timestamp_param || 'updatedAt' }}
       timestamp_url: ${{ matrix.api.timestamp_url || '' }}
-      # @everyone for airports/models, but not airlines/fleets. (Name comparison
-      # avoids the null-coerces-to-false trap of `matrix.api.x != false`.)
-      mention_everyone: ${{ matrix.api.name != 'airlines' }}
+      mention_everyone: true
     secrets: inherit

@@ -1,0 +1,23 @@
+name: Fetch Fleets Data
+
+on:
+  schedule:
+    # Run once daily at 09:00 UTC
+    - cron: "0 9 * * *"
+  workflow_dispatch: # Allow manual triggering
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-data:
+    uses: ./.github/workflows/fetch-single-api.yml
+    with:
+      api_url: "https://api.skycards.oldapes.com/airlines"
+      output_file: "airlines.json"
+      data_name: "airlines"
+      timestamp_param: "timestamp"
+      timestamp_url: "https://api.skycards.oldapes.com/airlines/timestamp"
+      # @everyone for airports/models, but not airlines/fleets.
+      mention_everyone: false
+    secrets: inherit
