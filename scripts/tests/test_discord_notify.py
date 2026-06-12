@@ -18,3 +18,21 @@ class StripArtifactsTest(unittest.TestCase):
         src = "  \\- item\ntext [x](<https://u>) more"
         out = dn._strip_discord_artifacts(src)
         self.assertEqual(out, "  - item\ntext [x](https://u) more")
+
+
+class PayloadTest(unittest.TestCase):
+    def test_inline_payload_prefixes_mention_on_own_line(self):
+        p = dn.build_inline_payload("## Heading\nbody", "Skycards", "@everyone")
+        self.assertEqual(p["content"], "@everyone\n## Heading\nbody")
+        self.assertEqual(p["username"], "Skycards")
+        self.assertEqual(p["avatar_url"], dn.AVATAR)
+        self.assertEqual(p["attachments"], [])
+
+    def test_inline_payload_no_mention(self):
+        p = dn.build_inline_payload("hi", "Skycards", "")
+        self.assertEqual(p["content"], "hi")
+
+    def test_attachment_content_uses_title_body_and_link(self):
+        c = dn.build_attachment_content("## Title", "the body", "https://c/1", "")
+        self.assertEqual(
+            c, "## Title\nthe body\n\nSee [commit](<https://c/1>) for full changes")

@@ -26,3 +26,15 @@ def _strip_discord_artifacts(text):
     lines = [re.sub(r"^(\s*)\\-", r"\1-", line) for line in text.split("\n")]
     text = "\n".join(lines)
     return re.sub(r"\]\(<([^>]*)>\)", r"](\1)", text)
+
+
+def build_inline_payload(message, username, mention):
+    prefix = f"{mention}\n" if mention else ""
+    return {"content": f"{prefix}{message}", "username": username,
+            "avatar_url": AVATAR, "attachments": []}
+
+
+def build_attachment_content(file_title, body, link, mention):
+    prefix = f"{mention}\n" if mention else ""
+    return (f"{prefix}{file_title}\n{body}\n\n"
+            f"See [commit](<{link}>) for full changes")
