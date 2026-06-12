@@ -1,0 +1,36 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: fetch-models
+  namespace: skycards
+spec:
+  schedule: "*/30 * * * *"
+  concurrencyPolicy: Forbid
+  startingDeadlineSeconds: 300
+  successfulJobsHistoryLimit: 1
+  failedJobsHistoryLimit: 3
+  jobTemplate:
+    spec:
+      backoffLimit: 2
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+            - name: fetch
+              image: ghcr.io/skycards/changes:latest
+              args:
+                - fetch
+                - --data-name=models
+                - --api-url=https://api.skycards.oldapes.com/models
+                - --output-file=models.json
+                - --mention-everyone
+              envFrom:
+                - secretRef:
+                    name: skycards-changes-secrets
+              resources:
+                requests:
+                  cpu: 100m
+                  memory: 256Mi
+                limits:
+                  cpu: "1"
+                  memory: 512Mi
