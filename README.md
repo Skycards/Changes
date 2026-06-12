@@ -14,53 +14,62 @@ This project is **not affiliated with, endorsed by, or connected to Skycards** i
 
 ## Automation
 
-The repository uses GitHub Actions to automatically fetch updated data every 30 minutes. The workflow:
+The data is fetched by Kubernetes CronJobs running on a Flux-managed cluster.
+Each run:
 
-1. Fetches data from both API endpoints with a current timestamp parameter
-2. Saves the responses as JSON files
-3. Commits changes only if the data has been updated
-4. Runs automatically every 30 minutes via scheduled workflow
+1. Clones this repository and fetches an API endpoint with a current timestamp parameter
+2. Saves the response as a JSON file (formatted with `jq`)
+3. Commits and pushes the change only if the data has actually changed
+4. Posts a Discord webhook summary linking to the commit
 
-## Workflow Details
+## Schedule
 
-- **Schedule**: Every 30 minutes (`*/30 * * * *`)
-- **Manual Trigger**: The workflow can also be triggered manually via GitHub's Actions tab
-- **Smart Commits**: Only commits when actual changes are detected in each API response
-- **Individual Processing**: Each API endpoint is processed separately using a matrix strategy
-- **Timestamp Parameter**: Appends `?updatedAt=<current_timestamp>` to API requests
-- **Conventional Commits**: Uses [Conventional Commits](https://www.conventionalcommits.org/) format for commit messages
-- **Concurrent Push Safety**: Handles race conditions when parallel jobs try to push simultaneously
+- **airports** and **models**: every 30 minutes (`*/30 * * * *`)
+- **airlines**: daily at 09:00 UTC (`0 9 * * *`)
+- **airport comparison**: chained onto the airports job (runs immediately after it)
+- **Manual run**: `kubectl -n skycards create job --from=cronjob/fetch-airports manual-run`
+
+Behavioral notes:
+
+- **Smart Commits**: Only commits when actual changes are detected; changes limited to the `updatedAt` field are committed but do not trigger a webhook.
+- **Timestamp Parameter**: Appends `?updatedAt=<current_timestamp>` to API requests (airlines uses a `timestamp` parameter fetched from its `/timestamp` endpoint).
+- **Conventional Commits**: Uses [Conventional Commits](https://www.conventionalcommits.org/) format for commit messages.
+- **Concurrent Push Safety**: Handles race conditions when jobs push simultaneously (`git pull --rebase` retry loop).
 
 ## Architecture
 
-The system uses a modular approach with two GitHub Actions workflows:
+A single container image (`ghcr.io/skycards/changes`) runs `scripts/pipeline.py`;
+each CronJob selects its work via arguments. The Python modules are:
 
-1. **Main Scheduler** (`.github/workflows/fetch-api-data.yml`) - Runs on schedule and defines the API endpoints in a matrix
-2. **Reusable Fetcher** (`.github/workflows/fetch-single-api.yml`) - Handles fetching and committing individual API endpoints
+1. **`scripts/pipeline.py`** - CLI entrypoint with `fetch` and `compare` subcommands; clones the repo, fetches, formats, commits/pushes, and notifies.
+2. **`scripts/git_sync.py`** - Git operations: partial clone, change detection, capture-previous, commit, push-with-retry.
+3. **`scripts/discord_notify.py`** - Posts Markdown summaries to every configured Discord webhook.
+4. **`scripts/format_changes.py`** / **`compare_airports.py`** - Build the change summaries (unchanged from the previous setup).
 
 This design allows for:
 
-- Independent processing of each API endpoint
+- Independent processing of each API endpoint (one CronJob each)
 - Separate commits for each data source
-- Easy addition of new API endpoints by updating the matrix
-- Better error isolation (if one API fails, others continue)
-- Race condition handling for concurrent pushes from parallel jobs
+- Better error isolation (if one job fails, others continue)
+- Race condition handling for concurrent pushes
 
 ## Files
 
-- `.github/workflows/fetch-api-data.yml` - Main workflow with scheduling and matrix configuration
-- `.github/workflows/fetch-single-api.yml` - Reusable workflow for fetching individual APIs
+- `deploy/Dockerfile` - Container image for the pipeline
+- `deploy/cronjob-*.yaml` - CronJob definitions (airports, models, airlines)
+- `deploy/kustomization.yaml` - Kustomize entrypoint for Flux
+- `deploy/secret.example.yaml` - Secret template (`GIT_TOKEN` + `WEBHOOK_*`); sealed before committing
+- `.github/workflows/build-image.yml` - Builds and pushes the image to GHCR on code changes
+- `scripts/` - The Python pipeline and its tests
 - `airports.json` - Latest airport data (created automatically)
 - `models.json` - Latest aircraft models data (created automatically)
 - `airlines.json` - Latest airline data (created automatically)
 
-## Manual Execution
+## Deployment
 
-You can manually trigger the data fetch by:
-
-1. Going to the "Actions" tab in this repository
-2. Selecting the "Fetch API Data" workflow
-3. Clicking "Run workflow"
+See [`docs/superpowers/specs/2026-06-12-k8s-cronjobs-design.md`](docs/superpowers/specs/2026-06-12-k8s-cronjobs-design.md)
+for the design. In short: build/push the image (CI does this on merge), create the
+`skycards-changes-secrets` SealedSecret, then apply `deploy/` via Flux.
 
 ## Commit Messages
 
