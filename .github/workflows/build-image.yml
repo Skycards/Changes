@@ -34,3 +34,4 @@ jobs:
           tags: |
             ghcr.io/skycards/changes:latest
             ghcr.io/skycards/changes:${{ github.sha }}
+            ghcr.io/skycards/changes:${{ github.run_number }}
