@@ -42,9 +42,10 @@ def determine_timestamp(timestamp_url, session=None):
     return ts
 
 
-def resolve_mention(mention_everyone, is_misc):
-    # @everyone only for gameplay-relevant (non-misc) changes when enabled.
-    return "@everyone" if (mention_everyone and not is_misc) else ""
+def routing_key(data_name, is_misc):
+    # Non-gameplay (misc) changes route to the shared "misc" bucket regardless
+    # of source; gameplay changes route to their source type.
+    return "misc" if is_misc else data_name
 
 
 def fetch_api(api_url, timestamp_param, timestamp, session):
@@ -113,7 +114,7 @@ def run_fetch(args, workdir, session):
     is_misc = _read(meta_file).strip() == "true"
     dn.send_discord(msg_file, tldr=tldr, caption=_read(caption_file),
                     link=link, username="Skycards",
-                    mention=resolve_mention(args.mention_everyone, is_misc),
+                    routing_key=routing_key(args.data_name, is_misc),
                     session=session)
 
 
@@ -150,8 +151,8 @@ def run_compare(workdir, session):
     link = gs.COMMIT_URL.format(sha=gs.head_sha(cwd=workdir))
     _substitute(msg_file, "__COMMIT_URL__", link)
     dn.send_discord(msg_file, tldr=tldr, link=link,
-                    username="Skycards Airport Comparison", mention="",
-                    session=session)
+                    username="Skycards Airport Comparison",
+                    routing_key="comparison", session=session)
 
 
 def _substitute(path, placeholder, value):
@@ -166,17 +167,13 @@ def build_parser():
     sub = parser.add_subparsers(dest="command", required=True)
 
     f = sub.add_parser("fetch")
-    f.add_argument("--data-name", required=True)
+    f.add_argument("--data-name", required=True,
+                   choices=["airports", "models", "airlines"])
     f.add_argument("--api-url", required=True)
     f.add_argument("--output-file", required=True)
     f.add_argument("--timestamp-param", default="updatedAt")
     f.add_argument("--timestamp-url", default="")
     f.add_argument("--compare-after", action="store_true")
-    f.add_argument("--mention-everyone", dest="mention_everyone",
-                   action="store_true")
-    f.add_argument("--no-mention-everyone", dest="mention_everyone",
-                   action="store_false")
-    f.set_defaults(mention_everyone=True)
 
     sub.add_parser("compare")
     return parser

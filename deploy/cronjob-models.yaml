@@ -25,10 +25,11 @@ spec:
                 - --data-name=models
                 - --api-url=https://api.skycards.oldapes.com/models
                 - --output-file=models.json
-                - --mention-everyone
               envFrom:
                 - secretRef:
                     name: skycards-changes-secrets
+                - configMapRef:
+                    name: skycards-webhooks-config
               resources:
                 requests:
                   cpu: 100m

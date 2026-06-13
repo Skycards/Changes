@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: skycards-webhooks-config
+  namespace: skycards
+data:
+  # Per message type, the webhooks that receive it and their mention prefix.
+  # webhook name -> URL is defined in the WEBHOOK_URLS secret. Omit/empty
+  # mention = no mention. Remove a webhook from a type's list to unsubscribe it.
+  WEBHOOKS_CONFIG: |
+    {
+      "airports":   [ { "webhook": "main", "mention": "@everyone" } ],
+      "models":     [ { "webhook": "main", "mention": "@everyone" } ],
+      "airlines":   [ { "webhook": "main" } ],
+      "comparison": [ { "webhook": "main" } ],
+      "misc":       [ { "webhook": "main" } ]
+    }

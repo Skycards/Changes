@@ -4,6 +4,7 @@ namespace: skycards
 resources:
   - namespace.yaml
   - sealedsecret.yaml
+  - webhooks-config.yaml
   - cronjob-airports.yaml
   - cronjob-models.yaml
   - cronjob-airlines.yaml
