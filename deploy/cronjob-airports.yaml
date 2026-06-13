@@ -25,11 +25,12 @@ spec:
                 - --data-name=airports
                 - --api-url=https://api.skycards.oldapes.com/airports
                 - --output-file=airports.json
-                - --mention-everyone
                 - --compare-after
               envFrom:
                 - secretRef:
                     name: skycards-changes-secrets
+                - configMapRef:
+                    name: skycards-webhooks-config
               resources:
                 requests:
                   cpu: 100m

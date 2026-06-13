@@ -43,7 +43,7 @@ each CronJob selects its work via arguments. The Python modules are:
 
 1. **`scripts/pipeline.py`** - CLI entrypoint with `fetch` and `compare` subcommands; clones the repo, fetches, formats, commits/pushes, and notifies.
 2. **`scripts/git_sync.py`** - Git operations: partial clone, change detection, capture-previous, commit, push-with-retry.
-3. **`scripts/discord_notify.py`** - Posts Markdown summaries to every configured Discord webhook.
+3. **`scripts/discord_notify.py`** - Posts Markdown summaries to the Discord webhooks subscribed to each message type, each with its own mention prefix.
 4. **`scripts/format_changes.py`** / **`compare_airports.py`** - Build the change summaries (unchanged from the previous setup).
 
 This design allows for:
@@ -58,7 +58,8 @@ This design allows for:
 - `deploy/Dockerfile` - Container image for the pipeline
 - `deploy/cronjob-*.yaml` - CronJob definitions (airports, models, airlines)
 - `deploy/kustomization.yaml` - Kustomize entrypoint for Flux
-- `deploy/secret.example.yaml` - Secret template (`GIT_TOKEN` + `WEBHOOK_*`); sealed before committing
+- `deploy/webhooks-config.yaml` - ConfigMap with per-type webhook subscriptions + mentions (`WEBHOOKS_CONFIG`)
+- `deploy/secret.example.yaml` - Secret template (`GIT_TOKEN` + `WEBHOOK_URLS`); sealed before committing
 - `.github/workflows/build-image.yml` - Builds and pushes the image to GHCR on code changes
 - `scripts/` - The Python pipeline and its tests
 - `airports.json` - Latest airport data (created automatically)
@@ -83,7 +84,14 @@ The system uses [Conventional Commits](https://www.conventionalcommits.org/) for
 
 ## Discord Webhooks
 
-This repository can send Discord webhook notifications when data is updated. If you would like your Discord webhook to be added to receive notifications of data changes, please contact me.
+This repository sends Discord webhook notifications when data is updated. Each
+webhook subscribes to the message types it cares about — `airports`, `models`,
+`airlines`, `comparison`, and `misc` (non-gameplay changes) — and can set a
+mention prefix per type (e.g. `@everyone`, `@here`, `<@&role-id>`, or none).
+Subscriptions live in the `skycards-webhooks-config` ConfigMap (`WEBHOOKS_CONFIG`)
+keyed by message type; webhook URLs live in the sealed `WEBHOOK_URLS` secret. A
+webhook receives a message type only if it is listed under that type. If you
+would like your Discord webhook added, please contact me.
 
 Notifications include a formatted summary of what changed — aircraft stat changes
 and added/removed models, airports and airline fleets grouped by continent →
