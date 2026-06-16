@@ -271,14 +271,62 @@ def _airport_count_rows(added, updated_new, removed):
     ]
 
 
-def airports_caption(old_rows, new_rows):
-    """Multi-line per-category IATA-code breakdown used as the Discord
-    file-attachment caption. The one-line _tldr still feeds the commit body."""
-    old_rows = [r for r in old_rows if r.get("iata")]
-    new_rows = [r for r in new_rows if r.get("iata")]
-    added, updated, removed = diff(old_rows, new_rows, "id", AIRPORT_CHANGE_FIELDS)
-    rows = _airport_count_rows(added, [n for _, n in updated], removed)
-    return "\n".join(_count_lines(rows))
+ATTACH_CODES_BUDGET = 700  # max chars of joined codes per Added/Removed line
+
+
+def _capped_codes(codes):
+    """Render codes as `a,b,c`, truncated to ATTACH_CODES_BUDGET chars with a
+    `… +N more` note, so the attachment summary stays under Discord's 2000-char
+    content limit even when a category has hundreds of entries."""
+    if not codes:
+        return "none"
+    shown, used = [], 0
+    for c in codes:
+        extra = len(c) + (1 if shown else 0)  # +1 for the joining comma
+        if shown and used + extra > ATTACH_CODES_BUDGET:
+            break
+        shown.append(c)
+        used += extra
+    body = f"`{','.join(shown)}`"
+    if len(shown) < len(codes):
+        body += f" … +{len(codes) - len(shown)} more"
+    return body
+
+
+def _summary_parts(msg_type, old_rows, new_rows):
+    """(added_codes, removed_codes, total_count, total_label) for a gameplay
+    type, reusing each formatter's diff key, filtering, and identifier."""
+    if msg_type == "airports":
+        old = [r for r in old_rows if r.get("iata")]
+        new = [r for r in new_rows if r.get("iata")]
+        added, _, removed = diff(old, new, "id", AIRPORT_CHANGE_FIELDS)
+        return _iata_codes(added), _iata_codes(removed), len(new), "airports"
+    if msg_type == "airlines":
+        old = [r for r in old_rows if _aircraft_count(r)]
+        new = [r for r in new_rows if _aircraft_count(r)]
+        added, _, removed = diff(old, new, "id", FLEET_CHANGE_FIELDS)
+        icaos = lambda recs: sorted(r["icao"] for r in recs if r.get("icao"))
+        return icaos(added), icaos(removed), len(new), "fleets"
+    added, _, removed = diff(old_rows, new_rows, "id", MODEL_CHANGE_FIELDS)
+    ids = lambda recs: sorted(r["id"] for r in recs)
+    return ids(added), ids(removed), len(new_rows), "aircraft"
+
+
+def attachment_summary(msg_type, old_rows, new_rows, tldr):
+    """Rich Discord file-attachment body: tldr + Added/Removed code lists + total.
+
+    Updated is intentionally omitted — it rarely matters and a large updated list
+    would re-blow the content limit that forced the file attachment in the first
+    place. Codes are capped per line via _capped_codes."""
+    added, removed, total, label = _summary_parts(msg_type, old_rows, new_rows)
+    return "\n".join([
+        tldr,
+        "",
+        f"- Added ({len(added)}): {_capped_codes(added)}",
+        f"- Removed ({len(removed)}): {_capped_codes(removed)}",
+        "",
+        f"Total {label}: {total:,}",
+    ])
 
 
 def format_airports(old_rows, new_rows, link):
@@ -650,10 +698,13 @@ def main(argv=None):
         with open(args.meta_out, "w", encoding="utf-8") as fh:
             fh.write("true" if is_misc_tldr(tldr) else "false")
     if args.caption_out:
-        # Airports get a per-category code breakdown; everything else reuses the
-        # one-line tldr. Misc/first-run airport notices have no diff to break out.
-        if args.type == "airports" and old_data is not None and not is_misc_tldr(tldr):
-            caption = airports_caption(_rows(old_data) or [], new_rows)
+        # Gameplay changes get a rich attachment summary (tldr + Added/Removed
+        # codes + total) for the Discord file message; the commit body keeps the
+        # one-line tldr. Misc/first-run/comparison notices have no diff to break
+        # out, so they reuse the tldr.
+        if (args.type in ("airports", "airlines", "models")
+                and old_data is not None and not is_misc_tldr(tldr)):
+            caption = attachment_summary(args.type, _rows(old_data) or [], new_rows, tldr)
         else:
             caption = tldr
         with open(args.caption_out, "w", encoding="utf-8") as fh:

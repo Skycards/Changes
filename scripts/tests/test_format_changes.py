@@ -66,6 +66,26 @@ class ModelsTest(unittest.TestCase):
         self.assertIn("- Weight: N/A", msg)
         self.assertIn("- Rarity: N/A", msg)
 
+    def test_attachment_summary_uses_id_and_aircraft_total(self):
+        tldr = "Aircraft update: 1 added · 0 updated · 0 removed"
+        summary = fc.attachment_summary("models", [], [self._row()], tldr)
+        self.assertEqual(
+            summary,
+            "Aircraft update: 1 added · 0 updated · 0 removed\n\n"
+            "- Added (1): `PC12`\n- Removed (0): none\n\n"
+            "Total aircraft: 1",
+        )
+
+    def test_attachment_summary_caps_long_code_list(self):
+        # A huge Added list is truncated with a "+N more" note so the summary
+        # stays under Discord's content limit.
+        rows = [self._row(id=f"M{n:04d}") for n in range(500)]
+        tldr = "Aircraft update: 500 added · 0 updated · 0 removed"
+        summary = fc.attachment_summary("models", [], rows, tldr)
+        self.assertIn("- Added (500): `M0000,", summary)
+        self.assertIn("more", summary)
+        self.assertLess(len(summary), 1900)
+
     def test_tldr_counts(self):
         _, tldr = fc.format_models([], [self._row()], "L")
         self.assertEqual(tldr, "Aircraft update: 1 added · 0 updated · 0 removed")
@@ -212,15 +232,18 @@ class AirportsTest(unittest.TestCase):
         self.assertEqual(tldr, "Miscellaneous airports changes (non-gameplay)")
         self.assertNotIn("### Added", msg)
 
-    def test_caption_lists_iata_codes_per_category(self):
-        # The Discord file-attachment caption breaks the one-line tldr into a
-        # per-category code list (commit body keeps the terse tldr).
+    def test_attachment_summary_added_removed_and_total(self):
+        # The file-attachment summary shows the tldr, Added/Removed IATA lists
+        # (Updated omitted), and the total. The commit body keeps the terse tldr.
         old = self._ap(id=1, iata="AMS", icao="EHAM")
         jfk = self._ap(id=2, iata="JFK", icao="KJFK", name="JFK", placeCode="US-NY")
-        caption = fc.airports_caption([old], [old, jfk])
+        tldr = "Airports update: 1 added · 0 updated · 0 removed"
+        summary = fc.attachment_summary("airports", [old], [old, jfk], tldr)
         self.assertEqual(
-            caption,
-            "- Added (1): `JFK`\n- Updated (0): none\n- Removed (0): none",
+            summary,
+            "Airports update: 1 added · 0 updated · 0 removed\n\n"
+            "- Added (1): `JFK`\n- Removed (0): none\n\n"
+            "Total airports: 2",
         )
 
 
@@ -288,6 +311,16 @@ class FleetsTest(unittest.TestCase):
     def test_total_footer(self):
         msg, _ = fc.format_fleets([], [self._al()], "L")
         self.assertIn("Total fleets: 1", msg)
+
+    def test_attachment_summary_uses_icao_and_fleet_total(self):
+        tldr = "Fleets update: 1 added · 0 updated · 0 removed"
+        summary = fc.attachment_summary("airlines", [], [self._al()], tldr)
+        self.assertEqual(
+            summary,
+            "Fleets update: 1 added · 0 updated · 0 removed\n\n"
+            "- Added (1): `DLH`\n- Removed (0): none\n\n"
+            "Total fleets: 1",
+        )
 
     def test_misc_only_non_gameplay_change(self):
         old = self._al(logoId="a")
@@ -556,10 +589,12 @@ class CliTest(unittest.TestCase):
             self.assertEqual(tldr, "Airports update: 1 added · 0 updated · 0 removed")
             self.assertEqual(
                 open(cap).read().strip(),
-                "- Added (1): `JFK`\n- Updated (0): none\n- Removed (0): none",
+                "Airports update: 1 added · 0 updated · 0 removed\n\n"
+                "- Added (1): `JFK`\n- Removed (0): none\n\n"
+                "Total airports: 2",
             )
 
-    def test_caption_out_falls_back_to_tldr_for_models(self):
+    def test_caption_out_writes_summary_for_models(self):
         with tempfile.TemporaryDirectory() as d:
             old = os.path.join(d, "old.json")
             new = os.path.join(d, "new.json")
@@ -567,7 +602,27 @@ class CliTest(unittest.TestCase):
             cap = os.path.join(d, "cap.txt")
             row = {"id": "PC12", "name": "PC-12", "seats": 9}
             json.dump({"rows": [row]}, open(old, "w"))
-            json.dump({"rows": [dict(row, seats=10)]}, open(new, "w"))
+            json.dump({"rows": [dict(row, seats=10), {"id": "A20N", "seats": 5}]},
+                      open(new, "w"))
+            rc, tldr = self._run(["--type", "models", "--old", old, "--new", new,
+                                  "--link", "L", "--out", out, "--caption-out", cap])
+            self.assertEqual(rc, 0)
+            self.assertEqual(
+                open(cap).read().strip(),
+                "Aircraft update: 1 added · 1 updated · 0 removed\n\n"
+                "- Added (1): `A20N`\n- Removed (0): none\n\n"
+                "Total aircraft: 2",
+            )
+
+    def test_caption_out_falls_back_to_tldr_for_misc(self):
+        with tempfile.TemporaryDirectory() as d:
+            old = os.path.join(d, "old.json")
+            new = os.path.join(d, "new.json")
+            out = os.path.join(d, "msg.md")
+            cap = os.path.join(d, "cap.txt")
+            row = {"id": "PC12", "name": "PC-12", "logoId": 1}
+            json.dump({"rows": [row]}, open(old, "w"))
+            json.dump({"rows": [dict(row, logoId=2)]}, open(new, "w"))
             rc, tldr = self._run(["--type", "models", "--old", old, "--new", new,
                                   "--link", "L", "--out", out, "--caption-out", cap])
             self.assertEqual(rc, 0)
