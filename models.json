@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1778653410745,
+  "updatedAt": 1781786320739,
   "rows": [
     {
       "id": "A1",
@@ -8971,6 +8971,51 @@
       ]
     },
     {
+      "id": "B60",
+      "manufacturer": "BOISAVIA",
+      "name": "B-60 Mercurey",
+      "manufacturers": [
+        "BOISAVIA B-60 Mercurey",
+        "BOISAVIA B-601 Mercurey",
+        "BOISAVIA B-602 Mercurey",
+        "BOISAVIA B-603 Mercurey",
+        "BOISAVIA B-604 Mercurey",
+        "BOISAVIA B-605 Mercurey",
+        "BOISAVIA B-606 Mercurey"
+      ],
+      "description": "The Boisavia B-60 Mercurey is a French light aircraft designed for general aviation. Known for its high-wing configuration, it served primarily in training and recreational flying during the mid-20th century.",
+      "landingGear": "Tailwheel",
+      "wingPos": "High wing",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1554,
+      "num": 0,
+      "xp": 8768,
+      "firstFlight": 1949,
+      "wingspan": 11.4,
+      "length": 7.2,
+      "height": 2.2,
+      "ceiling": 18000,
+      "mtow": 1280,
+      "seats": 4,
+      "range": 650,
+      "maxSpeed": 127,
+      "cardCategory": "ultra",
+      "ftea": 0.00032328132927447994,
+      "images": [
+        "PA18",
+        "C172"
+      ],
+      "markers": [
+        "P28A"
+      ],
+      "inSeasons": [
+        1
+      ]
+    },
+    {
       "id": "B609",
       "manufacturer": "AGUSTAWESTLAND",
       "name": "AW-609",
@@ -16654,9 +16699,9 @@
       "engNum": 1,
       "engType": "P",
       "wtc": "L",
-      "rareness": 1400,
+      "rareness": 1569,
       "num": 1,
-      "xp": 8000,
+      "xp": 8844,
       "firstFlight": 2002,
       "wingspan": 11,
       "length": 7.3,
@@ -16667,6 +16712,7 @@
       "range": 1000,
       "maxSpeed": 152,
       "cardCategory": "ultra",
+      "ftea": 0.0002779046169457128,
       "images": [
         "PA18",
         "C180"
@@ -16675,7 +16721,8 @@
         "P28A"
       ],
       "inSeasons": [
-        0
+        0,
+        1
       ]
     },
     {
@@ -18253,6 +18300,44 @@
         1
       ],
       "military": true
+    },
+    {
+      "id": "CHIP",
+      "manufacturer": "SUPER-CHIPMUNK",
+      "name": "Super-Chipmunk",
+      "manufacturers": [
+        "LEGER Super-Chipmunk",
+        "SUPER-CHIPMUNK Super-Chipmunk"
+      ],
+      "description": "The Super-Chipmunk is an aerobatic aircraft, modified from the de Havilland Chipmunk. Known for its enhanced performance and agility, it played a significant role in airshows and aerobatic competitions.",
+      "landingGear": "Tailwheel",
+      "wingPos": "Low wing",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1271,
+      "num": 0,
+      "xp": 7353,
+      "firstFlight": 1946,
+      "wingspan": 10.5,
+      "length": 7.7,
+      "height": 2.1,
+      "seats": 2,
+      "maxSpeed": 156,
+      "cardCategory": "ultra",
+      "ftea": 0.005487823439878235,
+      "images": [
+        "RV7",
+        "C172"
+      ],
+      "markers": [
+        "P28A"
+      ],
+      "inSeasons": [
+        1
+      ],
+      "imageOverride": "DHC1"
     },
     {
       "id": "CHP2",
@@ -21667,6 +21752,42 @@
       ]
     },
     {
+      "id": "D7",
+      "manufacturer": "FOKKER",
+      "name": "D-7 Replica",
+      "manufacturers": [
+        "FOKKER D-7 Replica"
+      ],
+      "description": "The Fokker D-7 Replica is a reproduction of the iconic World War I fighter, known for its innovative design and combat effectiveness, often regarded as one of the best aircraft of its era.",
+      "landingGear": "Tailwheel",
+      "wingPos": "Biplane",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1521,
+      "num": 0,
+      "xp": 8603,
+      "firstFlight": 1918,
+      "wingspan": 8.9,
+      "length": 6.9,
+      "height": 2.7,
+      "mtow": 770,
+      "seats": 1,
+      "maxSpeed": 91,
+      "cardCategory": "ultra",
+      "ftea": 0.0004503107559614409,
+      "images": [
+        "ST75"
+      ],
+      "markers": [
+        "P28A"
+      ],
+      "inSeasons": [
+        1
+      ]
+    },
+    {
       "id": "DA2",
       "manufacturer": "DAVIS",
       "name": "DA-2",
@@ -23044,6 +23165,49 @@
       ],
       "inSeasons": [
         0,
+        1
+      ]
+    },
+    {
+      "id": "DH84",
+      "manufacturer": "DE HAVILLAND",
+      "name": "DH-84 Dragon",
+      "manufacturers": [
+        "DE HAVILLAND AUSTRALIA DH-84 Dragon",
+        "DE HAVILLAND DH-84 Dragon"
+      ],
+      "description": "The De Havilland DH-84 Dragon was a 1930s British biplane designed for short-haul passenger flights. Known for its reliability, it played a crucial role in early commercial aviation and air mail services.",
+      "landingGear": "Tailwheel",
+      "wingPos": "Biplane",
+      "type": "L",
+      "engNum": 2,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1434,
+      "num": 0,
+      "xp": 8169,
+      "firstFlight": 1932,
+      "wingspan": 14.4,
+      "length": 10.5,
+      "height": 3.1,
+      "ceiling": 12500,
+      "mtow": 1910,
+      "seats": 10,
+      "range": 400,
+      "maxSpeed": 111,
+      "cardCategory": "ultra",
+      "ftea": 0.0010718226788432267,
+      "images": [
+        "BLEN",
+        "DH89",
+        "DHC6",
+        "BE58"
+      ],
+      "markers": [
+        "DHC6",
+        "PA34"
+      ],
+      "inSeasons": [
         1
       ]
     },
@@ -27806,6 +27970,55 @@
       "military": true
     },
     {
+      "id": "F156",
+      "manufacturer": "MORANE-SAULNIER",
+      "name": "MS-500 Criquet",
+      "manufacturers": [
+        "FIESELER Fi-156 Storch",
+        "MORANE-SAULNIER MS-500 Criquet",
+        "MORANE-SAULNIER MS-501 Criquet",
+        "MORANE-SAULNIER MS-502 Criquet",
+        "MORANE-SAULNIER MS-504 Criquet",
+        "MORANE-SAULNIER MS-505 Criquet",
+        "MORANE-SAULNIER MS-506 Criquet",
+        "MRAZ K-65 Cap"
+      ],
+      "description": "The Morane-Saulnier MS-500 Criquet is a French liaison aircraft, renowned for its short takeoff and landing capabilities. It served post-WWII, continuing the legacy of the German Fieseler Storch.",
+      "landingGear": "Tailwheel",
+      "wingPos": "High wing",
+      "wingShape": "Rectangular",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 2121,
+      "num": 0,
+      "xp": 11606,
+      "firstFlight": 1936,
+      "wingspan": 14.3,
+      "length": 9.91,
+      "height": 3,
+      "ceiling": 15090,
+      "mtow": 1320,
+      "seats": 2,
+      "range": 210,
+      "maxSpeed": 95,
+      "cardCategory": "ultra",
+      "ftea": 0.0000011098427194317604,
+      "images": [
+        "ACAR",
+        "C172"
+      ],
+      "markers": [
+        "PA18",
+        "P28A"
+      ],
+      "inSeasons": [
+        1
+      ],
+      "military": true
+    },
+    {
       "id": "F16",
       "manufacturer": "LOCKHEED MARTIN",
       "name": "F-16 Fighting Falcon",
@@ -28293,6 +28506,59 @@
       ],
       "inSeasons": [
         0,
+        1
+      ],
+      "military": true
+    },
+    {
+      "id": "F4",
+      "manufacturer": "MCDONNELL DOUGLAS",
+      "name": "F-4 Phantom",
+      "manufacturers": [
+        "IAI F-4 Kurnass 2000",
+        "IAI F-4 Phantom 2000",
+        "MCDONNELL C-12 Phantom 2",
+        "MCDONNELL CR-12 Phantom 2",
+        "MCDONNELL DOUGLAS F-4 Kurnass",
+        "MCDONNELL DOUGLAS F-4 Phantom 2",
+        "MCDONNELL DOUGLAS QF-4 Phantom 2",
+        "MCDONNELL DOUGLAS RF-4 Kurnass",
+        "MCDONNELL DOUGLAS RF-4 Phantom 2",
+        "MCDONNELL F-4 Phantom 2",
+        "MCDONNELL RF-4 Phantom 2",
+        "MITSUBISHI F-4 Phantom 2",
+        "MITSUBISHI RF-4 Phantom 2"
+      ],
+      "description": "The McDonnell Douglas F-4 Phantom is a tandem two-seat, twin-engine, all-weather, long-range supersonic jet interceptor and fighter-bomber, renowned for its versatility and extensive use during the Vietnam War.",
+      "landingGear": "Tricycle",
+      "wingPos": "Low wing",
+      "wingShape": "Swept back",
+      "type": "L",
+      "engNum": 2,
+      "engType": "J",
+      "wtc": "M",
+      "rareness": 1649,
+      "num": 0,
+      "xp": 9245,
+      "firstFlight": 1958,
+      "wingspan": 11.7,
+      "length": 19.2,
+      "height": 5,
+      "ceiling": 60000,
+      "mtow": 28000,
+      "seats": 2,
+      "range": 1457,
+      "maxSpeed": 1280,
+      "cardCategory": "ultra",
+      "ftea": 0.0001245560629122273,
+      "images": [
+        "F5"
+      ],
+      "markers": [
+        "A4",
+        "EUFI"
+      ],
+      "inSeasons": [
         1
       ],
       "military": true
@@ -32223,6 +32489,47 @@
       ]
     },
     {
+      "id": "GEMI",
+      "manufacturer": "MILES",
+      "name": "Gemini",
+      "manufacturers": [
+        "MILES M-65 Gemini"
+      ],
+      "description": "The MILES Gemini was a British twin-engine light aircraft from the 1940s, designed for private and business use. It featured a distinctive twin-tail design and was known for its versatility.",
+      "landingGear": "Tailwheel",
+      "wingPos": "Low wing",
+      "type": "L",
+      "engNum": 2,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1738,
+      "num": 0,
+      "xp": 9691,
+      "firstFlight": 1945,
+      "wingspan": 11,
+      "length": 6.78,
+      "height": 2.3,
+      "ceiling": 13500,
+      "mtow": 1360,
+      "seats": 4,
+      "range": 450,
+      "maxSpeed": 130,
+      "cardCategory": "ultra",
+      "ftea": 0.000051052765093860986,
+      "images": [
+        "L200",
+        "DHC6",
+        "BE58"
+      ],
+      "markers": [
+        "DHC6",
+        "PA34"
+      ],
+      "inSeasons": [
+        1
+      ]
+    },
+    {
       "id": "GENI",
       "manufacturer": "IFB",
       "name": "E-Genius",
@@ -35043,6 +35350,46 @@
       "military": true
     },
     {
+      "id": "HURK",
+      "manufacturer": "TAI",
+      "name": "Hürkuş",
+      "manufacturers": [
+        "TAI TT-32 Hürkuş"
+      ],
+      "description": "The TAI Hürkuş is a Turkish-designed basic trainer aircraft, notable for its role in pilot training and light attack missions, reflecting Turkey's growing aerospace capabilities and indigenous aircraft development.",
+      "landingGear": "Tricycle",
+      "wingPos": "Low wing",
+      "type": "L",
+      "engNum": 1,
+      "engType": "T",
+      "wtc": "L",
+      "rareness": 1421,
+      "num": 0,
+      "xp": 8104,
+      "firstFlight": 2013,
+      "wingspan": 9.96,
+      "length": 11.2,
+      "height": 3.7,
+      "ceiling": 34701,
+      "mtow": 3300,
+      "seats": 2,
+      "range": 798,
+      "maxSpeed": 310,
+      "cardCategory": "ultra",
+      "ftea": 0.001220922120750888,
+      "images": [
+        "P28A",
+        "C172"
+      ],
+      "markers": [
+        "P28A"
+      ],
+      "inSeasons": [
+        1
+      ],
+      "military": true
+    },
+    {
       "id": "HUSK",
       "manufacturer": "AVIAT",
       "name": "A-1 Husky",
@@ -35125,6 +35472,47 @@
         1
       ],
       "imageOverride": "ULAC"
+    },
+    {
+      "id": "I103",
+      "manufacturer": "ILYUSHIN",
+      "name": "Il-103",
+      "manufacturers": [
+        "ILYUSHIN Il-103"
+      ],
+      "description": "The Ilyushin Il-103 is a Russian single-engine trainer aircraft, designed for pilot instruction. It features a low-wing design and is notable for its robust construction and ease of handling.",
+      "landingGear": "Tricycle",
+      "wingPos": "Low wing",
+      "wingShape": "Tapered",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1704,
+      "num": 0,
+      "xp": 9519,
+      "firstFlight": 1994,
+      "wingspan": 10.6,
+      "length": 8,
+      "height": 3.1,
+      "ceiling": 9840,
+      "mtow": 1310,
+      "seats": 5,
+      "range": 430,
+      "maxSpeed": 120,
+      "cardCategory": "ultra",
+      "ftea": 0.00007201293759512937,
+      "images": [
+        "TEX2",
+        "C172"
+      ],
+      "markers": [
+        "C208",
+        "P28A"
+      ],
+      "inSeasons": [
+        1
+      ]
     },
     {
       "id": "I114",
@@ -37728,6 +38116,49 @@
       ]
     },
     {
+      "id": "KL35",
+      "manufacturer": "KLEMM",
+      "name": "Kl-35",
+      "manufacturers": [
+        "KLEMM Kl-35"
+      ],
+      "description": "The KLEMM Kl-35 was a German training aircraft used before and during World War II, known for its wooden construction and aerobatic capabilities, serving primarily in pilot training roles.",
+      "landingGear": "Tailwheel",
+      "wingPos": "Low wing",
+      "wingShape": "Tapered",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1429,
+      "num": 0,
+      "xp": 8147,
+      "firstFlight": 1935,
+      "wingspan": 10.4,
+      "length": 7.5,
+      "height": 2,
+      "ceiling": 14350,
+      "mtow": 750,
+      "seats": 2,
+      "range": 359,
+      "maxSpeed": 114,
+      "cardCategory": "ultra",
+      "ftea": 0.001120433789954338,
+      "images": [
+        "GC1",
+        "GB1",
+        "C172"
+      ],
+      "markers": [
+        "GC1",
+        "P28A"
+      ],
+      "inSeasons": [
+        1
+      ],
+      "military": true
+    },
+    {
       "id": "KM2",
       "manufacturer": "FUJI",
       "name": "KM-2",
@@ -40306,9 +40737,9 @@
       "engNum": 1,
       "engType": "P",
       "wtc": "L",
-      "rareness": 1400,
+      "rareness": 1571,
       "num": 1,
-      "xp": 8000,
+      "xp": 8856,
       "firstFlight": 1994,
       "wingspan": 7.8,
       "length": 6.3,
@@ -40318,6 +40749,7 @@
       "seats": 2,
       "range": 540,
       "cardCategory": "ultra",
+      "ftea": 0.0002715943683409437,
       "images": [
         "P28A"
       ],
@@ -40325,7 +40757,8 @@
         "P28A"
       ],
       "inSeasons": [
-        0
+        0,
+        1
       ]
     },
     {
@@ -40913,6 +41346,46 @@
       ],
       "inSeasons": [
         0,
+        1
+      ]
+    },
+    {
+      "id": "M106",
+      "manufacturer": "LAMBERT",
+      "name": "M-106 Mission",
+      "manufacturers": [
+        "LAMBERT M-106 Mission"
+      ],
+      "description": "The LAMBERT M-106 Mission is a light sport aircraft designed for recreational flying. It features a sleek, modern design and is known for its efficient performance and ease of handling.",
+      "landingGear": "Tailwheel",
+      "wingPos": "High wing",
+      "wingShape": "Rectangular",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1592,
+      "num": 0,
+      "xp": 8960,
+      "firstFlight": 2003,
+      "wingspan": 9.32,
+      "length": 6.1,
+      "height": 2.1,
+      "mtow": 450,
+      "seats": 2,
+      "range": 380,
+      "maxSpeed": 100,
+      "cardCategory": "ultra",
+      "ftea": 0.00022025621511922883,
+      "images": [
+        "ACAR",
+        "C172"
+      ],
+      "markers": [
+        "PA18",
+        "P28A"
+      ],
+      "inSeasons": [
         1
       ]
     },
@@ -41772,7 +42245,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "imageOverride": "P46T"
     },
     {
       "id": "M74",
@@ -44454,6 +44928,41 @@
       ]
     },
     {
+      "id": "MS1",
+      "manufacturer": "MYSKY",
+      "name": "MS-1",
+      "manufacturers": [
+        "MYSKY MS-1"
+      ],
+      "landingGear": "Tricycle",
+      "wingPos": "Low wing",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1674,
+      "num": 0,
+      "xp": 9371,
+      "firstFlight": 2009,
+      "wingspan": 9.14,
+      "mtow": 600,
+      "seats": 2,
+      "maxSpeed": 120,
+      "cardCategory": "ultra",
+      "ftea": 0.0000969685438863521,
+      "images": [
+        "BT36",
+        "C172"
+      ],
+      "markers": [
+        "BT36",
+        "P28A"
+      ],
+      "inSeasons": [
+        1
+      ]
+    },
+    {
       "id": "MS23",
       "manufacturer": "MORANE-SAULNIER",
       "name": "MS-230",
@@ -45134,6 +45643,47 @@
         0,
         1
       ]
+    },
+    {
+      "id": "N320",
+      "manufacturer": "NORD",
+      "name": "3202",
+      "manufacturers": [
+        "NORD 3202"
+      ],
+      "description": "The NORD 3202 is a French military trainer aircraft, notable for its tandem seating and robust design, primarily used for pilot training and aerobatic instruction during the mid-20th century.",
+      "landingGear": "Tailwheel",
+      "wingPos": "Low wing",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1652,
+      "num": 0,
+      "xp": 9258,
+      "firstFlight": 1957,
+      "wingspan": 9.5,
+      "length": 8.12,
+      "height": 2.8,
+      "ceiling": 15000,
+      "mtow": 1220,
+      "seats": 2,
+      "range": 540,
+      "maxSpeed": 140,
+      "cardCategory": "ultra",
+      "ftea": 0.00012138508371385084,
+      "images": [
+        "T6",
+        "C172"
+      ],
+      "markers": [
+        "T6",
+        "P28A"
+      ],
+      "inSeasons": [
+        1
+      ],
+      "military": true
     },
     {
       "id": "N3N",
@@ -51301,6 +51851,44 @@
       "military": true
     },
     {
+      "id": "Q28",
+      "manufacturer": "BOEING",
+      "name": "MQ-28 Ghost Bat",
+      "description": "The Boeing MQ-28 Ghost Bat is an unmanned combat aerial vehicle designed for autonomous operations, enhancing manned aircraft capabilities. It represents a significant step in collaborative combat technology development.",
+      "landingGear": "Tricycle",
+      "wingPos": "Shoulder wing",
+      "type": "L",
+      "engNum": 1,
+      "engType": "J",
+      "wtc": "L",
+      "rareness": 1419,
+      "num": 0,
+      "xp": 8095,
+      "firstFlight": 2021,
+      "wingspan": 7.3,
+      "length": 11.7,
+      "seats": 0,
+      "range": 2000,
+      "maxSpeed": 580,
+      "cardCategory": "ultra",
+      "ftea": 0.0012433409436834095,
+      "images": [
+        "M345",
+        "SF50"
+      ],
+      "markers": [
+        "Q1",
+        "Q4",
+        "Q9",
+        "P28A"
+      ],
+      "inSeasons": [
+        1
+      ],
+      "imageOverride": "ANKA",
+      "military": true
+    },
+    {
       "id": "Q4",
       "manufacturer": "NORTHROP GRUMMAN",
       "name": "RQ-4 Global Hawk",
@@ -55976,7 +56564,7 @@
     {
       "id": "SB39",
       "manufacturer": "SAAB",
-      "name": "JAS 39 Gripen",
+      "name": "39 Gripen",
       "manufacturers": [
         "SAAB 39 Gripen",
         "SAAB JAS39 Gripen"
@@ -56294,9 +56882,9 @@
       "engNum": 1,
       "engType": "P",
       "wtc": "L",
-      "rareness": 1400,
+      "rareness": 1834,
       "num": 1,
-      "xp": 8000,
+      "xp": 10171,
       "firstFlight": 1973,
       "wingspan": 5.33,
       "length": 4.27,
@@ -56307,6 +56895,7 @@
       "range": 108,
       "maxSpeed": 91,
       "cardCategory": "ultra",
+      "ftea": 0.00001956494165398275,
       "images": [
         "BU33",
         "ST75"
@@ -56315,7 +56904,8 @@
         "P28A"
       ],
       "inSeasons": [
-        0
+        0,
+        1
       ]
     },
     {
@@ -56540,6 +57130,45 @@
         1
       ],
       "military": true
+    },
+    {
+      "id": "SEAT",
+      "manufacturer": "SEAWIND",
+      "name": "Turbine Seawind",
+      "manufacturers": [
+        "SEAWIND Turbine Seawind"
+      ],
+      "landingGear": "Tricycle",
+      "wingPos": "Shoulder wing",
+      "type": "A",
+      "engNum": 1,
+      "engType": "T",
+      "wtc": "L",
+      "rareness": 1631,
+      "num": 0,
+      "xp": 9155,
+      "firstFlight": 1980,
+      "wingspan": 10.6,
+      "length": 8.3,
+      "height": 3.1,
+      "ceiling": 18000,
+      "mtow": 1590,
+      "seats": 4,
+      "range": 1040,
+      "maxSpeed": 173,
+      "cardCategory": "ultra",
+      "ftea": 0.00014916286149162862,
+      "images": [
+        "SEAW",
+        "C172"
+      ],
+      "markers": [
+        "SEAW",
+        "P28A"
+      ],
+      "inSeasons": [
+        1
+      ]
     },
     {
       "id": "SEAW",
@@ -57300,6 +57929,39 @@
       ],
       "inSeasons": [
         0,
+        1
+      ]
+    },
+    {
+      "id": "SHRA",
+      "manufacturer": "TCD",
+      "name": "Sherwood Ranger",
+      "manufacturers": [
+        "TCD Sherwood Ranger",
+        "TLAC Sherwood Ranger"
+      ],
+      "description": "The TCD Sherwood Ranger is a lightweight biplane designed for recreational flying. Known for its classic design and open cockpit, it offers an authentic vintage flying experience for aviation enthusiasts.",
+      "wingPos": "Biplane",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1467,
+      "xp": 8336,
+      "firstFlight": 1992,
+      "wingspan": 7.92,
+      "length": 6.18,
+      "height": 2.4,
+      "mtow": 450,
+      "seats": 2,
+      "range": 173,
+      "maxSpeed": 70,
+      "cardCategory": "ultra",
+      "ftea": 0.0007685185185185185,
+      "images": [
+        "ST75"
+      ],
+      "inSeasons": [
         1
       ]
     },
@@ -62211,6 +62873,50 @@
       ]
     },
     {
+      "id": "TJET",
+      "manufacturer": "MAVERICK",
+      "name": "TJ-1500 TwinJet",
+      "manufacturers": [
+        "MAVERICK TJ-1500 Leader",
+        "MAVERICK TJ-1500 TwinJet",
+        "TAM TAM-Jet"
+      ],
+      "description": "The MAVERICK TJ-1500 TwinJet is a versatile business jet known for its twin-engine configuration, offering enhanced reliability and efficiency. It serves corporate travel needs with a focus on comfort and speed.",
+      "landingGear": "Tricycle",
+      "wingPos": "Mid wing",
+      "wingShape": "Rectangular",
+      "type": "L",
+      "engNum": 2,
+      "engType": "J",
+      "wtc": "L",
+      "rareness": 2049,
+      "num": 0,
+      "xp": 11245,
+      "firstFlight": 1999,
+      "wingspan": 10.5,
+      "length": 8.69,
+      "height": 2.7,
+      "ceiling": 31000,
+      "mtow": 2630,
+      "seats": 5,
+      "range": 1700,
+      "maxSpeed": 391,
+      "cardCategory": "ultra",
+      "ftea": 0.0000022831050228310503,
+      "images": [
+        "EA50",
+        "C25B"
+      ],
+      "markers": [
+        "EA50",
+        "DHC6",
+        "PA34"
+      ],
+      "inSeasons": [
+        1
+      ]
+    },
+    {
       "id": "TL20",
       "manufacturer": "TL ULTRALIGHT",
       "name": "Sting",
@@ -63827,6 +64533,45 @@
       ]
     },
     {
+      "id": "UL10",
+      "manufacturer": "ULTIMATE",
+      "name": "10 Albertan",
+      "manufacturers": [
+        "STREAMLINE WELDING 10 Ultimate Competitor",
+        "STREAMLINE WELDING 10 Ultimate Winner",
+        "ULTIMATE 10 Albertan"
+      ],
+      "description": "The ULTIMATE 10 Albertan is a biplane designed for aerobatic performance, featuring a robust structure and agile handling. It's celebrated for its role in competitive aerobatics and airshows.",
+      "landingGear": "Tailwheel",
+      "wingPos": "Biplane",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1792,
+      "num": 0,
+      "xp": 9958,
+      "firstFlight": 1985,
+      "wingspan": 5.95,
+      "length": 6.4,
+      "mtow": 750,
+      "seats": 1,
+      "range": 780,
+      "maxSpeed": 220,
+      "cardCategory": "ultra",
+      "ftea": 0.000029965753424657534,
+      "images": [
+        "ST75",
+        "C172"
+      ],
+      "markers": [
+        "P28A"
+      ],
+      "inSeasons": [
+        1
+      ]
+    },
+    {
       "id": "UL2F",
       "manufacturer": "AEROS",
       "name": "UL-2000 Flamingo",
@@ -64205,6 +64950,43 @@
         1
       ],
       "military": true
+    },
+    {
+      "id": "V221",
+      "manufacturer": "MSW",
+      "name": "Votec 221",
+      "manufacturers": [
+        "MSW Votec 221"
+      ],
+      "description": "The MSW Votec 221 is a Swiss aerobatic aircraft designed for precision flying. Known for its agility, it serves both recreational pilots and competitive aerobatic performers, showcasing advanced maneuverability.",
+      "landingGear": "Tailwheel",
+      "wingPos": "Low wing",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1794,
+      "num": 0,
+      "xp": 9969,
+      "firstFlight": 2009,
+      "wingspan": 5.85,
+      "length": 5.66,
+      "mtow": 600,
+      "seats": 1,
+      "range": 755,
+      "maxSpeed": 145,
+      "cardCategory": "ultra",
+      "ftea": 0.000029299847792998478,
+      "images": [
+        "RV7",
+        "C172"
+      ],
+      "markers": [
+        "P28A"
+      ],
+      "inSeasons": [
+        1
+      ]
     },
     {
       "id": "V252",
