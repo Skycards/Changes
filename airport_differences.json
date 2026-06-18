@@ -1,7 +1,7 @@
 {
   "summary": {
-    "total_countries_with_differences": 1,
-    "total_added_airports": 0,
+    "total_countries_with_differences": 2,
+    "total_added_airports": 1,
     "total_removed_airports": 1
   },
   "countries": {
@@ -23,6 +23,26 @@
       ],
       "added_count": 0,
       "removed_count": 1
+    },
+    "TR": {
+      "country_name": "Turkey",
+      "iso_code": "TR",
+      "fr24_count": 60,
+      "skycards_count": 59,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "ANK",
+          "lat": 39.952526,
+          "lon": 32.684116,
+          "link": "https://www.flightradar24.com/data/airports/ank",
+          "name": "Ankara Airport",
+          "icao": "LTAD"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
+      "removed_count": 0
     }
   }
 }
