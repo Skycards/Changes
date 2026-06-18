@@ -6,10 +6,12 @@ Automatically compares airport counts between Flightradar24 and our `airports.js
 
 ### Python Script (`compare_airports.py`)
 
-- Scrapes airport data from https://www.flightradar24.com/data/airports
+- Reads per-country airport counts from https://www.flightradar24.com/data/airports
+  (now an Inertia.js app — counts are parsed from the `airportsByCountry` array
+  embedded in the page's `data-page` JSON payload, not from an HTML table)
 - Maps country names to ISO country codes (e.g., "Norway" → "NO")
 - Compares airport counts between FR24 and our `airports.json` file
-- For countries with different counts, fetches detailed airport lists from individual FR24 country pages
+- For countries with different counts, fetches detailed airport lists from individual FR24 country pages (still server-rendered HTML)
 - Identifies specific airports that are added or removed
 - Saves detailed differences with airport metadata to `airport_differences.json`
 - Uses only Python built-in libraries (no external dependencies)
@@ -24,7 +26,7 @@ Automatically compares airport counts between Flightradar24 and our `airports.js
 
 ## How It Works
 
-1. **Data Scraping**: Extracts data from Flightradar24's airport directory page
+1. **Data Scraping**: Extracts per-country counts from the `data-page` JSON embedded in Flightradar24's airport directory page
 2. **Country Mapping**: Converts country names to ISO codes (e.g., "United States" → "US")
 3. **Airport Counting**: Groups airports by country code from our `airports.json` file
 4. **Initial Comparison**: Shows countries with matching/different airport counts

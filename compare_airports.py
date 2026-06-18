@@ -309,70 +309,74 @@ def create_country_mapping() -> Dict[str, str]:
     }
 
 
-class FlightRadar24Parser(HTMLParser):
-    """Custom HTML parser for Flightradar24 airport data"""
+class AppDataPageParser(HTMLParser):
+    """Extract the Inertia.js `data-page` JSON payload from a FR24 page.
+
+    Flightradar24's /data/airports page is now an Inertia (Vue) app that no
+    longer renders a server-side country table. Instead it embeds the full
+    page payload as HTML-escaped JSON in `<div id="app" data-page="...">`.
+    HTMLParser un-escapes the attribute value for us, leaving plain JSON.
+    """
 
     def __init__(self):
         super().__init__()
-        self.country_counts = {}
-        self.in_table_row = False
-        self.current_country = None
-        self.current_count = None
-        self.in_airport_link = False
-        self.in_count_span = False
+        self.data_page = None
 
     def handle_starttag(self, tag, attrs):
+        if tag != 'div' or self.data_page is not None:
+            return
         attrs_dict = dict(attrs)
+        if attrs_dict.get('id') == 'app' and attrs_dict.get('data-page'):
+            self.data_page = attrs_dict['data-page']
 
-        if tag == 'tr':
-            self.in_table_row = True
-            self.current_country = None
-            self.current_count = None
 
-        elif tag == 'a' and self.in_table_row:
-            href = attrs_dict.get('href', '')
-            if '/data/airports/' in href and href != '/data/airports':
-                self.in_airport_link = True
-                # Try to get country from data-country attribute
-                self.current_country = attrs_dict.get('data-country')
-                if not self.current_country:
-                    # Extract from title
-                    self.current_country = attrs_dict.get('title')
+def _normalize_country_name(name: str) -> str:
+    """Map FR24's UPPERCASE country names onto create_country_mapping() keys.
 
-        elif tag == 'span' and self.in_table_row:
-            class_attr = attrs_dict.get('class', '')
-            if 'gray' in class_attr:
-                self.in_count_span = True
+    The mapping capitalizes each space-separated word and lowercases the rest
+    (e.g. "Myanmar (burma)", "Guinea-bissau", "Cocos (keeling) Islands"), so
+    str.title() — which also capitalizes after "(" and "-" — would not match.
+    """
+    return ' '.join(word.capitalize() for word in name.split())
 
-    def handle_data(self, data):
-        data = data.strip()
 
-        if self.in_airport_link and not self.current_country and data:
-            # Fallback: use the link text as country name
-            self.current_country = data
+def parse_airports_by_country(html_content: str) -> Dict[str, int]:
+    """Parse country -> airport count from the FR24 /data/airports page HTML.
 
-        elif self.in_count_span and data:
-            # Look for airport count pattern
-            count_match = re.search(r'(\d+)\s+airports?', data)
-            if count_match:
-                self.current_count = int(count_match.group(1))
+    Returns an empty dict when the payload is missing or malformed (e.g. a
+    Cloudflare challenge interstitial), so callers can treat it as a failure
+    rather than emitting false "everything removed" differences.
+    """
+    parser = AppDataPageParser()
+    parser.feed(html_content)
 
-    def handle_endtag(self, tag):
-        if tag == 'a':
-            self.in_airport_link = False
+    if not parser.data_page:
+        print("Error: could not find Inertia data-page payload on Flightradar24 page")
+        return {}
 
-        elif tag == 'span':
-            self.in_count_span = False
+    try:
+        payload = json.loads(parser.data_page)
+    except json.JSONDecodeError as e:
+        print(f"Error parsing Flightradar24 data-page JSON: {e}")
+        return {}
 
-        elif tag == 'tr':
-            # End of table row - save data if we have both country and count
-            if self.current_country and self.current_count is not None:
-                self.country_counts[self.current_country.strip()] = self.current_count
-            self.in_table_row = False
+    by_country = payload.get('props', {}).get('airportsByCountry', [])
+    country_counts = {}
+    for entry in by_country:
+        name = entry.get('name')
+        total = entry.get('total')
+        if not name or total is None:
+            continue
+        try:
+            country_counts[_normalize_country_name(name)] = int(total)
+        except (ValueError, TypeError):
+            continue
+
+    return country_counts
 
 
 def scrape_flightradar24() -> Dict[str, int]:
-    """Scrape airport counts from Flightradar24"""
+    """Scrape airport counts per country from Flightradar24"""
     url = "https://www.flightradar24.com/data/airports"
 
     try:
@@ -388,11 +392,7 @@ def scrape_flightradar24() -> Dict[str, int]:
         with urllib.request.urlopen(req, timeout=30) as response:
             html_content = response.read().decode('utf-8')
 
-        # Parse the HTML
-        parser = FlightRadar24Parser()
-        parser.feed(html_content)
-
-        return parser.country_counts
+        return parse_airports_by_country(html_content)
 
     except Exception as e:
         print(f"Error scraping Flightradar24: {e}")
