@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1782217633275,
+  "updatedAt": 1782297817266,
   "rows": [
     {
       "id": "A1",
@@ -3460,7 +3460,8 @@
       ],
       "inSeasons": [
         1
-      ]
+      ],
+      "imageOverride": "PETR"
     },
     {
       "id": "AIGT",
@@ -6403,7 +6404,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "imageOverride": "AT3P"
     },
     {
       "id": "AT43",
@@ -6607,7 +6609,8 @@
       ],
       "inSeasons": [
         0
-      ]
+      ],
+      "imageOverride": "AT3P"
     },
     {
       "id": "AT5T",
@@ -6651,7 +6654,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "imageOverride": "AT3P"
     },
     {
       "id": "AT6T",
@@ -6692,7 +6696,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "imageOverride": "AT3P"
     },
     {
       "id": "AT72",
@@ -6887,6 +6892,7 @@
         0,
         1
       ],
+      "imageOverride": "AT3P",
       "military": true
     },
     {
@@ -17933,7 +17939,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "imageOverride": "CH60"
     },
     {
       "id": "CH7",
@@ -23209,7 +23216,8 @@
       ],
       "inSeasons": [
         1
-      ]
+      ],
+      "imageOverride": "DH89"
     },
     {
       "id": "DH85",
@@ -33198,7 +33206,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "imageOverride": "GLST"
     },
     {
       "id": "GLST",
@@ -41469,13 +41478,13 @@
     },
     {
       "id": "M18",
-      "manufacturer": "AII",
-      "name": "AVA-303",
+      "manufacturer": "PZL-MIELEC",
+      "name": "M-18 Dromader",
       "manufacturers": [
         "AII AVA-303",
         "PZL-MIELEC M-18 Dromader"
       ],
-      "description": "The AII AVA-303 is a light utility aircraft known for its rugged design and versatility, used for various civilian and military applications.",
+      "description": "The PZL-Mielec M-18 Dromader is an agricultural aircraft designed for crop dusting and firefighting. Its robust construction and large payload capacity make it ideal for rugged, rural operations.",
       "landingGear": "Tailwheel",
       "wingPos": "Low wing",
       "type": "L",
@@ -41507,7 +41516,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "imageOverride": "AT3P"
     },
     {
       "id": "M18T",
@@ -41552,6 +41562,7 @@
         0,
         1
       ],
+      "imageOverride": "AT3P",
       "military": true
     },
     {
@@ -42847,6 +42858,7 @@
         0,
         1
       ],
+      "imageOverride": "A320",
       "military": true
     },
     {
@@ -51885,7 +51897,7 @@
       "inSeasons": [
         1
       ],
-      "imageOverride": "ANKA",
+      "imageOverride": "Q4",
       "military": true
     },
     {
@@ -60831,7 +60843,8 @@
       "inSeasons": [
         0,
         1
-      ]
+      ],
+      "imageOverride": "GLST"
     },
     {
       "id": "SYNC",
@@ -61393,6 +61406,7 @@
         0,
         1
       ],
+      "imageOverride": "T34T",
       "military": true
     },
     {
@@ -62921,7 +62935,7 @@
       "manufacturer": "TL ULTRALIGHT",
       "name": "Sting",
       "manufacturers": [
-        "TL ULTRALIGHT TL-2000  Sting",
+        "TL ULTRALIGHT TL-2000 Sting",
         "TL ULTRALIGHT TL-2000 Sting",
         "TL ULTRALIGHT TL-2000 StingSport",
         "TL ULTRALIGHT TL-96 Star",
