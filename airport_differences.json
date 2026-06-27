@@ -1,7 +1,7 @@
 {
   "summary": {
-    "total_countries_with_differences": 2,
-    "total_added_airports": 1,
+    "total_countries_with_differences": 3,
+    "total_added_airports": 5,
     "total_removed_airports": 1
   },
   "countries": {
@@ -42,6 +42,50 @@
       ],
       "removed_airports": [],
       "added_count": 1,
+      "removed_count": 0
+    },
+    "VE": {
+      "country_name": "Venezuela",
+      "iso_code": "VE",
+      "fr24_count": 35,
+      "skycards_count": 31,
+      "difference": 4,
+      "added_airports": [
+        {
+          "iata": "CBS",
+          "lat": 10.331629,
+          "lon": -71.319817,
+          "link": "https://www.flightradar24.com/data/airports/cbs",
+          "name": "Cabimas Oro Negro Airport",
+          "icao": "SVON"
+        },
+        {
+          "iata": "CLZ",
+          "lat": 8.924815,
+          "lon": -67.415115,
+          "link": "https://www.flightradar24.com/data/airports/clz",
+          "name": "Calabozo Airport",
+          "icao": "SVCL"
+        },
+        {
+          "iata": "MYC",
+          "lat": 10.249661,
+          "lon": -67.649658,
+          "link": "https://www.flightradar24.com/data/airports/myc",
+          "name": "Escuela Mariscal Sucre Airport",
+          "icao": "SVBS"
+        },
+        {
+          "iata": "SCI",
+          "lat": 7.80224,
+          "lon": -72.202644,
+          "link": "https://www.flightradar24.com/data/airports/sci",
+          "name": "San Cristobal Paramillo Airport",
+          "icao": "SVPM"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 4,
       "removed_count": 0
     }
   }
