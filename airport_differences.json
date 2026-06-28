@@ -1,10 +1,30 @@
 {
   "summary": {
-    "total_countries_with_differences": 3,
-    "total_added_airports": 5,
+    "total_countries_with_differences": 4,
+    "total_added_airports": 6,
     "total_removed_airports": 1
   },
   "countries": {
+    "LV": {
+      "country_name": "Latvia",
+      "iso_code": "LV",
+      "fr24_count": 4,
+      "skycards_count": 3,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "QUS",
+          "lat": 56.99115,
+          "lon": 24.075272,
+          "link": "https://www.flightradar24.com/data/airports/qus",
+          "name": "Riga Spilve Airport",
+          "icao": "EVRS"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
+      "removed_count": 0
+    },
     "SE": {
       "country_name": "Sweden",
       "iso_code": "SE",
