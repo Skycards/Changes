@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1782297817266,
+  "updatedAt": 1782743190680,
   "rows": [
     {
       "id": "A1",
@@ -31463,7 +31463,7 @@
     {
       "id": "G2CA",
       "manufacturer": "GUIMBAL",
-      "name": "Cabri",
+      "name": "G-2 Cabri",
       "manufacturers": [
         "GUIMBAL G-2 Cabri"
       ],
@@ -66753,6 +66753,7 @@
         0,
         1
       ],
+      "imageOverride": "CNBR",
       "military": true
     },
     {
