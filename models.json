@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1782743190680,
+  "updatedAt": 1782818471957,
   "rows": [
     {
       "id": "A1",
@@ -10426,6 +10426,7 @@
         "BEARHAWK Bearhawk Companion",
         "R & B Bearhawk Companion"
       ],
+      "description": "The AVIPRO Bearhawk Companion is a homebuilt utility aircraft designed for side-by-side flying, backcountry access, and practical load-carrying, combining Bearhawk ruggedness with a more sociable cockpit layout.",
       "landingGear": "Tailwheel",
       "wingPos": "High wing",
       "type": "L",
@@ -11856,6 +11857,7 @@
         "BEARHAWK Bearhawk 5",
         "R & B Bearhawk 5"
       ],
+      "description": "The AVIPRO Bearhawk 5 is a homebuilt utility aircraft designed for larger loads, backcountry operations, and practical versatility, continuing the Bearhawk line’s emphasis on rugged construction and short-field capability.",
       "landingGear": "Tailwheel",
       "wingPos": "High wing",
       "type": "L",
@@ -12305,6 +12307,7 @@
         "BEARHAWK Bearhawk LSA",
         "R & B Bearhawk LSA"
       ],
+      "description": "The AVIPRO Bearhawk LSA is a two-seat, high-wing light-sport aircraft derived from Bob Barrows’ utility designs, emphasizing simple construction, tailwheel handling, and short-field recreation or backcountry flying.",
       "landingGear": "Tricycle",
       "wingPos": "High wing",
       "type": "L",
@@ -12433,6 +12436,33 @@
       ],
       "imageOverride": "BN2P",
       "military": true
+    },
+    {
+      "id": "BOBC",
+      "manufacturer": "TLAC",
+      "name": "Bobcat",
+      "description": "The TLAC Bobcat is a British light sport and microlight aircraft aimed at simple recreational flying, combining traditional high-wing handling with modern kit-built construction and straightforward operation for private pilots.",
+      "landingGear": "Tricycle",
+      "wingPos": "High wing",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1534,
+      "xp": 8672,
+      "mtow": 600,
+      "seats": 2,
+      "cardCategory": "ultra",
+      "ftea": 0.0003924720953830543,
+      "images": [
+        "C172"
+      ],
+      "markers": [
+        "P28A"
+      ],
+      "inSeasons": [
+        1
+      ]
     },
     {
       "id": "BOLT",
@@ -17822,6 +17852,7 @@
         "ZENAIR CH-620 Gemini",
         "ZENITH CH-620 Gemini"
       ],
+      "description": "The Zenair CH-620 Gemini is a light twin-engine homebuilt aircraft design that emphasizes simple construction, economical operation, and redundancy, reflecting Zenair’s practical approach to personal aviation.",
       "landingGear": "Tailwheel",
       "wingPos": "Low wing",
       "type": "L",
@@ -19223,6 +19254,7 @@
       "manufacturers": [
         "DEBORDE-ROLLAND Cobra"
       ],
+      "description": "The DEBORDE-ROLLAND Cobra is a French light sporting aircraft, representing small-scale private-aircraft experimentation, with a compact layout that suits economical recreational flying and amateur aviation interest.",
       "landingGear": "Tailwheel",
       "wingPos": "Low wing",
       "type": "L",
@@ -21022,6 +21054,39 @@
         1
       ],
       "military": true
+    },
+    {
+      "id": "CX30",
+      "manufacturer": "BETA",
+      "name": "CX-300",
+      "description": "BETA’s CX-300 is a conventional electric aircraft developed for regional cargo and passenger missions, sharing technology with its ALIA family and reflecting aviation’s shift toward practical battery-powered operations.",
+      "landingGear": "Tricycle",
+      "wingPos": "High wing",
+      "type": "L",
+      "engNum": 1,
+      "engType": "E",
+      "wtc": "L",
+      "rareness": 1102,
+      "xp": 6508,
+      "firstFlight": 2024,
+      "wingspan": 15,
+      "ceiling": 914,
+      "mtow": 2720,
+      "seats": 5,
+      "range": 336,
+      "maxSpeed": 153,
+      "cardCategory": "ultra",
+      "ftea": 0.029737252663622527,
+      "images": [
+        "HRON"
+      ],
+      "markers": [
+        "HRON"
+      ],
+      "inSeasons": [
+        1
+      ],
+      "imageOverride": "C337"
     },
     {
       "id": "CX5",
@@ -28563,6 +28628,7 @@
         "F5"
       ],
       "markers": [
+        "EUFI",
         "A4",
         "EUFI"
       ],
@@ -31136,13 +31202,13 @@
     {
       "id": "G159",
       "manufacturer": "GRUMMAN",
-      "name": "Academe",
+      "name": "G-159 Gulfstream 1",
       "manufacturers": [
         "GRUMMAN G-159 Gulfstream 1",
         "GRUMMAN TC-4 Academe",
         "GRUMMAN VC-4 Gulfstream 1"
       ],
-      "description": "The Grumman Academe is a twin-engine, turboprop aircraft used primarily for military training and transport missions.",
+      "description": "The Grumman G-159 Gulfstream I was an early business turboprop that helped define executive air travel, combining airline-style comfort with corporate flexibility and a rugged, company-developed design heritage.",
       "landingGear": "Tricycle",
       "wingPos": "Low wing",
       "wingShape": "Tapered",
@@ -33501,6 +33567,7 @@
       "manufacturers": [
         "GENEVATION GenPro"
       ],
+      "description": "The Genevation GenPro is a Hungarian-designed, carbon-composite aerobatic aircraft intended for advanced training and competition, emphasizing crisp handling and structural strength while reflecting modern central European sport-aircraft engineering.",
       "landingGear": "Tailwheel",
       "wingPos": "Low wing",
       "type": "L",
@@ -34845,6 +34912,46 @@
       ]
     },
     {
+      "id": "HI27",
+      "manufacturer": "HIRTH",
+      "name": "Acrostar",
+      "manufacturers": [
+        "HIRTH Hi-27 Acrostar"
+      ],
+      "description": "The Hirth Acrostar is a German single-seat aerobatic aircraft created for competition flying. Its clean lines, responsive handling, and homebuilt character reflect the postwar growth of specialized sport aviation.",
+      "landingGear": "Tricycle",
+      "wingPos": "Low wing",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 2011,
+      "num": 0,
+      "xp": 11056,
+      "firstFlight": 1970,
+      "wingspan": 8,
+      "length": 6.11,
+      "height": 2.5,
+      "ceiling": 24600,
+      "mtow": 700,
+      "seats": 1,
+      "range": 467,
+      "maxSpeed": 165,
+      "cardCategory": "ultra",
+      "ftea": 0.0000033295281582952815,
+      "images": [
+        "H207",
+        "C172"
+      ],
+      "markers": [
+        "C172",
+        "P28A"
+      ],
+      "inSeasons": [
+        1
+      ]
+    },
+    {
       "id": "HIGH",
       "manufacturer": "JUST",
       "name": "Highlander",
@@ -35838,6 +35945,7 @@
       "manufacturers": [
         "INPAER Explorer"
       ],
+      "description": "The INPAER Stallion is a Brazilian light aircraft intended for private flying, training, and utility use, reflecting local efforts to develop practical, accessible general aviation designs.",
       "landingGear": "Tricycle",
       "wingPos": "High wing",
       "type": "L",
@@ -41110,6 +41218,7 @@
       "manufacturers": [
         "HOWARD HUGHES Australian LightWing Speed SP-2000"
       ],
+      "description": "The Australian LightWing Speed SP-2000 is a light recreational aircraft from Howard Hughes Engineering, developed for sporty handling, simple operation, and local utility within Australia’s kit and ultralight aviation scene.",
       "landingGear": "Tricycle",
       "wingPos": "Low wing",
       "type": "L",
@@ -42536,6 +42645,46 @@
       ]
     },
     {
+      "id": "MAGI",
+      "manufacturer": "MILES",
+      "name": "Magister",
+      "manufacturers": [
+        "MILES M-14 Magister",
+        "PHILLIPS & POWIS M-14 Magister"
+      ],
+      "description": "The Miles Magister was a British basic trainer used to prepare pilots for more advanced military aircraft. Its low-wing monoplane layout helped transition trainees from biplanes to modern fighters.",
+      "landingGear": "Tailwheel",
+      "wingPos": "Low wing",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1653,
+      "num": 0,
+      "xp": 9267,
+      "firstFlight": 1937,
+      "wingspan": 10.3,
+      "length": 7.51,
+      "height": 2,
+      "ceiling": 16500,
+      "mtow": 860,
+      "seats": 2,
+      "range": 319,
+      "maxSpeed": 123,
+      "cardCategory": "ultra",
+      "ftea": 0.00011932394723490614,
+      "images": [
+        "RV7",
+        "MESS"
+      ],
+      "markers": [
+        "P28A"
+      ],
+      "inSeasons": [
+        1
+      ]
+    },
+    {
       "id": "MAGN",
       "manufacturer": "AIRDALE",
       "name": "Magnum",
@@ -43546,6 +43695,29 @@
       "imageOverride": "MD83"
     },
     {
+      "id": "MDNT",
+      "manufacturer": "ARCHER",
+      "name": "Midnight",
+      "description": "Archer Midnight is an electric vertical-lift aircraft developed for short urban air-taxi routes. Its design emphasizes quiet operation, distributed propulsion, and a piloted cabin, reflecting the emerging eVTOL mobility sector.",
+      "landingGear": "Tricycle",
+      "wingPos": "High wing",
+      "type": "T",
+      "engType": "E",
+      "rareness": 1456,
+      "xp": 8282,
+      "cardCategory": "ultra",
+      "ftea": 0.0008551496702181633,
+      "images": [
+        "V22"
+      ],
+      "markers": [
+        "V22"
+      ],
+      "inSeasons": [
+        1
+      ]
+    },
+    {
       "id": "ME08",
       "manufacturer": "MESSERSCHMITT",
       "name": "Bf-108 Taifun",
@@ -44012,6 +44184,7 @@
       "manufacturers": [
         "AEROSETTE MH-46 Eclipse"
       ],
+      "description": "The Aerosette MH-46 Eclipse is a Czech ultralight for recreational flying and training, reflecting European microlight design with a high-wing layout, side-by-side seating, and Rotax-powered simplicity.",
       "landingGear": "Tricycle",
       "wingPos": "High wing",
       "type": "L",
@@ -44946,6 +45119,7 @@
       "manufacturers": [
         "MYSKY MS-1"
       ],
+      "description": "The MYSKY MS-1 is a little-known light aircraft project intended for private flying and training, notable for its modern composite approach and place among niche sport aviation designs.",
       "landingGear": "Tricycle",
       "wingPos": "Low wing",
       "type": "L",
@@ -51885,14 +52059,12 @@
       "cardCategory": "ultra",
       "ftea": 0.0012433409436834095,
       "images": [
-        "M345",
-        "SF50"
+        "Q4"
       ],
       "markers": [
         "Q1",
         "Q4",
-        "Q9",
-        "P28A"
+        "Q9"
       ],
       "inSeasons": [
         1
@@ -54613,6 +54785,7 @@
       "manufacturers": [
         "STEMME S-15"
       ],
+      "description": "The STEMME S-15 is a German self-launching motor glider designed for touring, training and airborne observation, blending sailplane efficiency with powered flight and adaptable mission equipment.",
       "landingGear": "Tricycle",
       "wingPos": "High wing",
       "type": "L",
@@ -57150,6 +57323,7 @@
       "manufacturers": [
         "SEAWIND Turbine Seawind"
       ],
+      "description": "The Turbine Seawind is a turbine-powered development of the Seawind amphibian, blending composite construction, retractable landing gear, and a sleek hull for private operations from both runways and sheltered water.",
       "landingGear": "Tricycle",
       "wingPos": "Shoulder wing",
       "type": "A",
@@ -57471,6 +57645,7 @@
       "manufacturers": [
         "SCHEIBE SF-35"
       ],
+      "description": "The Scheibe SF-35 is a German touring motor glider designed for economical cross-country flying and training, reflecting Scheibe’s practical approach to combining sailplane handling with independent powered operation.",
       "landingGear": "Tailwheel",
       "wingPos": "Low wing",
       "wingShape": "Sailplane",
@@ -57972,6 +58147,9 @@
       "ftea": 0.0007685185185185185,
       "images": [
         "ST75"
+      ],
+      "markers": [
+        "P28A"
       ],
       "inSeasons": [
         1
@@ -59451,10 +59629,12 @@
       "cardCategory": "ultra",
       "ftea": 0.00009871258244545916,
       "images": [
+        "SB29",
         "SB32",
         "HAWK"
       ],
       "markers": [
+        "F86",
         "HUNT",
         "HAWK"
       ],
@@ -65113,9 +65293,11 @@
       "cardCategory": "ultra",
       "ftea": 0.05443188736681887,
       "images": [
+        "DHC1",
         "GC1"
       ],
       "markers": [
+        "T6",
         "GC1"
       ],
       "inSeasons": [
@@ -67327,13 +67509,10 @@
       "cardCategory": "ultra",
       "ftea": 0.0006004249112125824,
       "images": [
-        "KFIR",
         "XB1"
       ],
       "markers": [
-        "XB1",
-        "SEAW",
-        "HAWK"
+        "XB1"
       ],
       "inSeasons": [
         1
@@ -68973,6 +69152,7 @@
     "SNVH",
     "TB9",
     "TL96",
-    "ZONX"
+    "ZONX",
+    "KC39"
   ]
 }
