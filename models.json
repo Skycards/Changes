@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1782818471957,
+  "updatedAt": 1782823705133,
   "rows": [
     {
       "id": "A1",
@@ -10323,9 +10323,7 @@
       "id": "BALL",
       "name": "Balloon",
       "description": "A balloon is a lighter-than-air aircraft that uses heated air or gas to achieve lift, commonly used for recreational flights and aerial observations.",
-      "type": "_",
       "engNum": 0,
-      "engType": "_",
       "rareness": 634,
       "num": 966,
       "xp": 4170,
@@ -24435,8 +24433,6 @@
       "id": "DRON",
       "name": "Drone",
       "description": "A Drone is an unmanned aerial vehicle (UAV) used for a variety of applications including surveillance, photography, and delivery services.",
-      "type": "_",
-      "engType": "_",
       "rareness": 703,
       "num": 217,
       "xp": 4515,
@@ -33068,7 +33064,6 @@
       "wingShape": "Sailplane",
       "type": "L",
       "engNum": 0,
-      "engType": "_",
       "wtc": "L",
       "rareness": 512,
       "num": 2836,
@@ -33765,7 +33760,6 @@
       "description": "The Ultralight autogyro is a small, rotary-wing aircraft known for its simplicity, safety, and ability to take off and land in short distances.",
       "rotorConfig": "Gyrocopter",
       "type": "G",
-      "engType": "_",
       "rareness": 833,
       "num": 67,
       "xp": 5165,
@@ -43702,6 +43696,7 @@
       "landingGear": "Tricycle",
       "wingPos": "High wing",
       "type": "T",
+      "engNum": 12,
       "engType": "E",
       "rareness": 1456,
       "xp": 8282,
@@ -43715,7 +43710,8 @@
       ],
       "inSeasons": [
         1
-      ]
+      ],
+      "imageOverride": "JAS4"
     },
     {
       "id": "ME08",
@@ -49302,8 +49298,6 @@
       "id": "PARA",
       "name": "Powered parachute",
       "description": "Powered parachutes, also known as paraplanes, are ultralight aircraft with a parachute canopy and a motor, used for recreational flying and known for their simplicity and safety.",
-      "type": "_",
-      "engType": "_",
       "rareness": 988,
       "num": 33,
       "xp": 5940,
@@ -58066,8 +58060,6 @@
       "id": "SHIP",
       "name": "Airship",
       "description": "An airship is a lighter-than-air aircraft that can navigate through the air under its own power, often used for advertising and observation.",
-      "type": "_",
-      "engType": "_",
       "rareness": 688,
       "num": 21,
       "xp": 4440,
@@ -58554,8 +58546,6 @@
       "id": "SLEI",
       "name": "Santa",
       "description": "The legendary gift-giver who flies a magical sleigh pulled by reindeer, first mentioned in 1823’s “A Visit from St. Nicholas.”\n\nA symbol of Christmas joy and magic, he spreads cheer to believers worldwide.",
-      "type": "_",
-      "engType": "_",
       "rareness": 1232,
       "num": 1,
       "xp": 7160,
@@ -64708,7 +64698,6 @@
       "name": "Ultralight helicopter",
       "description": "The Ultralight helicopter is a lightweight, single-seat helicopter designed for recreational flying and personal use.",
       "type": "H",
-      "engType": "_",
       "wtc": "L",
       "rareness": 942,
       "num": 28,
@@ -64850,7 +64839,6 @@
       "wingPos": "Parasol wing",
       "wingShape": "Kite",
       "type": "L",
-      "engType": "_",
       "wtc": "L",
       "rareness": 599,
       "num": 762,
