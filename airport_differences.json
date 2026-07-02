@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 4,
-    "total_added_airports": 6,
+    "total_added_airports": 7,
     "total_removed_airports": 1
   },
   "countries": {
@@ -13,6 +13,14 @@
       "difference": 1,
       "added_airports": [
         {
+          "iata": "QUJ",
+          "lat": 56.942818,
+          "lon": 23.223337,
+          "link": "https://www.flightradar24.com/data/airports/quj",
+          "name": "Tukums Jurmala Airport",
+          "icao": "EVJA"
+        },
+        {
           "iata": "QUS",
           "lat": 56.99115,
           "lon": 24.075272,
@@ -22,7 +30,7 @@
         }
       ],
       "removed_airports": [],
-      "added_count": 1,
+      "added_count": 2,
       "removed_count": 0
     },
     "SE": {
