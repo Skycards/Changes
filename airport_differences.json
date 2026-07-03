@@ -1,10 +1,49 @@
 {
   "summary": {
-    "total_countries_with_differences": 4,
-    "total_added_airports": 7,
-    "total_removed_airports": 1
+    "total_countries_with_differences": 6,
+    "total_added_airports": 8,
+    "total_removed_airports": 2
   },
   "countries": {
+    "CD": {
+      "country_name": "Democratic Republic Of The Congo",
+      "iso_code": "CD",
+      "fr24_count": 25,
+      "skycards_count": 26,
+      "difference": -1,
+      "added_airports": [],
+      "removed_airports": [
+        {
+          "name": "Butembo Rughenda Airport",
+          "iata": "RUE",
+          "icao": "FZMB",
+          "lat": 0.116831,
+          "lon": 29.313217
+        }
+      ],
+      "added_count": 0,
+      "removed_count": 1
+    },
+    "CG": {
+      "country_name": "Congo",
+      "iso_code": "CG",
+      "fr24_count": 3,
+      "skycards_count": 2,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "RUE",
+          "lat": 0.116831,
+          "lon": 29.313217,
+          "link": "https://www.flightradar24.com/data/airports/rue",
+          "name": "Butembo Rughenda Airport",
+          "icao": "FZMB"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
+      "removed_count": 0
+    },
     "LV": {
       "country_name": "Latvia",
       "iso_code": "LV",
