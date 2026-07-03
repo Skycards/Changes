@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1781170049099,
+  "updatedAt": 1783079848700,
   "rows": [
     {
       "id": 1,
@@ -39039,7 +39039,7 @@
       "icao": "KSUX",
       "name": "Sioux Gateway Airport",
       "city": "Sioux City",
-      "placeCode": "US-NE",
+      "placeCode": "US-IA",
       "lat": 42.402599,
       "lon": -96.3843,
       "alt": 1098,
@@ -61229,7 +61229,7 @@
       "icao": "FZMB",
       "name": "Butembo Rughenda Airport",
       "city": "Butembo",
-      "placeCode": "CG",
+      "placeCode": "CD",
       "lat": 0.116831,
       "lon": 29.313217,
       "alt": 5762,
