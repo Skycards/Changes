@@ -8,9 +8,9 @@
     "LV": {
       "country_name": "Latvia",
       "iso_code": "LV",
-      "fr24_count": 4,
+      "fr24_count": 5,
       "skycards_count": 3,
-      "difference": 1,
+      "difference": 2,
       "added_airports": [
         {
           "iata": "QUJ",
