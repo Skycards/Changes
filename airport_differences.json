@@ -1,8 +1,8 @@
 {
   "summary": {
-    "total_countries_with_differences": 6,
-    "total_added_airports": 8,
-    "total_removed_airports": 2
+    "total_countries_with_differences": 2,
+    "total_added_airports": 1,
+    "total_removed_airports": 1
   },
   "countries": {
     "CD": {
@@ -42,117 +42,6 @@
       ],
       "removed_airports": [],
       "added_count": 1,
-      "removed_count": 0
-    },
-    "LV": {
-      "country_name": "Latvia",
-      "iso_code": "LV",
-      "fr24_count": 5,
-      "skycards_count": 3,
-      "difference": 2,
-      "added_airports": [
-        {
-          "iata": "QUJ",
-          "lat": 56.942818,
-          "lon": 23.223337,
-          "link": "https://www.flightradar24.com/data/airports/quj",
-          "name": "Tukums Jurmala Airport",
-          "icao": "EVJA"
-        },
-        {
-          "iata": "QUS",
-          "lat": 56.99115,
-          "lon": 24.075272,
-          "link": "https://www.flightradar24.com/data/airports/qus",
-          "name": "Riga Spilve Airport",
-          "icao": "EVRS"
-        }
-      ],
-      "removed_airports": [],
-      "added_count": 2,
-      "removed_count": 0
-    },
-    "SE": {
-      "country_name": "Sweden",
-      "iso_code": "SE",
-      "fr24_count": 66,
-      "skycards_count": 67,
-      "difference": -1,
-      "added_airports": [],
-      "removed_airports": [
-        {
-          "name": "Gavle Airport",
-          "iata": "GVX",
-          "icao": "ESSK",
-          "lat": 60.5933,
-          "lon": 16.951401
-        }
-      ],
-      "added_count": 0,
-      "removed_count": 1
-    },
-    "TR": {
-      "country_name": "Turkey",
-      "iso_code": "TR",
-      "fr24_count": 60,
-      "skycards_count": 59,
-      "difference": 1,
-      "added_airports": [
-        {
-          "iata": "ANK",
-          "lat": 39.952526,
-          "lon": 32.684116,
-          "link": "https://www.flightradar24.com/data/airports/ank",
-          "name": "Ankara Airport",
-          "icao": "LTAD"
-        }
-      ],
-      "removed_airports": [],
-      "added_count": 1,
-      "removed_count": 0
-    },
-    "VE": {
-      "country_name": "Venezuela",
-      "iso_code": "VE",
-      "fr24_count": 35,
-      "skycards_count": 31,
-      "difference": 4,
-      "added_airports": [
-        {
-          "iata": "CBS",
-          "lat": 10.331629,
-          "lon": -71.319817,
-          "link": "https://www.flightradar24.com/data/airports/cbs",
-          "name": "Cabimas Oro Negro Airport",
-          "icao": "SVON"
-        },
-        {
-          "iata": "CLZ",
-          "lat": 8.924815,
-          "lon": -67.415115,
-          "link": "https://www.flightradar24.com/data/airports/clz",
-          "name": "Calabozo Airport",
-          "icao": "SVCL"
-        },
-        {
-          "iata": "MYC",
-          "lat": 10.249661,
-          "lon": -67.649658,
-          "link": "https://www.flightradar24.com/data/airports/myc",
-          "name": "Escuela Mariscal Sucre Airport",
-          "icao": "SVBS"
-        },
-        {
-          "iata": "SCI",
-          "lat": 7.80224,
-          "lon": -72.202644,
-          "link": "https://www.flightradar24.com/data/airports/sci",
-          "name": "San Cristobal Paramillo Airport",
-          "icao": "SVPM"
-        }
-      ],
-      "removed_airports": [],
-      "added_count": 4,
       "removed_count": 0
     }
   }
