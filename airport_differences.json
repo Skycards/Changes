@@ -1,10 +1,30 @@
 {
   "summary": {
-    "total_countries_with_differences": 2,
-    "total_added_airports": 1,
+    "total_countries_with_differences": 3,
+    "total_added_airports": 2,
     "total_removed_airports": 1
   },
   "countries": {
+    "AU": {
+      "country_name": "Australia",
+      "iso_code": "AU",
+      "fr24_count": 473,
+      "skycards_count": 472,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "WSI",
+          "lat": -33.883606,
+          "lon": 150.712845,
+          "link": "https://www.flightradar24.com/data/airports/wsi",
+          "name": "Western Sydney Airport",
+          "icao": "YSWS"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
+      "removed_count": 0
+    },
     "CD": {
       "country_name": "Democratic Republic Of The Congo",
       "iso_code": "CD",
