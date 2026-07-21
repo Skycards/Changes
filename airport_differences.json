@@ -1,7 +1,7 @@
 {
   "summary": {
-    "total_countries_with_differences": 3,
-    "total_added_airports": 2,
+    "total_countries_with_differences": 5,
+    "total_added_airports": 7,
     "total_removed_airports": 1
   },
   "countries": {
@@ -19,6 +19,26 @@
           "link": "https://www.flightradar24.com/data/airports/wsi",
           "name": "Western Sydney Airport",
           "icao": "YSWS"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
+      "removed_count": 0
+    },
+    "BW": {
+      "country_name": "Botswana",
+      "iso_code": "BW",
+      "fr24_count": 5,
+      "skycards_count": 4,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "PKW",
+          "lat": -22.0583,
+          "lon": 27.82876,
+          "link": "https://www.flightradar24.com/data/airports/pkw",
+          "name": "Selebi-Phikwe Airport",
+          "icao": "FBSP"
         }
       ],
       "removed_airports": [],
@@ -62,6 +82,50 @@
       ],
       "removed_airports": [],
       "added_count": 1,
+      "removed_count": 0
+    },
+    "ID": {
+      "country_name": "Indonesia",
+      "iso_code": "ID",
+      "fr24_count": 153,
+      "skycards_count": 149,
+      "difference": 4,
+      "added_airports": [
+        {
+          "iata": "PPR",
+          "lat": 0.845538,
+          "lon": 100.370193,
+          "link": "https://www.flightradar24.com/data/airports/ppr",
+          "name": "Pasir Pangaraan Airport",
+          "icao": "WIDE"
+        },
+        {
+          "iata": "TJB",
+          "lat": 1.0527,
+          "lon": 103.393097,
+          "link": "https://www.flightradar24.com/data/airports/tjb",
+          "name": "Tanjung Balai Raja Haji Abdullah Airport",
+          "icao": "WIBT"
+        },
+        {
+          "iata": "TXM",
+          "lat": -1.44598,
+          "lon": 132.021881,
+          "link": "https://www.flightradar24.com/data/airports/txm",
+          "name": "Teminabuan Airport",
+          "icao": "WAST"
+        },
+        {
+          "iata": "WSR",
+          "lat": -2.721,
+          "lon": 134.506104,
+          "link": "https://www.flightradar24.com/data/airports/wsr",
+          "name": "Wasior Airport",
+          "icao": "WASW"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 4,
       "removed_count": 0
     }
   }
