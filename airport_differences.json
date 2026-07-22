@@ -1,7 +1,7 @@
 {
   "summary": {
-    "total_countries_with_differences": 5,
-    "total_added_airports": 7,
+    "total_countries_with_differences": 6,
+    "total_added_airports": 29,
     "total_removed_airports": 1
   },
   "countries": {
@@ -126,6 +126,194 @@
       ],
       "removed_airports": [],
       "added_count": 4,
+      "removed_count": 0
+    },
+    "US": {
+      "country_name": "United States",
+      "iso_code": "US",
+      "fr24_count": 1750,
+      "skycards_count": 1728,
+      "difference": 22,
+      "added_airports": [
+        {
+          "iata": "ASY",
+          "lat": 46.025627,
+          "lon": -99.354233,
+          "link": "https://www.flightradar24.com/data/airports/asy",
+          "name": "Ashley Municipal Airport",
+          "icao": "KASY"
+        },
+        {
+          "iata": "BPI",
+          "lat": 42.578873,
+          "lon": -110.105827,
+          "link": "https://www.flightradar24.com/data/airports/bpi",
+          "name": "Big Piney Miley Memorial Field Airport",
+          "icao": "KBPI"
+        },
+        {
+          "iata": "BTY",
+          "lat": 36.860962,
+          "lon": -116.78685,
+          "link": "https://www.flightradar24.com/data/airports/bty",
+          "name": "Beatty Airport",
+          "icao": "KBTY"
+        },
+        {
+          "iata": "CHL",
+          "lat": 44.521812,
+          "lon": -114.217972,
+          "link": "https://www.flightradar24.com/data/airports/chl",
+          "name": "Challis Airport",
+          "icao": "KLLJ"
+        },
+        {
+          "iata": "CIR",
+          "lat": 37.063847,
+          "lon": -89.220802,
+          "link": "https://www.flightradar24.com/data/airports/cir",
+          "name": "Cairo Regional Airport",
+          "icao": "KCIR"
+        },
+        {
+          "iata": "CNK",
+          "lat": 39.548473,
+          "lon": -97.652107,
+          "link": "https://www.flightradar24.com/data/airports/cnk",
+          "name": "Concordia Blosser Municipal Airport",
+          "icao": "KCNK"
+        },
+        {
+          "iata": "CNU",
+          "lat": 37.670193,
+          "lon": -95.486412,
+          "link": "https://www.flightradar24.com/data/airports/cnu",
+          "name": "Chanute Martin Johnson Airport",
+          "icao": "KCNU"
+        },
+        {
+          "iata": "DRE",
+          "lat": 46.009293,
+          "lon": -83.743561,
+          "link": "https://www.flightradar24.com/data/airports/dre",
+          "name": "Drummond Island Airport",
+          "icao": "KDRM"
+        },
+        {
+          "iata": "EKN",
+          "lat": 38.889923,
+          "lon": -79.857658,
+          "link": "https://www.flightradar24.com/data/airports/ekn",
+          "name": "Elkins Randolph County Airport",
+          "icao": "KEKN"
+        },
+        {
+          "iata": "EMM",
+          "lat": 41.824707,
+          "lon": -110.55777,
+          "link": "https://www.flightradar24.com/data/airports/emm",
+          "name": "Kemmerer Municipal Airport",
+          "icao": "KEMM"
+        },
+        {
+          "iata": "EOS",
+          "lat": 36.807465,
+          "lon": -94.392525,
+          "link": "https://www.flightradar24.com/data/airports/eos",
+          "name": "Neosho Hugh Robinson Airport",
+          "icao": "KEOS"
+        },
+        {
+          "iata": "GRN",
+          "lat": 42.804058,
+          "lon": -102.177948,
+          "link": "https://www.flightradar24.com/data/airports/grn",
+          "name": "Gordon Airport",
+          "icao": "KGRN"
+        },
+        {
+          "iata": "HTL",
+          "lat": 44.36124,
+          "lon": -84.67054,
+          "link": "https://www.flightradar24.com/data/airports/htl",
+          "name": "Houghton Lake Roscommon County Airport",
+          "icao": "KHTL"
+        },
+        {
+          "iata": "MLT",
+          "lat": 45.649345,
+          "lon": -68.691872,
+          "link": "https://www.flightradar24.com/data/airports/mlt",
+          "name": "Millinocket Municipal Airport",
+          "icao": "KMLT"
+        },
+        {
+          "iata": "NLG",
+          "lat": 56.007893,
+          "lon": -161.166962,
+          "link": "https://www.flightradar24.com/data/airports/nlg",
+          "name": "Nelson Lagoon Airport",
+          "icao": "PAOU"
+        },
+        {
+          "iata": "NVD",
+          "lat": 37.852951,
+          "lon": -94.304382,
+          "link": "https://www.flightradar24.com/data/airports/nvd",
+          "name": "Nevada Municipal Airport",
+          "icao": "KNVD"
+        },
+        {
+          "iata": "OIC",
+          "lat": 42.567146,
+          "lon": -75.524132,
+          "link": "https://www.flightradar24.com/data/airports/oic",
+          "name": "Norwich Warren Eaton Airport",
+          "icao": "KOIC"
+        },
+        {
+          "iata": "OLE",
+          "lat": 42.241104,
+          "lon": -78.370934,
+          "link": "https://www.flightradar24.com/data/airports/ole",
+          "name": "Olean Cattaraugus County Airport",
+          "icao": "KOLE"
+        },
+        {
+          "iata": "ORT",
+          "lat": 62.961292,
+          "lon": -141.926712,
+          "link": "https://www.flightradar24.com/data/airports/ort",
+          "name": "Northway Airport",
+          "icao": "PAOR"
+        },
+        {
+          "iata": "RED",
+          "lat": 40.678974,
+          "lon": -77.624329,
+          "link": "https://www.flightradar24.com/data/airports/red",
+          "name": "Reedsville Mifflin County Airport",
+          "icao": "KRVL"
+        },
+        {
+          "iata": "RRL",
+          "lat": 45.200466,
+          "lon": -89.707924,
+          "link": "https://www.flightradar24.com/data/airports/rrl",
+          "name": "Merrill Municipal Airport",
+          "icao": "KRRL"
+        },
+        {
+          "iata": "TRX",
+          "lat": 40.079929,
+          "lon": -93.590622,
+          "link": "https://www.flightradar24.com/data/airports/trx",
+          "name": "Trenton Municipal Airport",
+          "icao": "KTRX"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 22,
       "removed_count": 0
     }
   }
