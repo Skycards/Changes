@@ -1,7 +1,7 @@
 {
   "summary": {
-    "total_countries_with_differences": 6,
-    "total_added_airports": 29,
+    "total_countries_with_differences": 7,
+    "total_added_airports": 30,
     "total_removed_airports": 1
   },
   "countries": {
@@ -126,6 +126,26 @@
       ],
       "removed_airports": [],
       "added_count": 4,
+      "removed_count": 0
+    },
+    "SY": {
+      "country_name": "Syria",
+      "iso_code": "SY",
+      "fr24_count": 5,
+      "skycards_count": 4,
+      "difference": 1,
+      "added_airports": [
+        {
+          "iata": "DEZ",
+          "lat": 35.28537,
+          "lon": 40.175961,
+          "link": "https://www.flightradar24.com/data/airports/dez",
+          "name": "Deir ez-Zor Airport",
+          "icao": "OSDZ"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
       "removed_count": 0
     },
     "US": {
