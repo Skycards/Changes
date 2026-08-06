@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 7,
-    "total_added_airports": 30,
+    "total_added_airports": 35,
     "total_removed_airports": 1
   },
   "countries": {
@@ -92,6 +92,38 @@
       "difference": 9,
       "added_airports": [
         {
+          "iata": "BXD",
+          "lat": -7.175186,
+          "lon": 139.583588,
+          "link": "https://www.flightradar24.com/data/airports/bxd",
+          "name": "Bade Airport",
+          "icao": "WAKE"
+        },
+        {
+          "iata": "DTD",
+          "lat": 0.808197,
+          "lon": 114.529312,
+          "link": "https://www.flightradar24.com/data/airports/dtd",
+          "name": "Datah Dawai Airport",
+          "icao": "WALJ"
+        },
+        {
+          "iata": "EWI",
+          "lat": -3.925625,
+          "lon": 136.37944,
+          "link": "https://www.flightradar24.com/data/airports/ewi",
+          "name": "Enarotali Airport",
+          "icao": "WABT"
+        },
+        {
+          "iata": "LBW",
+          "lat": 3.90227,
+          "lon": 115.691551,
+          "link": "https://www.flightradar24.com/data/airports/lbw",
+          "name": "Long Bawan Juvai Semaring Airport",
+          "icao": "WAQJ"
+        },
+        {
           "iata": "PPR",
           "lat": 0.845538,
           "lon": 100.370193,
@@ -116,6 +148,14 @@
           "icao": "WAST"
         },
         {
+          "iata": "WET",
+          "lat": -4.05597,
+          "lon": 136.284882,
+          "link": "https://www.flightradar24.com/data/airports/wet",
+          "name": "Waghete Airport",
+          "icao": "WABG"
+        },
+        {
           "iata": "WSR",
           "lat": -2.721,
           "lon": 134.506104,
@@ -125,7 +165,7 @@
         }
       ],
       "removed_airports": [],
-      "added_count": 4,
+      "added_count": 9,
       "removed_count": 0
     },
     "SY": {
