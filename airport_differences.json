@@ -87,9 +87,9 @@
     "ID": {
       "country_name": "Indonesia",
       "iso_code": "ID",
-      "fr24_count": 153,
+      "fr24_count": 158,
       "skycards_count": 149,
-      "difference": 4,
+      "difference": 9,
       "added_airports": [
         {
           "iata": "PPR",
