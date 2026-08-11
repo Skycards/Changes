@@ -11,7 +11,11 @@ Automatically compares airport counts between Flightradar24 and our `airports.js
   embedded in the page's `data-page` JSON payload, not from an HTML table)
 - Maps country names to ISO country codes (e.g., "Norway" → "NO")
 - Compares airport counts between FR24 and our `airports.json` file
-- For countries with different counts, fetches detailed airport lists from individual FR24 country pages (still server-rendered HTML)
+- For countries with different counts, fetches detailed airport lists from the
+  individual FR24 country pages (also Inertia `data-page` JSON — `props.airports`)
+- Large countries (US, Canada, Australia, China, …) are split into per-state
+  pages (`props.states`); those are fetched and aggregated, each airport tagged
+  with its state code (matching our `placeCode` suffix, e.g. `US-AL`)
 - Identifies specific airports that are added or removed
 - Saves detailed differences with airport metadata to `airport_differences.json`
 - Uses only Python built-in libraries (no external dependencies)
@@ -31,8 +35,9 @@ Automatically compares airport counts between Flightradar24 and our `airports.js
 3. **Airport Counting**: Groups airports by country code from our `airports.json` file
 4. **Initial Comparison**: Shows countries with matching/different airport counts
 5. **Detailed Analysis**: For countries with differences:
-   - Fetches individual country pages from FR24
-   - Extracts airport metadata (name, IATA, ICAO, coordinates, links)
+   - Fetches the FR24 country page; for subdivisioned countries, fetches each
+     per-state page and aggregates (tagging airports with their state code)
+   - Extracts airport metadata (name, IATA, ICAO) from the `data-page` JSON
    - Compares airport lists using IATA/ICAO codes as identifiers
    - Identifies specific added/removed airports
 6. **Result Storage**: Saves detailed differences to `airport_differences.json`

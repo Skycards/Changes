@@ -4,7 +4,6 @@ Script to compare Flightradar24 airport counts with our airports.json data
 """
 
 import json
-import re
 import sys
 import time
 from collections import Counter
@@ -340,6 +339,45 @@ def _normalize_country_name(name: str) -> str:
     return ' '.join(word.capitalize() for word in name.split())
 
 
+def _extract_data_page(html_content: str) -> Dict:
+    """Extract and parse the Inertia `data-page` JSON payload from a FR24 page.
+
+    Raises ValueError if the payload is missing or malformed (e.g. a Cloudflare
+    challenge interstitial), so callers can distinguish a failed fetch from a
+    genuinely empty result.
+    """
+    parser = AppDataPageParser()
+    parser.feed(html_content)
+
+    if not parser.data_page:
+        raise ValueError("could not find Inertia data-page payload")
+
+    try:
+        return json.loads(parser.data_page)
+    except json.JSONDecodeError as e:
+        raise ValueError(f"could not parse data-page JSON: {e}")
+
+
+def _airports_from_props(props: Dict, state_code: Optional[str] = None) -> List[Dict]:
+    """Build clean airport dicts from a `props.airports` list.
+
+    Keeps only {name, iata, icao} (+ optional state); notably drops `total`,
+    a live flight-movement count that would otherwise churn the differences file
+    on every run. Skips airports with no IATA/ICAO (can't be matched).
+    """
+    airports = []
+    for entry in props.get('airports', []):
+        iata = (entry.get('iata') or '').strip()
+        icao = (entry.get('icao') or '').strip()
+        if not iata and not icao:
+            continue
+        airport = {'name': entry.get('name', ''), 'iata': iata, 'icao': icao}
+        if state_code:
+            airport['state'] = state_code
+        airports.append(airport)
+    return airports
+
+
 def parse_airports_by_country(html_content: str) -> Dict[str, int]:
     """Parse country -> airport count from the FR24 /data/airports page HTML.
 
@@ -347,17 +385,10 @@ def parse_airports_by_country(html_content: str) -> Dict[str, int]:
     Cloudflare challenge interstitial), so callers can treat it as a failure
     rather than emitting false "everything removed" differences.
     """
-    parser = AppDataPageParser()
-    parser.feed(html_content)
-
-    if not parser.data_page:
-        print("Error: could not find Inertia data-page payload on Flightradar24 page")
-        return {}
-
     try:
-        payload = json.loads(parser.data_page)
-    except json.JSONDecodeError as e:
-        print(f"Error parsing Flightradar24 data-page JSON: {e}")
+        payload = _extract_data_page(html_content)
+    except ValueError as e:
+        print(f"Error reading Flightradar24 airports page: {e}")
         return {}
 
     by_country = payload.get('props', {}).get('airportsByCountry', [])
@@ -399,107 +430,57 @@ def scrape_flightradar24() -> Dict[str, int]:
         return {}
 
 
-class CountryAirportParser(HTMLParser):
-    """Parser for individual country airport pages from Flightradar24"""
+def parse_country_airports(html_content: str) -> List[Dict]:
+    """Parse the flat airport list from a FR24 /data/airports/<country> page.
 
-    def __init__(self):
-        super().__init__()
-        self.airports = []
-        self.in_table_row = False
-        self.current_airport = {}
-        self.in_airport_link = False
-        self.capturing_name = False
-
-    def handle_starttag(self, tag, attrs):
-        attrs_dict = dict(attrs)
-
-        if tag == 'tr':
-            self.in_table_row = True
-            self.current_airport = {}
-
-        elif tag == 'a' and self.in_table_row:
-            href = attrs_dict.get('href', '')
-            if '/data/airports/' in href and href.count('/') >= 4:  # Individual airport page
-                self.in_airport_link = True
-                self.capturing_name = True
-
-                # Extract data attributes
-                self.current_airport['iata'] = attrs_dict.get('data-iata', '')
-                self.current_airport['lat'] = attrs_dict.get('data-lat', '')
-                self.current_airport['lon'] = attrs_dict.get('data-lon', '')
-                self.current_airport['link'] = f"https://www.flightradar24.com{href}" if href.startswith('/') else href
-                self.current_airport['title'] = attrs_dict.get('title', '')
-
-    def handle_data(self, data):
-        data = data.strip()
-
-        if self.in_airport_link and self.capturing_name and data:
-            # Extract airport name and ICAO from text like "Rotterdam The Hague Airport (RTM/EHRD)"
-            if self.current_airport.get('title'):
-                self.current_airport['name'] = self.current_airport['title']
-            else:
-                self.current_airport['name'] = data
-
-            # Try to extract ICAO from parentheses
-            icao_match = re.search(r'\(([A-Z]{3,4})/([A-Z]{4})\)', data)
-            if icao_match:
-                self.current_airport['icao'] = icao_match.group(2)
-            else:
-                # Try alternative format
-                icao_match = re.search(r'\(([A-Z]{4})\)', data)
-                if icao_match:
-                    self.current_airport['icao'] = icao_match.group(1)
-                else:
-                    self.current_airport['icao'] = ''
-
-    def handle_endtag(self, tag):
-        if tag == 'a':
-            self.in_airport_link = False
-            self.capturing_name = False
-
-        elif tag == 'tr':
-            # End of table row - save airport if we have required data
-            if (self.current_airport.get('name') and
-                self.current_airport.get('iata') and
-                self.current_airport.get('lat') and
-                self.current_airport.get('lon')):
-
-                # Convert lat/lon to float
-                try:
-                    self.current_airport['lat'] = float(self.current_airport['lat'])
-                    self.current_airport['lon'] = float(self.current_airport['lon'])
-                    self.airports.append(self.current_airport.copy())
-                except (ValueError, TypeError):
-                    pass  # Skip if lat/lon conversion fails
-
-            self.in_table_row = False
-
-
-def fetch_country_airports(country_name: str) -> Tuple[List[Dict], Optional[str]]:
-    """Fetch detailed airport data for a specific country from Flightradar24
-
-    Returns:
-        Tuple of (airports_list, error_message). If successful, error_message is None.
-        If failed after all retries, airports_list is empty and error_message contains the error.
+    Like the airports index, per-country pages are now an Inertia app
+    (component "Data/AirportsByCountry" / "Data/AirportsByState"); the airport
+    list lives in `props.airports` inside the `data-page` JSON, not an HTML
+    table. Raises ValueError if the payload is missing/malformed or has no
+    `airports` list (e.g. a Cloudflare challenge, or a country that is split
+    into states — see parse_states), so callers treat it as a failed fetch
+    instead of an empty "all airports removed" list.
     """
-    # Convert country name to URL format (lowercase, replace spaces with dashes)
-    country_url = country_name.lower().replace(' ', '-').replace('(', '').replace(')', '').replace("'", '')
+    payload = _extract_data_page(html_content)
+    props = payload.get('props', {})
+    if 'airports' not in props:
+        raise ValueError("country page payload has no 'airports' list")
+    return _airports_from_props(props)
 
-    # Handle special cases
-    country_url = country_url.replace('&', 'and')
 
-    url = f"https://www.flightradar24.com/data/airports/{country_url}"
+def parse_states(html_content: str) -> List[Dict]:
+    """Return the subdivision pages for a country, or [] if it isn't split.
 
+    Large countries (US, Canada, Australia, China, ...) no longer list airports
+    directly; the country page carries `props.states`, each a
+    {code, name, total, url} pointing at a per-state airport page. The `code`
+    (e.g. "AL", "AB") matches our placeCode subdivision suffix ("US-AL").
+    """
+    payload = _extract_data_page(html_content)
+    states = []
+    for entry in payload.get('props', {}).get('states', []):
+        url = entry.get('url')
+        if url:
+            states.append({
+                'code': entry.get('code', ''),
+                'name': entry.get('name', ''),
+                'url': url,
+            })
+    return states
+
+
+def _fetch_html(url: str, label: str) -> Tuple[Optional[str], Optional[str]]:
+    """Fetch a FR24 page with retries. Returns (html, error_message)."""
     retry_delays = [10, 15, 20]  # Retry delays in seconds
     last_error = None
 
     for attempt in range(4):  # 1 initial attempt + 3 retries
         try:
             if attempt == 0:
-                print(f"  Fetching airports for {country_name} from {url}")
+                print(f"  Fetching {label} from {url}")
             else:
                 delay = retry_delays[attempt - 1]
-                print(f"  Retry {attempt}/3 for {country_name} after {delay}s delay...")
+                print(f"  Retry {attempt}/3 for {label} after {delay}s delay...")
                 time.sleep(delay)
 
             req = urllib.request.Request(
@@ -510,22 +491,76 @@ def fetch_country_airports(country_name: str) -> Tuple[List[Dict], Optional[str]
             )
 
             with urllib.request.urlopen(req, timeout=30) as response:
-                html_content = response.read().decode('utf-8')
-
-            parser = CountryAirportParser()
-            parser.feed(html_content)
-
-            print(f"  Found {len(parser.airports)} airports for {country_name}")
-            return parser.airports, None
+                return response.read().decode('utf-8'), None
 
         except Exception as e:
             last_error = str(e)
-            print(f"  Error fetching airports for {country_name} (attempt {attempt + 1}/4): {e}")
+            print(f"  Error fetching {label} (attempt {attempt + 1}/4): {e}")
 
-    # All attempts failed
     error_msg = f"Failed after 4 attempts. Last error: {last_error}"
     print(f"  ❌ {error_msg}")
-    return [], error_msg
+    return None, error_msg
+
+
+def fetch_country_airports(country_name: str) -> Tuple[List[Dict], Optional[str]]:
+    """Fetch detailed airport data for a specific country from Flightradar24.
+
+    Handles both flat countries (airports listed directly) and subdivisioned
+    countries (US, Canada, ...) whose airports are spread across per-state
+    pages — those are fetched and aggregated, each airport tagged with its
+    state code.
+
+    Returns:
+        Tuple of (airports_list, error_message). On success error_message is
+        None. If any fetch/parse fails, returns ([], error) so the caller
+        preserves existing data rather than emitting false "removed" diffs.
+    """
+    # Convert country name to URL format (lowercase, replace spaces with dashes)
+    country_url = country_name.lower().replace(' ', '-').replace('(', '').replace(')', '').replace("'", '')
+
+    # Handle special cases
+    country_url = country_url.replace('&', 'and')
+
+    url = f"https://www.flightradar24.com/data/airports/{country_url}"
+
+    html, error = _fetch_html(url, country_name)
+    if error:
+        return [], error
+
+    # Subdivisioned countries (US, Canada, ...) list states, not airports.
+    try:
+        states = parse_states(html)
+    except ValueError as e:
+        return [], str(e)
+
+    if states:
+        all_airports = []
+        for i, state in enumerate(states):
+            state_url = f"https://www.flightradar24.com{state['url']}"
+            label = f"{country_name} / {state['name']} ({state['code']})"
+            state_html, state_error = _fetch_html(state_url, label)
+            if state_error:
+                # Abort the whole country on any state failure — a partial list
+                # would look like a mass removal downstream.
+                return [], f"state {state['code']} fetch failed: {state_error}"
+            try:
+                all_airports.extend(
+                    _airports_from_props(_extract_data_page(state_html).get('props', {}),
+                                         state_code=state['code']))
+            except ValueError as e:
+                return [], f"state {state['code']} parse failed: {e}"
+            if i < len(states) - 1:
+                time.sleep(2)  # be polite between state fetches
+        print(f"  Found {len(all_airports)} airports for {country_name} across {len(states)} states")
+        return all_airports, None
+
+    # Flat country: airports listed directly on the country page.
+    try:
+        airports = parse_country_airports(html)
+    except ValueError as e:
+        return [], str(e)
+    print(f"  Found {len(airports)} airports for {country_name}")
+    return airports, None
 
 
 def get_country_airports_from_our_data(airports_data: Dict, country_code: str) -> List[Dict]:
