@@ -1,8 +1,8 @@
 {
   "summary": {
     "total_countries_with_differences": 2,
-    "total_added_airports": 0,
-    "total_removed_airports": 28
+    "total_added_airports": 1,
+    "total_removed_airports": 1
   },
   "countries": {
     "CD": {
@@ -14,190 +14,14 @@
       "added_airports": [],
       "removed_airports": [
         {
-          "name": "Gbadolite Airport",
-          "iata": "BDT",
-          "icao": "FZFD",
-          "lat": 4.252136,
-          "lon": 20.9732
-        },
-        {
-          "name": "Kuvumu Airport",
-          "iata": "BKY",
-          "icao": "FZMA",
-          "lat": -2.30897,
-          "lon": 28.8088
-        },
-        {
-          "name": "Beni Airport",
-          "iata": "BNC",
-          "icao": "FZNP",
-          "lat": 0.576373,
-          "lon": 29.47238
-        },
-        {
-          "name": "Bunia Airport",
-          "iata": "BUX",
-          "icao": "FZKA",
-          "lat": 1.565719,
-          "lon": 30.220831
-        },
-        {
-          "name": "Lubumbashi International Airport",
-          "iata": "FBM",
-          "icao": "FZQA",
-          "lat": -11.5913,
-          "lon": 27.53088
-        },
-        {
-          "name": "Bandundu Airport",
-          "iata": "FDU",
-          "icao": "FZBO",
-          "lat": -3.31131,
-          "lon": 17.381445
-        },
-        {
-          "name": "Kinshasa N'Djili Airport",
-          "iata": "FIH",
-          "icao": "FZAA",
-          "lat": -4.38575,
-          "lon": 15.44456
-        },
-        {
-          "name": "Kisangani Bangoka International Airport",
-          "iata": "FKI",
-          "icao": "FZIC",
-          "lat": 0.481639,
-          "lon": 25.337971
-        },
-        {
-          "name": "Kalemie Airport",
-          "iata": "FMI",
-          "icao": "FZRF",
-          "lat": -5.87555,
-          "lon": 29.25
-        },
-        {
-          "name": "Gemena Airport",
-          "iata": "GMA",
-          "icao": "FZFK",
-          "lat": 3.235455,
-          "lon": 19.770971
-        },
-        {
-          "name": "Goma International Airport",
-          "iata": "GOM",
-          "icao": "FZNA",
-          "lat": -1.67081,
-          "lon": 29.238461
-        },
-        {
-          "name": "Inongo Airport",
-          "iata": "INO",
-          "icao": "FZBA",
-          "lat": -1.946662,
-          "lon": 18.285711
-        },
-        {
-          "name": "Isiro Matari Airport",
-          "iata": "IRP",
-          "icao": "FZJH",
-          "lat": 2.827606,
-          "lon": 27.588249
-        },
-        {
-          "name": "Kananga Airport",
-          "iata": "KGA",
-          "icao": "FZUA",
-          "lat": -5.90005,
-          "lon": 22.46916
-        },
-        {
-          "name": "Kasongo Lunda Airport",
-          "iata": "KGN",
-          "icao": "FZOK",
-          "lat": -6.467999,
-          "lon": 16.805065
-        },
-        {
-          "name": "Kamina Airport",
-          "iata": "KMN",
-          "icao": "FZSB",
-          "lat": -8.64202,
-          "lon": 25.25289
-        },
-        {
-          "name": "Kindu Airport",
-          "iata": "KND",
-          "icao": "FZOA",
-          "lat": -2.91917,
-          "lon": 25.915359
-        },
-        {
-          "name": "Kongolo Airport",
-          "iata": "KOO",
-          "icao": "FZRQ",
-          "lat": -5.393714,
-          "lon": 26.989355
-        },
-        {
-          "name": "Kiri Basango Mboliasa Airport",
-          "iata": "KRZ",
-          "icao": "FZBT",
-          "lat": -1.500146,
-          "lon": 18.92802
-        },
-        {
-          "name": "Kolwezi Airport",
-          "iata": "KWZ",
-          "icao": "FZQM",
-          "lat": -10.76639,
-          "lon": 25.508223
-        },
-        {
-          "name": "Mbandaka Airport",
-          "iata": "MDK",
-          "icao": "FZEA",
-          "lat": 0.022514,
-          "lon": 18.288782
-        },
-        {
-          "name": "Mbuji Mayi Airport",
-          "iata": "MJM",
-          "icao": "FZWA",
-          "lat": -6.12123,
-          "lon": 23.569
-        },
-        {
-          "name": "Muanda Airport",
-          "iata": "MNB",
-          "icao": "FZAG",
-          "lat": -5.930583,
-          "lon": 12.351394
-        },
-        {
-          "name": "Kinshasa N'Dolo Airport",
-          "iata": "NLO",
-          "icao": "FZAB",
-          "lat": -4.32668,
-          "lon": 15.327426
-        },
-        {
-          "name": "Ilebo Airport",
-          "iata": "PFR",
-          "icao": "FZVS",
-          "lat": -4.329411,
-          "lon": 20.591734
-        },
-        {
           "name": "Butembo Rughenda Airport",
           "iata": "RUE",
           "icao": "FZMB",
-          "lat": 0.116831,
-          "lon": 29.313217
+          "placeCode": "CD"
         }
       ],
       "added_count": 0,
-      "removed_count": 26
+      "removed_count": 1
     },
     "CG": {
       "country_name": "Congo",
@@ -205,25 +29,17 @@
       "fr24_count": 3,
       "skycards_count": 2,
       "difference": 1,
-      "added_airports": [],
-      "removed_airports": [
+      "added_airports": [
         {
-          "name": "Brazzaville Maya Maya Airport",
-          "iata": "BZV",
-          "icao": "FCBB",
-          "lat": -4.2517,
-          "lon": 15.25303
-        },
-        {
-          "name": "Pointe Noire Airport",
-          "iata": "PNR",
-          "icao": "FCPP",
-          "lat": -4.81602,
-          "lon": 11.88659
+          "name": "Butembo Rughenda Airport",
+          "iata": "RUE",
+          "icao": "FZMB",
+          "placeCode": "CG"
         }
       ],
-      "added_count": 0,
-      "removed_count": 2
+      "removed_airports": [],
+      "added_count": 1,
+      "removed_count": 0
     }
   }
 }
