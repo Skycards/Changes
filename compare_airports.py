@@ -674,6 +674,44 @@ def _diff_flat_country(iso_code: str, country_name: str, fr24_count: int,
     return _country_record(country_name, iso_code, fr24_count, our_count, added, removed), None
 
 
+def _fetch_all_state_airports(country_name: str, states: List[Dict]) -> Tuple[Optional[List[Dict]], Optional[str]]:
+    """Fetch and aggregate airports from every state page (state-tagged)."""
+    airports = []
+    for state in states:
+        state_url = f"https://www.flightradar24.com{state['url']}"
+        state_html, error = _fetch_html(state_url, f"{country_name} / {state['name']} ({state['code']})")
+        if error:
+            return None, f"state {state['code']} fetch failed: {error}"
+        try:
+            airports.extend(_airports_from_props(
+                _extract_data_page(state_html).get('props', {}), state_code=state['code']))
+        except ValueError as e:
+            return None, f"state {state['code']} parse failed: {e}"
+        time.sleep(2)  # be polite between state fetches
+    return airports, None
+
+
+def _diff_states_as_flat(iso_code: str, country_name: str, fr24_count: int,
+                         our_count: int, states: List[Dict],
+                         airports_data: Dict) -> Tuple[Optional[Dict], Optional[str]]:
+    """Fallback when FR24 splits a country into states but our data doesn't.
+
+    We can't gate per state (our data has no per-state counts to compare), so
+    fetch every state page, aggregate, and compare at the country level — where
+    placeCodes line up. FR24-added airports still carry their state placeCode so
+    the message nests them; our (un-subdivided) airports compare by country.
+    """
+    fr24_airports, error = _fetch_all_state_airports(country_name, states)
+    if error:
+        return None, error
+    our_airports = get_country_airports_from_our_data(airports_data, iso_code)
+    added, removed = compare_country_airports(fr24_airports, our_airports)
+    for ap in added:
+        ap.setdefault('placeCode', f"{iso_code}-{ap['state']}" if ap.get('state') else iso_code)
+    print(f"  (our data not subdivided) Added: {len(added)}, Removed: {len(removed)}")
+    return _country_record(country_name, iso_code, fr24_count, our_count, added, removed), None
+
+
 def _diff_subdivisioned_country(iso_code: str, country_name: str, fr24_count: int,
                                 our_count: int, states: List[Dict],
                                 airports_data: Dict) -> Tuple[Optional[Dict], Optional[str]]:
@@ -684,6 +722,13 @@ def _diff_subdivisioned_country(iso_code: str, country_name: str, fr24_count: in
     whose counts actually differ — mirroring the country-level count gate.
     """
     our_state_counts = get_our_state_counts(airports_data, iso_code)
+    if not our_state_counts:
+        # FR24 subdivides this country but our data doesn't yet (or we have no
+        # airports there). Per-state matching would falsely flag everything as
+        # added, so fall back to a country-level comparison.
+        return _diff_states_as_flat(iso_code, country_name, fr24_count,
+                                    our_count, states, airports_data)
+
     fr24_by_code = {s['code']: s for s in states}
 
     changed = [code for code in sorted(set(fr24_by_code) | set(our_state_counts))

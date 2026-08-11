@@ -305,6 +305,52 @@ class DiffOneCountryTest(unittest.TestCase):
         self.assertIsNone(rec)
         self.assertIsNotNone(err)
 
+    def test_fr24_adds_states_but_our_data_is_flat_falls_back(self):
+        # FR24 newly splits Germany into states; our data still uses bare "DE".
+        # Must compare at country level, not flag every airport as added.
+        pages = {
+            "/data/airports/germany": _states_page_html([
+                {"code": "BY", "name": "Bavaria", "total": 2, "url": "/data/airports/germany/by"},
+                {"code": "BE", "name": "Berlin", "total": 1, "url": "/data/airports/germany/be"},
+            ]),
+            "/germany/by": _country_page_html([
+                {"name": "Munich", "iata": "MUC", "icao": "EDDM"},
+                {"name": "Nuremberg", "iata": "NUE", "icao": "EDDN"},
+            ]),
+            "/germany/be": _country_page_html([
+                {"name": "Berlin Brandenburg", "iata": "BER", "icao": "EDDB"},
+            ]),
+        }
+        # Our data: MUC + BER already present under bare "DE"; NUE is genuinely new.
+        our = _rows(
+            {"name": "Munich", "iata": "MUC", "placeCode": "DE"},
+            {"name": "Berlin Brandenburg", "iata": "BER", "placeCode": "DE"},
+        )
+        rec, err, calls = self._run("Germany", "DE", 3, 2, pages, our)
+        self.assertIsNone(err)
+        # Only NUE is added — MUC/BER matched, not falsely re-added.
+        self.assertEqual([a["iata"] for a in rec["added_airports"]], ["NUE"])
+        self.assertEqual(rec["removed_airports"], [])
+        # Added airport still carries its state placeCode for nesting.
+        self.assertEqual(rec["added_airports"][0]["placeCode"], "DE-BY")
+
+    def test_fr24_drops_states_but_our_data_subdivided(self):
+        # FR24 flattens Canada (country page lists airports); our data keeps CA-XX.
+        pages = {"/canada": _country_page_html([
+            {"name": "Toronto", "iata": "YYZ", "icao": "CYYZ"},
+            {"name": "Vancouver", "iata": "YVR", "icao": "CYVR"},
+        ])}
+        our = _rows(
+            {"name": "Toronto", "iata": "YYZ", "placeCode": "CA-ON"},
+            {"name": "Old Field", "iata": "YOL", "placeCode": "CA-AB"},  # gone from FR24
+        )
+        rec, err, calls = self._run("Canada", "CA", 2, 2, pages, our)
+        self.assertIsNone(err)
+        self.assertEqual([a["iata"] for a in rec["added_airports"]], ["YVR"])
+        # Our subdivided airport is correctly matched/removed by country prefix.
+        self.assertEqual([a["iata"] for a in rec["removed_airports"]], ["YOL"])
+        self.assertEqual(len(calls), 1)  # flat: single country page
+
 
 if __name__ == "__main__":
     unittest.main()
