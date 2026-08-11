@@ -122,8 +122,8 @@ class ParseCountryAirportsTest(unittest.TestCase):
         self.assertEqual([a["iata"] for a in airports], ["AMS"])
 
     def test_raises_on_cloudflare_challenge(self):
-        # No data-page payload -> raise so fetch_country_airports treats it as a
-        # failed fetch (retry / preserve existing data) instead of "0 airports".
+        # No data-page payload -> raise so the caller treats it as a failed
+        # fetch (retry / preserve existing data) instead of "0 airports".
         html = "<html><head><title>Just a moment...</title></head><body></body></html>"
         with self.assertRaises(ValueError):
             ca.parse_country_airports(html)
@@ -168,17 +168,50 @@ class ParseStatesTest(unittest.TestCase):
         self.assertEqual([s["code"] for s in ca.parse_states(html)], ["AL"])
 
 
-class FetchCountryAirportsTest(unittest.TestCase):
-    """Exercise the flat/subdivisioned orchestration with _fetch_html mocked."""
+def _rows(*airports):
+    return {"rows": list(airports)}
 
-    def _run_with_pages(self, pages):
-        """pages: dict of url-substring -> html. Patches _fetch_html + sleep."""
+
+class OurDataHelpersTest(unittest.TestCase):
+    def test_country_airports_keep_placecode_skip_iataless(self):
+        data = _rows(
+            {"name": "A", "iata": "AAA", "icao": "KAAA", "placeCode": "US-CA"},
+            {"name": "No IATA", "iata": "", "icao": "KZZZ", "placeCode": "US-CA"},
+            {"name": "Other", "iata": "BBB", "icao": "KBBB", "placeCode": "GB"},
+        )
+        got = ca.get_country_airports_from_our_data(data, "US")
+        self.assertEqual([a["iata"] for a in got], ["AAA"])
+        self.assertEqual(got[0]["placeCode"], "US-CA")
+
+    def test_state_airports_filter_exact_placecode(self):
+        data = _rows(
+            {"name": "A", "iata": "AAA", "placeCode": "US-CA"},
+            {"name": "B", "iata": "BBB", "placeCode": "US-TX"},
+        )
+        got = ca.get_state_airports_from_our_data(data, "US", "CA")
+        self.assertEqual([a["iata"] for a in got], ["AAA"])
+
+    def test_our_state_counts_group_by_subdivision(self):
+        data = _rows(
+            {"iata": "AAA", "placeCode": "US-CA"},
+            {"iata": "BBB", "placeCode": "US-CA"},
+            {"iata": "CCC", "placeCode": "US-TX"},
+            {"iata": "", "placeCode": "US-TX"},   # iata-less: excluded
+            {"iata": "DDD", "placeCode": "CA-ON"},  # other country
+        )
+        self.assertEqual(ca.get_our_state_counts(data, "US"), {"CA": 2, "TX": 1})
+
+
+class DiffOneCountryTest(unittest.TestCase):
+    """Exercise flat/subdivisioned analysis with _fetch_html mocked."""
+
+    def _run(self, country_name, iso, fr24_count, our_count, pages, airports_data):
         calls = []
 
         def fake_fetch(url, label):
             calls.append(url)
-            # Suffix match: the country key is a *prefix* of the state URLs, so
-            # a plain substring test would shadow them. Path suffixes are unique.
+            # Suffix match: the country key is a prefix of the state URLs, so a
+            # plain substring test would shadow them. Path suffixes are unique.
             for key, html in pages.items():
                 if url.endswith(key):
                     return html, None
@@ -188,57 +221,89 @@ class FetchCountryAirportsTest(unittest.TestCase):
         ca._fetch_html = fake_fetch
         ca.time.sleep = lambda *a, **k: None
         try:
-            return ca.fetch_country_airports("United States"), calls
+            rec, err = ca._diff_one_country(iso, country_name, fr24_count, our_count, airports_data)
+            return rec, err, calls
         finally:
             ca._fetch_html = orig_fetch
             ca.time.sleep = orig_sleep
 
-    def test_flat_country_returns_airports(self):
-        pages = {"/united-states": _country_page_html([
-            {"name": "A", "iata": "AAA", "icao": "KAAA"},
+    def test_flat_country_tags_country_placecode(self):
+        pages = {"/netherlands": _country_page_html([
+            {"name": "New", "iata": "NEW", "icao": "EHNW"},
         ])}
-        (airports, error), _ = self._run_with_pages(pages)
-        self.assertIsNone(error)
-        self.assertEqual(airports[0]["iata"], "AAA")
+        our = _rows({"name": "Old", "iata": "OLD", "icao": "EHOL", "placeCode": "NL"})
+        rec, err, calls = self._run("Netherlands", "NL", 1, 1, pages, our)
+        self.assertIsNone(err)
+        self.assertEqual(rec["added_airports"][0]["placeCode"], "NL")
+        self.assertEqual(rec["removed_airports"][0]["iata"], "OLD")
+        self.assertNotIn("states", rec)
+        self.assertEqual(len(calls), 1)  # flat: only the country page
 
-    def test_subdivisioned_country_aggregates_and_tags_state(self):
+    def test_subdivisioned_only_fetches_changed_states(self):
         pages = {
-            # country page lists states (no airports) -> fetch each state
             "/data/airports/united-states": _states_page_html([
-                {"code": "AL", "name": "Alabama", "url": "/data/airports/united-states/al"},
-                {"code": "AK", "name": "Alaska", "url": "/data/airports/united-states/ak"},
+                {"code": "CA", "name": "California", "total": 3, "url": "/data/airports/united-states/ca"},
+                {"code": "TX", "name": "Texas", "total": 2, "url": "/data/airports/united-states/tx"},
             ]),
-            "/united-states/al": _country_page_html([
-                {"name": "Alexander City", "iata": "ALX", "icao": "KALX"},
-            ]),
-            "/united-states/ak": _country_page_html([
-                {"name": "Anchorage", "iata": "ANC", "icao": "PANC"},
-                {"name": "Fairbanks", "iata": "FAI", "icao": "PAFA"},
+            # Only CA differs (FR24 3 vs our 2); TX matches (2 == 2) -> not fetched
+            "/united-states/ca": _country_page_html([
+                {"name": "LA", "iata": "LAX", "icao": "KLAX"},
+                {"name": "SF", "iata": "SFO", "icao": "KSFO"},
+                {"name": "San Diego", "iata": "SAN", "icao": "KSAN"},
             ]),
         }
-        (airports, error), calls = self._run_with_pages(pages)
-        self.assertIsNone(error)
-        self.assertEqual(len(airports), 3)
-        by_iata = {a["iata"]: a for a in airports}
-        self.assertEqual(by_iata["ALX"]["state"], "AL")
-        self.assertEqual(by_iata["ANC"]["state"], "AK")
-        # country page + 2 state pages
-        self.assertEqual(len(calls), 3)
+        our = _rows(
+            {"name": "LA", "iata": "LAX", "placeCode": "US-CA"},
+            {"name": "SF", "iata": "SFO", "placeCode": "US-CA"},
+            {"name": "Dallas", "iata": "DFW", "placeCode": "US-TX"},
+            {"name": "Houston", "iata": "IAH", "placeCode": "US-TX"},
+        )
+        rec, err, calls = self._run("United States", "US", 5, 4, pages, our)
+        self.assertIsNone(err)
+        # Only SAN is new; tagged with the state placeCode
+        self.assertEqual([a["iata"] for a in rec["added_airports"]], ["SAN"])
+        self.assertEqual(rec["added_airports"][0]["placeCode"], "US-CA")
+        self.assertEqual(rec["removed_airports"], [])
+        # states breakdown present, only for the changed state
+        self.assertEqual(set(rec["states"]), {"CA"})
+        self.assertEqual(rec["states"]["CA"]["added_count"], 1)
+        # country page + only the CA state page (TX skipped)
+        self.assertEqual(len(calls), 2)
+        self.assertFalse(any(c.endswith("/tx") for c in calls))
+
+    def test_state_present_in_our_data_but_absent_on_fr24(self):
+        # A subdivision FR24 dropped entirely: no page to fetch, everything ours
+        # there becomes "removed".
+        pages = {
+            "/data/airports/united-states": _states_page_html([
+                {"code": "CA", "name": "California", "total": 1, "url": "/data/airports/united-states/ca"},
+            ]),
+            "/united-states/ca": _country_page_html([
+                {"name": "LA", "iata": "LAX", "icao": "KLAX"},
+            ]),
+        }
+        our = _rows(
+            {"name": "LA", "iata": "LAX", "placeCode": "US-CA"},
+            {"name": "Honolulu", "iata": "HNL", "placeCode": "US-HI"},  # HI not on FR24
+        )
+        rec, err, calls = self._run("United States", "US", 1, 2, pages, our)
+        self.assertIsNone(err)
+        self.assertEqual([a["iata"] for a in rec["removed_airports"]], ["HNL"])
+        self.assertIn("HI", rec["states"])
+        # HI has no FR24 page, so it is never fetched
+        self.assertFalse(any(c.endswith("/hi") for c in calls))
 
     def test_state_fetch_failure_aborts_whole_country(self):
         pages = {
             "/data/airports/united-states": _states_page_html([
-                {"code": "AL", "name": "Alabama", "url": "/data/airports/united-states/al"},
-                {"code": "AK", "name": "Alaska", "url": "/data/airports/united-states/ak"},
+                {"code": "CA", "name": "California", "total": 9, "url": "/data/airports/united-states/ca"},
             ]),
-            "/united-states/al": _country_page_html([
-                {"name": "Alexander City", "iata": "ALX", "icao": "KALX"},
-            ]),
-            # no stub for /ak -> fetch fails -> whole country aborts
+            # no stub for /ca -> fetch fails -> whole country aborts
         }
-        (airports, error), _ = self._run_with_pages(pages)
-        self.assertEqual(airports, [])
-        self.assertIsNotNone(error)
+        our = _rows({"name": "LA", "iata": "LAX", "placeCode": "US-CA"})
+        rec, err, _ = self._run("United States", "US", 9, 1, pages, our)
+        self.assertIsNone(rec)
+        self.assertIsNotNone(err)
 
 
 if __name__ == "__main__":

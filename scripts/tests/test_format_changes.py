@@ -353,6 +353,38 @@ class ComparisonTest(unittest.TestCase):
         self.assertIn("To be added: 1 · To be removed: 0 · 1 countries", msg)
         self.assertIn("1 to add", tldr)
 
+    def _ap_pc(self, name, iata, icao, place_code):
+        r = self._ap(name, iata, icao)
+        r["placeCode"] = place_code
+        return r
+
+    def test_subdivisioned_country_nests_by_state(self):
+        old = {"countries": {}}
+        new = {"countries": {"US": {
+            "country_name": "United States", "iso_code": "US",
+            "fr24_count": 3, "skycards_count": 1,
+            "added_airports": [
+                self._ap_pc("Los Angeles", "LAX", "KLAX", "US-CA"),
+                self._ap_pc("Dallas", "DFW", "KDFW", "US-TX"),
+            ],
+            "removed_airports": [],
+        }}}
+        msg, _ = fc.format_comparison(old, new, set(), set(), "L")
+        # State names appear as sub-headings, airports indented one level deeper.
+        self.assertIn("California", msg)
+        self.assertIn("Texas", msg)
+        self.assertIn("    + [Los Angeles]", msg)
+        self.assertIn("    + [Dallas]", msg)
+
+    def test_flat_country_not_nested_by_region(self):
+        old = {"countries": {}}
+        new = {"countries": self._country("Netherlands", "NL",
+                                          added=[self._ap_pc("Schiphol", "AMS", "EHAM", "NL")])}
+        msg, _ = fc.format_comparison(old, new, set(), set(), "L")
+        # No region sub-heading -> airport sits at the two-space country level.
+        self.assertIn("  + [Schiphol]", msg)
+        self.assertNotIn("    + [Schiphol]", msg)
+
     def test_new_to_be_removed_listed(self):
         old = {"countries": {}}
         new = {"countries": self._country("Australia", "AU",

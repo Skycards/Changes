@@ -14,9 +14,11 @@ Automatically compares airport counts between Flightradar24 and our `airports.js
 - For countries with different counts, fetches detailed airport lists from the
   individual FR24 country pages (also Inertia `data-page` JSON — `props.airports`)
 - Large countries (US, Canada, Australia, China, …) are split into per-state
-  pages (`props.states`); those are fetched and aggregated, each airport tagged
-  with its state code (matching our `placeCode` suffix, e.g. `US-AL`)
-- Identifies specific airports that are added or removed
+  pages (`props.states`, which carry each state's total). Our data has per-state
+  counts too (placeCode `US-PA`), so only the states whose counts differ are
+  fetched — the rest are skipped. Each airport is tagged with its state code.
+- Identifies specific airports that are added or removed, and for subdivisioned
+  countries records a per-state breakdown under `states` in the differences file
 - Saves detailed differences with airport metadata to `airport_differences.json`
 - Uses only Python built-in libraries (no external dependencies)
 
@@ -35,11 +37,13 @@ Automatically compares airport counts between Flightradar24 and our `airports.js
 3. **Airport Counting**: Groups airports by country code from our `airports.json` file
 4. **Initial Comparison**: Shows countries with matching/different airport counts
 5. **Detailed Analysis**: For countries with differences:
-   - Fetches the FR24 country page; for subdivisioned countries, fetches each
-     per-state page and aggregates (tagging airports with their state code)
+   - Fetches the FR24 country page; for subdivisioned countries, compares each
+     state's total against our per-state count and fetches only the states that
+     differ (tagging airports with their state code)
    - Extracts airport metadata (name, IATA, ICAO) from the `data-page` JSON
    - Compares airport lists using IATA/ICAO codes as identifiers
-   - Identifies specific added/removed airports
+   - Identifies specific added/removed airports (nested by state in the Discord
+     message and commit summary for subdivisioned countries)
 6. **Result Storage**: Saves detailed differences to `airport_differences.json`
 
 ## Example Output

@@ -385,7 +385,9 @@ def _comparison_records(diffs, kind):
                 "iata": ap.get("iata") or None,
                 "icao": ap.get("icao") or None,
                 "link": ap.get("link"),
-                "placeCode": iso,
+                # Full placeCode (e.g. "US-PA") when present, so subdivisioned
+                # countries nest by state; fall back to the bare country ISO.
+                "placeCode": ap.get("placeCode") or iso,
             })
     return records
 
@@ -533,11 +535,11 @@ def format_comparison(old_diffs, new_diffs, old_iatas, new_iatas, link):
     if new_add:
         parts += ["**To be added** (new)",
                   render_geo(new_add, place, name_key,
-                             lambda r: [_comparison_line(r, "+")], with_region=False), ""]
+                             lambda r: [_comparison_line(r, "+")], with_region=True), ""]
     if new_rem:
         parts += ["**To be removed** (new)",
                   render_geo(new_rem, place, name_key,
-                             lambda r: [_comparison_line(r, "\\-")], with_region=False), ""]
+                             lambda r: [_comparison_line(r, "\\-")], with_region=True), ""]
     if resolved:
         parts += [f"✓ {resolved} resolved this update (see the airports update)", ""]
     if count_changes:
@@ -550,7 +552,7 @@ def format_comparison(old_diffs, new_diffs, old_iatas, new_iatas, link):
         if all_add:
             parts += ["**Still to be added**",
                       render_geo(all_add, place, name_key,
-                                 lambda r: [_comparison_line(r, "+")], with_region=False), ""]
+                                 lambda r: [_comparison_line(r, "+")], with_region=True), ""]
     parts += [overall, "", f"For all changes see [commit](<{link}>)"]
 
     tldr = _comparison_tldr(len(new_add), len(new_rem), len(count_changes),

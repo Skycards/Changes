@@ -461,9 +461,14 @@ def parse_states(html_content: str) -> List[Dict]:
     for entry in payload.get('props', {}).get('states', []):
         url = entry.get('url')
         if url:
+            try:
+                total = int(entry.get('total', 0))
+            except (ValueError, TypeError):
+                total = 0
             states.append({
                 'code': entry.get('code', ''),
                 'name': entry.get('name', ''),
+                'total': total,
                 'url': url,
             })
     return states
@@ -502,87 +507,73 @@ def _fetch_html(url: str, label: str) -> Tuple[Optional[str], Optional[str]]:
     return None, error_msg
 
 
-def fetch_country_airports(country_name: str) -> Tuple[List[Dict], Optional[str]]:
-    """Fetch detailed airport data for a specific country from Flightradar24.
+def _country_url(country_name: str) -> str:
+    """Build the FR24 /data/airports/<country> URL from a country name."""
+    slug = country_name.lower().replace(' ', '-').replace('(', '').replace(')', '').replace("'", '')
+    slug = slug.replace('&', 'and')  # handle special cases
+    return f"https://www.flightradar24.com/data/airports/{slug}"
 
-    Handles both flat countries (airports listed directly) and subdivisioned
-    countries (US, Canada, ...) whose airports are spread across per-state
-    pages — those are fetched and aggregated, each airport tagged with its
-    state code.
 
-    Returns:
-        Tuple of (airports_list, error_message). On success error_message is
-        None. If any fetch/parse fails, returns ([], error) so the caller
-        preserves existing data rather than emitting false "removed" diffs.
-    """
-    # Convert country name to URL format (lowercase, replace spaces with dashes)
-    country_url = country_name.lower().replace(' ', '-').replace('(', '').replace(')', '').replace("'", '')
-
-    # Handle special cases
-    country_url = country_url.replace('&', 'and')
-
-    url = f"https://www.flightradar24.com/data/airports/{country_url}"
-
-    html, error = _fetch_html(url, country_name)
-    if error:
-        return [], error
-
-    # Subdivisioned countries (US, Canada, ...) list states, not airports.
-    try:
-        states = parse_states(html)
-    except ValueError as e:
-        return [], str(e)
-
-    if states:
-        all_airports = []
-        for i, state in enumerate(states):
-            state_url = f"https://www.flightradar24.com{state['url']}"
-            label = f"{country_name} / {state['name']} ({state['code']})"
-            state_html, state_error = _fetch_html(state_url, label)
-            if state_error:
-                # Abort the whole country on any state failure — a partial list
-                # would look like a mass removal downstream.
-                return [], f"state {state['code']} fetch failed: {state_error}"
-            try:
-                all_airports.extend(
-                    _airports_from_props(_extract_data_page(state_html).get('props', {}),
-                                         state_code=state['code']))
-            except ValueError as e:
-                return [], f"state {state['code']} parse failed: {e}"
-            if i < len(states) - 1:
-                time.sleep(2)  # be polite between state fetches
-        print(f"  Found {len(all_airports)} airports for {country_name} across {len(states)} states")
-        return all_airports, None
-
-    # Flat country: airports listed directly on the country page.
-    try:
-        airports = parse_country_airports(html)
-    except ValueError as e:
-        return [], str(e)
-    print(f"  Found {len(airports)} airports for {country_name}")
-    return airports, None
+def _our_airport_record(airport: Dict) -> Dict:
+    """Project one airports.json row to the fields the comparison needs."""
+    return {
+        'name': airport.get('name', ''),
+        'iata': airport.get('iata'),
+        'icao': airport.get('icao', ''),
+        'placeCode': airport.get('placeCode', ''),
+    }
 
 
 def get_country_airports_from_our_data(airports_data: Dict, country_code: str) -> List[Dict]:
-    """Extract airports for a specific country from our airports.json data"""
-    country_airports = []
+    """Extract airports for a specific country from our airports.json data.
 
+    Keeps the full placeCode (e.g. "US-PA") so downstream rendering can nest
+    airports by state/region.
+    """
+    country_airports = []
     for airport in airports_data.get('rows', []):
         place_code = airport.get('placeCode', '')
         if place_code and place_code.split('-')[0] == country_code:
             iata = airport.get('iata')
             if iata is None or iata == '':
                 continue
-
-            country_airports.append({
-                'name': airport.get('name', ''),
-                'iata': iata,
-                'icao': airport.get('icao', ''),
-                'lat': airport.get('lat', 0),
-                'lon': airport.get('lon', 0)
-            })
-
+            country_airports.append(_our_airport_record(airport))
     return country_airports
+
+
+def get_state_airports_from_our_data(airports_data: Dict, country_code: str,
+                                     state_code: str) -> List[Dict]:
+    """Extract our airports for one subdivision (placeCode == "US-PA")."""
+    target = f"{country_code}-{state_code}"
+    state_airports = []
+    for airport in airports_data.get('rows', []):
+        if airport.get('placeCode', '') != target:
+            continue
+        iata = airport.get('iata')
+        if iata is None or iata == '':
+            continue
+        state_airports.append(_our_airport_record(airport))
+    return state_airports
+
+
+def get_our_state_counts(airports_data: Dict, country_code: str) -> Dict[str, int]:
+    """Our airport counts per subdivision for a country, keyed by state code.
+
+    Mirrors the country-level counting (IATA-less airports excluded) so the
+    per-state totals line up with FR24's state totals.
+    """
+    counts: Dict[str, int] = {}
+    prefix = f"{country_code}-"
+    for airport in airports_data.get('rows', []):
+        place_code = airport.get('placeCode', '')
+        if not place_code.startswith(prefix):
+            continue
+        iata = airport.get('iata')
+        if iata is None or iata == '':
+            continue
+        state_code = place_code.split('-', 1)[1]
+        counts[state_code] = counts.get(state_code, 0) + 1
+    return counts
 
 
 def compare_country_airports(fr24_airports: List[Dict], our_airports: List[Dict]) -> Tuple[List[Dict], List[Dict]]:
@@ -652,6 +643,114 @@ def compare_country_airports(fr24_airports: List[Dict], our_airports: List[Dict]
     return cleaned_added_airports, removed_airports
 
 
+def _country_record(country_name: str, iso_code: str, fr24_count: int,
+                    our_count: int, added: List[Dict], removed: List[Dict]) -> Dict:
+    """Assemble one country's difference record."""
+    return {
+        'country_name': country_name,
+        'iso_code': iso_code,
+        'fr24_count': fr24_count,
+        'skycards_count': our_count,
+        'difference': fr24_count - our_count,  # Positive means FR24 has more
+        'added_airports': added,   # In FR24 but not in our data
+        'removed_airports': removed,  # In our data but not in FR24
+        'added_count': len(added),
+        'removed_count': len(removed),
+    }
+
+
+def _diff_flat_country(iso_code: str, country_name: str, fr24_count: int,
+                       our_count: int, html: str, airports_data: Dict) -> Tuple[Optional[Dict], Optional[str]]:
+    """Compare a flat country (airports listed directly on its page)."""
+    try:
+        fr24_airports = parse_country_airports(html)
+    except ValueError as e:
+        return None, str(e)
+    our_airports = get_country_airports_from_our_data(airports_data, iso_code)
+    added, removed = compare_country_airports(fr24_airports, our_airports)
+    for ap in added:  # tag FR24-added airports with the country placeCode
+        ap.setdefault('placeCode', iso_code)
+    print(f"  Added: {len(added)}, Removed: {len(removed)}")
+    return _country_record(country_name, iso_code, fr24_count, our_count, added, removed), None
+
+
+def _diff_subdivisioned_country(iso_code: str, country_name: str, fr24_count: int,
+                                our_count: int, states: List[Dict],
+                                airports_data: Dict) -> Tuple[Optional[Dict], Optional[str]]:
+    """Compare a subdivisioned country (US, Canada, ...) state by state.
+
+    FR24's country page already carries each state's total, and our data has
+    per-state counts (placeCode "US-PA"), so we only fetch the state pages
+    whose counts actually differ — mirroring the country-level count gate.
+    """
+    our_state_counts = get_our_state_counts(airports_data, iso_code)
+    fr24_by_code = {s['code']: s for s in states}
+
+    changed = [code for code in sorted(set(fr24_by_code) | set(our_state_counts))
+               if int(fr24_by_code.get(code, {}).get('total', 0)) != our_state_counts.get(code, 0)]
+    print(f"  {len(states)} states, {len(changed)} with count differences: {', '.join(changed) or '—'}")
+
+    all_added, all_removed = [], []
+    states_breakdown = {}
+    for code in changed:
+        state = fr24_by_code.get(code)
+        if state:  # state present on FR24 -> fetch its airports
+            state_url = f"https://www.flightradar24.com{state['url']}"
+            state_html, state_error = _fetch_html(state_url, f"{country_name} / {state['name']} ({code})")
+            if state_error:
+                # Abort the whole country on any state failure — a partial list
+                # would look like a mass removal downstream.
+                return None, f"state {code} fetch failed: {state_error}"
+            try:
+                fr24_state_airports = _airports_from_props(
+                    _extract_data_page(state_html).get('props', {}), state_code=code)
+            except ValueError as e:
+                return None, f"state {code} parse failed: {e}"
+            time.sleep(2)  # be polite between state fetches
+        else:  # state gone from FR24 -> everything we have there is "removed"
+            fr24_state_airports = []
+
+        our_state_airports = get_state_airports_from_our_data(airports_data, iso_code, code)
+        added, removed = compare_country_airports(fr24_state_airports, our_state_airports)
+        for ap in added:
+            ap.setdefault('placeCode', f"{iso_code}-{code}")
+        all_added.extend(added)
+        all_removed.extend(removed)
+
+        fr24_state_count = int(state['total']) if state else 0
+        states_breakdown[code] = {
+            'state_name': state['name'] if state else code,
+            'fr24_count': fr24_state_count,
+            'skycards_count': our_state_counts.get(code, 0),
+            'difference': fr24_state_count - our_state_counts.get(code, 0),
+            'added_airports': added,
+            'removed_airports': removed,
+            'added_count': len(added),
+            'removed_count': len(removed),
+        }
+
+    record = _country_record(country_name, iso_code, fr24_count, our_count, all_added, all_removed)
+    record['states'] = states_breakdown
+    print(f"  Added: {len(all_added)}, Removed: {len(all_removed)} across {len(changed)} states")
+    return record, None
+
+
+def _diff_one_country(iso_code: str, country_name: str, fr24_count: int,
+                      our_count: int, airports_data: Dict) -> Tuple[Optional[Dict], Optional[str]]:
+    """Fetch a country's page and compare it, handling flat and state splits."""
+    html, error = _fetch_html(_country_url(country_name), country_name)
+    if error:
+        return None, error
+    try:
+        states = parse_states(html)
+    except ValueError as e:
+        return None, str(e)
+    if states:
+        return _diff_subdivisioned_country(iso_code, country_name, fr24_count,
+                                           our_count, states, airports_data)
+    return _diff_flat_country(iso_code, country_name, fr24_count, our_count, html, airports_data)
+
+
 def analyze_country_differences(fr24_counts: Dict[str, int], our_counts: Dict[str, int],
                               country_mapping: Dict[str, str], airports_data: Dict,
                               existing_differences: Optional[Dict] = None) -> Dict:
@@ -693,11 +792,8 @@ def analyze_country_differences(fr24_counts: Dict[str, int], our_counts: Dict[st
 
         print(f"\nProcessing {country_name} ({iso_code}): FR24={fr24_count}, Ours={our_count}")
 
-        # Fetch FR24 airport data for this country
-        fr24_airports, fetch_error = fetch_country_airports(country_name)
-
-        # Get our airport data for this country
-        our_airports = get_country_airports_from_our_data(airports_data, iso_code)
+        record, fetch_error = _diff_one_country(iso_code, country_name, fr24_count,
+                                                our_count, airports_data)
 
         if fetch_error:
             # Failed to fetch new data
@@ -709,26 +805,8 @@ def analyze_country_differences(fr24_counts: Dict[str, int], our_counts: Dict[st
             else:
                 # No existing data and failed to fetch - skip this country
                 print(f"  ⚠️  Fetch failed and no existing data - skipping {country_name}")
-                continue
-        else:
-            # Successfully fetched data or no error
-            if fr24_airports or our_airports:
-                added_airports, removed_airports = compare_country_airports(fr24_airports, our_airports)
-
-                differences[iso_code] = {
-                    'country_name': country_name,
-                    'iso_code': iso_code,
-                    'fr24_count': fr24_count,
-                    'skycards_count': our_count,
-                    'difference': fr24_count - our_count,  # Positive means FR24 has more
-                    'added_airports': added_airports,  # In FR24 but not in our data
-                    'removed_airports': removed_airports,  # In our data but not in FR24
-                    'added_count': len(added_airports),
-                    'removed_count': len(removed_airports)
-                }
-
-                print(f"  Added: {len(added_airports)} airports")
-                print(f"  Removed: {len(removed_airports)} airports")
+        elif record is not None:
+            differences[iso_code] = record
 
         # Add delay to be respectful to the server and avoid 429 errors
         time.sleep(5)
