@@ -1,10 +1,886 @@
 {
   "summary": {
-    "total_countries_with_differences": 2,
-    "total_added_airports": 1,
-    "total_removed_airports": 1
+    "total_countries_with_differences": 4,
+    "total_added_airports": 2,
+    "total_removed_airports": 145
   },
   "countries": {
+    "BR": {
+      "country_name": "Brazil",
+      "iso_code": "BR",
+      "fr24_count": 283,
+      "skycards_count": 282,
+      "difference": 1,
+      "added_airports": [],
+      "removed_airports": [
+        {
+          "name": "Araxa Airport",
+          "iata": "AAX",
+          "icao": "SBAX",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Aripuana Airport",
+          "iata": "AIR",
+          "icao": "SSOU",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Alegrete Novo Airport",
+          "iata": "ALQ",
+          "icao": "SSLT",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Alenquer Airport",
+          "iata": "ALT",
+          "icao": "SDWQ",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Almenara Cirilo Queiroz Airport",
+          "iata": "AMJ",
+          "icao": "SNAR",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Arapiraca Airport",
+          "iata": "APQ",
+          "icao": "SNAL",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Anapolis Airport",
+          "iata": "APS",
+          "icao": "SWNS",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Apucarana Airport",
+          "iata": "APU",
+          "icao": "SSAP",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Arapongas Airport",
+          "iata": "APX",
+          "icao": "SSOG",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Ariquemes Airport",
+          "iata": "AQM",
+          "icao": "SJOG",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Aracati Airport",
+          "iata": "ARX",
+          "icao": "SBAC",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Xanxere Joao Winckler Airport",
+          "iata": "AXE",
+          "icao": "SSXX",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Blumenau Airport",
+          "iata": "BNU",
+          "icao": "SSBL",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Barreirinhas Airport",
+          "iata": "BRB",
+          "icao": "SSRS",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Balsas Airport",
+          "iata": "BSS",
+          "icao": "SNBS",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Belmonte Airport",
+          "iata": "BVM",
+          "icao": "SNBL",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Breves Airport",
+          "iata": "BVS",
+          "icao": "SNVS",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Buzios Umberto Modiano Airport",
+          "iata": "BZC",
+          "icao": "SSBZ",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Caruaru Airport",
+          "iata": "CAU",
+          "icao": "SNRU",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Campo Mourao Airport",
+          "iata": "CBW",
+          "icao": "SSKM",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Concordia Olavo Cecco Rigon Airport",
+          "iata": "CCI",
+          "icao": "SSCK",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Caceres Airport",
+          "iata": "CCX",
+          "icao": "SWKC",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Cachoeiro de Itapemirim Airport",
+          "iata": "CDI",
+          "icao": "SNKI",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Confresa Airport",
+          "iata": "CFO",
+          "icao": "SJHG",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Cajazeiras Airport",
+          "iata": "CJZ",
+          "icao": "SJZA",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Cornelio Procopio Airport",
+          "iata": "CKO",
+          "icao": "SSCP",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Parauapebas Carajas Airport",
+          "iata": "CKS",
+          "icao": "SBCJ",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Camocim Airport",
+          "iata": "CMC",
+          "icao": "SNWC",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Canarana Airport",
+          "iata": "CQA",
+          "icao": "SWEK",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Santa Cruz do Sul Airport",
+          "iata": "CSU",
+          "icao": "SSSC",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Divinopolis Airport",
+          "iata": "DIQ",
+          "icao": "SNDV",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Diamantina Juscelino Kubitschek Airport",
+          "iata": "DTI",
+          "icao": "SNDT",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Eirunepe Amaury Feitosa Tomaz Airport",
+          "iata": "ERN",
+          "icao": "SWEI",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Francisco Beltrao Airport",
+          "iata": "FBE",
+          "icao": "SSFB",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Feira de Santana Airport",
+          "iata": "FEC",
+          "icao": "SDIY",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Feijo Airport",
+          "iata": "FEJ",
+          "icao": "SWFJ",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Fernando de Noronha Airport",
+          "iata": "FEN",
+          "icao": "SBFN",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Floriano Cangapara Airport",
+          "iata": "FLB",
+          "icao": "SNQG",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Guadalupe Airport",
+          "iata": "GDP",
+          "icao": "SNGD",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Almeirim Airport",
+          "iata": "GGF",
+          "icao": "SNYA",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Cianorte Airport",
+          "iata": "GGH",
+          "icao": "SSCT",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Guaira Airport",
+          "iata": "GGJ",
+          "icao": "SSGY",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Guajara-Mirim Airport",
+          "iata": "GJM",
+          "icao": "SBGM",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Guanambi Airport",
+          "iata": "GNM",
+          "icao": "SNGI",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Governador Valadares Airport",
+          "iata": "GVR",
+          "icao": "SBGV",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Horizontina Walter Bundchen Airport",
+          "iata": "HRZ",
+          "icao": "SSHZ",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Salinas Airport",
+          "iata": "IAL",
+          "icao": "SNSS",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Ijui Airport",
+          "iata": "IJU",
+          "icao": "SSIJ",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Ipiau Airport",
+          "iata": "IPU",
+          "icao": "SNIU",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Santa Isabel Do Rio Negro Tapuruquara Airport",
+          "iata": "IRZ",
+          "icao": "SWTP",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Itacoatiara Airport",
+          "iata": "ITA",
+          "icao": "SBIC",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Itaituba Airport",
+          "iata": "ITB",
+          "icao": "SBIH",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Itubera Airport",
+          "iata": "ITE",
+          "icao": "SNZW",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Itabuna Airport",
+          "iata": "ITN",
+          "icao": "SNHA",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Itaperuna Airport",
+          "iata": "ITP",
+          "icao": "SDUN",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Itaqui Airport",
+          "iata": "ITQ",
+          "icao": "SSIQ",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Itumbiara Airport",
+          "iata": "ITR",
+          "icao": "SBIT",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Apui Airport",
+          "iata": "IUP",
+          "icao": "SWYN",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Juiz de Fora Presidente Itamar Franco Airport",
+          "iata": "IZA",
+          "icao": "SBZM",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Sao Borja\tAirport",
+          "iata": "JBS",
+          "icao": "SSSB",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Jacareacanga Airport",
+          "iata": "JCR",
+          "icao": "SBEK",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Jequie Airport",
+          "iata": "JEQ",
+          "icao": "SNJK",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Juina Airport",
+          "iata": "JIA",
+          "icao": "SWJN",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Jericoacoara Airport",
+          "iata": "JJD",
+          "icao": "SBJE",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Manhuacu Airport",
+          "iata": "JMA",
+          "icao": "SNJM",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Patos Airport",
+          "iata": "JPO",
+          "icao": "SNTS",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Ji-Parana Airport",
+          "iata": "JPR",
+          "icao": "SBJI",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Juruti Airport",
+          "iata": "JRT",
+          "icao": "SNRJ",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Sobral Regional Airport",
+          "iata": "JSO",
+          "icao": "SN6L",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Bauru Arealva Airport",
+          "iata": "JTC",
+          "icao": "SBAE",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Juara Airport",
+          "iata": "JUA",
+          "icao": "SIZX",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Lages Airport",
+          "iata": "LAJ",
+          "icao": "SBLJ",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Labrea Airport",
+          "iata": "LBR",
+          "icao": "SWLB",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Pontes-e-Lacerda Airport",
+          "iata": "LCB",
+          "icao": "SWBG",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Linhares Municipal Airport",
+          "iata": "LHN",
+          "icao": "SNLN",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Lontras Helmuth Baungartem Airport",
+          "iata": "LOI",
+          "icao": "SSLN",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Lucas do Rio Verde Airport",
+          "iata": "LVR",
+          "icao": "SILC",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Maues Airport",
+          "iata": "MBZ",
+          "icao": "SWMW",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Macae Airport",
+          "iata": "MEA",
+          "icao": "SBME",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Monte Dourado Serra do Areao Airport",
+          "iata": "MEU",
+          "icao": "SBMD",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Manicore Airport",
+          "iata": "MNX",
+          "icao": "SBMY",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Monte Alegre Airport",
+          "iata": "MTE",
+          "icao": "SNMA",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Vila Bela da Santíssima Trindade Airport",
+          "iata": "MTG",
+          "icao": "SWVB",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Marau Barra Grande Airport",
+          "iata": "MUU",
+          "icao": "SIRI",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Mossoro Airport",
+          "iata": "MVF",
+          "icao": "SBMS",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Mucuri Airport",
+          "iata": "MVS",
+          "icao": "SNMU",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Cairu Lorenzo Airport",
+          "iata": "MXQ",
+          "icao": "SNCL",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Nanuque Airport",
+          "iata": "NNU",
+          "icao": "SNNU",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Nova Xavantina Airport",
+          "iata": "NOK",
+          "icao": "SWXV",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Novo Aripuana Airport",
+          "iata": "NVP",
+          "icao": "SWNA",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Cacoal Airport",
+          "iata": "OAL",
+          "icao": "SSKW",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Obidos Tirios Airport",
+          "iata": "OBI",
+          "icao": "SBTS",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Sao Paulo De Olivenca Airport",
+          "iata": "OLC",
+          "icao": "SDCG",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Sinop Airport",
+          "iata": "OPS",
+          "icao": "SBSI",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Oriximina Airport",
+          "iata": "ORX",
+          "icao": "SNOX",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Oiapoque Airport",
+          "iata": "OYK",
+          "icao": "SBOI",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Cairu Boipeba Airport",
+          "iata": "PBA",
+          "icao": "SDLO",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Pimenta Bueno Airport",
+          "iata": "PBQ",
+          "icao": "SWPM",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Porto Alegre Do Norte Airport",
+          "iata": "PBX",
+          "icao": "SWPQ",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Picos Airport",
+          "iata": "PCS",
+          "icao": "SNPC",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Prado Airport",
+          "iata": "PDF",
+          "icao": "SNRD",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Ponta Grossa Airport",
+          "iata": "PGZ",
+          "icao": "SBPG",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Parnaiba International Airport",
+          "iata": "PHB",
+          "icao": "SBPB",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Pinheiro Airport",
+          "iata": "PHI",
+          "icao": "SNYE",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Parintins Airport",
+          "iata": "PIN",
+          "icao": "SWPI",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Pirapora Airport",
+          "iata": "PIV",
+          "icao": "SNPX",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Manaus Ponta Pelada Airport",
+          "iata": "PLL",
+          "icao": "SBMN",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Paranagua Airport",
+          "iata": "PNG",
+          "icao": "SSPG",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Patos de Minas Airport",
+          "iata": "POJ",
+          "icao": "SNPD",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Passos Municipal Jose Figueiredo Airport",
+          "iata": "PSW",
+          "icao": "SNOS",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Pato Branco Airport",
+          "iata": "PTO",
+          "icao": "SBPO",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Porto de Moz Airport",
+          "iata": "PTQ",
+          "icao": "SNMZ",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Paranavai Airport",
+          "iata": "PVI",
+          "icao": "SSPI",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Paracatu Airport",
+          "iata": "PYT",
+          "icao": "SNZR",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Cachoeira do Sul Airport",
+          "iata": "QDB",
+          "icao": "SSKS",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Garanhuns Airport",
+          "iata": "QGP",
+          "icao": "SNGN",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Iguatu Airport",
+          "iata": "QIG",
+          "icao": "SNIG",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Sao Carlos Airport",
+          "iata": "QSC",
+          "icao": "SDSC",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Borba Airport",
+          "iata": "RBB",
+          "icao": "SWBR",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Redencao Airport",
+          "iata": "RDC",
+          "icao": "SNDC",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Resende Airport",
+          "iata": "REZ",
+          "icao": "SDRS",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Rondonopolis Airport",
+          "iata": "ROO",
+          "icao": "SBRD",
+          "placeCode": "BR"
+        },
+        {
+          "name": "São Mateus Airport",
+          "iata": "SBJ",
+          "icao": "SNMX",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Soure Airport",
+          "iata": "SFK",
+          "icao": "SNSW",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Sao Gabriel da Cachoeira Airport",
+          "iata": "SJL",
+          "icao": "SBUA",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Sorriso Airport",
+          "iata": "SMT",
+          "icao": "SBSO",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Sorocaba Airport",
+          "iata": "SOD",
+          "icao": "SDCO",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Sao Miguel do Araguaia Airport",
+          "iata": "SQM",
+          "icao": "SWUA",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Sao Miguel do Oeste Helio Wasum Airport",
+          "iata": "SQX",
+          "icao": "SSOE",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Sao Felix do Araguaia Airport",
+          "iata": "SXO",
+          "icao": "SWFX",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Telemaco Borba Airport",
+          "iata": "TEC",
+          "icao": "SSVL",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Teofilo Otoni Airport",
+          "iata": "TFL",
+          "icao": "SNTO",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Tangara da Serra Airport",
+          "iata": "TGQ",
+          "icao": "SWTS",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Tres Lagoas Airport",
+          "iata": "TJL",
+          "icao": "SBTG",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Porto Trombetas Airport",
+          "iata": "TMT",
+          "icao": "SBTB",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Toledo Airport",
+          "iata": "TOW",
+          "icao": "SBTD",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Torres Airport",
+          "iata": "TSQ",
+          "icao": "SSTE",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Ubatuba Airport",
+          "iata": "UBT",
+          "icao": "SDUB",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Umuarama Orlando de Carvalho Airport",
+          "iata": "UMU",
+          "icao": "SSUM",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Uniao da Vitoria Airport",
+          "iata": "UVI",
+          "icao": "SSUV",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Valenca Airport",
+          "iata": "VAL",
+          "icao": "SNVB",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Vacaria Airport",
+          "iata": "VCC",
+          "icao": "SNEE",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Videira Airport",
+          "iata": "VIA",
+          "icao": "SSVI",
+          "placeCode": "BR"
+        },
+        {
+          "name": "Vila Rica Airport",
+          "iata": "VLP",
+          "icao": "SWVC",
+          "placeCode": "BR"
+        }
+      ],
+      "added_count": 0,
+      "removed_count": 144
+    },
     "CD": {
       "country_name": "Democratic Republic Of The Congo",
       "iso_code": "CD",
@@ -35,6 +911,24 @@
           "iata": "RUE",
           "icao": "FZMB",
           "placeCode": "CG"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
+      "removed_count": 0
+    },
+    "MM": {
+      "country_name": "Myanmar (burma)",
+      "iso_code": "MM",
+      "fr24_count": 29,
+      "skycards_count": 28,
+      "difference": 1,
+      "added_airports": [
+        {
+          "name": "Anisakan Airport",
+          "iata": "NSA",
+          "icao": "VYAS",
+          "placeCode": "MM"
         }
       ],
       "removed_airports": [],
