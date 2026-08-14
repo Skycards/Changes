@@ -271,6 +271,29 @@ class DiffOneCountryTest(unittest.TestCase):
         self.assertEqual(len(calls), 2)
         self.assertFalse(any(c.endswith("/tx") for c in calls))
 
+    def test_incomplete_state_coverage_is_count_only(self):
+        # FR24 freshly split Brazil: 2 states summing to 3 airports, but the
+        # country total is 283 (most airports not yet assigned to a state).
+        # Must NOT fetch state pages or report the ~280 unreachable ones as
+        # removed — emit a count-only record instead.
+        pages = {
+            "/data/airports/brazil": _states_page_html([
+                {"code": "AC", "name": "Acre", "total": 2, "url": "/data/airports/brazil/ac"},
+                {"code": "AL", "name": "Alagoas", "total": 1, "url": "/data/airports/brazil/al"},
+            ]),
+        }
+        our = _rows(*[{"name": f"A{i}", "iata": f"A{i:02d}", "placeCode": "BR"}
+                      for i in range(282)])
+        rec, err, calls = self._run("Brazil", "BR", 283, 282, pages, our)
+        self.assertIsNone(err)
+        self.assertEqual(rec["added_airports"], [])
+        self.assertEqual(rec["removed_airports"], [])
+        self.assertEqual(rec["difference"], 1)  # 283 - 282, count only
+        # Coverage recorded as "covered/total (pct%)": 3 of 283 == 1%.
+        self.assertEqual(rec.get("state_coverage"), "3/283 (1%)")
+        # Only the country page was fetched — no state pages.
+        self.assertEqual(len(calls), 1)
+
     def test_state_present_in_our_data_but_absent_on_fr24(self):
         # A subdivision FR24 dropped entirely: no page to fetch, everything ours
         # there becomes "removed".

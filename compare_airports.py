@@ -13,6 +13,15 @@ import urllib.error
 from html.parser import HTMLParser
 
 
+# Minimum fraction of a subdivisioned country's airports its state pages must
+# cover before we trust them for airport-level detail. FR24 rolls the state
+# feature out gradually, so a partially-classified country (e.g. Brazil) can
+# have state pages summing to far less than the country total; below this ratio
+# we fall back to a count-only diff. Fully-migrated countries (US, CA) sit at
+# ~1.0, with small timing skew between the index and country-page fetches.
+STATE_COVERAGE_MIN = 0.9
+
+
 def create_country_mapping() -> Dict[str, str]:
     """Create mapping from country names to ISO codes"""
     return {
@@ -721,6 +730,21 @@ def _diff_subdivisioned_country(iso_code: str, country_name: str, fr24_count: in
     per-state counts (placeCode "US-PA"), so we only fetch the state pages
     whose counts actually differ — mirroring the country-level count gate.
     """
+    # FR24 rolls the state feature out gradually, so a freshly-split country can
+    # have many airports not yet assigned to any state — the state pages then
+    # enumerate only a fraction of the country total and every unreachable
+    # airport would look "removed". If coverage is well short of the country
+    # total, skip airport-level detail and emit a count-only record instead.
+    state_total = sum(int(s.get('total', 0)) for s in states)
+    if fr24_count and state_total < fr24_count * STATE_COVERAGE_MIN:
+        pct = round(state_total / fr24_count * 100)
+        coverage = f"{state_total}/{fr24_count} ({pct}%)"
+        print(f"  ⚠️  Incomplete state coverage for {country_name}: {coverage}; "
+              f"count-only (no detail)")
+        record = _country_record(country_name, iso_code, fr24_count, our_count, [], [])
+        record['state_coverage'] = coverage
+        return record, None
+
     our_state_counts = get_our_state_counts(airports_data, iso_code)
     if not our_state_counts:
         # FR24 subdivides this country but our data doesn't yet (or we have no
