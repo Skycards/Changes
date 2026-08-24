@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1782977855897,
+  "updatedAt": 1787565268047,
   "rows": [
     {
       "id": "A1",
@@ -4098,6 +4098,37 @@
       "military": true
     },
     {
+      "id": "ANDR",
+      "manufacturer": "MILLIOUD",
+      "name": "Andromède",
+      "landingGear": "Tailwheel",
+      "wingPos": "Low wing",
+      "wingShape": "Tapered",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1582,
+      "num": 0,
+      "xp": 8909,
+      "firstFlight": 2012,
+      "wingspan": 7.2,
+      "length": 5.2,
+      "mtow": 540,
+      "seats": 2,
+      "maxSpeed": 179,
+      "cardCategory": "ultra",
+      "ftea": 0.00024397513952308472,
+      "images": [
+        "P28A"
+      ],
+      "markers": [
+        "YK52",
+        "P28A"
+      ],
+      "imageOverride": "RV7"
+    },
+    {
       "id": "ANGL",
       "manufacturer": "ANGEL",
       "name": "44 Angel",
@@ -5725,6 +5756,45 @@
       ]
     },
     {
+      "id": "AT2P",
+      "manufacturer": "AIR TRACTOR",
+      "name": "AT-250",
+      "manufacturers": [
+        "AIR TRACTOR AT-250"
+      ],
+      "description": "The Air Tractor AT-250 was an early purpose-built agricultural aircraft from Leland Snow’s company, emphasizing rugged field operation, simple maintenance, and precise crop-spraying work that shaped Air Tractor’s later designs.",
+      "landingGear": "Tailwheel",
+      "wingPos": "Low wing",
+      "wingShape": "Rectangular",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1419,
+      "num": 0,
+      "xp": 8097,
+      "firstFlight": 1982,
+      "wingspan": 12.5,
+      "length": 8.2,
+      "height": 2.6,
+      "ceiling": 15000,
+      "mtow": 4000,
+      "seats": 1,
+      "range": 550,
+      "maxSpeed": 135,
+      "cardCategory": "ultra",
+      "ftea": 0.0012395357686453576,
+      "images": [
+        "AT3P",
+        "C172"
+      ],
+      "markers": [
+        "AT3P",
+        "P28A"
+      ],
+      "imageOverride": "AT3P"
+    },
+    {
       "id": "AT3P",
       "manufacturer": "AIR TRACTOR",
       "name": "AT-300",
@@ -7281,6 +7351,49 @@
         "C208",
         "BE36"
       ]
+    },
+    {
+      "id": "B24",
+      "manufacturer": "CONSOLIDATED",
+      "name": "B-24 Liberator",
+      "manufacturers": [
+        "CONSOLIDATED B-24 Liberator",
+        "CONSOLIDATED C-87 Liberator Express",
+        "CONSOLIDATED LB-30 Liberator",
+        "CONVAIR B-24 Liberator",
+        "CONVAIR C-87 Liberator Express"
+      ],
+      "description": "The Consolidated B-24 Liberator was an American heavy bomber of the Second World War, noted for its distinctive twin-tail design, long-range missions, and major role in strategic bombing and maritime patrol.",
+      "landingGear": "Tricycle",
+      "wingPos": "High wing",
+      "wingShape": "Tapered",
+      "type": "L",
+      "engNum": 4,
+      "engType": "P",
+      "wtc": "M",
+      "rareness": 1599,
+      "num": 0,
+      "xp": 8994,
+      "firstFlight": 1939,
+      "wingspan": 33.5,
+      "length": 20.5,
+      "height": 5.9,
+      "ceiling": 28000,
+      "mtow": 29500,
+      "seats": 11,
+      "range": 1540,
+      "maxSpeed": 260,
+      "cardCategory": "ultra",
+      "ftea": 0.00020582825976661593,
+      "images": [
+        "C30J"
+      ],
+      "markers": [
+        "P4Y",
+        "C30J"
+      ],
+      "imageOverride": "P4Y",
+      "military": true
     },
     {
       "id": "B25",
@@ -10825,6 +10938,43 @@
       "markers": [
         "Q4"
       ]
+    },
+    {
+      "id": "BIPL",
+      "manufacturer": "EAA",
+      "name": "Biplane",
+      "manufacturers": [
+        "EAA Biplane"
+      ],
+      "description": "The EAA Biplane is a homebuilt aircraft designed for amateur construction, featuring a classic biplane configuration. It embodies the spirit of grassroots aviation, offering enthusiasts a hands-on flying experience.",
+      "landingGear": "Tailwheel",
+      "wingPos": "Biplane",
+      "wingShape": "Rectangular",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1416,
+      "num": 0,
+      "xp": 8079,
+      "firstFlight": 1960,
+      "wingspan": 6.1,
+      "length": 5.18,
+      "height": 1.8,
+      "ceiling": 11500,
+      "mtow": 520,
+      "seats": 1,
+      "range": 300,
+      "maxSpeed": 109,
+      "cardCategory": "ultra",
+      "ftea": 0.0012843099949264333,
+      "images": [
+        "ST75"
+      ],
+      "markers": [
+        "P28A"
+      ],
+      "imageOverride": "PTS2"
     },
     {
       "id": "BISC",
@@ -15077,7 +15227,7 @@
         "G2T1",
         "P28A"
       ],
-      "imageOverride": "FURY",
+      "imageOverride": "HCAT",
       "military": true
     },
     {
@@ -15154,6 +15304,46 @@
       "markers": [
         "P28A"
       ]
+    },
+    {
+      "id": "CA4",
+      "manufacturer": "AEROCOMP",
+      "name": "CA-4 Comp Air 4",
+      "manufacturers": [
+        "AEROCOMP CA-4 Comp Air 4",
+        "AEROCOMP CA-4 Comp Monster",
+        "COMP AIR CA-4 Comp Air 4",
+        "COMP AIR CA-4 Comp Monster"
+      ],
+      "description": "The Aerocomp CA-4 Comp Air 4 is a kit-built utility aircraft, noted for its high-wing layout, rugged construction, and practical cabin, serving private builders seeking simple backcountry-capable aviation.",
+      "landingGear": "Tricycle",
+      "wingPos": "High wing",
+      "wingShape": "Rectangular",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1581,
+      "num": 0,
+      "xp": 8905,
+      "firstFlight": 1995,
+      "wingspan": 11.5,
+      "length": 7.92,
+      "height": 2.4,
+      "ceiling": 16000,
+      "mtow": 1290,
+      "seats": 4,
+      "range": 660,
+      "maxSpeed": 129,
+      "cardCategory": "ultra",
+      "ftea": 0.00024609969558599695,
+      "images": [
+        "C172"
+      ],
+      "markers": [
+        "C172"
+      ],
+      "imageOverride": "T210"
     },
     {
       "id": "CA41",
@@ -18347,6 +18537,49 @@
       ]
     },
     {
+      "id": "CP80",
+      "manufacturer": "PIEL",
+      "name": "CP-80 Zéphir",
+      "manufacturers": [
+        "PIEL CP-80 Zephir",
+        "PIEL CP-801 Zephir",
+        "PIEL CP-801 Zéphir",
+        "PIEL CP-802 Zephir",
+        "PIEL CP-802 Zéphir"
+      ],
+      "description": "The Piel CP-80 Zéphir was a French plans-built sport aircraft by Claude Piel, using elegant wooden construction and low-wing lines, reflecting postwar European enthusiasm for capable amateur-built touring aircraft.",
+      "landingGear": "Tailwheel",
+      "wingPos": "Low wing",
+      "wingShape": "Tapered rear",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1734,
+      "num": 0,
+      "xp": 9670,
+      "firstFlight": 1974,
+      "wingspan": 6,
+      "length": 5.3,
+      "height": 1.7,
+      "ceiling": 20000,
+      "mtow": 380,
+      "seats": 1,
+      "range": 240,
+      "maxSpeed": 170,
+      "cardCategory": "ultra",
+      "ftea": 0.000053272450532724505,
+      "images": [
+        "CP32",
+        "P28A"
+      ],
+      "markers": [
+        "YK54",
+        "P28A"
+      ],
+      "imageOverride": "CP32"
+    },
+    {
       "id": "CP90",
       "manufacturer": "PIEL",
       "name": "CP-90 Pinocchio 2",
@@ -18859,6 +19092,43 @@
       "markers": [
         "P28A"
       ]
+    },
+    {
+      "id": "CTLN",
+      "manufacturer": "FLY SYNTHESIS",
+      "name": "Catalina",
+      "manufacturers": [
+        "FLY SYNTHESIS Catalina"
+      ],
+      "description": "The Fly Synthesis Catalina is a light amphibious aircraft for recreational and training flying, combining boat-hull water operations with land gear, side-by-side seating and composite construction for versatile short-range use.",
+      "landingGear": "Amphibian",
+      "wingPos": "Parasol wing",
+      "wingShape": "Rectangular",
+      "type": "A",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1707,
+      "num": 0,
+      "xp": 9535,
+      "firstFlight": 2010,
+      "wingspan": 9.47,
+      "length": 6.28,
+      "height": 2.5,
+      "mtow": 500,
+      "seats": 2,
+      "maxSpeed": 81,
+      "cardCategory": "ultra",
+      "ftea": 0.00006979325215626585,
+      "images": [
+        "S39",
+        "SREY"
+      ],
+      "markers": [
+        "JFOX",
+        "P28A"
+      ],
+      "imageOverride": "VJ22"
     },
     {
       "id": "CUCA",
@@ -21864,7 +22134,7 @@
         "RILEY Dove 400",
         "RILEY Executive 400"
       ],
-      "description": "The DE HAVILLAND DH-104 Dove is a British short-haul airliner and executive transport aircraft, known for its reliability and comfortable cabin.",
+      "description": "The de Havilland DH-104 Dove was a British postwar light transport and airliner, valued for short routes, executive travel, and charter work, with refined handling and widespread civil and military service.",
       "landingGear": "Tricycle",
       "wingPos": "Low wing",
       "wingShape": "Tapered",
@@ -21872,9 +22142,9 @@
       "engNum": 2,
       "engType": "P",
       "wtc": "L",
-      "rareness": 1400,
+      "rareness": 1662,
       "num": 1,
-      "xp": 8000,
+      "xp": 9312,
       "firstFlight": 1945,
       "wingspan": 17.4,
       "length": 12,
@@ -21885,6 +22155,7 @@
       "range": 760,
       "maxSpeed": 200,
       "cardCategory": "ultra",
+      "ftea": 0.00010904997463216641,
       "images": [
         "BE58",
         "PA31",
@@ -21893,7 +22164,44 @@
       "markers": [
         "D228",
         "C441"
-      ]
+      ],
+      "imageOverride": "E110"
+    },
+    {
+      "id": "DR1",
+      "manufacturer": "FOKKER",
+      "name": "Dr-1 Replica",
+      "manufacturers": [
+        "FOKKER Dr-1 Replica",
+        "REDFERN Fokker Dr-1",
+        "SANDS Fokker Dr-1"
+      ],
+      "description": "A Fokker Dr.I replica recreates the iconic First World War triplane associated with Manfred von Richthofen, preserving its distinctive three-wing layout for museum display, education, and vintage aviation demonstrations.",
+      "landingGear": "Tricycle",
+      "wingPos": "Biplane",
+      "wingShape": "Rectangular",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1460,
+      "num": 0,
+      "xp": 8302,
+      "firstFlight": 1917,
+      "wingspan": 7.2,
+      "length": 5.8,
+      "height": 3,
+      "maxSpeed": 104,
+      "cardCategory": "ultra",
+      "ftea": 0.0008224885844748858,
+      "images": [
+        "C172"
+      ],
+      "markers": [
+        "DUCE",
+        "P28A"
+      ],
+      "imageOverride": "N3N"
     },
     {
       "id": "DR10",
@@ -27022,6 +27330,35 @@
       ]
     },
     {
+      "id": "FDSK",
+      "name": "UFO",
+      "manufacturers": [
+        "Black Triangle",
+        "Flying Saucer",
+        "Foo Fighter",
+        "Ghost Rocket",
+        "Green Fireball",
+        "Mystery Airship",
+        "Space Jellyfish"
+      ],
+      "description": "The Alien UFO is a fictional or unidentified craft concept, typically depicted as a disc-shaped vehicle with mysterious propulsion, reflecting Cold War sightings, science fiction imagery, and enduring public fascination.",
+      "rareness": 1518,
+      "xp": 8590,
+      "firstFlight": 1947,
+      "wingspan": 30,
+      "maxSpeed": 1040,
+      "cardCategory": "fantasy",
+      "ftea": 0.00046061643835616436,
+      "images": [
+        "BALL"
+      ],
+      "markers": [
+        "FDSK",
+        "BALL"
+      ],
+      "imageOverride": "BALL"
+    },
+    {
       "id": "FEST",
       "manufacturer": "AEROSTAR",
       "name": "R40S Festival",
@@ -28960,6 +29297,47 @@
       "military": true
     },
     {
+      "id": "G96",
+      "manufacturer": "GRUMMAN",
+      "name": "C-1 Trader",
+      "manufacturers": [
+        "GRUMMAN C-1 Trader",
+        "GRUMMAN G-96 Trader",
+        "GRUMMAN TF Trader"
+      ],
+      "description": "The Grumman C-1 Trader was a carrier onboard delivery aircraft, bringing mail, passengers, and supplies to U.S. Navy carriers. Derived from the Tracker, it supported fleet logistics during the Cold War.",
+      "landingGear": "Tricycle",
+      "wingPos": "High wing",
+      "wingShape": "Tapered",
+      "type": "L",
+      "engNum": 2,
+      "engType": "P",
+      "wtc": "M",
+      "rareness": 1449,
+      "num": 0,
+      "xp": 8243,
+      "firstFlight": 1955,
+      "wingspan": 21.2,
+      "length": 13,
+      "height": 5,
+      "ceiling": 24800,
+      "mtow": 11200,
+      "seats": 12,
+      "range": 960,
+      "maxSpeed": 240,
+      "cardCategory": "ultra",
+      "ftea": 0.0009244038559107052,
+      "images": [
+        "C2"
+      ],
+      "markers": [
+        "L14",
+        "B738"
+      ],
+      "imageOverride": "C212",
+      "military": true
+    },
+    {
       "id": "GA20",
       "manufacturer": "GIPPSLAND",
       "name": "GA-200 Fatman",
@@ -28989,6 +29367,42 @@
       "markers": [
         "RV6"
       ]
+    },
+    {
+      "id": "GA3C",
+      "manufacturer": "GULFSTREAM AEROSPACE",
+      "name": "Gulfstream G300",
+      "manufacturers": [
+        "IAI Gulfstream G300"
+      ],
+      "description": "The Gulfstream G300 is a long-range business jet derived from the Gulfstream IV family, offering intercontinental corporate travel with a spacious cabin, proven systems, and a reputation for dependable executive transport.",
+      "landingGear": "Tricycle",
+      "wingPos": "Low wing",
+      "wingShape": "Swept back",
+      "type": "L",
+      "engNum": 2,
+      "engType": "J",
+      "wtc": "M",
+      "rareness": 1292,
+      "xp": 7458,
+      "firstFlight": 1999,
+      "wingspan": 23.7,
+      "length": 26.9,
+      "height": 7.4,
+      "ceiling": 45000,
+      "mtow": 32900,
+      "seats": 14,
+      "range": 3600,
+      "maxSpeed": 500,
+      "cardCategory": "ultra",
+      "ftea": 0.004448249619482496,
+      "images": [
+        "G280"
+      ],
+      "markers": [
+        "G280"
+      ],
+      "imageOverride": "G280"
     },
     {
       "id": "GA4C",
@@ -31364,7 +31778,8 @@
       ],
       "markers": [
         "GC1"
-      ]
+      ],
+      "imageOverride": "HURI"
     },
     {
       "id": "HAR",
@@ -33482,6 +33897,39 @@
       ]
     },
     {
+      "id": "JC02",
+      "manufacturer": "COUPE",
+      "name": "JC-02",
+      "manufacturers": [
+        "COUPE JC-02",
+        "COUPE JC-200"
+      ],
+      "landingGear": "Tricycle",
+      "wingPos": "Low wing",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1709,
+      "num": 0,
+      "xp": 9546,
+      "firstFlight": 1981,
+      "wingspan": 8.35,
+      "length": 6.4,
+      "mtow": 750,
+      "seats": 2,
+      "maxSpeed": 110,
+      "cardCategory": "ultra",
+      "ftea": 0.00006833460172501269,
+      "images": [
+        "C172"
+      ],
+      "markers": [
+        "P28A"
+      ],
+      "imageOverride": "Z42"
+    },
+    {
       "id": "JD2",
       "manufacturer": "DYKE",
       "name": "JD-2 Delta",
@@ -35381,6 +35829,7 @@
         "C46"
       ],
       "markers": [
+        "L14",
         "SF34"
       ]
     },
@@ -37298,6 +37747,42 @@
       "excluded": true
     },
     {
+      "id": "LUL5",
+      "manufacturer": "LUCAS",
+      "name": "L-5",
+      "manufacturers": [
+        "LUCAS L-5"
+      ],
+      "description": "The Lucas L-5 was a French light aircraft intended for amateur construction and private touring. Its straightforward low-wing layout reflected postwar homebuilding trends and France’s active sport-aircraft culture.",
+      "landingGear": "Tricycle",
+      "wingPos": "Low wing",
+      "wingShape": "Rectangular",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1526,
+      "num": 0,
+      "xp": 8628,
+      "firstFlight": 1976,
+      "wingspan": 9.2,
+      "length": 6.3,
+      "height": 2.1,
+      "mtow": 950,
+      "seats": 2,
+      "range": 540,
+      "maxSpeed": 140,
+      "cardCategory": "ultra",
+      "ftea": 0.00042805048198883813,
+      "images": [
+        "C172"
+      ],
+      "markers": [
+        "P28A"
+      ],
+      "imageOverride": "Z42"
+    },
+    {
       "id": "LW20",
       "manufacturer": "HOWARD HUGHES",
       "name": "Australian LightWing Speed SP-2000",
@@ -39010,7 +39495,7 @@
       "manufacturers": [
         "MONTANA Coyote"
       ],
-      "description": "The MONTANA Coyote is a light sport aircraft known for its rugged construction and suitability for backcountry flying.",
+      "description": "The Montana Coyote is a kit-built light aircraft aimed at recreational and backcountry flying, using a simple high-wing, tube-and-fabric design that reflects grassroots American sport aviation and owner-built practicality.",
       "landingGear": "Tailwheel",
       "wingPos": "High wing",
       "wingShape": "Rectangular",
@@ -39018,9 +39503,9 @@
       "engNum": 1,
       "engType": "P",
       "wtc": "L",
-      "rareness": 1400,
+      "rareness": 1808,
       "num": 1,
-      "xp": 8000,
+      "xp": 10041,
       "firstFlight": 1991,
       "wingspan": 11.6,
       "length": 7.62,
@@ -39031,6 +39516,7 @@
       "range": 430,
       "maxSpeed": 100,
       "cardCategory": "ultra",
+      "ftea": 0.00002536783358701167,
       "images": [
         "PA18",
         "BL8"
@@ -39038,7 +39524,8 @@
       "markers": [
         "AA5",
         "RV7"
-      ]
+      ],
+      "imageOverride": "J2"
     },
     {
       "id": "MCR1",
@@ -40370,6 +40857,85 @@
       "markers": [
         "P28A"
       ]
+    },
+    {
+      "id": "MJ1H",
+      "manufacturer": "JURCA",
+      "name": "MJ-100 Spitfire Replica",
+      "manufacturers": [
+        "JURCA MJ-100 Spitfire Replica"
+      ],
+      "description": "The JURCA MJ-100 Spitfire Replica is a homebuilt design inspired by the iconic wartime fighter, offering enthusiasts a practical way to recreate its distinctive elliptical-wing character and historic presence.",
+      "landingGear": "Tailwheel",
+      "wingPos": "Low wing",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1520,
+      "num": 0,
+      "xp": 8598,
+      "firstFlight": 1982,
+      "wingspan": 11,
+      "length": 9.1,
+      "height": 3.4,
+      "mtow": 910,
+      "seats": 1,
+      "maxSpeed": 351,
+      "cardCategory": "ultra",
+      "ftea": 0.0004549720953830543,
+      "images": [
+        "SPIT",
+        "C172"
+      ],
+      "markers": [
+        "SPIT",
+        "P28A"
+      ],
+      "imageOverride": "SPIT"
+    },
+    {
+      "id": "MJ2",
+      "manufacturer": "JURCA",
+      "name": "MJ-2 Tempête",
+      "manufacturers": [
+        "JURCA MJ-2 Tempete",
+        "JURCA MJ-20 Tempete",
+        "JURCA MJ-20 Tempête",
+        "JURCA MJ-22 Tempete",
+        "JURCA MJ-22 Tempête",
+        "SIRAVIA MJ-22 Tempete",
+        "SIRAVIA MJ-22 Tempête"
+      ],
+      "description": "The JURCA MJ-2 Tempête is a French wooden homebuilt sport aircraft by Marcel Jurca, valued for fighter-like styling, straightforward construction, and its role in postwar amateur aviation.",
+      "landingGear": "Tailwheel",
+      "wingPos": "Low wing",
+      "wingShape": "Rectangular",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1808,
+      "num": 0,
+      "xp": 10042,
+      "firstFlight": 1956,
+      "wingspan": 6,
+      "length": 5.85,
+      "height": 2.4,
+      "ceiling": 11500,
+      "mtow": 550,
+      "seats": 1,
+      "maxSpeed": 100,
+      "cardCategory": "ultra",
+      "ftea": 0.00002530441400304414,
+      "images": [
+        "C172"
+      ],
+      "markers": [
+        "WACF",
+        "P28A"
+      ],
+      "imageOverride": "YAK3"
     },
     {
       "id": "MJ5",
@@ -47800,6 +48366,44 @@
       ]
     },
     {
+      "id": "RAID",
+      "manufacturer": "SKY RAIDER",
+      "name": "Super Sky Raider",
+      "manufacturers": [
+        "SKY RAIDER Super Sky Raider"
+      ],
+      "description": "The Sky Raider Super Sky Raider is an experimental, kit-built light aircraft with high-wing, tailwheel configuration. It emphasizes simple construction, short-field utility, and recreational backcountry flying.",
+      "landingGear": "Tailwheel",
+      "wingPos": "High wing",
+      "wingShape": "Rectangular",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1538,
+      "num": 0,
+      "xp": 8689,
+      "firstFlight": 1996,
+      "wingspan": 9,
+      "length": 5.5,
+      "height": 1.8,
+      "ceiling": 11000,
+      "mtow": 480,
+      "seats": 2,
+      "range": 100,
+      "maxSpeed": 55,
+      "cardCategory": "ultra",
+      "ftea": 0.000379312531709792,
+      "images": [
+        "C172"
+      ],
+      "markers": [
+        "SRAI",
+        "P28A"
+      ],
+      "imageOverride": "PA18"
+    },
+    {
       "id": "RALL",
       "manufacturer": "MORANE-SAULNIER",
       "name": "MS-880 Rallye Club",
@@ -48113,6 +48717,44 @@
       "markers": [
         "P28A"
       ]
+    },
+    {
+      "id": "RD03",
+      "manufacturer": "DURUBLE",
+      "name": "RD-03 Edelweiss",
+      "manufacturers": [
+        "DURUBLE RD-03 Edelweiss"
+      ],
+      "description": "The Duruble RD-03 Edelweiss was a French sailplane created for recreational soaring. It reflected postwar interest in efficient, elegant gliders and small-scale designers contributing to France’s aviation culture.",
+      "landingGear": "Tricycle",
+      "wingPos": "Low wing",
+      "wingShape": "Tapered",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1586,
+      "num": 0,
+      "xp": 8932,
+      "firstFlight": 1962,
+      "wingspan": 8.75,
+      "length": 6.27,
+      "height": 2.4,
+      "ceiling": 14990,
+      "mtow": 700,
+      "seats": 4,
+      "range": 607,
+      "maxSpeed": 139,
+      "cardCategory": "ultra",
+      "ftea": 0.00023306697108066971,
+      "images": [
+        "C172"
+      ],
+      "markers": [
+        "YK52",
+        "P28A"
+      ],
+      "imageOverride": "SR22"
     },
     {
       "id": "RELI",
@@ -53765,6 +54407,46 @@
       ]
     },
     {
+      "id": "SRAS",
+      "manufacturer": "D'APUZZO",
+      "name": "Senior Aero Sport",
+      "manufacturers": [
+        "D'APUZZO D-260 Senior Aero Sport",
+        "D'APUZZO D-295 Senior Aero Sport",
+        "D'APUZZO PJ-260 Senior Aero Sport"
+      ],
+      "description": "The D’Apuzzo Senior Aero Sport was a small amateur-built sport aircraft intended for personal flying. Its significance lies in representing grassroots aircraft design, where individual builders shaped practical, recreational aviation.",
+      "landingGear": "Tailwheel",
+      "wingPos": "Biplane",
+      "wingShape": "Rectangular",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1945,
+      "num": 0,
+      "xp": 10727,
+      "firstFlight": 1962,
+      "wingspan": 8.23,
+      "length": 6.4,
+      "height": 2.3,
+      "ceiling": 20000,
+      "mtow": 980,
+      "seats": 2,
+      "range": 430,
+      "maxSpeed": 135,
+      "cardCategory": "ultra",
+      "ftea": 0.000006437087772704211,
+      "images": [
+        "C172"
+      ],
+      "markers": [
+        "WACF",
+        "P28A"
+      ],
+      "imageOverride": "PTS2"
+    },
+    {
       "id": "SREY",
       "manufacturer": "PROGRESSIVE AERODYNE",
       "name": "SeaRey",
@@ -54659,6 +55341,54 @@
         "DA40",
         "SR22"
       ]
+    },
+    {
+      "id": "SU27",
+      "manufacturer": "SUKHOI",
+      "name": "Su-27",
+      "manufacturers": [
+        "HINDUSTAN Su-30",
+        "SHENYANG J-11",
+        "SHENYANG J-15",
+        "SHENYANG J-16",
+        "SUKHOI J-11",
+        "SUKHOI JJ-11",
+        "SUKHOI Su-27",
+        "SUKHOI Su-30",
+        "SUKHOI Su-32",
+        "SUKHOI Su-33",
+        "SUKHOI Su-34",
+        "SUKHOI Su-35",
+        "SUKHOI Su-37"
+      ],
+      "description": "The Sukhoi Su-27 is a Soviet air-superiority fighter designed to counter advanced Western jets, noted for exceptional agility, powerful sensors, and its influence on later Russian and international fighter designs.",
+      "landingGear": "Tricycle",
+      "wingShape": "Swept back",
+      "type": "L",
+      "engNum": 2,
+      "engType": "J",
+      "wtc": "M",
+      "rareness": 1533,
+      "num": 0,
+      "xp": 8663,
+      "firstFlight": 1977,
+      "wingspan": 14.7,
+      "length": 21.9,
+      "height": 5.9,
+      "ceiling": 60,
+      "mtow": 33000,
+      "seats": 1,
+      "range": 1910,
+      "maxSpeed": 1350,
+      "cardCategory": "ultra",
+      "ftea": 0.00039922628107559615,
+      "images": [
+        "F15"
+      ],
+      "markers": [
+        "F15"
+      ],
+      "imageOverride": "F15"
     },
     {
       "id": "SU29",
@@ -61029,6 +61759,38 @@
       "maxSpeed": 475,
       "cardCategory": "ultra",
       "ftea": 0.5513869545915778
+    },
+    {
+      "id": "WX35",
+      "manufacturer": "WHISPER",
+      "name": "X-350",
+      "description": "The Whisper X-350 is a composite, kit-built light aircraft intended for efficient personal touring. It reflects modern homebuilt design priorities, combining streamlined construction with practical cross-country capability.",
+      "landingGear": "Tailwheel",
+      "wingPos": "Low wing",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1563,
+      "xp": 8814,
+      "firstFlight": 2015,
+      "wingspan": 8,
+      "length": 6.3,
+      "height": 1.9,
+      "ceiling": 25500,
+      "mtow": 970,
+      "seats": 2,
+      "range": 988,
+      "maxSpeed": 189,
+      "cardCategory": "ultra",
+      "ftea": 0.00029505961440892946,
+      "images": [
+        "RS18"
+      ],
+      "markers": [
+        "P28A"
+      ],
+      "imageOverride": "RS18"
     },
     {
       "id": "WZ10",
