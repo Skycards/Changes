@@ -1,10 +1,21 @@
 {
   "summary": {
-    "total_countries_with_differences": 4,
-    "total_added_airports": 2,
-    "total_removed_airports": 1
+    "total_countries_with_differences": 8,
+    "total_added_airports": 8,
+    "total_removed_airports": 0
   },
   "countries": {
+    "BF": {
+      "country_name": "Burkina Faso",
+      "iso_code": "BF",
+      "fr24_count": 4,
+      "skycards_count": 1,
+      "difference": 3,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
+      "removed_count": 0
+    },
     "BR": {
       "country_name": "Brazil",
       "iso_code": "BR",
@@ -17,23 +28,46 @@
       "removed_count": 0,
       "state_coverage": "138/283 (49%)"
     },
-    "CD": {
-      "country_name": "Democratic Republic Of The Congo",
-      "iso_code": "CD",
-      "fr24_count": 25,
-      "skycards_count": 26,
-      "difference": -1,
+    "BW": {
+      "country_name": "Botswana",
+      "iso_code": "BW",
+      "fr24_count": 6,
+      "skycards_count": 5,
+      "difference": 1,
       "added_airports": [],
-      "removed_airports": [
+      "removed_airports": [],
+      "added_count": 0,
+      "removed_count": 0
+    },
+    "CF": {
+      "country_name": "Central African Republic",
+      "iso_code": "CF",
+      "fr24_count": 14,
+      "skycards_count": 4,
+      "difference": 10,
+      "added_airports": [
         {
-          "name": "Butembo Rughenda Airport",
-          "iata": "RUE",
-          "icao": "FZMB",
-          "placeCode": "CD"
+          "name": "Bambari Airport",
+          "iata": "BBY",
+          "icao": "FEFM",
+          "placeCode": "CF"
+        },
+        {
+          "name": "Bangassou Airport",
+          "iata": "BGU",
+          "icao": "FEFG",
+          "placeCode": "CF"
+        },
+        {
+          "name": "Batangafo Airport",
+          "iata": "BTG",
+          "icao": "FEGF",
+          "placeCode": "CF"
         }
       ],
-      "added_count": 0,
-      "removed_count": 1
+      "removed_airports": [],
+      "added_count": 3,
+      "removed_count": 0
     },
     "CG": {
       "country_name": "Congo",
@@ -51,6 +85,47 @@
       ],
       "removed_airports": [],
       "added_count": 1,
+      "removed_count": 0
+    },
+    "CK": {
+      "country_name": "Cook Islands",
+      "iso_code": "CK",
+      "fr24_count": 3,
+      "skycards_count": 2,
+      "difference": 1,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
+      "removed_count": 0
+    },
+    "ML": {
+      "country_name": "Mali",
+      "iso_code": "ML",
+      "fr24_count": 5,
+      "skycards_count": 2,
+      "difference": 3,
+      "added_airports": [
+        {
+          "name": "Kayes Dag-Dag Airport",
+          "iata": "KYS",
+          "icao": "GAKY",
+          "placeCode": "ML"
+        },
+        {
+          "name": "Mopti Airport",
+          "iata": "MZI",
+          "icao": "GAMB",
+          "placeCode": "ML"
+        },
+        {
+          "name": "Timbuktu Airport",
+          "iata": "TOM",
+          "icao": "GATB",
+          "placeCode": "ML"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 3,
       "removed_count": 0
     },
     "MM": {
