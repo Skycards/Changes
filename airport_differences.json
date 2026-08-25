@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 8,
-    "total_added_airports": 10,
+    "total_added_airports": 13,
     "total_removed_airports": 0
   },
   "countries": {
@@ -11,9 +11,28 @@
       "fr24_count": 4,
       "skycards_count": 1,
       "difference": 3,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "name": "Bobo Dioulasso Airport",
+          "iata": "BOY",
+          "icao": "DFOO",
+          "placeCode": "BF"
+        },
+        {
+          "name": "Diapaga Airport",
+          "iata": "DIP",
+          "icao": "DFED",
+          "placeCode": "BF"
+        },
+        {
+          "name": "Fada N'gourma Airport",
+          "iata": "FNG",
+          "icao": "DFEF",
+          "placeCode": "BF"
+        }
+      ],
       "removed_airports": [],
-      "added_count": 0,
+      "added_count": 3,
       "removed_count": 0
     },
     "BR": {
