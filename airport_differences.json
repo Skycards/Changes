@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 8,
-    "total_added_airports": 8,
+    "total_added_airports": 10,
     "total_removed_airports": 0
   },
   "countries": {
@@ -34,9 +34,16 @@
       "fr24_count": 6,
       "skycards_count": 5,
       "difference": 1,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "name": "Savuti Airport",
+          "iata": "SVT",
+          "icao": "FBSV",
+          "placeCode": "BW"
+        }
+      ],
       "removed_airports": [],
-      "added_count": 0,
+      "added_count": 1,
       "removed_count": 0
     },
     "CF": {
@@ -93,9 +100,16 @@
       "fr24_count": 3,
       "skycards_count": 2,
       "difference": 1,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "name": "Atiu Enua Airport",
+          "iata": "AIU",
+          "icao": "NCAT",
+          "placeCode": "CK"
+        }
+      ],
       "removed_airports": [],
-      "added_count": 0,
+      "added_count": 1,
       "removed_count": 0
     },
     "ML": {
