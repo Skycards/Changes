@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 15,
-    "total_added_airports": 37,
+    "total_added_airports": 39,
     "total_removed_airports": 0
   },
   "countries": {
@@ -259,14 +259,26 @@
       "difference": 3,
       "added_airports": [
         {
+          "name": "Chigorodo Jaime Ortiz Betancur Airport",
+          "iata": "IGO",
+          "icao": "SKIG",
+          "placeCode": "CO"
+        },
+        {
           "name": "La Chorrera Airport",
           "iata": "LCR",
           "icao": "SKHZ",
           "placeCode": "CO"
+        },
+        {
+          "name": "Mariquita Jose Celestino Mutis Airport",
+          "iata": "MQU",
+          "icao": "SKQU",
+          "placeCode": "CO"
         }
       ],
       "removed_airports": [],
-      "added_count": 1,
+      "added_count": 3,
       "removed_count": 0
     },
     "EC": {
