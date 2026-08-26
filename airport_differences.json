@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 15,
-    "total_added_airports": 39,
+    "total_added_airports": 42,
     "total_removed_airports": 0
   },
   "countries": {
@@ -17,10 +17,28 @@
           "iata": "BIN",
           "icao": "OABN",
           "placeCode": "AF"
+        },
+        {
+          "name": "Faizabad Airport",
+          "iata": "FBD",
+          "icao": "OAFZ",
+          "placeCode": "AF"
+        },
+        {
+          "name": "Maymana Airport",
+          "iata": "MMZ",
+          "icao": "OAMN",
+          "placeCode": "AF"
+        },
+        {
+          "name": "Kunduz Airport",
+          "iata": "UND",
+          "icao": "OAUZ",
+          "placeCode": "AF"
         }
       ],
       "removed_airports": [],
-      "added_count": 1,
+      "added_count": 4,
       "removed_count": 0
     },
     "AR": {
