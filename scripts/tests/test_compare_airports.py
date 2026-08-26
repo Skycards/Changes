@@ -3,6 +3,7 @@ import os
 import sys
 import unittest
 from html import escape
+from unittest import mock
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", ".."))
 
@@ -373,6 +374,152 @@ class DiffOneCountryTest(unittest.TestCase):
         # Our subdivided airport is correctly matched/removed by country prefix.
         self.assertEqual([a["iata"] for a in rec["removed_airports"]], ["YOL"])
         self.assertEqual(len(calls), 1)  # flat: single country page
+
+
+    def test_flat_country_suppresses_patched_airport_on_fr24_side(self):
+        # FR24 wrongly lists RUE under Congo; our data deliberately keeps it
+        # under CD. It must not surface as "added" to Congo.
+        pages = {"/congo": _country_page_html([
+            {"name": "Maya-Maya", "iata": "BZV", "icao": "FCBB"},
+            {"name": "Pointe Noire", "iata": "PNR", "icao": "FCPP"},
+            {"name": "Butembo Rughenda", "iata": "RUE", "icao": "FZMB"},
+        ])}
+        our = _rows({"name": "Maya-Maya", "iata": "BZV", "placeCode": "CG"},
+                    {"name": "Pointe Noire", "iata": "PNR", "placeCode": "CG"})
+        with mock.patch.object(ca, "FR24_COUNTRY_PATCHES",
+                               {"RUE": {"fr24": "CG", "ours": "CD"}}):
+            rec, err, _ = self._run("Congo", "CG", 3, 2, pages, our)
+        self.assertIsNone(err)
+        self.assertEqual(rec["added_airports"], [])
+        self.assertEqual(rec["removed_airports"], [])
+
+    def test_flat_country_suppresses_patched_airport_on_our_side(self):
+        # The corrected country's FR24 page doesn't list the airport; our copy
+        # of it must not surface as "removed".
+        pages = {"/democratic-republic-of-the-congo": _country_page_html([
+            {"name": "Ndjili", "iata": "FIH", "icao": "FZAA"},
+        ])}
+        our = _rows({"name": "Ndjili", "iata": "FIH", "placeCode": "CD"},
+                    {"name": "Butembo Rughenda", "iata": "RUE", "placeCode": "CD"})
+        with mock.patch.object(ca, "FR24_COUNTRY_PATCHES",
+                               {"RUE": {"fr24": "CG", "ours": "CD"}}):
+            rec, err, _ = self._run("Democratic Republic Of The Congo", "CD", 2, 2, pages, our)
+        self.assertIsNone(err)
+        self.assertEqual(rec["added_airports"], [])
+        self.assertEqual(rec["removed_airports"], [])
+
+    def test_flat_country_new_airport_surfaces_despite_patch(self):
+        # FR24 adds a genuinely new airport to the corrected country. The
+        # patched count (+1 for RUE) keeps this fetch from being masked, and
+        # the detail must report the new airport while still suppressing RUE.
+        pages = {"/democratic-republic-of-the-congo": _country_page_html([
+            {"name": "Ndjili", "iata": "FIH", "icao": "FZAA"},
+            {"name": "Bangoka", "iata": "FKI", "icao": "FZIC"},
+        ])}
+        our = _rows({"name": "Ndjili", "iata": "FIH", "placeCode": "CD"},
+                    {"name": "Butembo Rughenda", "iata": "RUE", "placeCode": "CD"})
+        with mock.patch.object(ca, "FR24_COUNTRY_PATCHES",
+                               {"RUE": {"fr24": "CG", "ours": "CD"}}):
+            rec, err, _ = self._run("Democratic Republic Of The Congo", "CD", 3, 2, pages, our)
+        self.assertIsNone(err)
+        self.assertEqual([a["iata"] for a in rec["added_airports"]], ["FKI"])
+        self.assertEqual(rec["removed_airports"], [])
+
+
+class Fr24CountryPatchTest(unittest.TestCase):
+    """FR24 places some airports under the wrong country (e.g. RUE under Congo
+    instead of DR Congo) and Skycards deliberately deviates. The patch table
+    remaps FR24's counts and airport lists to the corrected country so the
+    known mismatch stops surfacing as a permanent added/removed pair."""
+
+    PATCHES = {"RUE": {"fr24": "CG", "ours": "CD"}}
+
+    def test_count_patch_moves_airport_between_countries(self):
+        with mock.patch.object(ca, "FR24_COUNTRY_PATCHES", self.PATCHES):
+            counts = ca._patch_fr24_iso_counts({"CG": 3, "CD": 26})
+        self.assertEqual(counts, {"CG": 2, "CD": 27})
+
+    def test_count_patch_skips_missing_source_country(self):
+        # FR24 lists nothing under the source country (data likely fixed on
+        # their side): moving a count would fabricate a negative — leave it.
+        with mock.patch.object(ca, "FR24_COUNTRY_PATCHES", self.PATCHES):
+            counts = ca._patch_fr24_iso_counts({"CD": 26})
+        self.assertEqual(counts, {"CD": 26})
+
+    def test_compare_drops_patched_airport_from_fr24_list(self):
+        fr24 = [{"iata": "BZV", "icao": "FCBB", "name": "Maya-Maya"},
+                {"iata": "RUE", "icao": "FZMB", "name": "Butembo Rughenda"}]
+        our = [{"iata": "BZV", "icao": "FCBB", "name": "Maya-Maya", "placeCode": "CG"}]
+        with mock.patch.object(ca, "FR24_COUNTRY_PATCHES", self.PATCHES):
+            added, removed = ca.compare_country_airports(fr24, our, "CG")
+        self.assertEqual(added, [])
+        self.assertEqual(removed, [])
+
+    def test_compare_drops_patched_airport_from_our_list(self):
+        fr24 = [{"iata": "FIH", "icao": "FZAA", "name": "Ndjili"}]
+        our = [{"iata": "FIH", "icao": "FZAA", "name": "Ndjili", "placeCode": "CD"},
+               {"iata": "RUE", "icao": "FZMB", "name": "Butembo Rughenda", "placeCode": "CD"}]
+        with mock.patch.object(ca, "FR24_COUNTRY_PATCHES", self.PATCHES):
+            added, removed = ca.compare_country_airports(fr24, our, "CD")
+        self.assertEqual(added, [])
+        self.assertEqual(removed, [])
+
+    def test_compare_matches_by_country_prefix_of_state_codes(self):
+        # State-level comparisons pass "CG"-prefixed context too; the patch
+        # keys on the country part.
+        fr24 = [{"iata": "RUE", "icao": "FZMB", "name": "Butembo Rughenda"}]
+        with mock.patch.object(ca, "FR24_COUNTRY_PATCHES", self.PATCHES):
+            added, removed = ca.compare_country_airports(fr24, [], "CG-XX")
+        self.assertEqual(added, [])
+        self.assertEqual(removed, [])
+
+    def test_compare_without_country_context_is_unpatched(self):
+        fr24 = [{"iata": "RUE", "icao": "FZMB", "name": "Butembo Rughenda"}]
+        with mock.patch.object(ca, "FR24_COUNTRY_PATCHES", self.PATCHES):
+            added, removed = ca.compare_country_airports(fr24, [])
+        self.assertEqual([a["iata"] for a in added], ["RUE"])
+
+    def test_analyze_fetches_nothing_once_counts_agree(self):
+        # Steady state: FR24 keeps counting RUE under Congo (CG raw 3 vs our
+        # 2, forever) and our CD holds every airport FR24 has plus RUE. After
+        # patching both sides agree, so no country page is fetched at all.
+        calls = []
+
+        def fake_diff(iso, name, fr24_count, our_count, airports_data):
+            calls.append(iso)
+            return {"iso_code": iso, "added_count": 0, "removed_count": 0}, None
+
+        with mock.patch.object(ca, "FR24_COUNTRY_PATCHES", self.PATCHES), \
+             mock.patch.object(ca, "_diff_one_country", fake_diff), \
+             mock.patch.object(ca.time, "sleep", lambda *a, **k: None):
+            diffs = ca.analyze_country_differences(
+                {"Congo": 3, "Democratic Republic Of The Congo": 26},
+                {"CG": 2, "CD": 27},
+                ca.create_country_mapping(), {"rows": []})
+        self.assertEqual(calls, [])
+        self.assertEqual(diffs, {})
+
+    def test_analyze_respects_count_patch(self):
+        # After patching, CG matches (2 == 2) and must not be analyzed; CD
+        # carries the moved count (27 vs 26) and must be.
+        calls = []
+
+        def fake_diff(iso, name, fr24_count, our_count, airports_data):
+            calls.append((iso, fr24_count, our_count))
+            return {"iso_code": iso, "added_count": 0, "removed_count": 0}, None
+
+        with mock.patch.object(ca, "FR24_COUNTRY_PATCHES", self.PATCHES), \
+             mock.patch.object(ca, "_diff_one_country", fake_diff), \
+             mock.patch.object(ca.time, "sleep", lambda *a, **k: None):
+            diffs = ca.analyze_country_differences(
+                {"Congo": 3, "Democratic Republic Of The Congo": 26},
+                {"CG": 2, "CD": 26},
+                ca.create_country_mapping(), {"rows": []})
+        self.assertEqual([c[0] for c in calls], ["CD"])
+        self.assertEqual(calls[0][1], 27)
+        self.assertNotIn("CG", diffs)
+        self.assertIn("CD", diffs)
+
 
 
 if __name__ == "__main__":

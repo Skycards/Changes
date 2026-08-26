@@ -21,6 +21,28 @@ from html.parser import HTMLParser
 # ~1.0, with small timing skew between the index and country-page fetches.
 STATE_COVERAGE_MIN = 0.9
 
+# Airports FR24 lists under the wrong country while Skycards deliberately
+# keeps them under the right one. Keyed by IATA code; 'fr24' is the country
+# FR24 (wrongly) uses, 'ours' the corrected one. FR24's counts and airport
+# lists are remapped to the corrected country so the known misplacement stops
+# surfacing as a permanent added/removed pair. Drop an entry once FR24 fixes
+# its data — the tell is the patched airport being reported as newly added to
+# the corrected country.
+FR24_COUNTRY_PATCHES = {
+    'RUE': {'fr24': 'CG', 'ours': 'CD'},  # Butembo Rughenda is in DR Congo
+}
+
+
+def _patch_fr24_iso_counts(iso_counts):
+    """Move each patched airport's count from FR24's country to the corrected
+    one. Skipped when FR24 no longer counts anything under the wrong country,
+    so a stale patch can't drive a count negative."""
+    for patch in FR24_COUNTRY_PATCHES.values():
+        if iso_counts.get(patch['fr24'], 0) > 0:
+            iso_counts[patch['fr24']] -= 1
+            iso_counts[patch['ours']] = iso_counts.get(patch['ours'], 0) + 1
+    return iso_counts
+
 
 def create_country_mapping() -> Dict[str, str]:
     """Create mapping from country names to ISO codes"""
@@ -585,8 +607,20 @@ def get_our_state_counts(airports_data: Dict, country_code: str) -> Dict[str, in
     return counts
 
 
-def compare_country_airports(fr24_airports: List[Dict], our_airports: List[Dict]) -> Tuple[List[Dict], List[Dict]]:
-    """Compare airport lists and return added/removed airports"""
+def compare_country_airports(fr24_airports: List[Dict], our_airports: List[Dict],
+                             iso_code: Optional[str] = None) -> Tuple[List[Dict], List[Dict]]:
+    """Compare airport lists and return added/removed airports.
+
+    With a country context (iso_code, possibly state-qualified like "US-CA"),
+    airports in FR24_COUNTRY_PATCHES are dropped from the side whose placement
+    in this country is the known-wrong / deliberately-corrected one.
+    """
+    if iso_code:
+        country = iso_code.split('-')[0]
+        fr24_airports = [ap for ap in fr24_airports
+                         if FR24_COUNTRY_PATCHES.get(ap.get('iata'), {}).get('fr24') != country]
+        our_airports = [ap for ap in our_airports
+                        if FR24_COUNTRY_PATCHES.get(ap.get('iata'), {}).get('ours') != country]
 
     # Create sets of airport identifiers for comparison
     # Use IATA as primary identifier, fallback to ICAO if IATA missing
@@ -676,7 +710,7 @@ def _diff_flat_country(iso_code: str, country_name: str, fr24_count: int,
     except ValueError as e:
         return None, str(e)
     our_airports = get_country_airports_from_our_data(airports_data, iso_code)
-    added, removed = compare_country_airports(fr24_airports, our_airports)
+    added, removed = compare_country_airports(fr24_airports, our_airports, iso_code)
     for ap in added:  # tag FR24-added airports with the country placeCode
         ap.setdefault('placeCode', iso_code)
     print(f"  Added: {len(added)}, Removed: {len(removed)}")
@@ -714,7 +748,7 @@ def _diff_states_as_flat(iso_code: str, country_name: str, fr24_count: int,
     if error:
         return None, error
     our_airports = get_country_airports_from_our_data(airports_data, iso_code)
-    added, removed = compare_country_airports(fr24_airports, our_airports)
+    added, removed = compare_country_airports(fr24_airports, our_airports, iso_code)
     for ap in added:
         ap.setdefault('placeCode', f"{iso_code}-{ap['state']}" if ap.get('state') else iso_code)
     print(f"  (our data not subdivided) Added: {len(added)}, Removed: {len(removed)}")
@@ -780,7 +814,7 @@ def _diff_subdivisioned_country(iso_code: str, country_name: str, fr24_count: in
             fr24_state_airports = []
 
         our_state_airports = get_state_airports_from_our_data(airports_data, iso_code, code)
-        added, removed = compare_country_airports(fr24_state_airports, our_state_airports)
+        added, removed = compare_country_airports(fr24_state_airports, our_state_airports, iso_code)
         for ap in added:
             ap.setdefault('placeCode', f"{iso_code}-{code}")
         all_added.extend(added)
@@ -840,6 +874,8 @@ def analyze_country_differences(fr24_counts: Dict[str, int], our_counts: Dict[st
         if iso_code:
             fr24_iso_counts[iso_code] = count
             iso_to_name[iso_code] = country_name
+
+    _patch_fr24_iso_counts(fr24_iso_counts)
 
     differences = {}
     countries_with_diffs = []
@@ -928,6 +964,8 @@ def compare_counts(fr24_counts: Dict[str, int], our_counts: Dict[str, int], coun
             fr24_iso_counts[iso_code] = count
         else:
             print(f"⚠️  Unknown country mapping: '{country_name}' -> Need to add to mapping")
+
+    _patch_fr24_iso_counts(fr24_iso_counts)
 
     # Find all unique countries
     all_countries = set(fr24_iso_counts.keys()) | set(our_counts.keys())
