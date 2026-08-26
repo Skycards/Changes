@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 8,
-    "total_added_airports": 13,
+    "total_added_airports": 20,
     "total_removed_airports": 0
   },
   "countries": {
@@ -73,6 +73,12 @@
       "difference": 10,
       "added_airports": [
         {
+          "name": "Berberati Airport",
+          "iata": "BBT",
+          "icao": "FEFT",
+          "placeCode": "CF"
+        },
+        {
           "name": "Bambari Airport",
           "iata": "BBY",
           "icao": "FEFM",
@@ -85,14 +91,50 @@
           "placeCode": "CF"
         },
         {
+          "name": "Bouar Airport",
+          "iata": "BOP",
+          "icao": "FEFO",
+          "placeCode": "CF"
+        },
+        {
+          "name": "Bossangoa Airport",
+          "iata": "BSN",
+          "icao": "FEFS",
+          "placeCode": "CF"
+        },
+        {
           "name": "Batangafo Airport",
           "iata": "BTG",
           "icao": "FEGF",
           "placeCode": "CF"
+        },
+        {
+          "name": "Carnot Airport",
+          "iata": "CRF",
+          "icao": "FEFC",
+          "placeCode": "CF"
+        },
+        {
+          "name": "Zemio Airport",
+          "iata": "IMO",
+          "icao": "FEFZ",
+          "placeCode": "CF"
+        },
+        {
+          "name": "Ouanda Djalle Airport",
+          "iata": "ODJ",
+          "icao": "FEGO",
+          "placeCode": "CF"
+        },
+        {
+          "name": "Rafai Airport",
+          "iata": "RFA",
+          "icao": "FEGR",
+          "placeCode": "CF"
         }
       ],
       "removed_airports": [],
-      "added_count": 3,
+      "added_count": 10,
       "removed_count": 0
     },
     "CG": {
