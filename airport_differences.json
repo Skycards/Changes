@@ -1,8 +1,8 @@
 {
   "summary": {
-    "total_countries_with_differences": 16,
-    "total_added_airports": 38,
-    "total_removed_airports": 1
+    "total_countries_with_differences": 15,
+    "total_added_airports": 37,
+    "total_removed_airports": 0
   },
   "countries": {
     "AF": {
@@ -122,9 +122,9 @@
     "CD": {
       "country_name": "Democratic Republic Of The Congo",
       "iso_code": "CD",
-      "fr24_count": 27,
+      "fr24_count": 28,
       "skycards_count": 26,
-      "difference": 1,
+      "difference": 2,
       "added_airports": [
         {
           "name": "Boende Airport",
@@ -139,16 +139,9 @@
           "placeCode": "CD"
         }
       ],
-      "removed_airports": [
-        {
-          "name": "Butembo Rughenda Airport",
-          "iata": "RUE",
-          "icao": "FZMB",
-          "placeCode": "CD"
-        }
-      ],
+      "removed_airports": [],
       "added_count": 2,
-      "removed_count": 1
+      "removed_count": 0
     },
     "CF": {
       "country_name": "Central African Republic",
@@ -220,24 +213,6 @@
       ],
       "removed_airports": [],
       "added_count": 10,
-      "removed_count": 0
-    },
-    "CG": {
-      "country_name": "Congo",
-      "iso_code": "CG",
-      "fr24_count": 3,
-      "skycards_count": 2,
-      "difference": 1,
-      "added_airports": [
-        {
-          "name": "Butembo Rughenda Airport",
-          "iata": "RUE",
-          "icao": "FZMB",
-          "placeCode": "CG"
-        }
-      ],
-      "removed_airports": [],
-      "added_count": 1,
       "removed_count": 0
     },
     "CK": {
