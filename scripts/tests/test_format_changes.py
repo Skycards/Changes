@@ -343,7 +343,7 @@ class ComparisonTest(unittest.TestCase):
 
     def test_new_to_be_added_listed(self):
         old = {"countries": {}}
-        new = {"countries": self._country("Netherlands", "NL",
+        new = {"countries": self._country("Netherlands", "NL", fr24=1,
                                           added=[self._ap("Schiphol", "AMS", "EHAM")])}
         msg, tldr = fc.format_comparison(old, new, set(), set(), "L")
         self.assertIn("## \U0001F6A8 Airpedia airport comparison update", msg)
@@ -378,7 +378,7 @@ class ComparisonTest(unittest.TestCase):
 
     def test_flat_country_not_nested_by_region(self):
         old = {"countries": {}}
-        new = {"countries": self._country("Netherlands", "NL",
+        new = {"countries": self._country("Netherlands", "NL", fr24=1,
                                           added=[self._ap_pc("Schiphol", "AMS", "EHAM", "NL")])}
         msg, _ = fc.format_comparison(old, new, set(), set(), "L")
         # No region sub-heading -> airport sits at the two-space country level.
@@ -387,14 +387,14 @@ class ComparisonTest(unittest.TestCase):
 
     def test_new_to_be_removed_listed(self):
         old = {"countries": {}}
-        new = {"countries": self._country("Australia", "AU",
+        new = {"countries": self._country("Australia", "AU", sky=1,
                                           removed=[self._ap("Old Field", "OLD", "YOLD")])}
         msg, _ = fc.format_comparison(old, new, {"OLD"}, {"OLD"}, "L")
         self.assertIn("**To be removed** (new)", msg)
         self.assertIn("  \\- [Old Field]", msg)
 
     def test_skycards_caught_up_is_resolved_not_listed(self):
-        old = {"countries": self._country("Netherlands", "NL",
+        old = {"countries": self._country("Netherlands", "NL", fr24=1,
                                           added=[self._ap("Schiphol", "AMS", "EHAM")])}
         new = {"countries": {}}
         msg, _ = fc.format_comparison(old, new, set(), {"AMS"}, "L")
@@ -402,9 +402,9 @@ class ComparisonTest(unittest.TestCase):
         self.assertNotIn("Schiphol", msg)
 
     def test_still_to_be_added_on_skycards_update(self):
-        old = {"countries": self._country("Netherlands", "NL",
+        old = {"countries": self._country("Netherlands", "NL", fr24=1,
                                           added=[self._ap("Schiphol", "AMS", "EHAM")])}
-        new = {"countries": self._country("Brazil", "BR",
+        new = {"countries": self._country("Brazil", "BR", fr24=1,
                                           added=[self._ap("Novo", "NVO", "SBNV")])}
         msg, _ = fc.format_comparison(old, new, set(), {"AMS"}, "L")
         self.assertIn("**Still to be added**", msg)
@@ -412,7 +412,7 @@ class ComparisonTest(unittest.TestCase):
 
     def test_still_to_be_added_omitted_when_empty(self):
         # Skycards-driven cycle (AMS now present) but nothing left to add.
-        old = {"countries": self._country("Netherlands", "NL",
+        old = {"countries": self._country("Netherlands", "NL", fr24=1,
                                           added=[self._ap("Schiphol", "AMS", "EHAM")])}
         new = {"countries": {}}
         msg, _ = fc.format_comparison(old, new, set(), {"AMS"}, "L")
@@ -427,6 +427,50 @@ class ComparisonTest(unittest.TestCase):
         self.assertIn("United States of America +9", msg)
         self.assertNotIn("**Still to be added**", msg)
         self.assertIn("1 count", tldr)
+
+    def test_partial_detailing_reports_undetailed_remainder(self):
+        # FR24's count grew by 10 but only 3 airports were detailed on the
+        # country page: the other 7 must still show up as a count change.
+        old = {"countries": {}}
+        new = {"countries": self._country(
+            "Central African Republic", "CF", fr24=14, sky=4,
+            added=[self._ap_pc("Bambari", "BBY", "FEFM", "CF"),
+                   self._ap_pc("Bangassou", "BGU", "FEFG", "CF"),
+                   self._ap_pc("Batangafo", "BTG", "FEGF", "CF")])}
+        msg, tldr = fc.format_comparison(old, new, set(), set(), "L")
+        self.assertIn("  + [Bambari]", msg)
+        self.assertIn("**Count changes** (not yet detailed)", msg)
+        self.assertIn("Central African Republic +7", msg)
+        self.assertIn("1 count", tldr)
+
+    def test_detailing_backlog_not_shown_as_negative_count(self):
+        # The 7-strong backlog gets detailed: those lines appear in the
+        # detailed section, so no "-7" count change should accompany them.
+        base = [self._ap_pc("Bambari", "BBY", "FEFM", "CF"),
+                self._ap_pc("Bangassou", "BGU", "FEFG", "CF"),
+                self._ap_pc("Batangafo", "BTG", "FEGF", "CF")]
+        more = [self._ap_pc(f"New{i}", f"N{i}A", f"FE{i}", "CF") for i in range(7)]
+        old = {"countries": self._country("Central African Republic", "CF",
+                                          fr24=14, sky=4, added=base)}
+        new = {"countries": self._country("Central African Republic", "CF",
+                                          fr24=14, sky=4, added=base + more)}
+        msg, _ = fc.format_comparison(old, new, set(), set(), "L")
+        self.assertIn("  + [New0]", msg)
+        self.assertNotIn("**Count changes**", msg)
+
+    def test_backlog_growth_while_detailing_reported(self):
+        # 3 of the 7-strong backlog get detailed while FR24's count grows by
+        # 2 more: only the genuine growth (+2) is a count change.
+        base = [self._ap_pc("Bambari", "BBY", "FEFM", "CF"),
+                self._ap_pc("Bangassou", "BGU", "FEFG", "CF"),
+                self._ap_pc("Batangafo", "BTG", "FEGF", "CF")]
+        more = [self._ap_pc(f"New{i}", f"N{i}A", f"FE{i}", "CF") for i in range(3)]
+        old = {"countries": self._country("Central African Republic", "CF",
+                                          fr24=14, sky=4, added=base)}
+        new = {"countries": self._country("Central African Republic", "CF",
+                                          fr24=16, sky=4, added=base + more)}
+        msg, _ = fc.format_comparison(old, new, set(), set(), "L")
+        self.assertIn("Central African Republic +2", msg)
 
     def test_suppress_when_nothing_changed(self):
         same = {"countries": self._country("Netherlands", "NL",
@@ -486,15 +530,40 @@ class ComparisonHelpersTest(unittest.TestCase):
         new_recs, resolved, sky = fc._classify_side(old, new, set(), set())
         self.assertEqual((resolved, sky), (1, 0))
 
-    def test_count_only_reports_net_delta(self):
+    def test_count_changes_reports_net_delta(self):
         old = self._diffs(fr24=10, sky=5)
         new = self._diffs(fr24=14, sky=5)
-        self.assertEqual(fc._count_only(old, new), [("NL", 4)])
+        self.assertEqual(fc._count_changes(old, new, [], []), [("NL", 4)])
 
-    def test_count_only_skips_when_list_changed(self):
-        old = self._diffs(added=[{"iata": "AMS", "icao": "EHAM"}], fr24=10, sky=5)
-        new = self._diffs(added=[], fr24=14, sky=5)
-        self.assertEqual(fc._count_only(old, new), [])
+    def test_count_changes_reports_undetailed_remainder(self):
+        # 4 net new on FR24, only 1 detailed -> the other 3 are a count change.
+        det = [{"iata": "AMS", "icao": "EHAM", "placeCode": "NL"}]
+        old = {"countries": {}}
+        new = self._diffs(added=det, fr24=5, sky=1)
+        self.assertEqual(fc._count_changes(old, new, det, []), [("NL", 3)])
+
+    def test_count_changes_offsets_backlog_drain_from_detailing(self):
+        # A backlog airport getting detailed is not a count change: its line
+        # already appears in the detailed section.
+        det = [{"iata": "AMS", "icao": "EHAM", "placeCode": "NL"}]
+        old = self._diffs(fr24=5, sky=1)
+        new = self._diffs(added=det, fr24=5, sky=1)
+        self.assertEqual(fc._count_changes(old, new, det, []), [])
+
+    def test_count_changes_offsets_removal_detailing(self):
+        det = [{"iata": "OLD", "icao": "YOLD", "placeCode": "NL"}]
+        old = self._diffs(fr24=5, sky=7)
+        new = self._diffs(removed=det, fr24=5, sky=7)
+        self.assertEqual(fc._count_changes(old, new, [], det), [])
+
+    def test_count_changes_matches_subdivisioned_place_codes(self):
+        det = [{"iata": "LAX", "icao": "KLAX", "placeCode": "US-CA"}]
+        us = {"country_name": "United States", "iso_code": "US",
+              "fr24_count": 10, "skycards_count": 5,
+              "added_airports": [], "removed_airports": []}
+        old = {"countries": {"US": dict(us)}}
+        new = {"countries": {"US": dict(us, added_airports=det)}}
+        self.assertEqual(fc._count_changes(old, new, det, []), [])
 
     def test_overall_counts(self):
         diffs = {"countries": {

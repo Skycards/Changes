@@ -454,26 +454,41 @@ def _classify_side(old_idx, new_idx, old_iatas, new_iatas):
     return new_records, resolved, skycards_driven
 
 
-def _country_idents(country, kind):
-    return {a.get("iata") or a.get("icao")
-            for a in country.get(kind, [])}
+def _residual(country):
+    """Undetailed backlog: the part of a country's net FR24-vs-Skycards count
+    difference not explained by its detailed added/removed lists. Positive =
+    additions not yet detailed, negative = removals not yet detailed."""
+    net = country.get("fr24_count", 0) - country.get("skycards_count", 0)
+    detailed = (len(country.get("added_airports", []))
+                - len(country.get("removed_airports", [])))
+    return net - detailed
 
 
-def _count_only(old_diffs, new_diffs):
-    """Per-country net-standing deltas for countries whose airport identity sets
-    did not change. Returns [(iso, delta), ...] sorted by iso, skipping zeros."""
+def _by_country(records):
+    """Count records per root country code ("US-CA" counts toward "US")."""
+    counts = {}
+    for r in records:
+        code = (r.get("placeCode") or "").split("-")[0]
+        if code:
+            counts[code] = counts.get(code, 0) + 1
+    return counts
+
+
+def _count_changes(old_diffs, new_diffs, new_add, new_rem):
+    """Per-country deltas of the undetailed backlog ([(iso, delta)], sorted by
+    iso, zeros skipped). Newly detailed records drain the backlog without being
+    news — their lines already appear in the detailed sections — so up to the
+    old backlog's worth of them is offset here rather than shown as a drop."""
     old_c = (old_diffs or {}).get("countries", {})
     new_c = (new_diffs or {}).get("countries", {})
+    add_n = _by_country(new_add)
+    rem_n = _by_country(new_rem)
     results = []
     for iso in sorted(set(old_c) | set(new_c)):
-        o = old_c.get(iso, {})
-        n = new_c.get(iso, {})
-        if (_country_idents(o, "added_airports") != _country_idents(n, "added_airports")
-                or _country_idents(o, "removed_airports") != _country_idents(n, "removed_airports")):
-            continue
-        old_net = o.get("fr24_count", 0) - o.get("skycards_count", 0)
-        new_net = n.get("fr24_count", 0) - n.get("skycards_count", 0)
-        delta = new_net - old_net
+        old_res = _residual(old_c.get(iso, {}))
+        delta = _residual(new_c.get(iso, {})) - old_res
+        delta += min(add_n.get(iso, 0), max(old_res, 0))
+        delta -= min(rem_n.get(iso, 0), max(-old_res, 0))
         if delta:
             results.append((iso, delta))
     return results
@@ -523,7 +538,7 @@ def format_comparison(old_diffs, new_diffs, old_iatas, new_iatas, link):
         _cmp_index(new_diffs, "removed_airports"), old_iatas, new_iatas)
     resolved = res_add + res_rem
     skycards_driven = sky_add + sky_rem
-    count_changes = _count_only(old_diffs, new_diffs)
+    count_changes = _count_changes(old_diffs, new_diffs, new_add, new_rem)
 
     if not new_add and not new_rem and not resolved and not count_changes:
         return "", ""
