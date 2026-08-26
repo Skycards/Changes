@@ -1,10 +1,64 @@
 {
   "summary": {
-    "total_countries_with_differences": 8,
-    "total_added_airports": 20,
-    "total_removed_airports": 0
+    "total_countries_with_differences": 16,
+    "total_added_airports": 38,
+    "total_removed_airports": 1
   },
   "countries": {
+    "AF": {
+      "country_name": "Afghanistan",
+      "iso_code": "AF",
+      "fr24_count": 14,
+      "skycards_count": 10,
+      "difference": 4,
+      "added_airports": [
+        {
+          "name": "Bamyan Shahid Mazari Airport",
+          "iata": "BIN",
+          "icao": "OABN",
+          "placeCode": "AF"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
+      "removed_count": 0
+    },
+    "AR": {
+      "country_name": "Argentina",
+      "iso_code": "AR",
+      "fr24_count": 60,
+      "skycards_count": 56,
+      "difference": 4,
+      "added_airports": [
+        {
+          "name": "La Cumbre Airport",
+          "iata": "LCM",
+          "icao": "SACC",
+          "placeCode": "AR"
+        },
+        {
+          "name": "Oran Airport",
+          "iata": "ORA",
+          "icao": "SASO",
+          "placeCode": "AR"
+        },
+        {
+          "name": "Perito Moreno Airport",
+          "iata": "PMQ",
+          "icao": "SAWP",
+          "placeCode": "AR"
+        },
+        {
+          "name": "Villa Reynolds Airport",
+          "iata": "VME",
+          "icao": "SAOR",
+          "placeCode": "AR"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 4,
+      "removed_count": 0
+    },
     "BF": {
       "country_name": "Burkina Faso",
       "iso_code": "BF",
@@ -64,6 +118,37 @@
       "removed_airports": [],
       "added_count": 1,
       "removed_count": 0
+    },
+    "CD": {
+      "country_name": "Democratic Republic Of The Congo",
+      "iso_code": "CD",
+      "fr24_count": 27,
+      "skycards_count": 26,
+      "difference": 1,
+      "added_airports": [
+        {
+          "name": "Boende Airport",
+          "iata": "BNB",
+          "icao": "FZGN",
+          "placeCode": "CD"
+        },
+        {
+          "name": "Manono Airport",
+          "iata": "MNO",
+          "icao": "FZRA",
+          "placeCode": "CD"
+        }
+      ],
+      "removed_airports": [
+        {
+          "name": "Butembo Rughenda Airport",
+          "iata": "RUE",
+          "icao": "FZMB",
+          "placeCode": "CD"
+        }
+      ],
+      "added_count": 2,
+      "removed_count": 1
     },
     "CF": {
       "country_name": "Central African Republic",
@@ -173,6 +258,102 @@
       "added_count": 1,
       "removed_count": 0
     },
+    "CN": {
+      "country_name": "China",
+      "iso_code": "CN",
+      "fr24_count": 267,
+      "skycards_count": 266,
+      "difference": 1,
+      "added_airports": [
+        {
+          "name": "Hejing Bayinbuluke Airport",
+          "iata": "HJB",
+          "icao": "ZWHJ",
+          "placeCode": "CN"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
+      "removed_count": 0
+    },
+    "CO": {
+      "country_name": "Colombia",
+      "iso_code": "CO",
+      "fr24_count": 80,
+      "skycards_count": 77,
+      "difference": 3,
+      "added_airports": [
+        {
+          "name": "La Chorrera Airport",
+          "iata": "LCR",
+          "icao": "SKHZ",
+          "placeCode": "CO"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
+      "removed_count": 0
+    },
+    "EC": {
+      "country_name": "Ecuador",
+      "iso_code": "EC",
+      "fr24_count": 14,
+      "skycards_count": 13,
+      "difference": 1,
+      "added_airports": [
+        {
+          "name": "Shell Mera Rio Amazonas Airport",
+          "iata": "PTZ",
+          "icao": "SESM",
+          "placeCode": "EC"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 1,
+      "removed_count": 0
+    },
+    "GY": {
+      "country_name": "Guyana",
+      "iso_code": "GY",
+      "fr24_count": 9,
+      "skycards_count": 4,
+      "difference": 5,
+      "added_airports": [
+        {
+          "name": "Imbaimadai Airport",
+          "iata": "IMB",
+          "icao": "SYIB",
+          "placeCode": "GY"
+        },
+        {
+          "name": "Kamarang Airport",
+          "iata": "KAR",
+          "icao": "SYKM",
+          "placeCode": "GY"
+        },
+        {
+          "name": "Mahdia Airport",
+          "iata": "MHA",
+          "icao": "SYMD",
+          "placeCode": "GY"
+        },
+        {
+          "name": "Matthews Ridge Airport",
+          "iata": "MWJ",
+          "icao": "SYMR",
+          "placeCode": "GY"
+        },
+        {
+          "name": "Mabaruma Airport",
+          "iata": "USI",
+          "icao": "SYMB",
+          "placeCode": "GY"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 5,
+      "removed_count": 0
+    },
     "ML": {
       "country_name": "Mali",
       "iso_code": "ML",
@@ -219,6 +400,36 @@
       ],
       "removed_airports": [],
       "added_count": 1,
+      "removed_count": 0
+    },
+    "PE": {
+      "country_name": "Peru",
+      "iso_code": "PE",
+      "fr24_count": 34,
+      "skycards_count": 31,
+      "difference": 3,
+      "added_airports": [
+        {
+          "name": "Andahuaylas Airport",
+          "iata": "ANS",
+          "icao": "SPHY",
+          "placeCode": "PE"
+        },
+        {
+          "name": "Chagual Airport",
+          "iata": "CGL",
+          "icao": "SPGL",
+          "placeCode": "PE"
+        },
+        {
+          "name": "San Juan de Marcona Airport",
+          "iata": "SJA",
+          "icao": "SPJN",
+          "placeCode": "PE"
+        }
+      ],
+      "removed_airports": [],
+      "added_count": 3,
       "removed_count": 0
     }
   }
