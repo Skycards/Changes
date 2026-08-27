@@ -504,6 +504,61 @@ class DiffOneCountryTest(unittest.TestCase):
         self.assertEqual(rec["states"]["VA"]["removed_count"], 0)
         self.assertNotIn("changed_airports", rec["states"]["DC"])
 
+    def test_states_as_flat_rename_has_no_placecode_pseudo_change(self):
+        # FR24 splits Germany into states while our data is flat: a rename
+        # pairing across the granularity gap must not report DE -> DE-BY as a
+        # move.
+        pages = {
+            "/data/airports/germany": _states_page_html([
+                {"code": "BY", "name": "Bavaria", "total": 1,
+                 "url": "/data/airports/germany/by"},
+            ]),
+            "/germany/by": _country_page_html([
+                {"name": "Munich Airport", "iata": "MUX", "icao": "EDDM"},
+            ]),
+        }
+        our = _rows({"name": "Munich Airport", "iata": "MUC", "icao": "EDDM",
+                     "placeCode": "DE"})
+        rec, err, _ = self._run("Germany", "DE", 1, 1, pages, our)
+        self.assertIsNone(err)
+        self.assertEqual(rec["added_airports"], [])
+        self.assertEqual(rec["removed_airports"], [])
+        self.assertEqual(rec["changed_airports"][0]["changes"],
+                         {"iata": {"old": "MUC", "new": "MUX"}})
+
+    def test_flat_fallback_rename_has_no_placecode_pseudo_change(self):
+        # FR24 flattened Canada while our data keeps CA-AB: the pairing must
+        # not suggest stripping the subdivision (CA-AB -> CA).
+        pages = {"/canada": _country_page_html([
+            {"name": "Old Field", "iata": "YNW", "icao": "CYOL"},
+        ])}
+        our = _rows({"name": "Old Field", "iata": "YOL", "icao": "CYOL",
+                     "placeCode": "CA-AB"})
+        rec, err, _ = self._run("Canada", "CA", 1, 1, pages, our)
+        self.assertIsNone(err)
+        self.assertEqual(rec["added_airports"], [])
+        self.assertEqual(rec["removed_airports"], [])
+        self.assertEqual(rec["changed_airports"][0]["changes"],
+                         {"iata": {"old": "YOL", "new": "YNW"}})
+
+    def test_flat_fallback_stage_a_change_keeps_our_subdivision(self):
+        # FR24 flattened Canada but our data still knows CA-ON; the changed
+        # record should point at where the airport lives in our data, not the
+        # bare country FR24 offers.
+        pages = {"/canada": _country_page_html([
+            {"name": "Toronto Pearson International Airport", "iata": "YYZ",
+             "icao": "CYYZ"},
+        ])}
+        our = _rows({"name": "Toronto Pearson", "iata": "YYZ", "icao": "CYYZ",
+                     "placeCode": "CA-ON"})
+        rec, err, _ = self._run("Canada", "CA", 1, 1, pages, our)
+        self.assertIsNone(err)
+        self.assertEqual(rec["changed_airports"][0]["placeCode"], "CA-ON")
+        self.assertEqual(rec["changed_airports"][0]["changes"],
+                         {"name": {"old": "Toronto Pearson",
+                                   "new": "Toronto Pearson International Airport"}})
+
+
 
 class Fr24CountryPatchTest(unittest.TestCase):
     """FR24 places some airports under the wrong country (e.g. RUE under Congo
@@ -692,6 +747,14 @@ class PairChangedTest(unittest.TestCase):
         added = [{"name": "A1", "iata": "AAA", "icao": "KDUP", "placeCode": "US-TX"},
                  {"name": "A2", "iata": "BBB", "icao": "KDUP", "placeCode": "US-TX"}]
         removed = [{"name": "R", "iata": "CCC", "icao": "KDUP", "placeCode": "US-OK"}]
+        changed, paired_ids = ca._pair_changed(added, removed)
+        self.assertEqual(changed, [])
+        self.assertEqual(paired_ids, set())
+
+    def test_ambiguous_duplicate_icao_on_removed_side_not_paired(self):
+        added = [{"name": "A", "iata": "AAA", "icao": "KDUP", "placeCode": "US-TX"}]
+        removed = [{"name": "R1", "iata": "BBB", "icao": "KDUP", "placeCode": "US-TX"},
+                   {"name": "R2", "iata": "CCC", "icao": "KDUP", "placeCode": "US-OK"}]
         changed, paired_ids = ca._pair_changed(added, removed)
         self.assertEqual(changed, [])
         self.assertEqual(paired_ids, set())

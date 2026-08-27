@@ -637,6 +637,19 @@ def _unique_by_code(airports: List[Dict], field: str) -> Dict[str, Dict]:
     return {code: airport for code, airport in by_code.items() if counts[code] == 1}
 
 
+def _place_code_change(old: Optional[str], new: Optional[str]) -> Optional[Dict]:
+    """placeCode `changes` entry for a Stage-B pair, or None when nothing
+    really moved. A bare country on one side with a subdivision of that same
+    country on the other is a granularity mismatch between FR24 and our data
+    (the flat-fallback comparison paths), not a move."""
+    if (old or '') == (new or ''):
+        return None
+    same_country = (old or '').split('-')[0] == (new or '').split('-')[0]
+    if same_country and not ('-' in (old or '') and '-' in (new or '')):
+        return None
+    return {'old': old, 'new': new}
+
+
 def _pair_changed(added: List[Dict], removed: List[Dict]) -> Tuple[List[Dict], Set[int]]:
     """Pair added records with removed records that share an ICAO (then, among
     the leftovers, an IATA): an IATA rename or a state move otherwise surfaces
@@ -656,7 +669,10 @@ def _pair_changed(added: List[Dict], removed: List[Dict]) -> Tuple[List[Dict], S
             airport = add.copy()
             airport.pop('title', None)
             airport['changes'] = _airport_field_changes(
-                rem, add, ('name', 'iata', 'icao', 'placeCode'))
+                rem, add, ('name', 'iata', 'icao'))
+            place_change = _place_code_change(rem.get('placeCode'), add.get('placeCode'))
+            if place_change:
+                airport['changes']['placeCode'] = place_change
             changed.append(airport)
             paired_ids.update((id(add), id(rem)))
     return changed, paired_ids
@@ -760,6 +776,10 @@ def compare_country_airports(fr24_airports: List[Dict], our_airports: List[Dict]
         if changes:
             airport = fr24_by_id[identifier].copy()
             airport.pop('title', None)
+            # Our record knows the real subdivision even when FR24's side of
+            # this comparison is flat; the caller's setdefault won't override.
+            if our_by_id[identifier].get('placeCode'):
+                airport['placeCode'] = our_by_id[identifier]['placeCode']
             airport['changes'] = changes
             changed_airports.append(airport)
 
@@ -882,13 +902,13 @@ def _diff_subdivisioned_country(iso_code: str, country_name: str, fr24_count: in
 
     fr24_by_code = {s['code']: s for s in states}
 
-    changed = [code for code in sorted(set(fr24_by_code) | set(our_state_counts))
-               if int(fr24_by_code.get(code, {}).get('total', 0)) != our_state_counts.get(code, 0)]
-    print(f"  {len(states)} states, {len(changed)} with count differences: {', '.join(changed) or '—'}")
+    diff_states = [code for code in sorted(set(fr24_by_code) | set(our_state_counts))
+                   if int(fr24_by_code.get(code, {}).get('total', 0)) != our_state_counts.get(code, 0)]
+    print(f"  {len(states)} states, {len(diff_states)} with count differences: {', '.join(diff_states) or '—'}")
 
     all_added, all_removed, all_changed = [], [], []
     states_breakdown = {}
-    for code in changed:
+    for code in diff_states:
         state = fr24_by_code.get(code)
         if state:  # state present on FR24 -> fetch its airports
             state_url = f"https://www.flightradar24.com{state['url']}"
@@ -944,7 +964,7 @@ def _diff_subdivisioned_country(iso_code: str, country_name: str, fr24_count: in
                              all_added, all_removed, all_changed)
     record['states'] = states_breakdown
     print(f"  Added: {len(all_added)}, Removed: {len(all_removed)}, "
-          f"Changed: {len(all_changed)} across {len(changed)} states")
+          f"Changed: {len(all_changed)} across {len(diff_states)} states")
     return record, None
 
 
