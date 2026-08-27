@@ -525,6 +525,8 @@ class DiffOneCountryTest(unittest.TestCase):
         self.assertEqual(rec["removed_airports"], [])
         self.assertEqual(rec["changed_airports"][0]["changes"],
                          {"iata": {"old": "MUC", "new": "MUX"}})
+        # The record keeps the state-qualified side (FR24's, here).
+        self.assertEqual(rec["changed_airports"][0]["placeCode"], "DE-BY")
 
     def test_flat_fallback_rename_has_no_placecode_pseudo_change(self):
         # FR24 flattened Canada while our data keeps CA-AB: the pairing must
@@ -540,6 +542,8 @@ class DiffOneCountryTest(unittest.TestCase):
         self.assertEqual(rec["removed_airports"], [])
         self.assertEqual(rec["changed_airports"][0]["changes"],
                          {"iata": {"old": "YOL", "new": "YNW"}})
+        # The record keeps the state-qualified side (ours, here).
+        self.assertEqual(rec["changed_airports"][0]["placeCode"], "CA-AB")
 
     def test_flat_fallback_stage_a_change_keeps_our_subdivision(self):
         # FR24 flattened Canada but our data still knows CA-ON; the changed
@@ -765,6 +769,14 @@ class PairChangedTest(unittest.TestCase):
         changed, paired_ids = ca._pair_changed(added, removed)
         self.assertEqual(changed, [])
         self.assertEqual(paired_ids, set())
+
+    def test_suppressed_placecode_prefers_state_qualified_side(self):
+        added = [{"name": "Old Field", "iata": "YNW", "icao": "CYOL", "placeCode": "CA"}]
+        removed = [{"name": "Old Field", "iata": "YOL", "icao": "CYOL",
+                    "placeCode": "CA-AB"}]
+        changed, _ = ca._pair_changed(added, removed)
+        self.assertEqual(changed[0]["placeCode"], "CA-AB")
+        self.assertEqual(changed[0]["changes"], {"iata": {"old": "YOL", "new": "YNW"}})
 
     def test_iata_pass_pairs_leftovers_after_icao_pass(self):
         # ICAO pass consumes the KAAA pair; the leftover then pairs by IATA

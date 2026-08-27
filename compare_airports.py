@@ -673,6 +673,11 @@ def _pair_changed(added: List[Dict], removed: List[Dict]) -> Tuple[List[Dict], S
             place_change = _place_code_change(rem.get('placeCode'), add.get('placeCode'))
             if place_change:
                 airport['changes']['placeCode'] = place_change
+            elif '-' in (rem.get('placeCode') or ''):
+                # Suppressed granularity mismatch: keep the state-qualified
+                # side. The add side's code is already on the record via the
+                # copy, so only a qualified removed side needs to win here.
+                airport['placeCode'] = rem['placeCode']
             changed.append(airport)
             paired_ids.update((id(add), id(rem)))
     return changed, paired_ids
