@@ -546,6 +546,23 @@ class ComparisonTest(unittest.TestCase):
         self.assertIn("✓ 1 resolved this update", msg)
         self.assertNotIn("**To be updated**", msg)
 
+    def test_deploy_transition_pair_collapses_into_changed(self):
+        # First run after the changed_airports deploy: the old-schema file
+        # detailed a rename as an add+remove pair; the new file collapses it
+        # into one changed record. The pair resolves, the update is news.
+        old = {"countries": self._country(
+            "United States", "US", fr24=1, sky=1,
+            added=[self._ap("McKinney National Airport", "DTX", "KTKI")],
+            removed=[self._ap("McKinney Airport", "QQT", "KTKI")])}
+        new = {"countries": self._country(
+            "United States", "US", fr24=1, sky=1,
+            changed=[self._chg("McKinney National Airport", "DTX", "KTKI",
+                               {"iata": {"old": "QQT", "new": "DTX"}}, "US-TX")])}
+        msg, _ = fc.format_comparison(old, new, set(), set(), "L")
+        self.assertIn("**To be updated** (new)", msg)
+        self.assertIn("~ [McKinney National Airport]", msg)
+        self.assertIn("✓ 2 resolved this update (see the airports update)", msg)
+
     def test_updated_only_country_has_worklist_in_overall(self):
         old = {"countries": {}}
         new = {"countries": self._country(
