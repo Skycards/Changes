@@ -46,6 +46,8 @@ Automatically compares airport counts between Flightradar24 and our `airports.js
      message and commit summary for subdivisioned countries)
 6. **Result Storage**: Saves detailed differences to `airport_differences.json`
 
+**Update detection**: airports that merely changed are reported as updates instead of unrelated added+removed pairs. Airports matched by identifier are checked for name, IATA, and ICAO changes, and leftover added/removed records sharing an ICAO (or IATA) are paired into a single changed record — catching IATA renames and state moves. Each changed record carries a `changes` map with the old and new value for every differing field. placeCode differences that only reflect a granularity mismatch (a bare country code on one side, a subdivision of that same country on the other) are suppressed, since nothing actually moved.
+
 ## Example Output
 
 ```
@@ -91,7 +93,8 @@ The `airport_differences.json` file contains detailed information:
 	"summary": {
 		"total_countries_with_differences": 33,
 		"total_added_airports": 89,
-		"total_removed_airports": 12
+		"total_removed_airports": 12,
+		"total_changed_airports": 5
 	},
 	"countries": {
 		"NO": {
@@ -119,8 +122,25 @@ The `airport_differences.json` file contains detailed information:
 					"lon": -79.370003
 				}
 			],
+			"changed_airports": [
+				{
+					"name": "McKinney National Airport",
+					"iata": "DTX",
+					"icao": "KTKI",
+					"lat": 33.177977,
+					"lon": -96.590547,
+					"link": "https://www.flightradar24.com/data/airports/dtx",
+					"changes": {
+						"iata": {
+							"old": "QQT",
+							"new": "DTX"
+						}
+					}
+				}
+			],
 			"added_count": 1,
-			"removed_count": 1
+			"removed_count": 1,
+			"changed_count": 1
 		}
 	}
 }
