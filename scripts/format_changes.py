@@ -388,6 +388,8 @@ def _comparison_records(diffs, kind):
                 # Full placeCode (e.g. "US-PA") when present, so subdivisioned
                 # countries nest by state; fall back to the bare country ISO.
                 "placeCode": ap.get("placeCode") or iso,
+                # Only changed_airports records carry a changes map.
+                "changes": ap.get("changes") or {},
             })
     return records
 
@@ -400,6 +402,41 @@ def _comparison_line(r, marker):
     label = f"[{name}](<{link}>)" if link else name
     codes = _codes_span(iata, r.get("icao"))
     return f"{marker} {label} ({codes})" if codes else f"{marker} {label}"
+
+
+_CHANGE_CLAUSE_ORDER = ("iata", "icao", "name", "placeCode")
+
+
+def _change_val(value):
+    return value if value else "—"  # em dash for empty/missing values
+
+
+def _change_clause(field, old, new):
+    """One "old → new" clause for a changed airport's `changes` entry."""
+    if field == "placeCode":
+        if "-" in (old or "") and "-" in (new or ""):
+            # Both sides state-qualified -> just the subdivision codes.
+            return (f"state {old.split('-', 1)[1]} {ARROW} "
+                    f"{new.split('-', 1)[1]}")
+        return f"{_change_val(old)} {ARROW} {_change_val(new)}"
+    if field == "name":
+        quoted = lambda v: f'"{v}"' if v else _change_val(v)
+        return f"name {quoted(old)} {ARROW} {quoted(new)}"
+    return f"{field.upper()} {_change_val(old)} {ARROW} {_change_val(new)}"
+
+
+def _changed_line(r):
+    """`~` line for a changed airport: the _comparison_line lead plus one
+    comma-joined clause per differing field."""
+    changes = r.get("changes") or {}
+    fields = [f for f in _CHANGE_CLAUSE_ORDER if f in changes]
+    # Future tracked fields still get a (generic) clause, after the known four.
+    fields += sorted(f for f in changes if f not in _CHANGE_CLAUSE_ORDER)
+    clauses = [_change_clause(f, (changes[f] or {}).get("old"),
+                              (changes[f] or {}).get("new"))
+               for f in fields]
+    line = _comparison_line(r, "~")
+    return f"{line}: {', '.join(clauses)}" if clauses else line
 
 
 def _airport_idents(airports_data):
@@ -495,19 +532,24 @@ def _count_changes(old_diffs, new_diffs, new_add, new_rem):
 
 
 def _overall(new_diffs):
-    """(to_be_added, to_be_removed, countries_with_worklist) from the new file."""
+    """(to_be_added, to_be_updated, to_be_removed, countries_with_worklist)
+    from the new file."""
     countries = (new_diffs or {}).get("countries", {})
     to_add = sum(len(c.get("added_airports", [])) for c in countries.values())
+    to_update = sum(len(c.get("changed_airports", [])) for c in countries.values())
     to_remove = sum(len(c.get("removed_airports", [])) for c in countries.values())
     n = sum(1 for c in countries.values()
-            if c.get("added_airports") or c.get("removed_airports"))
-    return to_add, to_remove, n
+            if c.get("added_airports") or c.get("changed_airports")
+            or c.get("removed_airports"))
+    return to_add, to_update, to_remove, n
 
 
-def _comparison_tldr(n_add, n_rem, n_count, resolved, to_add):
+def _comparison_tldr(n_add, n_upd, n_rem, n_count, resolved, to_add):
     clauses = []
     if n_add:
         clauses.append(f"{n_add} to add")
+    if n_upd:
+        clauses.append(f"{n_upd} to update")
     if n_rem:
         clauses.append(f"{n_rem} to remove")
     if n_count:
@@ -520,27 +562,36 @@ def _comparison_tldr(n_add, n_rem, n_count, resolved, to_add):
 
 
 def format_comparison(old_diffs, new_diffs, old_iatas, new_iatas, link):
-    to_add, to_remove, n_countries = _overall(new_diffs)
+    to_add, to_update, to_remove, n_countries = _overall(new_diffs)
     overall = (f"**OVERALL**\nTo be added: {to_add:,} · "
+               f"To be updated: {to_update:,} · "
                f"To be removed: {to_remove:,} · {n_countries} countries")
 
     if old_diffs is None:
         head = f"## {HEADER_EMOJI} Airpedia airport comparison baseline"
         msg = "\n".join([head, "", overall, "", f"For all changes see [commit](<{link}>)"])
-        tldr = f"Airport comparison baseline: {to_add:,} to add, {to_remove:,} to remove"
+        clauses = [f"{to_add:,} to add"]
+        if to_update:
+            clauses.append(f"{to_update:,} to update")
+        clauses.append(f"{to_remove:,} to remove")
+        tldr = f"Airport comparison baseline: {', '.join(clauses)}"
         return msg, tldr
 
     new_add, res_add, sky_add = _classify_side(
         _cmp_index(old_diffs, "added_airports"),
         _cmp_index(new_diffs, "added_airports"), old_iatas, new_iatas)
+    new_chg, res_chg, sky_chg = _classify_side(
+        _cmp_index(old_diffs, "changed_airports"),
+        _cmp_index(new_diffs, "changed_airports"), old_iatas, new_iatas)
     new_rem, res_rem, sky_rem = _classify_side(
         _cmp_index(old_diffs, "removed_airports"),
         _cmp_index(new_diffs, "removed_airports"), old_iatas, new_iatas)
-    resolved = res_add + res_rem
-    skycards_driven = sky_add + sky_rem
+    resolved = res_add + res_chg + res_rem
+    skycards_driven = sky_add + sky_chg + sky_rem
     count_changes = _count_changes(old_diffs, new_diffs, new_add, new_rem)
 
-    if not new_add and not new_rem and not resolved and not count_changes:
+    if (not new_add and not new_chg and not new_rem and not resolved
+            and not count_changes):
         return "", ""
 
     place = lambda r: r.get("placeCode")
@@ -551,6 +602,10 @@ def format_comparison(old_diffs, new_diffs, old_iatas, new_iatas, link):
         parts += ["**To be added** (new)",
                   render_geo(new_add, place, name_key,
                              lambda r: [_comparison_line(r, "+")], with_region=True), ""]
+    if new_chg:
+        parts += ["**To be updated** (new)",
+                  render_geo(new_chg, place, name_key,
+                             lambda r: [_changed_line(r)], with_region=True), ""]
     if new_rem:
         parts += ["**To be removed** (new)",
                   render_geo(new_rem, place, name_key,
@@ -570,8 +625,8 @@ def format_comparison(old_diffs, new_diffs, old_iatas, new_iatas, link):
                                  lambda r: [_comparison_line(r, "+")], with_region=True), ""]
     parts += [overall, "", f"For all changes see [commit](<{link}>)"]
 
-    tldr = _comparison_tldr(len(new_add), len(new_rem), len(count_changes),
-                            resolved, to_add)
+    tldr = _comparison_tldr(len(new_add), len(new_chg), len(new_rem),
+                            len(count_changes), resolved, to_add)
     return "\n".join(parts), tldr
 
 
