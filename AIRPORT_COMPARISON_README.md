@@ -46,7 +46,7 @@ Automatically compares airport counts between Flightradar24 and our `airports.js
      message and commit summary for subdivisioned countries)
 6. **Result Storage**: Saves detailed differences to `airport_differences.json`
 
-**Update detection**: airports that merely changed are reported as updates instead of unrelated added+removed pairs. Airports matched by identifier are checked for name, IATA, and ICAO changes, and leftover added/removed records sharing an ICAO (or IATA) are paired into a single changed record — catching IATA renames and state moves. Each changed record carries a `changes` map with the old and new value for every differing field. placeCode differences that only reflect a granularity mismatch (a bare country code on one side, a subdivision of that same country on the other) are suppressed, since nothing actually moved.
+**Update detection**: airports that merely changed are reported as updates instead of unrelated added+removed pairs. Airports matched by identifier are checked for name, IATA, and ICAO changes, and leftover added/removed records sharing an ICAO (or IATA) are paired into a single changed record — catching IATA renames and state moves. Each changed record carries a `changes` map with the old and new value for every differing field. placeCode differences that only reflect a granularity mismatch (a bare country code on one side, a subdivision of that same country on the other) are suppressed, since nothing actually moved. Note that update detection inherits the count-mismatch gating above: a country (or state) is only analyzed when its totals differ, so a pure rename or move in a count-balanced country stays invisible until its counts diverge.
 
 ## Example Output
 
@@ -70,10 +70,8 @@ DETAILED ANALYSIS
 Analyzing detailed differences for 33 countries...
 
 Processing Norway (NO): FR24=57, Ours=56
-  Fetching airports for Norway from https://www.flightradar24.com/data/airports/norway
-  Found 57 airports for Norway
-  Added: 1 airports
-  Removed: 0 airports
+  Fetching Norway from https://www.flightradar24.com/data/airports/norway
+  Added: 1, Removed: 0, Changed: 0
 
 Note: 5-second delay between country requests to avoid HTTP 429 errors
 
@@ -82,6 +80,7 @@ Note: 5-second delay between country requests to avoid HTTP 429 errors
    • 33 countries with differences
    • 89 airports added (in FR24 but not in our data)
    • 12 airports removed (in our data but not in FR24)
+   • 5 airports changed (matched, but with updated fields)
 ```
 
 ## JSON Output Format
@@ -108,9 +107,7 @@ The `airport_differences.json` file contains detailed information:
 					"name": "Honefoss Eggemoen Airport",
 					"iata": "QUE",
 					"icao": "ENEG",
-					"lat": 60.211742,
-					"lon": 10.314016,
-					"link": "https://www.flightradar24.com/data/airports/que"
+					"placeCode": "NO"
 				}
 			],
 			"removed_airports": [
@@ -118,8 +115,7 @@ The `airport_differences.json` file contains detailed information:
 					"name": "Toronto Buttonville Municipal Airport",
 					"iata": "",
 					"icao": "",
-					"lat": 43.862221,
-					"lon": -79.370003
+					"placeCode": "NO"
 				}
 			],
 			"changed_airports": [
@@ -127,9 +123,8 @@ The `airport_differences.json` file contains detailed information:
 					"name": "McKinney National Airport",
 					"iata": "DTX",
 					"icao": "KTKI",
-					"lat": 33.177977,
-					"lon": -96.590547,
-					"link": "https://www.flightradar24.com/data/airports/dtx",
+					"state": "TX",
+					"placeCode": "US-TX",
 					"changes": {
 						"iata": {
 							"old": "QQT",
