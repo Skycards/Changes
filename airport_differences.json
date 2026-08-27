@@ -1,8 +1,9 @@
 {
   "summary": {
     "total_countries_with_differences": 37,
-    "total_added_airports": 94,
-    "total_removed_airports": 30
+    "total_added_airports": 82,
+    "total_removed_airports": 17,
+    "total_changed_airports": 18
   },
   "countries": {
     "AF": {
@@ -38,8 +39,10 @@
         }
       ],
       "removed_airports": [],
+      "changed_airports": [],
       "added_count": 4,
-      "removed_count": 0
+      "removed_count": 0,
+      "changed_count": 0
     },
     "AR": {
       "country_name": "Argentina",
@@ -74,8 +77,10 @@
         }
       ],
       "removed_airports": [],
+      "changed_airports": [],
       "added_count": 4,
-      "removed_count": 0
+      "removed_count": 0,
+      "changed_count": 0
     },
     "BF": {
       "country_name": "Burkina Faso",
@@ -104,8 +109,10 @@
         }
       ],
       "removed_airports": [],
+      "changed_airports": [],
       "added_count": 3,
-      "removed_count": 0
+      "removed_count": 0,
+      "changed_count": 0
     },
     "BR": {
       "country_name": "Brazil",
@@ -115,8 +122,10 @@
       "difference": 5,
       "added_airports": [],
       "removed_airports": [],
+      "changed_airports": [],
       "added_count": 0,
       "removed_count": 0,
+      "changed_count": 0,
       "state_coverage": "139/287 (48%)"
     },
     "BS": {
@@ -140,8 +149,10 @@
         }
       ],
       "removed_airports": [],
+      "changed_airports": [],
       "added_count": 2,
-      "removed_count": 0
+      "removed_count": 0,
+      "changed_count": 0
     },
     "BW": {
       "country_name": "Botswana",
@@ -158,8 +169,10 @@
         }
       ],
       "removed_airports": [],
+      "changed_airports": [],
       "added_count": 1,
-      "removed_count": 0
+      "removed_count": 0,
+      "changed_count": 0
     },
     "CA": {
       "country_name": "Canada",
@@ -169,8 +182,10 @@
       "difference": 5,
       "added_airports": [],
       "removed_airports": [],
+      "changed_airports": [],
       "added_count": 0,
       "removed_count": 0,
+      "changed_count": 0,
       "state_coverage": "303/354 (86%)"
     },
     "CD": {
@@ -200,8 +215,23 @@
         }
       ],
       "removed_airports": [],
+      "changed_airports": [
+        {
+          "name": "Kamina Ville Airport",
+          "iata": "KMN",
+          "icao": "FZSB",
+          "placeCode": "CD",
+          "changes": {
+            "name": {
+              "old": "Kamina Airport",
+              "new": "Kamina Ville Airport"
+            }
+          }
+        }
+      ],
       "added_count": 3,
-      "removed_count": 0
+      "removed_count": 0,
+      "changed_count": 1
     },
     "CF": {
       "country_name": "Central African Republic",
@@ -272,8 +302,10 @@
         }
       ],
       "removed_airports": [],
+      "changed_airports": [],
       "added_count": 10,
-      "removed_count": 0
+      "removed_count": 0,
+      "changed_count": 0
     },
     "CG": {
       "country_name": "Congo",
@@ -296,8 +328,10 @@
         }
       ],
       "removed_airports": [],
+      "changed_airports": [],
       "added_count": 2,
-      "removed_count": 0
+      "removed_count": 0,
+      "changed_count": 0
     },
     "CK": {
       "country_name": "Cook Islands",
@@ -314,8 +348,10 @@
         }
       ],
       "removed_airports": [],
+      "changed_airports": [],
       "added_count": 1,
-      "removed_count": 0
+      "removed_count": 0,
+      "changed_count": 0
     },
     "CN": {
       "country_name": "China",
@@ -332,8 +368,23 @@
         }
       ],
       "removed_airports": [],
+      "changed_airports": [
+        {
+          "name": "Korla Licheng Airport",
+          "iata": "KRL",
+          "icao": "ZWKL",
+          "placeCode": "CN-XJ",
+          "changes": {
+            "name": {
+              "old": "Korla Airport",
+              "new": "Korla Licheng Airport"
+            }
+          }
+        }
+      ],
       "added_count": 1,
-      "removed_count": 0
+      "removed_count": 0,
+      "changed_count": 1
     },
     "CO": {
       "country_name": "Colombia",
@@ -362,8 +413,10 @@
         }
       ],
       "removed_airports": [],
+      "changed_airports": [],
       "added_count": 3,
-      "removed_count": 0
+      "removed_count": 0,
+      "changed_count": 0
     },
     "EC": {
       "country_name": "Ecuador",
@@ -380,8 +433,10 @@
         }
       ],
       "removed_airports": [],
+      "changed_airports": [],
       "added_count": 1,
-      "removed_count": 0
+      "removed_count": 0,
+      "changed_count": 0
     },
     "ET": {
       "country_name": "Ethiopia",
@@ -410,8 +465,10 @@
         }
       ],
       "removed_airports": [],
+      "changed_airports": [],
       "added_count": 3,
-      "removed_count": 0
+      "removed_count": 0,
+      "changed_count": 0
     },
     "GA": {
       "country_name": "Gabon",
@@ -434,8 +491,10 @@
         }
       ],
       "removed_airports": [],
+      "changed_airports": [],
       "added_count": 2,
-      "removed_count": 0
+      "removed_count": 0,
+      "changed_count": 0
     },
     "GD": {
       "country_name": "Grenada",
@@ -452,8 +511,10 @@
         }
       ],
       "removed_airports": [],
+      "changed_airports": [],
       "added_count": 1,
-      "removed_count": 0
+      "removed_count": 0,
+      "changed_count": 0
     },
     "GT": {
       "country_name": "Guatemala",
@@ -482,8 +543,10 @@
         }
       ],
       "removed_airports": [],
+      "changed_airports": [],
       "added_count": 3,
-      "removed_count": 0
+      "removed_count": 0,
+      "changed_count": 0
     },
     "GY": {
       "country_name": "Guyana",
@@ -524,8 +587,10 @@
         }
       ],
       "removed_airports": [],
+      "changed_airports": [],
       "added_count": 5,
-      "removed_count": 0
+      "removed_count": 0,
+      "changed_count": 0
     },
     "HT": {
       "country_name": "Haiti",
@@ -548,8 +613,10 @@
         }
       ],
       "removed_airports": [],
+      "changed_airports": [],
       "added_count": 2,
-      "removed_count": 0
+      "removed_count": 0,
+      "changed_count": 0
     },
     "KP": {
       "country_name": "North Korea",
@@ -559,8 +626,10 @@
       "difference": 1,
       "added_airports": [],
       "removed_airports": [],
+      "changed_airports": [],
       "added_count": 0,
-      "removed_count": 0
+      "removed_count": 0,
+      "changed_count": 0
     },
     "ML": {
       "country_name": "Mali",
@@ -589,8 +658,10 @@
         }
       ],
       "removed_airports": [],
+      "changed_airports": [],
       "added_count": 3,
-      "removed_count": 0
+      "removed_count": 0,
+      "changed_count": 0
     },
     "MM": {
       "country_name": "Myanmar (burma)",
@@ -607,8 +678,10 @@
         }
       ],
       "removed_airports": [],
+      "changed_airports": [],
       "added_count": 1,
-      "removed_count": 0
+      "removed_count": 0,
+      "changed_count": 0
     },
     "MN": {
       "country_name": "Mongolia",
@@ -625,8 +698,35 @@
         }
       ],
       "removed_airports": [],
+      "changed_airports": [
+        {
+          "name": "Ulaanbaatar Chinggis Khaan International Airport",
+          "iata": "UBN",
+          "icao": "ZMCK",
+          "placeCode": "MN",
+          "changes": {
+            "name": {
+              "old": "Ulaanbaatar New International Airport",
+              "new": "Ulaanbaatar Chinggis Khaan International Airport"
+            }
+          }
+        },
+        {
+          "name": "Ulaanbaatar Buyant-Ukhaa International Airport",
+          "iata": "ULN",
+          "icao": "ZMUB",
+          "placeCode": "MN",
+          "changes": {
+            "name": {
+              "old": "Ulaanbaatar Chinggis Khaan International Airport",
+              "new": "Ulaanbaatar Buyant-Ukhaa International Airport"
+            }
+          }
+        }
+      ],
       "added_count": 1,
-      "removed_count": 0
+      "removed_count": 0,
+      "changed_count": 2
     },
     "NA": {
       "country_name": "Namibia",
@@ -643,8 +743,10 @@
         }
       ],
       "removed_airports": [],
+      "changed_airports": [],
       "added_count": 1,
-      "removed_count": 0
+      "removed_count": 0,
+      "changed_count": 0
     },
     "OM": {
       "country_name": "Oman",
@@ -667,8 +769,10 @@
         }
       ],
       "removed_airports": [],
+      "changed_airports": [],
       "added_count": 2,
-      "removed_count": 0
+      "removed_count": 0,
+      "changed_count": 0
     },
     "PE": {
       "country_name": "Peru",
@@ -697,8 +801,10 @@
         }
       ],
       "removed_airports": [],
+      "changed_airports": [],
       "added_count": 3,
-      "removed_count": 0
+      "removed_count": 0,
+      "changed_count": 0
     },
     "PG": {
       "country_name": "Papua New Guinea",
@@ -708,8 +814,10 @@
       "difference": 2,
       "added_airports": [],
       "removed_airports": [],
+      "changed_airports": [],
       "added_count": 0,
-      "removed_count": 0
+      "removed_count": 0,
+      "changed_count": 0
     },
     "PH": {
       "country_name": "Philippines",
@@ -738,8 +846,10 @@
         }
       ],
       "removed_airports": [],
+      "changed_airports": [],
       "added_count": 3,
-      "removed_count": 0
+      "removed_count": 0,
+      "changed_count": 0
     },
     "PK": {
       "country_name": "Pakistan",
@@ -756,8 +866,10 @@
         }
       ],
       "removed_airports": [],
+      "changed_airports": [],
       "added_count": 1,
-      "removed_count": 0
+      "removed_count": 0,
+      "changed_count": 0
     },
     "PM": {
       "country_name": "Saint Pierre And Miquelon",
@@ -774,8 +886,10 @@
         }
       ],
       "removed_airports": [],
+      "changed_airports": [],
       "added_count": 1,
-      "removed_count": 0
+      "removed_count": 0,
+      "changed_count": 0
     },
     "SB": {
       "country_name": "Solomon Islands",
@@ -810,8 +924,10 @@
         }
       ],
       "removed_airports": [],
+      "changed_airports": [],
       "added_count": 4,
-      "removed_count": 0
+      "removed_count": 0,
+      "changed_count": 0
     },
     "TD": {
       "country_name": "Chad",
@@ -821,8 +937,10 @@
       "difference": 2,
       "added_airports": [],
       "removed_airports": [],
+      "changed_airports": [],
       "added_count": 0,
-      "removed_count": 0
+      "removed_count": 0,
+      "changed_count": 0
     },
     "US": {
       "country_name": "United States",
@@ -831,97 +949,6 @@
       "skycards_count": 1750,
       "difference": 2,
       "added_airports": [
-        {
-          "name": "Washington Ronald Reagan National Airport",
-          "iata": "DCA",
-          "icao": "KDCA",
-          "state": "DC",
-          "placeCode": "US-DC"
-        },
-        {
-          "name": "Washington Dulles International Airport",
-          "iata": "IAD",
-          "icao": "KIAD",
-          "state": "DC",
-          "placeCode": "US-DC"
-        },
-        {
-          "name": "West Palm Beach Donald J. Trump International Airport",
-          "iata": "DJT",
-          "icao": "KDJT",
-          "state": "FL",
-          "placeCode": "US-FL"
-        },
-        {
-          "name": "Columbus Lawson Army Airfield",
-          "iata": "LSF",
-          "icao": "KLSF",
-          "state": "GA",
-          "placeCode": "US-GA"
-        },
-        {
-          "name": "Vero Beach Regional Airport",
-          "iata": "VRB",
-          "icao": "KVRB",
-          "state": "GA",
-          "placeCode": "US-GA"
-        },
-        {
-          "name": "Columbia Regional Airport",
-          "iata": "COA",
-          "icao": "KCOA",
-          "state": "MO",
-          "placeCode": "US-MO"
-        },
-        {
-          "name": "Kansas City New Century Aircenter Airport",
-          "iata": "JCI",
-          "icao": "KIXD",
-          "state": "MO",
-          "placeCode": "US-MO"
-        },
-        {
-          "name": "Fitchburg Municipal Airport",
-          "iata": "QTI",
-          "icao": "KFIT",
-          "state": "MO",
-          "placeCode": "US-MO"
-        },
-        {
-          "name": "Saint Joseph Rosecrans Memorial Airport",
-          "iata": "STJ",
-          "icao": "KSTJ",
-          "state": "MO",
-          "placeCode": "US-MO"
-        },
-        {
-          "name": "New York Manhattan West 30th Street Heliport",
-          "iata": "JRA",
-          "icao": "KJRA",
-          "state": "NY",
-          "placeCode": "US-NY"
-        },
-        {
-          "name": "Wheeling Ohio County Airport",
-          "iata": "HLG",
-          "icao": "KHLG",
-          "state": "OH",
-          "placeCode": "US-OH"
-        },
-        {
-          "name": "Glendale Luke Air Force Base",
-          "iata": "LUF",
-          "icao": "KLUF",
-          "state": "OH",
-          "placeCode": "US-OH"
-        },
-        {
-          "name": "McKinney National Airport",
-          "iata": "DTX",
-          "icao": "KTKI",
-          "state": "TX",
-          "placeCode": "US-TX"
-        },
         {
           "name": "Danville Regional Airport",
           "iata": "DAN",
@@ -938,12 +965,6 @@
           "placeCode": "US-AK"
         },
         {
-          "name": "Columbus Lawson Army Airfield",
-          "iata": "LSF",
-          "icao": "KLSF",
-          "placeCode": "US-AL"
-        },
-        {
           "name": "Jasper Walker County Airport",
           "iata": "QDX",
           "icao": "KJFX",
@@ -956,34 +977,10 @@
           "placeCode": "US-AR"
         },
         {
-          "name": "Glendale Luke Air Force Base",
-          "iata": "LUF",
-          "icao": "KLUF",
-          "placeCode": "US-AZ"
-        },
-        {
-          "name": "Columbia Regional Airport",
-          "iata": "COA",
-          "icao": "KCOA",
-          "placeCode": "US-CA"
-        },
-        {
           "name": "Shafter Minter Field Airport",
           "iata": "MIT",
           "icao": "KMIT",
           "placeCode": "US-CA"
-        },
-        {
-          "name": "West Palm Beach Donald J. Trump International Airport",
-          "iata": "PBI",
-          "icao": "KDJT",
-          "placeCode": "US-FL"
-        },
-        {
-          "name": "Vero Beach Regional Airport",
-          "iata": "VRB",
-          "icao": "KVRB",
-          "placeCode": "US-FL"
         },
         {
           "name": "Fairfield Municipal Airport",
@@ -1004,34 +1001,10 @@
           "placeCode": "US-IN"
         },
         {
-          "name": "Kansas City New Century Aircenter Airport",
-          "iata": "JCI",
-          "icao": "KIXD",
-          "placeCode": "US-KS"
-        },
-        {
-          "name": "Saint Joseph Rosecrans Memorial Airport",
-          "iata": "STJ",
-          "icao": "KSTJ",
-          "placeCode": "US-KS"
-        },
-        {
-          "name": "Fitchburg Municipal Airport",
-          "iata": "QTI",
-          "icao": "KFIT",
-          "placeCode": "US-MA"
-        },
-        {
           "name": "Sturgis Kirsch Municipal Airport",
           "iata": "IRS",
           "icao": "KIRS",
           "placeCode": "US-MI"
-        },
-        {
-          "name": "New York Manhattan West 30th Street Heliport",
-          "iata": "JRA",
-          "icao": "KJRA",
-          "placeCode": "US-NJ"
         },
         {
           "name": "Delaware Municipal Airport",
@@ -1070,12 +1043,6 @@
           "placeCode": "US-TX"
         },
         {
-          "name": "McKinney National Airport",
-          "iata": "QQT",
-          "icao": "KTKI",
-          "placeCode": "US-TX"
-        },
-        {
           "name": "Van Horn Culberson County Airport",
           "iata": "VHN",
           "icao": "KVHN",
@@ -1088,32 +1055,199 @@
           "placeCode": "US-VA"
         },
         {
-          "name": "Washington Ronald Reagan National Airport",
-          "iata": "DCA",
-          "icao": "KDCA",
-          "placeCode": "US-VA"
-        },
-        {
-          "name": "Washington Dulles International Airport",
-          "iata": "IAD",
-          "icao": "KIAD",
-          "placeCode": "US-VA"
-        },
-        {
-          "name": "Wheeling Ohio County Airport",
-          "iata": "HLG",
-          "icao": "KHLG",
-          "placeCode": "US-WV"
-        },
-        {
           "name": "Torrington Municipal Airport",
           "iata": "TOR",
           "icao": "KTOR",
           "placeCode": "US-WY"
         }
       ],
-      "added_count": 14,
-      "removed_count": 30,
+      "changed_airports": [
+        {
+          "name": "Columbia Regional Airport",
+          "iata": "COA",
+          "icao": "KCOA",
+          "state": "MO",
+          "placeCode": "US-MO",
+          "changes": {
+            "placeCode": {
+              "old": "US-CA",
+              "new": "US-MO"
+            }
+          }
+        },
+        {
+          "name": "Washington Ronald Reagan National Airport",
+          "iata": "DCA",
+          "icao": "KDCA",
+          "state": "DC",
+          "placeCode": "US-DC",
+          "changes": {
+            "placeCode": {
+              "old": "US-VA",
+              "new": "US-DC"
+            }
+          }
+        },
+        {
+          "name": "West Palm Beach Donald J. Trump International Airport",
+          "iata": "DJT",
+          "icao": "KDJT",
+          "state": "FL",
+          "placeCode": "US-FL",
+          "changes": {
+            "iata": {
+              "old": "PBI",
+              "new": "DJT"
+            }
+          }
+        },
+        {
+          "name": "McKinney National Airport",
+          "iata": "DTX",
+          "icao": "KTKI",
+          "state": "TX",
+          "placeCode": "US-TX",
+          "changes": {
+            "iata": {
+              "old": "QQT",
+              "new": "DTX"
+            }
+          }
+        },
+        {
+          "name": "Wheeling Ohio County Airport",
+          "iata": "HLG",
+          "icao": "KHLG",
+          "state": "OH",
+          "placeCode": "US-OH",
+          "changes": {
+            "placeCode": {
+              "old": "US-WV",
+              "new": "US-OH"
+            }
+          }
+        },
+        {
+          "name": "Washington Dulles International Airport",
+          "iata": "IAD",
+          "icao": "KIAD",
+          "state": "DC",
+          "placeCode": "US-DC",
+          "changes": {
+            "placeCode": {
+              "old": "US-VA",
+              "new": "US-DC"
+            }
+          }
+        },
+        {
+          "name": "Kansas City New Century Aircenter Airport",
+          "iata": "JCI",
+          "icao": "KIXD",
+          "state": "MO",
+          "placeCode": "US-MO",
+          "changes": {
+            "placeCode": {
+              "old": "US-KS",
+              "new": "US-MO"
+            }
+          }
+        },
+        {
+          "name": "New York Manhattan West 30th Street Heliport",
+          "iata": "JRA",
+          "icao": "KJRA",
+          "state": "NY",
+          "placeCode": "US-NY",
+          "changes": {
+            "placeCode": {
+              "old": "US-NJ",
+              "new": "US-NY"
+            }
+          }
+        },
+        {
+          "name": "Columbus Lawson Army Airfield",
+          "iata": "LSF",
+          "icao": "KLSF",
+          "state": "GA",
+          "placeCode": "US-GA",
+          "changes": {
+            "placeCode": {
+              "old": "US-AL",
+              "new": "US-GA"
+            }
+          }
+        },
+        {
+          "name": "Glendale Luke Air Force Base",
+          "iata": "LUF",
+          "icao": "KLUF",
+          "state": "OH",
+          "placeCode": "US-OH",
+          "changes": {
+            "placeCode": {
+              "old": "US-AZ",
+              "new": "US-OH"
+            }
+          }
+        },
+        {
+          "name": "Memphis Frederick W. Smith International Airport",
+          "iata": "MEM",
+          "icao": "KMEM",
+          "state": "TN",
+          "placeCode": "US-TN",
+          "changes": {
+            "name": {
+              "old": "Memphis International Airport",
+              "new": "Memphis Frederick W. Smith International Airport"
+            }
+          }
+        },
+        {
+          "name": "Fitchburg Municipal Airport",
+          "iata": "QTI",
+          "icao": "KFIT",
+          "state": "MO",
+          "placeCode": "US-MO",
+          "changes": {
+            "placeCode": {
+              "old": "US-MA",
+              "new": "US-MO"
+            }
+          }
+        },
+        {
+          "name": "Saint Joseph Rosecrans Memorial Airport",
+          "iata": "STJ",
+          "icao": "KSTJ",
+          "state": "MO",
+          "placeCode": "US-MO",
+          "changes": {
+            "placeCode": {
+              "old": "US-KS",
+              "new": "US-MO"
+            }
+          }
+        },
+        {
+          "name": "Vero Beach Regional Airport",
+          "iata": "VRB",
+          "icao": "KVRB",
+          "state": "GA",
+          "placeCode": "US-GA",
+          "changes": {
+            "placeCode": {
+              "old": "US-FL",
+              "new": "US-GA"
+            }
+          }
+        }
+      ],
+      "added_count": 1,
+      "removed_count": 17,
+      "changed_count": 14,
       "states": {
         "AK": {
           "state_name": "Alaska",
@@ -1140,12 +1274,6 @@
           "added_airports": [],
           "removed_airports": [
             {
-              "name": "Columbus Lawson Army Airfield",
-              "iata": "LSF",
-              "icao": "KLSF",
-              "placeCode": "US-AL"
-            },
-            {
               "name": "Jasper Walker County Airport",
               "iata": "QDX",
               "icao": "KJFX",
@@ -1153,7 +1281,7 @@
             }
           ],
           "added_count": 0,
-          "removed_count": 2
+          "removed_count": 1
         },
         "AR": {
           "state_name": "Arkansas",
@@ -1178,16 +1306,9 @@
           "skycards_count": 38,
           "difference": -1,
           "added_airports": [],
-          "removed_airports": [
-            {
-              "name": "Glendale Luke Air Force Base",
-              "iata": "LUF",
-              "icao": "KLUF",
-              "placeCode": "US-AZ"
-            }
-          ],
+          "removed_airports": [],
           "added_count": 0,
-          "removed_count": 1
+          "removed_count": 0
         },
         "CA": {
           "state_name": "California",
@@ -1197,12 +1318,6 @@
           "added_airports": [],
           "removed_airports": [
             {
-              "name": "Columbia Regional Airport",
-              "iata": "COA",
-              "icao": "KCOA",
-              "placeCode": "US-CA"
-            },
-            {
               "name": "Shafter Minter Field Airport",
               "iata": "MIT",
               "icao": "KMIT",
@@ -1210,31 +1325,16 @@
             }
           ],
           "added_count": 0,
-          "removed_count": 2
+          "removed_count": 1
         },
         "DC": {
           "state_name": "District of Columbia",
           "fr24_count": 2,
           "skycards_count": 0,
           "difference": 2,
-          "added_airports": [
-            {
-              "name": "Washington Ronald Reagan National Airport",
-              "iata": "DCA",
-              "icao": "KDCA",
-              "state": "DC",
-              "placeCode": "US-DC"
-            },
-            {
-              "name": "Washington Dulles International Airport",
-              "iata": "IAD",
-              "icao": "KIAD",
-              "state": "DC",
-              "placeCode": "US-DC"
-            }
-          ],
+          "added_airports": [],
           "removed_airports": [],
-          "added_count": 2,
+          "added_count": 0,
           "removed_count": 0
         },
         "FL": {
@@ -1242,55 +1342,19 @@
           "fr24_count": 78,
           "skycards_count": 79,
           "difference": -1,
-          "added_airports": [
-            {
-              "name": "West Palm Beach Donald J. Trump International Airport",
-              "iata": "DJT",
-              "icao": "KDJT",
-              "state": "FL",
-              "placeCode": "US-FL"
-            }
-          ],
-          "removed_airports": [
-            {
-              "name": "West Palm Beach Donald J. Trump International Airport",
-              "iata": "PBI",
-              "icao": "KDJT",
-              "placeCode": "US-FL"
-            },
-            {
-              "name": "Vero Beach Regional Airport",
-              "iata": "VRB",
-              "icao": "KVRB",
-              "placeCode": "US-FL"
-            }
-          ],
-          "added_count": 1,
-          "removed_count": 2
+          "added_airports": [],
+          "removed_airports": [],
+          "added_count": 0,
+          "removed_count": 0
         },
         "GA": {
           "state_name": "Georgia",
           "fr24_count": 49,
           "skycards_count": 47,
           "difference": 2,
-          "added_airports": [
-            {
-              "name": "Columbus Lawson Army Airfield",
-              "iata": "LSF",
-              "icao": "KLSF",
-              "state": "GA",
-              "placeCode": "US-GA"
-            },
-            {
-              "name": "Vero Beach Regional Airport",
-              "iata": "VRB",
-              "icao": "KVRB",
-              "state": "GA",
-              "placeCode": "US-GA"
-            }
-          ],
+          "added_airports": [],
           "removed_airports": [],
-          "added_count": 2,
+          "added_count": 0,
           "removed_count": 0
         },
         "IA": {
@@ -1339,22 +1403,9 @@
           "skycards_count": 37,
           "difference": -2,
           "added_airports": [],
-          "removed_airports": [
-            {
-              "name": "Kansas City New Century Aircenter Airport",
-              "iata": "JCI",
-              "icao": "KIXD",
-              "placeCode": "US-KS"
-            },
-            {
-              "name": "Saint Joseph Rosecrans Memorial Airport",
-              "iata": "STJ",
-              "icao": "KSTJ",
-              "placeCode": "US-KS"
-            }
-          ],
+          "removed_airports": [],
           "added_count": 0,
-          "removed_count": 2
+          "removed_count": 0
         },
         "MA": {
           "state_name": "Massachusetts",
@@ -1362,16 +1413,9 @@
           "skycards_count": 19,
           "difference": -1,
           "added_airports": [],
-          "removed_airports": [
-            {
-              "name": "Fitchburg Municipal Airport",
-              "iata": "QTI",
-              "icao": "KFIT",
-              "placeCode": "US-MA"
-            }
-          ],
+          "removed_airports": [],
           "added_count": 0,
-          "removed_count": 1
+          "removed_count": 0
         },
         "MI": {
           "state_name": "Michigan",
@@ -1395,38 +1439,9 @@
           "fr24_count": 34,
           "skycards_count": 30,
           "difference": 4,
-          "added_airports": [
-            {
-              "name": "Columbia Regional Airport",
-              "iata": "COA",
-              "icao": "KCOA",
-              "state": "MO",
-              "placeCode": "US-MO"
-            },
-            {
-              "name": "Kansas City New Century Aircenter Airport",
-              "iata": "JCI",
-              "icao": "KIXD",
-              "state": "MO",
-              "placeCode": "US-MO"
-            },
-            {
-              "name": "Fitchburg Municipal Airport",
-              "iata": "QTI",
-              "icao": "KFIT",
-              "state": "MO",
-              "placeCode": "US-MO"
-            },
-            {
-              "name": "Saint Joseph Rosecrans Memorial Airport",
-              "iata": "STJ",
-              "icao": "KSTJ",
-              "state": "MO",
-              "placeCode": "US-MO"
-            }
-          ],
+          "added_airports": [],
           "removed_airports": [],
-          "added_count": 4,
+          "added_count": 0,
           "removed_count": 0
         },
         "NJ": {
@@ -1435,33 +1450,18 @@
           "skycards_count": 16,
           "difference": -1,
           "added_airports": [],
-          "removed_airports": [
-            {
-              "name": "New York Manhattan West 30th Street Heliport",
-              "iata": "JRA",
-              "icao": "KJRA",
-              "placeCode": "US-NJ"
-            }
-          ],
+          "removed_airports": [],
           "added_count": 0,
-          "removed_count": 1
+          "removed_count": 0
         },
         "NY": {
           "state_name": "New York",
           "fr24_count": 39,
           "skycards_count": 38,
           "difference": 1,
-          "added_airports": [
-            {
-              "name": "New York Manhattan West 30th Street Heliport",
-              "iata": "JRA",
-              "icao": "KJRA",
-              "state": "NY",
-              "placeCode": "US-NY"
-            }
-          ],
+          "added_airports": [],
           "removed_airports": [],
-          "added_count": 1,
+          "added_count": 0,
           "removed_count": 0
         },
         "OH": {
@@ -1469,22 +1469,7 @@
           "fr24_count": 36,
           "skycards_count": 35,
           "difference": 1,
-          "added_airports": [
-            {
-              "name": "Wheeling Ohio County Airport",
-              "iata": "HLG",
-              "icao": "KHLG",
-              "state": "OH",
-              "placeCode": "US-OH"
-            },
-            {
-              "name": "Glendale Luke Air Force Base",
-              "iata": "LUF",
-              "icao": "KLUF",
-              "state": "OH",
-              "placeCode": "US-OH"
-            }
-          ],
+          "added_airports": [],
           "removed_airports": [
             {
               "name": "Delaware Municipal Airport",
@@ -1493,7 +1478,7 @@
               "placeCode": "US-OH"
             }
           ],
-          "added_count": 2,
+          "added_count": 0,
           "removed_count": 1
         },
         "PA": {
@@ -1535,15 +1520,7 @@
           "fr24_count": 120,
           "skycards_count": 124,
           "difference": -4,
-          "added_airports": [
-            {
-              "name": "McKinney National Airport",
-              "iata": "DTX",
-              "icao": "KTKI",
-              "state": "TX",
-              "placeCode": "US-TX"
-            }
-          ],
+          "added_airports": [],
           "removed_airports": [
             {
               "name": "Eagle Lake Airport",
@@ -1564,20 +1541,14 @@
               "placeCode": "US-TX"
             },
             {
-              "name": "McKinney National Airport",
-              "iata": "QQT",
-              "icao": "KTKI",
-              "placeCode": "US-TX"
-            },
-            {
               "name": "Van Horn Culberson County Airport",
               "iata": "VHN",
               "icao": "KVHN",
               "placeCode": "US-TX"
             }
           ],
-          "added_count": 1,
-          "removed_count": 5
+          "added_count": 0,
+          "removed_count": 4
         },
         "VA": {
           "state_name": "Virginia",
@@ -1599,22 +1570,10 @@
               "iata": "DAA",
               "icao": "KDAA",
               "placeCode": "US-VA"
-            },
-            {
-              "name": "Washington Ronald Reagan National Airport",
-              "iata": "DCA",
-              "icao": "KDCA",
-              "placeCode": "US-VA"
-            },
-            {
-              "name": "Washington Dulles International Airport",
-              "iata": "IAD",
-              "icao": "KIAD",
-              "placeCode": "US-VA"
             }
           ],
           "added_count": 1,
-          "removed_count": 3
+          "removed_count": 1
         },
         "WV": {
           "state_name": "West Virginia",
@@ -1622,16 +1581,9 @@
           "skycards_count": 12,
           "difference": -1,
           "added_airports": [],
-          "removed_airports": [
-            {
-              "name": "Wheeling Ohio County Airport",
-              "iata": "HLG",
-              "icao": "KHLG",
-              "placeCode": "US-WV"
-            }
-          ],
+          "removed_airports": [],
           "added_count": 0,
-          "removed_count": 1
+          "removed_count": 0
         },
         "WY": {
           "state_name": "Wyoming",
@@ -1703,8 +1655,10 @@
         }
       ],
       "removed_airports": [],
+      "changed_airports": [],
       "added_count": 7,
-      "removed_count": 0
+      "removed_count": 0,
+      "changed_count": 0
     },
     "ZA": {
       "country_name": "South Africa",
@@ -1727,8 +1681,10 @@
         }
       ],
       "removed_airports": [],
+      "changed_airports": [],
       "added_count": 2,
-      "removed_count": 0
+      "removed_count": 0,
+      "changed_count": 0
     },
     "ZM": {
       "country_name": "Zambia",
@@ -1736,10 +1692,19 @@
       "fr24_count": 11,
       "skycards_count": 10,
       "difference": 1,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "name": "Kalumbila Airport",
+          "iata": "UMB",
+          "icao": "FLKM",
+          "placeCode": "ZM"
+        }
+      ],
       "removed_airports": [],
-      "added_count": 0,
-      "removed_count": 0
+      "changed_airports": [],
+      "added_count": 1,
+      "removed_count": 0,
+      "changed_count": 0
     }
   }
 }
