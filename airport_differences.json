@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 37,
-    "total_added_airports": 82,
+    "total_added_airports": 83,
     "total_removed_airports": 17,
     "total_changed_airports": 18
   },
@@ -70,6 +70,12 @@
           "placeCode": "AR"
         },
         {
+          "name": "Tartagal Airport",
+          "iata": "TTG",
+          "icao": "SAST",
+          "placeCode": "AR"
+        },
+        {
           "name": "Villa Reynolds Airport",
           "iata": "VME",
           "icao": "SAOR",
@@ -78,7 +84,7 @@
       ],
       "removed_airports": [],
       "changed_airports": [],
-      "added_count": 4,
+      "added_count": 5,
       "removed_count": 0,
       "changed_count": 0
     },
