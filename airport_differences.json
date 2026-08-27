@@ -1,8 +1,8 @@
 {
   "summary": {
-    "total_countries_with_differences": 15,
-    "total_added_airports": 42,
-    "total_removed_airports": 0
+    "total_countries_with_differences": 37,
+    "total_added_airports": 55,
+    "total_removed_airports": 31
   },
   "countries": {
     "AF": {
@@ -44,9 +44,9 @@
     "AR": {
       "country_name": "Argentina",
       "iso_code": "AR",
-      "fr24_count": 60,
+      "fr24_count": 61,
       "skycards_count": 56,
-      "difference": 4,
+      "difference": 5,
       "added_airports": [
         {
           "name": "La Cumbre Airport",
@@ -110,14 +110,25 @@
     "BR": {
       "country_name": "Brazil",
       "iso_code": "BR",
-      "fr24_count": 283,
+      "fr24_count": 287,
       "skycards_count": 282,
-      "difference": 1,
+      "difference": 5,
       "added_airports": [],
       "removed_airports": [],
       "added_count": 0,
       "removed_count": 0,
-      "state_coverage": "138/283 (49%)"
+      "state_coverage": "139/287 (48%)"
+    },
+    "BS": {
+      "country_name": "Bahamas",
+      "iso_code": "BS",
+      "fr24_count": 33,
+      "skycards_count": 31,
+      "difference": 2,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
+      "removed_count": 0
     },
     "BW": {
       "country_name": "Botswana",
@@ -137,12 +148,24 @@
       "added_count": 1,
       "removed_count": 0
     },
+    "CA": {
+      "country_name": "Canada",
+      "iso_code": "CA",
+      "fr24_count": 354,
+      "skycards_count": 349,
+      "difference": 5,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
+      "removed_count": 0,
+      "state_coverage": "298/354 (84%)"
+    },
     "CD": {
       "country_name": "Democratic Republic Of The Congo",
       "iso_code": "CD",
-      "fr24_count": 28,
+      "fr24_count": 29,
       "skycards_count": 26,
-      "difference": 2,
+      "difference": 3,
       "added_airports": [
         {
           "name": "Boende Airport",
@@ -233,6 +256,17 @@
       "added_count": 10,
       "removed_count": 0
     },
+    "CG": {
+      "country_name": "Congo",
+      "iso_code": "CG",
+      "fr24_count": 4,
+      "skycards_count": 2,
+      "difference": 2,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
+      "removed_count": 0
+    },
     "CK": {
       "country_name": "Cook Islands",
       "iso_code": "CK",
@@ -317,6 +351,50 @@
       "added_count": 1,
       "removed_count": 0
     },
+    "ET": {
+      "country_name": "Ethiopia",
+      "iso_code": "ET",
+      "fr24_count": 26,
+      "skycards_count": 23,
+      "difference": 3,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
+      "removed_count": 0
+    },
+    "GA": {
+      "country_name": "Gabon",
+      "iso_code": "GA",
+      "fr24_count": 6,
+      "skycards_count": 4,
+      "difference": 2,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
+      "removed_count": 0
+    },
+    "GD": {
+      "country_name": "Grenada",
+      "iso_code": "GD",
+      "fr24_count": 2,
+      "skycards_count": 1,
+      "difference": 1,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
+      "removed_count": 0
+    },
+    "GT": {
+      "country_name": "Guatemala",
+      "iso_code": "GT",
+      "fr24_count": 9,
+      "skycards_count": 6,
+      "difference": 3,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
+      "removed_count": 0
+    },
     "GY": {
       "country_name": "Guyana",
       "iso_code": "GY",
@@ -357,6 +435,28 @@
       ],
       "removed_airports": [],
       "added_count": 5,
+      "removed_count": 0
+    },
+    "HT": {
+      "country_name": "Haiti",
+      "iso_code": "HT",
+      "fr24_count": 5,
+      "skycards_count": 3,
+      "difference": 2,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
+      "removed_count": 0
+    },
+    "KP": {
+      "country_name": "North Korea",
+      "iso_code": "KP",
+      "fr24_count": 2,
+      "skycards_count": 1,
+      "difference": 1,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
       "removed_count": 0
     },
     "ML": {
@@ -407,6 +507,39 @@
       "added_count": 1,
       "removed_count": 0
     },
+    "MN": {
+      "country_name": "Mongolia",
+      "iso_code": "MN",
+      "fr24_count": 12,
+      "skycards_count": 11,
+      "difference": 1,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
+      "removed_count": 0
+    },
+    "NA": {
+      "country_name": "Namibia",
+      "iso_code": "NA",
+      "fr24_count": 13,
+      "skycards_count": 12,
+      "difference": 1,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
+      "removed_count": 0
+    },
+    "OM": {
+      "country_name": "Oman",
+      "iso_code": "OM",
+      "fr24_count": 8,
+      "skycards_count": 6,
+      "difference": 2,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
+      "removed_count": 0
+    },
     "PE": {
       "country_name": "Peru",
       "iso_code": "PE",
@@ -435,6 +568,952 @@
       ],
       "removed_airports": [],
       "added_count": 3,
+      "removed_count": 0
+    },
+    "PG": {
+      "country_name": "Papua New Guinea",
+      "iso_code": "PG",
+      "fr24_count": 35,
+      "skycards_count": 33,
+      "difference": 2,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
+      "removed_count": 0
+    },
+    "PH": {
+      "country_name": "Philippines",
+      "iso_code": "PH",
+      "fr24_count": 52,
+      "skycards_count": 49,
+      "difference": 3,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
+      "removed_count": 0
+    },
+    "PK": {
+      "country_name": "Pakistan",
+      "iso_code": "PK",
+      "fr24_count": 22,
+      "skycards_count": 21,
+      "difference": 1,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
+      "removed_count": 0
+    },
+    "PM": {
+      "country_name": "Saint Pierre And Miquelon",
+      "iso_code": "PM",
+      "fr24_count": 2,
+      "skycards_count": 1,
+      "difference": 1,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
+      "removed_count": 0
+    },
+    "SB": {
+      "country_name": "Solomon Islands",
+      "iso_code": "SB",
+      "fr24_count": 19,
+      "skycards_count": 15,
+      "difference": 4,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
+      "removed_count": 0
+    },
+    "TD": {
+      "country_name": "Chad",
+      "iso_code": "TD",
+      "fr24_count": 3,
+      "skycards_count": 1,
+      "difference": 2,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
+      "removed_count": 0
+    },
+    "US": {
+      "country_name": "United States",
+      "iso_code": "US",
+      "fr24_count": 1752,
+      "skycards_count": 1750,
+      "difference": 2,
+      "added_airports": [
+        {
+          "name": "Washington Ronald Reagan National Airport",
+          "iata": "DCA",
+          "icao": "KDCA",
+          "state": "DC",
+          "placeCode": "US-DC"
+        },
+        {
+          "name": "Washington Dulles International Airport",
+          "iata": "IAD",
+          "icao": "KIAD",
+          "state": "DC",
+          "placeCode": "US-DC"
+        },
+        {
+          "name": "West Palm Beach Donald J. Trump International Airport",
+          "iata": "DJT",
+          "icao": "KDJT",
+          "state": "FL",
+          "placeCode": "US-FL"
+        },
+        {
+          "name": "Columbus Lawson Army Airfield",
+          "iata": "LSF",
+          "icao": "KLSF",
+          "state": "GA",
+          "placeCode": "US-GA"
+        },
+        {
+          "name": "Vero Beach Regional Airport",
+          "iata": "VRB",
+          "icao": "KVRB",
+          "state": "GA",
+          "placeCode": "US-GA"
+        },
+        {
+          "name": "Columbia Regional Airport",
+          "iata": "COA",
+          "icao": "KCOA",
+          "state": "MO",
+          "placeCode": "US-MO"
+        },
+        {
+          "name": "Kansas City New Century Aircenter Airport",
+          "iata": "JCI",
+          "icao": "KIXD",
+          "state": "MO",
+          "placeCode": "US-MO"
+        },
+        {
+          "name": "Fitchburg Municipal Airport",
+          "iata": "QTI",
+          "icao": "KFIT",
+          "state": "MO",
+          "placeCode": "US-MO"
+        },
+        {
+          "name": "Saint Joseph Rosecrans Memorial Airport",
+          "iata": "STJ",
+          "icao": "KSTJ",
+          "state": "MO",
+          "placeCode": "US-MO"
+        },
+        {
+          "name": "New York Manhattan West 30th Street Heliport",
+          "iata": "JRA",
+          "icao": "KJRA",
+          "state": "NY",
+          "placeCode": "US-NY"
+        },
+        {
+          "name": "Wheeling Ohio County Airport",
+          "iata": "HLG",
+          "icao": "KHLG",
+          "state": "OH",
+          "placeCode": "US-OH"
+        },
+        {
+          "name": "Glendale Luke Air Force Base",
+          "iata": "LUF",
+          "icao": "KLUF",
+          "state": "OH",
+          "placeCode": "US-OH"
+        },
+        {
+          "name": "Danville Regional Airport",
+          "iata": "DAN",
+          "icao": "KDAN",
+          "state": "VA",
+          "placeCode": "US-VA"
+        }
+      ],
+      "removed_airports": [
+        {
+          "name": "Port Graham Airport",
+          "iata": "PGM",
+          "icao": "KPGM",
+          "placeCode": "US-AK"
+        },
+        {
+          "name": "Columbus Lawson Army Airfield",
+          "iata": "LSF",
+          "icao": "KLSF",
+          "placeCode": "US-AL"
+        },
+        {
+          "name": "Jasper Walker County Airport",
+          "iata": "QDX",
+          "icao": "KJFX",
+          "placeCode": "US-AL"
+        },
+        {
+          "name": "Flippin Marion County Regional Airport",
+          "iata": "FLP",
+          "icao": "KFLP",
+          "placeCode": "US-AR"
+        },
+        {
+          "name": "Glendale Luke Air Force Base",
+          "iata": "LUF",
+          "icao": "KLUF",
+          "placeCode": "US-AZ"
+        },
+        {
+          "name": "Columbia Regional Airport",
+          "iata": "COA",
+          "icao": "KCOA",
+          "placeCode": "US-CA"
+        },
+        {
+          "name": "Shafter Minter Field Airport",
+          "iata": "MIT",
+          "icao": "KMIT",
+          "placeCode": "US-CA"
+        },
+        {
+          "name": "West Palm Beach Donald J. Trump International Airport",
+          "iata": "PBI",
+          "icao": "KDJT",
+          "placeCode": "US-FL"
+        },
+        {
+          "name": "Vero Beach Regional Airport",
+          "iata": "VRB",
+          "icao": "KVRB",
+          "placeCode": "US-FL"
+        },
+        {
+          "name": "Fairfield Municipal Airport",
+          "iata": "FFL",
+          "icao": "KFFL",
+          "placeCode": "US-IA"
+        },
+        {
+          "name": "Fort Madison Municipal Airport",
+          "iata": "FMS",
+          "icao": "KFSW",
+          "placeCode": "US-IA"
+        },
+        {
+          "name": "Plymouth Municipal Airport",
+          "iata": "PLY",
+          "icao": "KC65",
+          "placeCode": "US-IN"
+        },
+        {
+          "name": "Kansas City New Century Aircenter Airport",
+          "iata": "JCI",
+          "icao": "KIXD",
+          "placeCode": "US-KS"
+        },
+        {
+          "name": "Saint Joseph Rosecrans Memorial Airport",
+          "iata": "STJ",
+          "icao": "KSTJ",
+          "placeCode": "US-KS"
+        },
+        {
+          "name": "Fitchburg Municipal Airport",
+          "iata": "QTI",
+          "icao": "KFIT",
+          "placeCode": "US-MA"
+        },
+        {
+          "name": "Brunswick Executive Airport",
+          "iata": "NHZ",
+          "icao": "KBXM",
+          "placeCode": "US-ME"
+        },
+        {
+          "name": "Sturgis Kirsch Municipal Airport",
+          "iata": "IRS",
+          "icao": "KIRS",
+          "placeCode": "US-MI"
+        },
+        {
+          "name": "New York Manhattan West 30th Street Heliport",
+          "iata": "JRA",
+          "icao": "KJRA",
+          "placeCode": "US-NJ"
+        },
+        {
+          "name": "Delaware Municipal Airport",
+          "iata": "QSL",
+          "icao": "KDLZ",
+          "placeCode": "US-OH"
+        },
+        {
+          "name": "The Dalles Columbia Gorge Regional Airport",
+          "iata": "DLS",
+          "icao": "KDLS",
+          "placeCode": "US-OR"
+        },
+        {
+          "name": "Port Meadville Airport",
+          "iata": "MEJ",
+          "icao": "KGKJ",
+          "placeCode": "US-PA"
+        },
+        {
+          "name": "Fayetteville Municipal Airport",
+          "iata": "FYM",
+          "icao": "KFYM",
+          "placeCode": "US-TN"
+        },
+        {
+          "name": "Eagle Lake Airport",
+          "iata": "ELA",
+          "icao": "KELA",
+          "placeCode": "US-TX"
+        },
+        {
+          "name": "Killeen Skylark Field Airport",
+          "iata": "ILE",
+          "icao": "KILE",
+          "placeCode": "US-TX"
+        },
+        {
+          "name": "Bridgeport Municipal Airport",
+          "iata": "QLP",
+          "icao": "KXBP",
+          "placeCode": "US-TX"
+        },
+        {
+          "name": "Van Horn Culberson County Airport",
+          "iata": "VHN",
+          "icao": "KVHN",
+          "placeCode": "US-TX"
+        },
+        {
+          "name": "Fort Belvoir Davison Army Airfield",
+          "iata": "DAA",
+          "icao": "KDAA",
+          "placeCode": "US-VA"
+        },
+        {
+          "name": "Washington Ronald Reagan National Airport",
+          "iata": "DCA",
+          "icao": "KDCA",
+          "placeCode": "US-VA"
+        },
+        {
+          "name": "Washington Dulles International Airport",
+          "iata": "IAD",
+          "icao": "KIAD",
+          "placeCode": "US-VA"
+        },
+        {
+          "name": "Wheeling Ohio County Airport",
+          "iata": "HLG",
+          "icao": "KHLG",
+          "placeCode": "US-WV"
+        },
+        {
+          "name": "Torrington Municipal Airport",
+          "iata": "TOR",
+          "icao": "KTOR",
+          "placeCode": "US-WY"
+        }
+      ],
+      "added_count": 13,
+      "removed_count": 31,
+      "states": {
+        "AK": {
+          "state_name": "Alaska",
+          "fr24_count": 185,
+          "skycards_count": 186,
+          "difference": -1,
+          "added_airports": [],
+          "removed_airports": [
+            {
+              "name": "Port Graham Airport",
+              "iata": "PGM",
+              "icao": "KPGM",
+              "placeCode": "US-AK"
+            }
+          ],
+          "added_count": 0,
+          "removed_count": 1
+        },
+        "AL": {
+          "state_name": "Alabama",
+          "fr24_count": 29,
+          "skycards_count": 31,
+          "difference": -2,
+          "added_airports": [],
+          "removed_airports": [
+            {
+              "name": "Columbus Lawson Army Airfield",
+              "iata": "LSF",
+              "icao": "KLSF",
+              "placeCode": "US-AL"
+            },
+            {
+              "name": "Jasper Walker County Airport",
+              "iata": "QDX",
+              "icao": "KJFX",
+              "placeCode": "US-AL"
+            }
+          ],
+          "added_count": 0,
+          "removed_count": 2
+        },
+        "AR": {
+          "state_name": "Arkansas",
+          "fr24_count": 34,
+          "skycards_count": 35,
+          "difference": -1,
+          "added_airports": [],
+          "removed_airports": [
+            {
+              "name": "Flippin Marion County Regional Airport",
+              "iata": "FLP",
+              "icao": "KFLP",
+              "placeCode": "US-AR"
+            }
+          ],
+          "added_count": 0,
+          "removed_count": 1
+        },
+        "AZ": {
+          "state_name": "Arizona",
+          "fr24_count": 37,
+          "skycards_count": 38,
+          "difference": -1,
+          "added_airports": [],
+          "removed_airports": [
+            {
+              "name": "Glendale Luke Air Force Base",
+              "iata": "LUF",
+              "icao": "KLUF",
+              "placeCode": "US-AZ"
+            }
+          ],
+          "added_count": 0,
+          "removed_count": 1
+        },
+        "CA": {
+          "state_name": "California",
+          "fr24_count": 124,
+          "skycards_count": 126,
+          "difference": -2,
+          "added_airports": [],
+          "removed_airports": [
+            {
+              "name": "Columbia Regional Airport",
+              "iata": "COA",
+              "icao": "KCOA",
+              "placeCode": "US-CA"
+            },
+            {
+              "name": "Shafter Minter Field Airport",
+              "iata": "MIT",
+              "icao": "KMIT",
+              "placeCode": "US-CA"
+            }
+          ],
+          "added_count": 0,
+          "removed_count": 2
+        },
+        "DC": {
+          "state_name": "District of Columbia",
+          "fr24_count": 2,
+          "skycards_count": 0,
+          "difference": 2,
+          "added_airports": [
+            {
+              "name": "Washington Ronald Reagan National Airport",
+              "iata": "DCA",
+              "icao": "KDCA",
+              "state": "DC",
+              "placeCode": "US-DC"
+            },
+            {
+              "name": "Washington Dulles International Airport",
+              "iata": "IAD",
+              "icao": "KIAD",
+              "state": "DC",
+              "placeCode": "US-DC"
+            }
+          ],
+          "removed_airports": [],
+          "added_count": 2,
+          "removed_count": 0
+        },
+        "FL": {
+          "state_name": "Florida",
+          "fr24_count": 78,
+          "skycards_count": 79,
+          "difference": -1,
+          "added_airports": [
+            {
+              "name": "West Palm Beach Donald J. Trump International Airport",
+              "iata": "DJT",
+              "icao": "KDJT",
+              "state": "FL",
+              "placeCode": "US-FL"
+            }
+          ],
+          "removed_airports": [
+            {
+              "name": "West Palm Beach Donald J. Trump International Airport",
+              "iata": "PBI",
+              "icao": "KDJT",
+              "placeCode": "US-FL"
+            },
+            {
+              "name": "Vero Beach Regional Airport",
+              "iata": "VRB",
+              "icao": "KVRB",
+              "placeCode": "US-FL"
+            }
+          ],
+          "added_count": 1,
+          "removed_count": 2
+        },
+        "GA": {
+          "state_name": "Georgia",
+          "fr24_count": 49,
+          "skycards_count": 47,
+          "difference": 2,
+          "added_airports": [
+            {
+              "name": "Columbus Lawson Army Airfield",
+              "iata": "LSF",
+              "icao": "KLSF",
+              "state": "GA",
+              "placeCode": "US-GA"
+            },
+            {
+              "name": "Vero Beach Regional Airport",
+              "iata": "VRB",
+              "icao": "KVRB",
+              "state": "GA",
+              "placeCode": "US-GA"
+            }
+          ],
+          "removed_airports": [],
+          "added_count": 2,
+          "removed_count": 0
+        },
+        "IA": {
+          "state_name": "Iowa",
+          "fr24_count": 37,
+          "skycards_count": 39,
+          "difference": -2,
+          "added_airports": [],
+          "removed_airports": [
+            {
+              "name": "Fairfield Municipal Airport",
+              "iata": "FFL",
+              "icao": "KFFL",
+              "placeCode": "US-IA"
+            },
+            {
+              "name": "Fort Madison Municipal Airport",
+              "iata": "FMS",
+              "icao": "KFSW",
+              "placeCode": "US-IA"
+            }
+          ],
+          "added_count": 0,
+          "removed_count": 2
+        },
+        "IN": {
+          "state_name": "Indiana",
+          "fr24_count": 37,
+          "skycards_count": 38,
+          "difference": -1,
+          "added_airports": [],
+          "removed_airports": [
+            {
+              "name": "Plymouth Municipal Airport",
+              "iata": "PLY",
+              "icao": "KC65",
+              "placeCode": "US-IN"
+            }
+          ],
+          "added_count": 0,
+          "removed_count": 1
+        },
+        "KS": {
+          "state_name": "Kansas",
+          "fr24_count": 35,
+          "skycards_count": 37,
+          "difference": -2,
+          "added_airports": [],
+          "removed_airports": [
+            {
+              "name": "Kansas City New Century Aircenter Airport",
+              "iata": "JCI",
+              "icao": "KIXD",
+              "placeCode": "US-KS"
+            },
+            {
+              "name": "Saint Joseph Rosecrans Memorial Airport",
+              "iata": "STJ",
+              "icao": "KSTJ",
+              "placeCode": "US-KS"
+            }
+          ],
+          "added_count": 0,
+          "removed_count": 2
+        },
+        "MA": {
+          "state_name": "Massachusetts",
+          "fr24_count": 18,
+          "skycards_count": 19,
+          "difference": -1,
+          "added_airports": [],
+          "removed_airports": [
+            {
+              "name": "Fitchburg Municipal Airport",
+              "iata": "QTI",
+              "icao": "KFIT",
+              "placeCode": "US-MA"
+            }
+          ],
+          "added_count": 0,
+          "removed_count": 1
+        },
+        "ME": {
+          "state_name": "Maine",
+          "fr24_count": 14,
+          "skycards_count": 15,
+          "difference": -1,
+          "added_airports": [],
+          "removed_airports": [
+            {
+              "name": "Brunswick Executive Airport",
+              "iata": "NHZ",
+              "icao": "KBXM",
+              "placeCode": "US-ME"
+            }
+          ],
+          "added_count": 0,
+          "removed_count": 1
+        },
+        "MI": {
+          "state_name": "Michigan",
+          "fr24_count": 47,
+          "skycards_count": 48,
+          "difference": -1,
+          "added_airports": [],
+          "removed_airports": [
+            {
+              "name": "Sturgis Kirsch Municipal Airport",
+              "iata": "IRS",
+              "icao": "KIRS",
+              "placeCode": "US-MI"
+            }
+          ],
+          "added_count": 0,
+          "removed_count": 1
+        },
+        "MO": {
+          "state_name": "Missouri",
+          "fr24_count": 34,
+          "skycards_count": 30,
+          "difference": 4,
+          "added_airports": [
+            {
+              "name": "Columbia Regional Airport",
+              "iata": "COA",
+              "icao": "KCOA",
+              "state": "MO",
+              "placeCode": "US-MO"
+            },
+            {
+              "name": "Kansas City New Century Aircenter Airport",
+              "iata": "JCI",
+              "icao": "KIXD",
+              "state": "MO",
+              "placeCode": "US-MO"
+            },
+            {
+              "name": "Fitchburg Municipal Airport",
+              "iata": "QTI",
+              "icao": "KFIT",
+              "state": "MO",
+              "placeCode": "US-MO"
+            },
+            {
+              "name": "Saint Joseph Rosecrans Memorial Airport",
+              "iata": "STJ",
+              "icao": "KSTJ",
+              "state": "MO",
+              "placeCode": "US-MO"
+            }
+          ],
+          "removed_airports": [],
+          "added_count": 4,
+          "removed_count": 0
+        },
+        "NJ": {
+          "state_name": "New Jersey",
+          "fr24_count": 15,
+          "skycards_count": 16,
+          "difference": -1,
+          "added_airports": [],
+          "removed_airports": [
+            {
+              "name": "New York Manhattan West 30th Street Heliport",
+              "iata": "JRA",
+              "icao": "KJRA",
+              "placeCode": "US-NJ"
+            }
+          ],
+          "added_count": 0,
+          "removed_count": 1
+        },
+        "NY": {
+          "state_name": "New York",
+          "fr24_count": 39,
+          "skycards_count": 38,
+          "difference": 1,
+          "added_airports": [
+            {
+              "name": "New York Manhattan West 30th Street Heliport",
+              "iata": "JRA",
+              "icao": "KJRA",
+              "state": "NY",
+              "placeCode": "US-NY"
+            }
+          ],
+          "removed_airports": [],
+          "added_count": 1,
+          "removed_count": 0
+        },
+        "OH": {
+          "state_name": "Ohio",
+          "fr24_count": 36,
+          "skycards_count": 35,
+          "difference": 1,
+          "added_airports": [
+            {
+              "name": "Wheeling Ohio County Airport",
+              "iata": "HLG",
+              "icao": "KHLG",
+              "state": "OH",
+              "placeCode": "US-OH"
+            },
+            {
+              "name": "Glendale Luke Air Force Base",
+              "iata": "LUF",
+              "icao": "KLUF",
+              "state": "OH",
+              "placeCode": "US-OH"
+            }
+          ],
+          "removed_airports": [
+            {
+              "name": "Delaware Municipal Airport",
+              "iata": "QSL",
+              "icao": "KDLZ",
+              "placeCode": "US-OH"
+            }
+          ],
+          "added_count": 2,
+          "removed_count": 1
+        },
+        "OR": {
+          "state_name": "Oregon",
+          "fr24_count": 29,
+          "skycards_count": 30,
+          "difference": -1,
+          "added_airports": [],
+          "removed_airports": [
+            {
+              "name": "The Dalles Columbia Gorge Regional Airport",
+              "iata": "DLS",
+              "icao": "KDLS",
+              "placeCode": "US-OR"
+            }
+          ],
+          "added_count": 0,
+          "removed_count": 1
+        },
+        "PA": {
+          "state_name": "Pennsylvania",
+          "fr24_count": 37,
+          "skycards_count": 38,
+          "difference": -1,
+          "added_airports": [],
+          "removed_airports": [
+            {
+              "name": "Port Meadville Airport",
+              "iata": "MEJ",
+              "icao": "KGKJ",
+              "placeCode": "US-PA"
+            }
+          ],
+          "added_count": 0,
+          "removed_count": 1
+        },
+        "TN": {
+          "state_name": "Tennessee",
+          "fr24_count": 29,
+          "skycards_count": 30,
+          "difference": -1,
+          "added_airports": [],
+          "removed_airports": [
+            {
+              "name": "Fayetteville Municipal Airport",
+              "iata": "FYM",
+              "icao": "KFYM",
+              "placeCode": "US-TN"
+            }
+          ],
+          "added_count": 0,
+          "removed_count": 1
+        },
+        "TX": {
+          "state_name": "Texas",
+          "fr24_count": 120,
+          "skycards_count": 124,
+          "difference": -4,
+          "added_airports": [],
+          "removed_airports": [
+            {
+              "name": "Eagle Lake Airport",
+              "iata": "ELA",
+              "icao": "KELA",
+              "placeCode": "US-TX"
+            },
+            {
+              "name": "Killeen Skylark Field Airport",
+              "iata": "ILE",
+              "icao": "KILE",
+              "placeCode": "US-TX"
+            },
+            {
+              "name": "Bridgeport Municipal Airport",
+              "iata": "QLP",
+              "icao": "KXBP",
+              "placeCode": "US-TX"
+            },
+            {
+              "name": "Van Horn Culberson County Airport",
+              "iata": "VHN",
+              "icao": "KVHN",
+              "placeCode": "US-TX"
+            }
+          ],
+          "added_count": 0,
+          "removed_count": 4
+        },
+        "VA": {
+          "state_name": "Virginia",
+          "fr24_count": 33,
+          "skycards_count": 35,
+          "difference": -2,
+          "added_airports": [
+            {
+              "name": "Danville Regional Airport",
+              "iata": "DAN",
+              "icao": "KDAN",
+              "state": "VA",
+              "placeCode": "US-VA"
+            }
+          ],
+          "removed_airports": [
+            {
+              "name": "Fort Belvoir Davison Army Airfield",
+              "iata": "DAA",
+              "icao": "KDAA",
+              "placeCode": "US-VA"
+            },
+            {
+              "name": "Washington Ronald Reagan National Airport",
+              "iata": "DCA",
+              "icao": "KDCA",
+              "placeCode": "US-VA"
+            },
+            {
+              "name": "Washington Dulles International Airport",
+              "iata": "IAD",
+              "icao": "KIAD",
+              "placeCode": "US-VA"
+            }
+          ],
+          "added_count": 1,
+          "removed_count": 3
+        },
+        "WV": {
+          "state_name": "West Virginia",
+          "fr24_count": 11,
+          "skycards_count": 12,
+          "difference": -1,
+          "added_airports": [],
+          "removed_airports": [
+            {
+              "name": "Wheeling Ohio County Airport",
+              "iata": "HLG",
+              "icao": "KHLG",
+              "placeCode": "US-WV"
+            }
+          ],
+          "added_count": 0,
+          "removed_count": 1
+        },
+        "WY": {
+          "state_name": "Wyoming",
+          "fr24_count": 25,
+          "skycards_count": 26,
+          "difference": -1,
+          "added_airports": [],
+          "removed_airports": [
+            {
+              "name": "Torrington Municipal Airport",
+              "iata": "TOR",
+              "icao": "KTOR",
+              "placeCode": "US-WY"
+            }
+          ],
+          "added_count": 0,
+          "removed_count": 1
+        }
+      }
+    },
+    "VU": {
+      "country_name": "Vanuatu",
+      "iso_code": "VU",
+      "fr24_count": 15,
+      "skycards_count": 8,
+      "difference": 7,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
+      "removed_count": 0
+    },
+    "ZA": {
+      "country_name": "South Africa",
+      "iso_code": "ZA",
+      "fr24_count": 44,
+      "skycards_count": 42,
+      "difference": 2,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
+      "removed_count": 0
+    },
+    "ZM": {
+      "country_name": "Zambia",
+      "iso_code": "ZM",
+      "fr24_count": 11,
+      "skycards_count": 10,
+      "difference": 1,
+      "added_airports": [],
+      "removed_airports": [],
+      "added_count": 0,
       "removed_count": 0
     }
   }
