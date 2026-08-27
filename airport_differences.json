@@ -1,8 +1,8 @@
 {
   "summary": {
     "total_countries_with_differences": 37,
-    "total_added_airports": 92,
-    "total_removed_airports": 29
+    "total_added_airports": 94,
+    "total_removed_airports": 30
   },
   "countries": {
     "AF": {
@@ -747,9 +747,16 @@
       "fr24_count": 22,
       "skycards_count": 21,
       "difference": 1,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "name": "Sui Airport",
+          "iata": "SUL",
+          "icao": "OPSU",
+          "placeCode": "PK"
+        }
+      ],
       "removed_airports": [],
-      "added_count": 0,
+      "added_count": 1,
       "removed_count": 0
     },
     "PM": {
@@ -909,6 +916,13 @@
           "placeCode": "US-OH"
         },
         {
+          "name": "McKinney National Airport",
+          "iata": "DTX",
+          "icao": "KTKI",
+          "state": "TX",
+          "placeCode": "US-TX"
+        },
+        {
           "name": "Danville Regional Airport",
           "iata": "DAN",
           "icao": "KDAN",
@@ -1056,6 +1070,12 @@
           "placeCode": "US-TX"
         },
         {
+          "name": "McKinney National Airport",
+          "iata": "QQT",
+          "icao": "KTKI",
+          "placeCode": "US-TX"
+        },
+        {
           "name": "Van Horn Culberson County Airport",
           "iata": "VHN",
           "icao": "KVHN",
@@ -1092,8 +1112,8 @@
           "placeCode": "US-WY"
         }
       ],
-      "added_count": 13,
-      "removed_count": 29,
+      "added_count": 14,
+      "removed_count": 30,
       "states": {
         "AK": {
           "state_name": "Alaska",
@@ -1515,7 +1535,15 @@
           "fr24_count": 120,
           "skycards_count": 124,
           "difference": -4,
-          "added_airports": [],
+          "added_airports": [
+            {
+              "name": "McKinney National Airport",
+              "iata": "DTX",
+              "icao": "KTKI",
+              "state": "TX",
+              "placeCode": "US-TX"
+            }
+          ],
           "removed_airports": [
             {
               "name": "Eagle Lake Airport",
@@ -1536,14 +1564,20 @@
               "placeCode": "US-TX"
             },
             {
+              "name": "McKinney National Airport",
+              "iata": "QQT",
+              "icao": "KTKI",
+              "placeCode": "US-TX"
+            },
+            {
               "name": "Van Horn Culberson County Airport",
               "iata": "VHN",
               "icao": "KVHN",
               "placeCode": "US-TX"
             }
           ],
-          "added_count": 0,
-          "removed_count": 4
+          "added_count": 1,
+          "removed_count": 5
         },
         "VA": {
           "state_name": "Virginia",
