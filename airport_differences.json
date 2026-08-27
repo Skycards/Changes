@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 37,
-    "total_added_airports": 70,
+    "total_added_airports": 72,
     "total_removed_airports": 31
   },
   "countries": {
@@ -275,9 +275,22 @@
       "fr24_count": 4,
       "skycards_count": 2,
       "difference": 2,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "name": "Impfondo Airport",
+          "iata": "ION",
+          "icao": "FCOI",
+          "placeCode": "CG"
+        },
+        {
+          "name": "Ouesso Airport",
+          "iata": "OUE",
+          "icao": "FCOU",
+          "placeCode": "CG"
+        }
+      ],
       "removed_airports": [],
-      "added_count": 0,
+      "added_count": 2,
       "removed_count": 0
     },
     "CK": {
