@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 37,
-    "total_added_airports": 72,
+    "total_added_airports": 75,
     "total_removed_airports": 31
   },
   "countries": {
@@ -692,9 +692,28 @@
       "fr24_count": 52,
       "skycards_count": 49,
       "difference": 3,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "name": "Jolo Airport",
+          "iata": "JOL",
+          "icao": "RPMJ",
+          "placeCode": "PH"
+        },
+        {
+          "name": "San Fernando Airport",
+          "iata": "SFE",
+          "icao": "RPUS",
+          "placeCode": "PH"
+        },
+        {
+          "name": "Tandag Airport",
+          "iata": "TDG",
+          "icao": "RPMW",
+          "placeCode": "PH"
+        }
+      ],
       "removed_airports": [],
-      "added_count": 0,
+      "added_count": 3,
       "removed_count": 0
     },
     "PK": {
