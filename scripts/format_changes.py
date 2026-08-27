@@ -429,8 +429,12 @@ def _changed_line(r):
     """`~` line for a changed airport: the _comparison_line lead plus one
     comma-joined clause per differing field."""
     changes = r.get("changes") or {}
-    clauses = [_change_clause(f, changes[f].get("old"), changes[f].get("new"))
-               for f in _CHANGE_CLAUSE_ORDER if f in changes]
+    fields = [f for f in _CHANGE_CLAUSE_ORDER if f in changes]
+    # Future tracked fields still get a (generic) clause, after the known four.
+    fields += sorted(f for f in changes if f not in _CHANGE_CLAUSE_ORDER)
+    clauses = [_change_clause(f, (changes[f] or {}).get("old"),
+                              (changes[f] or {}).get("new"))
+               for f in fields]
     line = _comparison_line(r, "~")
     return f"{line}: {', '.join(clauses)}" if clauses else line
 
@@ -566,9 +570,11 @@ def format_comparison(old_diffs, new_diffs, old_iatas, new_iatas, link):
     if old_diffs is None:
         head = f"## {HEADER_EMOJI} Airpedia airport comparison baseline"
         msg = "\n".join([head, "", overall, "", f"For all changes see [commit](<{link}>)"])
-        tldr = f"Airport comparison baseline: {to_add:,} to add, {to_remove:,} to remove"
+        clauses = [f"{to_add:,} to add"]
         if to_update:
-            tldr += f", {to_update:,} to update"
+            clauses.append(f"{to_update:,} to update")
+        clauses.append(f"{to_remove:,} to remove")
+        tldr = f"Airport comparison baseline: {', '.join(clauses)}"
         return msg, tldr
 
     new_add, res_add, sky_add = _classify_side(

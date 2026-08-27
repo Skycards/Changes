@@ -448,12 +448,34 @@ class ComparisonTest(unittest.TestCase):
         old = {"countries": {}}
         new = {"countries": self._country(
             "United States", "US", fr24=1, sky=1,
+            # Keys deliberately out of canonical order: the rendered clause
+            # order must come from _CHANGE_CLAUSE_ORDER, not dict iteration.
             changed=[self._chg("McKinney National Airport", "DTX", "KTKI",
-                               {"iata": {"old": "QQT", "new": "DTX"},
-                                "placeCode": {"old": "US-VA", "new": "US-TX"}},
+                               {"placeCode": {"old": "US-VA", "new": "US-TX"},
+                                "iata": {"old": "QQT", "new": "DTX"}},
                                "US-TX")])}
         msg, _ = fc.format_comparison(old, new, set(), set(), "L")
         self.assertIn(": IATA QQT → DTX, state VA → TX", msg)
+
+    def test_updated_unknown_field_renders_generic_clause(self):
+        # A future tracked field still gets a clause, after the known four.
+        old = {"countries": {}}
+        new = {"countries": self._country(
+            "Netherlands", "NL", fr24=1, sky=1,
+            changed=[self._chg("Rotterdam", "RTM", "EHRD",
+                               {"city": {"old": "Old Town", "new": "New Town"},
+                                "iata": {"old": "QRT", "new": "RTM"}})])}
+        msg, _ = fc.format_comparison(old, new, set(), set(), "L")
+        self.assertIn(": IATA QRT → RTM, CITY Old Town → New Town", msg)
+
+    def test_updated_null_change_entry_tolerated(self):
+        old = {"countries": {}}
+        new = {"countries": self._country(
+            "Netherlands", "NL", fr24=1, sky=1,
+            changed=[self._chg("Rotterdam", "RTM", "EHRD", {"iata": None})])}
+        msg, _ = fc.format_comparison(old, new, set(), set(), "L")
+        self.assertIn("~ [Rotterdam]", msg)
+        self.assertIn(": IATA — → —", msg)
 
     def test_updated_empty_value_renders_dash(self):
         old = {"countries": {}}
@@ -663,7 +685,7 @@ class ComparisonTest(unittest.TestCase):
         msg, tldr = fc.format_comparison(None, new, set(), set(), "L")
         self.assertIn("To be added: 1 · To be updated: 1 · "
                       "To be removed: 0 · 1 countries", msg)
-        self.assertIn("1 to update", tldr)
+        self.assertIn("baseline: 1 to add, 1 to update, 0 to remove", tldr)
 
 
 class ComparisonHelpersTest(unittest.TestCase):
