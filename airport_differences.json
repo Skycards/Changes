@@ -1,8 +1,8 @@
 {
   "summary": {
     "total_countries_with_differences": 37,
-    "total_added_airports": 82,
-    "total_removed_airports": 31
+    "total_added_airports": 92,
+    "total_removed_airports": 29
   },
   "countries": {
     "AF": {
@@ -187,6 +187,12 @@
           "placeCode": "CD"
         },
         {
+          "name": "Buta Zega Airport",
+          "iata": "BZU",
+          "icao": "FZKJ",
+          "placeCode": "CD"
+        },
+        {
           "name": "Manono Airport",
           "iata": "MNO",
           "icao": "FZRA",
@@ -194,7 +200,7 @@
         }
       ],
       "removed_airports": [],
-      "added_count": 2,
+      "added_count": 3,
       "removed_count": 0
     },
     "CF": {
@@ -383,9 +389,28 @@
       "fr24_count": 26,
       "skycards_count": 23,
       "difference": 3,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "name": "Debra Marcos Airport",
+          "iata": "DBM",
+          "icao": "HADM",
+          "placeCode": "ET"
+        },
+        {
+          "name": "Humera Airport",
+          "iata": "HUE",
+          "icao": "HAHU",
+          "placeCode": "ET"
+        },
+        {
+          "name": "Mizan Teferi Airport",
+          "iata": "MTF",
+          "icao": "HAMT",
+          "placeCode": "ET"
+        }
+      ],
       "removed_airports": [],
-      "added_count": 0,
+      "added_count": 3,
       "removed_count": 0
     },
     "GA": {
@@ -751,9 +776,34 @@
       "fr24_count": 19,
       "skycards_count": 15,
       "difference": 4,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "name": "Santa Ana Airport",
+          "iata": "NNB",
+          "icao": "AGGT",
+          "placeCode": "SB"
+        },
+        {
+          "name": "Parasi Airport",
+          "iata": "PRS",
+          "icao": "AGGP",
+          "placeCode": "SB"
+        },
+        {
+          "name": "Ramata Airport",
+          "iata": "RBV",
+          "icao": "AGRM",
+          "placeCode": "SB"
+        },
+        {
+          "name": "Ulawa Arona Airport",
+          "iata": "RNA",
+          "icao": "AGAR",
+          "placeCode": "SB"
+        }
+      ],
       "removed_airports": [],
-      "added_count": 0,
+      "added_count": 4,
       "removed_count": 0
     },
     "TD": {
@@ -958,12 +1008,6 @@
           "placeCode": "US-MA"
         },
         {
-          "name": "Brunswick Executive Airport",
-          "iata": "NHZ",
-          "icao": "KBXM",
-          "placeCode": "US-ME"
-        },
-        {
           "name": "Sturgis Kirsch Municipal Airport",
           "iata": "IRS",
           "icao": "KIRS",
@@ -980,12 +1024,6 @@
           "iata": "QSL",
           "icao": "KDLZ",
           "placeCode": "US-OH"
-        },
-        {
-          "name": "The Dalles Columbia Gorge Regional Airport",
-          "iata": "DLS",
-          "icao": "KDLS",
-          "placeCode": "US-OR"
         },
         {
           "name": "Port Meadville Airport",
@@ -1055,7 +1093,7 @@
         }
       ],
       "added_count": 13,
-      "removed_count": 31,
+      "removed_count": 29,
       "states": {
         "AK": {
           "state_name": "Alaska",
@@ -1315,23 +1353,6 @@
           "added_count": 0,
           "removed_count": 1
         },
-        "ME": {
-          "state_name": "Maine",
-          "fr24_count": 14,
-          "skycards_count": 15,
-          "difference": -1,
-          "added_airports": [],
-          "removed_airports": [
-            {
-              "name": "Brunswick Executive Airport",
-              "iata": "NHZ",
-              "icao": "KBXM",
-              "placeCode": "US-ME"
-            }
-          ],
-          "added_count": 0,
-          "removed_count": 1
-        },
         "MI": {
           "state_name": "Michigan",
           "fr24_count": 47,
@@ -1453,23 +1474,6 @@
             }
           ],
           "added_count": 2,
-          "removed_count": 1
-        },
-        "OR": {
-          "state_name": "Oregon",
-          "fr24_count": 29,
-          "skycards_count": 30,
-          "difference": -1,
-          "added_airports": [],
-          "removed_airports": [
-            {
-              "name": "The Dalles Columbia Gorge Regional Airport",
-              "iata": "DLS",
-              "icao": "KDLS",
-              "placeCode": "US-OR"
-            }
-          ],
-          "added_count": 0,
           "removed_count": 1
         },
         "PA": {
@@ -1674,9 +1678,22 @@
       "fr24_count": 44,
       "skycards_count": 42,
       "difference": 2,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "name": "Bisho Airport",
+          "iata": "BIY",
+          "icao": "FABE",
+          "placeCode": "ZA"
+        },
+        {
+          "name": "Ulusaba Airport",
+          "iata": "ULX",
+          "icao": "FAUS",
+          "placeCode": "ZA"
+        }
+      ],
       "removed_airports": [],
-      "added_count": 0,
+      "added_count": 2,
       "removed_count": 0
     },
     "ZM": {
