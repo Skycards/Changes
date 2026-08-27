@@ -332,14 +332,26 @@ class FleetsTest(unittest.TestCase):
 
 
 class ComparisonTest(unittest.TestCase):
-    def _country(self, name, iso, added=None, removed=None, fr24=0, sky=0):
-        return {iso: {"country_name": name, "iso_code": iso,
-                      "fr24_count": fr24, "skycards_count": sky,
-                      "added_airports": added or [], "removed_airports": removed or []}}
+    def _country(self, name, iso, added=None, removed=None, changed=None,
+                 fr24=0, sky=0):
+        country = {"country_name": name, "iso_code": iso,
+                   "fr24_count": fr24, "skycards_count": sky,
+                   "added_airports": added or [], "removed_airports": removed or []}
+        # Old (git-historical) diff files predate changed_airports; only carry
+        # the key when a test supplies it so both shapes stay covered.
+        if changed is not None:
+            country["changed_airports"] = changed
+        return {iso: country}
 
     def _ap(self, name, iata, icao):
         return {"name": name, "iata": iata, "icao": icao,
                 "link": f"https://www.flightradar24.com/data/airports/{(iata or icao).lower()}"}
+
+    def _chg(self, name, iata, icao, changes, place_code=None):
+        r = {"name": name, "iata": iata, "icao": icao, "changes": changes}
+        if place_code:
+            r["placeCode"] = place_code
+        return r
 
     def test_new_to_be_added_listed(self):
         old = {"countries": {}}
@@ -350,7 +362,9 @@ class ComparisonTest(unittest.TestCase):
         self.assertIn("**To be added** (new)", msg)
         self.assertIn("  + [Schiphol]", msg)
         self.assertIn("**OVERALL**", msg)
-        self.assertIn("To be added: 1 · To be removed: 0 · 1 countries", msg)
+        self.assertIn("To be added: 1 · To be updated: 0 · "
+                      "To be removed: 0 · 1 countries", msg)
+        self.assertNotIn("**To be updated**", msg)
         self.assertIn("1 to add", tldr)
 
     def _ap_pc(self, name, iata, icao, place_code):
@@ -392,6 +406,156 @@ class ComparisonTest(unittest.TestCase):
         msg, _ = fc.format_comparison(old, new, {"OLD"}, {"OLD"}, "L")
         self.assertIn("**To be removed** (new)", msg)
         self.assertIn("  \\- [Old Field]", msg)
+
+    def test_new_to_be_updated_listed(self):
+        old = {"countries": {}}
+        new = {"countries": self._country(
+            "United States", "US", fr24=1, sky=1,
+            changed=[self._chg("McKinney National Airport", "DTX", "KTKI",
+                               {"iata": {"old": "QQT", "new": "DTX"}}, "US-TX")])}
+        msg, tldr = fc.format_comparison(old, new, set(), set(), "L")
+        self.assertIn("**To be updated** (new)", msg)
+        self.assertIn("Texas", msg)
+        self.assertIn(
+            "    ~ [McKinney National Airport]"
+            "(<https://www.flightradar24.com/data/airports/DTX>) "
+            "(`DTX`/`KTKI`): IATA QQT → DTX", msg)
+        self.assertIn("1 to update", tldr)
+
+    def test_updated_name_clause(self):
+        old = {"countries": {}}
+        new = {"countries": self._country(
+            "Netherlands", "NL", fr24=1, sky=1,
+            changed=[self._chg("New Name", "AMS", "EHAM",
+                               {"name": {"old": "Old Name", "new": "New Name"}})])}
+        msg, _ = fc.format_comparison(old, new, set(), set(), "L")
+        self.assertIn(': name "Old Name" → "New Name"', msg)
+
+    def test_updated_state_move_groups_under_new_state(self):
+        old = {"countries": {}}
+        new = {"countries": self._country(
+            "United States", "US", fr24=1, sky=1,
+            changed=[self._chg("Washington Dulles International Airport",
+                               "IAD", "KIAD",
+                               {"placeCode": {"old": "US-VA", "new": "US-DC"}},
+                               "US-DC")])}
+        msg, _ = fc.format_comparison(old, new, set(), set(), "L")
+        self.assertIn("District of Columbia", msg)
+        self.assertNotIn("Virginia", msg)
+        self.assertIn(": state VA → DC", msg)
+
+    def test_updated_rename_and_move_multi_clause(self):
+        old = {"countries": {}}
+        new = {"countries": self._country(
+            "United States", "US", fr24=1, sky=1,
+            changed=[self._chg("McKinney National Airport", "DTX", "KTKI",
+                               {"iata": {"old": "QQT", "new": "DTX"},
+                                "placeCode": {"old": "US-VA", "new": "US-TX"}},
+                               "US-TX")])}
+        msg, _ = fc.format_comparison(old, new, set(), set(), "L")
+        self.assertIn(": IATA QQT → DTX, state VA → TX", msg)
+
+    def test_updated_empty_value_renders_dash(self):
+        old = {"countries": {}}
+        new = {"countries": self._country(
+            "Netherlands", "NL", fr24=1, sky=1,
+            changed=[self._chg("Rotterdam", "RTM", "EHRD",
+                               {"icao": {"old": "", "new": "EHRD"}})])}
+        msg, _ = fc.format_comparison(old, new, set(), set(), "L")
+        self.assertIn(": ICAO — → EHRD", msg)
+
+    def test_updated_country_move_falls_back_to_full_codes(self):
+        old = {"countries": {}}
+        new = {"countries": self._country(
+            "Congo (Kinshasa)", "CD", fr24=1, sky=1,
+            changed=[self._chg("Moved Field", "BZV", "FCBB",
+                               {"placeCode": {"old": "CG", "new": "CD"}}, "CD")])}
+        msg, _ = fc.format_comparison(old, new, set(), set(), "L")
+        self.assertIn("): CG → CD", msg)
+        self.assertNotIn("state CG", msg)
+
+    def test_updated_section_between_added_and_removed(self):
+        old = {"countries": {}}
+        new = {"countries": self._country(
+            "Netherlands", "NL", fr24=2, sky=1,
+            added=[self._ap("Schiphol", "AMS", "EHAM")],
+            removed=[self._ap("Old Field", "OLD", "EHOF")],
+            changed=[self._chg("Rotterdam", "RTM", "EHRD",
+                               {"iata": {"old": "QRT", "new": "RTM"}})])}
+        msg, _ = fc.format_comparison(old, new, {"OLD"}, {"OLD"}, "L")
+        self.assertLess(msg.index("**To be added** (new)"),
+                        msg.index("**To be updated** (new)"))
+        self.assertLess(msg.index("**To be updated** (new)"),
+                        msg.index("**To be removed** (new)"))
+
+    def test_updated_in_both_versions_not_reannounced(self):
+        chg = [self._chg("Rotterdam", "RTM", "EHRD",
+                         {"iata": {"old": "QRT", "new": "RTM"}})]
+        old = {"countries": self._country("Netherlands", "NL", fr24=1, sky=1,
+                                          changed=chg)}
+        new = {"countries": {**self._country("Netherlands", "NL", fr24=1, sky=1,
+                                             changed=chg),
+                             **self._country("Brazil", "BR", fr24=1,
+                                             added=[self._ap("Novo", "NVO", "SBNV")])}}
+        msg, _ = fc.format_comparison(old, new, set(), set(), "L")
+        self.assertIn("  + [Novo]", msg)
+        self.assertNotIn("**To be updated**", msg)
+        self.assertNotIn("Rotterdam", msg)
+
+    def test_updated_leaving_counts_as_resolved(self):
+        old = {"countries": self._country(
+            "Netherlands", "NL", fr24=1, sky=1,
+            changed=[self._chg("Rotterdam", "RTM", "EHRD",
+                               {"iata": {"old": "QRT", "new": "RTM"}})])}
+        new = {"countries": {}}
+        msg, _ = fc.format_comparison(old, new, set(), set(), "L")
+        self.assertIn("✓ 1 resolved this update (see the airports update)", msg)
+        self.assertNotIn("Rotterdam", msg)
+
+    def test_skycards_driven_update_is_resolved_not_listed(self):
+        # We applied the rename to airports.json — RTM newly appears there —
+        # so the changed entry is covered by the airports webhook, not news.
+        old = {"countries": {}}
+        new = {"countries": self._country(
+            "Netherlands", "NL", fr24=1, sky=1,
+            changed=[self._chg("Rotterdam", "RTM", "EHRD",
+                               {"iata": {"old": "QRT", "new": "RTM"}})])}
+        msg, _ = fc.format_comparison(old, new, set(), {"RTM"}, "L")
+        self.assertIn("✓ 1 resolved this update", msg)
+        self.assertNotIn("**To be updated**", msg)
+
+    def test_updated_only_country_has_worklist_in_overall(self):
+        old = {"countries": {}}
+        new = {"countries": self._country(
+            "Netherlands", "NL", fr24=1, sky=1,
+            changed=[self._chg("Rotterdam", "RTM", "EHRD",
+                               {"iata": {"old": "QRT", "new": "RTM"}})])}
+        msg, _ = fc.format_comparison(old, new, set(), set(), "L")
+        self.assertIn("To be added: 0 · To be updated: 1 · "
+                      "To be removed: 0 · 1 countries", msg)
+
+    def test_suppress_when_updates_unchanged(self):
+        same = {"countries": self._country(
+            "Netherlands", "NL", fr24=1, sky=1,
+            changed=[self._chg("Rotterdam", "RTM", "EHRD",
+                               {"iata": {"old": "QRT", "new": "RTM"}})])}
+        msg, tldr = fc.format_comparison(same, same, set(), set(), "L")
+        self.assertEqual(msg, "")
+        self.assertEqual(tldr, "")
+
+    def test_old_diffs_without_changed_key_tolerated(self):
+        # Git-historical diff files predate changed_airports entirely.
+        old = {"countries": self._country("Netherlands", "NL", fr24=1,
+                                          added=[self._ap("Schiphol", "AMS", "EHAM")])}
+        new = {"countries": self._country(
+            "Netherlands", "NL", fr24=1, sky=0,
+            added=[self._ap("Schiphol", "AMS", "EHAM")],
+            changed=[self._chg("Rotterdam", "RTM", "EHRD",
+                               {"iata": {"old": "QRT", "new": "RTM"}})])}
+        msg, _ = fc.format_comparison(old, new, set(), set(), "L")
+        self.assertIn("**To be updated** (new)", msg)
+        self.assertIn("~ [Rotterdam]", msg)
+        self.assertNotIn("+ [Schiphol]", msg)
 
     def test_skycards_caught_up_is_resolved_not_listed(self):
         old = {"countries": self._country("Netherlands", "NL", fr24=1,
@@ -485,8 +649,21 @@ class ComparisonTest(unittest.TestCase):
                                           added=[self._ap("Schiphol", "AMS", "EHAM")])}
         msg, tldr = fc.format_comparison(None, new, set(), set(), "L")
         self.assertIn("airport comparison baseline", msg)
-        self.assertIn("To be added: 1 · To be removed: 0 · 1 countries", msg)
+        self.assertIn("To be added: 1 · To be updated: 0 · "
+                      "To be removed: 0 · 1 countries", msg)
         self.assertNotIn("**To be added** (new)", msg)
+        self.assertNotIn("to update", tldr)
+
+    def test_first_run_baseline_with_updates(self):
+        new = {"countries": self._country(
+            "Netherlands", "NL", fr24=1, sky=1,
+            added=[self._ap("Schiphol", "AMS", "EHAM")],
+            changed=[self._chg("Rotterdam", "RTM", "EHRD",
+                               {"iata": {"old": "QRT", "new": "RTM"}})])}
+        msg, tldr = fc.format_comparison(None, new, set(), set(), "L")
+        self.assertIn("To be added: 1 · To be updated: 1 · "
+                      "To be removed: 0 · 1 countries", msg)
+        self.assertIn("1 to update", tldr)
 
 
 class ComparisonHelpersTest(unittest.TestCase):
@@ -570,8 +747,16 @@ class ComparisonHelpersTest(unittest.TestCase):
             "NL": {"added_airports": [{"iata": "AMS"}], "removed_airports": []},
             "AU": {"added_airports": [], "removed_airports": [{"iata": "OLD"}]},
             "DE": {"added_airports": [{"iata": "BER"}, {"iata": "MUC"}],
-                   "removed_airports": []}}}
-        self.assertEqual(fc._overall(diffs), (3, 1, 3))
+                   "removed_airports": []},
+            "FR": {"added_airports": [], "removed_airports": [],
+                   "changed_airports": [{"iata": "PAR"}]}}}
+        self.assertEqual(fc._overall(diffs), (3, 1, 1, 4))
+
+    def test_comparison_tldr_update_clause(self):
+        self.assertEqual(
+            fc._comparison_tldr(2, 1, 3, 0, 0, 10),
+            "Airport comparison: 2 to add · 1 to update · 3 to remove (10 to add)")
+        self.assertNotIn("to update", fc._comparison_tldr(1, 0, 0, 0, 0, 5))
 
 
 import io
