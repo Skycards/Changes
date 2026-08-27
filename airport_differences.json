@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 37,
-    "total_added_airports": 75,
+    "total_added_airports": 82,
     "total_removed_airports": 31
   },
   "countries": {
@@ -1620,9 +1620,52 @@
       "fr24_count": 15,
       "skycards_count": 8,
       "difference": 7,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "name": "Craig Cove Airport",
+          "iata": "CCV",
+          "icao": "NVSF",
+          "placeCode": "VU"
+        },
+        {
+          "name": "Lamen Bay Airport",
+          "iata": "LNB",
+          "icao": "NVSM",
+          "placeCode": "VU"
+        },
+        {
+          "name": "Mota Lava Airport",
+          "iata": "MTV",
+          "icao": "NVSA",
+          "placeCode": "VU"
+        },
+        {
+          "name": "Sola Vanua Lava Airport",
+          "iata": "SLH",
+          "icao": "NVSC",
+          "placeCode": "VU"
+        },
+        {
+          "name": "Sara Airport",
+          "iata": "SSR",
+          "icao": "NVSH",
+          "placeCode": "VU"
+        },
+        {
+          "name": "Walaha Airport",
+          "iata": "WLH",
+          "icao": "NVSW",
+          "placeCode": "VU"
+        },
+        {
+          "name": "Gaua Airport",
+          "iata": "ZGU",
+          "icao": "NVSQ",
+          "placeCode": "VU"
+        }
+      ],
       "removed_airports": [],
-      "added_count": 0,
+      "added_count": 7,
       "removed_count": 0
     },
     "ZA": {
