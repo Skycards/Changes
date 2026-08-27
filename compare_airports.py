@@ -7,7 +7,7 @@ import json
 import sys
 import time
 from collections import Counter
-from typing import Dict, List, Tuple, Optional
+from typing import Dict, List, Tuple, Optional, Set
 import urllib.request
 import urllib.error
 from html.parser import HTMLParser
@@ -607,9 +607,81 @@ def get_our_state_counts(airports_data: Dict, country_code: str) -> Dict[str, in
     return counts
 
 
+def _airport_field_changes(ours: Dict, fr24: Dict, fields: Tuple[str, ...]) -> Dict:
+    """Diff the given fields between our record and FR24's, as
+    {field: {'old': ours, 'new': fr24}}. Names compare whitespace-collapsed
+    (original values are still reported); other fields treat ''/None as
+    equal-empty, so an empty-vs-set value still counts as a change."""
+    changes = {}
+    for field in fields:
+        old, new = ours.get(field), fr24.get(field)
+        if field == 'name':
+            if ' '.join((old or '').split()) == ' '.join((new or '').split()):
+                continue
+        elif (old or '') == (new or ''):
+            continue
+        changes[field] = {'old': old, 'new': new}
+    return changes
+
+
+def _unique_by_code(airports: List[Dict], field: str) -> Dict[str, Dict]:
+    """Map each non-empty `field` code to its airport, dropping codes that
+    appear more than once (ambiguous: pairing on them could mismatch)."""
+    counts = Counter()
+    by_code = {}
+    for airport in airports:
+        code = airport.get(field) or ''
+        if code:
+            counts[code] += 1
+            by_code[code] = airport
+    return {code: airport for code, airport in by_code.items() if counts[code] == 1}
+
+
+def _pair_changed(added: List[Dict], removed: List[Dict]) -> Tuple[List[Dict], Set[int]]:
+    """Pair added records with removed records that share an ICAO (then, among
+    the leftovers, an IATA): an IATA rename or a state move otherwise surfaces
+    as an unrelated added+removed pair. Each record pairs at most once. Returns
+    (changed_records, paired_ids) where paired_ids holds the id()s of the
+    consumed dicts so callers can filter every list (country aggregate and
+    per-state breakdown) holding the same objects."""
+    changed = []
+    paired_ids: Set[int] = set()
+    for field in ('icao', 'iata'):
+        added_by_code = _unique_by_code(
+            [ap for ap in added if id(ap) not in paired_ids], field)
+        removed_by_code = _unique_by_code(
+            [ap for ap in removed if id(ap) not in paired_ids], field)
+        for code in added_by_code.keys() & removed_by_code.keys():
+            add, rem = added_by_code[code], removed_by_code[code]
+            airport = add.copy()
+            airport.pop('title', None)
+            airport['changes'] = _airport_field_changes(
+                rem, add, ('name', 'iata', 'icao', 'placeCode'))
+            changed.append(airport)
+            paired_ids.update((id(add), id(rem)))
+    return changed, paired_ids
+
+
+def _merge_changed(added: List[Dict], removed: List[Dict],
+                   changed: List[Dict]) -> Tuple[List[Dict], List[Dict], List[Dict], Set[int]]:
+    """Fold Stage-B pairs into a country's changed list, dropping the paired
+    records from added/removed. Returns the filtered lists, the merged+sorted
+    changed list, and the paired id()s (for scrubbing per-state breakdowns)."""
+    paired, paired_ids = _pair_changed(added, removed)
+    added = [ap for ap in added if id(ap) not in paired_ids]
+    removed = [ap for ap in removed if id(ap) not in paired_ids]
+    changed = sorted(changed + paired,
+                     key=lambda airport: (airport.get('iata', ''), airport.get('name', '')))
+    return added, removed, changed, paired_ids
+
+
 def compare_country_airports(fr24_airports: List[Dict], our_airports: List[Dict],
-                             iso_code: Optional[str] = None) -> Tuple[List[Dict], List[Dict]]:
-    """Compare airport lists and return added/removed airports.
+                             iso_code: Optional[str] = None) -> Tuple[List[Dict], List[Dict], List[Dict]]:
+    """Compare airport lists and return added/removed/changed airports.
+
+    Changed airports are matched by identifier but differ in name/iata/icao
+    (Stage A); renames and moves that show up as an added+removed pair are
+    handled at the country level by _pair_changed (Stage B).
 
     With a country context (iso_code, possibly state-qualified like "US-CA"),
     airports in FR24_COUNTRY_PATCHES are dropped from the side whose placement
@@ -679,15 +751,29 @@ def compare_country_airports(fr24_airports: List[Dict], our_airports: List[Dict]
             # This airport has no identifier, so it's effectively "removed" since we can't match it
             removed_airports.append(airport)
 
-    # Sort both lists by IATA code first, then by name
+    # Stage A: airports matched by identifier can still differ in the fields
+    # we track; surface those as changed records instead of dropping the pair.
+    changed_airports = []
+    for identifier in fr24_identifiers & our_identifiers:
+        changes = _airport_field_changes(our_by_id[identifier], fr24_by_id[identifier],
+                                         ('name', 'iata', 'icao'))
+        if changes:
+            airport = fr24_by_id[identifier].copy()
+            airport.pop('title', None)
+            airport['changes'] = changes
+            changed_airports.append(airport)
+
+    # Sort all lists by IATA code first, then by name
     cleaned_added_airports.sort(key=lambda airport: (airport.get('iata', ''), airport.get('name', '')))
     removed_airports.sort(key=lambda airport: (airport.get('iata', ''), airport.get('name', '')))
+    changed_airports.sort(key=lambda airport: (airport.get('iata', ''), airport.get('name', '')))
 
-    return cleaned_added_airports, removed_airports
+    return cleaned_added_airports, removed_airports, changed_airports
 
 
 def _country_record(country_name: str, iso_code: str, fr24_count: int,
-                    our_count: int, added: List[Dict], removed: List[Dict]) -> Dict:
+                    our_count: int, added: List[Dict], removed: List[Dict],
+                    changed: List[Dict]) -> Dict:
     """Assemble one country's difference record."""
     return {
         'country_name': country_name,
@@ -697,8 +783,10 @@ def _country_record(country_name: str, iso_code: str, fr24_count: int,
         'difference': fr24_count - our_count,  # Positive means FR24 has more
         'added_airports': added,   # In FR24 but not in our data
         'removed_airports': removed,  # In our data but not in FR24
+        'changed_airports': changed,  # Matched, but with updated fields
         'added_count': len(added),
         'removed_count': len(removed),
+        'changed_count': len(changed),
     }
 
 
@@ -710,11 +798,13 @@ def _diff_flat_country(iso_code: str, country_name: str, fr24_count: int,
     except ValueError as e:
         return None, str(e)
     our_airports = get_country_airports_from_our_data(airports_data, iso_code)
-    added, removed = compare_country_airports(fr24_airports, our_airports, iso_code)
-    for ap in added:  # tag FR24-added airports with the country placeCode
+    added, removed, changed = compare_country_airports(fr24_airports, our_airports, iso_code)
+    for ap in added + changed:  # tag FR24 records with the country placeCode
         ap.setdefault('placeCode', iso_code)
-    print(f"  Added: {len(added)}, Removed: {len(removed)}")
-    return _country_record(country_name, iso_code, fr24_count, our_count, added, removed), None
+    added, removed, changed, _ = _merge_changed(added, removed, changed)
+    print(f"  Added: {len(added)}, Removed: {len(removed)}, Changed: {len(changed)}")
+    return _country_record(country_name, iso_code, fr24_count, our_count,
+                           added, removed, changed), None
 
 
 def _fetch_all_state_airports(country_name: str, states: List[Dict]) -> Tuple[Optional[List[Dict]], Optional[str]]:
@@ -748,11 +838,14 @@ def _diff_states_as_flat(iso_code: str, country_name: str, fr24_count: int,
     if error:
         return None, error
     our_airports = get_country_airports_from_our_data(airports_data, iso_code)
-    added, removed = compare_country_airports(fr24_airports, our_airports, iso_code)
-    for ap in added:
+    added, removed, changed = compare_country_airports(fr24_airports, our_airports, iso_code)
+    for ap in added + changed:
         ap.setdefault('placeCode', f"{iso_code}-{ap['state']}" if ap.get('state') else iso_code)
-    print(f"  (our data not subdivided) Added: {len(added)}, Removed: {len(removed)}")
-    return _country_record(country_name, iso_code, fr24_count, our_count, added, removed), None
+    added, removed, changed, _ = _merge_changed(added, removed, changed)
+    print(f"  (our data not subdivided) Added: {len(added)}, Removed: {len(removed)}, "
+          f"Changed: {len(changed)}")
+    return _country_record(country_name, iso_code, fr24_count, our_count,
+                           added, removed, changed), None
 
 
 def _diff_subdivisioned_country(iso_code: str, country_name: str, fr24_count: int,
@@ -775,7 +868,7 @@ def _diff_subdivisioned_country(iso_code: str, country_name: str, fr24_count: in
         coverage = f"{state_total}/{fr24_count} ({pct}%)"
         print(f"  ⚠️  Incomplete state coverage for {country_name}: {coverage}; "
               f"count-only (no detail)")
-        record = _country_record(country_name, iso_code, fr24_count, our_count, [], [])
+        record = _country_record(country_name, iso_code, fr24_count, our_count, [], [], [])
         record['state_coverage'] = coverage
         return record, None
 
@@ -793,7 +886,7 @@ def _diff_subdivisioned_country(iso_code: str, country_name: str, fr24_count: in
                if int(fr24_by_code.get(code, {}).get('total', 0)) != our_state_counts.get(code, 0)]
     print(f"  {len(states)} states, {len(changed)} with count differences: {', '.join(changed) or '—'}")
 
-    all_added, all_removed = [], []
+    all_added, all_removed, all_changed = [], [], []
     states_breakdown = {}
     for code in changed:
         state = fr24_by_code.get(code)
@@ -814,11 +907,13 @@ def _diff_subdivisioned_country(iso_code: str, country_name: str, fr24_count: in
             fr24_state_airports = []
 
         our_state_airports = get_state_airports_from_our_data(airports_data, iso_code, code)
-        added, removed = compare_country_airports(fr24_state_airports, our_state_airports, iso_code)
-        for ap in added:
+        added, removed, state_changed = compare_country_airports(
+            fr24_state_airports, our_state_airports, iso_code)
+        for ap in added + state_changed:
             ap.setdefault('placeCode', f"{iso_code}-{code}")
         all_added.extend(added)
         all_removed.extend(removed)
+        all_changed.extend(state_changed)
 
         fr24_state_count = int(state['total']) if state else 0
         states_breakdown[code] = {
@@ -832,9 +927,24 @@ def _diff_subdivisioned_country(iso_code: str, country_name: str, fr24_count: in
             'removed_count': len(removed),
         }
 
-    record = _country_record(country_name, iso_code, fr24_count, our_count, all_added, all_removed)
+    # Stage B runs on the country aggregate: a state move is a removal in one
+    # state plus an addition in another, invisible to the per-state diffs.
+    all_added, all_removed, all_changed, paired_ids = _merge_changed(
+        all_added, all_removed, all_changed)
+    if paired_ids:  # scrub paired records out of the per-state breakdown too
+        for entry in states_breakdown.values():
+            entry['added_airports'] = [ap for ap in entry['added_airports']
+                                       if id(ap) not in paired_ids]
+            entry['removed_airports'] = [ap for ap in entry['removed_airports']
+                                         if id(ap) not in paired_ids]
+            entry['added_count'] = len(entry['added_airports'])
+            entry['removed_count'] = len(entry['removed_airports'])
+
+    record = _country_record(country_name, iso_code, fr24_count, our_count,
+                             all_added, all_removed, all_changed)
     record['states'] = states_breakdown
-    print(f"  Added: {len(all_added)}, Removed: {len(all_removed)} across {len(changed)} states")
+    print(f"  Added: {len(all_added)}, Removed: {len(all_removed)}, "
+          f"Changed: {len(all_changed)} across {len(changed)} states")
     return record, None
 
 
@@ -1058,7 +1168,10 @@ def main():
         'summary': {
             'total_countries_with_differences': len(differences),
             'total_added_airports': sum(diff['added_count'] for diff in differences.values()),
-            'total_removed_airports': sum(diff['removed_count'] for diff in differences.values())
+            'total_removed_airports': sum(diff['removed_count'] for diff in differences.values()),
+            # .get(): records preserved from an older differences file on fetch
+            # failure may predate changed_count.
+            'total_changed_airports': sum(diff.get('changed_count', 0) for diff in differences.values())
         },
         'countries': sorted_countries
     }
@@ -1072,6 +1185,7 @@ def main():
         print(f"   • {output_data['summary']['total_countries_with_differences']} countries with differences")
         print(f"   • {output_data['summary']['total_added_airports']} airports added (in FR24 but not in our data)")
         print(f"   • {output_data['summary']['total_removed_airports']} airports removed (in our data but not in FR24)")
+        print(f"   • {output_data['summary']['total_changed_airports']} airports changed (matched, but with updated fields)")
 
         if not differences:
             print("✅ No detailed analysis needed - all countries match!")

@@ -1,6 +1,7 @@
 import json
 import os
 import sys
+import tempfile
 import unittest
 from html import escape
 from unittest import mock
@@ -289,6 +290,7 @@ class DiffOneCountryTest(unittest.TestCase):
         self.assertIsNone(err)
         self.assertEqual(rec["added_airports"], [])
         self.assertEqual(rec["removed_airports"], [])
+        self.assertEqual(rec["changed_airports"], [])
         self.assertEqual(rec["difference"], 1)  # 283 - 282, count only
         # Coverage recorded as "covered/total (pct%)": 3 of 283 == 1%.
         self.assertEqual(rec.get("state_coverage"), "3/283 (1%)")
@@ -425,6 +427,83 @@ class DiffOneCountryTest(unittest.TestCase):
         self.assertEqual([a["iata"] for a in rec["added_airports"]], ["FKI"])
         self.assertEqual(rec["removed_airports"], [])
 
+    def test_flat_country_reports_name_change_on_matched_airport(self):
+        pages = {"/netherlands": _country_page_html([
+            {"name": "Amsterdam Schiphol Airport", "iata": "AMS", "icao": "EHAM"},
+        ])}
+        our = _rows({"name": "Schiphol", "iata": "AMS", "icao": "EHAM", "placeCode": "NL"})
+        rec, err, _ = self._run("Netherlands", "NL", 1, 1, pages, our)
+        self.assertIsNone(err)
+        self.assertEqual(rec["added_airports"], [])
+        self.assertEqual(rec["removed_airports"], [])
+        self.assertEqual(rec["changed_count"], 1)
+        self.assertEqual(rec["changed_airports"][0]["placeCode"], "NL")
+        self.assertEqual(rec["changed_airports"][0]["changes"],
+                         {"name": {"old": "Schiphol", "new": "Amsterdam Schiphol Airport"}})
+
+    def test_flat_country_reports_iata_rename_as_changed(self):
+        # Same airport, new IATA (QQT -> DTX), ICAO KTKI unchanged: one changed
+        # record instead of an added+removed pair.
+        pages = {"/united-states": _country_page_html([
+            {"name": "McKinney National Airport", "iata": "DTX", "icao": "KTKI"},
+        ])}
+        our = _rows({"name": "McKinney National Airport", "iata": "QQT", "icao": "KTKI",
+                     "placeCode": "US"})
+        rec, err, _ = self._run("United States", "US", 1, 1, pages, our)
+        self.assertIsNone(err)
+        self.assertEqual(rec["added_airports"], [])
+        self.assertEqual(rec["removed_airports"], [])
+        self.assertEqual(rec["added_count"], 0)
+        self.assertEqual(rec["removed_count"], 0)
+        self.assertEqual(rec["changed_count"], 1)
+        change = rec["changed_airports"][0]
+        self.assertEqual(change["iata"], "DTX")
+        self.assertEqual(change["placeCode"], "US")
+        self.assertEqual(change["changes"], {"iata": {"old": "QQT", "new": "DTX"}})
+
+    def test_subdivisioned_state_move_reported_as_changed(self):
+        # IAD reassigned from Virginia to DC on FR24. The per-state diffs see a
+        # removal in VA and an addition in DC; country-level pairing must fold
+        # them into one changed record and scrub both state breakdowns.
+        pages = {
+            "/data/airports/united-states": _states_page_html([
+                {"code": "DC", "name": "Washington DC", "total": 1,
+                 "url": "/data/airports/united-states/dc"},
+                {"code": "VA", "name": "Virginia", "total": 1,
+                 "url": "/data/airports/united-states/va"},
+            ]),
+            "/united-states/dc": _country_page_html([
+                {"name": "Washington Dulles International Airport", "iata": "IAD",
+                 "icao": "KIAD"},
+            ]),
+            "/united-states/va": _country_page_html([
+                {"name": "Richmond International Airport", "iata": "RIC", "icao": "KRIC"},
+            ]),
+        }
+        our = _rows(
+            {"name": "Washington Dulles International Airport", "iata": "IAD",
+             "icao": "KIAD", "placeCode": "US-VA"},
+            {"name": "Richmond International Airport", "iata": "RIC", "icao": "KRIC",
+             "placeCode": "US-VA"},
+        )
+        rec, err, _ = self._run("United States", "US", 2, 2, pages, our)
+        self.assertIsNone(err)
+        self.assertEqual(rec["added_airports"], [])
+        self.assertEqual(rec["removed_airports"], [])
+        self.assertEqual(rec["changed_count"], 1)
+        change = rec["changed_airports"][0]
+        self.assertEqual(change["iata"], "IAD")
+        self.assertEqual(change["placeCode"], "US-DC")
+        self.assertEqual(change["changes"],
+                         {"placeCode": {"old": "US-VA", "new": "US-DC"}})
+        # The paired airport is gone from both state breakdowns, counts adjusted;
+        # breakdown entries carry no changed lists of their own.
+        self.assertEqual(rec["states"]["DC"]["added_airports"], [])
+        self.assertEqual(rec["states"]["DC"]["added_count"], 0)
+        self.assertEqual(rec["states"]["VA"]["removed_airports"], [])
+        self.assertEqual(rec["states"]["VA"]["removed_count"], 0)
+        self.assertNotIn("changed_airports", rec["states"]["DC"])
+
 
 class Fr24CountryPatchTest(unittest.TestCase):
     """FR24 places some airports under the wrong country (e.g. RUE under Congo
@@ -451,7 +530,7 @@ class Fr24CountryPatchTest(unittest.TestCase):
                 {"iata": "RUE", "icao": "FZMB", "name": "Butembo Rughenda"}]
         our = [{"iata": "BZV", "icao": "FCBB", "name": "Maya-Maya", "placeCode": "CG"}]
         with mock.patch.object(ca, "FR24_COUNTRY_PATCHES", self.PATCHES):
-            added, removed = ca.compare_country_airports(fr24, our, "CG")
+            added, removed, _ = ca.compare_country_airports(fr24, our, "CG")
         self.assertEqual(added, [])
         self.assertEqual(removed, [])
 
@@ -460,7 +539,7 @@ class Fr24CountryPatchTest(unittest.TestCase):
         our = [{"iata": "FIH", "icao": "FZAA", "name": "Ndjili", "placeCode": "CD"},
                {"iata": "RUE", "icao": "FZMB", "name": "Butembo Rughenda", "placeCode": "CD"}]
         with mock.patch.object(ca, "FR24_COUNTRY_PATCHES", self.PATCHES):
-            added, removed = ca.compare_country_airports(fr24, our, "CD")
+            added, removed, _ = ca.compare_country_airports(fr24, our, "CD")
         self.assertEqual(added, [])
         self.assertEqual(removed, [])
 
@@ -469,14 +548,14 @@ class Fr24CountryPatchTest(unittest.TestCase):
         # keys on the country part.
         fr24 = [{"iata": "RUE", "icao": "FZMB", "name": "Butembo Rughenda"}]
         with mock.patch.object(ca, "FR24_COUNTRY_PATCHES", self.PATCHES):
-            added, removed = ca.compare_country_airports(fr24, [], "CG-XX")
+            added, removed, _ = ca.compare_country_airports(fr24, [], "CG-XX")
         self.assertEqual(added, [])
         self.assertEqual(removed, [])
 
     def test_compare_without_country_context_is_unpatched(self):
         fr24 = [{"iata": "RUE", "icao": "FZMB", "name": "Butembo Rughenda"}]
         with mock.patch.object(ca, "FR24_COUNTRY_PATCHES", self.PATCHES):
-            added, removed = ca.compare_country_airports(fr24, [])
+            added, removed, _ = ca.compare_country_airports(fr24, [])
         self.assertEqual([a["iata"] for a in added], ["RUE"])
 
     def test_analyze_fetches_nothing_once_counts_agree(self):
@@ -519,6 +598,167 @@ class Fr24CountryPatchTest(unittest.TestCase):
         self.assertEqual(calls[0][1], 27)
         self.assertNotIn("CG", diffs)
         self.assertIn("CD", diffs)
+
+
+
+class CompareChangedAirportsTest(unittest.TestCase):
+    """Stage A: field diffs on airports matched by identifier."""
+
+    def test_name_change_on_matched_airport(self):
+        fr24 = [{"name": "Amsterdam Schiphol Airport", "iata": "AMS", "icao": "EHAM"}]
+        our = [{"name": "Schiphol", "iata": "AMS", "icao": "EHAM", "placeCode": "NL"}]
+        added, removed, changed = ca.compare_country_airports(fr24, our, "NL")
+        self.assertEqual(added, [])
+        self.assertEqual(removed, [])
+        self.assertEqual(len(changed), 1)
+        # Top level carries the current FR24 values; changes holds only the diff.
+        self.assertEqual(changed[0]["name"], "Amsterdam Schiphol Airport")
+        self.assertEqual(changed[0]["changes"],
+                         {"name": {"old": "Schiphol", "new": "Amsterdam Schiphol Airport"}})
+
+    def test_icao_change_on_matched_airport(self):
+        fr24 = [{"name": "A", "iata": "AMS", "icao": "EHAM"}]
+        our = [{"name": "A", "iata": "AMS", "icao": "EHXX", "placeCode": "NL"}]
+        added, removed, changed = ca.compare_country_airports(fr24, our, "NL")
+        self.assertEqual(changed[0]["changes"], {"icao": {"old": "EHXX", "new": "EHAM"}})
+
+    def test_empty_vs_set_icao_is_a_change(self):
+        # Our data often lacks the ICAO; FR24 knowing it counts as a change.
+        fr24 = [{"name": "A", "iata": "AMS", "icao": "EHAM"}]
+        our = [{"name": "A", "iata": "AMS", "icao": "", "placeCode": "NL"}]
+        added, removed, changed = ca.compare_country_airports(fr24, our, "NL")
+        self.assertEqual(changed[0]["changes"], {"icao": {"old": "", "new": "EHAM"}})
+
+    def test_whitespace_only_name_difference_is_not_a_change(self):
+        fr24 = [{"name": "Rotterdam  The Hague  Airport", "iata": "RTM", "icao": "EHRD"}]
+        our = [{"name": "Rotterdam The Hague Airport", "iata": "RTM", "icao": "EHRD",
+                "placeCode": "NL"}]
+        added, removed, changed = ca.compare_country_airports(fr24, our, "NL")
+        self.assertEqual(changed, [])
+
+    def test_changed_records_sorted_by_iata_then_name(self):
+        fr24 = [{"name": "Bravo", "iata": "BBB", "icao": "EHBB"},
+                {"name": "Alpha", "iata": "AAA", "icao": "EHAA"}]
+        our = [{"name": "Bravo Old", "iata": "BBB", "icao": "EHBB", "placeCode": "NL"},
+               {"name": "Alpha Old", "iata": "AAA", "icao": "EHAA", "placeCode": "NL"}]
+        added, removed, changed = ca.compare_country_airports(fr24, our, "NL")
+        self.assertEqual([c["iata"] for c in changed], ["AAA", "BBB"])
+
+    def test_changed_record_drops_title_field(self):
+        fr24 = [{"name": "A", "iata": "AMS", "icao": "EHAM", "title": "leftover"}]
+        our = [{"name": "B", "iata": "AMS", "icao": "EHAM", "placeCode": "NL"}]
+        added, removed, changed = ca.compare_country_airports(fr24, our, "NL")
+        self.assertNotIn("title", changed[0])
+
+
+class PairChangedTest(unittest.TestCase):
+    """Stage B: pair country-level added/removed records that are really the
+    same airport under a new identifier or subdivision."""
+
+    def test_pairs_iata_rename_by_shared_icao(self):
+        # QQT -> DTX rename at McKinney National (ICAO KTKI stayed put).
+        added = [{"name": "McKinney National Airport", "iata": "DTX", "icao": "KTKI",
+                  "state": "TX", "placeCode": "US-TX"}]
+        removed = [{"name": "McKinney National Airport", "iata": "QQT", "icao": "KTKI",
+                    "placeCode": "US-TX"}]
+        changed, paired_ids = ca._pair_changed(added, removed)
+        self.assertEqual(len(changed), 1)
+        self.assertEqual(changed[0]["iata"], "DTX")
+        self.assertEqual(changed[0]["changes"], {"iata": {"old": "QQT", "new": "DTX"}})
+        self.assertEqual(paired_ids, {id(added[0]), id(removed[0])})
+
+    def test_pairs_pure_state_move(self):
+        # IAD reassigned US-VA -> US-DC; identifiers unchanged.
+        added = [{"name": "Washington Dulles International Airport", "iata": "IAD",
+                  "icao": "KIAD", "state": "DC", "placeCode": "US-DC"}]
+        removed = [{"name": "Washington Dulles International Airport", "iata": "IAD",
+                    "icao": "KIAD", "placeCode": "US-VA"}]
+        changed, _ = ca._pair_changed(added, removed)
+        self.assertEqual(changed[0]["changes"],
+                         {"placeCode": {"old": "US-VA", "new": "US-DC"}})
+
+    def test_rename_and_move_is_one_record_with_both_changes(self):
+        added = [{"name": "Columbia Regional Airport", "iata": "COU", "icao": "KCOA",
+                  "state": "MO", "placeCode": "US-MO"}]
+        removed = [{"name": "Columbia Regional Airport", "iata": "COA", "icao": "KCOA",
+                    "placeCode": "US-CA"}]
+        changed, _ = ca._pair_changed(added, removed)
+        self.assertEqual(len(changed), 1)
+        self.assertEqual(changed[0]["changes"],
+                         {"iata": {"old": "COA", "new": "COU"},
+                          "placeCode": {"old": "US-CA", "new": "US-MO"}})
+
+    def test_ambiguous_duplicate_icao_not_paired(self):
+        added = [{"name": "A1", "iata": "AAA", "icao": "KDUP", "placeCode": "US-TX"},
+                 {"name": "A2", "iata": "BBB", "icao": "KDUP", "placeCode": "US-TX"}]
+        removed = [{"name": "R", "iata": "CCC", "icao": "KDUP", "placeCode": "US-OK"}]
+        changed, paired_ids = ca._pair_changed(added, removed)
+        self.assertEqual(changed, [])
+        self.assertEqual(paired_ids, set())
+
+    def test_records_without_codes_never_pair(self):
+        added = [{"name": "New Field", "iata": "", "icao": "", "placeCode": "US-TX"}]
+        removed = [{"name": "Old Field", "iata": None, "icao": "", "placeCode": "US-TX"}]
+        changed, paired_ids = ca._pair_changed(added, removed)
+        self.assertEqual(changed, [])
+        self.assertEqual(paired_ids, set())
+
+    def test_iata_pass_pairs_leftovers_after_icao_pass(self):
+        # ICAO pass consumes the KAAA pair; the leftover then pairs by IATA
+        # even though its counterpart has no ICAO.
+        added = [
+            {"name": "Alpha", "iata": "AAB", "icao": "KAAA", "placeCode": "US-TX"},
+            {"name": "Beta", "iata": "BBB", "icao": "KBBB", "placeCode": "US-TX"},
+        ]
+        removed = [
+            {"name": "Alpha", "iata": "AAA", "icao": "KAAA", "placeCode": "US-TX"},
+            {"name": "Beta", "iata": "BBB", "icao": "", "placeCode": "US-OK"},
+        ]
+        changed, paired_ids = ca._pair_changed(added, removed)
+        self.assertEqual(len(changed), 2)
+        by_iata = {c["iata"]: c for c in changed}
+        self.assertEqual(by_iata["AAB"]["changes"], {"iata": {"old": "AAA", "new": "AAB"}})
+        self.assertEqual(by_iata["BBB"]["changes"],
+                         {"icao": {"old": "", "new": "KBBB"},
+                          "placeCode": {"old": "US-OK", "new": "US-TX"}})
+        self.assertEqual(len(paired_ids), 4)
+
+    def test_icao_pairing_wins_and_each_record_pairs_once(self):
+        added = [{"name": "X", "iata": "QQQ", "icao": "K01", "placeCode": "US-TX"}]
+        removed = [{"name": "X", "iata": "ZZZ", "icao": "K01", "placeCode": "US-TX"},
+                   {"name": "Y", "iata": "QQQ", "icao": "K02", "placeCode": "US-TX"}]
+        changed, paired_ids = ca._pair_changed(added, removed)
+        self.assertEqual(len(changed), 1)
+        self.assertEqual(changed[0]["changes"], {"iata": {"old": "ZZZ", "new": "QQQ"}})
+        self.assertNotIn(id(removed[1]), paired_ids)
+
+
+class MainSummaryTest(unittest.TestCase):
+    def test_summary_totals_include_changed_airports(self):
+        # Records carried over from an existing differences file may predate
+        # changed_count; the summary must tolerate its absence.
+        differences = {
+            "NL": {"iso_code": "NL", "added_count": 1, "removed_count": 0,
+                   "changed_count": 2},
+            "US": {"iso_code": "US", "added_count": 0, "removed_count": 1},
+        }
+        cwd = os.getcwd()
+        with mock.patch.object(ca, "scrape_flightradar24", lambda: {"Netherlands": 1}), \
+             mock.patch.object(ca, "load_airports_data",
+                               lambda path: ({"NL": 2}, {"rows": []})), \
+             mock.patch.object(ca, "analyze_country_differences",
+                               lambda *a, **k: differences), \
+             tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                ca.main()
+                with open("airport_differences.json", encoding="utf-8") as f:
+                    output = json.load(f)
+            finally:
+                os.chdir(cwd)
+        self.assertEqual(output["summary"]["total_added_airports"], 1)
+        self.assertEqual(output["summary"]["total_removed_airports"], 1)
+        self.assertEqual(output["summary"]["total_changed_airports"], 2)
 
 
 
