@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 37,
-    "total_added_airports": 55,
+    "total_added_airports": 70,
     "total_removed_airports": 31
   },
   "countries": {
@@ -125,9 +125,22 @@
       "fr24_count": 33,
       "skycards_count": 31,
       "difference": 2,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "name": "Rum Cay Port Nelson Airport",
+          "iata": "RCY",
+          "icao": "MYRP",
+          "placeCode": "BS"
+        },
+        {
+          "name": "Torch Cay Airport",
+          "iata": "TCV",
+          "icao": "MYTC",
+          "placeCode": "BS"
+        }
+      ],
       "removed_airports": [],
-      "added_count": 0,
+      "added_count": 2,
       "removed_count": 0
     },
     "BW": {
@@ -368,9 +381,22 @@
       "fr24_count": 6,
       "skycards_count": 4,
       "difference": 2,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "name": "Gamba Airport",
+          "iata": "GAX",
+          "icao": "FOGX",
+          "placeCode": "GA"
+        },
+        {
+          "name": "Makokou Airport",
+          "iata": "MKU",
+          "icao": "FOOK",
+          "placeCode": "GA"
+        }
+      ],
       "removed_airports": [],
-      "added_count": 0,
+      "added_count": 2,
       "removed_count": 0
     },
     "GD": {
@@ -379,9 +405,16 @@
       "fr24_count": 2,
       "skycards_count": 1,
       "difference": 1,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "name": "Carriacou Lauriston Airport",
+          "iata": "CRU",
+          "icao": "TGPZ",
+          "placeCode": "GD"
+        }
+      ],
       "removed_airports": [],
-      "added_count": 0,
+      "added_count": 1,
       "removed_count": 0
     },
     "GT": {
@@ -390,9 +423,28 @@
       "fr24_count": 9,
       "skycards_count": 6,
       "difference": 3,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "name": "Coban Airport",
+          "iata": "CBV",
+          "icao": "MGCB",
+          "placeCode": "GT"
+        },
+        {
+          "name": "Coatepeque Airport",
+          "iata": "CTF",
+          "icao": "MGCT",
+          "placeCode": "GT"
+        },
+        {
+          "name": "Huehuetenango Airport",
+          "iata": "HUG",
+          "icao": "MGHT",
+          "placeCode": "GT"
+        }
+      ],
       "removed_airports": [],
-      "added_count": 0,
+      "added_count": 3,
       "removed_count": 0
     },
     "GY": {
@@ -443,9 +495,22 @@
       "fr24_count": 5,
       "skycards_count": 3,
       "difference": 2,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "name": "Jacmel Airport",
+          "iata": "JAK",
+          "icao": "MTJA",
+          "placeCode": "HT"
+        },
+        {
+          "name": "Jeremie Airport",
+          "iata": "JEE",
+          "icao": "MTJE",
+          "placeCode": "HT"
+        }
+      ],
       "removed_airports": [],
-      "added_count": 0,
+      "added_count": 2,
       "removed_count": 0
     },
     "KP": {
@@ -513,9 +578,16 @@
       "fr24_count": 12,
       "skycards_count": 11,
       "difference": 1,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "name": "Choibalsan Airport",
+          "iata": "COQ",
+          "icao": "ZMCD",
+          "placeCode": "MN"
+        }
+      ],
       "removed_airports": [],
-      "added_count": 0,
+      "added_count": 1,
       "removed_count": 0
     },
     "NA": {
@@ -524,9 +596,16 @@
       "fr24_count": 13,
       "skycards_count": 12,
       "difference": 1,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "name": "Namutoni Airport",
+          "iata": "NNI",
+          "icao": "FANA",
+          "placeCode": "NA"
+        }
+      ],
       "removed_airports": [],
-      "added_count": 0,
+      "added_count": 1,
       "removed_count": 0
     },
     "OM": {
@@ -535,9 +614,22 @@
       "fr24_count": 8,
       "skycards_count": 6,
       "difference": 2,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "name": "Fahud Airport",
+          "iata": "FAU",
+          "icao": "OOFD",
+          "placeCode": "OM"
+        },
+        {
+          "name": "Mukhaizna Airport",
+          "iata": "UKH",
+          "icao": "OOMK",
+          "placeCode": "OM"
+        }
+      ],
       "removed_airports": [],
-      "added_count": 0,
+      "added_count": 2,
       "removed_count": 0
     },
     "PE": {
@@ -609,9 +701,16 @@
       "fr24_count": 2,
       "skycards_count": 1,
       "difference": 1,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "name": "Miquelon Airport",
+          "iata": "MQC",
+          "icao": "LFVM",
+          "placeCode": "PM"
+        }
+      ],
       "removed_airports": [],
-      "added_count": 0,
+      "added_count": 1,
       "removed_count": 0
     },
     "SB": {
