@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 37,
-    "total_added_airports": 87,
+    "total_added_airports": 88,
     "total_removed_airports": 17,
     "total_changed_airports": 18
   },
@@ -630,10 +630,17 @@
       "fr24_count": 2,
       "skycards_count": 1,
       "difference": 1,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "name": "Wonsan Kalma Airport",
+          "iata": "WOS",
+          "icao": "ZKWS",
+          "placeCode": "KP"
+        }
+      ],
       "removed_airports": [],
       "changed_airports": [],
-      "added_count": 0,
+      "added_count": 1,
       "removed_count": 0,
       "changed_count": 0
     },
