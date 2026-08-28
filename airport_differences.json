@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 37,
-    "total_added_airports": 83,
+    "total_added_airports": 85,
     "total_removed_airports": 17,
     "total_changed_airports": 18
   },
@@ -818,10 +818,23 @@
       "fr24_count": 35,
       "skycards_count": 33,
       "difference": 2,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "name": "Bulolo Airport",
+          "iata": "BUL",
+          "icao": "AYBU",
+          "placeCode": "PG"
+        },
+        {
+          "name": "Simberi Airport",
+          "iata": "NIS",
+          "icao": "AYSE",
+          "placeCode": "PG"
+        }
+      ],
       "removed_airports": [],
       "changed_airports": [],
-      "added_count": 0,
+      "added_count": 2,
       "removed_count": 0,
       "changed_count": 0
     },
