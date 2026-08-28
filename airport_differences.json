@@ -1,7 +1,7 @@
 {
   "summary": {
-    "total_countries_with_differences": 37,
-    "total_added_airports": 88,
+    "total_countries_with_differences": 42,
+    "total_added_airports": 90,
     "total_removed_airports": 17,
     "total_changed_airports": 18
   },
@@ -87,6 +87,20 @@
       "added_count": 5,
       "removed_count": 0,
       "changed_count": 0
+    },
+    "AU": {
+      "country_name": "Australia",
+      "iso_code": "AU",
+      "fr24_count": 475,
+      "skycards_count": 473,
+      "difference": 2,
+      "added_airports": [],
+      "removed_airports": [],
+      "changed_airports": [],
+      "added_count": 0,
+      "removed_count": 0,
+      "changed_count": 0,
+      "state_coverage": "341/475 (72%)"
     },
     "BF": {
       "country_name": "Burkina Faso",
@@ -342,15 +356,35 @@
     "CK": {
       "country_name": "Cook Islands",
       "iso_code": "CK",
-      "fr24_count": 3,
+      "fr24_count": 5,
       "skycards_count": 2,
-      "difference": 1,
+      "difference": 3,
       "added_airports": [
         {
           "name": "Atiu Enua Airport",
           "iata": "AIU",
           "icao": "NCAT",
           "placeCode": "CK"
+        }
+      ],
+      "removed_airports": [],
+      "changed_airports": [],
+      "added_count": 1,
+      "removed_count": 0,
+      "changed_count": 0
+    },
+    "CM": {
+      "country_name": "Cameroon",
+      "iso_code": "CM",
+      "fr24_count": 10,
+      "skycards_count": 9,
+      "difference": 1,
+      "added_airports": [
+        {
+          "name": "Yaounde Ville Airport",
+          "iata": "YAO",
+          "icao": "FKKY",
+          "placeCode": "CM"
         }
       ],
       "removed_airports": [],
@@ -598,6 +632,19 @@
       "removed_count": 0,
       "changed_count": 0
     },
+    "HN": {
+      "country_name": "Honduras",
+      "iso_code": "HN",
+      "fr24_count": 8,
+      "skycards_count": 6,
+      "difference": 2,
+      "added_airports": [],
+      "removed_airports": [],
+      "changed_airports": [],
+      "added_count": 0,
+      "removed_count": 0,
+      "changed_count": 0
+    },
     "HT": {
       "country_name": "Haiti",
       "iso_code": "HT",
@@ -761,6 +808,26 @@
       "removed_count": 0,
       "changed_count": 0
     },
+    "NZ": {
+      "country_name": "New Zealand",
+      "iso_code": "NZ",
+      "fr24_count": 54,
+      "skycards_count": 53,
+      "difference": 1,
+      "added_airports": [
+        {
+          "name": "Tokoroa Airport",
+          "iata": "TKZ",
+          "icao": "NZTO",
+          "placeCode": "NZ"
+        }
+      ],
+      "removed_airports": [],
+      "changed_airports": [],
+      "added_count": 1,
+      "removed_count": 0,
+      "changed_count": 0
+    },
     "OM": {
       "country_name": "Oman",
       "iso_code": "OM",
@@ -914,6 +981,19 @@
       "removed_airports": [],
       "changed_airports": [],
       "added_count": 1,
+      "removed_count": 0,
+      "changed_count": 0
+    },
+    "RW": {
+      "country_name": "Rwanda",
+      "iso_code": "RW",
+      "fr24_count": 3,
+      "skycards_count": 2,
+      "difference": 1,
+      "added_airports": [],
+      "removed_airports": [],
+      "changed_airports": [],
+      "added_count": 0,
       "removed_count": 0,
       "changed_count": 0
     },
