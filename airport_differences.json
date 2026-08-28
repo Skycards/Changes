@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 37,
-    "total_added_airports": 85,
+    "total_added_airports": 87,
     "total_removed_airports": 17,
     "total_changed_airports": 18
   },
@@ -954,10 +954,23 @@
       "fr24_count": 3,
       "skycards_count": 1,
       "difference": 2,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "name": "Abeche Airport",
+          "iata": "AEH",
+          "icao": "FTTC",
+          "placeCode": "TD"
+        },
+        {
+          "name": "Moundou Airport",
+          "iata": "MQQ",
+          "icao": "FTTD",
+          "placeCode": "TD"
+        }
+      ],
       "removed_airports": [],
       "changed_airports": [],
-      "added_count": 0,
+      "added_count": 2,
       "removed_count": 0,
       "changed_count": 0
     },
