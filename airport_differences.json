@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 42,
-    "total_added_airports": 94,
+    "total_added_airports": 95,
     "total_removed_airports": 17,
     "total_changed_airports": 18
   },
@@ -1015,10 +1015,17 @@
       "fr24_count": 3,
       "skycards_count": 2,
       "difference": 1,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "name": "Ruhengeri Airport",
+          "iata": "RHG",
+          "icao": "HRYU",
+          "placeCode": "RW"
+        }
+      ],
       "removed_airports": [],
       "changed_airports": [],
-      "added_count": 0,
+      "added_count": 1,
       "removed_count": 0,
       "changed_count": 0
     },
