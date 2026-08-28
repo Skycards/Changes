@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 42,
-    "total_added_airports": 90,
+    "total_added_airports": 92,
     "total_removed_airports": 17,
     "total_changed_airports": 18
   },
@@ -638,10 +638,23 @@
       "fr24_count": 8,
       "skycards_count": 6,
       "difference": 2,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "name": "Guanaja Airport",
+          "iata": "GJA",
+          "icao": "MHNJ",
+          "placeCode": "HN"
+        },
+        {
+          "name": "Puerto Lempira Airport",
+          "iata": "PEU",
+          "icao": "MHPL",
+          "placeCode": "HN"
+        }
+      ],
       "removed_airports": [],
       "changed_airports": [],
-      "added_count": 0,
+      "added_count": 2,
       "removed_count": 0,
       "changed_count": 0
     },
