@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 43,
-    "total_added_airports": 95,
+    "total_added_airports": 96,
     "total_removed_airports": 17,
     "total_changed_airports": 18
   },
@@ -964,6 +964,12 @@
           "placeCode": "PH"
         },
         {
+          "name": "Mati Airport",
+          "iata": "MXI",
+          "icao": "RPMQ",
+          "placeCode": "PH"
+        },
+        {
           "name": "San Fernando Airport",
           "iata": "SFE",
           "icao": "RPUS",
@@ -978,7 +984,7 @@
       ],
       "removed_airports": [],
       "changed_airports": [],
-      "added_count": 3,
+      "added_count": 4,
       "removed_count": 0,
       "changed_count": 0
     },
