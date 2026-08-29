@@ -2,7 +2,7 @@
   "summary": {
     "total_countries_with_differences": 43,
     "total_added_airports": 96,
-    "total_removed_airports": 17,
+    "total_removed_airports": 16,
     "total_changed_airports": 18
   },
   "countries": {
@@ -1183,12 +1183,6 @@
           "placeCode": "US-OH"
         },
         {
-          "name": "Port Meadville Airport",
-          "iata": "MEJ",
-          "icao": "KGKJ",
-          "placeCode": "US-PA"
-        },
-        {
           "name": "Fayetteville Municipal Airport",
           "iata": "FYM",
           "icao": "KFYM",
@@ -1416,7 +1410,7 @@
         }
       ],
       "added_count": 1,
-      "removed_count": 17,
+      "removed_count": 16,
       "changed_count": 14,
       "states": {
         "AK": {
@@ -1646,23 +1640,6 @@
               "iata": "QSL",
               "icao": "KDLZ",
               "placeCode": "US-OH"
-            }
-          ],
-          "added_count": 0,
-          "removed_count": 1
-        },
-        "PA": {
-          "state_name": "Pennsylvania",
-          "fr24_count": 37,
-          "skycards_count": 38,
-          "difference": -1,
-          "added_airports": [],
-          "removed_airports": [
-            {
-              "name": "Port Meadville Airport",
-              "iata": "MEJ",
-              "icao": "KGKJ",
-              "placeCode": "US-PA"
             }
           ],
           "added_count": 0,
