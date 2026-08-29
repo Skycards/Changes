@@ -1,6 +1,6 @@
 {
   "summary": {
-    "total_countries_with_differences": 42,
+    "total_countries_with_differences": 43,
     "total_added_airports": 95,
     "total_removed_airports": 17,
     "total_changed_airports": 18
@@ -879,6 +879,19 @@
       "removed_count": 0,
       "changed_count": 0
     },
+    "PA": {
+      "country_name": "Panama",
+      "iso_code": "PA",
+      "fr24_count": 12,
+      "skycards_count": 11,
+      "difference": 1,
+      "added_airports": [],
+      "removed_airports": [],
+      "changed_airports": [],
+      "added_count": 0,
+      "removed_count": 0,
+      "changed_count": 0
+    },
     "PE": {
       "country_name": "Peru",
       "iso_code": "PE",
@@ -940,9 +953,9 @@
     "PH": {
       "country_name": "Philippines",
       "iso_code": "PH",
-      "fr24_count": 52,
+      "fr24_count": 53,
       "skycards_count": 49,
-      "difference": 3,
+      "difference": 4,
       "added_airports": [
         {
           "name": "Jolo Airport",
