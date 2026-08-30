@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 43,
-    "total_added_airports": 96,
+    "total_added_airports": 97,
     "total_removed_airports": 16,
     "total_changed_airports": 18
   },
@@ -885,10 +885,17 @@
       "fr24_count": 12,
       "skycards_count": 11,
       "difference": 1,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "name": "Pedasi Captain Justiniano Montenegro Airport",
+          "iata": "PDM",
+          "icao": "MPPD",
+          "placeCode": "PA"
+        }
+      ],
       "removed_airports": [],
       "changed_airports": [],
-      "added_count": 0,
+      "added_count": 1,
       "removed_count": 0,
       "changed_count": 0
     },
