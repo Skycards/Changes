@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 51,
-    "total_added_airports": 103,
+    "total_added_airports": 107,
     "total_removed_airports": 16,
     "total_changed_airports": 18
   },
@@ -859,10 +859,23 @@
       "fr24_count": 4,
       "skycards_count": 2,
       "difference": 2,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "name": "Club Makokola Airport",
+          "iata": "CMK",
+          "icao": "FWCM",
+          "placeCode": "MW"
+        },
+        {
+          "name": "Mzuzu Airport",
+          "iata": "ZZU",
+          "icao": "FWUU",
+          "placeCode": "MW"
+        }
+      ],
       "removed_airports": [],
       "changed_airports": [],
-      "added_count": 0,
+      "added_count": 2,
       "removed_count": 0,
       "changed_count": 0
     },
@@ -1172,10 +1185,23 @@
       "fr24_count": 5,
       "skycards_count": 3,
       "difference": 2,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "name": "North Caicos Airport",
+          "iata": "NCA",
+          "icao": "MBNC",
+          "placeCode": "TC"
+        },
+        {
+          "name": "Salt Cay Airport",
+          "iata": "SLX",
+          "icao": "MBSY",
+          "placeCode": "TC"
+        }
+      ],
       "removed_airports": [],
       "changed_airports": [],
-      "added_count": 0,
+      "added_count": 2,
       "removed_count": 0,
       "changed_count": 0
     },
