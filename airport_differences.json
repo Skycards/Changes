@@ -1,7 +1,7 @@
 {
   "summary": {
-    "total_countries_with_differences": 43,
-    "total_added_airports": 97,
+    "total_countries_with_differences": 51,
+    "total_added_airports": 103,
     "total_removed_airports": 16,
     "total_changed_airports": 18
   },
@@ -197,16 +197,16 @@
     "CA": {
       "country_name": "Canada",
       "iso_code": "CA",
-      "fr24_count": 354,
+      "fr24_count": 355,
       "skycards_count": 349,
-      "difference": 5,
+      "difference": 6,
       "added_airports": [],
       "removed_airports": [],
       "changed_airports": [],
       "added_count": 0,
       "removed_count": 0,
       "changed_count": 0,
-      "state_coverage": "304/354 (86%)"
+      "state_coverage": "304/355 (86%)"
     },
     "CD": {
       "country_name": "Democratic Republic Of The Congo",
@@ -696,6 +696,26 @@
       "removed_count": 0,
       "changed_count": 0
     },
+    "KE": {
+      "country_name": "Kenya",
+      "iso_code": "KE",
+      "fr24_count": 29,
+      "skycards_count": 28,
+      "difference": 1,
+      "added_airports": [
+        {
+          "name": "Mandera Airport",
+          "iata": "NDE",
+          "icao": "HKMA",
+          "placeCode": "KE"
+        }
+      ],
+      "removed_airports": [],
+      "changed_airports": [],
+      "added_count": 1,
+      "removed_count": 0,
+      "changed_count": 0
+    },
     "KP": {
       "country_name": "North Korea",
       "iso_code": "KP",
@@ -708,6 +728,26 @@
           "iata": "WOS",
           "icao": "ZKWS",
           "placeCode": "KP"
+        }
+      ],
+      "removed_airports": [],
+      "changed_airports": [],
+      "added_count": 1,
+      "removed_count": 0,
+      "changed_count": 0
+    },
+    "LK": {
+      "country_name": "Sri Lanka",
+      "iso_code": "LK",
+      "fr24_count": 8,
+      "skycards_count": 7,
+      "difference": 1,
+      "added_airports": [
+        {
+          "name": "Weerawila Airport",
+          "iata": "WRZ",
+          "icao": "VCCW",
+          "placeCode": "LK"
         }
       ],
       "removed_airports": [],
@@ -812,6 +852,19 @@
       "added_count": 1,
       "removed_count": 0,
       "changed_count": 2
+    },
+    "MW": {
+      "country_name": "Malawi",
+      "iso_code": "MW",
+      "fr24_count": 4,
+      "skycards_count": 2,
+      "difference": 2,
+      "added_airports": [],
+      "removed_airports": [],
+      "changed_airports": [],
+      "added_count": 0,
+      "removed_count": 0,
+      "changed_count": 0
     },
     "NA": {
       "country_name": "Namibia",
@@ -1093,6 +1146,39 @@
       "removed_count": 0,
       "changed_count": 0
     },
+    "SD": {
+      "country_name": "Sudan",
+      "iso_code": "SD",
+      "fr24_count": 8,
+      "skycards_count": 7,
+      "difference": 1,
+      "added_airports": [
+        {
+          "name": "Dongola Airport",
+          "iata": "DOG",
+          "icao": "HSDN",
+          "placeCode": "SD"
+        }
+      ],
+      "removed_airports": [],
+      "changed_airports": [],
+      "added_count": 1,
+      "removed_count": 0,
+      "changed_count": 0
+    },
+    "TC": {
+      "country_name": "Turks And Caicos Islands",
+      "iso_code": "TC",
+      "fr24_count": 5,
+      "skycards_count": 3,
+      "difference": 2,
+      "added_airports": [],
+      "removed_airports": [],
+      "changed_airports": [],
+      "added_count": 0,
+      "removed_count": 0,
+      "changed_count": 0
+    },
     "TD": {
       "country_name": "Chad",
       "iso_code": "TD",
@@ -1119,12 +1205,32 @@
       "removed_count": 0,
       "changed_count": 0
     },
+    "TZ": {
+      "country_name": "Tanzania",
+      "iso_code": "TZ",
+      "fr24_count": 24,
+      "skycards_count": 23,
+      "difference": 1,
+      "added_airports": [
+        {
+          "name": "Sumbawanga Airport",
+          "iata": "SUT",
+          "icao": "HTSU",
+          "placeCode": "TZ"
+        }
+      ],
+      "removed_airports": [],
+      "changed_airports": [],
+      "added_count": 1,
+      "removed_count": 0,
+      "changed_count": 0
+    },
     "US": {
       "country_name": "United States",
       "iso_code": "US",
-      "fr24_count": 1752,
+      "fr24_count": 1754,
       "skycards_count": 1750,
-      "difference": 2,
+      "difference": 4,
       "added_airports": [
         {
           "name": "Danville Regional Airport",
@@ -1758,6 +1864,26 @@
         }
       }
     },
+    "VN": {
+      "country_name": "Vietnam",
+      "iso_code": "VN",
+      "fr24_count": 23,
+      "skycards_count": 22,
+      "difference": 1,
+      "added_airports": [
+        {
+          "name": "Vung Tau Airport",
+          "iata": "VTG",
+          "icao": "VVVT",
+          "placeCode": "VN"
+        }
+      ],
+      "removed_airports": [],
+      "changed_airports": [],
+      "added_count": 1,
+      "removed_count": 0,
+      "changed_count": 0
+    },
     "VU": {
       "country_name": "Vanuatu",
       "iso_code": "VU",
@@ -1811,6 +1937,26 @@
       "removed_airports": [],
       "changed_airports": [],
       "added_count": 7,
+      "removed_count": 0,
+      "changed_count": 0
+    },
+    "WS": {
+      "country_name": "Samoa",
+      "iso_code": "WS",
+      "fr24_count": 2,
+      "skycards_count": 1,
+      "difference": 1,
+      "added_airports": [
+        {
+          "name": "Apia Fagali'i Airport",
+          "iata": "FGI",
+          "icao": "NSFI",
+          "placeCode": "WS"
+        }
+      ],
+      "removed_airports": [],
+      "changed_airports": [],
+      "added_count": 1,
       "removed_count": 0,
       "changed_count": 0
     },
