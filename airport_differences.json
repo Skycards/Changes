@@ -2,7 +2,7 @@
   "summary": {
     "total_countries_with_differences": 8,
     "total_added_airports": 6,
-    "total_removed_airports": 34,
+    "total_removed_airports": 33,
     "total_changed_airports": 11
   },
   "countries": {
@@ -85,17 +85,10 @@
       "skycards_count": 14,
       "difference": -1,
       "added_airports": [],
-      "removed_airports": [
-        {
-          "name": "Jakharrah Nafoora Airport",
-          "iata": "NFR",
-          "icao": "HLNR",
-          "placeCode": "LY"
-        }
-      ],
+      "removed_airports": [],
       "changed_airports": [],
       "added_count": 0,
-      "removed_count": 1,
+      "removed_count": 0,
       "changed_count": 0
     },
     "NA": {
