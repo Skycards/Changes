@@ -1,6 +1,6 @@
 {
   "summary": {
-    "total_countries_with_differences": 51,
+    "total_countries_with_differences": 58,
     "total_added_airports": 107,
     "total_removed_airports": 16,
     "total_changed_airports": 18
@@ -137,16 +137,16 @@
     "BR": {
       "country_name": "Brazil",
       "iso_code": "BR",
-      "fr24_count": 287,
+      "fr24_count": 295,
       "skycards_count": 282,
-      "difference": 5,
+      "difference": 13,
       "added_airports": [],
       "removed_airports": [],
       "changed_airports": [],
       "added_count": 0,
       "removed_count": 0,
       "changed_count": 0,
-      "state_coverage": "139/287 (48%)"
+      "state_coverage": "139/295 (47%)"
     },
     "BS": {
       "country_name": "Bahamas",
@@ -177,9 +177,9 @@
     "BW": {
       "country_name": "Botswana",
       "iso_code": "BW",
-      "fr24_count": 6,
+      "fr24_count": 9,
       "skycards_count": 5,
-      "difference": 1,
+      "difference": 4,
       "added_airports": [
         {
           "name": "Savuti Airport",
@@ -211,9 +211,9 @@
     "CD": {
       "country_name": "Democratic Republic Of The Congo",
       "iso_code": "CD",
-      "fr24_count": 29,
+      "fr24_count": 31,
       "skycards_count": 26,
-      "difference": 3,
+      "difference": 5,
       "added_airports": [
         {
           "name": "Boende Airport",
@@ -441,9 +441,9 @@
     "CO": {
       "country_name": "Colombia",
       "iso_code": "CO",
-      "fr24_count": 80,
+      "fr24_count": 81,
       "skycards_count": 77,
-      "difference": 3,
+      "difference": 4,
       "added_airports": [
         {
           "name": "Chigorodo Jaime Ortiz Betancur Airport",
@@ -571,9 +571,9 @@
     "GT": {
       "country_name": "Guatemala",
       "iso_code": "GT",
-      "fr24_count": 9,
+      "fr24_count": 10,
       "skycards_count": 6,
-      "difference": 3,
+      "difference": 4,
       "added_airports": [
         {
           "name": "Coban Airport",
@@ -603,9 +603,9 @@
     "GY": {
       "country_name": "Guyana",
       "iso_code": "GY",
-      "fr24_count": 9,
+      "fr24_count": 12,
       "skycards_count": 4,
-      "difference": 5,
+      "difference": 8,
       "added_airports": [
         {
           "name": "Imbaimadai Airport",
@@ -753,6 +753,19 @@
       "removed_airports": [],
       "changed_airports": [],
       "added_count": 1,
+      "removed_count": 0,
+      "changed_count": 0
+    },
+    "MG": {
+      "country_name": "Madagascar",
+      "iso_code": "MG",
+      "fr24_count": 14,
+      "skycards_count": 12,
+      "difference": 2,
+      "added_airports": [],
+      "removed_airports": [],
+      "changed_airports": [],
+      "added_count": 0,
       "removed_count": 0,
       "changed_count": 0
     },
@@ -997,12 +1010,25 @@
       "removed_count": 0,
       "changed_count": 0
     },
+    "PF": {
+      "country_name": "French Polynesia",
+      "iso_code": "PF",
+      "fr24_count": 49,
+      "skycards_count": 48,
+      "difference": 1,
+      "added_airports": [],
+      "removed_airports": [],
+      "changed_airports": [],
+      "added_count": 0,
+      "removed_count": 0,
+      "changed_count": 0
+    },
     "PG": {
       "country_name": "Papua New Guinea",
       "iso_code": "PG",
-      "fr24_count": 35,
+      "fr24_count": 40,
       "skycards_count": 33,
-      "difference": 2,
+      "difference": 7,
       "added_airports": [
         {
           "name": "Bulolo Airport",
@@ -1159,6 +1185,19 @@
       "removed_count": 0,
       "changed_count": 0
     },
+    "SC": {
+      "country_name": "Seychelles",
+      "iso_code": "SC",
+      "fr24_count": 4,
+      "skycards_count": 3,
+      "difference": 1,
+      "added_airports": [],
+      "removed_airports": [],
+      "changed_airports": [],
+      "added_count": 0,
+      "removed_count": 0,
+      "changed_count": 0
+    },
     "SD": {
       "country_name": "Sudan",
       "iso_code": "SD",
@@ -1176,6 +1215,32 @@
       "removed_airports": [],
       "changed_airports": [],
       "added_count": 1,
+      "removed_count": 0,
+      "changed_count": 0
+    },
+    "SO": {
+      "country_name": "Somalia",
+      "iso_code": "SO",
+      "fr24_count": 12,
+      "skycards_count": 11,
+      "difference": 1,
+      "added_airports": [],
+      "removed_airports": [],
+      "changed_airports": [],
+      "added_count": 0,
+      "removed_count": 0,
+      "changed_count": 0
+    },
+    "SR": {
+      "country_name": "Suriname",
+      "iso_code": "SR",
+      "fr24_count": 5,
+      "skycards_count": 3,
+      "difference": 2,
+      "added_airports": [],
+      "removed_airports": [],
+      "changed_airports": [],
+      "added_count": 0,
       "removed_count": 0,
       "changed_count": 0
     },
@@ -1208,9 +1273,9 @@
     "TD": {
       "country_name": "Chad",
       "iso_code": "TD",
-      "fr24_count": 3,
+      "fr24_count": 4,
       "skycards_count": 1,
-      "difference": 2,
+      "difference": 3,
       "added_airports": [
         {
           "name": "Abeche Airport",
@@ -1251,12 +1316,25 @@
       "removed_count": 0,
       "changed_count": 0
     },
+    "UG": {
+      "country_name": "Uganda",
+      "iso_code": "UG",
+      "fr24_count": 10,
+      "skycards_count": 9,
+      "difference": 1,
+      "added_airports": [],
+      "removed_airports": [],
+      "changed_airports": [],
+      "added_count": 0,
+      "removed_count": 0,
+      "changed_count": 0
+    },
     "US": {
       "country_name": "United States",
       "iso_code": "US",
-      "fr24_count": 1754,
+      "fr24_count": 1769,
       "skycards_count": 1750,
-      "difference": 4,
+      "difference": 19,
       "added_airports": [
         {
           "name": "Danville Regional Airport",
@@ -1890,6 +1968,19 @@
         }
       }
     },
+    "VE": {
+      "country_name": "Venezuela",
+      "iso_code": "VE",
+      "fr24_count": 36,
+      "skycards_count": 35,
+      "difference": 1,
+      "added_airports": [],
+      "removed_airports": [],
+      "changed_airports": [],
+      "added_count": 0,
+      "removed_count": 0,
+      "changed_count": 0
+    },
     "VN": {
       "country_name": "Vietnam",
       "iso_code": "VN",
@@ -1989,9 +2080,9 @@
     "ZA": {
       "country_name": "South Africa",
       "iso_code": "ZA",
-      "fr24_count": 44,
+      "fr24_count": 51,
       "skycards_count": 42,
-      "difference": 2,
+      "difference": 9,
       "added_airports": [
         {
           "name": "Bisho Airport",
