@@ -1,223 +1,17 @@
 {
   "summary": {
-    "total_countries_with_differences": 58,
-    "total_added_airports": 116,
-    "total_removed_airports": 16,
-    "total_changed_airports": 18
+    "total_countries_with_differences": 8,
+    "total_added_airports": 2,
+    "total_removed_airports": 48,
+    "total_changed_airports": 20
   },
   "countries": {
-    "AF": {
-      "country_name": "Afghanistan",
-      "iso_code": "AF",
-      "fr24_count": 14,
-      "skycards_count": 10,
-      "difference": 4,
-      "added_airports": [
-        {
-          "name": "Bamyan Shahid Mazari Airport",
-          "iata": "BIN",
-          "icao": "OABN",
-          "placeCode": "AF"
-        },
-        {
-          "name": "Faizabad Airport",
-          "iata": "FBD",
-          "icao": "OAFZ",
-          "placeCode": "AF"
-        },
-        {
-          "name": "Maymana Airport",
-          "iata": "MMZ",
-          "icao": "OAMN",
-          "placeCode": "AF"
-        },
-        {
-          "name": "Kunduz Airport",
-          "iata": "UND",
-          "icao": "OAUZ",
-          "placeCode": "AF"
-        }
-      ],
-      "removed_airports": [],
-      "changed_airports": [],
-      "added_count": 4,
-      "removed_count": 0,
-      "changed_count": 0
-    },
-    "AR": {
-      "country_name": "Argentina",
-      "iso_code": "AR",
-      "fr24_count": 61,
-      "skycards_count": 56,
-      "difference": 5,
-      "added_airports": [
-        {
-          "name": "La Cumbre Airport",
-          "iata": "LCM",
-          "icao": "SACC",
-          "placeCode": "AR"
-        },
-        {
-          "name": "Oran Airport",
-          "iata": "ORA",
-          "icao": "SASO",
-          "placeCode": "AR"
-        },
-        {
-          "name": "Perito Moreno Airport",
-          "iata": "PMQ",
-          "icao": "SAWP",
-          "placeCode": "AR"
-        },
-        {
-          "name": "Tartagal Airport",
-          "iata": "TTG",
-          "icao": "SAST",
-          "placeCode": "AR"
-        },
-        {
-          "name": "Villa Reynolds Airport",
-          "iata": "VME",
-          "icao": "SAOR",
-          "placeCode": "AR"
-        }
-      ],
-      "removed_airports": [],
-      "changed_airports": [],
-      "added_count": 5,
-      "removed_count": 0,
-      "changed_count": 0
-    },
-    "AU": {
-      "country_name": "Australia",
-      "iso_code": "AU",
-      "fr24_count": 475,
-      "skycards_count": 473,
-      "difference": 2,
-      "added_airports": [],
-      "removed_airports": [],
-      "changed_airports": [],
-      "added_count": 0,
-      "removed_count": 0,
-      "changed_count": 0,
-      "state_coverage": "341/475 (72%)"
-    },
-    "BF": {
-      "country_name": "Burkina Faso",
-      "iso_code": "BF",
-      "fr24_count": 4,
-      "skycards_count": 1,
-      "difference": 3,
-      "added_airports": [
-        {
-          "name": "Bobo Dioulasso Airport",
-          "iata": "BOY",
-          "icao": "DFOO",
-          "placeCode": "BF"
-        },
-        {
-          "name": "Diapaga Airport",
-          "iata": "DIP",
-          "icao": "DFED",
-          "placeCode": "BF"
-        },
-        {
-          "name": "Fada N'gourma Airport",
-          "iata": "FNG",
-          "icao": "DFEF",
-          "placeCode": "BF"
-        }
-      ],
-      "removed_airports": [],
-      "changed_airports": [],
-      "added_count": 3,
-      "removed_count": 0,
-      "changed_count": 0
-    },
-    "BR": {
-      "country_name": "Brazil",
-      "iso_code": "BR",
-      "fr24_count": 295,
-      "skycards_count": 282,
-      "difference": 13,
-      "added_airports": [],
-      "removed_airports": [],
-      "changed_airports": [],
-      "added_count": 0,
-      "removed_count": 0,
-      "changed_count": 0,
-      "state_coverage": "140/295 (47%)"
-    },
-    "BS": {
-      "country_name": "Bahamas",
-      "iso_code": "BS",
-      "fr24_count": 33,
-      "skycards_count": 31,
-      "difference": 2,
-      "added_airports": [
-        {
-          "name": "Rum Cay Port Nelson Airport",
-          "iata": "RCY",
-          "icao": "MYRP",
-          "placeCode": "BS"
-        },
-        {
-          "name": "Torch Cay Airport",
-          "iata": "TCV",
-          "icao": "MYTC",
-          "placeCode": "BS"
-        }
-      ],
-      "removed_airports": [],
-      "changed_airports": [],
-      "added_count": 2,
-      "removed_count": 0,
-      "changed_count": 0
-    },
-    "BW": {
-      "country_name": "Botswana",
-      "iso_code": "BW",
-      "fr24_count": 9,
-      "skycards_count": 5,
-      "difference": 4,
-      "added_airports": [
-        {
-          "name": "Khwai River Airport",
-          "iata": "KHW",
-          "icao": "FBKR",
-          "placeCode": "BW"
-        },
-        {
-          "name": "Savuti Airport",
-          "iata": "SVT",
-          "icao": "FBSV",
-          "placeCode": "BW"
-        },
-        {
-          "name": "Shakawe Airport",
-          "iata": "SWX",
-          "icao": "FBSW",
-          "placeCode": "BW"
-        },
-        {
-          "name": "Tuli Lodge Limpopo Valley Airport",
-          "iata": "TLD",
-          "icao": "FBTL",
-          "placeCode": "BW"
-        }
-      ],
-      "removed_airports": [],
-      "changed_airports": [],
-      "added_count": 4,
-      "removed_count": 0,
-      "changed_count": 0
-    },
     "CA": {
       "country_name": "Canada",
       "iso_code": "CA",
       "fr24_count": 355,
-      "skycards_count": 349,
-      "difference": 6,
+      "skycards_count": 357,
+      "difference": -2,
       "added_airports": [],
       "removed_airports": [],
       "changed_airports": [],
@@ -226,837 +20,94 @@
       "changed_count": 0,
       "state_coverage": "304/355 (86%)"
     },
-    "CD": {
-      "country_name": "Democratic Republic Of The Congo",
-      "iso_code": "CD",
-      "fr24_count": 31,
-      "skycards_count": 26,
-      "difference": 5,
-      "added_airports": [
-        {
-          "name": "Boende Airport",
-          "iata": "BNB",
-          "icao": "FZGN",
-          "placeCode": "CD"
-        },
-        {
-          "name": "Buta Zega Airport",
-          "iata": "BZU",
-          "icao": "FZKJ",
-          "placeCode": "CD"
-        },
-        {
-          "name": "Manono Airport",
-          "iata": "MNO",
-          "icao": "FZRA",
-          "placeCode": "CD"
-        }
-      ],
-      "removed_airports": [],
-      "changed_airports": [
-        {
-          "name": "Kamina Ville Airport",
-          "iata": "KMN",
-          "icao": "FZSB",
-          "placeCode": "CD",
-          "changes": {
-            "name": {
-              "old": "Kamina Airport",
-              "new": "Kamina Ville Airport"
-            }
-          }
-        }
-      ],
-      "added_count": 3,
-      "removed_count": 0,
-      "changed_count": 1
-    },
-    "CF": {
-      "country_name": "Central African Republic",
-      "iso_code": "CF",
-      "fr24_count": 14,
-      "skycards_count": 4,
-      "difference": 10,
-      "added_airports": [
-        {
-          "name": "Berberati Airport",
-          "iata": "BBT",
-          "icao": "FEFT",
-          "placeCode": "CF"
-        },
-        {
-          "name": "Bambari Airport",
-          "iata": "BBY",
-          "icao": "FEFM",
-          "placeCode": "CF"
-        },
-        {
-          "name": "Bangassou Airport",
-          "iata": "BGU",
-          "icao": "FEFG",
-          "placeCode": "CF"
-        },
-        {
-          "name": "Bouar Airport",
-          "iata": "BOP",
-          "icao": "FEFO",
-          "placeCode": "CF"
-        },
-        {
-          "name": "Bossangoa Airport",
-          "iata": "BSN",
-          "icao": "FEFS",
-          "placeCode": "CF"
-        },
-        {
-          "name": "Batangafo Airport",
-          "iata": "BTG",
-          "icao": "FEGF",
-          "placeCode": "CF"
-        },
-        {
-          "name": "Carnot Airport",
-          "iata": "CRF",
-          "icao": "FEFC",
-          "placeCode": "CF"
-        },
-        {
-          "name": "Zemio Airport",
-          "iata": "IMO",
-          "icao": "FEFZ",
-          "placeCode": "CF"
-        },
-        {
-          "name": "Ouanda Djalle Airport",
-          "iata": "ODJ",
-          "icao": "FEGO",
-          "placeCode": "CF"
-        },
-        {
-          "name": "Rafai Airport",
-          "iata": "RFA",
-          "icao": "FEGR",
-          "placeCode": "CF"
-        }
-      ],
-      "removed_airports": [],
-      "changed_airports": [],
-      "added_count": 10,
-      "removed_count": 0,
-      "changed_count": 0
-    },
-    "CG": {
-      "country_name": "Congo",
-      "iso_code": "CG",
-      "fr24_count": 4,
-      "skycards_count": 2,
-      "difference": 2,
-      "added_airports": [
-        {
-          "name": "Impfondo Airport",
-          "iata": "ION",
-          "icao": "FCOI",
-          "placeCode": "CG"
-        },
-        {
-          "name": "Ouesso Airport",
-          "iata": "OUE",
-          "icao": "FCOU",
-          "placeCode": "CG"
-        }
-      ],
-      "removed_airports": [],
-      "changed_airports": [],
-      "added_count": 2,
-      "removed_count": 0,
-      "changed_count": 0
-    },
-    "CK": {
-      "country_name": "Cook Islands",
-      "iso_code": "CK",
+    "GF": {
+      "country_name": "French Guiana",
+      "iso_code": "GF",
       "fr24_count": 5,
-      "skycards_count": 2,
-      "difference": 3,
-      "added_airports": [
-        {
-          "name": "Atiu Enua Airport",
-          "iata": "AIU",
-          "icao": "NCAT",
-          "placeCode": "CK"
-        },
-        {
-          "name": "Mangaia Airport",
-          "iata": "MGS",
-          "icao": "NCGO",
-          "placeCode": "CK"
-        },
-        {
-          "name": "Mitiaro Airport",
-          "iata": "MOI",
-          "icao": "NCMR",
-          "placeCode": "CK"
-        }
-      ],
-      "removed_airports": [],
-      "changed_airports": [],
-      "added_count": 3,
-      "removed_count": 0,
-      "changed_count": 0
-    },
-    "CM": {
-      "country_name": "Cameroon",
-      "iso_code": "CM",
-      "fr24_count": 10,
-      "skycards_count": 9,
-      "difference": 1,
-      "added_airports": [
-        {
-          "name": "Yaounde Ville Airport",
-          "iata": "YAO",
-          "icao": "FKKY",
-          "placeCode": "CM"
-        }
-      ],
-      "removed_airports": [],
-      "changed_airports": [],
-      "added_count": 1,
-      "removed_count": 0,
-      "changed_count": 0
-    },
-    "CN": {
-      "country_name": "China",
-      "iso_code": "CN",
-      "fr24_count": 267,
-      "skycards_count": 266,
-      "difference": 1,
-      "added_airports": [
-        {
-          "name": "Hejing Bayinbuluke Airport",
-          "iata": "HJB",
-          "icao": "ZWHJ",
-          "placeCode": "CN"
-        }
-      ],
-      "removed_airports": [],
-      "changed_airports": [
-        {
-          "name": "Korla Licheng Airport",
-          "iata": "KRL",
-          "icao": "ZWKL",
-          "placeCode": "CN-XJ",
-          "changes": {
-            "name": {
-              "old": "Korla Airport",
-              "new": "Korla Licheng Airport"
-            }
-          }
-        }
-      ],
-      "added_count": 1,
-      "removed_count": 0,
-      "changed_count": 1
-    },
-    "CO": {
-      "country_name": "Colombia",
-      "iso_code": "CO",
-      "fr24_count": 81,
-      "skycards_count": 77,
-      "difference": 4,
-      "added_airports": [
-        {
-          "name": "Chigorodo Jaime Ortiz Betancur Airport",
-          "iata": "IGO",
-          "icao": "SKIG",
-          "placeCode": "CO"
-        },
-        {
-          "name": "La Chorrera Airport",
-          "iata": "LCR",
-          "icao": "SKHZ",
-          "placeCode": "CO"
-        },
-        {
-          "name": "Mariquita Jose Celestino Mutis Airport",
-          "iata": "MQU",
-          "icao": "SKQU",
-          "placeCode": "CO"
-        }
-      ],
-      "removed_airports": [],
-      "changed_airports": [],
-      "added_count": 3,
-      "removed_count": 0,
-      "changed_count": 0
-    },
-    "EC": {
-      "country_name": "Ecuador",
-      "iso_code": "EC",
-      "fr24_count": 14,
-      "skycards_count": 13,
-      "difference": 1,
-      "added_airports": [
-        {
-          "name": "Shell Mera Rio Amazonas Airport",
-          "iata": "PTZ",
-          "icao": "SESM",
-          "placeCode": "EC"
-        }
-      ],
-      "removed_airports": [],
-      "changed_airports": [],
-      "added_count": 1,
-      "removed_count": 0,
-      "changed_count": 0
-    },
-    "ET": {
-      "country_name": "Ethiopia",
-      "iso_code": "ET",
-      "fr24_count": 26,
-      "skycards_count": 23,
-      "difference": 3,
-      "added_airports": [
-        {
-          "name": "Debra Marcos Airport",
-          "iata": "DBM",
-          "icao": "HADM",
-          "placeCode": "ET"
-        },
-        {
-          "name": "Humera Airport",
-          "iata": "HUE",
-          "icao": "HAHU",
-          "placeCode": "ET"
-        },
-        {
-          "name": "Mizan Teferi Airport",
-          "iata": "MTF",
-          "icao": "HAMT",
-          "placeCode": "ET"
-        }
-      ],
-      "removed_airports": [],
-      "changed_airports": [],
-      "added_count": 3,
-      "removed_count": 0,
-      "changed_count": 0
-    },
-    "GA": {
-      "country_name": "Gabon",
-      "iso_code": "GA",
-      "fr24_count": 6,
-      "skycards_count": 4,
-      "difference": 2,
-      "added_airports": [
-        {
-          "name": "Gamba Airport",
-          "iata": "GAX",
-          "icao": "FOGX",
-          "placeCode": "GA"
-        },
-        {
-          "name": "Makokou Airport",
-          "iata": "MKU",
-          "icao": "FOOK",
-          "placeCode": "GA"
-        }
-      ],
-      "removed_airports": [],
-      "changed_airports": [],
-      "added_count": 2,
-      "removed_count": 0,
-      "changed_count": 0
-    },
-    "GD": {
-      "country_name": "Grenada",
-      "iso_code": "GD",
-      "fr24_count": 2,
-      "skycards_count": 1,
-      "difference": 1,
-      "added_airports": [
-        {
-          "name": "Carriacou Lauriston Airport",
-          "iata": "CRU",
-          "icao": "TGPZ",
-          "placeCode": "GD"
-        }
-      ],
-      "removed_airports": [],
-      "changed_airports": [],
-      "added_count": 1,
-      "removed_count": 0,
-      "changed_count": 0
-    },
-    "GT": {
-      "country_name": "Guatemala",
-      "iso_code": "GT",
-      "fr24_count": 10,
       "skycards_count": 6,
-      "difference": 4,
-      "added_airports": [
+      "difference": -1,
+      "added_airports": [],
+      "removed_airports": [
         {
-          "name": "Coban Airport",
-          "iata": "CBV",
-          "icao": "MGCB",
-          "placeCode": "GT"
-        },
-        {
-          "name": "Coatepeque Airport",
-          "iata": "CTF",
-          "icao": "MGCT",
-          "placeCode": "GT"
-        },
-        {
-          "name": "Huehuetenango Airport",
-          "iata": "HUG",
-          "icao": "MGHT",
-          "placeCode": "GT"
-        },
-        {
-          "name": "Rubelsanto Airport",
-          "iata": "RUV",
-          "icao": "MGRB",
-          "placeCode": "GT"
+          "name": "Stoelmanseiland Airport",
+          "iata": "SMZ",
+          "icao": "SMST",
+          "placeCode": "GF"
         }
       ],
-      "removed_airports": [],
       "changed_airports": [],
-      "added_count": 4,
-      "removed_count": 0,
+      "added_count": 0,
+      "removed_count": 1,
       "changed_count": 0
     },
     "GY": {
       "country_name": "Guyana",
       "iso_code": "GY",
       "fr24_count": 12,
-      "skycards_count": 4,
-      "difference": 8,
-      "added_airports": [
-        {
-          "name": "Imbaimadai Airport",
-          "iata": "IMB",
-          "icao": "SYIB",
-          "placeCode": "GY"
-        },
-        {
-          "name": "Kamarang Airport",
-          "iata": "KAR",
-          "icao": "SYKM",
-          "placeCode": "GY"
-        },
-        {
-          "name": "Mahdia Airport",
-          "iata": "MHA",
-          "icao": "SYMD",
-          "placeCode": "GY"
-        },
-        {
-          "name": "Matthews Ridge Airport",
-          "iata": "MWJ",
-          "icao": "SYMR",
-          "placeCode": "GY"
-        },
-        {
-          "name": "Mabaruma Airport",
-          "iata": "USI",
-          "icao": "SYMB",
-          "placeCode": "GY"
-        }
-      ],
-      "removed_airports": [],
-      "changed_airports": [],
-      "added_count": 5,
-      "removed_count": 0,
-      "changed_count": 0
-    },
-    "HN": {
-      "country_name": "Honduras",
-      "iso_code": "HN",
-      "fr24_count": 8,
-      "skycards_count": 6,
-      "difference": 2,
-      "added_airports": [
-        {
-          "name": "Guanaja Airport",
-          "iata": "GJA",
-          "icao": "MHNJ",
-          "placeCode": "HN"
-        },
-        {
-          "name": "Puerto Lempira Airport",
-          "iata": "PEU",
-          "icao": "MHPL",
-          "placeCode": "HN"
-        }
-      ],
-      "removed_airports": [],
-      "changed_airports": [],
-      "added_count": 2,
-      "removed_count": 0,
-      "changed_count": 0
-    },
-    "HT": {
-      "country_name": "Haiti",
-      "iso_code": "HT",
-      "fr24_count": 5,
-      "skycards_count": 3,
-      "difference": 2,
-      "added_airports": [
-        {
-          "name": "Jacmel Airport",
-          "iata": "JAK",
-          "icao": "MTJA",
-          "placeCode": "HT"
-        },
-        {
-          "name": "Jeremie Airport",
-          "iata": "JEE",
-          "icao": "MTJE",
-          "placeCode": "HT"
-        }
-      ],
-      "removed_airports": [],
-      "changed_airports": [],
-      "added_count": 2,
-      "removed_count": 0,
-      "changed_count": 0
-    },
-    "KE": {
-      "country_name": "Kenya",
-      "iso_code": "KE",
-      "fr24_count": 29,
-      "skycards_count": 28,
-      "difference": 1,
-      "added_airports": [
-        {
-          "name": "Mandera Airport",
-          "iata": "NDE",
-          "icao": "HKMA",
-          "placeCode": "KE"
-        }
-      ],
-      "removed_airports": [],
-      "changed_airports": [],
-      "added_count": 1,
-      "removed_count": 0,
-      "changed_count": 0
-    },
-    "KP": {
-      "country_name": "North Korea",
-      "iso_code": "KP",
-      "fr24_count": 2,
-      "skycards_count": 1,
-      "difference": 1,
-      "added_airports": [
-        {
-          "name": "Wonsan Kalma Airport",
-          "iata": "WOS",
-          "icao": "ZKWS",
-          "placeCode": "KP"
-        }
-      ],
-      "removed_airports": [],
-      "changed_airports": [],
-      "added_count": 1,
-      "removed_count": 0,
-      "changed_count": 0
-    },
-    "LK": {
-      "country_name": "Sri Lanka",
-      "iso_code": "LK",
-      "fr24_count": 8,
-      "skycards_count": 7,
-      "difference": 1,
-      "added_airports": [
-        {
-          "name": "Weerawila Airport",
-          "iata": "WRZ",
-          "icao": "VCCW",
-          "placeCode": "LK"
-        }
-      ],
-      "removed_airports": [],
-      "changed_airports": [],
-      "added_count": 1,
-      "removed_count": 0,
-      "changed_count": 0
-    },
-    "MG": {
-      "country_name": "Madagascar",
-      "iso_code": "MG",
-      "fr24_count": 14,
-      "skycards_count": 12,
-      "difference": 2,
+      "skycards_count": 13,
+      "difference": -1,
       "added_airports": [],
-      "removed_airports": [],
+      "removed_airports": [
+        {
+          "name": "Baramita Airport",
+          "iata": "BMJ",
+          "icao": "SYBR",
+          "placeCode": "GY"
+        },
+        {
+          "name": "Bartica Airport",
+          "iata": "GFO",
+          "icao": "SYBT",
+          "placeCode": "GY"
+        },
+        {
+          "name": "Kaieteur Falls Airport",
+          "iata": "KIA",
+          "icao": "PKSA",
+          "placeCode": "GY"
+        },
+        {
+          "name": "Kato Airport",
+          "iata": "KTO",
+          "icao": "SYKT",
+          "placeCode": "GY"
+        }
+      ],
       "changed_airports": [],
       "added_count": 0,
-      "removed_count": 0,
+      "removed_count": 4,
       "changed_count": 0
     },
-    "ML": {
-      "country_name": "Mali",
-      "iso_code": "ML",
-      "fr24_count": 5,
-      "skycards_count": 2,
-      "difference": 3,
-      "added_airports": [
+    "LY": {
+      "country_name": "Libya",
+      "iso_code": "LY",
+      "fr24_count": 13,
+      "skycards_count": 14,
+      "difference": -1,
+      "added_airports": [],
+      "removed_airports": [
         {
-          "name": "Kayes Dag-Dag Airport",
-          "iata": "KYS",
-          "icao": "GAKY",
-          "placeCode": "ML"
-        },
-        {
-          "name": "Mopti Airport",
-          "iata": "MZI",
-          "icao": "GAMB",
-          "placeCode": "ML"
-        },
-        {
-          "name": "Timbuktu Airport",
-          "iata": "TOM",
-          "icao": "GATB",
-          "placeCode": "ML"
+          "name": "Jakharrah Nafoora Airport",
+          "iata": "NFR",
+          "icao": "HLNR",
+          "placeCode": "LY"
         }
       ],
-      "removed_airports": [],
       "changed_airports": [],
-      "added_count": 3,
-      "removed_count": 0,
-      "changed_count": 0
-    },
-    "MM": {
-      "country_name": "Myanmar (burma)",
-      "iso_code": "MM",
-      "fr24_count": 29,
-      "skycards_count": 28,
-      "difference": 1,
-      "added_airports": [
-        {
-          "name": "Anisakan Airport",
-          "iata": "NSA",
-          "icao": "VYAS",
-          "placeCode": "MM"
-        }
-      ],
-      "removed_airports": [],
-      "changed_airports": [],
-      "added_count": 1,
-      "removed_count": 0,
-      "changed_count": 0
-    },
-    "MN": {
-      "country_name": "Mongolia",
-      "iso_code": "MN",
-      "fr24_count": 12,
-      "skycards_count": 11,
-      "difference": 1,
-      "added_airports": [
-        {
-          "name": "Choibalsan Airport",
-          "iata": "COQ",
-          "icao": "ZMCD",
-          "placeCode": "MN"
-        }
-      ],
-      "removed_airports": [],
-      "changed_airports": [
-        {
-          "name": "Ulaanbaatar Chinggis Khaan International Airport",
-          "iata": "UBN",
-          "icao": "ZMCK",
-          "placeCode": "MN",
-          "changes": {
-            "name": {
-              "old": "Ulaanbaatar New International Airport",
-              "new": "Ulaanbaatar Chinggis Khaan International Airport"
-            }
-          }
-        },
-        {
-          "name": "Ulaanbaatar Buyant-Ukhaa International Airport",
-          "iata": "ULN",
-          "icao": "ZMUB",
-          "placeCode": "MN",
-          "changes": {
-            "name": {
-              "old": "Ulaanbaatar Chinggis Khaan International Airport",
-              "new": "Ulaanbaatar Buyant-Ukhaa International Airport"
-            }
-          }
-        }
-      ],
-      "added_count": 1,
-      "removed_count": 0,
-      "changed_count": 2
-    },
-    "MW": {
-      "country_name": "Malawi",
-      "iso_code": "MW",
-      "fr24_count": 4,
-      "skycards_count": 2,
-      "difference": 2,
-      "added_airports": [
-        {
-          "name": "Club Makokola Airport",
-          "iata": "CMK",
-          "icao": "FWCM",
-          "placeCode": "MW"
-        },
-        {
-          "name": "Mzuzu Airport",
-          "iata": "ZZU",
-          "icao": "FWUU",
-          "placeCode": "MW"
-        }
-      ],
-      "removed_airports": [],
-      "changed_airports": [],
-      "added_count": 2,
-      "removed_count": 0,
+      "added_count": 0,
+      "removed_count": 1,
       "changed_count": 0
     },
     "NA": {
       "country_name": "Namibia",
       "iso_code": "NA",
       "fr24_count": 13,
-      "skycards_count": 12,
-      "difference": 1,
-      "added_airports": [
-        {
-          "name": "Arandis Airport",
-          "iata": "ADI",
-          "icao": "FAAR",
-          "placeCode": "NA"
-        },
-        {
-          "name": "Namutoni Airport",
-          "iata": "NNI",
-          "icao": "FANA",
-          "placeCode": "NA"
-        }
-      ],
+      "skycards_count": 14,
+      "difference": -1,
+      "added_airports": [],
       "removed_airports": [],
       "changed_airports": [],
-      "added_count": 2,
-      "removed_count": 0,
-      "changed_count": 0
-    },
-    "NZ": {
-      "country_name": "New Zealand",
-      "iso_code": "NZ",
-      "fr24_count": 54,
-      "skycards_count": 53,
-      "difference": 1,
-      "added_airports": [
-        {
-          "name": "Tokoroa Airport",
-          "iata": "TKZ",
-          "icao": "NZTO",
-          "placeCode": "NZ"
-        }
-      ],
-      "removed_airports": [],
-      "changed_airports": [],
-      "added_count": 1,
-      "removed_count": 0,
-      "changed_count": 0
-    },
-    "OM": {
-      "country_name": "Oman",
-      "iso_code": "OM",
-      "fr24_count": 8,
-      "skycards_count": 6,
-      "difference": 2,
-      "added_airports": [
-        {
-          "name": "Fahud Airport",
-          "iata": "FAU",
-          "icao": "OOFD",
-          "placeCode": "OM"
-        },
-        {
-          "name": "Mukhaizna Airport",
-          "iata": "UKH",
-          "icao": "OOMK",
-          "placeCode": "OM"
-        }
-      ],
-      "removed_airports": [],
-      "changed_airports": [],
-      "added_count": 2,
-      "removed_count": 0,
-      "changed_count": 0
-    },
-    "PA": {
-      "country_name": "Panama",
-      "iso_code": "PA",
-      "fr24_count": 12,
-      "skycards_count": 11,
-      "difference": 1,
-      "added_airports": [
-        {
-          "name": "Pedasi Captain Justiniano Montenegro Airport",
-          "iata": "PDM",
-          "icao": "MPPD",
-          "placeCode": "PA"
-        }
-      ],
-      "removed_airports": [],
-      "changed_airports": [],
-      "added_count": 1,
-      "removed_count": 0,
-      "changed_count": 0
-    },
-    "PE": {
-      "country_name": "Peru",
-      "iso_code": "PE",
-      "fr24_count": 34,
-      "skycards_count": 31,
-      "difference": 3,
-      "added_airports": [
-        {
-          "name": "Andahuaylas Airport",
-          "iata": "ANS",
-          "icao": "SPHY",
-          "placeCode": "PE"
-        },
-        {
-          "name": "Chagual Airport",
-          "iata": "CGL",
-          "icao": "SPGL",
-          "placeCode": "PE"
-        },
-        {
-          "name": "San Juan de Marcona Airport",
-          "iata": "SJA",
-          "icao": "SPJN",
-          "placeCode": "PE"
-        }
-      ],
-      "removed_airports": [],
-      "changed_airports": [],
-      "added_count": 3,
-      "removed_count": 0,
-      "changed_count": 0
-    },
-    "PF": {
-      "country_name": "French Polynesia",
-      "iso_code": "PF",
-      "fr24_count": 49,
-      "skycards_count": 48,
-      "difference": 1,
-      "added_airports": [
-        {
-          "name": "Takume Airport",
-          "iata": "TJN",
-          "icao": "NTKM",
-          "placeCode": "PF"
-        }
-      ],
-      "removed_airports": [],
-      "changed_airports": [],
-      "added_count": 1,
+      "added_count": 0,
       "removed_count": 0,
       "changed_count": 0
     },
@@ -1064,223 +115,47 @@
       "country_name": "Papua New Guinea",
       "iso_code": "PG",
       "fr24_count": 40,
-      "skycards_count": 33,
-      "difference": 7,
-      "added_airports": [
+      "skycards_count": 39,
+      "difference": 1,
+      "added_airports": [],
+      "removed_airports": [
         {
-          "name": "Bulolo Airport",
-          "iata": "BUL",
-          "icao": "AYBU",
+          "name": "Aiyura Airport",
+          "iata": "AYU",
+          "icao": "AYAY",
           "placeCode": "PG"
         },
         {
-          "name": "Simberi Airport",
-          "iata": "NIS",
-          "icao": "AYSE",
+          "name": "Frieda River Airport",
+          "iata": "FAQ",
+          "icao": "AYFR",
+          "placeCode": "PG"
+        },
+        {
+          "name": "Gusap Airport",
+          "iata": "GAP",
+          "icao": "AYGP",
+          "placeCode": "PG"
+        },
+        {
+          "name": "Woitape Airport",
+          "iata": "WTP",
+          "icao": "AYWT",
           "placeCode": "PG"
         }
       ],
-      "removed_airports": [],
-      "changed_airports": [],
-      "added_count": 2,
-      "removed_count": 0,
-      "changed_count": 0
-    },
-    "PH": {
-      "country_name": "Philippines",
-      "iso_code": "PH",
-      "fr24_count": 53,
-      "skycards_count": 49,
-      "difference": 4,
-      "added_airports": [
-        {
-          "name": "Jolo Airport",
-          "iata": "JOL",
-          "icao": "RPMJ",
-          "placeCode": "PH"
-        },
-        {
-          "name": "Mati Airport",
-          "iata": "MXI",
-          "icao": "RPMQ",
-          "placeCode": "PH"
-        },
-        {
-          "name": "San Fernando Airport",
-          "iata": "SFE",
-          "icao": "RPUS",
-          "placeCode": "PH"
-        },
-        {
-          "name": "Tandag Airport",
-          "iata": "TDG",
-          "icao": "RPMW",
-          "placeCode": "PH"
-        }
-      ],
-      "removed_airports": [],
-      "changed_airports": [],
-      "added_count": 4,
-      "removed_count": 0,
-      "changed_count": 0
-    },
-    "PK": {
-      "country_name": "Pakistan",
-      "iso_code": "PK",
-      "fr24_count": 22,
-      "skycards_count": 21,
-      "difference": 1,
-      "added_airports": [
-        {
-          "name": "Sui Airport",
-          "iata": "SUL",
-          "icao": "OPSU",
-          "placeCode": "PK"
-        }
-      ],
-      "removed_airports": [],
-      "changed_airports": [],
-      "added_count": 1,
-      "removed_count": 0,
-      "changed_count": 0
-    },
-    "PM": {
-      "country_name": "Saint Pierre And Miquelon",
-      "iso_code": "PM",
-      "fr24_count": 2,
-      "skycards_count": 1,
-      "difference": 1,
-      "added_airports": [
-        {
-          "name": "Miquelon Airport",
-          "iata": "MQC",
-          "icao": "LFVM",
-          "placeCode": "PM"
-        }
-      ],
-      "removed_airports": [],
-      "changed_airports": [],
-      "added_count": 1,
-      "removed_count": 0,
-      "changed_count": 0
-    },
-    "RW": {
-      "country_name": "Rwanda",
-      "iso_code": "RW",
-      "fr24_count": 3,
-      "skycards_count": 2,
-      "difference": 1,
-      "added_airports": [
-        {
-          "name": "Ruhengeri Airport",
-          "iata": "RHG",
-          "icao": "HRYU",
-          "placeCode": "RW"
-        }
-      ],
-      "removed_airports": [],
-      "changed_airports": [],
-      "added_count": 1,
-      "removed_count": 0,
-      "changed_count": 0
-    },
-    "SB": {
-      "country_name": "Solomon Islands",
-      "iso_code": "SB",
-      "fr24_count": 19,
-      "skycards_count": 15,
-      "difference": 4,
-      "added_airports": [
-        {
-          "name": "Santa Ana Airport",
-          "iata": "NNB",
-          "icao": "AGGT",
-          "placeCode": "SB"
-        },
-        {
-          "name": "Parasi Airport",
-          "iata": "PRS",
-          "icao": "AGGP",
-          "placeCode": "SB"
-        },
-        {
-          "name": "Ramata Airport",
-          "iata": "RBV",
-          "icao": "AGRM",
-          "placeCode": "SB"
-        },
-        {
-          "name": "Ulawa Arona Airport",
-          "iata": "RNA",
-          "icao": "AGAR",
-          "placeCode": "SB"
-        }
-      ],
-      "removed_airports": [],
-      "changed_airports": [],
-      "added_count": 4,
-      "removed_count": 0,
-      "changed_count": 0
-    },
-    "SC": {
-      "country_name": "Seychelles",
-      "iso_code": "SC",
-      "fr24_count": 4,
-      "skycards_count": 3,
-      "difference": 1,
-      "added_airports": [],
-      "removed_airports": [],
       "changed_airports": [],
       "added_count": 0,
-      "removed_count": 0,
-      "changed_count": 0
-    },
-    "SD": {
-      "country_name": "Sudan",
-      "iso_code": "SD",
-      "fr24_count": 8,
-      "skycards_count": 7,
-      "difference": 1,
-      "added_airports": [
-        {
-          "name": "Dongola Airport",
-          "iata": "DOG",
-          "icao": "HSDN",
-          "placeCode": "SD"
-        }
-      ],
-      "removed_airports": [],
-      "changed_airports": [],
-      "added_count": 1,
-      "removed_count": 0,
-      "changed_count": 0
-    },
-    "SO": {
-      "country_name": "Somalia",
-      "iso_code": "SO",
-      "fr24_count": 12,
-      "skycards_count": 11,
-      "difference": 1,
-      "added_airports": [],
-      "removed_airports": [],
-      "changed_airports": [],
-      "added_count": 0,
-      "removed_count": 0,
+      "removed_count": 4,
       "changed_count": 0
     },
     "SR": {
       "country_name": "Suriname",
       "iso_code": "SR",
       "fr24_count": 5,
-      "skycards_count": 3,
-      "difference": 2,
+      "skycards_count": 4,
+      "difference": 1,
       "added_airports": [
-        {
-          "name": "Drietabbetje Airport",
-          "iata": "DRJ",
-          "icao": "SMDA",
-          "placeCode": "SR"
-        },
         {
           "name": "Stoelmanseiland Airport",
           "iata": "SMZ",
@@ -1290,92 +165,7 @@
       ],
       "removed_airports": [],
       "changed_airports": [],
-      "added_count": 2,
-      "removed_count": 0,
-      "changed_count": 0
-    },
-    "TC": {
-      "country_name": "Turks And Caicos Islands",
-      "iso_code": "TC",
-      "fr24_count": 5,
-      "skycards_count": 3,
-      "difference": 2,
-      "added_airports": [
-        {
-          "name": "North Caicos Airport",
-          "iata": "NCA",
-          "icao": "MBNC",
-          "placeCode": "TC"
-        },
-        {
-          "name": "Salt Cay Airport",
-          "iata": "SLX",
-          "icao": "MBSY",
-          "placeCode": "TC"
-        }
-      ],
-      "removed_airports": [],
-      "changed_airports": [],
-      "added_count": 2,
-      "removed_count": 0,
-      "changed_count": 0
-    },
-    "TD": {
-      "country_name": "Chad",
-      "iso_code": "TD",
-      "fr24_count": 4,
-      "skycards_count": 1,
-      "difference": 3,
-      "added_airports": [
-        {
-          "name": "Abeche Airport",
-          "iata": "AEH",
-          "icao": "FTTC",
-          "placeCode": "TD"
-        },
-        {
-          "name": "Moundou Airport",
-          "iata": "MQQ",
-          "icao": "FTTD",
-          "placeCode": "TD"
-        }
-      ],
-      "removed_airports": [],
-      "changed_airports": [],
-      "added_count": 2,
-      "removed_count": 0,
-      "changed_count": 0
-    },
-    "TZ": {
-      "country_name": "Tanzania",
-      "iso_code": "TZ",
-      "fr24_count": 24,
-      "skycards_count": 23,
-      "difference": 1,
-      "added_airports": [
-        {
-          "name": "Sumbawanga Airport",
-          "iata": "SUT",
-          "icao": "HTSU",
-          "placeCode": "TZ"
-        }
-      ],
-      "removed_airports": [],
-      "changed_airports": [],
       "added_count": 1,
-      "removed_count": 0,
-      "changed_count": 0
-    },
-    "UG": {
-      "country_name": "Uganda",
-      "iso_code": "UG",
-      "fr24_count": 10,
-      "skycards_count": 9,
-      "difference": 1,
-      "added_airports": [],
-      "removed_airports": [],
-      "changed_airports": [],
-      "added_count": 0,
       "removed_count": 0,
       "changed_count": 0
     },
@@ -1383,8 +173,8 @@
       "country_name": "United States",
       "iso_code": "US",
       "fr24_count": 1769,
-      "skycards_count": 1750,
-      "difference": 19,
+      "skycards_count": 1772,
+      "difference": -3,
       "added_airports": [
         {
           "name": "Danville Regional Airport",
@@ -1396,9 +186,45 @@
       ],
       "removed_airports": [
         {
+          "name": "Dahl Creek Airport",
+          "iata": "DCK",
+          "icao": "PODC",
+          "placeCode": "US-AK"
+        },
+        {
+          "name": "Galbraith Lake Airport",
+          "iata": "GBH",
+          "icao": "PAGB",
+          "placeCode": "US-AK"
+        },
+        {
+          "name": "Ekwok Airport",
+          "iata": "KEK",
+          "icao": "PAAV",
+          "placeCode": "US-AK"
+        },
+        {
           "name": "Port Graham Airport",
           "iata": "PGM",
           "icao": "KPGM",
+          "placeCode": "US-AK"
+        },
+        {
+          "name": "Stevens Village Airport",
+          "iata": "SVS",
+          "icao": "PFSV",
+          "placeCode": "US-AK"
+        },
+        {
+          "name": "Takotna Airport",
+          "iata": "TCT",
+          "icao": "PPCT",
+          "placeCode": "US-AK"
+        },
+        {
+          "name": "Tenakee Springs Seaplane Base",
+          "iata": "TKE",
+          "icao": "PAJJ",
           "placeCode": "US-AK"
         },
         {
@@ -1406,6 +232,12 @@
           "iata": "QDX",
           "icao": "KJFX",
           "placeCode": "US-AL"
+        },
+        {
+          "name": "Crossett Municipal Airport",
+          "iata": "CRT",
+          "icao": "KCRT",
+          "placeCode": "US-AR"
         },
         {
           "name": "Flippin Marion County Regional Airport",
@@ -1432,10 +264,46 @@
           "placeCode": "US-IA"
         },
         {
+          "name": "Forest City Municipal Airport",
+          "iata": "FXY",
+          "icao": "KFXY",
+          "placeCode": "US-IA"
+        },
+        {
+          "name": "Connersville Mettel Field Airport",
+          "iata": "CEV",
+          "icao": "KCEV",
+          "placeCode": "US-IN"
+        },
+        {
           "name": "Plymouth Municipal Airport",
           "iata": "PLY",
           "icao": "KC65",
           "placeCode": "US-IN"
+        },
+        {
+          "name": "Caribou Municipal Airport",
+          "iata": "CAR",
+          "icao": "KCAR",
+          "placeCode": "US-ME"
+        },
+        {
+          "name": "Houlton International Airport",
+          "iata": "HUL",
+          "icao": "KHUL",
+          "placeCode": "US-ME"
+        },
+        {
+          "name": "Brunswick Executive Airport",
+          "iata": "NHZ",
+          "icao": "KBXM",
+          "placeCode": "US-ME"
+        },
+        {
+          "name": "Gladwin Zettel Memorial Airport",
+          "iata": "GDW",
+          "icao": "KGDW",
+          "placeCode": "US-MI"
         },
         {
           "name": "Sturgis Kirsch Municipal Airport",
@@ -1444,15 +312,63 @@
           "placeCode": "US-MI"
         },
         {
+          "name": "Benson Municipal Airport",
+          "iata": "BBB",
+          "icao": "KBBB",
+          "placeCode": "US-MN"
+        },
+        {
+          "name": "Shelby Toole County Airport",
+          "iata": "SBX",
+          "icao": "KSBX",
+          "placeCode": "US-MT"
+        },
+        {
+          "name": "New York Manhattan West 30th Street Heliport",
+          "iata": "JRA",
+          "icao": "KJRA",
+          "placeCode": "US-NJ"
+        },
+        {
           "name": "Delaware Municipal Airport",
           "iata": "QSL",
           "icao": "KDLZ",
           "placeCode": "US-OH"
         },
         {
+          "name": "The Dalles Columbia Gorge Regional Airport",
+          "iata": "DLS",
+          "icao": "KDLS",
+          "placeCode": "US-OR"
+        },
+        {
+          "name": "Lock Haven Piper Memorial Airport",
+          "iata": "LHV",
+          "icao": "KLHV",
+          "placeCode": "US-PA"
+        },
+        {
+          "name": "Port Meadville Airport",
+          "iata": "MEJ",
+          "icao": "KGKJ",
+          "placeCode": "US-PA"
+        },
+        {
           "name": "Fayetteville Municipal Airport",
           "iata": "FYM",
           "icao": "KFYM",
+          "placeCode": "US-TN"
+        },
+        {
+          "name": "Centerville Municipal Airport",
+          "iata": "GHM",
+          "icao": "KGHM",
+          "placeCode": "US-TN"
+        },
+        {
+          "name": "Sewanee Franklin County Airport",
+          "iata": "UOS",
+          "icao": "KUOS",
           "placeCode": "US-TN"
         },
         {
@@ -1486,6 +402,12 @@
           "placeCode": "US-VA"
         },
         {
+          "name": "Amery Municipal Airport",
+          "iata": "AHH",
+          "icao": "KAHH",
+          "placeCode": "US-WI"
+        },
+        {
           "name": "Torrington Municipal Airport",
           "iata": "TOR",
           "icao": "KTOR",
@@ -1493,6 +415,19 @@
         }
       ],
       "changed_airports": [
+        {
+          "name": "Atmautluak Airport",
+          "iata": "ATT",
+          "icao": "K4A2",
+          "state": "AK",
+          "placeCode": "US-AK",
+          "changes": {
+            "icao": {
+              "old": "PAAB",
+              "new": "K4A2"
+            }
+          }
+        },
         {
           "name": "Columbia Regional Airport",
           "iata": "COA",
@@ -1520,32 +455,6 @@
           }
         },
         {
-          "name": "West Palm Beach Donald J. Trump International Airport",
-          "iata": "DJT",
-          "icao": "KDJT",
-          "state": "FL",
-          "placeCode": "US-FL",
-          "changes": {
-            "iata": {
-              "old": "PBI",
-              "new": "DJT"
-            }
-          }
-        },
-        {
-          "name": "McKinney National Airport",
-          "iata": "DTX",
-          "icao": "KTKI",
-          "state": "TX",
-          "placeCode": "US-TX",
-          "changes": {
-            "iata": {
-              "old": "QQT",
-              "new": "DTX"
-            }
-          }
-        },
-        {
           "name": "Wheeling Ohio County Airport",
           "iata": "HLG",
           "icao": "KHLG",
@@ -1555,6 +464,19 @@
             "placeCode": {
               "old": "US-WV",
               "new": "US-OH"
+            }
+          }
+        },
+        {
+          "name": "Huslia Airport",
+          "iata": "HSL",
+          "icao": "PAHS",
+          "state": "AK",
+          "placeCode": "US-AK",
+          "changes": {
+            "icao": {
+              "old": "PAHL",
+              "new": "PAHS"
             }
           }
         },
@@ -1585,15 +507,28 @@
           }
         },
         {
-          "name": "New York Manhattan West 30th Street Heliport",
-          "iata": "JRA",
-          "icao": "KJRA",
-          "state": "NY",
-          "placeCode": "US-NY",
+          "name": "Birch Creek Airport",
+          "iata": "KBC",
+          "icao": "KZ91",
+          "state": "AK",
+          "placeCode": "US-AK",
           "changes": {
-            "placeCode": {
-              "old": "US-NJ",
-              "new": "US-NY"
+            "icao": {
+              "old": "PAAR",
+              "new": "KZ91"
+            }
+          }
+        },
+        {
+          "name": "Levelock Airport",
+          "iata": "KLL",
+          "icao": "K9Z8",
+          "state": "AK",
+          "placeCode": "US-AK",
+          "changes": {
+            "icao": {
+              "old": "PAAI",
+              "new": "K9Z8"
             }
           }
         },
@@ -1624,15 +559,28 @@
           }
         },
         {
-          "name": "Memphis Frederick W. Smith International Airport",
-          "iata": "MEM",
-          "icao": "KMEM",
-          "state": "TN",
-          "placeCode": "US-TN",
+          "name": "Minto Al Wright Airport",
+          "iata": "MNT",
+          "icao": "K51Z",
+          "state": "AK",
+          "placeCode": "US-AK",
           "changes": {
-            "name": {
-              "old": "Memphis International Airport",
-              "new": "Memphis Frederick W. Smith International Airport"
+            "icao": {
+              "old": "PAAF",
+              "new": "K51Z"
+            }
+          }
+        },
+        {
+          "name": "Pilot Station Airport",
+          "iata": "PQS",
+          "icao": "K0AK",
+          "state": "AK",
+          "placeCode": "US-AK",
+          "changes": {
+            "icao": {
+              "old": "PAAC",
+              "new": "K0AK"
             }
           }
         },
@@ -1663,6 +611,32 @@
           }
         },
         {
+          "name": "Tok Junction Airport",
+          "iata": "TKJ",
+          "icao": "PATJ",
+          "state": "AK",
+          "placeCode": "US-AK",
+          "changes": {
+            "icao": {
+              "old": "PFTO",
+              "new": "PATJ"
+            }
+          }
+        },
+        {
+          "name": "Tununak Airport",
+          "iata": "TNK",
+          "icao": "K4KA",
+          "state": "AK",
+          "placeCode": "US-AK",
+          "changes": {
+            "icao": {
+              "old": "POKA",
+              "new": "K4KA"
+            }
+          }
+        },
+        {
           "name": "Vero Beach Regional Airport",
           "iata": "VRB",
           "icao": "KVRB",
@@ -1674,28 +648,90 @@
               "new": "US-GA"
             }
           }
+        },
+        {
+          "name": "Stebbins Airport",
+          "iata": "WBB",
+          "icao": "PWBB",
+          "state": "AK",
+          "placeCode": "US-AK",
+          "changes": {
+            "icao": {
+              "old": "PAAS",
+              "new": "PWBB"
+            }
+          }
+        },
+        {
+          "name": "Tuntutuliak Airport",
+          "iata": "WTL",
+          "icao": "KA61",
+          "state": "AK",
+          "placeCode": "US-AK",
+          "changes": {
+            "icao": {
+              "old": "PAAJ",
+              "new": "KA61"
+            }
+          }
         }
       ],
       "added_count": 1,
-      "removed_count": 16,
-      "changed_count": 14,
+      "removed_count": 38,
+      "changed_count": 20,
       "states": {
         "AK": {
           "state_name": "Alaska",
           "fr24_count": 185,
-          "skycards_count": 186,
-          "difference": -1,
+          "skycards_count": 192,
+          "difference": -7,
           "added_airports": [],
           "removed_airports": [
+            {
+              "name": "Dahl Creek Airport",
+              "iata": "DCK",
+              "icao": "PODC",
+              "placeCode": "US-AK"
+            },
+            {
+              "name": "Galbraith Lake Airport",
+              "iata": "GBH",
+              "icao": "PAGB",
+              "placeCode": "US-AK"
+            },
+            {
+              "name": "Ekwok Airport",
+              "iata": "KEK",
+              "icao": "PAAV",
+              "placeCode": "US-AK"
+            },
             {
               "name": "Port Graham Airport",
               "iata": "PGM",
               "icao": "KPGM",
               "placeCode": "US-AK"
+            },
+            {
+              "name": "Stevens Village Airport",
+              "iata": "SVS",
+              "icao": "PFSV",
+              "placeCode": "US-AK"
+            },
+            {
+              "name": "Takotna Airport",
+              "iata": "TCT",
+              "icao": "PPCT",
+              "placeCode": "US-AK"
+            },
+            {
+              "name": "Tenakee Springs Seaplane Base",
+              "iata": "TKE",
+              "icao": "PAJJ",
+              "placeCode": "US-AK"
             }
           ],
           "added_count": 0,
-          "removed_count": 1
+          "removed_count": 7
         },
         "AL": {
           "state_name": "Alabama",
@@ -1717,10 +753,16 @@
         "AR": {
           "state_name": "Arkansas",
           "fr24_count": 34,
-          "skycards_count": 35,
-          "difference": -1,
+          "skycards_count": 36,
+          "difference": -2,
           "added_airports": [],
           "removed_airports": [
+            {
+              "name": "Crossett Municipal Airport",
+              "iata": "CRT",
+              "icao": "KCRT",
+              "placeCode": "US-AR"
+            },
             {
               "name": "Flippin Marion County Regional Airport",
               "iata": "FLP",
@@ -1729,7 +771,7 @@
             }
           ],
           "added_count": 0,
-          "removed_count": 1
+          "removed_count": 2
         },
         "AZ": {
           "state_name": "Arizona",
@@ -1791,8 +833,8 @@
         "IA": {
           "state_name": "Iowa",
           "fr24_count": 37,
-          "skycards_count": 39,
-          "difference": -2,
+          "skycards_count": 40,
+          "difference": -3,
           "added_airports": [],
           "removed_airports": [
             {
@@ -1806,18 +848,30 @@
               "iata": "FMS",
               "icao": "KFSW",
               "placeCode": "US-IA"
+            },
+            {
+              "name": "Forest City Municipal Airport",
+              "iata": "FXY",
+              "icao": "KFXY",
+              "placeCode": "US-IA"
             }
           ],
           "added_count": 0,
-          "removed_count": 2
+          "removed_count": 3
         },
         "IN": {
           "state_name": "Indiana",
           "fr24_count": 37,
-          "skycards_count": 38,
-          "difference": -1,
+          "skycards_count": 39,
+          "difference": -2,
           "added_airports": [],
           "removed_airports": [
+            {
+              "name": "Connersville Mettel Field Airport",
+              "iata": "CEV",
+              "icao": "KCEV",
+              "placeCode": "US-IN"
+            },
             {
               "name": "Plymouth Municipal Airport",
               "iata": "PLY",
@@ -1826,7 +880,7 @@
             }
           ],
           "added_count": 0,
-          "removed_count": 1
+          "removed_count": 2
         },
         "KS": {
           "state_name": "Kansas",
@@ -1848,18 +902,70 @@
           "added_count": 0,
           "removed_count": 0
         },
+        "ME": {
+          "state_name": "Maine",
+          "fr24_count": 15,
+          "skycards_count": 18,
+          "difference": -3,
+          "added_airports": [],
+          "removed_airports": [
+            {
+              "name": "Caribou Municipal Airport",
+              "iata": "CAR",
+              "icao": "KCAR",
+              "placeCode": "US-ME"
+            },
+            {
+              "name": "Houlton International Airport",
+              "iata": "HUL",
+              "icao": "KHUL",
+              "placeCode": "US-ME"
+            },
+            {
+              "name": "Brunswick Executive Airport",
+              "iata": "NHZ",
+              "icao": "KBXM",
+              "placeCode": "US-ME"
+            }
+          ],
+          "added_count": 0,
+          "removed_count": 3
+        },
         "MI": {
           "state_name": "Michigan",
           "fr24_count": 47,
-          "skycards_count": 48,
-          "difference": -1,
+          "skycards_count": 49,
+          "difference": -2,
           "added_airports": [],
           "removed_airports": [
+            {
+              "name": "Gladwin Zettel Memorial Airport",
+              "iata": "GDW",
+              "icao": "KGDW",
+              "placeCode": "US-MI"
+            },
             {
               "name": "Sturgis Kirsch Municipal Airport",
               "iata": "IRS",
               "icao": "KIRS",
               "placeCode": "US-MI"
+            }
+          ],
+          "added_count": 0,
+          "removed_count": 2
+        },
+        "MN": {
+          "state_name": "Minnesota",
+          "fr24_count": 43,
+          "skycards_count": 44,
+          "difference": -1,
+          "added_airports": [],
+          "removed_airports": [
+            {
+              "name": "Benson Municipal Airport",
+              "iata": "BBB",
+              "icao": "KBBB",
+              "placeCode": "US-MN"
             }
           ],
           "added_count": 0,
@@ -1875,25 +981,39 @@
           "added_count": 0,
           "removed_count": 0
         },
+        "MT": {
+          "state_name": "Montana",
+          "fr24_count": 22,
+          "skycards_count": 23,
+          "difference": -1,
+          "added_airports": [],
+          "removed_airports": [
+            {
+              "name": "Shelby Toole County Airport",
+              "iata": "SBX",
+              "icao": "KSBX",
+              "placeCode": "US-MT"
+            }
+          ],
+          "added_count": 0,
+          "removed_count": 1
+        },
         "NJ": {
           "state_name": "New Jersey",
           "fr24_count": 15,
           "skycards_count": 16,
           "difference": -1,
           "added_airports": [],
-          "removed_airports": [],
+          "removed_airports": [
+            {
+              "name": "New York Manhattan West 30th Street Heliport",
+              "iata": "JRA",
+              "icao": "KJRA",
+              "placeCode": "US-NJ"
+            }
+          ],
           "added_count": 0,
-          "removed_count": 0
-        },
-        "NY": {
-          "state_name": "New York",
-          "fr24_count": 39,
-          "skycards_count": 38,
-          "difference": 1,
-          "added_airports": [],
-          "removed_airports": [],
-          "added_count": 0,
-          "removed_count": 0
+          "removed_count": 1
         },
         "OH": {
           "state_name": "Ohio",
@@ -1912,11 +1032,51 @@
           "added_count": 0,
           "removed_count": 1
         },
+        "OR": {
+          "state_name": "Oregon",
+          "fr24_count": 30,
+          "skycards_count": 31,
+          "difference": -1,
+          "added_airports": [],
+          "removed_airports": [
+            {
+              "name": "The Dalles Columbia Gorge Regional Airport",
+              "iata": "DLS",
+              "icao": "KDLS",
+              "placeCode": "US-OR"
+            }
+          ],
+          "added_count": 0,
+          "removed_count": 1
+        },
+        "PA": {
+          "state_name": "Pennsylvania",
+          "fr24_count": 38,
+          "skycards_count": 40,
+          "difference": -2,
+          "added_airports": [],
+          "removed_airports": [
+            {
+              "name": "Lock Haven Piper Memorial Airport",
+              "iata": "LHV",
+              "icao": "KLHV",
+              "placeCode": "US-PA"
+            },
+            {
+              "name": "Port Meadville Airport",
+              "iata": "MEJ",
+              "icao": "KGKJ",
+              "placeCode": "US-PA"
+            }
+          ],
+          "added_count": 0,
+          "removed_count": 2
+        },
         "TN": {
           "state_name": "Tennessee",
           "fr24_count": 29,
-          "skycards_count": 30,
-          "difference": -1,
+          "skycards_count": 32,
+          "difference": -3,
           "added_airports": [],
           "removed_airports": [
             {
@@ -1924,10 +1084,22 @@
               "iata": "FYM",
               "icao": "KFYM",
               "placeCode": "US-TN"
+            },
+            {
+              "name": "Centerville Municipal Airport",
+              "iata": "GHM",
+              "icao": "KGHM",
+              "placeCode": "US-TN"
+            },
+            {
+              "name": "Sewanee Franklin County Airport",
+              "iata": "UOS",
+              "icao": "KUOS",
+              "placeCode": "US-TN"
             }
           ],
           "added_count": 0,
-          "removed_count": 1
+          "removed_count": 3
         },
         "TX": {
           "state_name": "Texas",
@@ -1989,6 +1161,23 @@
           "added_count": 1,
           "removed_count": 1
         },
+        "WI": {
+          "state_name": "Wisconsin",
+          "fr24_count": 39,
+          "skycards_count": 40,
+          "difference": -1,
+          "added_airports": [],
+          "removed_airports": [
+            {
+              "name": "Amery Municipal Airport",
+              "iata": "AHH",
+              "icao": "KAHH",
+              "placeCode": "US-WI"
+            }
+          ],
+          "added_count": 0,
+          "removed_count": 1
+        },
         "WV": {
           "state_name": "West Virginia",
           "fr24_count": 11,
@@ -2017,168 +1206,6 @@
           "removed_count": 1
         }
       }
-    },
-    "VE": {
-      "country_name": "Venezuela",
-      "iso_code": "VE",
-      "fr24_count": 36,
-      "skycards_count": 35,
-      "difference": 1,
-      "added_airports": [
-        {
-          "name": "Merida Alberto Carnevalli Airport",
-          "iata": "MRD",
-          "icao": "SVMD",
-          "placeCode": "VE"
-        }
-      ],
-      "removed_airports": [],
-      "changed_airports": [],
-      "added_count": 1,
-      "removed_count": 0,
-      "changed_count": 0
-    },
-    "VN": {
-      "country_name": "Vietnam",
-      "iso_code": "VN",
-      "fr24_count": 23,
-      "skycards_count": 22,
-      "difference": 1,
-      "added_airports": [
-        {
-          "name": "Vung Tau Airport",
-          "iata": "VTG",
-          "icao": "VVVT",
-          "placeCode": "VN"
-        }
-      ],
-      "removed_airports": [],
-      "changed_airports": [],
-      "added_count": 1,
-      "removed_count": 0,
-      "changed_count": 0
-    },
-    "VU": {
-      "country_name": "Vanuatu",
-      "iso_code": "VU",
-      "fr24_count": 15,
-      "skycards_count": 8,
-      "difference": 7,
-      "added_airports": [
-        {
-          "name": "Craig Cove Airport",
-          "iata": "CCV",
-          "icao": "NVSF",
-          "placeCode": "VU"
-        },
-        {
-          "name": "Lamen Bay Airport",
-          "iata": "LNB",
-          "icao": "NVSM",
-          "placeCode": "VU"
-        },
-        {
-          "name": "Mota Lava Airport",
-          "iata": "MTV",
-          "icao": "NVSA",
-          "placeCode": "VU"
-        },
-        {
-          "name": "Sola Vanua Lava Airport",
-          "iata": "SLH",
-          "icao": "NVSC",
-          "placeCode": "VU"
-        },
-        {
-          "name": "Sara Airport",
-          "iata": "SSR",
-          "icao": "NVSH",
-          "placeCode": "VU"
-        },
-        {
-          "name": "Walaha Airport",
-          "iata": "WLH",
-          "icao": "NVSW",
-          "placeCode": "VU"
-        },
-        {
-          "name": "Gaua Airport",
-          "iata": "ZGU",
-          "icao": "NVSQ",
-          "placeCode": "VU"
-        }
-      ],
-      "removed_airports": [],
-      "changed_airports": [],
-      "added_count": 7,
-      "removed_count": 0,
-      "changed_count": 0
-    },
-    "WS": {
-      "country_name": "Samoa",
-      "iso_code": "WS",
-      "fr24_count": 2,
-      "skycards_count": 1,
-      "difference": 1,
-      "added_airports": [
-        {
-          "name": "Apia Fagali'i Airport",
-          "iata": "FGI",
-          "icao": "NSFI",
-          "placeCode": "WS"
-        }
-      ],
-      "removed_airports": [],
-      "changed_airports": [],
-      "added_count": 1,
-      "removed_count": 0,
-      "changed_count": 0
-    },
-    "ZA": {
-      "country_name": "South Africa",
-      "iso_code": "ZA",
-      "fr24_count": 51,
-      "skycards_count": 42,
-      "difference": 9,
-      "added_airports": [
-        {
-          "name": "Bisho Airport",
-          "iata": "BIY",
-          "icao": "FABE",
-          "placeCode": "ZA"
-        },
-        {
-          "name": "Ulusaba Airport",
-          "iata": "ULX",
-          "icao": "FAUS",
-          "placeCode": "ZA"
-        }
-      ],
-      "removed_airports": [],
-      "changed_airports": [],
-      "added_count": 2,
-      "removed_count": 0,
-      "changed_count": 0
-    },
-    "ZM": {
-      "country_name": "Zambia",
-      "iso_code": "ZM",
-      "fr24_count": 11,
-      "skycards_count": 10,
-      "difference": 1,
-      "added_airports": [
-        {
-          "name": "Kalumbila Airport",
-          "iata": "UMB",
-          "icao": "FLKM",
-          "placeCode": "ZM"
-        }
-      ],
-      "removed_airports": [],
-      "changed_airports": [],
-      "added_count": 1,
-      "removed_count": 0,
-      "changed_count": 0
     }
   }
 }
