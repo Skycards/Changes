@@ -2,7 +2,7 @@
   "summary": {
     "total_countries_with_differences": 8,
     "total_added_airports": 6,
-    "total_removed_airports": 32,
+    "total_removed_airports": 31,
     "total_changed_airports": 11
   },
   "countries": {
@@ -241,12 +241,6 @@
           "iata": "FMS",
           "icao": "KFSW",
           "placeCode": "US-IA"
-        },
-        {
-          "name": "Connersville Mettel Field Airport",
-          "iata": "CEV",
-          "icao": "KCEV",
-          "placeCode": "US-IN"
         },
         {
           "name": "Plymouth Municipal Airport",
@@ -491,7 +485,7 @@
         }
       ],
       "added_count": 5,
-      "removed_count": 23,
+      "removed_count": 22,
       "changed_count": 11,
       "states": {
         "AK": {
@@ -656,12 +650,6 @@
           "added_airports": [],
           "removed_airports": [
             {
-              "name": "Connersville Mettel Field Airport",
-              "iata": "CEV",
-              "icao": "KCEV",
-              "placeCode": "US-IN"
-            },
-            {
               "name": "Plymouth Municipal Airport",
               "iata": "PLY",
               "icao": "KC65",
@@ -669,7 +657,7 @@
             }
           ],
           "added_count": 0,
-          "removed_count": 2
+          "removed_count": 1
         },
         "KS": {
           "state_name": "Kansas",
