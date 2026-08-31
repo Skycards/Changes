@@ -1,8 +1,8 @@
 {
   "summary": {
     "total_countries_with_differences": 8,
-    "total_added_airports": 5,
-    "total_removed_airports": 39,
+    "total_added_airports": 6,
+    "total_removed_airports": 34,
     "total_changed_airports": 11
   },
   "countries": {
@@ -191,6 +191,13 @@
           "placeCode": "US-AK"
         },
         {
+          "name": "Jefferson Municipal Airport",
+          "iata": "EFW",
+          "icao": "KEFW",
+          "state": "IA",
+          "placeCode": "US-IA"
+        },
+        {
           "name": "Hawthorne Industrial Airport",
           "iata": "HTH",
           "icao": "KHTH",
@@ -243,12 +250,6 @@
           "placeCode": "US-IA"
         },
         {
-          "name": "Forest City Municipal Airport",
-          "iata": "FXY",
-          "icao": "KFXY",
-          "placeCode": "US-IA"
-        },
-        {
           "name": "Connersville Mettel Field Airport",
           "iata": "CEV",
           "icao": "KCEV",
@@ -279,12 +280,6 @@
           "placeCode": "US-ME"
         },
         {
-          "name": "Gladwin Zettel Memorial Airport",
-          "iata": "GDW",
-          "icao": "KGDW",
-          "placeCode": "US-MI"
-        },
-        {
           "name": "Sturgis Kirsch Municipal Airport",
           "iata": "IRS",
           "icao": "KIRS",
@@ -295,12 +290,6 @@
           "iata": "BBB",
           "icao": "KBBB",
           "placeCode": "US-MN"
-        },
-        {
-          "name": "Dansville Municipal Airport",
-          "iata": "DSV",
-          "icao": "KDSV",
-          "placeCode": "US-NY"
         },
         {
           "name": "Delaware Municipal Airport",
@@ -330,18 +319,6 @@
           "name": "Fayetteville Municipal Airport",
           "iata": "FYM",
           "icao": "KFYM",
-          "placeCode": "US-TN"
-        },
-        {
-          "name": "Centerville Municipal Airport",
-          "iata": "GHM",
-          "icao": "KGHM",
-          "placeCode": "US-TN"
-        },
-        {
-          "name": "Sewanee Franklin County Airport",
-          "iata": "UOS",
-          "icao": "KUOS",
           "placeCode": "US-TN"
         },
         {
@@ -526,8 +503,8 @@
           }
         }
       ],
-      "added_count": 4,
-      "removed_count": 29,
+      "added_count": 5,
+      "removed_count": 24,
       "changed_count": 11,
       "states": {
         "AK": {
@@ -658,7 +635,15 @@
           "fr24_count": 39,
           "skycards_count": 40,
           "difference": -1,
-          "added_airports": [],
+          "added_airports": [
+            {
+              "name": "Jefferson Municipal Airport",
+              "iata": "EFW",
+              "icao": "KEFW",
+              "state": "IA",
+              "placeCode": "US-IA"
+            }
+          ],
           "removed_airports": [
             {
               "name": "Fairfield Municipal Airport",
@@ -671,16 +656,10 @@
               "iata": "FMS",
               "icao": "KFSW",
               "placeCode": "US-IA"
-            },
-            {
-              "name": "Forest City Municipal Airport",
-              "iata": "FXY",
-              "icao": "KFXY",
-              "placeCode": "US-IA"
             }
           ],
-          "added_count": 0,
-          "removed_count": 3
+          "added_count": 1,
+          "removed_count": 2
         },
         "IN": {
           "state_name": "Indiana",
@@ -762,12 +741,6 @@
           "added_airports": [],
           "removed_airports": [
             {
-              "name": "Gladwin Zettel Memorial Airport",
-              "iata": "GDW",
-              "icao": "KGDW",
-              "placeCode": "US-MI"
-            },
-            {
               "name": "Sturgis Kirsch Municipal Airport",
               "iata": "IRS",
               "icao": "KIRS",
@@ -775,7 +748,7 @@
             }
           ],
           "added_count": 0,
-          "removed_count": 2
+          "removed_count": 1
         },
         "MN": {
           "state_name": "Minnesota",
@@ -838,16 +811,9 @@
           "skycards_count": 39,
           "difference": 1,
           "added_airports": [],
-          "removed_airports": [
-            {
-              "name": "Dansville Municipal Airport",
-              "iata": "DSV",
-              "icao": "KDSV",
-              "placeCode": "US-NY"
-            }
-          ],
+          "removed_airports": [],
           "added_count": 0,
-          "removed_count": 1
+          "removed_count": 0
         },
         "OH": {
           "state_name": "Ohio",
@@ -918,22 +884,10 @@
               "iata": "FYM",
               "icao": "KFYM",
               "placeCode": "US-TN"
-            },
-            {
-              "name": "Centerville Municipal Airport",
-              "iata": "GHM",
-              "icao": "KGHM",
-              "placeCode": "US-TN"
-            },
-            {
-              "name": "Sewanee Franklin County Airport",
-              "iata": "UOS",
-              "icao": "KUOS",
-              "placeCode": "US-TN"
             }
           ],
           "added_count": 0,
-          "removed_count": 3
+          "removed_count": 1
         },
         "TX": {
           "state_name": "Texas",
