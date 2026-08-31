@@ -2,7 +2,7 @@
   "summary": {
     "total_countries_with_differences": 8,
     "total_added_airports": 2,
-    "total_removed_airports": 48,
+    "total_removed_airports": 47,
     "total_changed_airports": 20
   },
   "countries": {
@@ -316,12 +316,6 @@
           "iata": "BBB",
           "icao": "KBBB",
           "placeCode": "US-MN"
-        },
-        {
-          "name": "Shelby Toole County Airport",
-          "iata": "SBX",
-          "icao": "KSBX",
-          "placeCode": "US-MT"
         },
         {
           "name": "New York Manhattan West 30th Street Heliport",
@@ -677,7 +671,7 @@
         }
       ],
       "added_count": 1,
-      "removed_count": 38,
+      "removed_count": 37,
       "changed_count": 20,
       "states": {
         "AK": {
@@ -987,16 +981,9 @@
           "skycards_count": 23,
           "difference": -1,
           "added_airports": [],
-          "removed_airports": [
-            {
-              "name": "Shelby Toole County Airport",
-              "iata": "SBX",
-              "icao": "KSBX",
-              "placeCode": "US-MT"
-            }
-          ],
+          "removed_airports": [],
           "added_count": 0,
-          "removed_count": 1
+          "removed_count": 0
         },
         "NJ": {
           "state_name": "New Jersey",
