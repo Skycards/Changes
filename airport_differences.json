@@ -1,9 +1,9 @@
 {
   "summary": {
     "total_countries_with_differences": 8,
-    "total_added_airports": 3,
-    "total_removed_airports": 46,
-    "total_changed_airports": 21
+    "total_added_airports": 5,
+    "total_removed_airports": 39,
+    "total_changed_airports": 11
   },
   "countries": {
     "CA": {
@@ -177,6 +177,20 @@
       "difference": -3,
       "added_airports": [
         {
+          "name": "McKinley National Park Airport",
+          "iata": "MCL",
+          "icao": "PAIN",
+          "state": "AK",
+          "placeCode": "US-AK"
+        },
+        {
+          "name": "Metlakatla Seaplane Base",
+          "iata": "MTM",
+          "icao": "PAMM",
+          "state": "AK",
+          "placeCode": "US-AK"
+        },
+        {
           "name": "Hawthorne Industrial Airport",
           "iata": "HTH",
           "icao": "KHTH",
@@ -193,45 +207,9 @@
       ],
       "removed_airports": [
         {
-          "name": "Dahl Creek Airport",
-          "iata": "DCK",
-          "icao": "PODC",
-          "placeCode": "US-AK"
-        },
-        {
-          "name": "Galbraith Lake Airport",
-          "iata": "GBH",
-          "icao": "PAGB",
-          "placeCode": "US-AK"
-        },
-        {
-          "name": "Ekwok Airport",
-          "iata": "KEK",
-          "icao": "PAAV",
-          "placeCode": "US-AK"
-        },
-        {
           "name": "Port Graham Airport",
           "iata": "PGM",
           "icao": "KPGM",
-          "placeCode": "US-AK"
-        },
-        {
-          "name": "Stevens Village Airport",
-          "iata": "SVS",
-          "icao": "PFSV",
-          "placeCode": "US-AK"
-        },
-        {
-          "name": "Takotna Airport",
-          "iata": "TCT",
-          "icao": "PPCT",
-          "placeCode": "US-AK"
-        },
-        {
-          "name": "Tenakee Springs Seaplane Base",
-          "iata": "TKE",
-          "icao": "PAJJ",
           "placeCode": "US-AK"
         },
         {
@@ -239,12 +217,6 @@
           "iata": "QDX",
           "icao": "KJFX",
           "placeCode": "US-AL"
-        },
-        {
-          "name": "Crossett Municipal Airport",
-          "iata": "CRT",
-          "icao": "KCRT",
-          "placeCode": "US-AR"
         },
         {
           "name": "Flippin Marion County Regional Airport",
@@ -411,19 +383,6 @@
       ],
       "changed_airports": [
         {
-          "name": "Atmautluak Airport",
-          "iata": "ATT",
-          "icao": "K4A2",
-          "state": "AK",
-          "placeCode": "US-AK",
-          "changes": {
-            "icao": {
-              "old": "PAAB",
-              "new": "K4A2"
-            }
-          }
-        },
-        {
           "name": "Columbia Regional Airport",
           "iata": "COA",
           "icao": "KCOA",
@@ -459,19 +418,6 @@
             "placeCode": {
               "old": "US-WV",
               "new": "US-OH"
-            }
-          }
-        },
-        {
-          "name": "Huslia Airport",
-          "iata": "HSL",
-          "icao": "PAHS",
-          "state": "AK",
-          "placeCode": "US-AK",
-          "changes": {
-            "icao": {
-              "old": "PAHL",
-              "new": "PAHS"
             }
           }
         },
@@ -515,32 +461,6 @@
           }
         },
         {
-          "name": "Birch Creek Airport",
-          "iata": "KBC",
-          "icao": "KZ91",
-          "state": "AK",
-          "placeCode": "US-AK",
-          "changes": {
-            "icao": {
-              "old": "PAAR",
-              "new": "KZ91"
-            }
-          }
-        },
-        {
-          "name": "Levelock Airport",
-          "iata": "KLL",
-          "icao": "K9Z8",
-          "state": "AK",
-          "placeCode": "US-AK",
-          "changes": {
-            "icao": {
-              "old": "PAAI",
-              "new": "K9Z8"
-            }
-          }
-        },
-        {
           "name": "Columbus Lawson Army Airfield",
           "iata": "LSF",
           "icao": "KLSF",
@@ -563,32 +483,6 @@
             "placeCode": {
               "old": "US-AZ",
               "new": "US-OH"
-            }
-          }
-        },
-        {
-          "name": "Minto Al Wright Airport",
-          "iata": "MNT",
-          "icao": "K51Z",
-          "state": "AK",
-          "placeCode": "US-AK",
-          "changes": {
-            "icao": {
-              "old": "PAAF",
-              "new": "K51Z"
-            }
-          }
-        },
-        {
-          "name": "Pilot Station Airport",
-          "iata": "PQS",
-          "icao": "K0AK",
-          "state": "AK",
-          "placeCode": "US-AK",
-          "changes": {
-            "icao": {
-              "old": "PAAC",
-              "new": "K0AK"
             }
           }
         },
@@ -619,32 +513,6 @@
           }
         },
         {
-          "name": "Tok Junction Airport",
-          "iata": "TKJ",
-          "icao": "PATJ",
-          "state": "AK",
-          "placeCode": "US-AK",
-          "changes": {
-            "icao": {
-              "old": "PFTO",
-              "new": "PATJ"
-            }
-          }
-        },
-        {
-          "name": "Tununak Airport",
-          "iata": "TNK",
-          "icao": "K4KA",
-          "state": "AK",
-          "placeCode": "US-AK",
-          "changes": {
-            "icao": {
-              "old": "POKA",
-              "new": "K4KA"
-            }
-          }
-        },
-        {
           "name": "Vero Beach Regional Airport",
           "iata": "VRB",
           "icao": "KVRB",
@@ -656,90 +524,43 @@
               "new": "US-GA"
             }
           }
-        },
-        {
-          "name": "Stebbins Airport",
-          "iata": "WBB",
-          "icao": "PWBB",
-          "state": "AK",
-          "placeCode": "US-AK",
-          "changes": {
-            "icao": {
-              "old": "PAAS",
-              "new": "PWBB"
-            }
-          }
-        },
-        {
-          "name": "Tuntutuliak Airport",
-          "iata": "WTL",
-          "icao": "KA61",
-          "state": "AK",
-          "placeCode": "US-AK",
-          "changes": {
-            "icao": {
-              "old": "PAAJ",
-              "new": "KA61"
-            }
-          }
         }
       ],
-      "added_count": 2,
-      "removed_count": 36,
-      "changed_count": 21,
+      "added_count": 4,
+      "removed_count": 29,
+      "changed_count": 11,
       "states": {
         "AK": {
           "state_name": "Alaska",
           "fr24_count": 193,
           "skycards_count": 192,
           "difference": 1,
-          "added_airports": [],
+          "added_airports": [
+            {
+              "name": "McKinley National Park Airport",
+              "iata": "MCL",
+              "icao": "PAIN",
+              "state": "AK",
+              "placeCode": "US-AK"
+            },
+            {
+              "name": "Metlakatla Seaplane Base",
+              "iata": "MTM",
+              "icao": "PAMM",
+              "state": "AK",
+              "placeCode": "US-AK"
+            }
+          ],
           "removed_airports": [
-            {
-              "name": "Dahl Creek Airport",
-              "iata": "DCK",
-              "icao": "PODC",
-              "placeCode": "US-AK"
-            },
-            {
-              "name": "Galbraith Lake Airport",
-              "iata": "GBH",
-              "icao": "PAGB",
-              "placeCode": "US-AK"
-            },
-            {
-              "name": "Ekwok Airport",
-              "iata": "KEK",
-              "icao": "PAAV",
-              "placeCode": "US-AK"
-            },
             {
               "name": "Port Graham Airport",
               "iata": "PGM",
               "icao": "KPGM",
               "placeCode": "US-AK"
-            },
-            {
-              "name": "Stevens Village Airport",
-              "iata": "SVS",
-              "icao": "PFSV",
-              "placeCode": "US-AK"
-            },
-            {
-              "name": "Takotna Airport",
-              "iata": "TCT",
-              "icao": "PPCT",
-              "placeCode": "US-AK"
-            },
-            {
-              "name": "Tenakee Springs Seaplane Base",
-              "iata": "TKE",
-              "icao": "PAJJ",
-              "placeCode": "US-AK"
             }
           ],
-          "added_count": 0,
-          "removed_count": 7
+          "added_count": 2,
+          "removed_count": 1
         },
         "AL": {
           "state_name": "Alabama",
@@ -766,12 +587,6 @@
           "added_airports": [],
           "removed_airports": [
             {
-              "name": "Crossett Municipal Airport",
-              "iata": "CRT",
-              "icao": "KCRT",
-              "placeCode": "US-AR"
-            },
-            {
               "name": "Flippin Marion County Regional Airport",
               "iata": "FLP",
               "icao": "KFLP",
@@ -779,7 +594,7 @@
             }
           ],
           "added_count": 0,
-          "removed_count": 2
+          "removed_count": 1
         },
         "AZ": {
           "state_name": "Arizona",
