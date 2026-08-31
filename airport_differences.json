@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 58,
-    "total_added_airports": 112,
+    "total_added_airports": 114,
     "total_removed_airports": 16,
     "total_changed_airports": 18
   },
@@ -146,7 +146,7 @@
       "added_count": 0,
       "removed_count": 0,
       "changed_count": 0,
-      "state_coverage": "139/295 (47%)"
+      "state_coverage": "140/295 (47%)"
     },
     "BS": {
       "country_name": "Bahamas",
@@ -610,11 +610,17 @@
           "iata": "HUG",
           "icao": "MGHT",
           "placeCode": "GT"
+        },
+        {
+          "name": "Rubelsanto Airport",
+          "iata": "RUV",
+          "icao": "MGRB",
+          "placeCode": "GT"
         }
       ],
       "removed_airports": [],
       "changed_airports": [],
-      "added_count": 3,
+      "added_count": 4,
       "removed_count": 0,
       "changed_count": 0
     },
@@ -918,6 +924,12 @@
       "difference": 1,
       "added_airports": [
         {
+          "name": "Arandis Airport",
+          "iata": "ADI",
+          "icao": "FAAR",
+          "placeCode": "NA"
+        },
+        {
           "name": "Namutoni Airport",
           "iata": "NNI",
           "icao": "FANA",
@@ -926,7 +938,7 @@
       ],
       "removed_airports": [],
       "changed_airports": [],
-      "added_count": 1,
+      "added_count": 2,
       "removed_count": 0,
       "changed_count": 0
     },
