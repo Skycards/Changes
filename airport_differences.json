@@ -2,8 +2,8 @@
   "summary": {
     "total_countries_with_differences": 8,
     "total_added_airports": 2,
-    "total_removed_airports": 47,
-    "total_changed_airports": 20
+    "total_removed_airports": 46,
+    "total_changed_airports": 21
   },
   "countries": {
     "CA": {
@@ -318,10 +318,10 @@
           "placeCode": "US-MN"
         },
         {
-          "name": "New York Manhattan West 30th Street Heliport",
-          "iata": "JRA",
-          "icao": "KJRA",
-          "placeCode": "US-NJ"
+          "name": "Dansville Municipal Airport",
+          "iata": "DSV",
+          "icao": "KDSV",
+          "placeCode": "US-NY"
         },
         {
           "name": "Delaware Municipal Airport",
@@ -394,12 +394,6 @@
           "iata": "DAA",
           "icao": "KDAA",
           "placeCode": "US-VA"
-        },
-        {
-          "name": "Amery Municipal Airport",
-          "iata": "AHH",
-          "icao": "KAHH",
-          "placeCode": "US-WI"
         },
         {
           "name": "Torrington Municipal Airport",
@@ -497,6 +491,19 @@
             "placeCode": {
               "old": "US-KS",
               "new": "US-MO"
+            }
+          }
+        },
+        {
+          "name": "New York Manhattan West 30th Street Heliport",
+          "iata": "JRA",
+          "icao": "KJRA",
+          "state": "NY",
+          "placeCode": "US-NY",
+          "changes": {
+            "placeCode": {
+              "old": "US-NJ",
+              "new": "US-NY"
             }
           }
         },
@@ -671,14 +678,14 @@
         }
       ],
       "added_count": 1,
-      "removed_count": 37,
-      "changed_count": 20,
+      "removed_count": 36,
+      "changed_count": 21,
       "states": {
         "AK": {
           "state_name": "Alaska",
-          "fr24_count": 185,
+          "fr24_count": 193,
           "skycards_count": 192,
-          "difference": -7,
+          "difference": 1,
           "added_airports": [],
           "removed_airports": [
             {
@@ -746,9 +753,9 @@
         },
         "AR": {
           "state_name": "Arkansas",
-          "fr24_count": 34,
+          "fr24_count": 35,
           "skycards_count": 36,
-          "difference": -2,
+          "difference": -1,
           "added_airports": [],
           "removed_airports": [
             {
@@ -826,9 +833,9 @@
         },
         "IA": {
           "state_name": "Iowa",
-          "fr24_count": 37,
+          "fr24_count": 39,
           "skycards_count": 40,
-          "difference": -3,
+          "difference": -1,
           "added_airports": [],
           "removed_airports": [
             {
@@ -855,9 +862,9 @@
         },
         "IN": {
           "state_name": "Indiana",
-          "fr24_count": 37,
+          "fr24_count": 38,
           "skycards_count": 39,
-          "difference": -2,
+          "difference": -1,
           "added_airports": [],
           "removed_airports": [
             {
@@ -898,9 +905,9 @@
         },
         "ME": {
           "state_name": "Maine",
-          "fr24_count": 15,
+          "fr24_count": 17,
           "skycards_count": 18,
-          "difference": -3,
+          "difference": -1,
           "added_airports": [],
           "removed_airports": [
             {
@@ -927,9 +934,9 @@
         },
         "MI": {
           "state_name": "Michigan",
-          "fr24_count": 47,
+          "fr24_count": 48,
           "skycards_count": 49,
-          "difference": -2,
+          "difference": -1,
           "added_airports": [],
           "removed_airports": [
             {
@@ -975,28 +982,38 @@
           "added_count": 0,
           "removed_count": 0
         },
-        "MT": {
-          "state_name": "Montana",
-          "fr24_count": 22,
-          "skycards_count": 23,
-          "difference": -1,
-          "added_airports": [],
-          "removed_airports": [],
-          "added_count": 0,
-          "removed_count": 0
-        },
         "NJ": {
           "state_name": "New Jersey",
           "fr24_count": 15,
           "skycards_count": 16,
           "difference": -1,
           "added_airports": [],
+          "removed_airports": [],
+          "added_count": 0,
+          "removed_count": 0
+        },
+        "NV": {
+          "state_name": "Nevada",
+          "fr24_count": 18,
+          "skycards_count": 17,
+          "difference": 1,
+          "added_airports": [],
+          "removed_airports": [],
+          "added_count": 0,
+          "removed_count": 0
+        },
+        "NY": {
+          "state_name": "New York",
+          "fr24_count": 40,
+          "skycards_count": 39,
+          "difference": 1,
+          "added_airports": [],
           "removed_airports": [
             {
-              "name": "New York Manhattan West 30th Street Heliport",
-              "iata": "JRA",
-              "icao": "KJRA",
-              "placeCode": "US-NJ"
+              "name": "Dansville Municipal Airport",
+              "iata": "DSV",
+              "icao": "KDSV",
+              "placeCode": "US-NY"
             }
           ],
           "added_count": 0,
@@ -1038,9 +1055,9 @@
         },
         "PA": {
           "state_name": "Pennsylvania",
-          "fr24_count": 38,
+          "fr24_count": 39,
           "skycards_count": 40,
-          "difference": -2,
+          "difference": -1,
           "added_airports": [],
           "removed_airports": [
             {
@@ -1061,9 +1078,9 @@
         },
         "TN": {
           "state_name": "Tennessee",
-          "fr24_count": 29,
+          "fr24_count": 31,
           "skycards_count": 32,
-          "difference": -3,
+          "difference": -1,
           "added_airports": [],
           "removed_airports": [
             {
@@ -1146,23 +1163,6 @@
             }
           ],
           "added_count": 1,
-          "removed_count": 1
-        },
-        "WI": {
-          "state_name": "Wisconsin",
-          "fr24_count": 39,
-          "skycards_count": 40,
-          "difference": -1,
-          "added_airports": [],
-          "removed_airports": [
-            {
-              "name": "Amery Municipal Airport",
-              "iata": "AHH",
-              "icao": "KAHH",
-              "placeCode": "US-WI"
-            }
-          ],
-          "added_count": 0,
           "removed_count": 1
         },
         "WV": {
