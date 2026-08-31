@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 8,
-    "total_added_airports": 2,
+    "total_added_airports": 3,
     "total_removed_airports": 46,
     "total_changed_airports": 21
   },
@@ -176,6 +176,13 @@
       "skycards_count": 1772,
       "difference": -3,
       "added_airports": [
+        {
+          "name": "Hawthorne Industrial Airport",
+          "iata": "HTH",
+          "icao": "KHTH",
+          "state": "NV",
+          "placeCode": "US-NV"
+        },
         {
           "name": "Danville Regional Airport",
           "iata": "DAN",
@@ -677,7 +684,7 @@
           }
         }
       ],
-      "added_count": 1,
+      "added_count": 2,
       "removed_count": 36,
       "changed_count": 21,
       "states": {
@@ -997,9 +1004,17 @@
           "fr24_count": 18,
           "skycards_count": 17,
           "difference": 1,
-          "added_airports": [],
+          "added_airports": [
+            {
+              "name": "Hawthorne Industrial Airport",
+              "iata": "HTH",
+              "icao": "KHTH",
+              "state": "NV",
+              "placeCode": "US-NV"
+            }
+          ],
           "removed_airports": [],
-          "added_count": 0,
+          "added_count": 1,
           "removed_count": 0
         },
         "NY": {
