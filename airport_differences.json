@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 58,
-    "total_added_airports": 109,
+    "total_added_airports": 112,
     "total_removed_airports": 16,
     "total_changed_airports": 18
   },
@@ -182,15 +182,33 @@
       "difference": 4,
       "added_airports": [
         {
+          "name": "Khwai River Airport",
+          "iata": "KHW",
+          "icao": "FBKR",
+          "placeCode": "BW"
+        },
+        {
           "name": "Savuti Airport",
           "iata": "SVT",
           "icao": "FBSV",
+          "placeCode": "BW"
+        },
+        {
+          "name": "Shakawe Airport",
+          "iata": "SWX",
+          "icao": "FBSW",
+          "placeCode": "BW"
+        },
+        {
+          "name": "Tuli Lodge Limpopo Valley Airport",
+          "iata": "TLD",
+          "icao": "FBTL",
           "placeCode": "BW"
         }
       ],
       "removed_airports": [],
       "changed_airports": [],
-      "added_count": 1,
+      "added_count": 4,
       "removed_count": 0,
       "changed_count": 0
     },
