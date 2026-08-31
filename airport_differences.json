@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 58,
-    "total_added_airports": 107,
+    "total_added_airports": 109,
     "total_removed_airports": 16,
     "total_changed_airports": 18
   },
@@ -1237,10 +1237,23 @@
       "fr24_count": 5,
       "skycards_count": 3,
       "difference": 2,
-      "added_airports": [],
+      "added_airports": [
+        {
+          "name": "Drietabbetje Airport",
+          "iata": "DRJ",
+          "icao": "SMDA",
+          "placeCode": "SR"
+        },
+        {
+          "name": "Stoelmanseiland Airport",
+          "iata": "SMZ",
+          "icao": "SMST",
+          "placeCode": "SR"
+        }
+      ],
       "removed_airports": [],
       "changed_airports": [],
-      "added_count": 0,
+      "added_count": 2,
       "removed_count": 0,
       "changed_count": 0
     },
