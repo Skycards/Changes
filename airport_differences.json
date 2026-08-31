@@ -2,7 +2,7 @@
   "summary": {
     "total_countries_with_differences": 8,
     "total_added_airports": 6,
-    "total_removed_airports": 33,
+    "total_removed_airports": 32,
     "total_changed_airports": 11
   },
   "countries": {
@@ -297,12 +297,6 @@
           "placeCode": "US-OR"
         },
         {
-          "name": "Lock Haven Piper Memorial Airport",
-          "iata": "LHV",
-          "icao": "KLHV",
-          "placeCode": "US-PA"
-        },
-        {
           "name": "Port Meadville Airport",
           "iata": "MEJ",
           "icao": "KGKJ",
@@ -497,7 +491,7 @@
         }
       ],
       "added_count": 5,
-      "removed_count": 24,
+      "removed_count": 23,
       "changed_count": 11,
       "states": {
         "AK": {
@@ -850,12 +844,6 @@
           "added_airports": [],
           "removed_airports": [
             {
-              "name": "Lock Haven Piper Memorial Airport",
-              "iata": "LHV",
-              "icao": "KLHV",
-              "placeCode": "US-PA"
-            },
-            {
               "name": "Port Meadville Airport",
               "iata": "MEJ",
               "icao": "KGKJ",
@@ -863,7 +851,7 @@
             }
           ],
           "added_count": 0,
-          "removed_count": 2
+          "removed_count": 1
         },
         "TN": {
           "state_name": "Tennessee",
