@@ -1113,5 +1113,110 @@ class CompareMobileAirportsTest(unittest.TestCase):
         self.assertEqual(ca._country_display_name("ZZ", mapping), "ZZ")
 
 
+class StatesBreakdownTest(unittest.TestCase):
+    def test_breakdown_groups_by_state_and_computes_counts(self):
+        ours = [
+            _our_row(id=1, iata="ONE", icao="KONE", placeCode="US-NY"),
+            _our_row(id=2, iata="TWO", icao="KTWO", placeCode="US-NY"),
+            _our_row(id=3, iata="TRE", icao="KTRE", placeCode="US-CA"),
+        ]
+        added = [{"name": "New NY", "iata": "NEW", "icao": "KNEW",
+                  "placeCode": "US-NY"}]
+        removed = [{"name": "Old CA", "iata": "TRE", "icao": "KTRE",
+                    "placeCode": "US-CA"}]
+        breakdown = ca._states_breakdown("US", added, removed, ours,
+                                         FakeLookup())
+        self.assertEqual(set(breakdown), {"NY", "CA"})
+        ny = breakdown["NY"]
+        self.assertEqual(ny["fr24_count"], 3)       # 2 ours + 1 added
+        self.assertEqual(ny["skycards_count"], 2)
+        self.assertEqual(ny["difference"], 1)
+        self.assertEqual(ny["added_count"], 1)
+        self.assertEqual(ny["removed_count"], 0)
+        camp = breakdown["CA"]
+        self.assertEqual(camp["fr24_count"], 0)
+        self.assertEqual(camp["skycards_count"], 1)
+        self.assertEqual(camp["removed_count"], 1)
+
+    def test_states_without_differences_are_omitted(self):
+        ours = [_our_row(id=1, iata="ONE", icao="KONE", placeCode="US-NY")]
+        breakdown = ca._states_breakdown("US", [], [], ours, FakeLookup())
+        self.assertEqual(breakdown, {})
+
+    def test_bare_country_added_airport_not_in_breakdown(self):
+        # A geo-lookup failure leaves placeCode == "US"; it belongs to the
+        # country aggregate only, never a fabricated state bucket.
+        added = [{"name": "Floater", "iata": "FLO", "icao": "KFLO",
+                  "placeCode": "US"}]
+        breakdown = ca._states_breakdown("US", added, [], [], FakeLookup())
+        self.assertEqual(breakdown, {})
+
+    def test_other_country_rows_do_not_leak_into_counts(self):
+        # our_rows spans all countries; only this country's states may count.
+        ours = [
+            _our_row(id=1, iata="ONE", icao="KONE", placeCode="US-NY"),
+            _our_row(id=2, iata="TWO", icao="KTWO", placeCode="CA-ON"),
+            _our_row(id=3, iata="TRE", icao="KTRE", placeCode="DE"),
+        ]
+        added = [{"name": "New NY", "iata": "NEW", "icao": "KNEW",
+                  "placeCode": "US-NY"}]
+        breakdown = ca._states_breakdown("US", added, [], ours, FakeLookup())
+        self.assertEqual(set(breakdown), {"NY"})
+        self.assertEqual(breakdown["NY"]["skycards_count"], 1)
+
+    def test_state_names_come_from_lookup(self):
+        class NamedLookup(FakeLookup):
+            def state_name(self, code):
+                return {"US-NY": "New York"}.get(code, code)
+
+        added = [{"name": "New NY", "iata": "NEW", "icao": "KNEW",
+                  "placeCode": "US-NY"}]
+        breakdown = ca._states_breakdown("US", added, [], [], NamedLookup())
+        self.assertEqual(breakdown["NY"]["state_name"], "New York")
+
+
+class StatesIntegrationTest(unittest.TestCase):
+    """The breakdown wired through compare_mobile_airports."""
+
+    def compare(self, mobile, ours, lookup=None):
+        return ca.compare_mobile_airports(
+            mobile, {"rows": ours}, ca.create_country_mapping(),
+            lookup or FakeLookup())
+
+    def test_subdivided_country_gets_states_key(self):
+        lookup = FakeLookup({(6.1848, 50.8219, "US"): "US-NY"})
+        diffs, _ = self.compare(
+            [_mobile_row(country="United States"),
+             _mobile_row(id=99, iata="XYZ", icao="KXYZ",
+                         name="New Airport", country="United States")],
+            [_our_row(placeCode="US-CA")], lookup)
+        self.assertIn("states", diffs["US"])
+        self.assertEqual(set(diffs["US"]["states"]), {"NY"})
+        self.assertEqual(diffs["US"]["states"]["NY"]["added_count"], 1)
+
+    def test_changed_only_subdivided_country_has_no_states_key(self):
+        diffs, _ = self.compare(
+            [_mobile_row(id=60, iata="ANX", icao="PANC",
+                         name="Anchorage", country="United States")],
+            [_our_row(id=60, iata="ANC", icao="PANC",
+                      name="Anchorage", placeCode="US-AK")])
+        self.assertEqual(diffs["US"]["changed_count"], 1)
+        self.assertNotIn("states", diffs["US"])
+
+    def test_flat_country_never_gets_states_key(self):
+        diffs, _ = self.compare(
+            [_mobile_row(), _mobile_row(id=99, iata="XYZ", icao="EDXY",
+                                        name="New Airport")],
+            [_our_row()])
+        self.assertNotIn("states", diffs["DE"])
+
+    def test_malformed_mobile_rows_are_skipped(self):
+        diffs, _ = self.compare(
+            [_mobile_row(id=99, iata="XYZ", icao="EDXY", name="New"),
+             {"name": "broken"}, "garbage"],
+            [_our_row()])
+        self.assertEqual(diffs["DE"]["added_count"], 1)
+
+
 if __name__ == "__main__":
     unittest.main()

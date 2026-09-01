@@ -104,8 +104,56 @@ def _sort_airports(airports: List[Dict]) -> None:
     airports.sort(key=lambda ap: (ap.get('iata') or '', ap.get('name') or ''))
 
 
-def _states_breakdown(iso_code, added, removed, our_rows, lookup):
-    return {}
+def _states_breakdown(iso_code: str, added: List[Dict], removed: List[Dict],
+                      our_rows: List[Dict], lookup) -> Dict[str, Dict]:
+    """Per-state breakdown for a subdivided country, states with diffs only.
+
+    Matched airports carry our placeCode, added airports the geo-derived one,
+    so both sides of every per-state count come from the same placeCodes.
+    Added airports whose geo lookup failed (bare-country placeCode) appear in
+    the country aggregate only. Counts come from the same code-filtered
+    our_rows as the country-level counts, so per-state totals always sum
+    consistently with them.
+    """
+    prefix = f"{iso_code}-"
+
+    def state_of(airport):
+        place = airport.get('placeCode') or ''
+        if place.startswith(prefix):
+            return place.split('-', 1)[1]
+        return None
+
+    our_counts = Counter(row['placeCode'].split('-', 1)[1]
+                         for row in our_rows
+                         if (row.get('placeCode') or '').startswith(prefix))
+    added_by_state: Dict[str, List[Dict]] = {}
+    removed_by_state: Dict[str, List[Dict]] = {}
+    for airport in added:
+        state = state_of(airport)
+        if state:
+            added_by_state.setdefault(state, []).append(airport)
+    for airport in removed:
+        state = state_of(airport)
+        if state:
+            removed_by_state.setdefault(state, []).append(airport)
+
+    breakdown = {}
+    for state in sorted(set(added_by_state) | set(removed_by_state)):
+        state_added = added_by_state.get(state, [])
+        state_removed = removed_by_state.get(state, [])
+        our_count = our_counts.get(state, 0)
+        fr24_count = our_count - len(state_removed) + len(state_added)
+        breakdown[state] = {
+            'state_name': lookup.state_name(f"{iso_code}-{state}"),
+            'fr24_count': fr24_count,
+            'skycards_count': our_count,
+            'difference': fr24_count - our_count,
+            'added_airports': state_added,
+            'removed_airports': state_removed,
+            'added_count': len(state_added),
+            'removed_count': len(state_removed),
+        }
+    return breakdown
 
 
 def compare_mobile_airports(mobile_rows: List[Dict], airports_data: Dict,
@@ -130,7 +178,10 @@ def compare_mobile_airports(mobile_rows: List[Dict], airports_data: Dict,
     """
     our_rows = [row for row in airports_data.get('rows', [])
                 if _has_code(row)]
-    our_by_id = {row['id']: row for row in our_rows}  # ids are unique in airports.json today; a duplicate would shadow a row here while our_counts counted it — worth a check if that ever changes
+    # ids are unique in airports.json today; a duplicate would shadow a
+    # row here while our_counts counted it — worth a check if that ever
+    # changes
+    our_by_id = {row['id']: row for row in our_rows}
     mobile_by_id = {row['id']: row for row in mobile_rows
                     if isinstance(row, dict) and isinstance(row.get('id'), int)}
 
