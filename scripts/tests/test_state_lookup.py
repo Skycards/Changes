@@ -32,6 +32,10 @@ FIXTURE = {
          "geometry": {"type": "Polygon", "coordinates": [
              [[1, 0], [2, 0], [2, 1], [1, 1], [1, 0]],
          ]}},
+        {"type": "Feature",
+         "properties": {"iso_a2": "HH", "iso_3166_2": "HH-N", "name": "Nord"},
+         "geometry": {"type": "Polygon", "coordinates": [
+             [[0, 70], [1, 70], [1, 71], [0, 71], [0, 70]]]}},
     ],
 }
 
@@ -79,6 +83,12 @@ class StateLookupTest(unittest.TestCase):
     def test_state_name(self):
         self.assertEqual(self.lookup.state_name("XX-A"), "Alpha")
         self.assertEqual(self.lookup.state_name("QQ-QQ"), "QQ-QQ")
+
+    def test_high_latitude_snap_uses_lon_scaled_margin(self):
+        # 1.0 deg of longitude east at 70.5N is only ~66.7 km — inside the
+        # snap cap, but outside a naive unscaled bbox margin. Pins the
+        # cos(lat) scaling of lon_margin in _nearest.
+        self.assertEqual(self.lookup.lookup(2.0, 70.5, "HH"), "HH-N")
 
 
 class RealDataTest(unittest.TestCase):
