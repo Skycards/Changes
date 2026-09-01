@@ -913,5 +913,167 @@ class FetchMobileAirportsTest(unittest.TestCase):
             self.assertIsNone(ca.fetch_mobile_airports())
 
 
+
+def _our_row(**over):
+    row = {"id": 3, "iata": "AAH", "icao": "EDKA",
+           "name": "Aachen Merzbruck Airport", "placeCode": "DE"}
+    row.update(over)
+    return row
+
+
+class FakeLookup:
+    """Test double for state_lookup.StateLookup."""
+
+    def __init__(self, answers=None):
+        self.answers = answers or {}
+
+    def lookup(self, lon, lat, country):
+        return self.answers.get((lon, lat, country))
+
+    def state_name(self, code):
+        return code
+
+
+class CompareMobileAirportsTest(unittest.TestCase):
+    def compare(self, mobile, ours, lookup=None):
+        airports_data = {"rows": ours}
+        return ca.compare_mobile_airports(
+            mobile, airports_data, ca.create_country_mapping(),
+            lookup or FakeLookup())
+
+    def test_identical_data_no_differences(self):
+        diffs, unmapped = self.compare([_mobile_row()], [_our_row()])
+        self.assertEqual(diffs, {})
+        self.assertEqual(unmapped, [])
+
+    def test_added_airport_groups_by_fr24_label(self):
+        diffs, _ = self.compare(
+            [_mobile_row(), _mobile_row(id=99, iata="XYZ", icao="EDXY",
+                                        name="New Airport")],
+            [_our_row()])
+        self.assertEqual(list(diffs), ["DE"])
+        record = diffs["DE"]
+        self.assertEqual(record["fr24_count"], 2)
+        self.assertEqual(record["skycards_count"], 1)
+        self.assertEqual(record["difference"], 1)
+        self.assertEqual(record["added_count"], 1)
+        added = record["added_airports"][0]
+        self.assertEqual(added["iata"], "XYZ")
+        self.assertEqual(added["placeCode"], "DE")
+        self.assertNotIn("timezone", added)
+        self.assertNotIn("size", added)
+
+    def test_removed_airport_groups_by_our_placecode(self):
+        # RUE-class insurance: even when FR24 mislabels a country, a removed
+        # airport is grouped by OUR placeCode, so no mapping is involved.
+        diffs, _ = self.compare(
+            [], [_our_row(id=50, iata="RUE", icao="FZMB",
+                          name="Butembo Rughenda Airport", placeCode="CD")])
+        record = diffs["CD"]
+        self.assertEqual(record["removed_count"], 1)
+        self.assertEqual(record["fr24_count"], 0)
+        self.assertEqual(record["skycards_count"], 1)
+        self.assertEqual(record["removed_airports"][0]["iata"], "RUE")
+
+    def test_matched_airport_ignores_country_label_mismatch(self):
+        # SMZ-class: FR24 files it under Suriname, we under French Guiana.
+        # Matched by id -> no diff at all, in either country.
+        diffs, _ = self.compare(
+            [_mobile_row(id=7, iata="SMZ", icao="SMST",
+                         name="Stoelmanseiland Airport", country="Suriname")],
+            [_our_row(id=7, iata="SMZ", icao="SMST",
+                      name="Stoelmanseiland Airport", placeCode="GF")])
+        self.assertEqual(diffs, {})
+
+    def test_field_change_reported_with_our_placecode(self):
+        diffs, _ = self.compare(
+            [_mobile_row(iata="AAX")],
+            [_our_row(placeCode="DE")])
+        record = diffs["DE"]
+        self.assertEqual(record["added_count"], 0)
+        self.assertEqual(record["removed_count"], 0)
+        self.assertEqual(record["changed_count"], 1)
+        changed = record["changed_airports"][0]
+        self.assertEqual(changed["iata"], "AAX")
+        self.assertEqual(changed["placeCode"], "DE")
+        self.assertEqual(changed["changes"],
+                         {"iata": {"old": "AAH", "new": "AAX"}})
+        # counts balance: a change is not a count difference
+        self.assertEqual(record["difference"], 0)
+
+    def test_name_change_whitespace_insensitive(self):
+        diffs, _ = self.compare(
+            [_mobile_row(name="Aachen  Merzbruck Airport")],
+            [_our_row()])
+        self.assertEqual(diffs, {})
+
+    def test_empty_vs_set_icao_is_a_change(self):
+        # Ports the behavior pinned by the old CompareChangedAirportsTest
+        # (deleted in Task 6): ''/None vs a real value counts as a change.
+        diffs, _ = self.compare(
+            [_mobile_row(icao="EDKA")],
+            [_our_row(icao="")])
+        changed = diffs["DE"]["changed_airports"][0]
+        self.assertEqual(changed["changes"],
+                         {"icao": {"old": "", "new": "EDKA"}})
+
+    def test_codeless_our_row_excluded_entirely(self):
+        # Codeless remnants of FR24-deleted airports must not surface as
+        # removed, and their FR24 twin (if any) counts as added.
+        diffs, _ = self.compare(
+            [_mobile_row(id=4028, iata="YMJ", icao="CYMJ",
+                         name="Moose Jaw Municipal Airport", country="Canada")],
+            [_our_row(id=4028, iata=None, icao=None,
+                      name="Moose Jaw Municipal Airport", placeCode="CA-SK")])
+        record = diffs["CA"]
+        self.assertEqual(record["removed_count"], 0)
+        self.assertEqual(record["added_count"], 1)
+        self.assertEqual(record["skycards_count"], 0)
+
+    def test_added_in_subdivided_country_gets_geo_state(self):
+        lookup = FakeLookup({(6.1848, 50.8219, "US"): "US-NY"})
+        diffs, _ = self.compare(
+            [_mobile_row(id=99, iata="XYZ", icao="KXYZ",
+                         name="New Airport", country="United States")],
+            [_our_row(placeCode="US-CA")], lookup)
+        # Ours: 1 airport under US-CA; FR24 adds one geo-attributed to US-NY.
+        added = diffs["US"]["added_airports"][0]
+        self.assertEqual(added["placeCode"], "US-NY")
+
+    def test_added_geo_failure_falls_back_to_bare_country(self):
+        diffs, _ = self.compare(
+            [_mobile_row(id=99, iata="XYZ", icao="KXYZ",
+                         name="New Airport", country="United States")],
+            [_our_row(placeCode="US-CA")], FakeLookup())
+        added = diffs["US"]["added_airports"][0]
+        self.assertEqual(added["placeCode"], "US")
+
+    def test_added_in_flat_country_skips_geo_lookup(self):
+        # Germany is not subdivided in our data -> no lookup call, bare ISO.
+        lookup = FakeLookup({(6.1848, 50.8219, "DE"): "DE-NW"})
+        diffs, _ = self.compare(
+            [_mobile_row(), _mobile_row(id=99, iata="XYZ", icao="EDXY",
+                                        name="New Airport")],
+            [_our_row()], lookup)
+        self.assertEqual(diffs["DE"]["added_airports"][0]["placeCode"], "DE")
+
+    def test_unmapped_country_label_goes_to_bucket(self):
+        diffs, unmapped = self.compare(
+            [_mobile_row(id=99, iata="XYZ", icao="ZZZZ",
+                         name="Mystery Airport", country="Atlantis")],
+            [])
+        self.assertEqual(diffs, {})
+        self.assertEqual(len(unmapped), 1)
+        self.assertEqual(unmapped[0]["country"], "Atlantis")
+        self.assertEqual(unmapped[0]["iata"], "XYZ")
+
+    def test_sorted_by_iata_then_name(self):
+        diffs, _ = self.compare(
+            [_mobile_row(id=98, iata="BBB", icao="EDBB", name="B Airport"),
+             _mobile_row(id=99, iata="AAA", icao="EDAA", name="A Airport")],
+            [_our_row()])
+        added = diffs["DE"]["added_airports"]
+        self.assertEqual([a["iata"] for a in added], ["AAA", "BBB"])
+
 if __name__ == "__main__":
     unittest.main()

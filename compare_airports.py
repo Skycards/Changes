@@ -86,6 +86,123 @@ def fetch_mobile_airports() -> Optional[List[Dict]]:
         return None
 
 
+def _has_code(row: Dict) -> bool:
+    return bool((row.get('iata') or '').strip() or (row.get('icao') or '').strip())
+
+
+def _added_airport_record(row: Dict, place_code: str) -> Dict:
+    """Project a mobile row to the output shape used for added airports."""
+    return {
+        'name': row.get('name', ''),
+        'iata': (row.get('iata') or '').strip() or None,
+        'icao': (row.get('icao') or '').strip(),
+        'placeCode': place_code,
+    }
+
+
+def _sort_airports(airports: List[Dict]) -> None:
+    airports.sort(key=lambda ap: (ap.get('iata') or '', ap.get('name') or ''))
+
+
+def _states_breakdown(iso_code, added, removed, airports_data, lookup):
+    return {}
+
+
+def compare_mobile_airports(mobile_rows: List[Dict], airports_data: Dict,
+                            country_mapping: Dict[str, str],
+                            lookup) -> Tuple[Dict, List[Dict]]:
+    """Diff FR24's mobile dataset against airports.json by airport id.
+
+    Skycards ids are FR24 mobile ids, so the join is exact: rows on both
+    sides are matched (field changes), FR24-only rows are added, our-only
+    rows are removed. Matched and removed airports group by our placeCode —
+    FR24's country label never buckets an airport we already know, so FR24
+    mislabels (RUE, SMZ, KIA) cannot fabricate diffs. Added airports group by
+    FR24's label and, in countries our data subdivides, get a state placeCode
+    from the geo lookup.
+
+    Skycards rows with neither IATA nor ICAO are remnants of FR24-deleted
+    airports; they are excluded from matching and from counts (as the
+    web-scraping comparison always did).
+
+    Returns (differences_by_iso, unmapped_added_rows).
+    """
+    our_rows = [row for row in airports_data.get('rows', [])
+                if _has_code(row)]
+    our_by_id = {row['id']: row for row in our_rows}
+    mobile_by_id = {row['id']: row for row in mobile_rows}
+
+    # Countries whose placeCodes carry subdivisions (currently US CA AU CN).
+    subdivided = {(row.get('placeCode') or '').split('-')[0]
+                  for row in our_rows if '-' in (row.get('placeCode') or '')}
+
+    our_counts = Counter((row.get('placeCode') or '').split('-')[0]
+                         for row in our_rows)
+
+    added: Dict[str, List[Dict]] = {}
+    removed: Dict[str, List[Dict]] = {}
+    changed: Dict[str, List[Dict]] = {}
+    unmapped: List[Dict] = []
+
+    for airport_id, row in mobile_by_id.items():
+        ours = our_by_id.get(airport_id)
+        if ours is None:
+            iso = country_mapping.get(_normalize_country_name(row.get('country', '')))
+            if not iso:
+                record = _added_airport_record(row, '')
+                record['country'] = row.get('country', '')
+                del record['placeCode']
+                unmapped.append(record)
+                continue
+            place = iso
+            if iso in subdivided:
+                state = lookup.lookup(row.get('lon'), row.get('lat'), iso)
+                if state:
+                    place = state
+            added.setdefault(iso, []).append(_added_airport_record(row, place))
+        else:
+            changes = _airport_field_changes(ours, row, ('name', 'iata', 'icao'))
+            if changes:
+                iso = (ours.get('placeCode') or '').split('-')[0]
+                record = _added_airport_record(row, ours.get('placeCode') or iso)
+                record['changes'] = changes
+                changed.setdefault(iso, []).append(record)
+
+    for airport_id, row in our_by_id.items():
+        if airport_id not in mobile_by_id:
+            iso = (row.get('placeCode') or '').split('-')[0]
+            removed.setdefault(iso, []).append(_our_airport_record(row))
+
+    differences = {}
+    for iso in sorted(set(added) | set(removed) | set(changed)):
+        iso_added = added.get(iso, [])
+        iso_removed = removed.get(iso, [])
+        iso_changed = changed.get(iso, [])
+        for airports in (iso_added, iso_removed, iso_changed):
+            _sort_airports(airports)
+        our_count = our_counts.get(iso, 0)
+        # By construction the mobile dataset's count for this country is ours
+        # minus what it dropped plus what it has that we lack — counts and
+        # lists can never disagree.
+        fr24_count = our_count - len(iso_removed) + len(iso_added)
+        record = _country_record(_country_display_name(iso, country_mapping),
+                                 iso, fr24_count, our_count,
+                                 iso_added, iso_removed, iso_changed)
+        if iso in subdivided:
+            record['states'] = _states_breakdown(
+                iso, iso_added, iso_removed, airports_data, lookup)
+        differences[iso] = record
+    return differences, unmapped
+
+
+def _country_display_name(iso: str, country_mapping: Dict[str, str]) -> str:
+    """Reverse-map an ISO code to a display name (first mapping hit)."""
+    for name, code in country_mapping.items():
+        if code == iso:
+            return name
+    return iso
+
+
 def create_country_mapping() -> Dict[str, str]:
     """Create mapping from country names to ISO codes"""
     return {
