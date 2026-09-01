@@ -18,6 +18,11 @@ FIXTURE = {
              [[0.4, 0.4], [0.6, 0.4], [0.6, 0.6], [0.4, 0.6], [0.4, 0.4]],
          ]}},
         {"type": "Feature",
+         "properties": {"iso_a2": "XX", "iso_3166_2": "XX-C", "name": "Gamma"},
+         "geometry": {"type": "Polygon", "coordinates": [
+             [[0.4, 0.4], [0.6, 0.4], [0.6, 0.6], [0.4, 0.6], [0.4, 0.4]],
+         ]}},
+        {"type": "Feature",
          "properties": {"iso_a2": "XX", "iso_3166_2": "XX-B", "name": "Beta"},
          "geometry": {"type": "MultiPolygon", "coordinates": [
              [[[1, 0], [2, 0], [2, 1], [1, 1], [1, 0]]],
@@ -42,17 +47,19 @@ class StateLookupTest(unittest.TestCase):
     def test_point_inside_multipolygon(self):
         self.assertEqual(self.lookup.lookup(1.5, 0.5, "XX"), "XX-B")
 
-    def test_point_in_hole_snaps_to_nearest_boundary(self):
-        # Center of XX-A's hole: not inside any ring, but the hole's edge is
-        # ~0.1 deg away, well under the snap cap.
-        self.assertEqual(self.lookup.lookup(0.5, 0.5, "XX"), "XX-A")
+    def test_hole_is_excluded_and_enclave_wins(self):
+        # (0.5, 0.5) is inside XX-A's outer ring but also inside its hole, so
+        # XX-A must NOT match; the XX-C enclave filling the hole must.
+        self.assertEqual(self.lookup.lookup(0.5, 0.5, "XX"), "XX-C")
 
     def test_country_filter_excludes_other_countries(self):
         # Same coordinates resolve per requested country.
         self.assertEqual(self.lookup.lookup(1.5, 0.5, "YY"), "YY-Z")
 
     def test_point_just_offshore_snaps_to_nearest(self):
-        self.assertEqual(self.lookup.lookup(-0.05, 0.5, "XX"), "XX-A")
+        # ~7.8 km off XX-A's (0, 0) corner; XX-C's nearest vertex is ~63 km
+        # away, so vertex-based snapping unambiguously picks XX-A.
+        self.assertEqual(self.lookup.lookup(-0.05, 0.05, "XX"), "XX-A")
 
     def test_point_far_from_country_returns_none(self):
         # ~10 degrees away: beyond MAX_SNAP_KM.
@@ -60,6 +67,14 @@ class StateLookupTest(unittest.TestCase):
 
     def test_unknown_country_returns_none(self):
         self.assertIsNone(self.lookup.lookup(0.5, 0.5, "ZZ"))
+
+    def test_snap_beyond_cap_returns_none(self):
+        # (0.5, 1.85) passes the bbox-margin prefilter but the nearest vertex
+        # is ~110 km away, beyond MAX_SNAP_KM.
+        self.assertIsNone(self.lookup.lookup(0.5, 1.85, "XX"))
+
+    def test_none_coordinates_return_none(self):
+        self.assertIsNone(self.lookup.lookup(None, None, "XX"))
 
     def test_state_name(self):
         self.assertEqual(self.lookup.state_name("XX-A"), "Alpha")

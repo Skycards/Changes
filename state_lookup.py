@@ -6,7 +6,8 @@ exist in FR24's data but not yet in ours, from their FR24 coordinates. Matched
 airports never need this — their placeCode comes from our own data.
 
 Accuracy measured against all 2,879 state-qualified airports in airports.json:
-US 99.94%, CA 99.72%, AU 99.37%, CN 100%. Points outside every polygon (the
+US 99.94%, CA 99.72%, AU 98.74% (six remote-island airports beyond the snap
+cap degrade to None), CN 100%. Points outside every polygon (the
 50m coastline is simplified, so coastal airports often are) snap to the
 nearest boundary vertex of the requested country, capped at MAX_SNAP_KM so a
 remote island (Norfolk, Christmas Island) degrades to None — callers then fall
@@ -17,7 +18,7 @@ import math
 from typing import Dict, List, Optional, Tuple
 
 # A point farther than this from every polygon of its country gets no state.
-# Measured legitimate snaps (coastal airports) top out at ~83 km.
+# Measured legitimate snaps (coastal and island airports) top out at ~91 km.
 MAX_SNAP_KM = 100.0
 
 _KM_PER_DEG = 111.0
@@ -67,6 +68,8 @@ class StateLookup:
 
     def lookup(self, lon: float, lat: float, country: str) -> Optional[str]:
         """iso_3166_2 code (e.g. "US-NY") for a coordinate, or None."""
+        if lon is None or lat is None:
+            return None
         entries = self._by_country.get(country)
         if not entries:
             return None
@@ -81,10 +84,11 @@ class StateLookup:
         """Nearest boundary vertex within MAX_SNAP_KM, else None."""
         best_code, best_d2 = None, (MAX_SNAP_KM / _KM_PER_DEG) ** 2
         cos_lat = math.cos(math.radians(lat))
+        lat_margin = MAX_SNAP_KM / _KM_PER_DEG
+        lon_margin = lat_margin / max(cos_lat, 0.01)
         for code, (x0, y0, x1, y1), outer, _holes in entries:
-            margin = MAX_SNAP_KM / _KM_PER_DEG
-            if not (x0 - margin <= lon <= x1 + margin
-                    and y0 - margin <= lat <= y1 + margin):
+            if not (x0 - lon_margin <= lon <= x1 + lon_margin
+                    and y0 - lat_margin <= lat <= y1 + lat_margin):
                 continue
             for x, y in outer:
                 d2 = (y - lat) ** 2 + ((x - lon) * cos_lat) ** 2
