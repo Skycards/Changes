@@ -2,7 +2,7 @@
   "summary": {
     "total_countries_with_differences": 8,
     "total_added_airports": 6,
-    "total_removed_airports": 31,
+    "total_removed_airports": 28,
     "total_changed_airports": 11
   },
   "countries": {
@@ -49,33 +49,15 @@
       "added_airports": [],
       "removed_airports": [
         {
-          "name": "Baramita Airport",
-          "iata": "BMJ",
-          "icao": "SYBR",
-          "placeCode": "GY"
-        },
-        {
-          "name": "Bartica Airport",
-          "iata": "GFO",
-          "icao": "SYBT",
-          "placeCode": "GY"
-        },
-        {
           "name": "Kaieteur Falls Airport",
           "iata": "KIA",
           "icao": "PKSA",
-          "placeCode": "GY"
-        },
-        {
-          "name": "Kato Airport",
-          "iata": "KTO",
-          "icao": "SYKT",
           "placeCode": "GY"
         }
       ],
       "changed_airports": [],
       "added_count": 0,
-      "removed_count": 4,
+      "removed_count": 1,
       "changed_count": 0
     },
     "LY": {
