@@ -44,7 +44,7 @@ each CronJob selects its work via arguments. The Python modules are:
 1. **`scripts/pipeline.py`** - CLI entrypoint with `fetch` and `compare` subcommands; clones the repo, fetches, formats, commits/pushes, and notifies.
 2. **`scripts/git_sync.py`** - Git operations: partial clone, change detection, capture-previous, commit, push-with-retry.
 3. **`scripts/discord_notify.py`** - Posts Markdown summaries to the Discord webhooks subscribed to each message type, each with its own mention prefix.
-4. **`scripts/format_changes.py`** / **`compare_airports.py`** - Build the change summaries.
+4. **`scripts/format_changes.py`** / **`compare_airports.py`** (with **`state_lookup.py`** for state attribution) - Build the change summaries.
 
 This design allows for:
 
@@ -62,6 +62,8 @@ This design allows for:
 - `deploy/secret.example.yaml` - Secret template (`GIT_TOKEN` + `WEBHOOK_URLS`); sealed before committing
 - `.github/workflows/build-image.yml` - Builds and pushes the image to GHCR on code changes
 - `scripts/` - The Python pipeline and its tests
+- `state_lookup.py` - Point-in-polygon state lookup used by the airport comparison
+- `data/ne_50m_admin_1_states.geojson` - Stripped Natural Earth admin-1 boundaries used by `state_lookup.py`
 - `airports.json` - Latest airport data (created automatically)
 - `models.json` - Latest aircraft models data (created automatically)
 - `airlines.json` - Latest airline data (created automatically)
@@ -97,8 +99,8 @@ Notifications include a formatted summary of what changed — aircraft stat chan
 and added/removed models, airports and airline fleets grouped by continent →
 country (→ region), each linking back to the commit. The Flightradar24 comparison
 is reported as a Skycards "to be added / to be removed" worklist: new items this
-update, a merged count of entries resolved (covered by the airports update), any
-count-only movements, and an overall standing of how far the worklist stretches.
+update, a merged count of entries resolved (covered by the airports update), and
+an overall standing of how far the worklist stretches.
 When a summary is too long for a single Discord message, a short TLDR is posted
 with the full summary attached as a Markdown file.
 

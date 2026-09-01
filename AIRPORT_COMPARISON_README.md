@@ -76,8 +76,7 @@ Fetching FR24 mobile airports dataset...
   Fetching FR24 mobile airports from https://www.flightradar24.com/mobile/airports/format/4?version=1
 Fetched 7042 airports from FR24
 Loading our airports data...
-Found 231 countries in our data
-
+Found 228 countries in our data
 ⚠️  Unmapped FR24 country 'Some New Territory': Example Airport (XYZ)
 
 ✅ Detailed differences saved to airport_differences.json
@@ -115,20 +114,13 @@ The `airport_differences.json` file contains detailed information:
 					"placeCode": "NO"
 				}
 			],
-			"removed_airports": [
-				{
-					"name": "Toronto Buttonville Municipal Airport",
-					"iata": "",
-					"icao": "",
-					"placeCode": "NO"
-				}
-			],
+			"removed_airports": [],
 			"changed_airports": [
 				{
 					"name": "McKinney National Airport",
 					"iata": "DTX",
 					"icao": "KTKI",
-					"placeCode": "US-TX",
+					"placeCode": "NO",
 					"changes": {
 						"iata": {
 							"old": "QQT",
@@ -138,8 +130,36 @@ The `airport_differences.json` file contains detailed information:
 				}
 			],
 			"added_count": 1,
-			"removed_count": 1,
+			"removed_count": 0,
 			"changed_count": 1
+		}
+	}
+}
+```
+
+For the countries our data subdivides (currently US, CA, AU, CN), the
+country record also carries a `states` object — one entry per state with
+differences, in the same added/removed shape:
+
+```json
+{
+	"states": {
+		"TX": {
+			"state_name": "Texas",
+			"fr24_count": 254,
+			"skycards_count": 253,
+			"difference": 1,
+			"added_airports": [
+				{
+					"name": "McKinney National Airport",
+					"iata": "DTX",
+					"icao": "KTKI",
+					"placeCode": "US-TX"
+				}
+			],
+			"removed_airports": [],
+			"added_count": 1,
+			"removed_count": 0
 		}
 	}
 }
