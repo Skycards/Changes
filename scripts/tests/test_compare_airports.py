@@ -487,14 +487,18 @@ class RunLoggingTest(unittest.TestCase):
     def test_join_stats_and_codeless_exclusion_logged(self):
         out = self._run(
             [_mobile_row(), _mobile_row(id=99, iata="XYZ", icao="EDXY",
-                                        name="New Airport")],
+                                        name="New Airport"),
+             _mobile_row(id=98, iata="QQQ", icao="ZZZZ", name="Mystery",
+                         country="Atlantis")],
             [_our_row(),
-             _our_row(id=77, iata=None, icao=None, name="Ghost")])
-        self.assertIn("1 airports with codes (1 codeless excluded)", out)
-        self.assertIn("Matched 1 airports by id; 1 only in FR24 (added), "
-                      "0 only in ours (removed), 0 changed", out)
+             _our_row(id=77, iata=None, icao=None, name="Ghost"),
+             _our_row(id=50, iata="GON", icao="EDGO", name="Gone",
+                      placeCode="DE")])
+        self.assertIn("2 airports with codes (1 codeless excluded)", out)
+        self.assertIn("Matched 1 airports by id; 2 only in FR24 (added), "
+                      "1 only in ours (removed), 0 changed", out)
         self.assertIn("Differences by country:", out)
-        self.assertIn("DE (Germany): +1 -0 ~0", out)
+        self.assertIn("DE (Germany): +1 -1 ~0", out)
 
     def test_geo_attribution_logged_with_states_suffix(self):
         lookup = FakeLookup({(6.1848, 50.8219, "US"): "US-NY"})
@@ -509,6 +513,13 @@ class RunLoggingTest(unittest.TestCase):
     def test_no_differences_no_country_block(self):
         out = self._run([_mobile_row()], [_our_row()])
         self.assertNotIn("Differences by country:", out)
+
+    def test_flat_country_added_airport_not_geo_logged(self):
+        out = self._run(
+            [_mobile_row(), _mobile_row(id=99, iata="XYZ", icao="EDXY",
+                                        name="New Airport")],
+            [_our_row()])
+        self.assertNotIn("geo state", out)
 
 
 if __name__ == "__main__":

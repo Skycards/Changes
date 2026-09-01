@@ -45,7 +45,7 @@ def parse_mobile_payload(text: str) -> List[Dict]:
         try:
             stamp = datetime.fromtimestamp(int(version), tz=timezone.utc)
             print(f"FR24 payload version {version} ({stamp:%Y-%m-%d %H:%M} UTC)")
-        except (ValueError, OverflowError, OSError):
+        except (TypeError, ValueError, OverflowError, OSError):
             print(f"FR24 payload version {version}")
     return rows
 

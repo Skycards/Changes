@@ -80,10 +80,11 @@ Fetched 7042 airports from FR24
 Loading our airports data...
 Found 228 countries in our data
 Comparing by airport id...
-Skycards side: 7028 airports with codes (14 codeless excluded)
+Skycards side: 7028 airports with codes (19 codeless excluded)
   geo state: DTX McKinney National Airport -> US-TX
   geo state: XYZ Example Airfield -> US (no state found)
-Matched 7016 airports by id; 90 only in FR24 (added), 12 only in ours (removed), 5 changed
+  ...
+Matched 6952 airports by id; 90 only in FR24 (added), 76 only in ours (removed), 3 changed
 Differences by country:
   NO (Norway): +1 -0 ~1
   US (United States): +8 -3 ~2 | states: TX+1 CA-1 NY+2
@@ -94,8 +95,8 @@ Differences by country:
 📊 Summary:
    • 33 countries with differences
    • 89 airports added (in FR24 but not in our data)
-   • 12 airports removed (in our data but not in FR24)
-   • 5 airports changed (matched, but with updated fields)
+   • 76 airports removed (in our data but not in FR24)
+   • 3 airports changed (matched, but with updated fields)
 ```
 
 ## JSON Output Format
