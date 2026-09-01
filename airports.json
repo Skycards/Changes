@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1788185662164,
+  "updatedAt": 1788247512313,
   "rows": [
     {
       "id": 1,
@@ -1846,7 +1846,7 @@
       "lon": -131.573212,
       "alt": 93,
       "size": 3,
-      "distance": 36314,
+      "distance": 10389,
       "numUnlocks": null
     },
     {
@@ -2220,11 +2220,11 @@
       "name": "Stockholm Arlanda Airport",
       "city": "Stockholm",
       "placeCode": "SE",
-      "lat": 59.653545,
-      "lon": 17.939816,
-      "alt": 137,
+      "lat": 59.6553,
+      "lon": 17.93325,
+      "alt": 102,
       "size": 100911,
-      "distance": 386091,
+      "distance": 385643,
       "numUnlocks": null
     },
     {
@@ -4058,7 +4058,7 @@
       "lon": 5.218142,
       "alt": 170,
       "size": 39444,
-      "distance": 325069,
+      "distance": 325133,
       "numUnlocks": null
     },
     {
@@ -4779,7 +4779,7 @@
       "id": 400,
       "iata": "BKY",
       "icao": "FZMA",
-      "name": "Kuvumu Airport",
+      "name": "Bukavu Kavumu Airport",
       "city": "Bukavu",
       "placeCode": "CD",
       "lat": -2.30897,
@@ -4968,7 +4968,7 @@
       "lon": 17.94165,
       "alt": 47,
       "size": 7936,
-      "distance": 33304,
+      "distance": 33503,
       "numUnlocks": null
     },
     {
@@ -16840,7 +16840,7 @@
       "lon": 11.068056,
       "alt": 713,
       "size": 57,
-      "distance": 69502,
+      "distance": 68864,
       "numUnlocks": null
     },
     {
@@ -22276,6 +22276,20 @@
       "numUnlocks": null
     },
     {
+      "id": 1828,
+      "iata": "KTP",
+      "icao": "MKTP",
+      "name": "Kingston Tinson Pen Airport",
+      "city": "Kingston",
+      "placeCode": "JM",
+      "lat": 17.988398,
+      "lon": -76.823677,
+      "alt": 26,
+      "size": 248,
+      "distance": 7010,
+      "numUnlocks": null
+    },
+    {
       "id": 1829,
       "iata": "KTT",
       "icao": "EFKT",
@@ -26542,7 +26556,7 @@
       "lon": 19.898149,
       "alt": 17,
       "size": 1425,
-      "distance": 121169,
+      "distance": 121414,
       "numUnlocks": null
     },
     {
@@ -26654,7 +26668,7 @@
       "lon": 27.201553,
       "alt": 319,
       "size": 39,
-      "distance": 89101,
+      "distance": 64394,
       "numUnlocks": null
     },
     {
@@ -30812,7 +30826,7 @@
       "lon": -76.969002,
       "alt": 90,
       "size": 182,
-      "distance": 55583,
+      "distance": 48776,
       "numUnlocks": null
     },
     {
@@ -31718,11 +31732,11 @@
       "name": "Oslo Gardermoen Airport",
       "city": "Oslo",
       "placeCode": "NO",
-      "lat": 60.193909,
-      "lon": 11.10036,
-      "alt": 681,
+      "lat": 60.199669,
+      "lon": 11.10242,
+      "alt": 676,
       "size": 114260,
-      "distance": 517599,
+      "distance": 518207,
       "numUnlocks": null
     },
     {
@@ -40519,15 +40533,15 @@
     },
     {
       "id": 3384,
-      "iata": "SZW",
-      "icao": "EDOP",
+      "iata": null,
+      "icao": null,
       "name": "Schwerin Parchim International Airport",
       "city": "Schwerin",
       "placeCode": "DE",
       "lat": 53.426991,
       "lon": 11.78343,
       "alt": 166,
-      "size": 32,
+      "size": 0,
       "distance": 63649,
       "numUnlocks": null
     },
@@ -42572,7 +42586,7 @@
       "lon": 10.92425,
       "alt": 56,
       "size": 23706,
-      "distance": 363424,
+      "distance": 362786,
       "numUnlocks": null
     },
     {
@@ -42600,7 +42614,7 @@
       "lon": 10.25862,
       "alt": 286,
       "size": 8550,
-      "distance": 121684,
+      "distance": 122318,
       "numUnlocks": null
     },
     {
@@ -44588,7 +44602,7 @@
       "lon": 9.288056,
       "alt": 2697,
       "size": 17,
-      "distance": 98790,
+      "distance": 28125,
       "numUnlocks": null
     },
     {
@@ -45264,6 +45278,20 @@
       "numUnlocks": null
     },
     {
+      "id": 3791,
+      "iata": "VRK",
+      "icao": "EFVR",
+      "name": "Varkaus Airport",
+      "city": "Varkaus",
+      "placeCode": "FI",
+      "lat": 62.173653,
+      "lon": 27.865349,
+      "alt": 256,
+      "size": 59,
+      "distance": 61895,
+      "numUnlocks": null
+    },
+    {
       "id": 3792,
       "iata": "VRL",
       "icao": "LPVR",
@@ -45330,7 +45358,7 @@
       "lon": 16.63361,
       "alt": 21,
       "size": 1567,
-      "distance": 73878,
+      "distance": 73527,
       "numUnlocks": null
     },
     {
@@ -47836,7 +47864,7 @@
       "lon": -108.522003,
       "alt": 1576,
       "size": 116,
-      "distance": 136667,
+      "distance": 118285,
       "numUnlocks": null
     },
     {
@@ -47897,16 +47925,16 @@
     },
     {
       "id": 4028,
-      "iata": null,
-      "icao": null,
+      "iata": "YMJ",
+      "icao": "CYMJ",
       "name": "Moose Jaw Municipal Airport",
       "city": "Moose Jaw",
       "placeCode": "CA-SK",
-      "lat": 50.434601,
-      "lon": -105.387596,
-      "alt": 1903,
-      "size": 0,
-      "distance": 213734,
+      "lat": 50.332081,
+      "lon": -105.558167,
+      "alt": 1883,
+      "size": 113,
+      "distance": 64368,
       "numUnlocks": null
     },
     {
@@ -48117,6 +48145,20 @@
       "alt": 833,
       "size": 641,
       "distance": 259559,
+      "numUnlocks": null
+    },
+    {
+      "id": 4046,
+      "iata": "YOD",
+      "icao": "CYOD",
+      "name": "CFB Cold Lake",
+      "city": "Cold Lake",
+      "placeCode": "CA-AB",
+      "lat": 54.399368,
+      "lon": -110.279732,
+      "alt": 1772,
+      "size": 328,
+      "distance": 31845,
       "numUnlocks": null
     },
     {
@@ -49895,6 +49937,20 @@
       "alt": 33,
       "size": 4404,
       "distance": 324540,
+      "numUnlocks": null
+    },
+    {
+      "id": 4184,
+      "iata": "ZAR",
+      "icao": "DNZA",
+      "name": "Zaria Airport",
+      "city": "Zaria",
+      "placeCode": "NG",
+      "lat": 11.130443,
+      "lon": 7.686063,
+      "alt": 2147,
+      "size": 74,
+      "distance": 62759,
       "numUnlocks": null
     },
     {
@@ -52303,6 +52359,20 @@
       "alt": 440,
       "size": 263,
       "distance": 159571,
+      "numUnlocks": null
+    },
+    {
+      "id": 4389,
+      "iata": "YAA",
+      "icao": "CAJ4",
+      "name": "Anahim Lake Airport",
+      "city": "Anahim Lake",
+      "placeCode": "CA-BC",
+      "lat": 52.4552,
+      "lon": -125.307571,
+      "alt": 3620,
+      "size": 207,
+      "distance": 87781,
       "numUnlocks": null
     },
     {
@@ -61322,6 +61392,20 @@
       "numUnlocks": null
     },
     {
+      "id": 5265,
+      "iata": "ILF",
+      "icao": "CZBD",
+      "name": "Ilford Airport",
+      "city": "Ilford",
+      "placeCode": "CA-MB",
+      "lat": 56.051624,
+      "lon": -95.618195,
+      "alt": 656,
+      "size": 33,
+      "distance": 29762,
+      "numUnlocks": null
+    },
+    {
       "id": 5266,
       "iata": "ZBM",
       "icao": "CZBM",
@@ -62187,6 +62271,20 @@
       "alt": 74,
       "size": 83,
       "distance": 28293,
+      "numUnlocks": null
+    },
+    {
+      "id": 5376,
+      "iata": "GLL",
+      "icao": "ENKL",
+      "name": "Gol Klanten Airport",
+      "city": "Gol",
+      "placeCode": "NO",
+      "lat": 60.79044,
+      "lon": 9.05218,
+      "alt": 2782,
+      "size": 28,
+      "distance": 94517,
       "numUnlocks": null
     },
     {
@@ -65326,6 +65424,20 @@
       "numUnlocks": null
     },
     {
+      "id": 5767,
+      "iata": "EFW",
+      "icao": "KEFW",
+      "name": "Jefferson Municipal Airport",
+      "city": "Jefferson",
+      "placeCode": "US-IA",
+      "lat": 42.009548,
+      "lon": -94.342598,
+      "alt": 1041,
+      "size": 101,
+      "distance": 25273,
+      "numUnlocks": null
+    },
+    {
       "id": 5769,
       "iata": "EKI",
       "icao": "KEKM",
@@ -67860,6 +67972,20 @@
       "numUnlocks": null
     },
     {
+      "id": 5997,
+      "iata": "BXN",
+      "icao": "LTBV",
+      "name": "Bodrum Imsik Airport",
+      "city": "Bodrum",
+      "placeCode": "TR",
+      "lat": 37.140099,
+      "lon": 27.669485,
+      "alt": 157,
+      "size": 68,
+      "distance": 12311,
+      "numUnlocks": null
+    },
+    {
       "id": 5998,
       "iata": "SXZ",
       "icao": "LTCL",
@@ -69456,6 +69582,20 @@
       "numUnlocks": null
     },
     {
+      "id": 6242,
+      "iata": "MCL",
+      "icao": "PAIN",
+      "name": "McKinley National Park Airport",
+      "city": "McKinley Park",
+      "placeCode": "US-AK",
+      "lat": 63.732372,
+      "lon": -148.911301,
+      "alt": 1715,
+      "size": 236,
+      "distance": 15287,
+      "numUnlocks": null
+    },
+    {
       "id": 6243,
       "iata": "KDK",
       "icao": "PAKD",
@@ -69676,7 +69816,7 @@
       "lon": -149.126999,
       "alt": 2409,
       "size": 19,
-      "distance": 60160,
+      "distance": 45890,
       "numUnlocks": null
     },
     {
@@ -81203,8 +81343,8 @@
     },
     {
       "id": 7517,
-      "iata": "KGN",
-      "icao": "FZOK",
+      "iata": null,
+      "icao": null,
       "name": "Kasongo Lunda Airport",
       "city": "Kasongo Lunda",
       "placeCode": "CD",
@@ -84072,6 +84212,20 @@
       "numUnlocks": null
     },
     {
+      "id": 7737,
+      "iata": "HTH",
+      "icao": "KHTH",
+      "name": "Hawthorne Industrial Airport",
+      "city": "Hawthorne",
+      "placeCode": "US-NV",
+      "lat": 38.544529,
+      "lon": -118.634857,
+      "alt": 4202,
+      "size": 66,
+      "distance": 103965,
+      "numUnlocks": null
+    },
+    {
       "id": 7738,
       "iata": "DSS",
       "icao": "GOBD",
@@ -85500,6 +85654,20 @@
       "numUnlocks": null
     },
     {
+      "id": 7873,
+      "iata": "MTM",
+      "icao": "PAMM",
+      "name": "Metlakatla Seaplane Base",
+      "city": "Metlakatla",
+      "placeCode": "US-AK",
+      "lat": 55.130798,
+      "lon": -131.574142,
+      "alt": -1,
+      "size": 794,
+      "distance": 26328,
+      "numUnlocks": null
+    },
+    {
       "id": 7874,
       "iata": "NUL",
       "icao": "PANU",
@@ -85534,11 +85702,11 @@
       "name": "Tenakee Springs Seaplane Base",
       "city": "Tenakee Springs",
       "placeCode": "US-AK",
-      "lat": 57.77903,
+      "lat": 57.779049,
       "lon": -135.218216,
       "alt": 7,
       "size": 753,
-      "distance": 37160,
+      "distance": 37158,
       "numUnlocks": null
     },
     {
@@ -88408,7 +88576,7 @@
       "lon": 18.698334,
       "alt": 40,
       "size": 462,
-      "distance": 43531,
+      "distance": 43852,
       "numUnlocks": null
     },
     {
@@ -94988,7 +95156,7 @@
       "lon": 17.588724,
       "alt": 64,
       "size": 370,
-      "distance": 33522,
+      "distance": 33149,
       "numUnlocks": null
     },
     {
@@ -95086,7 +95254,7 @@
       "lon": 11.038792,
       "alt": 348,
       "size": 1199,
-      "distance": 25202,
+      "distance": 25852,
       "numUnlocks": null
     },
     {
@@ -95716,7 +95884,7 @@
       "lon": 10.314016,
       "alt": 639,
       "size": 64,
-      "distance": 43544,
+      "distance": 43630,
       "numUnlocks": null
     },
     {
@@ -97109,7 +97277,7 @@
       "id": 8935,
       "iata": "WSI",
       "icao": "YSWS",
-      "name": "Western Sydney Airport",
+      "name": "Western Sydney International Airport",
       "city": "Sydney",
       "placeCode": "AU-NSW",
       "lat": -33.883606,
