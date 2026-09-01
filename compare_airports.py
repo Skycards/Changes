@@ -65,8 +65,8 @@ def parse_mobile_payload(text: str) -> List[Dict]:
     rows = payload.get("rows") if isinstance(payload, dict) else None
     if not isinstance(rows, list):
         raise ValueError("mobile payload has no 'rows' list")
-    ids = {row.get("id") for row in rows if isinstance(row, dict)}
-    ids.discard(None)
+    ids = {row.get("id") for row in rows
+           if isinstance(row, dict) and isinstance(row.get("id"), int)}
     if len(ids) < MIN_MOBILE_ROWS:
         raise ValueError(
             f"mobile payload has only {len(ids)} usable airport ids "

@@ -886,6 +886,15 @@ class ParseMobilePayloadTest(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "no 'rows' list"):
             ca.parse_mobile_payload(json.dumps({"rows": {}}))
 
+    def test_rejects_string_typed_ids(self):
+        # FR24's website endpoint types ids as strings; if the mobile payload
+        # ever drifts the same way, that must read as a failed fetch, not as
+        # every airport being removed and re-added.
+        rows = [_mobile_row(id=str(i)) for i in range(ca.MIN_MOBILE_ROWS)]
+        payload = json.dumps({"version": "1", "rows": rows})
+        with self.assertRaisesRegex(ValueError, "usable airport ids"):
+            ca.parse_mobile_payload(payload)
+
 
 class FetchMobileAirportsTest(unittest.TestCase):
     def test_returns_rows_on_success(self):
