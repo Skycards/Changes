@@ -1126,7 +1126,7 @@ class StatesBreakdownTest(unittest.TestCase):
                     "placeCode": "US-CA"}]
         breakdown = ca._states_breakdown("US", added, removed, ours,
                                          FakeLookup())
-        self.assertEqual(set(breakdown), {"NY", "CA"})
+        self.assertEqual(list(breakdown), ["CA", "NY"])
         ny = breakdown["NY"]
         self.assertEqual(ny["fr24_count"], 3)       # 2 ours + 1 added
         self.assertEqual(ny["skycards_count"], 2)
@@ -1152,17 +1152,18 @@ class StatesBreakdownTest(unittest.TestCase):
         self.assertEqual(breakdown, {})
 
     def test_other_country_rows_do_not_leak_into_counts(self):
-        # our_rows spans all countries; only this country's states may count.
+        # our_rows spans all countries; a colliding state suffix in another
+        # country (CN-SD vs US-SD exist in real data) must not count here.
         ours = [
-            _our_row(id=1, iata="ONE", icao="KONE", placeCode="US-NY"),
-            _our_row(id=2, iata="TWO", icao="KTWO", placeCode="CA-ON"),
+            _our_row(id=1, iata="ONE", icao="KONE", placeCode="US-SD"),
+            _our_row(id=2, iata="TWO", icao="KTWO", placeCode="CN-SD"),
             _our_row(id=3, iata="TRE", icao="KTRE", placeCode="DE"),
         ]
-        added = [{"name": "New NY", "iata": "NEW", "icao": "KNEW",
-                  "placeCode": "US-NY"}]
+        added = [{"name": "New SD", "iata": "NEW", "icao": "KNEW",
+                  "placeCode": "US-SD"}]
         breakdown = ca._states_breakdown("US", added, [], ours, FakeLookup())
-        self.assertEqual(set(breakdown), {"NY"})
-        self.assertEqual(breakdown["NY"]["skycards_count"], 1)
+        self.assertEqual(set(breakdown), {"SD"})
+        self.assertEqual(breakdown["SD"]["skycards_count"], 1)
 
     def test_state_names_come_from_lookup(self):
         class NamedLookup(FakeLookup):
@@ -1193,6 +1194,21 @@ class StatesIntegrationTest(unittest.TestCase):
         self.assertIn("states", diffs["US"])
         self.assertEqual(set(diffs["US"]["states"]), {"NY"})
         self.assertEqual(diffs["US"]["states"]["NY"]["added_count"], 1)
+
+    def test_codeless_rows_do_not_inflate_state_counts(self):
+        # A codeless remnant in US-NY must not count toward NY's
+        # skycards_count — the breakdown gets the same code-filtered rows
+        # as the country-level counts.
+        lookup = FakeLookup({(6.1848, 50.8219, "US"): "US-NY"})
+        diffs, _ = self.compare(
+            [_mobile_row(country="United States"),
+             _mobile_row(id=99, iata="XYZ", icao="KXYZ",
+                         name="New Airport", country="United States")],
+            [_our_row(placeCode="US-CA"),
+             _our_row(id=77, iata=None, icao=None, name="Ghost",
+                      placeCode="US-NY")], lookup)
+        self.assertEqual(diffs["US"]["states"]["NY"]["skycards_count"], 0)
+        self.assertEqual(diffs["US"]["states"]["NY"]["fr24_count"], 1)
 
     def test_changed_only_subdivided_country_has_no_states_key(self):
         diffs, _ = self.compare(
