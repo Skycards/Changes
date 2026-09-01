@@ -1,8 +1,8 @@
 {
   "summary": {
     "total_countries_with_differences": 8,
-    "total_added_airports": 6,
-    "total_removed_airports": 28,
+    "total_added_airports": 7,
+    "total_removed_airports": 24,
     "total_changed_airports": 11
   },
   "countries": {
@@ -92,36 +92,18 @@
       "fr24_count": 40,
       "skycards_count": 39,
       "difference": 1,
-      "added_airports": [],
-      "removed_airports": [
+      "added_airports": [
         {
-          "name": "Aiyura Airport",
-          "iata": "AYU",
-          "icao": "AYAY",
-          "placeCode": "PG"
-        },
-        {
-          "name": "Frieda River Airport",
-          "iata": "FAQ",
-          "icao": "AYFR",
-          "placeCode": "PG"
-        },
-        {
-          "name": "Gusap Airport",
-          "iata": "GAP",
-          "icao": "AYGP",
-          "placeCode": "PG"
-        },
-        {
-          "name": "Woitape Airport",
-          "iata": "WTP",
-          "icao": "AYWT",
+          "name": "Kaieteur Falls Airport",
+          "iata": "KIA",
+          "icao": "PKSA",
           "placeCode": "PG"
         }
       ],
+      "removed_airports": [],
       "changed_airports": [],
-      "added_count": 0,
-      "removed_count": 4,
+      "added_count": 1,
+      "removed_count": 0,
       "changed_count": 0
     },
     "SR": {
