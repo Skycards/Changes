@@ -913,7 +913,6 @@ class FetchMobileAirportsTest(unittest.TestCase):
             self.assertIsNone(ca.fetch_mobile_airports())
 
 
-
 def _our_row(**over):
     row = {"id": 3, "iata": "AAH", "icao": "EDKA",
            "name": "Aachen Merzbruck Airport", "placeCode": "DE"}
@@ -984,6 +983,17 @@ class CompareMobileAirportsTest(unittest.TestCase):
             [_our_row(id=7, iata="SMZ", icao="SMST",
                       name="Stoelmanseiland Airport", placeCode="GF")])
         self.assertEqual(diffs, {})
+
+    def test_changed_airport_buckets_by_our_placecode_not_fr24_label(self):
+        # KIA/SMZ-class airport with a real field change must land in OUR
+        # country bucket, never FR24's label.
+        diffs, _ = self.compare(
+            [_mobile_row(id=7, iata="SMZ", icao="SMST",
+                         name="Stoelmanseiland Airfield", country="Suriname")],
+            [_our_row(id=7, iata="SMZ", icao="SMST",
+                      name="Stoelmanseiland Airport", placeCode="GF")])
+        self.assertEqual(list(diffs), ["GF"])
+        self.assertEqual(diffs["GF"]["changed_count"], 1)
 
     def test_field_change_reported_with_our_placecode(self):
         diffs, _ = self.compare(
@@ -1057,6 +1067,21 @@ class CompareMobileAirportsTest(unittest.TestCase):
             [_our_row()], lookup)
         self.assertEqual(diffs["DE"]["added_airports"][0]["placeCode"], "DE")
 
+    def test_removed_in_subdivided_country_keys_by_country(self):
+        diffs, _ = self.compare(
+            [], [_our_row(id=60, iata="ANC", icao="PANC",
+                          name="Anchorage", placeCode="US-AK")])
+        self.assertEqual(list(diffs), ["US"])
+        self.assertEqual(diffs["US"]["removed_airports"][0]["placeCode"], "US-AK")
+
+    def test_changed_record_keeps_state_qualified_placecode(self):
+        diffs, _ = self.compare(
+            [_mobile_row(id=60, iata="ANX", icao="PANC",
+                         name="Anchorage", country="United States")],
+            [_our_row(id=60, iata="ANC", icao="PANC",
+                      name="Anchorage", placeCode="US-AK")])
+        self.assertEqual(diffs["US"]["changed_airports"][0]["placeCode"], "US-AK")
+
     def test_unmapped_country_label_goes_to_bucket(self):
         diffs, unmapped = self.compare(
             [_mobile_row(id=99, iata="XYZ", icao="ZZZZ",
@@ -1067,13 +1092,26 @@ class CompareMobileAirportsTest(unittest.TestCase):
         self.assertEqual(unmapped[0]["country"], "Atlantis")
         self.assertEqual(unmapped[0]["iata"], "XYZ")
 
-    def test_sorted_by_iata_then_name(self):
+    def test_lists_sorted_by_iata_then_name(self):
         diffs, _ = self.compare(
-            [_mobile_row(id=98, iata="BBB", icao="EDBB", name="B Airport"),
-             _mobile_row(id=99, iata="AAA", icao="EDAA", name="A Airport")],
-            [_our_row()])
-        added = diffs["DE"]["added_airports"]
-        self.assertEqual([a["iata"] for a in added], ["AAA", "BBB"])
+            [_mobile_row(),
+             _mobile_row(id=98, iata="BBB", icao="EDBB", name="A Airport"),
+             _mobile_row(id=99, iata="AAA", icao="EDAA", name="Z Airport")],
+            [_our_row(),
+             _our_row(id=50, iata="DDD", icao="EDDD", name="A Gone", placeCode="DE"),
+             _our_row(id=51, iata="CCC", icao="EDCC", name="Z Gone", placeCode="DE")])
+        record = diffs["DE"]
+        self.assertEqual([a["iata"] for a in record["added_airports"]],
+                         ["AAA", "BBB"])
+        self.assertEqual([a["iata"] for a in record["removed_airports"]],
+                         ["CCC", "DDD"])
+
+    def test_country_display_name(self):
+        mapping = ca.create_country_mapping()
+        self.assertEqual(ca._country_display_name("US", mapping),
+                         "United States")
+        self.assertEqual(ca._country_display_name("ZZ", mapping), "ZZ")
+
 
 if __name__ == "__main__":
     unittest.main()

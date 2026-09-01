@@ -91,7 +91,7 @@ def _has_code(row: Dict) -> bool:
 
 
 def _added_airport_record(row: Dict, place_code: str) -> Dict:
-    """Project a mobile row to the output shape used for added airports."""
+    """Project a mobile row to the output shape for added/changed airports."""
     return {
         'name': row.get('name', ''),
         'iata': (row.get('iata') or '').strip() or None,
@@ -104,7 +104,7 @@ def _sort_airports(airports: List[Dict]) -> None:
     airports.sort(key=lambda ap: (ap.get('iata') or '', ap.get('name') or ''))
 
 
-def _states_breakdown(iso_code, added, removed, airports_data, lookup):
+def _states_breakdown(iso_code, added, removed, our_rows, lookup):
     return {}
 
 
@@ -122,15 +122,17 @@ def compare_mobile_airports(mobile_rows: List[Dict], airports_data: Dict,
     from the geo lookup.
 
     Skycards rows with neither IATA nor ICAO are remnants of FR24-deleted
-    airports; they are excluded from matching and from counts (as the
-    web-scraping comparison always did).
+    airports; they are excluded from matching and from counts (equivalent to
+    the old IATA-required rule on today's data: no row has ICAO without
+    IATA).
 
     Returns (differences_by_iso, unmapped_added_rows).
     """
     our_rows = [row for row in airports_data.get('rows', [])
                 if _has_code(row)]
-    our_by_id = {row['id']: row for row in our_rows}
-    mobile_by_id = {row['id']: row for row in mobile_rows}
+    our_by_id = {row['id']: row for row in our_rows}  # ids are unique in airports.json today; a duplicate would shadow a row here while our_counts counted it — worth a check if that ever changes
+    mobile_by_id = {row['id']: row for row in mobile_rows
+                    if isinstance(row, dict) and isinstance(row.get('id'), int)}
 
     # Countries whose placeCodes carry subdivisions (currently US CA AU CN).
     subdivided = {(row.get('placeCode') or '').split('-')[0]
@@ -149,10 +151,12 @@ def compare_mobile_airports(mobile_rows: List[Dict], airports_data: Dict,
         if ours is None:
             iso = country_mapping.get(_normalize_country_name(row.get('country', '')))
             if not iso:
-                record = _added_airport_record(row, '')
-                record['country'] = row.get('country', '')
-                del record['placeCode']
-                unmapped.append(record)
+                unmapped.append({
+                    'name': row.get('name', ''),
+                    'iata': (row.get('iata') or '').strip() or None,
+                    'icao': (row.get('icao') or '').strip(),
+                    'country': row.get('country', ''),
+                })
                 continue
             place = iso
             if iso in subdivided:
@@ -189,8 +193,10 @@ def compare_mobile_airports(mobile_rows: List[Dict], airports_data: Dict,
                                  iso, fr24_count, our_count,
                                  iso_added, iso_removed, iso_changed)
         if iso in subdivided:
-            record['states'] = _states_breakdown(
-                iso, iso_added, iso_removed, airports_data, lookup)
+            breakdown = _states_breakdown(iso, iso_added, iso_removed,
+                                          our_rows, lookup)
+            if breakdown:
+                record['states'] = breakdown
         differences[iso] = record
     return differences, unmapped
 
