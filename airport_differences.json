@@ -2,7 +2,7 @@
   "summary": {
     "total_countries_with_differences": 15,
     "total_added_airports": 4,
-    "total_removed_airports": 23,
+    "total_removed_airports": 22,
     "total_changed_airports": 11
   },
   "countries": {
@@ -60,17 +60,10 @@
       "skycards_count": 33,
       "difference": -1,
       "added_airports": [],
-      "removed_airports": [
-        {
-          "name": "Varkaus Airport",
-          "iata": "VRK",
-          "icao": "EFVR",
-          "placeCode": "FI"
-        }
-      ],
+      "removed_airports": [],
       "changed_airports": [],
       "added_count": 0,
-      "removed_count": 1,
+      "removed_count": 0,
       "changed_count": 0
     },
     "GF": {
