@@ -49,9 +49,10 @@ def _patch_fr24_iso_counts(iso_counts):
 # /data/airports pages which are maintained separately and drift from it.
 MOBILE_AIRPORTS_URL = "https://www.flightradar24.com/mobile/airports/format/4?version=1"
 
-# A genuine payload has ~7,000 rows. Anything far below that is a truncated
-# response or a Cloudflare challenge and must be treated as a failed fetch —
-# never compared, which would report thousands of false removals.
+# A genuine payload has ~7,000 airports with distinct ids. A well-formed but
+# shrunken or degenerate dataset (schema change, duplicated ids, partial
+# rollout) must be treated as a failed fetch — never compared, which would
+# report thousands of false removals.
 MIN_MOBILE_ROWS = 5000
 
 
@@ -60,13 +61,15 @@ def parse_mobile_payload(text: str) -> List[Dict]:
     try:
         payload = json.loads(text)
     except json.JSONDecodeError as e:
-        raise ValueError(f"mobile payload is not JSON: {e}")
+        raise ValueError(f"mobile payload is not JSON: {e}") from e
     rows = payload.get("rows") if isinstance(payload, dict) else None
     if not isinstance(rows, list):
         raise ValueError("mobile payload has no 'rows' list")
-    if len(rows) < MIN_MOBILE_ROWS:
+    ids = {row.get("id") for row in rows if isinstance(row, dict)}
+    ids.discard(None)
+    if len(ids) < MIN_MOBILE_ROWS:
         raise ValueError(
-            f"mobile payload has only {len(rows)} rows "
+            f"mobile payload has only {len(ids)} usable airport ids "
             f"(< {MIN_MOBILE_ROWS}); treating as failed fetch")
     return rows
 
@@ -545,7 +548,7 @@ def parse_states(html_content: str) -> List[Dict]:
 
 
 def _fetch_text(url: str, label: str) -> Tuple[Optional[str], Optional[str]]:
-    """Fetch a FR24 page with retries. Returns (html, error_message)."""
+    """Fetch a FR24 URL with retries. Returns (body_text, error_message)."""
     retry_delays = [10, 15, 20]  # Retry delays in seconds
     last_error = None
 

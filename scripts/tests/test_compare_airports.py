@@ -852,31 +852,48 @@ class ParseMobilePayloadTest(unittest.TestCase):
     def test_parses_rows(self):
         rows = [_mobile_row(id=i) for i in range(ca.MIN_MOBILE_ROWS)]
         payload = json.dumps({"version": "1788190045", "rows": rows})
-        self.assertEqual(len(ca.parse_mobile_payload(payload)), ca.MIN_MOBILE_ROWS)
+        rows_out = ca.parse_mobile_payload(payload)
+        self.assertEqual(len(rows_out), ca.MIN_MOBILE_ROWS)
+        self.assertEqual(rows_out[0]["iata"], "AAH")
 
     def test_rejects_non_json(self):
         # e.g. a Cloudflare challenge page instead of the JSON payload
-        with self.assertRaises(ValueError):
+        with self.assertRaisesRegex(ValueError, "not JSON"):
             ca.parse_mobile_payload("<html>Just a moment...</html>")
 
     def test_rejects_missing_rows(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaisesRegex(ValueError, "no 'rows' list"):
             ca.parse_mobile_payload(json.dumps({"version": "1"}))
 
     def test_rejects_suspiciously_few_rows(self):
         # A truncated or partial payload must read as a failed fetch, never as
         # thousands of removed airports.
         payload = json.dumps({"version": "1", "rows": [_mobile_row()]})
-        with self.assertRaises(ValueError):
+        with self.assertRaisesRegex(ValueError, "usable airport ids"):
             ca.parse_mobile_payload(payload)
+
+    def test_rejects_duplicate_ids(self):
+        rows = [_mobile_row() for _ in range(ca.MIN_MOBILE_ROWS + 100)]
+        payload = json.dumps({"version": "1", "rows": rows})
+        with self.assertRaisesRegex(ValueError, "usable airport ids"):
+            ca.parse_mobile_payload(payload)
+
+    def test_rejects_top_level_array(self):
+        with self.assertRaisesRegex(ValueError, "no 'rows' list"):
+            ca.parse_mobile_payload("[]")
+
+    def test_rejects_rows_not_a_list(self):
+        with self.assertRaisesRegex(ValueError, "no 'rows' list"):
+            ca.parse_mobile_payload(json.dumps({"rows": {}}))
 
 
 class FetchMobileAirportsTest(unittest.TestCase):
     def test_returns_rows_on_success(self):
         rows = [_mobile_row(id=i) for i in range(ca.MIN_MOBILE_ROWS)]
         body = json.dumps({"version": "1", "rows": rows})
-        with mock.patch.object(ca, "_fetch_text", return_value=(body, None)):
+        with mock.patch.object(ca, "_fetch_text", return_value=(body, None)) as fetch:
             self.assertEqual(len(ca.fetch_mobile_airports()), ca.MIN_MOBILE_ROWS)
+            fetch.assert_called_once_with(ca.MOBILE_AIRPORTS_URL, mock.ANY)
 
     def test_returns_none_on_fetch_error(self):
         with mock.patch.object(ca, "_fetch_text", return_value=(None, "boom")):
