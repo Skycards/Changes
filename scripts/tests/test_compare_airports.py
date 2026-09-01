@@ -454,6 +454,8 @@ class MainSummaryTest(unittest.TestCase):
     def test_main_exits_nonzero_on_failed_fetch(self):
         with tempfile.TemporaryDirectory() as tmp, \
                 mock.patch.object(ca, "fetch_mobile_airports",
+                                  return_value=None), \
+                mock.patch.object(ca.state_lookup, "load_state_lookup",
                                   return_value=None):
             cwd = os.getcwd()
             os.chdir(tmp)

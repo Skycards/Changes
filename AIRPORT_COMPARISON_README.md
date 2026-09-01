@@ -117,14 +117,14 @@ The `airport_differences.json` file contains detailed information:
 			"removed_airports": [],
 			"changed_airports": [
 				{
-					"name": "McKinney National Airport",
-					"iata": "DTX",
-					"icao": "KTKI",
+					"name": "Fagernes Leirin Airport",
+					"iata": "VDB",
+					"icao": "ENFG",
 					"placeCode": "NO",
 					"changes": {
-						"iata": {
-							"old": "QQT",
-							"new": "DTX"
+						"name": {
+							"old": "Fagernes Airport",
+							"new": "Fagernes Leirin Airport"
 						}
 					}
 				}

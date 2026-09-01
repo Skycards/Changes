@@ -642,6 +642,8 @@ def main():
     """Main function"""
     print("Starting airport comparison...")
 
+    lookup = state_lookup.load_state_lookup('data/ne_50m_admin_1_states.geojson')
+
     print("Fetching FR24 mobile airports dataset...")
     mobile_rows = fetch_mobile_airports()
     if mobile_rows is None:
@@ -656,7 +658,6 @@ def main():
         sys.exit(1)
     print(f"Found {len(our_counts)} countries in our data")
 
-    lookup = state_lookup.load_state_lookup('data/ne_50m_admin_1_states.geojson')
     differences, unmapped = compare_mobile_airports(
         mobile_rows, airports_data, create_country_mapping(), lookup)
 
