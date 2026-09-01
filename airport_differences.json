@@ -1,8 +1,8 @@
 {
   "summary": {
-    "total_countries_with_differences": 8,
-    "total_added_airports": 7,
-    "total_removed_airports": 22,
+    "total_countries_with_differences": 15,
+    "total_added_airports": 4,
+    "total_removed_airports": 23,
     "total_changed_airports": 11
   },
   "countries": {
@@ -10,8 +10,8 @@
       "country_name": "Canada",
       "iso_code": "CA",
       "fr24_count": 355,
-      "skycards_count": 357,
-      "difference": -2,
+      "skycards_count": 361,
+      "difference": -6,
       "added_airports": [],
       "removed_airports": [],
       "changed_airports": [],
@@ -19,6 +19,59 @@
       "removed_count": 0,
       "changed_count": 0,
       "state_coverage": "310/355 (87%)"
+    },
+    "CD": {
+      "country_name": "Democratic Republic Of The Congo",
+      "iso_code": "CD",
+      "fr24_count": 31,
+      "skycards_count": 30,
+      "difference": 1,
+      "added_airports": [],
+      "removed_airports": [],
+      "changed_airports": [],
+      "added_count": 0,
+      "removed_count": 0,
+      "changed_count": 0
+    },
+    "DE": {
+      "country_name": "Germany",
+      "iso_code": "DE",
+      "fr24_count": 152,
+      "skycards_count": 151,
+      "difference": 1,
+      "added_airports": [
+        {
+          "name": "Schwerin Parchim International Airport",
+          "iata": "SZW",
+          "icao": "EDOP",
+          "placeCode": "DE"
+        }
+      ],
+      "removed_airports": [],
+      "changed_airports": [],
+      "added_count": 1,
+      "removed_count": 0,
+      "changed_count": 0
+    },
+    "FI": {
+      "country_name": "Finland",
+      "iso_code": "FI",
+      "fr24_count": 32,
+      "skycards_count": 33,
+      "difference": -1,
+      "added_airports": [],
+      "removed_airports": [
+        {
+          "name": "Varkaus Airport",
+          "iata": "VRK",
+          "icao": "EFVR",
+          "placeCode": "FI"
+        }
+      ],
+      "changed_airports": [],
+      "added_count": 0,
+      "removed_count": 1,
+      "changed_count": 0
     },
     "GF": {
       "country_name": "French Guiana",
@@ -60,6 +113,19 @@
       "removed_count": 1,
       "changed_count": 0
     },
+    "JM": {
+      "country_name": "Jamaica",
+      "iso_code": "JM",
+      "fr24_count": 3,
+      "skycards_count": 4,
+      "difference": -1,
+      "added_airports": [],
+      "removed_airports": [],
+      "changed_airports": [],
+      "added_count": 0,
+      "removed_count": 0,
+      "changed_count": 0
+    },
     "LY": {
       "country_name": "Libya",
       "iso_code": "LY",
@@ -78,6 +144,32 @@
       "iso_code": "NA",
       "fr24_count": 13,
       "skycards_count": 14,
+      "difference": -1,
+      "added_airports": [],
+      "removed_airports": [],
+      "changed_airports": [],
+      "added_count": 0,
+      "removed_count": 0,
+      "changed_count": 0
+    },
+    "NG": {
+      "country_name": "Nigeria",
+      "iso_code": "NG",
+      "fr24_count": 25,
+      "skycards_count": 26,
+      "difference": -1,
+      "added_airports": [],
+      "removed_airports": [],
+      "changed_airports": [],
+      "added_count": 0,
+      "removed_count": 0,
+      "changed_count": 0
+    },
+    "NO": {
+      "country_name": "Norway",
+      "iso_code": "NO",
+      "fr24_count": 57,
+      "skycards_count": 58,
       "difference": -1,
       "added_airports": [],
       "removed_airports": [],
@@ -126,41 +218,26 @@
       "removed_count": 0,
       "changed_count": 0
     },
+    "TR": {
+      "country_name": "Turkey",
+      "iso_code": "TR",
+      "fr24_count": 60,
+      "skycards_count": 61,
+      "difference": -1,
+      "added_airports": [],
+      "removed_airports": [],
+      "changed_airports": [],
+      "added_count": 0,
+      "removed_count": 0,
+      "changed_count": 0
+    },
     "US": {
       "country_name": "United States",
       "iso_code": "US",
       "fr24_count": 1769,
-      "skycards_count": 1772,
-      "difference": -3,
+      "skycards_count": 1776,
+      "difference": -7,
       "added_airports": [
-        {
-          "name": "McKinley National Park Airport",
-          "iata": "MCL",
-          "icao": "PAIN",
-          "state": "AK",
-          "placeCode": "US-AK"
-        },
-        {
-          "name": "Metlakatla Seaplane Base",
-          "iata": "MTM",
-          "icao": "PAMM",
-          "state": "AK",
-          "placeCode": "US-AK"
-        },
-        {
-          "name": "Jefferson Municipal Airport",
-          "iata": "EFW",
-          "icao": "KEFW",
-          "state": "IA",
-          "placeCode": "US-IA"
-        },
-        {
-          "name": "Hawthorne Industrial Airport",
-          "iata": "HTH",
-          "icao": "KHTH",
-          "state": "NV",
-          "placeCode": "US-NV"
-        },
         {
           "name": "Danville Regional Airport",
           "iata": "DAN",
@@ -436,31 +513,16 @@
           }
         }
       ],
-      "added_count": 5,
+      "added_count": 1,
       "removed_count": 20,
       "changed_count": 11,
       "states": {
         "AK": {
           "state_name": "Alaska",
           "fr24_count": 193,
-          "skycards_count": 192,
-          "difference": 1,
-          "added_airports": [
-            {
-              "name": "McKinley National Park Airport",
-              "iata": "MCL",
-              "icao": "PAIN",
-              "state": "AK",
-              "placeCode": "US-AK"
-            },
-            {
-              "name": "Metlakatla Seaplane Base",
-              "iata": "MTM",
-              "icao": "PAMM",
-              "state": "AK",
-              "placeCode": "US-AK"
-            }
-          ],
+          "skycards_count": 194,
+          "difference": -1,
+          "added_airports": [],
           "removed_airports": [
             {
               "name": "Port Graham Airport",
@@ -469,7 +531,7 @@
               "placeCode": "US-AK"
             }
           ],
-          "added_count": 2,
+          "added_count": 0,
           "removed_count": 1
         },
         "AL": {
@@ -566,17 +628,9 @@
         "IA": {
           "state_name": "Iowa",
           "fr24_count": 39,
-          "skycards_count": 40,
-          "difference": -1,
-          "added_airports": [
-            {
-              "name": "Jefferson Municipal Airport",
-              "iata": "EFW",
-              "icao": "KEFW",
-              "state": "IA",
-              "placeCode": "US-IA"
-            }
-          ],
+          "skycards_count": 41,
+          "difference": -2,
+          "added_airports": [],
           "removed_airports": [
             {
               "name": "Fairfield Municipal Airport",
@@ -591,7 +645,7 @@
               "placeCode": "US-IA"
             }
           ],
-          "added_count": 1,
+          "added_count": 0,
           "removed_count": 2
         },
         "IN": {
@@ -700,24 +754,6 @@
           "added_airports": [],
           "removed_airports": [],
           "added_count": 0,
-          "removed_count": 0
-        },
-        "NV": {
-          "state_name": "Nevada",
-          "fr24_count": 18,
-          "skycards_count": 17,
-          "difference": 1,
-          "added_airports": [
-            {
-              "name": "Hawthorne Industrial Airport",
-              "iata": "HTH",
-              "icao": "KHTH",
-              "state": "NV",
-              "placeCode": "US-NV"
-            }
-          ],
-          "removed_airports": [],
-          "added_count": 1,
           "removed_count": 0
         },
         "NY": {
