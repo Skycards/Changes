@@ -2,7 +2,7 @@
   "summary": {
     "total_countries_with_differences": 8,
     "total_added_airports": 7,
-    "total_removed_airports": 24,
+    "total_removed_airports": 22,
     "total_changed_airports": 11
   },
   "countries": {
@@ -211,18 +211,6 @@
           "iata": "PLY",
           "icao": "KC65",
           "placeCode": "US-IN"
-        },
-        {
-          "name": "Caribou Municipal Airport",
-          "iata": "CAR",
-          "icao": "KCAR",
-          "placeCode": "US-ME"
-        },
-        {
-          "name": "Houlton International Airport",
-          "iata": "HUL",
-          "icao": "KHUL",
-          "placeCode": "US-ME"
         },
         {
           "name": "Brunswick Executive Airport",
@@ -449,7 +437,7 @@
         }
       ],
       "added_count": 5,
-      "removed_count": 22,
+      "removed_count": 20,
       "changed_count": 11,
       "states": {
         "AK": {
@@ -651,18 +639,6 @@
           "added_airports": [],
           "removed_airports": [
             {
-              "name": "Caribou Municipal Airport",
-              "iata": "CAR",
-              "icao": "KCAR",
-              "placeCode": "US-ME"
-            },
-            {
-              "name": "Houlton International Airport",
-              "iata": "HUL",
-              "icao": "KHUL",
-              "placeCode": "US-ME"
-            },
-            {
               "name": "Brunswick Executive Airport",
               "iata": "NHZ",
               "icao": "KBXM",
@@ -670,7 +646,7 @@
             }
           ],
           "added_count": 0,
-          "removed_count": 3
+          "removed_count": 1
         },
         "MI": {
           "state_name": "Michigan",
