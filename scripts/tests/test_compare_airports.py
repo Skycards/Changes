@@ -106,6 +106,9 @@ class FakeLookup:
     def state_name(self, code):
         return code
 
+    def coverage(self):
+        return (0, 0)
+
 
 class CompareMobileAirportsTest(unittest.TestCase):
     def compare(self, mobile, ours, lookup=None):
@@ -427,6 +430,9 @@ class MainSummaryTest(unittest.TestCase):
             def state_name(self, code):
                 return code
 
+            def coverage(self):
+                return (0, 0)
+
         with tempfile.TemporaryDirectory() as tmp, \
                 mock.patch.object(ca, "fetch_mobile_airports",
                                   return_value=mobile), \
@@ -456,7 +462,7 @@ class MainSummaryTest(unittest.TestCase):
                 mock.patch.object(ca, "fetch_mobile_airports",
                                   return_value=None), \
                 mock.patch.object(ca.state_lookup, "load_state_lookup",
-                                  return_value=None):
+                                  return_value=FakeLookup()):
             cwd = os.getcwd()
             os.chdir(tmp)
             try:
@@ -466,6 +472,43 @@ class MainSummaryTest(unittest.TestCase):
             finally:
                 os.chdir(cwd)
         self.assertEqual(ctx.exception.code, 1)
+
+
+class RunLoggingTest(unittest.TestCase):
+    def _run(self, mobile, ours, lookup=None):
+        import contextlib, io
+        buf = io.StringIO()
+        with contextlib.redirect_stdout(buf):
+            ca.compare_mobile_airports(
+                mobile, {"rows": ours}, ca.create_country_mapping(),
+                lookup or FakeLookup())
+        return buf.getvalue()
+
+    def test_join_stats_and_codeless_exclusion_logged(self):
+        out = self._run(
+            [_mobile_row(), _mobile_row(id=99, iata="XYZ", icao="EDXY",
+                                        name="New Airport")],
+            [_our_row(),
+             _our_row(id=77, iata=None, icao=None, name="Ghost")])
+        self.assertIn("1 airports with codes (1 codeless excluded)", out)
+        self.assertIn("Matched 1 airports by id; 1 only in FR24 (added), "
+                      "0 only in ours (removed), 0 changed", out)
+        self.assertIn("Differences by country:", out)
+        self.assertIn("DE (Germany): +1 -0 ~0", out)
+
+    def test_geo_attribution_logged_with_states_suffix(self):
+        lookup = FakeLookup({(6.1848, 50.8219, "US"): "US-NY"})
+        out = self._run(
+            [_mobile_row(country="United States"),
+             _mobile_row(id=99, iata="XYZ", icao="KXYZ",
+                         name="New Airport", country="United States")],
+            [_our_row(placeCode="US-CA")], lookup)
+        self.assertIn("geo state: XYZ New Airport -> US-NY", out)
+        self.assertIn("| states: NY+1", out)
+
+    def test_no_differences_no_country_block(self):
+        out = self._run([_mobile_row()], [_our_row()])
+        self.assertNotIn("Differences by country:", out)
 
 
 if __name__ == "__main__":

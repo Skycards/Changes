@@ -99,6 +99,12 @@ class StateLookup:
     def state_name(self, code: str) -> str:
         return self._names.get(code, code)
 
+    def coverage(self) -> Tuple[int, int]:
+        """(countries, regions) covered by the loaded boundaries."""
+        codes = {code for entries in self._by_country.values()
+                 for code, _bbox, _outer, _holes in entries}
+        return len(self._by_country), len(codes)
+
 
 def load_state_lookup(path: str) -> StateLookup:
     with open(path, "r", encoding="utf-8") as fh:

@@ -90,6 +90,9 @@ class StateLookupTest(unittest.TestCase):
         # cos(lat) scaling of lon_margin in _nearest.
         self.assertEqual(self.lookup.lookup(2.0, 70.5, "HH"), "HH-N")
 
+    def test_coverage_counts_countries_and_regions(self):
+        self.assertEqual(self.lookup.coverage(), (3, 5))
+
 
 class RealDataTest(unittest.TestCase):
     """Spot checks against the committed boundaries file."""

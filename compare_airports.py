@@ -7,6 +7,7 @@ import json
 import sys
 import time
 from collections import Counter
+from datetime import datetime, timezone
 from typing import Dict, List, Tuple, Optional
 import urllib.request
 import state_lookup
@@ -39,6 +40,13 @@ def parse_mobile_payload(text: str) -> List[Dict]:
         raise ValueError(
             f"mobile payload has only {len(ids)} usable airport ids "
             f"(< {MIN_MOBILE_ROWS}); treating as failed fetch")
+    version = payload.get("version")
+    if version is not None:
+        try:
+            stamp = datetime.fromtimestamp(int(version), tz=timezone.utc)
+            print(f"FR24 payload version {version} ({stamp:%Y-%m-%d %H:%M} UTC)")
+        except (ValueError, OverflowError, OSError):
+            print(f"FR24 payload version {version}")
     return rows
 
 
@@ -146,6 +154,9 @@ def compare_mobile_airports(mobile_rows: List[Dict], airports_data: Dict,
     """
     our_rows = [row for row in airports_data.get('rows', [])
                 if _has_code(row)]
+    total_rows = len(airports_data.get('rows', []))
+    print(f"Skycards side: {len(our_rows)} airports with codes "
+          f"({total_rows - len(our_rows)} codeless excluded)")
     # ids are unique in airports.json today; a duplicate would shadow a
     # row here while our_counts counted it — worth a check if that ever
     # changes
@@ -182,6 +193,11 @@ def compare_mobile_airports(mobile_rows: List[Dict], airports_data: Dict,
                 state = lookup.lookup(row.get('lon'), row.get('lat'), iso)
                 if state:
                     place = state
+                code = (row.get('iata') or '').strip() or (row.get('icao') or '').strip()
+                if state:
+                    print(f"  geo state: {code} {row.get('name', '')} -> {place}")
+                else:
+                    print(f"  geo state: {code} {row.get('name', '')} -> {iso} (no state found)")
             added.setdefault(iso, []).append(_added_airport_record(row, place))
         else:
             changes = _airport_field_changes(ours, row, ('name', 'iata', 'icao'))
@@ -195,6 +211,13 @@ def compare_mobile_airports(mobile_rows: List[Dict], airports_data: Dict,
         if airport_id not in mobile_by_id:
             iso = (row.get('placeCode') or '').split('-')[0]
             removed.setdefault(iso, []).append(_our_airport_record(row))
+
+    added_total = sum(len(v) for v in added.values()) + len(unmapped)
+    removed_total = sum(len(v) for v in removed.values())
+    changed_total = sum(len(v) for v in changed.values())
+    matched = len(our_by_id) - removed_total
+    print(f"Matched {matched} airports by id; {added_total} only in FR24 (added), "
+          f"{removed_total} only in ours (removed), {changed_total} changed")
 
     differences = {}
     for iso in sorted(set(added) | set(removed) | set(changed)):
@@ -217,6 +240,24 @@ def compare_mobile_airports(mobile_rows: List[Dict], airports_data: Dict,
             if breakdown:
                 record['states'] = breakdown
         differences[iso] = record
+    if differences:
+        print("Differences by country:")
+        for iso, record in differences.items():
+            line = (f"  {iso} ({record['country_name']}): "
+                    f"+{record['added_count']} -{record['removed_count']} "
+                    f"~{record['changed_count']}")
+            states = record.get('states')
+            if states:
+                parts = []
+                for code, entry in states.items():
+                    tag = code
+                    if entry['added_count']:
+                        tag += f"+{entry['added_count']}"
+                    if entry['removed_count']:
+                        tag += f"-{entry['removed_count']}"
+                    parts.append(tag)
+                line += " | states: " + " ".join(parts)
+            print(line)
     return differences, unmapped
 
 
@@ -643,6 +684,8 @@ def main():
     print("Starting airport comparison...")
 
     lookup = state_lookup.load_state_lookup('data/ne_50m_admin_1_states.geojson')
+    countries, regions = lookup.coverage()
+    print(f"Loaded state boundaries: {countries} countries, {regions} regions")
 
     print("Fetching FR24 mobile airports dataset...")
     mobile_rows = fetch_mobile_airports()
@@ -657,6 +700,7 @@ def main():
         print("Failed to read our airports data")
         sys.exit(1)
     print(f"Found {len(our_counts)} countries in our data")
+    print("Comparing by airport id...")
 
     differences, unmapped = compare_mobile_airports(
         mobile_rows, airports_data, create_country_mapping(), lookup)

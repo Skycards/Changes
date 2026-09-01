@@ -72,11 +72,22 @@ Automatically compares airport counts between Flightradar24 and our `airports.js
 
 ```
 Starting airport comparison...
+Loaded state boundaries: 9 countries, 294 regions
 Fetching FR24 mobile airports dataset...
   Fetching FR24 mobile airports from https://www.flightradar24.com/mobile/airports/format/4?version=1
+FR24 payload version 1788190045 (2026-08-31 15:27 UTC)
 Fetched 7042 airports from FR24
 Loading our airports data...
 Found 228 countries in our data
+Comparing by airport id...
+Skycards side: 7028 airports with codes (14 codeless excluded)
+  geo state: DTX McKinney National Airport -> US-TX
+  geo state: XYZ Example Airfield -> US (no state found)
+Matched 7016 airports by id; 90 only in FR24 (added), 12 only in ours (removed), 5 changed
+Differences by country:
+  NO (Norway): +1 -0 ~1
+  US (United States): +8 -3 ~2 | states: TX+1 CA-1 NY+2
+  ...
 ⚠️  Unmapped FR24 country 'Some New Territory': Example Airport (XYZ)
 
 ✅ Detailed differences saved to airport_differences.json
