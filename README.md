@@ -44,7 +44,7 @@ each CronJob selects its work via arguments. The Python modules are:
 1. **`scripts/pipeline.py`** - CLI entrypoint with `fetch` and `compare` subcommands; clones the repo, fetches, formats, commits/pushes, and notifies.
 2. **`scripts/git_sync.py`** - Git operations: partial clone, change detection, capture-previous, commit, push-with-retry.
 3. **`scripts/discord_notify.py`** - Posts Markdown summaries to the Discord webhooks subscribed to each message type, each with its own mention prefix.
-4. **`scripts/format_changes.py`** / **`compare_airports.py`** - Build the change summaries (unchanged from the previous setup).
+4. **`scripts/format_changes.py`** / **`compare_airports.py`** - Build the change summaries.
 
 This design allows for:
 
