@@ -452,10 +452,17 @@ class MainSummaryTest(unittest.TestCase):
         self.assertEqual(out["unmapped"][0]["country"], "Atlantis")
 
     def test_main_exits_nonzero_on_failed_fetch(self):
-        with mock.patch.object(ca, "fetch_mobile_airports",
-                               return_value=None):
-            with self.assertRaises(SystemExit) as ctx:
-                ca.main()
+        with tempfile.TemporaryDirectory() as tmp, \
+                mock.patch.object(ca, "fetch_mobile_airports",
+                                  return_value=None):
+            cwd = os.getcwd()
+            os.chdir(tmp)
+            try:
+                with self.assertRaises(SystemExit) as ctx:
+                    ca.main()
+                self.assertEqual(os.listdir(tmp), [])
+            finally:
+                os.chdir(cwd)
         self.assertEqual(ctx.exception.code, 1)
 
 

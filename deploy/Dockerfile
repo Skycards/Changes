@@ -13,7 +13,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Only the code is baked in; repo data is cloned fresh at runtime.
 COPY scripts/ ./scripts/
-COPY compare_airports.py ./
+COPY compare_airports.py state_lookup.py ./
 
 RUN useradd --create-home --uid 10001 runner
 USER runner

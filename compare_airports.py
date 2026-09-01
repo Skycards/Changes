@@ -9,7 +9,6 @@ import time
 from collections import Counter
 from typing import Dict, List, Tuple, Optional
 import urllib.request
-import urllib.error
 import state_lookup
 
 
@@ -694,6 +693,7 @@ def main():
 
     except Exception as e:
         print(f"❌ Error saving differences to file: {e}")
+        sys.exit(1)
 
 
 if __name__ == "__main__":
