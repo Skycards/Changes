@@ -44,6 +44,45 @@ def _patch_fr24_iso_counts(iso_counts):
     return iso_counts
 
 
+# The FR24 mobile-app dataset: one JSON document with every airport. This is
+# the dataset airports.json mirrors (same id space), unlike the website's
+# /data/airports pages which are maintained separately and drift from it.
+MOBILE_AIRPORTS_URL = "https://www.flightradar24.com/mobile/airports/format/4?version=1"
+
+# A genuine payload has ~7,000 rows. Anything far below that is a truncated
+# response or a Cloudflare challenge and must be treated as a failed fetch —
+# never compared, which would report thousands of false removals.
+MIN_MOBILE_ROWS = 5000
+
+
+def parse_mobile_payload(text: str) -> List[Dict]:
+    """Parse and validate the mobile airports payload. Raises ValueError."""
+    try:
+        payload = json.loads(text)
+    except json.JSONDecodeError as e:
+        raise ValueError(f"mobile payload is not JSON: {e}")
+    rows = payload.get("rows") if isinstance(payload, dict) else None
+    if not isinstance(rows, list):
+        raise ValueError("mobile payload has no 'rows' list")
+    if len(rows) < MIN_MOBILE_ROWS:
+        raise ValueError(
+            f"mobile payload has only {len(rows)} rows "
+            f"(< {MIN_MOBILE_ROWS}); treating as failed fetch")
+    return rows
+
+
+def fetch_mobile_airports() -> Optional[List[Dict]]:
+    """Fetch FR24's full airport list. Returns None on any failure."""
+    text, error = _fetch_text(MOBILE_AIRPORTS_URL, "FR24 mobile airports")
+    if error:
+        return None
+    try:
+        return parse_mobile_payload(text)
+    except ValueError as e:
+        print(f"Error parsing FR24 mobile payload: {e}")
+        return None
+
+
 def create_country_mapping() -> Dict[str, str]:
     """Create mapping from country names to ISO codes"""
     return {
@@ -505,7 +544,7 @@ def parse_states(html_content: str) -> List[Dict]:
     return states
 
 
-def _fetch_html(url: str, label: str) -> Tuple[Optional[str], Optional[str]]:
+def _fetch_text(url: str, label: str) -> Tuple[Optional[str], Optional[str]]:
     """Fetch a FR24 page with retries. Returns (html, error_message)."""
     retry_delays = [10, 15, 20]  # Retry delays in seconds
     last_error = None
@@ -837,7 +876,7 @@ def _fetch_all_state_airports(country_name: str, states: List[Dict]) -> Tuple[Op
     airports = []
     for state in states:
         state_url = f"https://www.flightradar24.com{state['url']}"
-        state_html, error = _fetch_html(state_url, f"{country_name} / {state['name']} ({state['code']})")
+        state_html, error = _fetch_text(state_url, f"{country_name} / {state['name']} ({state['code']})")
         if error:
             return None, f"state {state['code']} fetch failed: {error}"
         try:
@@ -917,7 +956,7 @@ def _diff_subdivisioned_country(iso_code: str, country_name: str, fr24_count: in
         state = fr24_by_code.get(code)
         if state:  # state present on FR24 -> fetch its airports
             state_url = f"https://www.flightradar24.com{state['url']}"
-            state_html, state_error = _fetch_html(state_url, f"{country_name} / {state['name']} ({code})")
+            state_html, state_error = _fetch_text(state_url, f"{country_name} / {state['name']} ({code})")
             if state_error:
                 # Abort the whole country on any state failure — a partial list
                 # would look like a mass removal downstream.
@@ -976,7 +1015,7 @@ def _diff_subdivisioned_country(iso_code: str, country_name: str, fr24_count: in
 def _diff_one_country(iso_code: str, country_name: str, fr24_count: int,
                       our_count: int, airports_data: Dict) -> Tuple[Optional[Dict], Optional[str]]:
     """Fetch a country's page and compare it, handling flat and state splits."""
-    html, error = _fetch_html(_country_url(country_name), country_name)
+    html, error = _fetch_text(_country_url(country_name), country_name)
     if error:
         return None, error
     try:

@@ -205,7 +205,7 @@ class OurDataHelpersTest(unittest.TestCase):
 
 
 class DiffOneCountryTest(unittest.TestCase):
-    """Exercise flat/subdivisioned analysis with _fetch_html mocked."""
+    """Exercise flat/subdivisioned analysis with _fetch_text mocked."""
 
     def _run(self, country_name, iso, fr24_count, our_count, pages, airports_data):
         calls = []
@@ -219,14 +219,14 @@ class DiffOneCountryTest(unittest.TestCase):
                     return html, None
             return None, f"no stub for {url}"
 
-        orig_fetch, orig_sleep = ca._fetch_html, ca.time.sleep
-        ca._fetch_html = fake_fetch
+        orig_fetch, orig_sleep = ca._fetch_text, ca.time.sleep
+        ca._fetch_text = fake_fetch
         ca.time.sleep = lambda *a, **k: None
         try:
             rec, err = ca._diff_one_country(iso, country_name, fr24_count, our_count, airports_data)
             return rec, err, calls
         finally:
-            ca._fetch_html = orig_fetch
+            ca._fetch_text = orig_fetch
             ca.time.sleep = orig_sleep
 
     def test_flat_country_tags_country_placecode(self):
@@ -835,6 +835,56 @@ class MainSummaryTest(unittest.TestCase):
         self.assertEqual(output["summary"]["total_removed_airports"], 1)
         self.assertEqual(output["summary"]["total_changed_airports"], 2)
 
+
+def _mobile_row(**over):
+    row = {
+        "id": 3, "name": "Aachen Merzbruck Airport", "iata": "AAH",
+        "icao": "EDKA", "city": "Aachen", "lat": 50.8219, "lon": 6.1848,
+        "country": "Germany", "alt": 626, "size": 1279,
+        "timezone": {"name": "Europe/Berlin"}, "countryId": 83,
+        "videoStream": None,
+    }
+    row.update(over)
+    return row
+
+
+class ParseMobilePayloadTest(unittest.TestCase):
+    def test_parses_rows(self):
+        rows = [_mobile_row(id=i) for i in range(ca.MIN_MOBILE_ROWS)]
+        payload = json.dumps({"version": "1788190045", "rows": rows})
+        self.assertEqual(len(ca.parse_mobile_payload(payload)), ca.MIN_MOBILE_ROWS)
+
+    def test_rejects_non_json(self):
+        # e.g. a Cloudflare challenge page instead of the JSON payload
+        with self.assertRaises(ValueError):
+            ca.parse_mobile_payload("<html>Just a moment...</html>")
+
+    def test_rejects_missing_rows(self):
+        with self.assertRaises(ValueError):
+            ca.parse_mobile_payload(json.dumps({"version": "1"}))
+
+    def test_rejects_suspiciously_few_rows(self):
+        # A truncated or partial payload must read as a failed fetch, never as
+        # thousands of removed airports.
+        payload = json.dumps({"version": "1", "rows": [_mobile_row()]})
+        with self.assertRaises(ValueError):
+            ca.parse_mobile_payload(payload)
+
+
+class FetchMobileAirportsTest(unittest.TestCase):
+    def test_returns_rows_on_success(self):
+        rows = [_mobile_row(id=i) for i in range(ca.MIN_MOBILE_ROWS)]
+        body = json.dumps({"version": "1", "rows": rows})
+        with mock.patch.object(ca, "_fetch_text", return_value=(body, None)):
+            self.assertEqual(len(ca.fetch_mobile_airports()), ca.MIN_MOBILE_ROWS)
+
+    def test_returns_none_on_fetch_error(self):
+        with mock.patch.object(ca, "_fetch_text", return_value=(None, "boom")):
+            self.assertIsNone(ca.fetch_mobile_airports())
+
+    def test_returns_none_on_invalid_payload(self):
+        with mock.patch.object(ca, "_fetch_text", return_value=("<html>", None)):
+            self.assertIsNone(ca.fetch_mobile_airports())
 
 
 if __name__ == "__main__":
