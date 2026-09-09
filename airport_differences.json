@@ -1,9 +1,62 @@
 {
   "summary": {
-    "total_countries_with_differences": 0,
+    "total_countries_with_differences": 2,
     "total_added_airports": 0,
     "total_removed_airports": 0,
-    "total_changed_airports": 0
+    "total_changed_airports": 2
   },
-  "countries": {}
+  "countries": {
+    "CN": {
+      "country_name": "China",
+      "iso_code": "CN",
+      "fr24_count": 267,
+      "skycards_count": 267,
+      "difference": 0,
+      "added_airports": [],
+      "removed_airports": [],
+      "changed_airports": [
+        {
+          "name": "Wuzhou Xijiang Airport",
+          "iata": "WUZ",
+          "icao": "ZGWZ",
+          "placeCode": "CN-GX",
+          "changes": {
+            "name": {
+              "old": "Wuzhou Changzhoudao Airport",
+              "new": "Wuzhou Xijiang Airport"
+            }
+          }
+        }
+      ],
+      "added_count": 0,
+      "removed_count": 0,
+      "changed_count": 1
+    },
+    "US": {
+      "country_name": "United States",
+      "iso_code": "US",
+      "fr24_count": 1776,
+      "skycards_count": 1776,
+      "difference": 0,
+      "added_airports": [],
+      "removed_airports": [],
+      "changed_airports": [
+        {
+          "name": "Fryeburg White Mountain Regional Airport",
+          "iata": "FRY",
+          "icao": "KIZG",
+          "placeCode": "US-ME",
+          "changes": {
+            "name": {
+              "old": "Fryeburg Eastern Slopes Regional Airport",
+              "new": "Fryeburg White Mountain Regional Airport"
+            }
+          }
+        }
+      ],
+      "added_count": 0,
+      "removed_count": 0,
+      "changed_count": 1
+    }
+  }
 }
