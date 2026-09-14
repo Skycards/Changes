@@ -1,11 +1,37 @@
 {
   "summary": {
-    "total_countries_with_differences": 3,
-    "total_added_airports": 0,
+    "total_countries_with_differences": 5,
+    "total_added_airports": 3,
     "total_removed_airports": 0,
     "total_changed_airports": 3
   },
   "countries": {
+    "CL": {
+      "country_name": "Chile",
+      "iso_code": "CL",
+      "fr24_count": 32,
+      "skycards_count": 30,
+      "difference": 2,
+      "added_airports": [
+        {
+          "name": "Los Andes San Rafael Airport",
+          "iata": "LOB",
+          "icao": "SCAN",
+          "placeCode": "CL"
+        },
+        {
+          "name": "Ovalle El Tuqui Airport",
+          "iata": "OVL",
+          "icao": "SCOV",
+          "placeCode": "CL"
+        }
+      ],
+      "removed_airports": [],
+      "changed_airports": [],
+      "added_count": 2,
+      "removed_count": 0,
+      "changed_count": 0
+    },
     "CN": {
       "country_name": "China",
       "iso_code": "CN",
@@ -31,6 +57,26 @@
       "added_count": 0,
       "removed_count": 0,
       "changed_count": 1
+    },
+    "CO": {
+      "country_name": "Colombia",
+      "iso_code": "CO",
+      "fr24_count": 82,
+      "skycards_count": 81,
+      "difference": 1,
+      "added_airports": [
+        {
+          "name": "Chaparral Airport",
+          "iata": "CPL",
+          "icao": "SKHA",
+          "placeCode": "CO"
+        }
+      ],
+      "removed_airports": [],
+      "changed_airports": [],
+      "added_count": 1,
+      "removed_count": 0,
+      "changed_count": 0
     },
     "ID": {
       "country_name": "Indonesia",
