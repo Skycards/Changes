@@ -1,9 +1,9 @@
 {
   "summary": {
-    "total_countries_with_differences": 2,
+    "total_countries_with_differences": 3,
     "total_added_airports": 0,
     "total_removed_airports": 0,
-    "total_changed_airports": 2
+    "total_changed_airports": 3
   },
   "countries": {
     "CN": {
@@ -24,6 +24,32 @@
             "name": {
               "old": "Wuzhou Changzhoudao Airport",
               "new": "Wuzhou Xijiang Airport"
+            }
+          }
+        }
+      ],
+      "added_count": 0,
+      "removed_count": 0,
+      "changed_count": 1
+    },
+    "ID": {
+      "country_name": "Indonesia",
+      "iso_code": "ID",
+      "fr24_count": 158,
+      "skycards_count": 158,
+      "difference": 0,
+      "added_airports": [],
+      "removed_airports": [],
+      "changed_airports": [
+        {
+          "name": "Pasir Pangaraan Airport",
+          "iata": "PPR",
+          "icao": "WIBG",
+          "placeCode": "ID",
+          "changes": {
+            "icao": {
+              "old": "WIDE",
+              "new": "WIBG"
             }
           }
         }
