@@ -1,9 +1,9 @@
 {
   "summary": {
-    "total_countries_with_differences": 5,
+    "total_countries_with_differences": 6,
     "total_added_airports": 3,
     "total_removed_airports": 0,
-    "total_changed_airports": 3
+    "total_changed_airports": 4
   },
   "countries": {
     "CL": {
@@ -77,6 +77,32 @@
       "added_count": 1,
       "removed_count": 0,
       "changed_count": 0
+    },
+    "EG": {
+      "country_name": "Egypt",
+      "iso_code": "EG",
+      "fr24_count": 19,
+      "skycards_count": 19,
+      "difference": 0,
+      "added_airports": [],
+      "removed_airports": [],
+      "changed_airports": [
+        {
+          "name": "Alexandria International Airport",
+          "iata": "ALY",
+          "icao": "HEAX",
+          "placeCode": "EG",
+          "changes": {
+            "iata": {
+              "old": "HBE",
+              "new": "ALY"
+            }
+          }
+        }
+      ],
+      "added_count": 0,
+      "removed_count": 0,
+      "changed_count": 1
     },
     "ID": {
       "country_name": "Indonesia",
