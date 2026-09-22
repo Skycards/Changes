@@ -1,9 +1,9 @@
 {
   "summary": {
-    "total_countries_with_differences": 6,
+    "total_countries_with_differences": 7,
     "total_added_airports": 3,
     "total_removed_airports": 0,
-    "total_changed_airports": 4
+    "total_changed_airports": 5
   },
   "countries": {
     "CL": {
@@ -96,6 +96,32 @@
             "iata": {
               "old": "HBE",
               "new": "ALY"
+            }
+          }
+        }
+      ],
+      "added_count": 0,
+      "removed_count": 0,
+      "changed_count": 1
+    },
+    "ES": {
+      "country_name": "Spain",
+      "iso_code": "ES",
+      "fr24_count": 64,
+      "skycards_count": 64,
+      "difference": 0,
+      "added_airports": [],
+      "removed_airports": [],
+      "changed_airports": [
+        {
+          "name": "Vigo Peinador Airport",
+          "iata": "VGO",
+          "icao": "LEVX",
+          "placeCode": "ES",
+          "changes": {
+            "name": {
+              "old": "Vigo-Peinador Airport",
+              "new": "Vigo Peinador Airport"
             }
           }
         }
