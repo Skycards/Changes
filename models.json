@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1790849082787,
+  "updatedAt": 1790856604769,
   "rows": [
     {
       "id": "A1",
@@ -52112,47 +52112,6 @@
       "military": true
     },
     {
-      "id": "SB39",
-      "manufacturer": "SAAB",
-      "name": "39 Gripen",
-      "manufacturers": [
-        "SAAB 39 Gripen",
-        "SAAB JAS39 Gripen"
-      ],
-      "description": "The Saab JAS 39 Gripen is a modern multi-role fighter, renowned for its agility, advanced technology, and cost-effectiveness in various combat scenarios.",
-      "landingGear": "Tricycle",
-      "wingPos": "Mid wing",
-      "wingShape": "Delta with canard front wing",
-      "type": "L",
-      "engNum": 1,
-      "engType": "J",
-      "wtc": "M",
-      "rareness": 1341,
-      "num": 5,
-      "xp": 7705,
-      "firstFlight": 1988,
-      "wingspan": 8.4,
-      "length": 14.1,
-      "height": 4.5,
-      "ceiling": 50000,
-      "mtow": 14000,
-      "seats": 1,
-      "range": 800,
-      "maxSpeed": 1150,
-      "cardCategory": "ultra",
-      "ftea": 0.0027102042110603753,
-      "images": [
-        "SGCD",
-        "KFIR",
-        "SB37"
-      ],
-      "markers": [
-        "KFIR",
-        "SB37"
-      ],
-      "military": true
-    },
-    {
       "id": "SB7",
       "manufacturer": "SEABIRD",
       "name": "SB-7 Seeker",
@@ -53091,6 +53050,47 @@
       "markers": [
         "P28A"
       ]
+    },
+    {
+      "id": "SGCD",
+      "manufacturer": "SAAB",
+      "name": "39 Gripen C/D",
+      "manufacturers": [
+        "SAAB JAS39C Gripen C",
+        "SAAB 39D Gripen D",
+        "SAAB JAS39D Gripen D"
+      ],
+      "description": "The SAAB Gripen C/D is a Swedish multirole fighter designed for flexible operations from dispersed bases, combining modern avionics, NATO interoperability, and efficient maintenance with a distinctive canard-delta layout.",
+      "landingGear": "Tricycle",
+      "wingPos": "Mid wing",
+      "wingShape": "Delta with canard front wing",
+      "type": "L",
+      "engNum": 1,
+      "engType": "J",
+      "wtc": "M",
+      "rareness": 1272,
+      "xp": 7705,
+      "firstFlight": 1988,
+      "wingspan": 8.4,
+      "length": 14.9,
+      "height": 4.5,
+      "ceiling": 50000,
+      "mtow": 14000,
+      "seats": 1,
+      "range": 1700,
+      "maxSpeed": 1300,
+      "cardCategory": "ultra",
+      "ftea": 0.0054204084221207505,
+      "images": [
+        "B738",
+        "SB39"
+      ],
+      "markers": [
+        "B738",
+        "SB39"
+      ],
+      "imageOverride": "SB39",
+      "military": true
     },
     {
       "id": "SGRA",
@@ -63494,6 +63494,7 @@
     "TB9",
     "TL96",
     "ZONX",
-    "KC39"
+    "KC39",
+    "SB39"
   ]
 }
