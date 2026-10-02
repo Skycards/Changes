@@ -211,4 +211,14 @@ SUBDIVISIONS = {
     "CN-QH": "Qinghai", "CN-SC": "Sichuan", "CN-SD": "Shandong", "CN-SH": "Shanghai",
     "CN-SN": "Shaanxi", "CN-SX": "Shanxi", "CN-TJ": "Tianjin", "CN-XJ": "Xinjiang",
     "CN-XZ": "Tibet", "CN-YN": "Yunnan", "CN-ZJ": "Zhejiang",
+    # Brazil
+    "BR-AC": "Acre", "BR-AL": "Alagoas", "BR-AP": "Amapá", "BR-AM": "Amazonas",
+    "BR-BA": "Bahia", "BR-CE": "Ceará", "BR-DF": "Distrito Federal",
+    "BR-ES": "Espírito Santo", "BR-GO": "Goiás", "BR-MA": "Maranhão",
+    "BR-MT": "Mato Grosso", "BR-MS": "Mato Grosso do Sul", "BR-MG": "Minas Gerais",
+    "BR-PA": "Pará", "BR-PB": "Paraíba", "BR-PR": "Paraná", "BR-PE": "Pernambuco",
+    "BR-PI": "Piauí", "BR-RJ": "Rio de Janeiro", "BR-RN": "Rio Grande do Norte",
+    "BR-RS": "Rio Grande do Sul", "BR-RO": "Rondônia", "BR-RR": "Roraima",
+    "BR-SC": "Santa Catarina", "BR-SP": "São Paulo", "BR-SE": "Sergipe",
+    "BR-TO": "Tocantins",
 }
