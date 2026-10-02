@@ -61,8 +61,8 @@
     "CO": {
       "country_name": "Colombia",
       "iso_code": "CO",
-      "fr24_count": 82,
-      "skycards_count": 81,
+      "fr24_count": 81,
+      "skycards_count": 80,
       "difference": 1,
       "added_airports": [
         {
