@@ -36,11 +36,58 @@ class LoadRoutesTest(unittest.TestCase):
         self.assertEqual(dn.load_webhook_routes({}), {})
 
 
-class StripArtifactsTest(unittest.TestCase):
-    def test_unescapes_leading_dash_and_angle_links(self):
-        src = "  \\- item\ntext [x](<https://u>) more"
-        out = dn._strip_discord_artifacts(src)
-        self.assertEqual(out, "  - item\ntext [x](https://u) more")
+class AttachmentMarkdownTest(unittest.TestCase):
+    def test_geo_tree_becomes_nested_list(self):
+        src = ("### Updated (2)\n"
+               "**SOUTH AMERICA**\n"
+               "🇧🇷 Brazil\n"
+               "  AC\n"
+               "    ~ [Rio](<https://u>) (`RBR`)\n"
+               "      \\- Country: Bolivia → Brazil\n"
+               "      \\- Region: N/A → AC\n"
+               "    \\- [Gone](<https://g>) (`GNE`)\n"
+               "**ASIA**\n"
+               "🇨🇳 China\n"
+               "  + [JD Express](<https://j>) (`JD`)\n"
+               "    \\- Aircraft: 3")
+        self.assertEqual(dn._to_attachment_markdown(src), "\n".join([
+            "### Updated (2)",
+            "",
+            "**SOUTH AMERICA**",
+            "",
+            "- 🇧🇷 Brazil",
+            "  - AC",
+            "    - [Rio](https://u) (`RBR`)",
+            "      - Country: Bolivia → Brazil",
+            "      - Region: N/A → AC",
+            "    - [Gone](https://g) (`GNE`)",
+            "",
+            "**ASIA**",
+            "",
+            "- 🇨🇳 China",
+            "  - [JD Express](https://j) (`JD`)",
+            "    - Aircraft: 3",
+        ]))
+
+    def test_plain_lines_become_separate_paragraphs(self):
+        src = ("`A320` Airbus A320\n\\- Seats: 180\n\\- Speed: 450kts\n\n"
+               "### TOTAL\n- Added (1): `A320`\n- Removed (0): none\n\n"
+               "Became major: `AAA`\nBecame minor: `BBB`")
+        self.assertEqual(dn._to_attachment_markdown(src), "\n".join([
+            "`A320` Airbus A320",
+            "",
+            "- Seats: 180",
+            "- Speed: 450kts",
+            "",
+            "### TOTAL",
+            "",
+            "- Added (1): `A320`",
+            "- Removed (0): none",
+            "",
+            "Became major: `AAA`",
+            "",
+            "Became minor: `BBB`",
+        ]))
 
 
 class PayloadTest(unittest.TestCase):

@@ -44,13 +44,64 @@ def load_webhook_routes(env=None):
     return routes
 
 
-def _strip_discord_artifacts(text):
-    # Discord-only rendering hacks are noise in the raw file preview:
-    #   leading-dash escapes (\-) that stop sub-lines becoming bullets, and
-    #   angle brackets around link targets ([x](<url>)) that suppress embeds.
-    lines = [re.sub(r"^(\s*)\\-", r"\1-", line) for line in text.split("\n")]
-    text = "\n".join(lines)
-    return re.sub(r"\]\(<([^>]*)>\)", r"](\1)", text)
+_ENTRY_MARKERS = ("+ ", "~ ", "\\- ")
+
+
+def _indent(line):
+    return len(line) - len(line.lstrip(" "))
+
+
+def _to_attachment_markdown(text):
+    """Rewrite a chat-flavored message into CommonMark for the .md attachment.
+
+    Discord chat turns every newline into a line break, but its .md file
+    preview follows CommonMark, where a lone newline is a space: plain lines
+    and `~` entries collapse into one paragraph. So every line is made its own
+    block — the indented geo tree (and the column-0 line heading it) becomes a
+    nested list, other plain lines become separate paragraphs. Angle brackets
+    around link targets ([x](<url>)), an embed-suppression hack, are dropped.
+    """
+    text = re.sub(r"\]\(<([^>]*)>\)", r"](\1)", text)
+    src = text.split("\n")
+    out = []
+    prev_kind = None  # "list" | "para" | None (start / after a blank line)
+
+    def emit(line, kind):
+        nonlocal prev_kind
+        # A paragraph next to anything else needs a blank line, or CommonMark
+        # folds it into the neighbouring block.
+        if prev_kind and (kind == "para" or prev_kind == "para"):
+            out.append("")
+        out.append(line)
+        prev_kind = kind
+
+    for i, line in enumerate(src):
+        content = line.strip()
+        if not content:
+            out.append("")
+            prev_kind = None
+            continue
+        n = _indent(line)
+        nxt = next((l for l in src[i + 1:] if l.strip()), "")
+        if content.startswith("#"):
+            emit(content, "para")
+        elif n == 0 and content.startswith("- "):
+            emit(content, "list")  # already a list item (TOTAL block)
+        elif n == 0 and content.startswith("\\- "):
+            emit("- " + content[3:], "list")  # model stat sub-line
+        elif n == 0 and _indent(nxt) == 0:
+            emit(content, "para")
+        else:
+            # Geo tree: column-0 country is depth 0, two spaces per level. The
+            # bullet replaces the +/~/\- marker; the section heading already
+            # says whether an entry was added, updated or removed.
+            depth = n // 2
+            for marker in _ENTRY_MARKERS:
+                if content.startswith(marker):
+                    content = content[len(marker):]
+                    break
+            emit("  " * depth + "- " + content, "list")
+    return "\n".join(out)
 
 
 def build_inline_payload(message, username, mention):
@@ -86,7 +137,7 @@ def send_discord(message_file, tldr, link, username, routing_key, caption="",
 
     long_message = len(message) > LIMIT
     if long_message:
-        attach = _strip_discord_artifacts(message)
+        attach = _to_attachment_markdown(message)
         file_title = message.split("\n", 1)[0]
         body = caption or tldr
 
