@@ -32,11 +32,26 @@ def format_json(raw_text, path):
                        text=True)
 
 
+def _get_ok(session, url, attempts=3, backoff=5, **kwargs):
+    """GET with retries; raises on a non-2xx status after the last attempt so
+    an error body (e.g. a 404 JSON) is never committed as data."""
+    for attempt in range(1, attempts + 1):
+        try:
+            resp = session.get(url, headers=HEADERS, **kwargs)
+            resp.raise_for_status()
+            return resp
+        except requests.RequestException as exc:
+            if attempt == attempts:
+                raise
+            print(f"GET {url} failed ({exc}); retry {attempt}/{attempts - 1}")
+            time.sleep(backoff * attempt)
+
+
 def determine_timestamp(timestamp_url, session=None):
     if not timestamp_url:
         return str(int(time.time() * 1000))
     session = requests.Session() if session is None else session
-    ts = session.get(timestamp_url, headers=HEADERS).text.strip()
+    ts = _get_ok(session, timestamp_url).text.strip()
     if not re.fullmatch(r"[0-9]+", ts):
         raise ValueError(f"Invalid timestamp received: {ts!r}")
     return ts
@@ -49,9 +64,7 @@ def routing_key(data_name, is_misc):
 
 
 def fetch_api(api_url, timestamp_param, timestamp, session):
-    resp = session.get(api_url, params={timestamp_param: timestamp},
-                       headers=HEADERS)
-    return resp.text
+    return _get_ok(session, api_url, params={timestamp_param: timestamp}).text
 
 
 SCRIPTS_DIR = os.path.dirname(os.path.abspath(__file__))

@@ -41,6 +41,50 @@ class TimestampTest(unittest.TestCase):
             pl.determine_timestamp("https://ts", session)
 
 
+class HttpErrorTest(unittest.TestCase):
+    def test_fetch_api_raises_on_error_status(self):
+        session = mock.Mock()
+        resp = mock.Mock(text='{"statusCode": 404}')
+        resp.raise_for_status.side_effect = pl.requests.HTTPError("404")
+        session.get.return_value = resp
+        with mock.patch.object(pl.time, "sleep"), \
+                self.assertRaises(pl.requests.HTTPError):
+            pl.fetch_api("https://api/airlines", "timestamp", "1", session)
+
+    def test_timestamp_raises_on_error_status(self):
+        session = mock.Mock()
+        resp = mock.Mock(text="1")
+        resp.raise_for_status.side_effect = pl.requests.HTTPError("500")
+        session.get.return_value = resp
+        with mock.patch.object(pl.time, "sleep"), \
+                self.assertRaises(pl.requests.HTTPError):
+            pl.determine_timestamp("https://ts", session)
+
+
+class RetryTest(unittest.TestCase):
+    def test_retries_then_succeeds(self):
+        bad = mock.Mock()
+        bad.raise_for_status.side_effect = pl.requests.HTTPError("404")
+        good = mock.Mock(text="ok")
+        session = mock.Mock()
+        session.get.side_effect = [bad, good]
+        with mock.patch.object(pl.time, "sleep") as sleep:
+            text = pl.fetch_api("https://a", "timestamp", "1", session)
+        self.assertEqual(text, "ok")
+        self.assertEqual(session.get.call_count, 2)
+        sleep.assert_called_once_with(5)
+
+    def test_gives_up_after_three_attempts(self):
+        bad = mock.Mock()
+        bad.raise_for_status.side_effect = pl.requests.HTTPError("404")
+        session = mock.Mock()
+        session.get.return_value = bad
+        with mock.patch.object(pl.time, "sleep"):
+            with self.assertRaises(pl.requests.HTTPError):
+                pl.fetch_api("https://a", "timestamp", "1", session)
+        self.assertEqual(session.get.call_count, 3)
+
+
 class RoutingKeyTest(unittest.TestCase):
     def test_source_when_not_misc(self):
         self.assertEqual(pl.routing_key("airports", is_misc=False), "airports")
