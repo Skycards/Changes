@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1791448175096,
+  "updatedAt": 1791808609544,
   "rows": [
     {
       "id": "A1",
@@ -2394,6 +2394,41 @@
       "ftea": 2.8572726725012685,
       "markers": [
         "AEST"
+      ]
+    },
+    {
+      "id": "AC52",
+      "manufacturer": "AERO COMMANDER",
+      "name": "520",
+      "manufacturers": [
+        "AERO (1) Commander 520"
+      ],
+      "description": "The Aero Commander 520 was an early postwar twin-engine business aircraft, known for its high-wing layout, rugged utility, and role in establishing the long-running Commander family of executive transports.",
+      "landingGear": "Tricycle",
+      "wingPos": "High wing",
+      "type": "L",
+      "engNum": 2,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1761,
+      "num": 0,
+      "xp": 9803,
+      "firstFlight": 1948,
+      "wingspan": 13.4,
+      "length": 10.4,
+      "height": 4.2,
+      "ceiling": 21450,
+      "mtow": 3060,
+      "seats": 7,
+      "range": 936,
+      "maxSpeed": 171,
+      "cardCategory": "ultra",
+      "ftea": 0.000040842212075088786,
+      "images": [
+        "AC50"
+      ],
+      "markers": [
+        "AC50"
       ]
     },
     {
@@ -41055,6 +41090,42 @@
       "military": true
     },
     {
+      "id": "MI34",
+      "manufacturer": "MIL",
+      "name": "Mi-34",
+      "manufacturers": [
+        "MIL Mi-34"
+      ],
+      "description": "The MIL Mi-34 is a light Soviet utility and training helicopter, notable for aerobatic capability and simple construction, developed to support pilot instruction, liaison work, and general civil operations.",
+      "landingGear": "Skids",
+      "rotorConfig": "Main+Tail",
+      "numMainRotorBlades": 4,
+      "type": "H",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 2110,
+      "num": 0,
+      "xp": 11552,
+      "firstFlight": 1986,
+      "wingspan": 10,
+      "length": 11.4,
+      "height": 2.8,
+      "ceiling": 13000,
+      "mtow": 1450,
+      "seats": 4,
+      "range": 192,
+      "maxSpeed": 110,
+      "cardCategory": "ultra",
+      "ftea": 0.0000012366818873668188,
+      "images": [
+        "B206"
+      ],
+      "markers": [
+        "B206"
+      ]
+    },
+    {
       "id": "MI8",
       "manufacturer": "MIL",
       "name": "Mi-8",
@@ -42789,6 +42860,41 @@
         "S92"
       ],
       "military": true
+    },
+    {
+      "id": "NI28",
+      "manufacturer": "AIRDROME",
+      "name": "Nieuport 28 Replica",
+      "manufacturers": [
+        "NIEUPORT 28 Replica"
+      ],
+      "description": "Airdrome Aeroplanes’ Nieuport 28 Replica recreates the First World War French fighter associated with early American combat pilots, offering modern builders a practical tribute to its lean form and aviation heritage.",
+      "landingGear": "Tailwheel",
+      "wingPos": "Biplane",
+      "wingShape": "Rectangular",
+      "type": "L",
+      "engNum": 1,
+      "engType": "P",
+      "wtc": "L",
+      "rareness": 1734,
+      "num": 0,
+      "xp": 9672,
+      "firstFlight": 1917,
+      "wingspan": 7.6,
+      "length": 7.3,
+      "height": 2.5,
+      "mtow": 550,
+      "seats": 1,
+      "range": 170,
+      "maxSpeed": 73,
+      "cardCategory": "ultra",
+      "ftea": 0.00005301877219685439,
+      "images": [
+        "ST75"
+      ],
+      "markers": [
+        "WACF"
+      ]
     },
     {
       "id": "NIBB",
@@ -48159,6 +48265,36 @@
         "LGEZ"
       ],
       "military": true
+    },
+    {
+      "id": "Q25",
+      "manufacturer": "BOEING",
+      "name": "MQ-25 Stingray",
+      "manufacturers": [
+        "BOEING MQ-25 Stingray"
+      ],
+      "description": "The Boeing MQ-25 Stingray is a carrier-based unmanned aircraft designed to refuel naval fighters, extending operational reach while advancing the U.S. Navy’s integration of autonomous aviation at sea.",
+      "type": "L",
+      "engNum": 1,
+      "engType": "J",
+      "wtc": "M",
+      "rareness": 1530,
+      "num": 0,
+      "xp": 8650,
+      "firstFlight": 2019,
+      "wingspan": 22.9,
+      "length": 15.5,
+      "height": 3,
+      "seats": 0,
+      "range": 500,
+      "cardCategory": "ultra",
+      "ftea": 0.00040972222222222224,
+      "images": [
+        "Q28"
+      ],
+      "markers": [
+        "Q28"
+      ]
     },
     {
       "id": "Q28",
@@ -54883,7 +55019,7 @@
     },
     {
       "id": "SPUP",
-      "manufacturer": "AIRDROME AEROPLANES",
+      "manufacturer": "AIRDROME",
       "name": "Sopwith Pup Replica",
       "manufacturers": [
         "AIRDROME AEROPLANES Sopwith Pup Replica",
@@ -54898,8 +55034,13 @@
       "rareness": 1420,
       "num": 0,
       "xp": 8100,
+      "firstFlight": 2011,
       "wingspan": 8.2,
       "length": 5.8,
+      "mtow": 270,
+      "seats": 1,
+      "range": 170,
+      "maxSpeed": 70,
       "cardCategory": "ultra",
       "ftea": 0.0012362696600710299,
       "images": [
@@ -59348,10 +59489,10 @@
       "cardCategory": "ultra",
       "ftea": 0.1938080289193303,
       "images": [
-        "P46T"
+        "TUCA"
       ],
       "markers": [
-        "P46T"
+        "TUCA"
       ]
     },
     {
@@ -59377,10 +59518,10 @@
       "cardCategory": "ultra",
       "ftea": 0.0008067288178589549,
       "images": [
-        "P46T"
+        "TUCA"
       ],
       "markers": [
-        "P46T"
+        "TUCA"
       ]
     },
     {
@@ -64030,7 +64171,6 @@
     "TS1J",
     "TRIN",
     "MA6",
-    "MI34",
     "AT6",
     "TEX",
     "A22",
