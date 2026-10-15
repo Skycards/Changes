@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1791808609544,
+  "updatedAt": 1792049897403,
   "rows": [
     {
       "id": "A1",
@@ -7639,12 +7639,10 @@
       "cardCategory": "ultra",
       "ftea": 0.047752473363774736,
       "images": [
-        "M20P"
+        "BE36"
       ],
       "markers": [
-        "PA24",
-        "C210",
-        "PA24"
+        "BE36"
       ]
     },
     {
@@ -12549,10 +12547,10 @@
       "cardCategory": "ultra",
       "ftea": 0.04824831938102486,
       "images": [
-        "C172"
+        "C06T"
       ],
       "markers": [
-        "C172"
+        "C06T"
       ]
     },
     {
@@ -15359,12 +15357,10 @@
       "cardCategory": "scarce",
       "ftea": 5.911679604261796,
       "images": [
-        "B38M",
-        "A20N"
+        "A320"
       ],
       "markers": [
-        "B38M",
-        "A20N"
+        "A320"
       ]
     },
     {
@@ -17129,15 +17125,15 @@
     },
     {
       "id": "CJ6",
-      "manufacturer": "HONGDU",
-      "name": "BT-6",
+      "manufacturer": "NANCHANG",
+      "name": "CJ-6",
       "manufacturers": [
         "HONGDU BT-6",
         "HONGDU CJ-6",
         "NANCHANG CJ-6",
         "NANCHANG PT-6"
       ],
-      "description": "The HONGDU BT-6 is a Chinese basic trainer aircraft, widely used for pilot training and aerobatic performance.",
+      "description": "The Nanchang CJ-6 is a Chinese primary trainer developed for military flight instruction. Known for robust handling and distinctive radial-engine character, it became widely used and later popular with warbird enthusiasts.",
       "landingGear": "Tricycle",
       "wingPos": "Low wing",
       "wingShape": "Tapered",
@@ -17160,11 +17156,10 @@
       "cardCategory": "ultra",
       "ftea": 0.2955350393201421,
       "images": [
-        "TEX2"
+        "YK52"
       ],
       "markers": [
-        "DA40",
-        "SR22"
+        "YK52"
       ],
       "military": true
     },
@@ -29611,13 +29606,11 @@
       "cardCategory": "ultra",
       "ftea": 0.0009244038559107052,
       "images": [
-        "C2"
+        "S2T"
       ],
       "markers": [
-        "L14",
-        "B738"
+        "S2T"
       ],
-      "imageOverride": "C212",
       "military": true
     },
     {
@@ -35541,11 +35534,10 @@
       "cardCategory": "ultra",
       "ftea": 0.014446822678843226,
       "images": [
-        "P46T"
+        "T34T"
       ],
       "markers": [
-        "C208",
-        "BE36"
+        "T34T"
       ],
       "military": true
     },
@@ -41644,10 +41636,12 @@
       "cardCategory": "ultra",
       "ftea": 0.20083314307458144,
       "images": [
-        "P28A"
+        "T34P",
+        "T34T"
       ],
       "markers": [
-        "P28A"
+        "T34P",
+        "T34T"
       ]
     },
     {
@@ -59630,10 +59624,10 @@
       "cardCategory": "scarce",
       "ftea": 5.772902619228818,
       "images": [
-        "K100"
+        "P208"
       ],
       "markers": [
-        "P28A"
+        "P208"
       ]
     },
     {
