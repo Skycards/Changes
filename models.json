@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1792049897403,
+  "updatedAt": 1792061356984,
   "rows": [
     {
       "id": "A1",
@@ -12188,15 +12188,12 @@
       "cardCategory": "ultra",
       "ftea": 0.00003072678843226788,
       "images": [
-        "BN2P",
-        "TRIS",
-        "C172"
+        "TRIM"
       ],
       "markers": [
-        "BN2P",
-        "TRIS",
-        "F900"
-      ]
+        "TRIM"
+      ],
+      "imageOverride": "TRIM"
     },
     {
       "id": "BU31",
@@ -16984,11 +16981,10 @@
       "cardCategory": "ultra",
       "ftea": 0.008509512937595129,
       "images": [
-        "RV7",
-        "C172"
+        "DHC1"
       ],
       "markers": [
-        "P28A"
+        "DHC1"
       ],
       "imageOverride": "DHC1"
     },
@@ -41111,10 +41107,10 @@
       "cardCategory": "ultra",
       "ftea": 0.0000012366818873668188,
       "images": [
-        "B206"
+        "B06"
       ],
       "markers": [
-        "B206"
+        "B06"
       ]
     },
     {
