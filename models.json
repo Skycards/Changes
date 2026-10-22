@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1792061356984,
+  "updatedAt": 1792658298666,
   "rows": [
     {
       "id": "A1",
@@ -16538,9 +16538,11 @@
         "BE58"
       ],
       "markers": [
+        "TBEE",
         "DHC6",
         "PA34"
-      ]
+      ],
+      "imageOverride": "GA7"
     },
     {
       "id": "CH64",
@@ -35424,11 +35426,11 @@
     {
       "id": "KL25",
       "manufacturer": "KLEMM",
-      "name": "L-25",
+      "name": "Kl 25",
       "manufacturers": [
-        "KLEMM L-25"
+        "KLEMM L 25"
       ],
-      "description": "The Klemm L-25 was a German light aircraft from the 1920s, known for its wooden construction and versatility in training and sport flying, contributing to early aviation development in Europe.",
+      "description": "The KLEMM Kl 25 was a German light sport and training aircraft, known for simple wooden construction, economical operation, and popularity with flying clubs and private pilots between the wars.",
       "landingGear": "Tailwheel",
       "wingPos": "Low wing",
       "wingShape": "Rounded rear",
@@ -35461,11 +35463,8 @@
     {
       "id": "KL35",
       "manufacturer": "KLEMM",
-      "name": "Kl-35",
-      "manufacturers": [
-        "KLEMM Kl-35"
-      ],
-      "description": "The KLEMM Kl-35 was a German training aircraft used before and during World War II, known for its wooden construction and aerobatic capabilities, serving primarily in pilot training roles.",
+      "name": "Kl 35",
+      "description": "The Klemm Kl 35 was a German two-seat sport and training aircraft of the 1930s, noted for clean low-wing design, aerobatic capability, and widespread use in civilian schools and military training.",
       "landingGear": "Tailwheel",
       "wingPos": "Low wing",
       "wingShape": "Tapered",
@@ -46767,7 +46766,7 @@
       "manufacturers": [
         "PIK PIK-15 Hinu"
       ],
-      "description": "The PIK Hinu is a Finnish glider designed for training and recreational flying, notable for its wooden construction and simple design, reflecting post-war aviation innovation in Finland.",
+      "description": "The PIK-15 Hinu was a Finnish light sailplane created by the Polyteknikkojen Ilmailukerho design group, reflecting postwar student engineering and club aviation traditions rather than large-scale production.",
       "landingGear": "Tailwheel",
       "wingPos": "Low wing",
       "type": "L",
