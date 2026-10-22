@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1792130969028,
+  "updatedAt": 1792661548234,
   "rows": [
     {
       "id": 1,
@@ -14999,7 +14999,7 @@
       "id": 1233,
       "iata": "GOT",
       "icao": "ESGG",
-      "name": "Gothenburg Landvetter  Airport",
+      "name": "Gothenburg Landvetter Airport",
       "city": "Gothenburg",
       "placeCode": "SE",
       "lat": 57.665951,
