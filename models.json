@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1792658298666,
+  "updatedAt": 1793954120828,
   "rows": [
     {
       "id": "A1",
@@ -17958,7 +17958,7 @@
       "seats": 128,
       "range": 3900,
       "maxSpeed": 1180,
-      "cardCategory": "ultra",
+      "cardCategory": "historical",
       "ftea": 0,
       "images": [
         "B744",
@@ -50822,7 +50822,7 @@
     {
       "id": "S12",
       "manufacturer": "SPENCER",
-      "name": "S-12 Air Car",
+      "name": "S-12 Air Car",
       "manufacturers": [
         "SPENCER S-12 Air Car"
       ],
