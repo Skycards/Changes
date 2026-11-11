@@ -1,9 +1,88 @@
 {
   "summary": {
-    "total_countries_with_differences": 0,
-    "total_added_airports": 0,
+    "total_countries_with_differences": 2,
+    "total_added_airports": 2,
     "total_removed_airports": 0,
     "total_changed_airports": 0
   },
-  "countries": {}
+  "countries": {
+    "CA": {
+      "country_name": "Canada",
+      "iso_code": "CA",
+      "fr24_count": 362,
+      "skycards_count": 361,
+      "difference": 1,
+      "added_airports": [
+        {
+          "name": "108 Mile Ranch Airport",
+          "iata": "ZMH",
+          "icao": "CZML",
+          "placeCode": "CA-BC"
+        }
+      ],
+      "removed_airports": [],
+      "changed_airports": [],
+      "added_count": 1,
+      "removed_count": 0,
+      "changed_count": 0,
+      "states": {
+        "BC": {
+          "state_name": "British Columbia",
+          "fr24_count": 53,
+          "skycards_count": 52,
+          "difference": 1,
+          "added_airports": [
+            {
+              "name": "108 Mile Ranch Airport",
+              "iata": "ZMH",
+              "icao": "CZML",
+              "placeCode": "CA-BC"
+            }
+          ],
+          "removed_airports": [],
+          "added_count": 1,
+          "removed_count": 0
+        }
+      }
+    },
+    "US": {
+      "country_name": "United States",
+      "iso_code": "US",
+      "fr24_count": 1777,
+      "skycards_count": 1776,
+      "difference": 1,
+      "added_airports": [
+        {
+          "name": "Prospect Creek Airport",
+          "iata": "PPC",
+          "icao": "PAPR",
+          "placeCode": "US-AK"
+        }
+      ],
+      "removed_airports": [],
+      "changed_airports": [],
+      "added_count": 1,
+      "removed_count": 0,
+      "changed_count": 0,
+      "states": {
+        "AK": {
+          "state_name": "Alaska",
+          "fr24_count": 195,
+          "skycards_count": 194,
+          "difference": 1,
+          "added_airports": [
+            {
+              "name": "Prospect Creek Airport",
+              "iata": "PPC",
+              "icao": "PAPR",
+              "placeCode": "US-AK"
+            }
+          ],
+          "removed_airports": [],
+          "added_count": 1,
+          "removed_count": 0
+        }
+      }
+    }
+  }
 }
