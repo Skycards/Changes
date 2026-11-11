@@ -1,11 +1,37 @@
 {
   "summary": {
-    "total_countries_with_differences": 2,
+    "total_countries_with_differences": 3,
     "total_added_airports": 2,
     "total_removed_airports": 0,
-    "total_changed_airports": 0
+    "total_changed_airports": 1
   },
   "countries": {
+    "AR": {
+      "country_name": "Argentina",
+      "iso_code": "AR",
+      "fr24_count": 61,
+      "skycards_count": 61,
+      "difference": 0,
+      "added_airports": [],
+      "removed_airports": [],
+      "changed_airports": [
+        {
+          "name": "San Juan Domingo Faustino Sarmiento Airport",
+          "iata": "UAQ",
+          "icao": "SANU",
+          "placeCode": "AR",
+          "changes": {
+            "name": {
+              "old": "San Juan Domingo Faustino Sarmiento",
+              "new": "San Juan Domingo Faustino Sarmiento Airport"
+            }
+          }
+        }
+      ],
+      "added_count": 0,
+      "removed_count": 0,
+      "changed_count": 1
+    },
     "CA": {
       "country_name": "Canada",
       "iso_code": "CA",
