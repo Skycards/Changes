@@ -1,9 +1,9 @@
 {
   "summary": {
-    "total_countries_with_differences": 3,
-    "total_added_airports": 2,
+    "total_countries_with_differences": 4,
+    "total_added_airports": 3,
     "total_removed_airports": 0,
-    "total_changed_airports": 1
+    "total_changed_airports": 2
   },
   "countries": {
     "AR": {
@@ -63,6 +63,58 @@
               "iata": "ZMH",
               "icao": "CZML",
               "placeCode": "CA-BC"
+            }
+          ],
+          "removed_airports": [],
+          "added_count": 1,
+          "removed_count": 0
+        }
+      }
+    },
+    "CN": {
+      "country_name": "China",
+      "iso_code": "CN",
+      "fr24_count": 268,
+      "skycards_count": 267,
+      "difference": 1,
+      "added_airports": [
+        {
+          "name": "Tongren Dejiang Airport",
+          "iata": "DEJ",
+          "icao": "ZUDJ",
+          "placeCode": "CN-GZ"
+        }
+      ],
+      "removed_airports": [],
+      "changed_airports": [
+        {
+          "name": "Zhangjiajie Hehua Airport",
+          "iata": "DYG",
+          "icao": "ZGDY",
+          "placeCode": "CN-HN",
+          "changes": {
+            "name": {
+              "old": "Dayong Zhangjiajie Hehua Airport",
+              "new": "Zhangjiajie Hehua Airport"
+            }
+          }
+        }
+      ],
+      "added_count": 1,
+      "removed_count": 0,
+      "changed_count": 1,
+      "states": {
+        "GZ": {
+          "state_name": "Guizhou",
+          "fr24_count": 12,
+          "skycards_count": 11,
+          "difference": 1,
+          "added_airports": [
+            {
+              "name": "Tongren Dejiang Airport",
+              "iata": "DEJ",
+              "icao": "ZUDJ",
+              "placeCode": "CN-GZ"
             }
           ],
           "removed_airports": [],
