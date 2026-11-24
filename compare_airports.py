@@ -13,10 +13,10 @@ import urllib.request
 import state_lookup
 
 
-# The FR24 mobile-app dataset: one JSON document with every airport. This is
-# the dataset airports.json mirrors (same id space), unlike the website's
-# /data/airports pages which are maintained separately and drift from it.
-MOBILE_AIRPORTS_URL = "https://www.flightradar24.com/mobile/airports/format/4?version=1"
+# The FR24 airports dataset: one JSON document with every airport. Same rows
+# and id space as the mobile-app feed airports.json mirrors (unlike the
+# website's /data/airports pages, which drift from it), plus a `lid` field.
+MOBILE_AIRPORTS_URL = "https://www.flightradar24.com/api/v2/airports"
 
 # A genuine payload has ~7,000 airports with distinct ids. A well-formed but
 # shrunken or degenerate dataset (schema change, duplicated ids, partial
@@ -68,12 +68,16 @@ def _has_code(row: Dict) -> bool:
 
 def _added_airport_record(row: Dict, place_code: str) -> Dict:
     """Project a mobile row to the output shape for added/changed airports."""
-    return {
+    record = {
         'name': row.get('name', ''),
         'iata': (row.get('iata') or '').strip() or None,
         'icao': (row.get('icao') or '').strip(),
         'placeCode': place_code,
     }
+    lid = (row.get('lid') or '').strip()
+    if lid:
+        record['lid'] = lid
+    return record
 
 
 def _sort_airports(airports: List[Dict]) -> None:
@@ -200,7 +204,12 @@ def compare_mobile_airports(mobile_rows: List[Dict], airports_data: Dict,
                     print(f"  geo state: {code} {row.get('name', '')} -> {iso} (no state found)")
             added.setdefault(iso, []).append(_added_airport_record(row, place))
         else:
-            changes = _airport_field_changes(ours, row, ('name', 'iata', 'icao'))
+            # LID is compared only once airports.json carries the field;
+            # until then every FR24 LID would show up as a change.
+            fields = ('name', 'iata', 'icao')
+            if 'lid' in ours:
+                fields += ('lid',)
+            changes = _airport_field_changes(ours, row, fields)
             if changes:
                 iso = (ours.get('placeCode') or '').split('-')[0]
                 record = _added_airport_record(row, ours.get('placeCode') or iso)

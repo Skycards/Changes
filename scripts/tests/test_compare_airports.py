@@ -188,6 +188,34 @@ class CompareMobileAirportsTest(unittest.TestCase):
         # counts balance: a change is not a count difference
         self.assertEqual(record["difference"], 0)
 
+    def test_lid_ignored_until_our_data_has_the_field(self):
+        diffs, _ = self.compare(
+            [_mobile_row(lid="ADH")],
+            [_our_row()])
+        self.assertEqual(diffs, {})
+
+    def test_lid_change_reported_once_our_data_has_the_field(self):
+        diffs, _ = self.compare(
+            [_mobile_row(lid="ADH")],
+            [_our_row(lid=None)])
+        changed = diffs["DE"]["changed_airports"][0]
+        self.assertEqual(changed["changes"],
+                         {"lid": {"old": None, "new": "ADH"}})
+        self.assertEqual(changed["lid"], "ADH")
+
+    def test_matching_lid_is_no_change(self):
+        diffs, _ = self.compare(
+            [_mobile_row(lid="ADH")],
+            [_our_row(lid="ADH")])
+        self.assertEqual(diffs, {})
+
+    def test_added_airport_carries_lid(self):
+        diffs, _ = self.compare(
+            [_mobile_row(), _mobile_row(id=99, iata="ZZZ", icao="EDZZ", lid="ZZZ")],
+            [_our_row()])
+        added = diffs["DE"]["added_airports"][0]
+        self.assertEqual(added["lid"], "ZZZ")
+
     def test_name_change_whitespace_insensitive(self):
         diffs, _ = self.compare(
             [_mobile_row(name="Aachen  Merzbruck Airport")],
