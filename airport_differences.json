@@ -134,7 +134,8 @@
           "name": "Prospect Creek Airport",
           "iata": "PPC",
           "icao": "PAPR",
-          "placeCode": "US-AK"
+          "placeCode": "US-AK",
+          "lid": "PPC"
         }
       ],
       "removed_airports": [],
@@ -153,7 +154,8 @@
               "name": "Prospect Creek Airport",
               "iata": "PPC",
               "icao": "PAPR",
-              "placeCode": "US-AK"
+              "placeCode": "US-AK",
+              "lid": "PPC"
             }
           ],
           "removed_airports": [],
