@@ -404,7 +404,7 @@ def _comparison_line(r, marker):
     return f"{marker} {label} ({codes})" if codes else f"{marker} {label}"
 
 
-_CHANGE_CLAUSE_ORDER = ("iata", "icao", "name", "placeCode")
+_CHANGE_CLAUSE_ORDER = ("iata", "icao", "lid", "name", "placeCode")
 
 
 def _change_val(value):

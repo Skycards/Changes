@@ -7,9 +7,9 @@ Automatically compares airport counts between Flightradar24 and our `airports.js
 ### Python Script (`compare_airports.py`)
 
 - Fetches FR24's mobile-app airport dataset with a single GET to
-  `https://www.flightradar24.com/mobile/airports/format/4?version=1` — one
+  `https://www.flightradar24.com/api/v2/airports` — one
   JSON document listing every FR24 airport (id, name, iata, icao, city, lat,
-  lon, country, alt, size, timezone, countryId). This is the dataset our
+  lon, country, alt, size, timezone, countryId, lid). This is the dataset our
   `airports.json` mirrors (the ids are the same), unlike the website's
   `/data/airports` pages, which are maintained separately and drift from it.
 - Validates the payload before comparing: it must parse as JSON and contain
@@ -74,7 +74,7 @@ Automatically compares airport counts between Flightradar24 and our `airports.js
 Starting airport comparison...
 Loaded state boundaries: 9 countries, 294 regions
 Fetching FR24 mobile airports dataset...
-  Fetching FR24 mobile airports from https://www.flightradar24.com/mobile/airports/format/4?version=1
+  Fetching FR24 mobile airports from https://www.flightradar24.com/api/v2/airports
 FR24 payload version 1788190045 (2026-08-31 15:27 UTC)
 Fetched 7042 airports from FR24
 Loading our airports data...
