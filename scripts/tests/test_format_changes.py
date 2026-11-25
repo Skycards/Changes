@@ -360,6 +360,14 @@ class ComparisonTest(unittest.TestCase):
         msg, _ = fc.format_comparison({"countries": {}}, new, set(), set(), "L")
         self.assertIn("(`TEB`/`KTEB`/`TEB`)", msg)
 
+    def test_lid_appended_on_changed_line(self):
+        ap = self._chg("Teterboro", "TEB", "KTEB",
+                       {"name": {"old": "A", "new": "B"}}, "US-NJ")
+        ap["lid"] = "TEB"
+        new = {"countries": self._country("United States", "US", fr24=1, changed=[ap])}
+        msg, _ = fc.format_comparison({"countries": {}}, new, set(), set(), "L")
+        self.assertIn("(`TEB`/`KTEB`/`TEB`): name", msg)
+
     def test_new_to_be_added_listed(self):
         old = {"countries": {}}
         new = {"countries": self._country("Netherlands", "NL", fr24=1,
