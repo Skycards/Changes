@@ -167,8 +167,8 @@ def format_models(old_rows, new_rows, link):
     return msg, _tldr("Aircraft", added, updated, removed)
 
 
-def _codes_span(iata, icao):
-    return "/".join(f"`{c}`" for c in (iata, icao) if c)
+def _codes_span(iata, icao, lid=None):
+    return "/".join(f"`{c}`" for c in (iata, icao, lid) if c)
 
 
 def render_geo(records, get_place, name_key, render_entry, with_region):
@@ -212,7 +212,7 @@ def _airport_line(r, marker):
         label = f"[{name}](<https://www.flightradar24.com/data/airports/{iata}>)"
     else:
         label = name
-    codes = _codes_span(iata, icao)
+    codes = _codes_span(iata, icao, r.get("lid"))
     return f"{marker} {label} ({codes})" if codes else f"{marker} {label}"
 
 
@@ -384,6 +384,7 @@ def _comparison_records(diffs, kind):
                 "name": ap.get("name"),
                 "iata": ap.get("iata") or None,
                 "icao": ap.get("icao") or None,
+                "lid": ap.get("lid") or None,
                 "link": ap.get("link"),
                 # Full placeCode (e.g. "US-PA") when present, so subdivisioned
                 # countries nest by state; fall back to the bare country ISO.
@@ -400,7 +401,7 @@ def _comparison_line(r, marker):
     link = r.get("link") or (
         f"https://www.flightradar24.com/data/airports/{iata}" if iata else None)
     label = f"[{name}](<{link}>)" if link else name
-    codes = _codes_span(iata, r.get("icao"))
+    codes = _codes_span(iata, r.get("icao"), r.get("lid"))
     return f"{marker} {label} ({codes})" if codes else f"{marker} {label}"
 
 
