@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_countries_with_differences": 4,
-    "total_added_airports": 3,
+    "total_added_airports": 5,
     "total_removed_airports": 0,
     "total_changed_airports": 2
   },
@@ -126,10 +126,23 @@
     "US": {
       "country_name": "United States",
       "iso_code": "US",
-      "fr24_count": 1777,
+      "fr24_count": 1779,
       "skycards_count": 1776,
-      "difference": 1,
+      "difference": 3,
       "added_airports": [
+        {
+          "name": "Lemmon Municipal Airport",
+          "iata": "LEM",
+          "icao": "KLEM",
+          "placeCode": "US-SD"
+        },
+        {
+          "name": "Oskaloosa Municipal Airport",
+          "iata": "OOA",
+          "icao": "KOOA",
+          "placeCode": "US-IA",
+          "lid": "OOA"
+        },
         {
           "name": "Prospect Creek Airport",
           "iata": "PPC",
@@ -140,7 +153,7 @@
       ],
       "removed_airports": [],
       "changed_airports": [],
-      "added_count": 1,
+      "added_count": 3,
       "removed_count": 0,
       "changed_count": 0,
       "states": {
@@ -156,6 +169,41 @@
               "icao": "PAPR",
               "placeCode": "US-AK",
               "lid": "PPC"
+            }
+          ],
+          "removed_airports": [],
+          "added_count": 1,
+          "removed_count": 0
+        },
+        "IA": {
+          "state_name": "Iowa",
+          "fr24_count": 42,
+          "skycards_count": 41,
+          "difference": 1,
+          "added_airports": [
+            {
+              "name": "Oskaloosa Municipal Airport",
+              "iata": "OOA",
+              "icao": "KOOA",
+              "placeCode": "US-IA",
+              "lid": "OOA"
+            }
+          ],
+          "removed_airports": [],
+          "added_count": 1,
+          "removed_count": 0
+        },
+        "SD": {
+          "state_name": "South Dakota",
+          "fr24_count": 16,
+          "skycards_count": 15,
+          "difference": 1,
+          "added_airports": [
+            {
+              "name": "Lemmon Municipal Airport",
+              "iata": "LEM",
+              "icao": "KLEM",
+              "placeCode": "US-SD"
             }
           ],
           "removed_airports": [],
