@@ -1,6 +1,6 @@
 # Skycards / FR24 Airport Wishlist
 
-A public Google Sheet that tracks airports (and airport data fixes) that Skycards players want in the game. Since Skycards mirrors the Flightradar24 (FR24) mobile airport dataset, every change ends up as a request to FR24.
+A public Google Sheet that tracks airports (and airport data fixes) that Skycards players want in the game. Skycards is a game published by Flightradar24 (FR24) and uses their data for airports, flights and more, so every request here is really a request to FR24.
 
 Sheet: <https://docs.google.com/spreadsheets/d/1_UJ58i3ojnDrto_T4jljMa3BhfN6s54CuaAON4_3qJ8/edit?usp=sharing>
 
