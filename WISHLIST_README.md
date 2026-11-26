@@ -9,30 +9,17 @@ Anyone with the link can view it.
 ## Who is involved
 
 - Maintained by Bas (this repo's owner).
+- Co-maintained by Nyax and Nick.
 - Olov and David (the Skycards devs) also maintain it.
 - Mike from Flightradar24 has access and handles the airports on the list.
 
 ## Tabs
 
-Normally the sheet has a single tab, `Wishlist`. The two `(review)` tabs are temporary: co-maintainers create them with proposed rows, and Bas reviews them before adding the accepted rows to `Wishlist`. At the time of writing both exist.
+The sheet's main tab is `Wishlist`. It starts with a summary row (pending additions, how many of those are already in FR24 with a hidden pin, open issues, open removals), then the header row, then one row per request.
 
-The sheet title is "Skycards / FR24 Airport Wishlist". Each tab has a summary row on top (pending additions, how many of those are already in FR24 with a hidden pin, open issues, open removals), then the header row, then one row per request.
-
-| Tab | What it holds | Row types | Status |
-| --- | --- | --- | --- |
-| `Wishlist` | The main, permanent list: everything that is submitted to FR24. | Addition, Issue, Removal | Pending, Accepted |
-| `New airports (review)` | Temporary. Additions proposed by co-maintainers, waiting for Bas's review before they go onto `Wishlist`. | Addition | Pending |
-| `FR24 corrections (review)` | Temporary. Corrections to airports FR24 already has, proposed by co-maintainers, waiting for Bas's review. | Issue, Removal | Pending |
-
-Snapshot taken 2026-11-26 (row counts drift quickly):
-
-- `Wishlist`: 357 rows — 306 additions, 42 issues, 9 removals; 255 pending, 102 accepted.
-- `New airports (review)`: 221 additions.
-- `FR24 corrections (review)`: 420 rows — 413 issues, 7 removals.
+Other tabs may appear from time to time while we review data. They are temporary and use the same layout.
 
 ## Columns
-
-All three tabs use the same layout.
 
 | Column | Meaning |
 | --- | --- |
@@ -42,12 +29,11 @@ All three tabs use the same layout.
 | Country | Country name (FR24 spelling, e.g. `Congo-Kinshasa`). |
 | Subdivision | State or province, often empty. |
 | Airport name | The name it should have. |
-| IATA / ICAO / LID | Codes the airport should have. LID is the FAA Location Identifier; it mirrors the `lid` field in FR24's airport data. |
-| (3 unlabeled columns) | Latitude, longitude and elevation in feet. Filled in on the review tabs, mostly empty on `Wishlist`. |
+| IATA / ICAO / LID | Codes the airport should have. LID is the local identifier: any identifier assigned by the country the airport is in (for example the FAA code in the US). It matches the `lid` field in FR24's airport data. |
+| Lat, Lon, Alt (ft) | Coordinates and elevation in feet. Often empty. |
 | FR24 state / issue type | See below. |
 | Link 1, Link 2 | Evidence. On additions these are 8-character hex ids (the FR24 flight ids that prove traffic). On issues they are source names such as SkyVector, Wikipedia or IATA. |
 | Notes | Free text: traffic description, and for fixes the current vs. correct value ("Currently named 'X' in fr24, should be 'Y'"). |
-| Last column | Unlabeled `0` / `1` helper. It is `1` on the accepted row sampled; its exact meaning is not documented yet. |
 
 ### FR24 state values (additions)
 
