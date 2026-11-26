@@ -67,6 +67,7 @@ This design allows for:
 - `airports.json` - Latest airport data (created automatically)
 - `models.json` - Latest aircraft models data (created automatically)
 - `airlines.json` - Latest airline data (created automatically)
+- `WISHLIST_README.md` - Documentation of the public Skycards/FR24 airport wishlist sheet
 
 ## Deployment
 
