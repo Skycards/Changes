@@ -55,6 +55,6 @@ Other tabs may appear from time to time while we review data. They are temporary
 
 ## How it relates to this repo
 
-- `airports.json` mirrors FR24's mobile airport dataset (same ids), so an accepted wishlist row only shows up here once FR24 applies it and the daily airport comparison (`compare_airports.py`, see `AIRPORT_COMPARISON_README.md`) picks it up.
-- Pending additions that are "In FR24, pin hidden" are never in `airports.json`, because FR24's feed omits hidden pins.
-- The comparison reports name, IATA/ICAO and LID differences, which is the quickest way to see that a wishlist item was applied.
+- `airports.json` holds the airport data as it is in Skycards. It comes from FR24's mobile airport dataset (same ids), but Skycards takes some time to pick up FR24's changes, so it lags behind FR24.
+- The daily airport comparison (`compare_airports.py`, see `AIRPORT_COMPARISON_README.md`) fetches every airport FR24 shows on its map and diffs that against `airports.json`. It reports added, removed and changed airports (name, IATA/ICAO and LID), which is the quickest way to see that a wishlist item was applied in FR24 and when Skycards has caught up.
+- Airports with a hidden pin are not shown on FR24's map, so they are in neither the comparison nor `airports.json`. They are still reachable on FR24's website at `https://www.flightradar24.com/data/airports/<code>` (usually the IATA code).
