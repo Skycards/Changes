@@ -30,7 +30,7 @@ Other tabs may appear from time to time while we review data. They are temporary
 | Subdivision | State or province, often empty. |
 | Airport name | The name it should have. |
 | IATA / ICAO / LID | Codes the airport should have. LID is the local identifier: any identifier assigned by the country the airport is in (for example the FAA code in the US). It matches the `lid` field in FR24's airport data. |
-| Lat, Lon, Alt (ft) | Coordinates and elevation in feet. Often empty. |
+| Lat, Lon, Alt (ft) | Coordinates and elevation in feet. Only filled in when relevant: new airports and pin movements. |
 | FR24 state / issue type | See below. |
 | Link 1, Link 2 | Evidence. On additions these are 8-character hex ids (the FR24 flight ids that prove traffic). On issues they are source names such as SkyVector, Wikipedia or IATA. |
 | Notes | Free text: traffic description, and for fixes the current vs. correct value ("Currently named 'X' in fr24, should be 'Y'"). |
